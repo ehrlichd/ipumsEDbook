@@ -1,60 +1,55 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Data Science for Social Scientists"
+author: 
+  - "Daniel E. Ehrlich"
+  - "Anna Tremblay"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
+description: "This is a test example of using the bookdown package to write an open source book. The output format for this example is bookdown::gitbook."
 ---
 
-# About
+# Preface {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+This is my very first bookdown book. I hope you like it.
 
-## Usage 
+**TIP:** Note the `{-}` used to indicate "do not number this section" eg: preface.
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+## TO DO
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+* discuss style
+  + key terms section for each chapter?
+  + key terms in **bold**
+  + italics for *emphasis*
+  + are we pro-hyphens, or are they pedantic?
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+## GUIDING PRINCIPLES
 
-## Render book
+* phenomenon-based learning
+  + try to start the class with a **question** or **problem**
+  + *why* does the data look the way it does
+  + structure class so students work towards solving the problem
 
-You can render the HTML version of this example book without changing anything:
+* RELEVANT examples
+  + try to touch on 2 or more disciplines (eg, economics, demography)
+  
 
-1. Find the **Build** pane in the RStudio IDE, and
+#### Documentation
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
-
+This function grabs any packages in your project and adds them to a local list that can be referenced using `R-pacakgename`
+  * **NOTE** in practice, that needs to be wrapped in markdown syntax, eg:
+    `[@R-bookdown]`
+  * See help files for more info - might be able to create/add a `citation` file
+    
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+

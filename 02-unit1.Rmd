@@ -1,0 +1,34 @@
+# The Basics {#unit1}
+
+
+For now, I have 3 main chapters for each of the main sections: 
+  * Basics of data science / R \@ref(unit1) 
+  * Applications/critiques using IPUMS data \@ref(unit2)
+  * Student-driven projects \@ref(unit3)
+
+Each of these **Chapters** contains multiple sections. We'll likely want to break these sections out into their own `.Rmd` files as they get fleshed out. For now, I'll try to keep the abundance of files limited.
+
+**NOTE:** As these actually get filled out, we will probably want to insert different `part`s to the book (EG, the content of Unit 1 is covered in `Part I`).
+  * Declare parts with `# (PART) Part I {-}` immediately before the first chapter `#` it contains.
+  
+## Intro to R/RStudio
+## Reading Data / Distributions
+### What *is* a **normal distribution**
+#### How normal is it?
+show increasingly unclear examples of normal vs not
+
+introduce tests of normality
+
+#### Measuring normality - single sample
+
+reinforce [concept of statistical] **normality**
+
+is a value from a sample? - one way ttest
+something about tails
+
+#### comparing normality - two saples
+
+standard / two-way t test
+
+#### comparing more than two - ANOVA
+

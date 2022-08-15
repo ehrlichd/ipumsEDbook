@@ -1,0 +1,82 @@
+# Example RMD code {#ex_code}
+ 
+For now, this chapter is a bit of a placeholder. I'm not sure what/how the `references.Rmd` file actually fits in to the code/construction (it looks automatic) so I want to keep that in place and need a section to note that. 
+
+I also want a more centralized reference point to put any example code I find helpful while working in R/bookdown. This section could get really unrully really fast, but oh well.
+
+
+
+## Core
+
+`index.Rmd` is required and treated as file `00`. Chapters *should* be numbered for ease of sorting but custom orders are possible by specifying filenames somewhere **in this file**
+
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+  + **IE** beyond the YAML header this file functions as a normal chapter since it starts with a top level header.
+  + Note that `index.Rmd` has its own YMAL in addition to the various .yml files...not sure exactly how these relate.
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+  * Again, this prints an auto-generated numeral
+  * also leaving this in the context of the plots in Chapter \@ref(intro)
+  
+
+You can write citations, too. See `knitr::write_bib()` for more on this. Quick example from demo/index (may not work without write_bib() though): we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+  * If included, "Refernces" section gets added to each chapter. 
+  * Not exactly sure where
+
+
+Embed html renders (EG, fancy tables (IPUMS_var_desc), or any shiny app) with `webshot` R package and `phantomJS`.
+
+```{r, eval = FALSE}
+install.packages("webshot")
+webshot::install_phantomjs()
+```
+  
+## Tips
+
+
+
+**LABEL EVERYTHING** you'll likely want to reference it later
+  * code chunks that produce figures can be referenced via `@\ref(fig:[LABEL])`
+  
+
+You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(unit1).
+  * No idea how the automatic references work, so always be sure to declare them.
+  * **NOTE** these display as the relevant Chapter `numeral`.
+  
+  
+
+
+## Syntax
+
+_italics_ or 
+*italics* (can handle spaces)
+**bold**
+`code`
+$equations$
+
+### Math
+
+Randal Pruim features an extensive list of common math expression on their [github page](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html). Here are some quick notes: 
+
+In-line equations can be written within `$` and will be displayed right there: $a^2 + b^2 = c^2$. In contrast, you can also add equation chunks by using `$$` 
+
+This can be coded in-line,  $$\sum_{n=1}^{10} n^2$$, but will result in a page break.
+
+
+Alternatively, a more "classic" equation chunk:
+
+$$
+Plain text doesnt get spaces
+
+how
+
+very
+
+
+
+odd
+
+$$
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
