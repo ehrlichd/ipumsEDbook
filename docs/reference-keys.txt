@@ -1,7 +1,14 @@
 fig:nice-fig
 tab:nice-tab
-to-do
+course-structure
+unit-1-understanding-and-testing-data
+unit-2-finding-data-and-asking-questions
+exploratory-analysis
+hypotethsis-driven
+unit-3-discussing-data-and-student-research
 guiding-principles
+dev-notes
+to-do
 documentation
 intro
 unit1

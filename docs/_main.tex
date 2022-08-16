@@ -117,7 +117,7 @@
 
 \title{Data Science for Social Scientists}
 \author{Daniel E. Ehrlich \and Anna Tremblay}
-\date{2022-08-15}
+\date{2022-08-16}
 
 \begin{document}
 \maketitle
@@ -134,26 +134,132 @@ This is my very first bookdown book. I hope you like it.
 
 \textbf{TIP:} Note the \texttt{\{-\}} used to indicate ``do not number this section'' eg: preface.
 
-\hypertarget{to-do}{%
-\section{TO DO}\label{to-do}}
+\hypertarget{course-structure}{%
+\section{Course Structure}\label{course-structure}}
+
+This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
+
+The basic structure of this course is:
+
+\hypertarget{unit-1-understanding-and-testing-data}{%
+\subsection{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
+
+Students will be able to:
+
+Technical:
 
 \begin{itemize}
 \tightlist
 \item
-  discuss style
+  Download R and RStudio
+\item
+  Read data into R and
+\item
+  Write (save) data out of R.
+\item
+  Summarize data visually
 
   \begin{itemize}
   \tightlist
   \item
-    key terms section for each chapter?
+    Using base R
   \item
-    key terms in \textbf{bold}
+    Using ggplot (tidyverse)
+  \end{itemize}
+\item
+  Summarize data tabularly
+
+  \begin{itemize}
+  \tightlist
   \item
-    italics for \emph{emphasis}
+    Using base R
   \item
-    are we pro-hyphens, or are they pedantic?
+    Using gttable / tidyverse
+  \end{itemize}
+\item
+  Formally state and test assumptions of data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} t-test, anova, (maybe) correlations
   \end{itemize}
 \end{itemize}
+
+Conceptual:
+
+\begin{itemize}
+\tightlist
+\item
+  Understand main types of data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} logical, numeric, character, etc
+  \item
+    R specic vs general terms
+  \end{itemize}
+\item
+  Recgonize various data distributions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} normal, poisson, etc
+  \end{itemize}
+\item
+  Know which types statistical tests are appropriate for a given set of data.
+\end{itemize}
+
+\hypertarget{unit-2-finding-data-and-asking-questions}{%
+\subsection{Unit 2 Finding Data and Asking Questions}\label{unit-2-finding-data-and-asking-questions}}
+
+Here we demonstrate two \textbf{different} approaches to conducting research.
+
+\hypertarget{exploratory-analysis}{%
+\subsubsection{Exploratory Analysis}\label{exploratory-analysis}}
+
+If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school (More on that to follow(\textbf{\emph{include\_link}})).
+
+This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
+* \emph{EG:} how to subset data, how to reshape data, how to recode data, how to convert from one \texttt{data\ type} to another.
+
+Example lab exercise:
+
+Students given a data set (xls, csv, etc)
+* load data, perform manipulations, basic summaries
++ cross tabs
++ group means by a covariate
+* inspect data visually
++ \emph{DESCRIBE} the distribution - is it normal? significant?
+* \emph{FIND} aquestion in the spread of the data
++ how can you test this (maybe small group work)
+* write up/ present results
++ think on confounding factors / biases
+
+\hypertarget{hypotethsis-driven}{%
+\subsubsection{Hypotethsis Driven}\label{hypotethsis-driven}}
+
+If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
+
+Begin introducing navigation of web resources - mainly IPUMS international
+
+Students should become comfortable working through lab exercises:
+* Define a question (or be presented with one)
+* Download variables from IPUMS (course downloads possible)
+* Perform a basic analysis (discussed in Unit 1)
+* Generate a \textbf{visual argument} for your analysis
++ Include explanation/interpretation/reflection on the question at hand, and the data used
++ Any obvious biases
++ Any obvious confounding factors
+
+\hypertarget{unit-3-discussing-data-and-student-research}{%
+\subsection{Unit 3 Discussing Data and Student Research}\label{unit-3-discussing-data-and-student-research}}
+
+In this section we encourage the instructor to provide ample time for indepent student/small-group research. Some class time should be devoted to modelling healthy disussion and critique of methods.
+
+We provide some examples here but encourage instrcutors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
 \hypertarget{guiding-principles}{%
 \section{GUIDING PRINCIPLES}\label{guiding-principles}}
@@ -182,8 +288,32 @@ This is my very first bookdown book. I hope you like it.
   \end{itemize}
 \end{itemize}
 
+\hypertarget{dev-notes}{%
+\section{DEV NOTES}\label{dev-notes}}
+
+\hypertarget{to-do}{%
+\subsection{TO DO}\label{to-do}}
+
+\begin{itemize}
+\tightlist
+\item
+  discuss style
+
+  \begin{itemize}
+  \tightlist
+  \item
+    key terms section for each chapter?
+  \item
+    key terms in \textbf{bold}
+  \item
+    italics for \emph{emphasis}
+  \item
+    are we pro-hyphens, or are they pedantic?
+  \end{itemize}
+\end{itemize}
+
 \hypertarget{documentation}{%
-\subsubsection{Documentation}\label{documentation}}
+\subsection{Documentation}\label{documentation}}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using \texttt{R-pacakgename}
 * \textbf{NOTE} in practice, that needs to be wrapped in markdown syntax, eg:
