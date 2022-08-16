@@ -34,7 +34,7 @@ webshot::install_phantomjs()
   
 ## Tips
 
-
+***Autonumber sections** Note the `{-}` used to indicate "do not number this section" eg: preface.
 
 **LABEL EVERYTHING** you'll likely want to reference it later
   * code chunks that produce figures can be referenced via `@\ref(fig:[LABEL])`

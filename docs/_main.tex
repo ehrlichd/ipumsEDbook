@@ -132,17 +132,17 @@
 
 This is my very first bookdown book. I hope you like it.
 
-\textbf{TIP:} Note the \texttt{\{-\}} used to indicate ``do not number this section'' eg: preface.
-
 \hypertarget{course-structure}{%
-\section{Course Structure}\label{course-structure}}
+\section*{Course Structure}\label{course-structure}}
+\addcontentsline{toc}{section}{Course Structure}
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
 The basic structure of this course is:
 
 \hypertarget{unit-1-understanding-and-testing-data}{%
-\subsection{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
+\subsection*{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
+\addcontentsline{toc}{subsection}{Unit 1 Understanding and Testing Data}
 
 Students will be able to:
 
@@ -213,12 +213,14 @@ Conceptual:
 \end{itemize}
 
 \hypertarget{unit-2-finding-data-and-asking-questions}{%
-\subsection{Unit 2 Finding Data and Asking Questions}\label{unit-2-finding-data-and-asking-questions}}
+\subsection*{Unit 2 Finding Data and Asking Questions}\label{unit-2-finding-data-and-asking-questions}}
+\addcontentsline{toc}{subsection}{Unit 2 Finding Data and Asking Questions}
 
 Here we demonstrate two \textbf{different} approaches to conducting research.
 
 \hypertarget{exploratory-analysis}{%
-\subsubsection{Exploratory Analysis}\label{exploratory-analysis}}
+\subsubsection*{Exploratory Analysis}\label{exploratory-analysis}}
+\addcontentsline{toc}{subsubsection}{Exploratory Analysis}
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school (More on that to follow(\textbf{\emph{include\_link}})).
 
@@ -239,7 +241,8 @@ Students given a data set (xls, csv, etc)
 + think on confounding factors / biases
 
 \hypertarget{hypotethsis-driven}{%
-\subsubsection{Hypotethsis Driven}\label{hypotethsis-driven}}
+\subsubsection*{Hypotethsis Driven}\label{hypotethsis-driven}}
+\addcontentsline{toc}{subsubsection}{Hypotethsis Driven}
 
 If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
 
@@ -255,14 +258,16 @@ Students should become comfortable working through lab exercises:
 + Any obvious confounding factors
 
 \hypertarget{unit-3-discussing-data-and-student-research}{%
-\subsection{Unit 3 Discussing Data and Student Research}\label{unit-3-discussing-data-and-student-research}}
+\subsection*{Unit 3 Discussing Data and Student Research}\label{unit-3-discussing-data-and-student-research}}
+\addcontentsline{toc}{subsection}{Unit 3 Discussing Data and Student Research}
 
 In this section we encourage the instructor to provide ample time for indepent student/small-group research. Some class time should be devoted to modelling healthy disussion and critique of methods.
 
 We provide some examples here but encourage instrcutors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
 \hypertarget{guiding-principles}{%
-\section{GUIDING PRINCIPLES}\label{guiding-principles}}
+\section*{Guiding Principles}\label{guiding-principles}}
+\addcontentsline{toc}{section}{Guiding Principles}
 
 \begin{itemize}
 \tightlist
@@ -289,10 +294,12 @@ We provide some examples here but encourage instrcutors (or students) to bring i
 \end{itemize}
 
 \hypertarget{dev-notes}{%
-\section{DEV NOTES}\label{dev-notes}}
+\section*{DEV NOTES}\label{dev-notes}}
+\addcontentsline{toc}{section}{DEV NOTES}
 
 \hypertarget{to-do}{%
-\subsection{TO DO}\label{to-do}}
+\subsection*{TO DO}\label{to-do}}
+\addcontentsline{toc}{subsection}{TO DO}
 
 \begin{itemize}
 \tightlist
@@ -313,7 +320,8 @@ We provide some examples here but encourage instrcutors (or students) to bring i
 \end{itemize}
 
 \hypertarget{documentation}{%
-\subsection{Documentation}\label{documentation}}
+\subsection*{Documentation}\label{documentation}}
+\addcontentsline{toc}{subsection}{Documentation}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using \texttt{R-pacakgename}
 * \textbf{NOTE} in practice, that needs to be wrapped in markdown syntax, eg:
@@ -588,6 +596,8 @@ Embed html renders (EG, fancy tables (IPUMS\_var\_desc), or any shiny app) with 
 
 \hypertarget{tips}{%
 \section{Tips}\label{tips}}
+
+*\textbf{Autonumber sections} Note the \texttt{\{-\}} used to indicate ``do not number this section'' eg: preface.
 
 \textbf{LABEL EVERYTHING} you'll likely want to reference it later
 * code chunks that produce figures can be referenced via \texttt{@\textbackslash{}ref(fig:{[}LABEL{]})}
