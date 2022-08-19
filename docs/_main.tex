@@ -117,7 +117,7 @@
 
 \title{Data Science for Social Scientists}
 \author{Daniel E. Ehrlich \and Anna Tremblay}
-\date{2022-08-16}
+\date{2022-08-19}
 
 \begin{document}
 \maketitle
@@ -132,17 +132,33 @@
 
 This is my very first bookdown book. I hope you like it.
 
-\hypertarget{course-structure}{%
-\section*{Course Structure}\label{course-structure}}
-\addcontentsline{toc}{section}{Course Structure}
+\hypertarget{syllabus-details}{%
+\chapter*{Syllabus Details}\label{syllabus-details}}
+\addcontentsline{toc}{chapter}{Syllabus Details}
+
+\hypertarget{course-aims}{%
+\section*{Course Aims}\label{course-aims}}
+\addcontentsline{toc}{section}{Course Aims}
+
+Provide students with relevant, hands on, methodological training in data literacy and visualization.
+
+\hypertarget{course-description}{%
+\section*{Course Description}\label{course-description}}
+\addcontentsline{toc}{section}{Course Description}
+
+This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
+
+\hypertarget{weekly-schedule}{%
+\section{Weekly Schedule}\label{weekly-schedule}}
 
 The basic structure of this course is:
 
 \hypertarget{unit-1-understanding-and-testing-data}{%
-\subsection*{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
-\addcontentsline{toc}{subsection}{Unit 1 Understanding and Testing Data}
+\subsection{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
+
+Intro to data/ simple analysis
 
 Students will be able to:
 
@@ -213,14 +229,14 @@ Conceptual:
 \end{itemize}
 
 \hypertarget{unit-2-finding-data-and-asking-questions}{%
-\subsection*{Unit 2 Finding Data and Asking Questions}\label{unit-2-finding-data-and-asking-questions}}
-\addcontentsline{toc}{subsection}{Unit 2 Finding Data and Asking Questions}
+\subsection{Unit 2 Finding Data and Asking Questions}\label{unit-2-finding-data-and-asking-questions}}
 
-Here we demonstrate two \textbf{different} approaches to conducting research.
+Here we demonstrate two \textbf{different} approaches to conducting research. Students become familar writing up short lab reports detailing their findings. For unit \ref{expo}, we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings.
 
-\hypertarget{exploratory-analysis}{%
-\subsubsection*{Exploratory Analysis}\label{exploratory-analysis}}
-\addcontentsline{toc}{subsubsection}{Exploratory Analysis}
+For unit \ref{hypo}, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate \href{https://ipums.org}{ipums.org}, and create \textbf{data extracts}, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings.
+
+\hypertarget{expo}{%
+\subsubsection{Exploratory Analysis}\label{expo}}
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school (More on that to follow(\textbf{\emph{include\_link}})).
 
@@ -240,9 +256,8 @@ Students given a data set (xls, csv, etc)
 * write up/ present results
 + think on confounding factors / biases
 
-\hypertarget{hypotethsis-driven}{%
-\subsubsection*{Hypotethsis Driven}\label{hypotethsis-driven}}
-\addcontentsline{toc}{subsubsection}{Hypotethsis Driven}
+\hypertarget{hypo}{%
+\subsubsection{Hypotethsis Driven}\label{hypo}}
 
 If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
 
@@ -261,9 +276,23 @@ Students should become comfortable working through lab exercises:
 \subsection*{Unit 3 Discussing Data and Student Research}\label{unit-3-discussing-data-and-student-research}}
 \addcontentsline{toc}{subsection}{Unit 3 Discussing Data and Student Research}
 
-In this section we encourage the instructor to provide ample time for indepent student/small-group research. Some class time should be devoted to modelling healthy disussion and critique of methods.
+Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks producing a research paper complete with data analysis, visualization, and interpretation.
 
-We provide some examples here but encourage instrcutors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
+In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modelling healthy discussion and critique of methods.
+
+We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
+
+\hypertarget{learning-outcomes}{%
+\section*{LEARNING OUTCOMES}\label{learning-outcomes}}
+\addcontentsline{toc}{section}{LEARNING OUTCOMES}
+
+LEARNING OUTCOMES:
+* Understand the depth of the IPUMS database and the variables it has to\\
+offer
+* Compose R code to analyze the IPUMS data
+* Produce visually pleasing data outputs in R
+* Synthesize the information in a written report
+* Present the analysis in a poster format for other students
 
 \hypertarget{guiding-principles}{%
 \section*{Guiding Principles}\label{guiding-principles}}
@@ -293,6 +322,9 @@ We provide some examples here but encourage instrcutors (or students) to bring i
   \end{itemize}
 \end{itemize}
 
+\hypertarget{section}{%
+\subsection{}\label{section}}
+
 \hypertarget{dev-notes}{%
 \section*{DEV NOTES}\label{dev-notes}}
 \addcontentsline{toc}{section}{DEV NOTES}
@@ -316,6 +348,36 @@ We provide some examples here but encourage instrcutors (or students) to bring i
     italics for \emph{emphasis}
   \item
     are we pro-hyphens, or are they pedantic?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{misc-ideas}{%
+\subsection{MISC IDEAS}\label{misc-ideas}}
+
+\begin{itemize}
+\tightlist
+\item
+  Application forward
+\item
+  Present research/ analysis/results FIRST, then explain the mathematical principals behind it
+\item
+  daily/weekly ``i'm stuck on\ldots{}''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Students send in questions (night before class) and instructor spends 10-15 mins talking through (or collaboratively working through with class) solutions
+  \item
+    Alternatively, once a month maybe a longer class covering ``common problems asked this month''
+    daily/weekly ``recent research''
+  \end{itemize}
+\item
+  pick out a recent article with good visualization (or bad) and spend 5-10 mins discussing what makes it good (or bad)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Encourage students to find articles for extra credit
   \end{itemize}
 \end{itemize}
 
@@ -417,6 +479,30 @@ Each of these \textbf{Chapters} contains multiple sections. We'll likely want to
 
 \textbf{NOTE:} As these actually get filled out, we will probably want to insert different \texttt{part}s to the book (EG, the content of Unit 1 is covered in \texttt{Part\ I}).
 * Declare parts with \texttt{\#\ (PART)\ Part\ I\ \{-\}} immediately before the first chapter \texttt{\#} it contains.
+
+\textbf{Topics to include:}
+* What is data?
+* Everything can be data
+* How do we interpret data
+* Tables
+* Plots
+* Univariate distributions
+* What can they tell us
+* Multi-modality in distributions
+* Categorical vs continuous data
+* Don't need to get ahead of this yet
+* Add in a grouping category - multi state/multi-national dataset
+* Ttest / anova
+
+\textbf{Type of Data:}
+Age distributions
+Specifically generate a dataset with old/young folks over-represented to highlight a bimodal distribution
+
+Start with single state/country
+Add a second state/country to demo ttest
+Add more to demo anova
+
+Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)
 
 \hypertarget{intro-to-rrstudio}{%
 \section{Intro to R/RStudio}\label{intro-to-rrstudio}}

@@ -11,6 +11,30 @@ Each of these **Chapters** contains multiple sections. We'll likely want to brea
 **NOTE:** As these actually get filled out, we will probably want to insert different `part`s to the book (EG, the content of Unit 1 is covered in `Part I`).
   * Declare parts with `# (PART) Part I {-}` immediately before the first chapter `#` it contains.
   
+**Topics to include:**
+  * What is data?
+  * Everything can be data
+  * How do we interpret data
+  * Tables
+  * Plots
+  * Univariate distributions
+  * What can they tell us
+  * Multi-modality in distributions
+  * Categorical vs continuous data
+  * Don’t need to get ahead of this yet
+  * Add in a grouping category - multi state/multi-national dataset
+  * Ttest / anova
+
+**Type of Data:**
+Age distributions
+Specifically generate a dataset with old/young folks over-represented to highlight a bimodal distribution
+
+Start with single state/country
+Add a second state/country to demo ttest
+Add more to demo anova
+
+Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)
+
 ## Intro to R/RStudio
 ## Reading Data / Distributions
 ### What *is* a **normal distribution**

@@ -18,15 +18,29 @@ description: "This is a test example of using the bookdown package to write an o
 
 This is my very first bookdown book. I hope you like it.
 
+# Syllabus Details {-}
 
 
-## Course Structure {-}
+## Course Aims {-}
+
+Provide students with relevant, hands on, methodological training in data literacy and visualization. 
+
+
+
+## Course Description {-}
+
+This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
+
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
+## Weekly Schedule
+
 The basic structure of this course is:
 
-### Unit 1 Understanding and Testing Data {-}
+### Unit 1 Understanding and Testing Data
+
+Intro to data/ simple analysis
 
 Students will be able to:
 
@@ -54,11 +68,13 @@ Conceptual:
 * Know which types statistical tests are appropriate for a given set of data.
 
 
-### Unit 2 Finding Data and Asking Questions {-}
+### Unit 2 Finding Data and Asking Questions
 
-Here we demonstrate two **different** approaches to conducting research. 
+Here we demonstrate two **different** approaches to conducting research. Students become familar writing up short lab reports detailing their findings. For unit \@ref(expo), we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings. 
 
-#### Exploratory Analysis {-}
+For unit \@ref(hypo), students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate [ipums.org](https://ipums.org), and create **data extracts**, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings. 
+
+#### Exploratory Analysis {#expo}
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against *the scientific method* most people learned in grade school (More on that to follow(**_include_link_**)).
 
@@ -80,7 +96,7 @@ Students given a data set (xls, csv, etc)
     
     
   
-#### Hypotethsis Driven {-}
+#### Hypotethsis Driven {#hypo}
 
 If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional *scientific method*. With a question in mind, the first question is: where to look. What better place than [IPUMS](https://ipums.org)!
 
@@ -100,9 +116,22 @@ Students should become comfortable working through lab exercises:
 
 ### Unit 3 Discussing Data and Student Research {-}
 
-In this section we encourage the instructor to provide ample time for indepent student/small-group research. Some class time should be devoted to modelling healthy disussion and critique of methods.
+Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks producing a research paper complete with data analysis, visualization, and interpretation.
 
-We provide some examples here but encourage instrcutors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
+
+In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modelling healthy discussion and critique of methods.
+
+We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
+
+## LEARNING OUTCOMES {-}
+
+LEARNING OUTCOMES: 
+  * Understand the depth of the IPUMS database and the variables it has to  
+offer
+  * Compose R code to analyze the IPUMS data
+  * Produce visually pleasing data outputs in R
+  * Synthesize the information in a written report
+  * Present the analysis in a poster format for other students
 
 
 
@@ -115,7 +144,8 @@ We provide some examples here but encourage instrcutors (or students) to bring i
 
 * RELEVANT examples
   + try to touch on 2 or more disciplines (eg, economics, demography)
-  
+
+###
 
 ## DEV NOTES {-}
 
@@ -126,6 +156,18 @@ We provide some examples here but encourage instrcutors (or students) to bring i
   + key terms in **bold**
   + italics for *emphasis*
   + are we pro-hyphens, or are they pedantic?
+
+
+### MISC IDEAS 
+
+* Application forward
+* Present research/ analysis/results FIRST, then explain the mathematical principals behind it
+* daily/weekly “i’m stuck on…” 
+  + Students send in questions (night before class) and instructor spends 10-15 mins talking through (or collaboratively working through with class) solutions
+  + Alternatively, once a month maybe a longer class covering “common problems asked this month”
+daily/weekly “recent research”
+* pick out a recent article with good visualization (or bad) and spend 5-10 mins discussing what makes it good (or bad)
+  + Encourage students to find articles for extra credit
 
 
 ### Documentation {-}

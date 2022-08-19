@@ -1,5 +1,12 @@
 fig:nice-fig
 tab:nice-tab
+weekly-schedule
+unit-1-understanding-and-testing-data
+unit-2-finding-data-and-asking-questions
+expo
+hypo
+section
+misc-ideas
 intro
 unit1
 intro-to-rrstudio
