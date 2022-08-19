@@ -32,9 +32,35 @@ Provide students with relevant, hands on, methodological training in data litera
 This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
 
-This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
+## LEARNING OUTCOMES {-}
+
+LEARNING OUTCOMES: 
+  * Understand the depth of the IPUMS database and the variables it has to  
+offer
+  * Compose R code to analyze the IPUMS data
+  * Produce visually pleasing data outputs in R
+  * Synthesize the information in a written report
+  * Present the analysis in a poster format for other students
+
+
+
+## Guiding Principles {-}
+
+* phenomenon-based learning
+  + try to start the class with a **question** or **problem**
+  + *why* does the data look the way it does
+  + structure class so students work towards solving the problem
+
+* RELEVANT examples
+  + try to touch on 2 or more disciplines (eg, economics, demography)
+
+
+
 
 ## Weekly Schedule
+
+
+This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
 The basic structure of this course is:
 
@@ -114,7 +140,7 @@ Students should become comfortable working through lab exercises:
 
 
 
-### Unit 3 Discussing Data and Student Research {-}
+### Unit 3 Discussing Data and Student Research 
 
 Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks producing a research paper complete with data analysis, visualization, and interpretation.
 
@@ -123,33 +149,11 @@ In this section we encourage the instructor to provide ample time for independen
 
 We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
-## LEARNING OUTCOMES {-}
-
-LEARNING OUTCOMES: 
-  * Understand the depth of the IPUMS database and the variables it has to  
-offer
-  * Compose R code to analyze the IPUMS data
-  * Produce visually pleasing data outputs in R
-  * Synthesize the information in a written report
-  * Present the analysis in a poster format for other students
 
 
+# DEV NOTES {-}
 
-## Guiding Principles {-}
-
-* phenomenon-based learning
-  + try to start the class with a **question** or **problem**
-  + *why* does the data look the way it does
-  + structure class so students work towards solving the problem
-
-* RELEVANT examples
-  + try to touch on 2 or more disciplines (eg, economics, demography)
-
-###
-
-## DEV NOTES {-}
-
-### TO DO {-}
+## TO DO {-}
 
 * discuss style
   + key terms section for each chapter?
@@ -158,7 +162,7 @@ offer
   + are we pro-hyphens, or are they pedantic?
 
 
-### MISC IDEAS 
+## MISC IDEAS 
 
 * Application forward
 * Present research/ analysis/results FIRST, then explain the mathematical principals behind it
@@ -170,7 +174,7 @@ daily/weekly “recent research”
   + Encourage students to find articles for extra credit
 
 
-### Documentation {-}
+## Documentation {-}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using `R-pacakgename`
   * **NOTE** in practice, that needs to be wrapped in markdown syntax, eg:
