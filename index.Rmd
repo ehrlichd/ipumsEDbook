@@ -162,7 +162,7 @@ We provide some examples here but encourage instructors (or students) to bring i
   + are we pro-hyphens, or are they pedantic?
 
 
-## MISC IDEAS 
+## MISC IDEAS {-}
 
 * Application forward
 * Present research/ analysis/results FIRST, then explain the mathematical principals behind it
