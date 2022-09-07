@@ -24,7 +24,6 @@
 <meta name="author" content="Anna Tremblay, Dept of Soc, Anth, &amp; CJ, Clemson University" />
 
 
-<meta name="date" content="2022-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,7 +166,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
 <ul>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#course-aims"><i class="fa fa-check"></i>Course Aims</a></li>
-<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#learning-outcomes"><i class="fa fa-check"></i>LEARNING OUTCOMES</a></li>
+<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#learning-outcomes"><i class="fa fa-check"></i>Learning Outcomes</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#guiding-principles"><i class="fa fa-check"></i>Guiding Principles</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
@@ -273,21 +272,21 @@ div.csl-indent {
 <span id="cb1-5"><a href="unit1.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="unit1.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="unit1.html#cb1-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1] 10.686791 10.267091 10.277789 10.741411  9.216059 10.227811  9.268841
-##   [8] 10.872604  9.151090  9.923417  9.312847  8.849626  9.924020 10.846915
-##  [15]  9.291844  9.080850 10.970575 11.670210  9.297532 10.555757 11.124947
-##  [22]  9.934607 10.382155  9.696932  9.211281 10.390740  9.301542 10.817792
-##  [29] 10.254063  8.190466  9.634147  9.484300  8.721186  9.739664 10.012544
-##  [36] 11.339569 10.162535 11.036610 10.462657 10.616209  8.356255  9.687170
-##  [43]  8.936194 11.061367  9.424418  9.976684 11.448088  9.802409 10.217673
-##  [50]  9.683499  8.329157  8.701407  8.808947  9.426277 10.593328  8.884324
-##  [57] 10.228963  8.915817 10.288622 11.315709 10.874413  6.932494  9.396731
-##  [64] 10.758423 10.969272 10.426966 10.013323 11.185575 10.013633 10.566466
-##  [71] 11.159274 10.175911 11.508619  9.414500  9.203511 10.194379 11.041307
-##  [78]  9.023506  9.839670  9.402765  9.295310 12.519264 10.401167  9.933020
-##  [85]  9.414900 11.205030 10.934349  9.643969 10.591373  9.196585 10.318528
-##  [92] 10.565406 10.043649 10.679886  9.476381  9.623140 10.009779  9.730851
-##  [99] 11.193161 11.744551</code></pre>
+<pre><code>##   [1] 11.049008  9.274736 10.190206 10.116741 10.272891 12.143695  9.678689
+##   [8] 10.532528  8.879068  9.104237  9.732527 10.844123  9.157166  9.902717
+##  [15]  9.495388 10.845433  9.803719 10.006824  8.546665  9.770778  9.078622
+##  [22]  9.611755 10.866260 11.201400  9.783517  9.836225 10.047095 11.830691
+##  [29] 10.026548 11.038964  8.984494  8.931687 10.058481 10.737155 10.385874
+##  [36]  9.992441 10.852426 11.208202 10.025474  9.832424  9.889736 11.136648
+##  [43]  9.454515 11.418626  9.803515 11.033205 10.094814  8.323969  9.243293
+##  [50] 10.385783  8.459053  8.966733  9.878707 10.682654 10.058855 11.404082
+##  [57] 11.090430 10.736216 10.406023 10.853420 10.261950 11.311626  9.335622
+##  [64] 10.044726  9.594079 11.886320  8.744458  9.429010  9.152259  9.523892
+##  [71] 11.018706 10.664428  9.523576 12.247340  9.254135 10.539120 10.646983
+##  [78]  8.964195  9.285958 11.737038 10.069798  9.033283 12.831784 10.469544
+##  [85]  9.740279 10.872670 10.443324  9.401996  8.403292  7.919989  8.599504
+##  [92]  9.537842  8.595410 10.028143 11.341525 10.651653 10.198117  9.491147
+##  [99] 10.314111 11.342297</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -304,7 +303,7 @@ div.csl-indent {
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   6.932   9.401  10.013  10.037  10.682  12.519</code></pre>
+##   7.920   9.448  10.036  10.094  10.764  12.832</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor" number="1.2.2.2">
@@ -335,9 +334,9 @@ div.csl-indent {
 <span id="cb11-2"><a href="unit1.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summary</span>(data2))</span>
 <span id="cb11-3"><a href="unit1.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="unit1.html#cb11-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  65.71907 93.31352 99.68588 99.72828 106.93291 132.7558
-## [2,] -25.53497 43.42851 61.18017 60.05739  76.84551 138.7341</code></pre>
+<pre><code>##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
+## [1,]  66.17511 93.72078 100.36938 100.6796 107.48435 134.1779
+## [2,] -39.79209 42.73405  59.31656  59.4320  75.38265 139.6701</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -361,21 +360,21 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">65.71907</td>
-<td align="right">93.31352</td>
-<td align="right">99.68588</td>
-<td align="right">99.72828</td>
-<td align="right">106.93291</td>
-<td align="right">132.7558</td>
+<td align="right">66.17511</td>
+<td align="right">93.72078</td>
+<td align="right">100.36938</td>
+<td align="right">100.6796</td>
+<td align="right">107.48435</td>
+<td align="right">134.1779</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-25.53496</td>
-<td align="right">43.42851</td>
-<td align="right">61.18017</td>
-<td align="right">60.05739</td>
-<td align="right">76.84551</td>
-<td align="right">138.7341</td>
+<td align="right">-39.79209</td>
+<td align="right">42.73405</td>
+<td align="right">59.31656</td>
+<td align="right">59.4320</td>
+<td align="right">75.38265</td>
+<td align="right">139.6701</td>
 </tr>
 </tbody>
 </table>

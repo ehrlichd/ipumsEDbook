@@ -55,9 +55,9 @@ Provide students with relevant, hands on, methodological training in data litera
 
 
 
-## LEARNING OUTCOMES {-}
+## Learning Outcomes {-}
 
-LEARNING OUTCOMES: 
+After this course, students will be able to:
 
   * Understand the depth of the IPUMS database and the variables it has to  
 offer

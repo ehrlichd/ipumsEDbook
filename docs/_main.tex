@@ -124,7 +124,7 @@
 \makeatother
 \subtitle{An applied course using IPUMS data}
 \author{Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota} \and Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}}
-\date{2022-09-07}
+\date{Compiled on: 2022-09-07}
 
 \begin{document}
 \maketitle
@@ -184,10 +184,10 @@ This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing
 Provide students with relevant, hands on, methodological training in data literacy and visualization.
 
 \hypertarget{learning-outcomes}{%
-\section*{LEARNING OUTCOMES}\label{learning-outcomes}}
-\addcontentsline{toc}{section}{LEARNING OUTCOMES}
+\section*{Learning Outcomes}\label{learning-outcomes}}
+\addcontentsline{toc}{section}{Learning Outcomes}
 
-LEARNING OUTCOMES:
+After this course, students will be able to:
 
 \begin{itemize}
 \item
@@ -242,10 +242,12 @@ The basic structure of this course is:
 Unit 1 (Weeks 1-5): Understanding and Testing Data
 
 \begin{itemize}
+\tightlist
 \item
   Students use simple datasets
 
   \begin{itemize}
+  \tightlist
   \item
     Data provided by the course/instructor
   \item
@@ -262,22 +264,68 @@ Unit 1 (Weeks 1-5): Understanding and Testing Data
 \end{itemize}
 
 Unit 2 (Weeks 6-10): Finding Data and Asking Questions
-* Students begin to analyze more complex (IPUMS) datasets
-+ Data provided by course/instructor
-+ IPUMS data testing/demonstrating real world effects
-+ EG: SEX \textasciitilde{} EDUATTAIN ; Sex by eduattain by some SES indicators
-+ Students are given a medium/large set of IPUMS variables
-+ Students learn to perform exploratory analysis to guide hypotheses
-* Students learn to navigate IPUMS website
-+ Students learn to develop a hypothesis and find relevant data
+
+\begin{itemize}
+\tightlist
+\item
+  Students begin to analyze more complex (IPUMS) datasets
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Data provided by course/instructor
+  \item
+    IPUMS data testing/demonstrating real world effects
+
+    \begin{itemize}
+    \tightlist
+    \item
+      EG: SEX \textasciitilde{} EDUATTAIN ; Sex by eduattain by some SES indicators
+    \end{itemize}
+  \item
+    Students are given a medium/large set of IPUMS variables
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Students learn to perform exploratory analysis to guide hypotheses
+    \end{itemize}
+  \end{itemize}
+\item
+  Students learn to navigate IPUMS website
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Students learn to develop a hypothesis and find relevant data
+  \end{itemize}
+\end{itemize}
 
 Unit 3 (Weeks 11-15): Discussing Data and Student Research
-* Students develop a research question to be answered with IPUMS data
-* Students are encouraged to fit it to their interests/major/disciplie
-* Course time should be devoted to individual/small-group research
-* Instructor/class present on recent research
-* Instructor models constructive / scholarly criticism
-* Encourage students to critque published work - responsibly
+
+\begin{itemize}
+\tightlist
+\item
+  Students develop a research question to be answered with IPUMS data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Students are encouraged to fit it to their interests/major/disciplie
+  \end{itemize}
+\item
+  Course time should be devoted to individual/small-group research
+\item
+  Instructor/class present on recent research
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Instructor models constructive / scholarly criticism
+  \item
+    Encourage students to critque published work - responsibly
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{unit-1-5-weeks-understanding-and-testing-data}{%
 \subsection*{Unit 1 (5 weeks) Understanding and Testing Data}\label{unit-1-5-weeks-understanding-and-testing-data}}
@@ -574,21 +622,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 13.033154  9.706548  7.657098  9.863114 11.094736  9.474891  9.631290
-##   [8] 11.323917  9.365660  8.288121 11.146634 10.434830 11.589687 11.856376
-##  [15] 10.910982  9.492497 10.270983  8.957959  8.836700  9.349669 10.775143
-##  [22] 10.135217  9.725308  9.597938  9.729460 11.627957 10.437467 10.062037
-##  [29]  9.710761  9.052624 10.757093 10.368510  9.279179 11.141923 10.468264
-##  [36] 10.380980  8.316040  8.748622 10.402271  9.014280  8.701523  9.957140
-##  [43]  9.525941  9.869269  6.986774 10.906572  9.906199 10.552217 10.424223
-##  [50]  9.794316 10.579508 10.315345  9.977534  7.739517 11.138667 10.075000
-##  [57] 11.111265  8.965880  9.348072 10.182019 10.892381 10.129555 10.440351
-##  [64]  8.840116  9.842284 10.235484 10.484269  9.871027 11.956154  7.750249
-##  [71] 11.112196 10.007758 11.634157  8.262024 10.410810  7.780116 11.234180
-##  [78] 10.998700  9.053740 10.543187  9.886425 12.190800  9.926524 10.095864
-##  [85]  9.268190 11.804283  9.225618 10.892000 10.308673  9.660945  9.489733
-##  [92]  8.974609  9.510372 10.743717  9.587023 10.861527 10.173602 10.732303
-##  [99]  9.746346  8.529163
+##   [1]  8.965427 11.266135 12.270298  9.955143 10.065363 11.075422  8.972279
+##   [8]  9.159382  8.592898  8.548881  9.294233  9.243512 10.082995 11.730941
+##  [15] 11.014429 10.170592 10.817248 10.167761 10.149895 10.702991  8.770624
+##  [22] 10.016888 10.479250  9.415021  9.655125 10.858238  9.189205  7.037807
+##  [29] 10.120482  9.256363 10.460908 10.466793 10.406534 10.380253 10.648492
+##  [36] 11.120064  9.542505  9.504260  8.926242 11.121044  9.348320  9.589909
+##  [43]  9.068365 10.044445  9.794621  7.766754  9.747814  9.290929 10.215607
+##  [50]  9.315153  9.722046 10.598671 12.444726 10.988911  9.041363 11.088785
+##  [57]  9.214838 10.931047 10.853399 10.417058  9.670524 10.040482  9.337300
+##  [64] 10.026099 11.015453 10.265944  9.859235  8.393473  8.425363  7.702653
+##  [71]  9.522073 10.484243  8.544031  9.125350  8.536518  9.876141  8.861175
+##  [78] 10.693308 11.180265 10.291935 10.203247 10.309233  9.582231 11.105940
+##  [85]  8.974015  9.584030 10.231683  9.883175 11.068514  8.626158 11.844599
+##  [92] 10.211860  9.426033 10.800509 10.334776 10.103207  9.449967 10.673323
+##  [99]  8.243546  9.244137
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -630,7 +678,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   6.987   9.448  10.035  10.012  10.735  13.033
+##   7.038   9.253  10.021   9.909  10.513  12.445
 \end{verbatim}
 
 Mean, standard deviation
@@ -698,9 +746,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
-## [1,]  71.26983 93.15937 100.10482 99.92318 106.51155 132.7447
-## [2,] -14.53694 42.85820  60.91629 59.92596  77.18745 155.6257
+##           Min.  1st Qu.    Median     Mean  3rd Qu.     Max.
+## [1,]  69.87223 93.11259 100.46754 100.0578 106.8570 135.2443
+## [2,] -22.48441 41.23193  59.99258  59.7697  77.6676 155.2825
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -735,9 +783,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 71.26983 & 93.15937 & 100.10482 & 99.92318 & 106.51155 & 132.7447\\
+data1 & 69.87223 & 93.11259 & 100.46754 & 100.0578 & 106.8570 & 135.2443\\
 \hline
-data2 & -14.53694 & 42.85820 & 60.91629 & 59.92596 & 77.18745 & 155.6257\\
+data2 & -22.48441 & 41.23193 & 59.99258 & 59.7697 & 77.6676 & 155.2825\\
 \hline
 \end{tabular}
 
