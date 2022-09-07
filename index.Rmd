@@ -95,14 +95,13 @@ The basic structure of this course is:
 Unit 1 (Weeks 1-5): Understanding and Testing Data
 
   * Students use simple datasets 
-  
     + Data provided by the course/instructor
     + simplified data to illustrate trends
-    
       + EG: Age distributions ; Age by Sex
       + potential usecase for synthesized data
 
 Unit 2 (Weeks 6-10): Finding Data and Asking Questions
+
   * Students begin to analyze more complex (IPUMS) datasets
     + Data provided by course/instructor
     + IPUMS data testing/demonstrating real world effects 
@@ -113,12 +112,13 @@ Unit 2 (Weeks 6-10): Finding Data and Asking Questions
     + Students learn to develop a hypothesis and find relevant data
     
 Unit 3 (Weeks 11-15): Discussing Data and Student Research 
+
   * Students develop a research question to be answered with IPUMS data
-    * Students are encouraged to fit it to their interests/major/disciplie
+    + Students are encouraged to fit it to their interests/major/disciplie
   * Course time should be devoted to individual/small-group research
   * Instructor/class present on recent research
-    * Instructor models constructive / scholarly criticism 
-    * Encourage students to critque published work - responsibly
+    + Instructor models constructive / scholarly criticism 
+    + Encourage students to critque published work - responsibly
 
 
 ### Unit 1 (5 weeks) Understanding and Testing Data {-}
