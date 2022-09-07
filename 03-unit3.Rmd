@@ -1,4 +1,10 @@
-# Independent Research {#unit3}
+# Unit 3: Independent Research {#unit3}
+
+## Week 11: Students develop research Question
+## Week 12: Students find relevant variables from IPUMS
+## Week 13: Students test and evaluate results
+## Week 14: Students prepare presentations of results
+## Week 15: Students present work (slides, poster, podium, etc)
 
 By this point, students should be familiar with basic concepts from Chapter \@ref(unit1). These include:
 

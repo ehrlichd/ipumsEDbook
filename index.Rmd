@@ -1,9 +1,10 @@
 --- 
 title: "Data Science for Social Scientists"
+subtitle: "An applied course using IPUMS data"
 author: 
-  - "Daniel E. Ehrlich"
-  - "Anna Tremblay"
-date: "`r Sys.Date()`"
+  - Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)
+  - Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)
+date: "Compiled on: `r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -16,9 +17,36 @@ description: "This is a test example of using the bookdown package to write an o
 
 # Preface {-}
 
-This is my very first bookdown book. I hope you like it.
 
-# Syllabus Details {-}
+An open-source book using open-source tools and nearly open-source data.
+
+
+
+## What is IPUMS {-}
+
+
+IPUMS started as a project to digitize the historical records of the US census. It has expanded to include [9 data collections](https://www.ipums.org/), which are united in their methods and principles of making soial science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably: 
+
+  * IPUMS **harmonizes** these data, ensuring consistently coded values across time and space.
+  * IPUMS provides harmonized **GIS Shapefiles** for most census and survey data
+  * IPUMS provides extensive **metadata**, including
+    + Original questionnaire text
+    + Alerts about notable changes in variable definition, universe, or coding
+    
+    
+IPUMS data is free to use for education and research purposes. Researchers just need to register with an **email address** and brief project description. Nothing too formal - we're just trying to understand what kinds of questions researchers are interested in. For educators, we have additional resources to set up [classroom accounts](), making it easy to get your students registered and share IPUMS data with them.
+
+
+
+## Why make this course {-}
+
+
+While we (DEE) may be slightly biased, we think IPUms is a fantastic resource for **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an **applied context** we hope students (and instructors) will find engaging. We also know meany instructors may be teaching across multiple disciplines, in large departments, or be the only "data person" at their instutition. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `template`, to tailor this course to their subject or interest.
+
+
+# Course Description {-}
+
+This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
 
 ## Course Aims {-}
@@ -27,19 +55,19 @@ Provide students with relevant, hands on, methodological training in data litera
 
 
 
-## Course Description {-}
-
-This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
-
-
 ## LEARNING OUTCOMES {-}
 
 LEARNING OUTCOMES: 
+
   * Understand the depth of the IPUMS database and the variables it has to  
 offer
+
   * Compose R code to analyze the IPUMS data
+  
   * Produce visually pleasing data outputs in R
+  
   * Synthesize the information in a written report
+  
   * Present the analysis in a poster format for other students
 
 
@@ -57,14 +85,51 @@ offer
 
 
 
-## Weekly Schedule
+# Syllabus {-}
 
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
 The basic structure of this course is:
 
-### Unit 1 Understanding and Testing Data
+Unit 1 (Weeks 1-5): Understanding and Testing Data
+
+  * Students use simple datasets 
+  
+    + Data provided by the course/instructor
+    + simplified data to illustrate trends
+    
+      + EG: Age distributions ; Age by Sex
+      + potential usecase for synthesized data
+
+Unit 2 (Weeks 6-10): Finding Data and Asking Questions
+  * Students begin to analyze more complex (IPUMS) datasets
+    + Data provided by course/instructor
+    + IPUMS data testing/demonstrating real world effects 
+      + EG: SEX ~ EDUATTAIN ; Sex by eduattain by some SES indicators
+    + Students are given a medium/large set of IPUMS variables
+      + Students learn to perform exploratory analysis to guide hypotheses 
+  * Students learn to navigate IPUMS website
+    + Students learn to develop a hypothesis and find relevant data
+    
+Unit 3 (Weeks 11-15): Discussing Data and Student Research 
+  * Students develop a research question to be answered with IPUMS data
+    * Students are encouraged to fit it to their interests/major/disciplie
+  * Course time should be devoted to individual/small-group research
+  * Instructor/class present on recent research
+    * Instructor models constructive / scholarly criticism 
+    * Encourage students to critque published work - responsibly
+
+
+### Unit 1 (5 weeks) Understanding and Testing Data {-}
+
+#### Week 1: Intro to R, data types, data structures {-}
+#### Week 2: Plotting Data, Distributions{-}
+#### Week 3: Statisitcal testing of simple data sets{-}
+#### Week 4: Correlation and Relationships of simple data sets {-}
+#### Week 5: (TBD) {-}
+
+#### Addl Details  {-}
 
 Intro to data/ simple analysis
 
@@ -94,13 +159,22 @@ Conceptual:
 * Know which types statistical tests are appropriate for a given set of data.
 
 
-### Unit 2 Finding Data and Asking Questions
+### Unit 2 Finding Data and Asking Questions (Using IPUMS Data)  {-}
+
+
+#### Week 6 Exploratory analysis {-}
+#### Week 7 Hypothesis Testing {-}
+#### Week 8 Statistical Inference {-}
+#### Week 9 (TBD) {-}
+#### Week 10 (TBD) {-}
+
+#### Addl Details  
 
 Here we demonstrate two **different** approaches to conducting research. Students become familar writing up short lab reports detailing their findings. For unit \@ref(expo), we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings. 
 
 For unit \@ref(hypo), students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate [ipums.org](https://ipums.org), and create **data extracts**, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings. 
 
-#### Exploratory Analysis {#expo}
+##### Exploratory Analysis {#expo}  
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against *the scientific method* most people learned in grade school (More on that to follow(**_include_link_**)).
 
@@ -122,7 +196,7 @@ Students given a data set (xls, csv, etc)
     
     
   
-#### Hypotethsis Driven {#hypo}
+##### Hypotethsis Driven {#hypo}
 
 If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional *scientific method*. With a question in mind, the first question is: where to look. What better place than [IPUMS](https://ipums.org)!
 
@@ -140,7 +214,15 @@ Students should become comfortable working through lab exercises:
 
 
 
-### Unit 3 Discussing Data and Student Research 
+### Unit 3 Discussing Data and Student Research  {-}
+
+#### Week 11: Students develop research Question {-}
+#### Week 12: Students find relevant variables from IPUMS {-}
+#### Week 13: Students test and evaluate results {-}
+#### Week 14: Students prepare presentations of results {-}
+#### Week 15: Students present work (slides, poster, podium, etc) {-}
+
+#### Addl Details  
 
 Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks producing a research paper complete with data analysis, visualization, and interpretation.
 
@@ -151,9 +233,14 @@ We provide some examples here but encourage instructors (or students) to bring i
 
 
 
+
+
 # DEV NOTES {-}
 
-## TO DO {-}
+##### TO DO {-}
+
+* Make chapter 1 chapter 2
+* Anna Adds chapter con data science intro exclusive of R/IPUMS
 
 * discuss style
   + key terms section for each chapter?
@@ -162,7 +249,7 @@ We provide some examples here but encourage instructors (or students) to bring i
   + are we pro-hyphens, or are they pedantic?
 
 
-## MISC IDEAS {-}
+##### MISC IDEAS {-}
 
 * Application forward
 * Present research/ analysis/results FIRST, then explain the mathematical principals behind it
@@ -174,7 +261,7 @@ daily/weekly “recent research”
   + Encourage students to find articles for extra credit
 
 
-## Documentation {-}
+##### Documentation {-}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using `R-pacakgename`
   * **NOTE** in practice, that needs to be wrapped in markdown syntax, eg:

@@ -15,9 +15,9 @@ Remember each Rmd file contains one and only one chapter, and a chapter is defin
   + **IE** beyond the YAML header this file functions as a normal chapter since it starts with a top level header.
   + Note that `index.Rmd` has its own YMAL in addition to the various .yml files...not sure exactly how these relate.
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:norm_dist_plot). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:norm_summary_tab).
   * Again, this prints an auto-generated numeral
-  * also leaving this in the context of the plots in Chapter \@ref(intro)
+  * also leaving this in the context of the plots in Chapter \@ref(unit2)
   
 
 You can write citations, too. See `knitr::write_bib()` for more on this. Quick example from demo/index (may not work without write_bib() though): we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
@@ -40,7 +40,7 @@ webshot::install_phantomjs()
   * code chunks that produce figures can be referenced via `@\ref(fig:[LABEL])`
   
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(unit1).
+You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(unit1). If you do not manually label them, there will be automatic labels anyway,
   * No idea how the automatic references work, so always be sure to declare them.
   * **NOTE** these display as the relevant Chapter `numeral`.
   

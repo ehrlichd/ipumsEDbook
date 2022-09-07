@@ -1,5 +1,155 @@
-# The Basics {#unit1}
+# Unit 1: The Basics {#unit1}
 
+## Week 1: Intro to R, data types, data structures 
+## Week 2: Plotting Data, Distributions
+
+
+### Normal Distributions
+
+First we'll generate a normal distribution with the `rnorm()` function. This takes 3 arguments: `n, mean, sd`, which you can see filled in below. While we could print out a list of all these values, it's not easy to *understand* a list of numbers
+```{r}
+
+normal_dist <- rnorm(n = 100, ## 100 samples
+                     mean = 10, ## with a mean of 10
+                     sd = 1 ## and a standard deviation of 1
+                     )
+
+
+normal_dist
+```
+
+
+Another better way to look at data would be to **visualize** or **plot** it. One way to to that is with a **histogram**, which groups **continuous values** into **bins**, then plots the **frequency** for each bin. 
+
+In R, we use the `hist()` function to plot a histogram of data. We can (try to) control the number of bins with the `breaks` argument, but note that it doesn't always match up. The `hist()` function will adjust based on the distribution of the data.
+
+```{r norm_dist_plot}
+hist(normal_dist,breaks = 5)
+```
+
+Another way to visualize this would be with a d
+
+### What *is* normal?
+#### Quantitative summaries
+
+5num summary
+* Min, 25th percentile, median, 75th percentile, Max
+
+```{r}
+tab_normal_dist <- summary(normal_dist)
+
+```
+
+
+We can print the table in R by calling its name.
+
+```{r}
+tab_normal_dist
+```
+
+Mean, standard deviation
+
+#### Meaningful Comparisons
+
+How to compare apples to oranges? Standardize the units / standardize the data
+
+
+```{r}
+data1 <- rnorm(n=1000, 
+              mean = 100,
+              sd = 10)
+
+data2 <- rnorm(n=1000,
+               mean = 60, 
+               sd = 25)
+
+```
+Are these the same distribution?
+
+Any issues??
+
+```{r, rnorm_hist_comp}
+layout(matrix(1:2, ncol = 2))
+hist(data1)
+hist(data2)
+```
+
+```{r}
+total_range <- range(data1, data2)
+```
+
+
+Are they the same?
+
+```{r, rnorm_hist_comp_true}
+layout(matrix(1:2, ncol = 2))
+hist(data1, xlim = total_range)
+hist(data2, xlim = total_range)
+```
+
+Numerically / tabularly
+
+Often times its important to tables of **summary statistics**
+
+```{r}
+
+norm_comp_tab <- rbind(summary(data1),
+                       summary(data2))
+
+norm_comp_tab
+
+```
+
+
+Making the table a little nicer. Also an example of **conditional programming**.
+
+
+```{r}
+
+
+rownames(norm_comp_tab) ## they're null
+
+
+if(is.null(rownames(norm_comp_tab))){
+  rownames(norm_comp_tab) <- c("data1", "data2")
+}
+
+```
+When working with **Rmarkdown** we can take advantage of `knitr` and `pandoc` to nice looking tables even easier.
+
+
+```{r norm_summary_tab}
+
+knitr::kable(norm_comp_tab)
+```
+**How** transform the data
+
+Simple transformation (multiply all values by 100)
+  * to convert units
+  * other examples?
+
+Complex transformations
+  * log-transformation (*DEE: not a fan*)
+  * z-scores (*DEE: a better option*)
+
+**Why** transform the data?
+  * Real world applications?
+  * Is it always appropriate to transform data?
+
+  
+### Skews
+
+What to do if the data are **not** normal?
+
+## Week 3: Statisitcal testing of simple data sets
+
+### t-tests, ANOVA, chi2
+## Week 4: Relationships between variables in simple data sets
+### Correlation, Linear Regression
+#### Simple LM
+#### Complex LM
+### Genearlized Linear Model
+## Week 5:  
 
 For now, I have 3 main chapters for each of the main sections: 
   * Basics of data science / R \@ref(unit1) 

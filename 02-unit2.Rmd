@@ -1,5 +1,11 @@
 # IPUMS {#unit2}
 
+## Week 6 Exploratory analysis 
+## Week 7 Hypothesis Testing
+## Week 8 Statistical Inference
+## Week 9 (TBD)
+## Week 10 (TBD)
+
 Some text to break up the sub-section headers
 
 ## Intro to IPUMS website
