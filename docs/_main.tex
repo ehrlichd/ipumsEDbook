@@ -4,10 +4,10 @@
 %
 \documentclass[
 ]{book}
-\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,6 +33,14 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Data Science for Social Scientists},
+  pdfauthor={Daniel E. Ehrlich, IPUMS, University of Minnesota; Anna Tremblay, Dept of Soc, Anth, \& CJ, Clemson University},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -73,8 +81,7 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
+\usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -83,7 +90,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -101,19 +108,8 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Data Science for Social Scientists},
-  pdfauthor={Daniel E. Ehrlich, IPUMS, University of Minnesota; Anna Tremblay, Dept of Soc, Anth, \& CJ, Clemson University},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{Data Science for Social Scientists}
 \usepackage{etoolbox}
@@ -124,7 +120,7 @@
 \makeatother
 \subtitle{An applied course using IPUMS data}
 \author{Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota} \and Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}}
-\date{Compiled on: 2022-09-07}
+\date{Compiled on: 2022-09-08}
 
 \begin{document}
 \maketitle
@@ -137,7 +133,13 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-An open-source book using open-source tools and nearly open-source data.
+An applied methods class for social scientists that uses real-world IPUMS data. This course is:
+
+Open-source and customizable - all materials available on \href{https://github.com/ehrlichd/stats_book}{Github}
+
+Made with open-source tools - \href{https://cran.r-project.org/}{R}, \href{https://www.rstudio.com/products/rstudio/}{RStudio}, \href{https://bookdown.org/}{bookdown}
+
+Driven by (nearly) open-source data, harmonized across time and space. - \href{https://ipums.org}{IPUMS}
 
 \hypertarget{what-is-ipums}{%
 \section*{What is IPUMS}\label{what-is-ipums}}
@@ -150,9 +152,9 @@ IPUMS started as a project to digitize the historical records of the US census. 
 \item
   IPUMS \textbf{harmonizes} these data, ensuring consistently coded values across time and space.
 \item
-  IPUMS provides harmonized \textbf{GIS Shapefiles} for most census and survey data
+  IPUMS provides harmonized \textbf{GIS Shapefiles} for most census and survey data.
 \item
-  IPUMS provides extensive \textbf{metadata}, including
+  IPUMS provides extensive \textbf{metadata}, including:
 
   \begin{itemize}
   \tightlist
@@ -190,6 +192,7 @@ Provide students with relevant, hands on, methodological training in data litera
 After this course, students will be able to:
 
 \begin{itemize}
+\tightlist
 \item
   Understand the depth of the IPUMS database and the variables it has to\\
   offer
@@ -210,7 +213,7 @@ After this course, students will be able to:
 \begin{itemize}
 \tightlist
 \item
-  phenomenon-based learning
+  Phenomenon-based learning
 
   \begin{itemize}
   \tightlist
@@ -222,114 +225,162 @@ After this course, students will be able to:
     structure class so students work towards solving the problem
   \end{itemize}
 \item
-  RELEVANT examples
+  Relevant examples
 
   \begin{itemize}
   \tightlist
   \item
-    try to touch on 2 or more disciplines (eg, economics, demography)
+    Drawn from multiple disciplines (eg, economics, demography)
+  \item
+    Can be added as modular examples/exercises
   \end{itemize}
 \end{itemize}
 
-\hypertarget{syllabus}{%
-\chapter*{Syllabus}\label{syllabus}}
-\addcontentsline{toc}{chapter}{Syllabus}
+\hypertarget{syllabus---overview}{%
+\chapter*{Syllabus - Overview}\label{syllabus---overview}}
+\addcontentsline{toc}{chapter}{Syllabus - Overview}
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
 The basic structure of this course is:
 
-Unit 1 (Weeks 1-5): Understanding and Testing Data
+\textbf{Unit 1 (Weeks 1-5):} Understanding and Testing Data
 
 \begin{itemize}
 \tightlist
 \item
-  Students use simple datasets
+  Students use simple datasets bundled with the course or provided by the instructor.
+\item
+  Simplified data to illustrate trends.
 
   \begin{itemize}
   \tightlist
   \item
-    Data provided by the course/instructor
-  \item
-    simplified data to illustrate trends
-
-    \begin{itemize}
-    \tightlist
-    \item
-      EG: Age distributions ; Age by Sex
-    \item
-      potential usecase for synthesized data
-    \end{itemize}
+    EG: plotting continuous variable (AGE); Table of categorical variable (SEX); Crosstabs
   \end{itemize}
 \end{itemize}
 
-Unit 2 (Weeks 6-10): Finding Data and Asking Questions
+\textbf{Unit 2 (Weeks 6-10):} Finding Data and Asking Questions
 
 \begin{itemize}
 \tightlist
 \item
-  Students begin to analyze more complex (IPUMS) datasets
+  Students begin to analyze real world, IPUMS, datasets, provided by course/instructor.
+\item
+  Students begin to model real world phenomena
 
   \begin{itemize}
   \tightlist
   \item
-    Data provided by course/instructor
-  \item
-    IPUMS data testing/demonstrating real world effects
-
-    \begin{itemize}
-    \tightlist
-    \item
-      EG: SEX \textasciitilde{} EDUATTAIN ; Sex by eduattain by some SES indicators
-    \end{itemize}
-  \item
-    Students are given a medium/large set of IPUMS variables
-
-    \begin{itemize}
-    \tightlist
-    \item
-      Students learn to perform exploratory analysis to guide hypotheses
-    \end{itemize}
+    EG: SEX \textasciitilde{} EDUATTAIN ; SEX \textasciitilde{} EDATTAIN + EMPSTAT
   \end{itemize}
 \item
-  Students learn to navigate IPUMS website
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Students learn to develop a hypothesis and find relevant data
-  \end{itemize}
+  Students learn to perform exploratory analysis, hypothesis testing, and statistical inference.
+\item
+  Students learn to navigate IPUMS website,and find relevant data to thier research interest.
 \end{itemize}
 
-Unit 3 (Weeks 11-15): Discussing Data and Student Research
+\textbf{Unit 3 (Weeks 11-15):} Discussing Data and Student Research
 
 \begin{itemize}
 \tightlist
 \item
-  Students develop a research question to be answered with IPUMS data
+  Students develop a research question to be answered with IPUMS data.
 
   \begin{itemize}
   \tightlist
   \item
-    Students are encouraged to fit it to their interests/major/disciplie
+    Students are encouraged to fit it to their interests/major/discipline.
   \end{itemize}
 \item
-  Course time should be devoted to individual/small-group research
+  Course time should be devoted to individual/small-group research.
 \item
-  Instructor/class present on recent research
+  Instructor/class present on recent research.
 
   \begin{itemize}
   \tightlist
   \item
-    Instructor models constructive / scholarly criticism
+    Instructor models constructive / scholarly criticism.
   \item
-    Encourage students to critque published work - responsibly
+    Encourage students to critique published work - responsibly.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{unit-1-5-weeks-understanding-and-testing-data}{%
-\subsection*{Unit 1 (5 weeks) Understanding and Testing Data}\label{unit-1-5-weeks-understanding-and-testing-data}}
-\addcontentsline{toc}{subsection}{Unit 1 (5 weeks) Understanding and Testing Data}
+\hypertarget{detailed-syllabus}{%
+\section*{Detailed Syllabus}\label{detailed-syllabus}}
+\addcontentsline{toc}{section}{Detailed Syllabus}
+
+\hypertarget{unit-1-understanding-and-testing-data}{%
+\subsection*{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
+\addcontentsline{toc}{subsection}{Unit 1 Understanding and Testing Data}
+
+Students become gain familiarity and comfortability navigating RStudio, coding in R and performing simple data manipulation and visualization exercises. Datasets in this section consist of real-world (or synthetic) data, but the focus is on understanding data types (EG: using Age as a continuous variable; sex, education, employment as categorical; etc). Instructors should acknowledge these as \textbf{educational} datasets and make explicit trends found within these data are devoid of context, and must be taken with a (rather large) grain of salt, if at all.
+
+By the end of Unit 1, students will be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Download R and RStudio
+\item
+  Read data into R and
+\item
+  Write (save) data out of R
+\item
+  Summarize data visually
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Using \texttt{base\ R}
+  \item
+    Using \texttt{ggplot} (tidyverse)
+  \end{itemize}
+\item
+  Summarize data in tables
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Using base R
+  \item
+    Using \texttt{gttable} / \texttt{tidyverse}
+  \end{itemize}
+\item
+  Formally state and test assumptions of data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} t-test, anova, correlations, regression
+  \end{itemize}
+\end{itemize}
+
+By the end of Unit 1, students will understand
+
+\begin{itemize}
+\tightlist
+\item
+  Main types of data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} logical, numeric, character, etc
+  \item
+    R specic vs general terms
+  \end{itemize}
+\item
+  How to create and describe various data distributions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{EG:} normal, poisson, normal-skewed, etc
+  \end{itemize}
+\item
+  Know which types statistical tests are appropriate for a given set of data.
+\end{itemize}
 
 \hypertarget{week-1-intro-to-r-data-types-data-structures}{%
 \subsubsection*{Week 1: Intro to R, data types, data structures}\label{week-1-intro-to-r-data-types-data-structures}}
@@ -351,118 +402,25 @@ Unit 3 (Weeks 11-15): Discussing Data and Student Research
 \subsubsection*{Week 5: (TBD)}\label{week-5-tbd}}
 \addcontentsline{toc}{subsubsection}{Week 5: (TBD)}
 
-\hypertarget{addl-details}{%
-\subsubsection*{Addl Details}\label{addl-details}}
-\addcontentsline{toc}{subsubsection}{Addl Details}
-
-Intro to data/ simple analysis
-
-Students will be able to:
-
-Technical:
-
-\begin{itemize}
-\tightlist
-\item
-  Download R and RStudio
-\item
-  Read data into R and
-\item
-  Write (save) data out of R.
-\item
-  Summarize data visually
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Using base R
-  \item
-    Using ggplot (tidyverse)
-  \end{itemize}
-\item
-  Summarize data tabularly
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Using base R
-  \item
-    Using gttable / tidyverse
-  \end{itemize}
-\item
-  Formally state and test assumptions of data
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \emph{EG:} t-test, anova, (maybe) correlations
-  \end{itemize}
-\end{itemize}
-
-Conceptual:
-
-\begin{itemize}
-\tightlist
-\item
-  Understand main types of data
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \emph{EG:} logical, numeric, character, etc
-  \item
-    R specic vs general terms
-  \end{itemize}
-\item
-  Recgonize various data distributions
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \emph{EG:} normal, poisson, etc
-  \end{itemize}
-\item
-  Know which types statistical tests are appropriate for a given set of data.
-\end{itemize}
-
 \hypertarget{unit-2-finding-data-and-asking-questions-using-ipums-data}{%
 \subsection*{Unit 2 Finding Data and Asking Questions (Using IPUMS Data)}\label{unit-2-finding-data-and-asking-questions-using-ipums-data}}
 \addcontentsline{toc}{subsection}{Unit 2 Finding Data and Asking Questions (Using IPUMS Data)}
 
-\hypertarget{week-6-exploratory-analysis}{%
-\subsubsection*{Week 6 Exploratory analysis}\label{week-6-exploratory-analysis}}
-\addcontentsline{toc}{subsubsection}{Week 6 Exploratory analysis}
+Here we demonstrate two \textbf{different} approaches to conducting research. Students become familiar writing up short lab reports detailing their findings. For Section \ref{exploratory}, we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings.
 
-\hypertarget{week-7-hypothesis-testing}{%
-\subsubsection*{Week 7 Hypothesis Testing}\label{week-7-hypothesis-testing}}
-\addcontentsline{toc}{subsubsection}{Week 7 Hypothesis Testing}
+For unit \ref{hypothesis}, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate \href{https://ipums.org}{ipums.org}, and create \textbf{data extracts}, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings.
 
-\hypertarget{week-8-statistical-inference}{%
-\subsubsection*{Week 8 Statistical Inference}\label{week-8-statistical-inference}}
-\addcontentsline{toc}{subsubsection}{Week 8 Statistical Inference}
+\hypertarget{week-6-intro-to-ipums}{%
+\subsubsection{Week 6: Intro to IPUMS}\label{week-6-intro-to-ipums}}
 
-\hypertarget{week-9-tbd}{%
-\subsubsection*{Week 9 (TBD)}\label{week-9-tbd}}
-\addcontentsline{toc}{subsubsection}{Week 9 (TBD)}
+\hypertarget{week-7-exploratory-analysis}{%
+\subsubsection*{Week 7: Exploratory analysis}\label{week-7-exploratory-analysis}}
+\addcontentsline{toc}{subsubsection}{Week 7: Exploratory analysis}
 
-\hypertarget{week-10-tbd}{%
-\subsubsection*{Week 10 (TBD)}\label{week-10-tbd}}
-\addcontentsline{toc}{subsubsection}{Week 10 (TBD)}
-
-\hypertarget{addl-details-1}{%
-\subsubsection{Addl Details}\label{addl-details-1}}
-
-Here we demonstrate two \textbf{different} approaches to conducting research. Students become familar writing up short lab reports detailing their findings. For unit \ref{expo}, we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings.
-
-For unit \ref{hypo}, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate \href{https://ipums.org}{ipums.org}, and create \textbf{data extracts}, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings.
-
-\hypertarget{expo}{%
-\paragraph{Exploratory Analysis}\label{expo}}
-
-If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school (More on that to follow(\textbf{\emph{include\_link}})).
+If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school.
 
 This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
-* \emph{EG:} how to subset data, how to reshape data, how to recode data, how to convert from one \texttt{data\ type} to another.
+* \emph{EG:} how to subset data, how to reshape data, how to re-code data, how to convert from one \texttt{data\ type} to another.
 
 Example lab exercise:
 
@@ -477,10 +435,11 @@ Students given a data set (xls, csv, etc)
 * write up/ present results
 + think on confounding factors / biases
 
-\hypertarget{hypo}{%
-\paragraph{Hypotethsis Driven}\label{hypo}}
+\hypertarget{week-8-hypothesis-testing}{%
+\subsubsection*{Week 8: Hypothesis Testing}\label{week-8-hypothesis-testing}}
+\addcontentsline{toc}{subsubsection}{Week 8: Hypothesis Testing}
 
-If, on the other hand you have an a pre-exisiting idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
+If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
 
 Begin introducing navigation of web resources - mainly IPUMS international
 
@@ -493,9 +452,23 @@ Students should become comfortable working through lab exercises:
 + Any obvious biases
 + Any obvious confounding factors
 
+\hypertarget{week-9-statistical-inference}{%
+\subsubsection*{Week 9: Statistical Inference}\label{week-9-statistical-inference}}
+\addcontentsline{toc}{subsubsection}{Week 9: Statistical Inference}
+
+\hypertarget{week-10-tbd}{%
+\subsubsection*{Week 10: (TBD)}\label{week-10-tbd}}
+\addcontentsline{toc}{subsubsection}{Week 10: (TBD)}
+
 \hypertarget{unit-3-discussing-data-and-student-research}{%
 \subsection*{Unit 3 Discussing Data and Student Research}\label{unit-3-discussing-data-and-student-research}}
 \addcontentsline{toc}{subsection}{Unit 3 Discussing Data and Student Research}
+
+Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks conducting a research project complete with data analysis, visualization, and interpretation.
+
+In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modeling healthy discussion and critique of methods. Students should learn to discuss not just \emph{how} to answer a research question but \emph{why} they are asking/answering it. What impact does the question/answers have. Is the question releveant/meaningful, and importantly, Is this research question perpetuating racist ideas.
+
+We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
 \hypertarget{week-11-students-develop-research-question}{%
 \subsubsection*{Week 11: Students develop research Question}\label{week-11-students-develop-research-question}}
@@ -517,21 +490,12 @@ Students should become comfortable working through lab exercises:
 \subsubsection*{Week 15: Students present work (slides, poster, podium, etc)}\label{week-15-students-present-work-slides-poster-podium-etc}}
 \addcontentsline{toc}{subsubsection}{Week 15: Students present work (slides, poster, podium, etc)}
 
-\hypertarget{addl-details-2}{%
-\subsubsection{Addl Details}\label{addl-details-2}}
-
-Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks producing a research paper complete with data analysis, visualization, and interpretation.
-
-In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modelling healthy discussion and critique of methods.
-
-We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
-
 \hypertarget{dev-notes}{%
 \chapter*{DEV NOTES}\label{dev-notes}}
 \addcontentsline{toc}{chapter}{DEV NOTES}
 
 \hypertarget{to-do}{%
-\paragraph*{TO DO}\label{to-do}}
+\paragraph{TO DO}\label{to-do}}
 \addcontentsline{toc}{paragraph}{TO DO}
 
 \begin{itemize}
@@ -556,7 +520,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 \end{itemize}
 
 \hypertarget{misc-ideas}{%
-\paragraph*{MISC IDEAS}\label{misc-ideas}}
+\paragraph{MISC IDEAS}\label{misc-ideas}}
 \addcontentsline{toc}{paragraph}{MISC IDEAS}
 
 \begin{itemize}
@@ -587,7 +551,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 \end{itemize}
 
 \hypertarget{documentation}{%
-\paragraph*{Documentation}\label{documentation}}
+\paragraph{Documentation}\label{documentation}}
 \addcontentsline{toc}{paragraph}{Documentation}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using \texttt{R-pacakgename}
@@ -601,8 +565,8 @@ This function grabs any packages in your project and adds them to a local list t
 \hypertarget{week-1-intro-to-r-data-types-data-structures-1}{%
 \section{Week 1: Intro to R, data types, data structures}\label{week-1-intro-to-r-data-types-data-structures-1}}
 
-\hypertarget{week-2-plotting-data-distributions-1}{%
-\section{Week 2: Plotting Data, Distributions}\label{week-2-plotting-data-distributions-1}}
+\hypertarget{week-2-plotting-data}{%
+\section{Week 2: Plotting Data}\label{week-2-plotting-data}}
 
 \hypertarget{normal-distributions}{%
 \subsection{Normal Distributions}\label{normal-distributions}}
@@ -611,32 +575,32 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\DocumentationTok{\#\# 100 samples}
-                     \AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\DocumentationTok{\#\# with a mean of 10}
-                     \AttributeTok{sd =} \DecValTok{1} \DocumentationTok{\#\# and a standard deviation of 1}
+\NormalTok{normal_dist <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{, }\CommentTok{## 100 samples}
+                     \DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\CommentTok{## with a mean of 10}
+                     \DataTypeTok{sd =} \DecValTok{1} \CommentTok{## and a standard deviation of 1}
 \NormalTok{                     )}
 
 
-\NormalTok{normal\_dist}
+\NormalTok{normal_dist}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##   [1]  8.965427 11.266135 12.270298  9.955143 10.065363 11.075422  8.972279
-##   [8]  9.159382  8.592898  8.548881  9.294233  9.243512 10.082995 11.730941
-##  [15] 11.014429 10.170592 10.817248 10.167761 10.149895 10.702991  8.770624
-##  [22] 10.016888 10.479250  9.415021  9.655125 10.858238  9.189205  7.037807
-##  [29] 10.120482  9.256363 10.460908 10.466793 10.406534 10.380253 10.648492
-##  [36] 11.120064  9.542505  9.504260  8.926242 11.121044  9.348320  9.589909
-##  [43]  9.068365 10.044445  9.794621  7.766754  9.747814  9.290929 10.215607
-##  [50]  9.315153  9.722046 10.598671 12.444726 10.988911  9.041363 11.088785
-##  [57]  9.214838 10.931047 10.853399 10.417058  9.670524 10.040482  9.337300
-##  [64] 10.026099 11.015453 10.265944  9.859235  8.393473  8.425363  7.702653
-##  [71]  9.522073 10.484243  8.544031  9.125350  8.536518  9.876141  8.861175
-##  [78] 10.693308 11.180265 10.291935 10.203247 10.309233  9.582231 11.105940
-##  [85]  8.974015  9.584030 10.231683  9.883175 11.068514  8.626158 11.844599
-##  [92] 10.211860  9.426033 10.800509 10.334776 10.103207  9.449967 10.673323
-##  [99]  8.243546  9.244137
+##   [1] 10.640003 11.335477 10.696800  7.940991  9.378810 11.158938 10.358443
+##   [8]  9.335207  9.913354 10.364507 11.111284  9.663179  8.460345 11.059331
+##  [15]  9.390150  9.886510  8.394740 10.707587  9.944541  9.756610 13.066961
+##  [22]  9.610115  8.928899  9.370855  9.604840  8.684002 10.818371  9.947986
+##  [29]  8.644595 10.121559  9.466146 10.234926 12.193999  9.816538  9.745556
+##  [36] 10.431175  9.373200  9.557036  9.427267  8.374522 10.253828  9.932229
+##  [43] 10.747812  9.428121 11.747044  7.131683 12.144114  9.958145  8.517905
+##  [50] 10.009615  9.000682 10.860729  8.361770 11.716648 10.235285  9.003695
+##  [57]  8.619146 10.409840 10.243579  9.910568  9.586047  9.488099 12.452762
+##  [64] 10.168890 10.113520  7.637835 10.561608  9.863173 10.760441 10.628929
+##  [71]  9.818885  9.002237 11.341899  8.743655  9.827232  8.299759 11.125096
+##  [78] 10.085853 10.564645 11.294765 10.394312  9.303190 11.580541  9.750376
+##  [85] 11.072313  9.471482 10.105742  9.004619 10.476570 10.636434  9.207190
+##  [92] 11.497606  8.482294  9.619367 10.630094 10.295705 10.256195 12.181595
+##  [99]  8.914229 11.631316
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -645,7 +609,7 @@ In R, we use the \texttt{hist()} function to plot a histogram of data. We can (t
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(normal\_dist,}\AttributeTok{breaks =} \DecValTok{5}\NormalTok{)}
+\KeywordTok{hist}\NormalTok{(normal_dist,}\DataTypeTok{breaks =} \DecValTok{5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -664,7 +628,7 @@ Another way to visualize this would be with a d
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tab\_normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(normal\_dist)}
+\NormalTok{tab_normal_dist <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(normal_dist)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -672,13 +636,13 @@ We can print the table in R by calling its name.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tab\_normal\_dist}
+\NormalTok{tab_normal_dist}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.038   9.253  10.021   9.909  10.513  12.445
+##   7.132   9.377   9.946  10.010  10.637  13.067
 \end{verbatim}
 
 Mean, standard deviation
@@ -690,13 +654,13 @@ How to compare apples to oranges? Standardize the units / standardize the data
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{, }
-              \AttributeTok{mean =} \DecValTok{100}\NormalTok{,}
-              \AttributeTok{sd =} \DecValTok{10}\NormalTok{)}
+\NormalTok{data1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1000}\NormalTok{, }
+              \DataTypeTok{mean =} \DecValTok{100}\NormalTok{,}
+              \DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
 
-\NormalTok{data2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{,}
-               \AttributeTok{mean =} \DecValTok{60}\NormalTok{, }
-               \AttributeTok{sd =} \DecValTok{25}\NormalTok{)}
+\NormalTok{data2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1000}\NormalTok{,}
+               \DataTypeTok{mean =} \DecValTok{60}\NormalTok{, }
+               \DataTypeTok{sd =} \DecValTok{25}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -706,9 +670,9 @@ Any issues??
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\FunctionTok{hist}\NormalTok{(data1)}
-\FunctionTok{hist}\NormalTok{(data2)}
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\KeywordTok{hist}\NormalTok{(data1)}
+\KeywordTok{hist}\NormalTok{(data2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -716,7 +680,7 @@ Any issues??
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{total\_range }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(data1, data2)}
+\NormalTok{total_range <-}\StringTok{ }\KeywordTok{range}\NormalTok{(data1, data2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -724,9 +688,9 @@ Are they the same?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\FunctionTok{hist}\NormalTok{(data1, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
-\FunctionTok{hist}\NormalTok{(data2, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\KeywordTok{hist}\NormalTok{(data1, }\DataTypeTok{xlim =}\NormalTok{ total_range)}
+\KeywordTok{hist}\NormalTok{(data2, }\DataTypeTok{xlim =}\NormalTok{ total_range)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -738,24 +702,24 @@ Often times its important to tables of \textbf{summary statistics}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{norm\_comp\_tab }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(}\FunctionTok{summary}\NormalTok{(data1),}
-                       \FunctionTok{summary}\NormalTok{(data2))}
+\NormalTok{norm_comp_tab <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(}\KeywordTok{summary}\NormalTok{(data1),}
+                       \KeywordTok{summary}\NormalTok{(data2))}
 
-\NormalTok{norm\_comp\_tab}
+\NormalTok{norm_comp_tab}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median     Mean  3rd Qu.     Max.
-## [1,]  69.87223 93.11259 100.46754 100.0578 106.8570 135.2443
-## [2,] -22.48441 41.23193  59.99258  59.7697  77.6676 155.2825
+##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
+## [1,]  70.21137 93.21291 100.35383 100.12214 106.73892 138.5635
+## [2,] -21.11075 42.98612  59.61846  58.66419  75.57238 139.9773
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\DocumentationTok{\#\# they\textquotesingle{}re null}
+\KeywordTok{rownames}\NormalTok{(norm_comp_tab) }\CommentTok{## they're null}
 \end{Highlighting}
 \end{Shaded}
 
@@ -765,8 +729,8 @@ Making the table a little nicer. Also an example of \textbf{conditional programm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab)))\{}
-  \FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.null}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(norm_comp_tab)))\{}
+  \KeywordTok{rownames}\NormalTok{(norm_comp_tab) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -775,7 +739,7 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(norm\_comp\_tab)}
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(norm_comp_tab)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -783,9 +747,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 69.87223 & 93.11259 & 100.46754 & 100.0578 & 106.8570 & 135.2443\\
+data1 & 70.21137 & 93.21291 & 100.35383 & 100.12214 & 106.73892 & 138.5635\\
 \hline
-data2 & -22.48441 & 41.23193 & 59.99258 & 59.7697 & 77.6676 & 155.2825\\
+data2 & -21.11075 & 42.98612 & 59.61846 & 58.66419 & 75.57238 & 139.9773\\
 \hline
 \end{tabular}
 
@@ -901,17 +865,438 @@ standard / two-way t test
 \hypertarget{unit2}{%
 \chapter{IPUMS}\label{unit2}}
 
-\hypertarget{week-6-exploratory-analysis-1}{%
-\section{Week 6 Exploratory analysis}\label{week-6-exploratory-analysis-1}}
+\hypertarget{week-6-introduction-to-ipums}{%
+\section{Week 6 Introduction to IPUMS}\label{week-6-introduction-to-ipums}}
 
-\hypertarget{week-7-hypothesis-testing-1}{%
-\section{Week 7 Hypothesis Testing}\label{week-7-hypothesis-testing-1}}
+\hypertarget{exploratory}{%
+\section{Week 7 Exploratory analysis}\label{exploratory}}
 
-\hypertarget{week-8-statistical-inference-1}{%
-\section{Week 8 Statistical Inference}\label{week-8-statistical-inference-1}}
+If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against \emph{the scientific method} most people learned in grade school (More on that to follow(\textbf{\emph{include\_link}})).
 
-\hypertarget{week-9-tbd-1}{%
-\section{Week 9 (TBD)}\label{week-9-tbd-1}}
+This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
+* \emph{EG:} how to subset data, how to reshape data, how to recode data, how to convert from one \texttt{data\ type} to another.
+
+Example lab exercise:
+
+Students given a data set (xls, csv, etc)
+* load data, perform manipulations, basic summaries
++ cross tabs
++ group means by a covariate
+* inspect data visually
++ \emph{DESCRIBE} the distribution - is it normal? significant?
+* \emph{FIND} aquestion in the spread of the data
++ how can you test this (maybe small group work)
+* write up/ present results
++ think on confounding factors / biases
+
+\hypertarget{advanced-exploration---change-over-time}{%
+\subsection{Advanced Exploration - Change Over Time}\label{advanced-exploration---change-over-time}}
+
+Here we demonstrate an approach to looking at how Family Structure (inferred from household relationships) has changed over time.
+
+\hypertarget{setup-load-data}{%
+\subsubsection{Setup / Load Data}\label{setup-load-data}}
+
+Install/update R packages
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"ipumsr"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Data extract created online using the datacart system.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ipumsr)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+
+
+\NormalTok{ddi <-}\StringTok{ }\KeywordTok{read_ipums_ddi}\NormalTok{(}\StringTok{"Data/ipumsi_00005.xml"}\NormalTok{)}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{read_ipums_micro}\NormalTok{(ddi)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{inspect-the-data}{%
+\paragraph{Inspect the Data}\label{inspect-the-data}}
+
+Using \texttt{haven} labeled values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data}\OperatorTok{$}\NormalTok{RELATE[}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{]}
+\KeywordTok{class}\NormalTok{(data}\OperatorTok{$}\NormalTok{RELATE)}
+
+\NormalTok{data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(RELATE)}
+\NormalTok{data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(SEX)}
+\end{Highlighting}
+\end{Shaded}
+
+What were those codes ??
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{## need to convert this to an image or something similar; kable table?}
+\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualize}{%
+\paragraph{Visualize}\label{visualize}}
+
+A simple plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(AGE }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data)}
+\end{Highlighting}
+\end{Shaded}
+
+A fancier plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(AGE}\OperatorTok{~}\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Age by Sex, over Time, CO"}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(data}\OperatorTok{$}\NormalTok{YEAR[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{1}\NormalTok{]}\OperatorTok{-}\DecValTok{1}\NormalTok{, data}\OperatorTok{$}\NormalTok{AGE[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{1}\NormalTok{], }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{6}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
+
+\KeywordTok{points}\NormalTok{(data}\OperatorTok{$}\NormalTok{YEAR[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{2}\NormalTok{]}\OperatorTok{+}\DecValTok{1}\NormalTok{, data}\OperatorTok{$}\NormalTok{AGE[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{2}\NormalTok{], }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(}\DecValTok{1}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
+
+\KeywordTok{abline}\NormalTok{(}\KeywordTok{lm}\NormalTok{(AGE}\OperatorTok{~}\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data), }\DataTypeTok{col =} \StringTok{"green"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{asking-logical-questions}{%
+\paragraph{Asking (logical) questions}\label{asking-logical-questions}}
+
+Here we demonstrate how setting up logical questions can be used to easily filter/subset data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age_test <-}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{AGE }\OperatorTok{>}\StringTok{ }\DecValTok{18}
+
+\KeywordTok{class}\NormalTok{(age_test)}
+
+\NormalTok{age_test}
+\end{Highlighting}
+\end{Shaded}
+
+Logical vectors are stored as \texttt{TRUE} or \texttt{FALSE}, but can also be evaluated numerically as \texttt{1} or \texttt{0} respectively. We can therefore \texttt{sum()} the number of \texttt{TRUE} values and divide by total rows for a proportion.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(age_test)}\OperatorTok{/}\KeywordTok{nrow}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{hh-vs-persons}{%
+\paragraph{HH vs persons}\label{hh-vs-persons}}
+
+A unique characteristic of census and some survey data is the nested-structure with individuals being grouped into households. Often times it is necessary to choose to work at the hh or person level, and data must be appropriately manipulated to fit that case.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hh_total <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(data}\OperatorTok{$}\NormalTok{SERIAL))}
+\NormalTok{hh_total}
+\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{nuclear-family}{%
+\subsubsection{Nuclear Family}\label{nuclear-family}}
+
+First we look at a nuclear family, comprising only parents and their immediate children.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ipumsr)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{ddi <-}\StringTok{ }\KeywordTok{read_ipums_ddi}\NormalTok{(}\StringTok{"/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml"}\NormalTok{)}
+\NormalTok{all_data <-}\StringTok{ }\KeywordTok{read_ipums_micro}\NormalTok{(ddi)}
+
+\NormalTok{census_years <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1860}\NormalTok{, }\DecValTok{1870}\NormalTok{, }\DecValTok{1880}\NormalTok{, }\DecValTok{1900}\NormalTok{, }\DecValTok{1910}\NormalTok{, }\DecValTok{1960}\NormalTok{, }\DecValTok{1970}\NormalTok{, }\DecValTok{1980}\NormalTok{, }\DecValTok{1990}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{2010}\NormalTok{)}
+
+\CommentTok{## subset census only}
+\NormalTok{d2 <-}\StringTok{ }\NormalTok{all_data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(YEAR }\OperatorTok{%in%}\StringTok{ }\NormalTok{census_years)}
+
+\CommentTok{## make a household dataframe}
+\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL, }\DataTypeTok{.keep_all =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select}\NormalTok{(YEAR,SERIAL,GEO1_US)}
+
+\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{View}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATE }\OperatorTok{==}\DecValTok{4}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }
+\StringTok{  }
+\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{extended_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{extended_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(extended_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+  
+
+
+
+
+
+
+
+
+\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\NormalTok{RELATE }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{) }\OperatorTok{|}
+\StringTok{                  }\NormalTok{(RELATE }\OperatorTok{==}\StringTok{ }\DecValTok{3} \OperatorTok{&}
+\StringTok{                     }\NormalTok{MARST }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\NormalTok{                ) }\OperatorTok{%>%}\StringTok{ }
+
+\StringTok{  }
+\StringTok{  }
+\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{nuclear_test =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{nuclear_test =} \KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(nuclear_test), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{))}
+
+
+
+\KeywordTok{table}\NormalTok{(hhs}\OperatorTok{$}\NormalTok{extended_test,hhs}\OperatorTok{$}\NormalTok{nuclear_test)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tabulate-results}{%
+\paragraph{Tabulate results}\label{tabulate-results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(parent_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+
+
+\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(children_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+  
+  
+\NormalTok{  res_tabs <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+    \StringTok{"nuclear_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, nuclear_test,GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"extended_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, extended_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"parent_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, parent_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"children_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, children_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{()}
+\NormalTok{  )}
+  
+  
+  
+  
+
+\NormalTok{collapsed_results <-}\StringTok{ }\NormalTok{res_tabs }\OperatorTok{%>%}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  x <-}\StringTok{ }\NormalTok{x }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{names}\NormalTok{(x)[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{])) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{sum}\NormalTok{(n))}
+
+\NormalTok{\})}
+
+
+\NormalTok{collapsed_results <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(collapsed_results, }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{colnames}\NormalTok{(x)[}\DecValTok{2}\NormalTok{] <-}\StringTok{ "test"}
+  \KeywordTok{colnames}\NormalTok{(x)[}\DecValTok{3}\NormalTok{] <-}\StringTok{ "state"}
+  \KeywordTok{return}\NormalTok{(x)}
+\NormalTok{\})}
+
+\NormalTok{combined <-}\StringTok{ }\NormalTok{collapsed_results }\OperatorTok{%>%}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{reduce}\NormalTok{(full_join, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{))}
+
+
+
+\KeywordTok{colnames}\NormalTok{(combined) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{,}\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{, }\StringTok{"n_nuclear"}\NormalTok{, }\StringTok{"n_extended"}\NormalTok{, }\StringTok{"n_parent"}\NormalTok{, }\StringTok{"n_children"}\NormalTok{)}
+
+\NormalTok{combined[}\KeywordTok{is.na}\NormalTok{(combined)] <-}\StringTok{ }\DecValTok{0}
+
+
+\NormalTok{to_plot <-}\StringTok{ }\NormalTok{combined }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, state) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{n_tot =} \KeywordTok{sum}\NormalTok{(n_nuclear)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{pct =}  \KeywordTok{across}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"n_"}\NormalTok{))}\OperatorTok{/}\NormalTok{n_tot) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select}\NormalTok{(YEAR,test,state,pct)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualize-nuclear-families}{%
+\paragraph{Visualize Nuclear Families}\label{visualize-nuclear-families}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{to_plot <-}\StringTok{ }\NormalTok{to_plot }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(test}\OperatorTok{==}\OtherTok{TRUE}\NormalTok{)}
+
+
+
+\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_nuclear, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{4}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"prop of hhs"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Nuclear HHs over time in CO"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{extended-family}{%
+\subsubsection{Extended Family}\label{extended-family}}
+
+Next we look at hhs with extended families present. IE, any that contain more relationships than just Parent/Child/Sibling (between children only)
+
+\hypertarget{gernerate-models}{%
+\paragraph{Gernerate models}\label{gernerate-models}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{to_plot <-}\StringTok{ }\NormalTok{to_plot }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(test}\OperatorTok{==}\OtherTok{TRUE}\NormalTok{)}
+
+
+\NormalTok{glm_hist <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(pct}\OperatorTok{$}\NormalTok{n_extended }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{,], }\DataTypeTok{family =} \KeywordTok{quasibinomial}\NormalTok{(}\DataTypeTok{link=}\NormalTok{logit))}
+
+
+
+\NormalTok{glm_hist_x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from=}\DecValTok{1860}\NormalTok{, }\DataTypeTok{to =} \DecValTok{1910}\NormalTok{, }\DataTypeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{glm_hist_y <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(glm_hist, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{ glm_hist_x), }\DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+
+\NormalTok{glm_mod <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(pct}\OperatorTok{$}\NormalTok{n_extended }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR}\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{,], }\DataTypeTok{family =} \KeywordTok{quasibinomial}\NormalTok{(}\DataTypeTok{link=}\NormalTok{logit))}
+
+\NormalTok{glm_mod_x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{1960}\NormalTok{, }\DataTypeTok{to =} \DecValTok{2010}\NormalTok{, }\DataTypeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{glm_mod_y <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(glm_mod, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{ glm_mod_x), }\DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+
+\NormalTok{mods <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\StringTok{"hist"}\NormalTok{=}\KeywordTok{list}\NormalTok{(),}
+             \StringTok{"mod"}\NormalTok{ =}\StringTok{ }\KeywordTok{list}\NormalTok{()}
+\NormalTok{             )}
+\NormalTok{mods_plots <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\StringTok{"hist"}\NormalTok{=}\KeywordTok{list}\NormalTok{(),}
+                   \StringTok{"mod"}\NormalTok{ =}\KeywordTok{list}\NormalTok{()}
+\NormalTok{                   )}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \KeywordTok{names}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{pct))\{}
+  
+\NormalTok{  hist_x <-}\StringTok{ }\NormalTok{to_plot}\OperatorTok{$}\NormalTok{YEAR[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{]}
+\NormalTok{mod_x <-}\StringTok{ }\NormalTok{to_plot}\OperatorTok{$}\NormalTok{YEAR[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{]}
+
+\NormalTok{  mods}\OperatorTok{$}\NormalTok{hist[[i]] <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(pct[[i]] }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{,])}
+  
+\NormalTok{  mods_plots}\OperatorTok{$}\NormalTok{hist[[i]] <-}\StringTok{ }
+\StringTok{    }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"x"}\NormalTok{ =}\StringTok{ }\NormalTok{hist_x,}
+               \StringTok{"y"}\NormalTok{ =}\StringTok{ }\KeywordTok{predict}\NormalTok{(mods}\OperatorTok{$}\NormalTok{hist[[i]], }
+                             \KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{hist_x), }
+                             \DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{               )}
+  
+  
+  
+\NormalTok{  mods}\OperatorTok{$}\NormalTok{mod[[i]] <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(pct[[i]] }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{,])}
+  
+  
+\NormalTok{  mods_plots}\OperatorTok{$}\NormalTok{mod[[i]] <-}\StringTok{ }
+\StringTok{    }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"x"}\NormalTok{ =}\StringTok{ }\NormalTok{mod_x,}
+               \StringTok{"y"}\NormalTok{ =}\StringTok{ }\KeywordTok{predict}\NormalTok{(mods}\OperatorTok{$}\NormalTok{mod[[i]], }
+                             \KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{mod_x), }
+                             \DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{               )}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualize-1}{%
+\paragraph{Visualize}\label{visualize-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+
+
+\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+
+
+
+
+\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
+\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
+       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{even-more-detail---maybe-remove}{%
+\subsubsection{Even more DETAIL - maybe remove}\label{even-more-detail---maybe-remove}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }
+\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(parent_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+
+\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(children_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{parents-supporting-parents}{%
+\paragraph{Parents Supporting Parents}\label{parents-supporting-parents}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+
+
+\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+
+
+\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{hist}\OperatorTok{$}\NormalTok{n_parent,}\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{mod}\OperatorTok{$}\NormalTok{n_parent, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
+\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_parent,}
+       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+
+
+\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
+\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
+       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{parents-supporting-extended-children}{%
+\paragraph{Parents Supporting (extended) children}\label{parents-supporting-extended-children}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+
+
+\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+
+
+
+\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{hist}\OperatorTok{$}\NormalTok{n_children, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+
+\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{mod}\OperatorTok{$}\NormalTok{n_children, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+
+
+\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
+\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_children,}
+       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+
+\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
+\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
+       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{hypothesis}{%
+\section{Week 8 Hypothesis Testing}\label{hypothesis}}
+
+If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional \emph{scientific method}. With a question in mind, the first question is: where to look. What better place than \href{https://ipums.org}{IPUMS}!
+
+Begin introducing navigation of web resources - mainly IPUMS international
+
+Students should become comfortable working through lab exercises:
+* Define a question (or be presented with one)
+* Download variables from IPUMS (course downloads possible)
+* Perform a basic analysis (discussed in Unit 1)
+* Generate a \textbf{visual argument} for your analysis
++ Include explanation/interpretation/reflection on the question at hand, and the data used
++ Any obvious biases
++ Any obvious confounding factors
+
+\hypertarget{week-9-statistical-inference-1}{%
+\section{Week 9 Statistical Inference}\label{week-9-statistical-inference-1}}
 
 \hypertarget{week-10-tbd-1}{%
 \section{Week 10 (TBD)}\label{week-10-tbd-1}}
@@ -954,6 +1339,12 @@ The \texttt{longnote} footnote seems particularly useful.
 
 \hypertarget{unit3}{%
 \chapter{Unit 3: Independent Research}\label{unit3}}
+
+Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks conducting a research project complete with data analysis, visualization, and interpretation.
+
+In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modeling healthy discussion and critique of methods. Students should learn to discuss not just \emph{how} to answer a research question but \emph{why} they are asking/answering it. What impact does the question/answers have. Is the question releveant/meaningful, and importantly, Is this research question perpetuating racist ideas.
+
+We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
 \hypertarget{week-11-students-develop-research-question-1}{%
 \section{Week 11: Students develop research Question}\label{week-11-students-develop-research-question-1}}
@@ -1067,8 +1458,8 @@ Embed html renders (EG, fancy tables (IPUMS\_var\_desc), or any shiny app) with 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
-\NormalTok{webshot}\SpecialCharTok{::}\FunctionTok{install\_phantomjs}\NormalTok{()}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
+\NormalTok{webshot}\OperatorTok{::}\KeywordTok{install_phantomjs}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 

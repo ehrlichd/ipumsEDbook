@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data Science for Social Scientists</title>
+  <title>Syllabus - Overview | Data Science for Social Scientists</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data Science for Social Scientists" />
+  <meta property="og:title" content="Syllabus - Overview | Data Science for Social Scientists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data Science for Social Scientists" />
+  <meta name="twitter:title" content="Syllabus - Overview | Data Science for Social Scientists" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="course-description.html"/>
+<link rel="prev" href="course-description.html"/>
+<link rel="next" href="dev-notes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -225,36 +225,160 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Data Science for Social Scientists</h1>
-<h2 class="subtitle"><em>An applied course using IPUMS data</em></h2>
-<p class="author"><em>Daniel E. Ehrlich, <a href="https://international.ipums.org/international/">IPUMS, University of Minnesota</a></em></p>
-<p class="author"><em>Anna Tremblay, <a href="https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html">Dept of Soc, Anth, &amp; CJ, Clemson University</a></em></p>
-<p class="date"><em>Compiled on: 2022-09-08</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>An applied methods class for social scientists that uses real-world IPUMS data. This course is:</p>
-<p>Open-source and customizable - all materials available on <a href="https://github.com/ehrlichd/stats_book">Github</a></p>
-<p>Made with open-source tools - <a href="https://cran.r-project.org/">R</a>, <a href="https://www.rstudio.com/products/rstudio/">RStudio</a>, <a href="https://bookdown.org/">bookdown</a></p>
-<p>Driven by (nearly) open-source data, harmonized across time and space. - <a href="https://ipums.org">IPUMS</a></p>
-<div id="what-is-ipums" class="section level2 unnumbered hasAnchor">
-<h2>What is IPUMS<a href="index.html#what-is-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>IPUMS started as a project to digitize the historical records of the US census. It has expanded to include <a href="https://www.ipums.org/">9 data collections</a>, which are united in their methods and principles of making soial science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably:</p>
+<div id="syllabus---overview" class="section level1 unnumbered hasAnchor">
+<h1>Syllabus - Overview<a href="syllabus---overview.html#syllabus---overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.</p>
+<p>The basic structure of this course is:</p>
+<p><strong>Unit 1 (Weeks 1-5):</strong> Understanding and Testing Data</p>
 <ul>
-<li>IPUMS <strong>harmonizes</strong> these data, ensuring consistently coded values across time and space.</li>
-<li>IPUMS provides harmonized <strong>GIS Shapefiles</strong> for most census and survey data.</li>
-<li>IPUMS provides extensive <strong>metadata</strong>, including:
+<li>Students use simple datasets bundled with the course or provided by the instructor.</li>
+<li>Simplified data to illustrate trends.
 <ul>
-<li>Original questionnaire text</li>
-<li>Alerts about notable changes in variable definition, universe, or coding</li>
+<li>EG: plotting continuous variable (AGE); Table of categorical variable (SEX); Crosstabs</li>
 </ul></li>
 </ul>
-<p>IPUMS data is free to use for education and research purposes. Researchers just need to register with an <strong>email address</strong> and brief project description. Nothing too formal - we’re just trying to understand what kinds of questions researchers are interested in. For educators, we have additional resources to set up <a href="">classroom accounts</a>, making it easy to get your students registered and share IPUMS data with them.</p>
+<p><strong>Unit 2 (Weeks 6-10):</strong> Finding Data and Asking Questions</p>
+<ul>
+<li>Students begin to analyze real world, IPUMS, datasets, provided by course/instructor.</li>
+<li>Students begin to model real world phenomena
+<ul>
+<li>EG: SEX ~ EDUATTAIN ; SEX ~ EDATTAIN + EMPSTAT</li>
+</ul></li>
+<li>Students learn to perform exploratory analysis, hypothesis testing, and statistical inference.</li>
+<li>Students learn to navigate IPUMS website,and find relevant data to thier research interest.</li>
+</ul>
+<p><strong>Unit 3 (Weeks 11-15):</strong> Discussing Data and Student Research</p>
+<ul>
+<li>Students develop a research question to be answered with IPUMS data.
+<ul>
+<li>Students are encouraged to fit it to their interests/major/discipline.</li>
+</ul></li>
+<li>Course time should be devoted to individual/small-group research.</li>
+<li>Instructor/class present on recent research.
+<ul>
+<li>Instructor models constructive / scholarly criticism.</li>
+<li>Encourage students to critique published work - responsibly.</li>
+</ul></li>
+</ul>
+<div id="detailed-syllabus" class="section level2 unnumbered hasAnchor">
+<h2>Detailed Syllabus<a href="syllabus---overview.html#detailed-syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="unit-1-understanding-and-testing-data" class="section level3 unnumbered hasAnchor">
+<h3>Unit 1 Understanding and Testing Data<a href="syllabus---overview.html#unit-1-understanding-and-testing-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Students become gain familiarity and comfortability navigating RStudio, coding in R and performing simple data manipulation and visualization exercises. Datasets in this section consist of real-world (or synthetic) data, but the focus is on understanding data types (EG: using Age as a continuous variable; sex, education, employment as categorical; etc). Instructors should acknowledge these as <strong>educational</strong> datasets and make explicit trends found within these data are devoid of context, and must be taken with a (rather large) grain of salt, if at all.</p>
+<p>By the end of Unit 1, students will be able to:</p>
+<ul>
+<li>Download R and RStudio</li>
+<li>Read data into R and</li>
+<li>Write (save) data out of R</li>
+<li>Summarize data visually
+<ul>
+<li>Using <code>base R</code></li>
+<li>Using <code>ggplot</code> (tidyverse)</li>
+</ul></li>
+<li>Summarize data in tables
+<ul>
+<li>Using base R</li>
+<li>Using <code>gttable</code> / <code>tidyverse</code></li>
+</ul></li>
+<li>Formally state and test assumptions of data
+<ul>
+<li><em>EG:</em> t-test, anova, correlations, regression</li>
+</ul></li>
+</ul>
+<p>By the end of Unit 1, students will understand</p>
+<ul>
+<li>Main types of data
+<ul>
+<li><em>EG:</em> logical, numeric, character, etc</li>
+<li>R specic vs general terms</li>
+</ul></li>
+<li>How to create and describe various data distributions
+<ul>
+<li><em>EG:</em> normal, poisson, normal-skewed, etc</li>
+</ul></li>
+<li>Know which types statistical tests are appropriate for a given set of data.</li>
+</ul>
+<div id="week-1-intro-to-r-data-types-data-structures" class="section level4 unnumbered hasAnchor">
+<h4>Week 1: Intro to R, data types, data structures<a href="syllabus---overview.html#week-1-intro-to-r-data-types-data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="why-make-this-course" class="section level2 unnumbered hasAnchor">
-<h2>Why make this course<a href="index.html#why-make-this-course" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While we (DEE) may be slightly biased, we think IPUms is a fantastic resource for <strong>Education</strong> and <strong>Research</strong>. Real-world example datasets provide the bulk of the content for this course, providing an <strong>applied context</strong> we hope students (and instructors) will find engaging. We also know meany instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their instutition. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our <code>template</code>, to tailor this course to their subject or interest.</p>
+<div id="week-2-plotting-data-distributions" class="section level4 unnumbered hasAnchor">
+<h4>Week 2: Plotting Data, Distributions<a href="syllabus---overview.html#week-2-plotting-data-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-3-statisitcal-testing-of-simple-data-sets" class="section level4 unnumbered hasAnchor">
+<h4>Week 3: Statisitcal testing of simple data sets<a href="syllabus---overview.html#week-3-statisitcal-testing-of-simple-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-4-correlation-and-relationships-of-simple-data-sets" class="section level4 unnumbered hasAnchor">
+<h4>Week 4: Correlation and Relationships of simple data sets<a href="syllabus---overview.html#week-4-correlation-and-relationships-of-simple-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-5-tbd" class="section level4 unnumbered hasAnchor">
+<h4>Week 5: (TBD)<a href="syllabus---overview.html#week-5-tbd" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="unit-2-finding-data-and-asking-questions-using-ipums-data" class="section level3 unnumbered hasAnchor">
+<h3>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)<a href="syllabus---overview.html#unit-2-finding-data-and-asking-questions-using-ipums-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here we demonstrate two <strong>different</strong> approaches to conducting research. Students become familiar writing up short lab reports detailing their findings. For Section <a href="unit2.html#exploratory">2.2</a>, we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings.</p>
+<p>For unit <a href="unit2.html#hypothesis">2.3</a>, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate <a href="https://ipums.org">ipums.org</a>, and create <strong>data extracts</strong>, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings.</p>
+<div id="week-6-intro-to-ipums" class="section level4 hasAnchor">
+<h4><span class="header-section-number">0.0.0.1</span> Week 6: Intro to IPUMS<a href="syllabus---overview.html#week-6-intro-to-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-7-exploratory-analysis" class="section level4 unnumbered hasAnchor">
+<h4>Week 7: Exploratory analysis<a href="syllabus---overview.html#week-7-exploratory-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If you’ve just collected a survey, or other raw data, you may not know what you’re looking for. This is perfectly ok but goes against <em>the scientific method</em> most people learned in grade school.</p>
+<p>This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
+* <em>EG:</em> how to subset data, how to reshape data, how to re-code data, how to convert from one <code>data type</code> to another.</p>
+<p>Example lab exercise:</p>
+<p>Students given a data set (xls, csv, etc)
+* load data, perform manipulations, basic summaries
++ cross tabs
++ group means by a covariate
+* inspect data visually
++ <em>DESCRIBE</em> the distribution - is it normal? significant?
+* <em>FIND</em> aquestion in the spread of the data
++ how can you test this (maybe small group work)
+* write up/ present results
++ think on confounding factors / biases</p>
+</div>
+<div id="week-8-hypothesis-testing" class="section level4 unnumbered hasAnchor">
+<h4>Week 8: Hypothesis Testing<a href="syllabus---overview.html#week-8-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional <em>scientific method</em>. With a question in mind, the first question is: where to look. What better place than <a href="https://ipums.org">IPUMS</a>!</p>
+<p>Begin introducing navigation of web resources - mainly IPUMS international</p>
+<p>Students should become comfortable working through lab exercises:
+* Define a question (or be presented with one)
+* Download variables from IPUMS (course downloads possible)
+* Perform a basic analysis (discussed in Unit 1)
+* Generate a <strong>visual argument</strong> for your analysis
++ Include explanation/interpretation/reflection on the question at hand, and the data used
++ Any obvious biases
++ Any obvious confounding factors</p>
+</div>
+<div id="week-9-statistical-inference" class="section level4 unnumbered hasAnchor">
+<h4>Week 9: Statistical Inference<a href="syllabus---overview.html#week-9-statistical-inference" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-10-tbd" class="section level4 unnumbered hasAnchor">
+<h4>Week 10: (TBD)<a href="syllabus---overview.html#week-10-tbd" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="unit-3-discussing-data-and-student-research" class="section level3 unnumbered hasAnchor">
+<h3>Unit 3 Discussing Data and Student Research<a href="syllabus---overview.html#unit-3-discussing-data-and-student-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks conducting a research project complete with data analysis, visualization, and interpretation.</p>
+<p>In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modeling healthy discussion and critique of methods. Students should learn to discuss not just <em>how</em> to answer a research question but <em>why</em> they are asking/answering it. What impact does the question/answers have. Is the question releveant/meaningful, and importantly, Is this research question perpetuating racist ideas.</p>
+<p>We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.</p>
+<div id="week-11-students-develop-research-question" class="section level4 unnumbered hasAnchor">
+<h4>Week 11: Students develop research Question<a href="syllabus---overview.html#week-11-students-develop-research-question" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-12-students-find-relevant-variables-from-ipums" class="section level4 unnumbered hasAnchor">
+<h4>Week 12: Students find relevant variables from IPUMS<a href="syllabus---overview.html#week-12-students-find-relevant-variables-from-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-13-students-test-and-evaluate-results" class="section level4 unnumbered hasAnchor">
+<h4>Week 13: Students test and evaluate results<a href="syllabus---overview.html#week-13-students-test-and-evaluate-results" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-14-students-prepare-presentations-of-results" class="section level4 unnumbered hasAnchor">
+<h4>Week 14: Students prepare presentations of results<a href="syllabus---overview.html#week-14-students-prepare-presentations-of-results" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="week-15-students-present-work-slides-poster-podium-etc" class="section level4 unnumbered hasAnchor">
+<h4>Week 15: Students present work (slides, poster, podium, etc)<a href="syllabus---overview.html#week-15-students-present-work-slides-poster-podium-etc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -262,8 +386,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="course-description.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="course-description.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dev-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

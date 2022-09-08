@@ -1,7 +1,7 @@
 # Unit 1: The Basics {#unit1}
 
 ## Week 1: Intro to R, data types, data structures 
-## Week 2: Plotting Data, Distributions
+## Week 2: Plotting Data
 
 
 ### Normal Distributions

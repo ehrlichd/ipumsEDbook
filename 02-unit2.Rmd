@@ -1,10 +1,457 @@
 # IPUMS {#unit2}
 
-## Week 6 Exploratory analysis 
-## Week 7 Hypothesis Testing
-## Week 8 Statistical Inference
-## Week 9 (TBD)
+## Week 6 Introduction to IPUMS
+## Week 7 Exploratory analysis {#exploratory}
+
+If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against *the scientific method* most people learned in grade school (More on that to follow(**_include_link_**)).
+
+This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
+  * *EG:* how to subset data, how to reshape data, how to recode data, how to convert from one `data type` to another.
+  
+Example lab exercise:
+
+Students given a data set (xls, csv, etc)
+  * load data, perform manipulations, basic summaries
+    + cross tabs
+    + group means by a covariate
+  * inspect data visually
+    + *DESCRIBE* the distribution - is it normal? significant?
+  * *FIND* aquestion in the spread of the data
+    + how can you test this (maybe small group work)
+  * write up/ present results
+    + think on confounding factors / biases
+
+
+### Advanced Exploration - Change Over Time
+
+Here we demonstrate an approach to looking at how Family Structure (inferred from household relationships) has changed over time.
+
+
+#### Setup / Load Data
+
+Install/update R packages
+
+```{r, eval=FALSE}
+
+install.packages("ipumsr")
+install.packages("tidyverse")
+```
+
+
+Data extract created online using the datacart system.
+
+```{r, eval = FALSE}
+
+library(ipumsr)
+library(dplyr)
+
+
+ddi <- read_ipums_ddi("Data/ipumsi_00005.xml")
+data <- read_ipums_micro(ddi)
+```
+
+
+##### Inspect the Data
+
+Using `haven` labeled values. 
+
+```{r, eval = FALSE}
+
+data$RELATE[1:100]
+class(data$RELATE)
+
+data %>% count(RELATE)
+data %>% count(SEX)
+```
+
+What were those codes ??
+
+```{r, eval = FALSE}
+
+## need to convert this to an image or something similar; kable table?
+ipums_view(ddi)
+
+```
+
+
+##### Visualize
+
+A simple plot
+
+```{r, eval = FALSE}
+
+plot(AGE ~ YEAR, data = data)
+
+```
+
+A fancier plot
+
+
+```{r, eval = FALSE}
+
+plot(AGE~YEAR, data = data, type = "n", main = "Age by Sex, over Time, CO")
+points(data$YEAR[data$SEX==1]-1, data$AGE[data$SEX==1], pch = 16, col = hsv(.6,.6,.8,.2))
+
+points(data$YEAR[data$SEX==2]+1, data$AGE[data$SEX==2], pch = 16, col = hsv(1,.6,.8,.2))
+
+abline(lm(AGE~YEAR, data = data), col = "green")
+
+```
+
+
+##### Asking (logical) questions
+
+Here we demonstrate how setting up logical questions can be used to easily filter/subset data.
+
+```{r, eval = FALSE}
+
+age_test <- data$AGE > 18
+
+class(age_test)
+
+age_test
+
+```
+
+Logical vectors are stored as `TRUE` or `FALSE`, but can also be evaluated numerically as `1` or `0` respectively. We can therefore `sum()` the number of `TRUE` values and divide by total rows for a proportion.
+
+```{r, eval = FALSE}
+
+sum(age_test)/nrow(data)
+
+```
+
+
+
+##### HH vs persons
+
+A unique characteristic of census and some survey data is the nested-structure with individuals being grouped into households. Often times it is necessary to choose to work at the hh or person level, and data must be appropriately manipulated to fit that case.
+
+```{r, eval = FALSE}
+
+hh_total <- length(unique(data$SERIAL))
+hh_total
+ipums_view(ddi)
+```
+
+
+#### Nuclear Family
+
+First we look at a nuclear family, comprising only parents and their immediate children. 
+
+```{r, eval = FALSE}
+
+library(ipumsr)
+library(dplyr)
+
+ddi <- read_ipums_ddi("/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml")
+all_data <- read_ipums_micro(ddi)
+
+census_years <- c(1860, 1870, 1880, 1900, 1910, 1960, 1970, 1980, 1990, 2000, 2010)
+
+## subset census only
+d2 <- all_data %>% filter(YEAR %in% census_years)
+
+## make a household dataframe
+hhs <- d2 %>% distinct(YEAR, SERIAL, .keep_all = TRUE) %>% select(YEAR,SERIAL,GEO1_US)
+
+hhs %>% View()
+
+```
+
+
+
+
+```{r, eval = FALSE}
+
+hhs <- d2 %>% filter(RELATE ==4) %>% 
+  
+  
+  distinct(YEAR, SERIAL) %>% mutate(extended_test=TRUE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(extended_test=if_else(is.na(extended_test),FALSE,TRUE))
+  
+
+
+
+
+
+
+
+
+hhs <- d2 %>% filter(!RELATE %in% c(1, 2, 3) |
+                  (RELATE == 3 &
+                     MARST %in% c(2, 3, 4))
+                ) %>% 
+
+  
+  
+  distinct(YEAR, SERIAL) %>% mutate(nuclear_test = FALSE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(nuclear_test = if_else(is.na(nuclear_test), TRUE, FALSE))
+
+
+
+table(hhs$extended_test,hhs$nuclear_test)
+
+
+```
+
+
+##### Tabulate results 
+
+
+```{r, eval = FALSE}
+  hhs <- d2 %>% filter(RELATED %in% c(4200, 4210, 4211, 4220, 4500, 4510, 4600)) %>% distinct(YEAR, SERIAL) %>% mutate(parent_test=TRUE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(parent_test=if_else(is.na(parent_test),FALSE,TRUE))
+
+
+  hhs <- d2 %>% filter(RELATED %in% c(4100, 4110, 4120, 4130, 4300, 4301, 4302)) %>% distinct(YEAR, SERIAL) %>% mutate(children_test=TRUE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(children_test=if_else(is.na(children_test),FALSE,TRUE))
+  
+  
+  res_tabs <- list(
+    "nuclear_test" = hhs %>% group_by(YEAR, nuclear_test,GEO1_US) %>% summarize(.groups="drop",n = n()) %>% as.data.frame(),
+  "extended_test" = hhs %>% group_by(YEAR, extended_test, GEO1_US) %>% summarize(.groups="drop",n = n()) %>% as.data.frame(),
+  "parent_test" = hhs %>% group_by(YEAR, parent_test, GEO1_US) %>% summarize(.groups="drop",n = n()) %>% as.data.frame(),
+  "children_test" = hhs %>% group_by(YEAR, children_test, GEO1_US) %>% summarize(.groups="drop",n = n()) %>% as.data.frame()
+  )
+  
+  
+  
+  
+
+collapsed_results <- res_tabs %>% purrr::map(function(x){
+  x <- x %>% group_by(across(names(x)[1:3])) %>% summarize(.groups="drop",n = sum(n))
+
+})
+
+
+collapsed_results <- lapply(collapsed_results, function(x){
+  colnames(x)[2] <- "test"
+  colnames(x)[3] <- "state"
+  return(x)
+})
+
+combined <- collapsed_results %>% purrr::reduce(full_join, by = c("YEAR", "test", "state"))
+
+
+
+colnames(combined) <- c("YEAR","test", "state", "n_nuclear", "n_extended", "n_parent", "n_children")
+
+combined[is.na(combined)] <- 0
+
+
+to_plot <- combined %>% group_by(YEAR, state) %>% mutate(n_tot = sum(n_nuclear)) %>% ungroup() %>% mutate(pct =  across(starts_with("n_"))/n_tot) %>% select(YEAR,test,state,pct)
+
+```
+
+
+##### Visualize Nuclear Families
+
+```{r, eval = FALSE}
+to_plot <- to_plot %>% filter(test==TRUE)
+
+
+
+plot(to_plot$YEAR, to_plot$pct$n_nuclear, col = hsv(.4, .6,.8), pch = 16, ylim =c(0,1), xlab = "", ylab = "prop of hhs", main = "Nuclear HHs over time in CO")
+
+
+```
+
+
+
+
+#### Extended Family
+
+
+Next we look at hhs with extended families present. IE, any that contain more relationships than just Parent/Child/Sibling (between children only)
+
+
+##### Gernerate models
+
+```{r, eval = FALSE}
+
+
+to_plot <- to_plot %>% filter(test==TRUE)
+
+
+glm_hist <- glm(pct$n_extended ~ YEAR, data = to_plot[to_plot$YEAR < 1950,], family = quasibinomial(link=logit))
+
+
+
+glm_hist_x <- seq(from=1860, to = 1910, length.out = 100)
+glm_hist_y <- predict(glm_hist, list(YEAR = glm_hist_x), type = "response")
+
+glm_mod <- glm(pct$n_extended ~ YEAR, data = to_plot[to_plot$YEAR> 1950,], family = quasibinomial(link=logit))
+
+glm_mod_x <- seq(from = 1960, to = 2010, length.out = 100)
+glm_mod_y <- predict(glm_mod, list(YEAR = glm_mod_x), type = "response")
+
+mods <- list("hist"=list(),
+             "mod" = list()
+             )
+mods_plots <- list("hist"=list(),
+                   "mod" =list()
+                   )
+
+for(i in names(to_plot$pct)){
+  
+  hist_x <- to_plot$YEAR[to_plot$YEAR < 1950]
+mod_x <- to_plot$YEAR[to_plot$YEAR > 1950]
+
+  mods$hist[[i]] <- lm(pct[[i]] ~ YEAR, data = to_plot[to_plot$YEAR < 1950,])
+  
+  mods_plots$hist[[i]] <- 
+    data.frame("x" = hist_x,
+               "y" = predict(mods$hist[[i]], 
+                             list(YEAR =hist_x), 
+                             type = "response")
+               )
+  
+  
+  
+  mods$mod[[i]] <- lm(pct[[i]] ~ YEAR, data = to_plot[to_plot$YEAR > 1950,])
+  
+  
+  mods_plots$mod[[i]] <- 
+    data.frame("x" = mod_x,
+               "y" = predict(mods$mod[[i]], 
+                             list(YEAR =mod_x), 
+                             type = "response")
+               )
+}
+
+
+
+```
+
+
+
+##### Visualize
+
+```{r, eval = FALSE}
+
+
+plot(to_plot$YEAR, to_plot$pct$n_extended, col = hsv(.95, .6,.8), pch = 16, ylim =c(0,.25), bg = "grey", xlab = "", ylab = "pct of hhs with extended family")
+
+
+lines(glm_hist_x,glm_hist_y, col = hsv(.95, .3, 1), lwd = 2)
+lines(glm_mod_x, glm_mod_y, col = hsv(.95, .3, 1), lwd = 2, lty = 2)
+
+
+
+
+points(to_plot$YEAR,
+       to_plot$pct$n_extended,
+       pch = 23,
+       bg = hsv(.95,.6,.8))
+```
+
+
+#### Even more DETAIL - maybe remove
+
+```{r, eval = FALSE}
+
+ipums_view(ddi)
+
+```
+
+
+```{r, eval = FALSE}
+
+
+  
+  hhs <- d2 %>% filter(RELATED %in% c(4200, 4210, 4211, 4220, 4500, 4510, 4600)) %>% 
+  
+  distinct(YEAR, SERIAL) %>% mutate(parent_test=TRUE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(parent_test=if_else(is.na(parent_test),FALSE,TRUE))
+
+  hhs <- d2 %>% filter(RELATED %in% c(4100, 4110, 4120, 4130, 4300, 4301, 4302)) %>% distinct(YEAR, SERIAL) %>% mutate(children_test=TRUE) %>% right_join(hhs, by = c("YEAR", "SERIAL")) %>% mutate(children_test=if_else(is.na(children_test),FALSE,TRUE))
+  
+
+```
+
+
+##### Parents Supporting Parents
+
+```{r, eval = FALSE}
+
+
+
+plot(to_plot$YEAR, to_plot$pct$n_extended, col = hsv(.95, .6,.8), pch = 16, ylim =c(0,.25), bg = "grey", xlab = "", ylab = "pct of hhs with extended family")
+
+
+lines(glm_hist_x,glm_hist_y, col = hsv(.95, .3, 1), lwd = 2)
+lines(glm_mod_x, glm_mod_y, col = hsv(.95, .3, 1), lwd = 2, lty = 2)
+
+
+lines(mods_plots$hist$n_parent,col = hsv(.8, .3,1), lwd = 2)
+
+lines(mods_plots$mod$n_parent, col = hsv(.8, .3,1), lwd = 2, lty = 2)
+
+points(to_plot$YEAR,
+       to_plot$pct$n_parent,
+       pch = 23,
+       bg = hsv(.8, .6,.8))
+
+
+points(to_plot$YEAR,
+       to_plot$pct$n_extended,
+       pch = 23,
+       bg = hsv(.95,.6,.8))
+
+```
+
+
+
+##### Parents Supporting (extended) children
+
+```{r, eval = FALSE}
+
+plot(to_plot$YEAR, to_plot$pct$n_extended, col = hsv(.95, .6,.8), pch = 16, ylim =c(0,.25), bg = "grey", xlab = "", ylab = "pct of hhs with extended family")
+
+
+lines(glm_hist_x,glm_hist_y, col = hsv(.95, .3, 1), lwd = 2)
+lines(glm_mod_x, glm_mod_y, col = hsv(.95, .3, 1), lwd = 2, lty = 2)
+
+
+
+lines(mods_plots$hist$n_children, col = hsv(.55,.3,1), lwd = 2)
+
+
+lines(mods_plots$mod$n_children, col = hsv(.55,.3,1), lwd = 2, lty = 2)
+
+
+points(to_plot$YEAR,
+       to_plot$pct$n_children,
+       pch = 23,
+       bg = hsv(.55,.6,.8))
+
+points(to_plot$YEAR,
+       to_plot$pct$n_extended,
+       pch = 23,
+       bg = hsv(.95,.6,.8))
+```
+
+
+
+
+
+
+## Week 8 Hypothesis Testing {#hypothesis}
+
+
+If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional *scientific method*. With a question in mind, the first question is: where to look. What better place than [IPUMS](https://ipums.org)!
+
+Begin introducing navigation of web resources - mainly IPUMS international
+
+Students should become comfortable working through lab exercises:
+  * Define a question (or be presented with one)
+  * Download variables from IPUMS (course downloads possible)
+  * Perform a basic analysis (discussed in Unit 1)
+  * Generate a **visual argument** for your analysis
+    + Include explanation/interpretation/reflection on the question at hand, and the data used
+    + Any obvious biases
+    + Any obvious confounding factors
+
+
+## Week 9 Statistical Inference
 ## Week 10 (TBD)
+
 
 Some text to break up the sub-section headers
 

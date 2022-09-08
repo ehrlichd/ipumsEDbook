@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Unit 1: The Basics | Data Science for Social Scientists</title>
-  <meta name="description" content="This is a test example of using the bookdown package to write an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Unit 1: The Basics | Data Science for Social Scientists" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a test example of using the bookdown package to write an open source book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 1 Unit 1: The Basics | Data Science for Social Scientists" />
   
-  <meta name="twitter:description" content="This is a test example of using the bookdown package to write an open source book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
 
 <meta name="author" content="Daniel E. Ehrlich, IPUMS, University of Minnesota" />
@@ -49,24 +49,25 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -119,28 +120,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -158,65 +137,58 @@ div.csl-indent {
 <li><a href="./">A Beginning of a Syllabus</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
-<ul>
+<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a><ul>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#course-aims"><i class="fa fa-check"></i>Course Aims</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#learning-outcomes"><i class="fa fa-check"></i>Learning Outcomes</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#guiding-principles"><i class="fa fa-check"></i>Guiding Principles</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
-<ul>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#unit-1-5-weeks-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 (5 weeks) Understanding and Testing Data</a></li>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html"><i class="fa fa-check"></i>Syllabus - Overview</a><ul>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="dev-notes.html"><a href="dev-notes.html"><i class="fa fa-check"></i>DEV NOTES</a></li>
-<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a>
-<ul>
+<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a><ul>
 <li class="chapter" data-level="1.1" data-path="unit1.html"><a href="unit1.html#week-1-intro-to-r-data-types-data-structures-1"><i class="fa fa-check"></i><b>1.1</b> Week 1: Intro to R, data types, data structures</a></li>
-<li class="chapter" data-level="1.2" data-path="unit1.html"><a href="unit1.html#week-2-plotting-data-distributions-1"><i class="fa fa-check"></i><b>1.2</b> Week 2: Plotting Data, Distributions</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="unit1.html"><a href="unit1.html#week-2-plotting-data"><i class="fa fa-check"></i><b>1.2</b> Week 2: Plotting Data</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="unit1.html"><a href="unit1.html#normal-distributions"><i class="fa fa-check"></i><b>1.2.1</b> Normal Distributions</a></li>
 <li class="chapter" data-level="1.2.2" data-path="unit1.html"><a href="unit1.html#what-is-normal"><i class="fa fa-check"></i><b>1.2.2</b> What <em>is</em> normal?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="unit1.html"><a href="unit1.html#skews"><i class="fa fa-check"></i><b>1.2.3</b> Skews</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="unit1.html"><a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1"><i class="fa fa-check"></i><b>1.3</b> Week 3: Statisitcal testing of simple data sets</a>
-<ul>
+<li class="chapter" data-level="1.3" data-path="unit1.html"><a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1"><i class="fa fa-check"></i><b>1.3</b> Week 3: Statisitcal testing of simple data sets</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="unit1.html"><a href="unit1.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>1.3.1</b> t-tests, ANOVA, chi2</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="unit1.html"><a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets"><i class="fa fa-check"></i><b>1.4</b> Week 4: Relationships between variables in simple data sets</a>
-<ul>
+<li class="chapter" data-level="1.4" data-path="unit1.html"><a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets"><i class="fa fa-check"></i><b>1.4</b> Week 4: Relationships between variables in simple data sets</a><ul>
 <li class="chapter" data-level="1.4.1" data-path="unit1.html"><a href="unit1.html#correlation-linear-regression"><i class="fa fa-check"></i><b>1.4.1</b> Correlation, Linear Regression</a></li>
 <li class="chapter" data-level="1.4.2" data-path="unit1.html"><a href="unit1.html#genearlized-linear-model"><i class="fa fa-check"></i><b>1.4.2</b> Genearlized Linear Model</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="unit1.html"><a href="unit1.html#week-5"><i class="fa fa-check"></i><b>1.5</b> Week 5:</a></li>
 <li class="chapter" data-level="1.6" data-path="unit1.html"><a href="unit1.html#intro-to-rrstudio"><i class="fa fa-check"></i><b>1.6</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="1.7" data-path="unit1.html"><a href="unit1.html#reading-data-distributions"><i class="fa fa-check"></i><b>1.7</b> Reading Data / Distributions</a>
-<ul>
+<li class="chapter" data-level="1.7" data-path="unit1.html"><a href="unit1.html#reading-data-distributions"><i class="fa fa-check"></i><b>1.7</b> Reading Data / Distributions</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="unit1.html"><a href="unit1.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>1.7.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>2</b> IPUMS</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="unit2.html"><a href="unit2.html#week-6-exploratory-analysis-1"><i class="fa fa-check"></i><b>2.1</b> Week 6 Exploratory analysis</a></li>
-<li class="chapter" data-level="2.2" data-path="unit2.html"><a href="unit2.html#week-7-hypothesis-testing-1"><i class="fa fa-check"></i><b>2.2</b> Week 7 Hypothesis Testing</a></li>
-<li class="chapter" data-level="2.3" data-path="unit2.html"><a href="unit2.html#week-8-statistical-inference-1"><i class="fa fa-check"></i><b>2.3</b> Week 8 Statistical Inference</a></li>
-<li class="chapter" data-level="2.4" data-path="unit2.html"><a href="unit2.html#week-9-tbd-1"><i class="fa fa-check"></i><b>2.4</b> Week 9 (TBD)</a></li>
+<li class="chapter" data-level="2" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>2</b> IPUMS</a><ul>
+<li class="chapter" data-level="2.1" data-path="unit2.html"><a href="unit2.html#week-6-introduction-to-ipums"><i class="fa fa-check"></i><b>2.1</b> Week 6 Introduction to IPUMS</a></li>
+<li class="chapter" data-level="2.2" data-path="unit2.html"><a href="unit2.html#exploratory"><i class="fa fa-check"></i><b>2.2</b> Week 7 Exploratory analysis</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="unit2.html"><a href="unit2.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>2.2.1</b> Advanced Exploration - Change Over Time</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="unit2.html"><a href="unit2.html#hypothesis"><i class="fa fa-check"></i><b>2.3</b> Week 8 Hypothesis Testing</a></li>
+<li class="chapter" data-level="2.4" data-path="unit2.html"><a href="unit2.html#week-9-statistical-inference-1"><i class="fa fa-check"></i><b>2.4</b> Week 9 Statistical Inference</a></li>
 <li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#week-10-tbd-1"><i class="fa fa-check"></i><b>2.5</b> Week 10 (TBD)</a></li>
-<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#intro-to-ipums-website"><i class="fa fa-check"></i><b>2.6</b> Intro to IPUMS website</a>
-<ul>
+<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#intro-to-ipums-website"><i class="fa fa-check"></i><b>2.6</b> Intro to IPUMS website</a><ul>
 <li class="chapter" data-level="2.6.1" data-path="unit2.html"><a href="unit2.html#background-on-ipums"><i class="fa fa-check"></i><b>2.6.1</b> background on ipums</a></li>
 <li class="chapter" data-level="2.6.2" data-path="unit2.html"><a href="unit2.html#navigating-website"><i class="fa fa-check"></i><b>2.6.2</b> navigating website</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="unit2.html"><a href="unit2.html#math-example"><i class="fa fa-check"></i><b>2.7</b> math example</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Unit 3: Independent Research</a>
-<ul>
+<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Unit 3: Independent Research</a><ul>
 <li class="chapter" data-level="3.1" data-path="unit3.html"><a href="unit3.html#week-11-students-develop-research-question-1"><i class="fa fa-check"></i><b>3.1</b> Week 11: Students develop research Question</a></li>
 <li class="chapter" data-level="3.2" data-path="unit3.html"><a href="unit3.html#week-12-students-find-relevant-variables-from-ipums-1"><i class="fa fa-check"></i><b>3.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
 <li class="chapter" data-level="3.3" data-path="unit3.html"><a href="unit3.html#week-13-students-test-and-evaluate-results-1"><i class="fa fa-check"></i><b>3.3</b> Week 13: Students test and evaluate results</a></li>
@@ -225,12 +197,10 @@ div.csl-indent {
 <li class="chapter" data-level="3.6" data-path="unit3.html"><a href="unit3.html#example-one"><i class="fa fa-check"></i><b>3.6</b> Example one</a></li>
 <li class="chapter" data-level="3.7" data-path="unit3.html"><a href="unit3.html#example-two"><i class="fa fa-check"></i><b>3.7</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>4</b> Example RMD code</a>
-<ul>
+<li class="chapter" data-level="4" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>4</b> Example RMD code</a><ul>
 <li class="chapter" data-level="4.1" data-path="ex_code.html"><a href="ex_code.html#core"><i class="fa fa-check"></i><b>4.1</b> Core</a></li>
 <li class="chapter" data-level="4.2" data-path="ex_code.html"><a href="ex_code.html#tips"><i class="fa fa-check"></i><b>4.2</b> Tips</a></li>
-<li class="chapter" data-level="4.3" data-path="ex_code.html"><a href="ex_code.html#syntax"><i class="fa fa-check"></i><b>4.3</b> Syntax</a>
-<ul>
+<li class="chapter" data-level="4.3" data-path="ex_code.html"><a href="ex_code.html#syntax"><i class="fa fa-check"></i><b>4.3</b> Syntax</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="ex_code.html"><a href="ex_code.html#math"><i class="fa fa-check"></i><b>4.3.1</b> Math</a></li>
 </ul></li>
 </ul></li>
@@ -255,96 +225,96 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="unit1" class="section level1 hasAnchor" number="1">
+<div id="unit1" class="section level1 hasAnchor">
 <h1><span class="header-section-number">Chapter 1</span> Unit 1: The Basics<a href="unit1.html#unit1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="week-1-intro-to-r-data-types-data-structures-1" class="section level2 hasAnchor" number="1.1">
+<div id="week-1-intro-to-r-data-types-data-structures-1" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.1</span> Week 1: Intro to R, data types, data structures<a href="unit1.html#week-1-intro-to-r-data-types-data-structures-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="week-2-plotting-data-distributions-1" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Week 2: Plotting Data, Distributions<a href="unit1.html#week-2-plotting-data-distributions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="normal-distributions" class="section level3 hasAnchor" number="1.2.1">
+<div id="week-2-plotting-data" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.2</span> Week 2: Plotting Data<a href="unit1.html#week-2-plotting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="normal-distributions" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.2.1</span> Normal Distributions<a href="unit1.html#normal-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First we’ll generate a normal distribution with the <code>rnorm()</code> function. This takes 3 arguments: <code>n, mean, sd</code>, which you can see filled in below. While we could print out a list of all these values, it’s not easy to <em>understand</em> a list of numbers</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit1.html#cb1-1" aria-hidden="true" tabindex="-1"></a>normal_dist <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="do">## 100 samples</span></span>
-<span id="cb1-2"><a href="unit1.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mean =</span> <span class="dv">10</span>, <span class="do">## with a mean of 10</span></span>
-<span id="cb1-3"><a href="unit1.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="dv">1</span> <span class="do">## and a standard deviation of 1</span></span>
-<span id="cb1-4"><a href="unit1.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                     )</span>
-<span id="cb1-5"><a href="unit1.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="unit1.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="unit1.html#cb1-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1] 11.049008  9.274736 10.190206 10.116741 10.272891 12.143695  9.678689
-##   [8] 10.532528  8.879068  9.104237  9.732527 10.844123  9.157166  9.902717
-##  [15]  9.495388 10.845433  9.803719 10.006824  8.546665  9.770778  9.078622
-##  [22]  9.611755 10.866260 11.201400  9.783517  9.836225 10.047095 11.830691
-##  [29] 10.026548 11.038964  8.984494  8.931687 10.058481 10.737155 10.385874
-##  [36]  9.992441 10.852426 11.208202 10.025474  9.832424  9.889736 11.136648
-##  [43]  9.454515 11.418626  9.803515 11.033205 10.094814  8.323969  9.243293
-##  [50] 10.385783  8.459053  8.966733  9.878707 10.682654 10.058855 11.404082
-##  [57] 11.090430 10.736216 10.406023 10.853420 10.261950 11.311626  9.335622
-##  [64] 10.044726  9.594079 11.886320  8.744458  9.429010  9.152259  9.523892
-##  [71] 11.018706 10.664428  9.523576 12.247340  9.254135 10.539120 10.646983
-##  [78]  8.964195  9.285958 11.737038 10.069798  9.033283 12.831784 10.469544
-##  [85]  9.740279 10.872670 10.443324  9.401996  8.403292  7.919989  8.599504
-##  [92]  9.537842  8.595410 10.028143 11.341525 10.651653 10.198117  9.491147
-##  [99] 10.314111 11.342297</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit1.html#cb1-1"></a>normal_dist &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="co">## 100 samples</span></span>
+<span id="cb1-2"><a href="unit1.html#cb1-2"></a>                     <span class="dt">mean =</span> <span class="dv">10</span>, <span class="co">## with a mean of 10</span></span>
+<span id="cb1-3"><a href="unit1.html#cb1-3"></a>                     <span class="dt">sd =</span> <span class="dv">1</span> <span class="co">## and a standard deviation of 1</span></span>
+<span id="cb1-4"><a href="unit1.html#cb1-4"></a>                     )</span>
+<span id="cb1-5"><a href="unit1.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="unit1.html#cb1-6"></a></span>
+<span id="cb1-7"><a href="unit1.html#cb1-7"></a>normal_dist</span></code></pre></div>
+<pre><code>##   [1] 10.068802 10.312946 10.097190 10.010060  9.881507  8.420090 10.258122
+##   [8] 10.641751  9.910864 10.584055 10.686523  8.234101  9.078394 10.003171
+##  [15]  8.709927  8.940128 11.514731 11.060424  9.140451  9.790022  8.902605
+##  [22] 11.196179  9.357191  9.797289  8.989928  8.606337 10.539995  9.341420
+##  [29]  9.817130 10.588250 10.498484 10.351262 10.458427 10.046456  9.125570
+##  [36] 10.498753 10.317289 10.506100 10.674702 11.938909 10.570309  8.936725
+##  [43]  8.524874  9.731495  8.951660  8.641190  9.511255  9.134479 10.720328
+##  [50]  8.226975  8.785246 10.034873 10.758391  9.724257 10.468566 10.310709
+##  [57] 10.282148  9.603880 10.075869  9.587739 10.333400  9.668557 11.086816
+##  [64]  9.753677  9.616745  9.426462  8.709799  9.263555 10.370050 11.093661
+##  [71]  9.040902  9.523292  9.649771  8.764416  9.999529  8.824008 11.419483
+##  [78]  8.048439  9.013069  9.741038  9.372876 12.192333 11.295252 11.423536
+##  [85]  9.203960  8.308362  8.934986  8.332809 11.528993  9.614826  9.987402
+##  [92]  9.677023 10.033755  8.061323  8.378717 10.647843 10.912566 10.250293
+##  [99] 10.615507  9.362946</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1"></a><span class="kw">hist</span>(normal_dist,<span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/norm_dist_plot-1.png" width="672" /></p>
 <p>Another way to visualize this would be with a d</p>
 </div>
-<div id="what-is-normal" class="section level3 hasAnchor" number="1.2.2">
+<div id="what-is-normal" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.2.2</span> What <em>is</em> normal?<a href="unit1.html#what-is-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="quantitative-summaries" class="section level4 hasAnchor" number="1.2.2.1">
+<div id="quantitative-summaries" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.2.2.1</span> Quantitative summaries<a href="unit1.html#quantitative-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>5num summary
 * Min, 25th percentile, median, 75th percentile, Max</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit1.html#cb4-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist <span class="ot">&lt;-</span> <span class="fu">summary</span>(normal_dist)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit1.html#cb4-1"></a>tab_normal_dist &lt;-<span class="st"> </span><span class="kw">summary</span>(normal_dist)</span></code></pre></div>
 <p>We can print the table in R by calling its name.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.920   9.448  10.036  10.094  10.764  12.832</code></pre>
+##   8.048   9.114   9.807   9.830  10.499  12.192</code></pre>
 <p>Mean, standard deviation</p>
 </div>
-<div id="meaningful-comparisons" class="section level4 hasAnchor" number="1.2.2.2">
+<div id="meaningful-comparisons" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.2.2.2</span> Meaningful Comparisons<a href="unit1.html#meaningful-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>How to compare apples to oranges? Standardize the units / standardize the data</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="unit1.html#cb7-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, </span>
-<span id="cb7-2"><a href="unit1.html#cb7-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean =</span> <span class="dv">100</span>,</span>
-<span id="cb7-3"><a href="unit1.html#cb7-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb7-4"><a href="unit1.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="unit1.html#cb7-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,</span>
-<span id="cb7-6"><a href="unit1.html#cb7-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">mean =</span> <span class="dv">60</span>, </span>
-<span id="cb7-7"><a href="unit1.html#cb7-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="unit1.html#cb7-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, </span>
+<span id="cb7-2"><a href="unit1.html#cb7-2"></a>              <span class="dt">mean =</span> <span class="dv">100</span>,</span>
+<span id="cb7-3"><a href="unit1.html#cb7-3"></a>              <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb7-4"><a href="unit1.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="unit1.html#cb7-5"></a>data2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>,</span>
+<span id="cb7-6"><a href="unit1.html#cb7-6"></a>               <span class="dt">mean =</span> <span class="dv">60</span>, </span>
+<span id="cb7-7"><a href="unit1.html#cb7-7"></a>               <span class="dt">sd =</span> <span class="dv">25</span>)</span></code></pre></div>
 <p>Are these the same distribution?</p>
 <p>Any issues??</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit1.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb8-2"><a href="unit1.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data1)</span>
-<span id="cb8-3"><a href="unit1.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data2)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit1.html#cb8-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb8-2"><a href="unit1.html#cb8-2"></a><span class="kw">hist</span>(data1)</span>
+<span id="cb8-3"><a href="unit1.html#cb8-3"></a><span class="kw">hist</span>(data2)</span></code></pre></div>
 <p><img src="_main_files/figure-html/rnorm_hist_comp-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="unit1.html#cb9-1" aria-hidden="true" tabindex="-1"></a>total_range <span class="ot">&lt;-</span> <span class="fu">range</span>(data1, data2)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="unit1.html#cb9-1"></a>total_range &lt;-<span class="st"> </span><span class="kw">range</span>(data1, data2)</span></code></pre></div>
 <p>Are they the same?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit1.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb10-2"><a href="unit1.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data1, <span class="at">xlim =</span> total_range)</span>
-<span id="cb10-3"><a href="unit1.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data2, <span class="at">xlim =</span> total_range)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit1.html#cb10-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="unit1.html#cb10-2"></a><span class="kw">hist</span>(data1, <span class="dt">xlim =</span> total_range)</span>
+<span id="cb10-3"><a href="unit1.html#cb10-3"></a><span class="kw">hist</span>(data2, <span class="dt">xlim =</span> total_range)</span></code></pre></div>
 <p><img src="_main_files/figure-html/rnorm_hist_comp_true-1.png" width="672" /></p>
 <p>Numerically / tabularly</p>
 <p>Often times its important to tables of <strong>summary statistics</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="unit1.html#cb11-1" aria-hidden="true" tabindex="-1"></a>norm_comp_tab <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">summary</span>(data1),</span>
-<span id="cb11-2"><a href="unit1.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summary</span>(data2))</span>
-<span id="cb11-3"><a href="unit1.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="unit1.html#cb11-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
-## [1,]  66.17511 93.72078 100.36938 100.6796 107.48435 134.1779
-## [2,] -39.79209 42.73405  59.31656  59.4320  75.38265 139.6701</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="unit1.html#cb11-1"></a>norm_comp_tab &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">summary</span>(data1),</span>
+<span id="cb11-2"><a href="unit1.html#cb11-2"></a>                       <span class="kw">summary</span>(data2))</span>
+<span id="cb11-3"><a href="unit1.html#cb11-3"></a></span>
+<span id="cb11-4"><a href="unit1.html#cb11-4"></a>norm_comp_tab</span></code></pre></div>
+<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  72.61073 92.60662 99.32918 99.68150 106.92996 132.4996
+## [2,] -21.19505 43.82843 61.32385 61.05539  78.24721 139.4410</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1"></a><span class="kw">rownames</span>(norm_comp_tab) <span class="co">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unit1.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(<span class="fu">rownames</span>(norm_comp_tab))){</span>
-<span id="cb15-2"><a href="unit1.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(norm_comp_tab) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;data1&quot;</span>, <span class="st">&quot;data2&quot;</span>)</span>
-<span id="cb15-3"><a href="unit1.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unit1.html#cb15-1"></a><span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">rownames</span>(norm_comp_tab))){</span>
+<span id="cb15-2"><a href="unit1.html#cb15-2"></a>  <span class="kw">rownames</span>(norm_comp_tab) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;data1&quot;</span>, <span class="st">&quot;data2&quot;</span>)</span>
+<span id="cb15-3"><a href="unit1.html#cb15-3"></a>}</span></code></pre></div>
 <p>When working with <strong>Rmarkdown</strong> we can take advantage of <code>knitr</code> and <code>pandoc</code> to nice looking tables even easier.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit1.html#cb16-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(norm_comp_tab)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit1.html#cb16-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(norm_comp_tab)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -360,21 +330,21 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">66.17511</td>
-<td align="right">93.72078</td>
-<td align="right">100.36938</td>
-<td align="right">100.6796</td>
-<td align="right">107.48435</td>
-<td align="right">134.1779</td>
+<td align="right">72.61073</td>
+<td align="right">92.60662</td>
+<td align="right">99.32918</td>
+<td align="right">99.68150</td>
+<td align="right">106.92996</td>
+<td align="right">132.4996</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-39.79209</td>
-<td align="right">42.73405</td>
-<td align="right">59.31656</td>
-<td align="right">59.4320</td>
-<td align="right">75.38265</td>
-<td align="right">139.6701</td>
+<td align="right">-21.19505</td>
+<td align="right">43.82843</td>
+<td align="right">61.32385</td>
+<td align="right">61.05539</td>
+<td align="right">78.24721</td>
+<td align="right">139.4410</td>
 </tr>
 </tbody>
 </table>
@@ -390,33 +360,33 @@ div.csl-indent {
 * Is it always appropriate to transform data?</p>
 </div>
 </div>
-<div id="skews" class="section level3 hasAnchor" number="1.2.3">
+<div id="skews" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.2.3</span> Skews<a href="unit1.html#skews" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What to do if the data are <strong>not</strong> normal?</p>
 </div>
 </div>
-<div id="week-3-statisitcal-testing-of-simple-data-sets-1" class="section level2 hasAnchor" number="1.3">
+<div id="week-3-statisitcal-testing-of-simple-data-sets-1" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.3</span> Week 3: Statisitcal testing of simple data sets<a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="t-tests-anova-chi2" class="section level3 hasAnchor" number="1.3.1">
+<div id="t-tests-anova-chi2" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.3.1</span> t-tests, ANOVA, chi2<a href="unit1.html#t-tests-anova-chi2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
-<div id="week-4-relationships-between-variables-in-simple-data-sets" class="section level2 hasAnchor" number="1.4">
+<div id="week-4-relationships-between-variables-in-simple-data-sets" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.4</span> Week 4: Relationships between variables in simple data sets<a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="correlation-linear-regression" class="section level3 hasAnchor" number="1.4.1">
+<div id="correlation-linear-regression" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.4.1</span> Correlation, Linear Regression<a href="unit1.html#correlation-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="simple-lm" class="section level4 hasAnchor" number="1.4.1.1">
+<div id="simple-lm" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.4.1.1</span> Simple LM<a href="unit1.html#simple-lm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="complex-lm" class="section level4 hasAnchor" number="1.4.1.2">
+<div id="complex-lm" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.4.1.2</span> Complex LM<a href="unit1.html#complex-lm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
 </div>
-<div id="genearlized-linear-model" class="section level3 hasAnchor" number="1.4.2">
+<div id="genearlized-linear-model" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.4.2</span> Genearlized Linear Model<a href="unit1.html#genearlized-linear-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
-<div id="week-5" class="section level2 hasAnchor" number="1.5">
+<div id="week-5" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.5</span> Week 5:<a href="unit1.html#week-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For now, I have 3 main chapters for each of the main sections:
 * Basics of data science / R <a href="unit1.html#unit1">1</a>
@@ -446,29 +416,29 @@ Add a second state/country to demo ttest
 Add more to demo anova</p>
 <p>Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)</p>
 </div>
-<div id="intro-to-rrstudio" class="section level2 hasAnchor" number="1.6">
+<div id="intro-to-rrstudio" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.6</span> Intro to R/RStudio<a href="unit1.html#intro-to-rrstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="reading-data-distributions" class="section level2 hasAnchor" number="1.7">
+<div id="reading-data-distributions" class="section level2 hasAnchor">
 <h2><span class="header-section-number">1.7</span> Reading Data / Distributions<a href="unit1.html#reading-data-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="what-is-a-normal-distribution" class="section level3 hasAnchor" number="1.7.1">
+<div id="what-is-a-normal-distribution" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.7.1</span> What <em>is</em> a <strong>normal distribution</strong><a href="unit1.html#what-is-a-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="how-normal-is-it" class="section level4 hasAnchor" number="1.7.1.1">
+<div id="how-normal-is-it" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.7.1.1</span> How normal is it?<a href="unit1.html#how-normal-is-it" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>show increasingly unclear examples of normal vs not</p>
 <p>introduce tests of normality</p>
 </div>
-<div id="measuring-normality---single-sample" class="section level4 hasAnchor" number="1.7.1.2">
+<div id="measuring-normality---single-sample" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.7.1.2</span> Measuring normality - single sample<a href="unit1.html#measuring-normality---single-sample" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>reinforce [concept of statistical] <strong>normality</strong></p>
 <p>is a value from a sample? - one way ttest
 something about tails</p>
 </div>
-<div id="comparing-normality---two-saples" class="section level4 hasAnchor" number="1.7.1.3">
+<div id="comparing-normality---two-saples" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.7.1.3</span> comparing normality - two saples<a href="unit1.html#comparing-normality---two-saples" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>standard / two-way t test</p>
 </div>
-<div id="comparing-more-than-two---anova" class="section level4 hasAnchor" number="1.7.1.4">
+<div id="comparing-more-than-two---anova" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.7.1.4</span> comparing more than two - ANOVA<a href="unit1.html#comparing-more-than-two---anova" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 
 </div>
@@ -541,7 +511,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

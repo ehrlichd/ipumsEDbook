@@ -1,5 +1,13 @@
 # Unit 3: Independent Research {#unit3}
 
+
+Students will select their own research question that can be answered with the IPUMS data set and will spend five weeks conducting a research project complete with data analysis, visualization, and interpretation.
+
+
+In this section we encourage the instructor to provide ample time for independent student/small-group research. Some class time should be devoted to modeling healthy discussion and critique of methods. Students should learn to discuss not just *how* to answer a research question but *why* they are asking/answering it. What impact does the question/answers have. Is the question releveant/meaningful, and importantly, Is this research question perpetuating racist ideas.
+
+We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
+
 ## Week 11: Students develop research Question
 ## Week 12: Students find relevant variables from IPUMS
 ## Week 13: Students test and evaluate results
