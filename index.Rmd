@@ -43,7 +43,7 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 ## What is IPUMS {-}
 
 
-IPUMS started as a project to digitize the historical records of the US census. It has expanded to include [9 data collections](https://www.ipums.org/), which are united in their methods and principles of making soial science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably: 
+IPUMS started as a project to digitize the historical records of the US census. It has expanded to include [9 data collections](https://www.ipums.org/), which are united in their methods and principles of making social science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably: 
 
   * IPUMS **harmonizes** these data, ensuring consistently coded values across time and space.
   * IPUMS provides harmonized **GIS Shapefiles** for most census and survey data.

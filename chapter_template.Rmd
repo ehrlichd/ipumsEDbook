@@ -1,0 +1,34 @@
+---
+title: "chapter_template"
+author: "DEE"
+date: "9/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Engage
+
+Brief example of an engaging phenomenon.
+
+What are examples of phenomena within data science? Within Anthro/ Social Science
+
+  * An interesting plot
+  * Wow factor
+
+# Explore
+
+Explore other examples of this phenomenon.
+
+Build on the first one to show variation. 
+Can 
+
+# Explain
+
+
+# Elaborate
+
+
+# Evaluate/Exercises
