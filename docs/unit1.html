@@ -242,21 +242,21 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb1-5"><a href="unit1.html#cb1-5"></a></span>
 <span id="cb1-6"><a href="unit1.html#cb1-6"></a></span>
 <span id="cb1-7"><a href="unit1.html#cb1-7"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  9.812027  9.767748  9.715163 11.005260 11.178048  9.071991  7.314241
-##   [8] 11.743487 10.951111  9.025586  8.752522  8.746268  9.378280 10.871000
-##  [15]  7.858248  9.241521 11.179289 10.522698 10.269737 10.958242 11.845102
-##  [22] 10.192681  9.229244  8.635777  8.686137  9.530165  8.995460 10.292111
-##  [29] 10.609126 10.529037  9.242377 11.250183  9.729223 10.577860 11.321183
-##  [36]  9.569443  8.801589 10.775575  8.681326  8.332043  9.457381  8.487696
-##  [43]  8.988810  8.828901  8.067236 11.830640  7.508226 10.234283 10.799629
-##  [50]  9.451402  9.172981  9.109458 11.029806  9.303476 10.293015 10.568641
-##  [57]  8.509985 10.193068  8.670372 11.100629  8.872172  9.732601  8.969216
-##  [64]  9.281768 11.285122  9.680896  7.811813 11.694720  9.783223 10.178490
-##  [71] 11.027931  9.638446 11.198010 11.010341  8.408728 10.212405  9.819805
-##  [78]  9.241326  9.930334  9.495854 10.939223 10.040600  9.883496  9.600965
-##  [85]  9.470134  9.594044 10.160518  9.583869  9.188600 10.437896  9.944596
-##  [92] 11.789744 10.762641  9.599026  9.514968  8.266600 10.097885  9.099623
-##  [99]  9.463520  9.674014</code></pre>
+<pre><code>##   [1]  9.995395 11.299018 10.883847 11.368616 10.196732  9.098661  9.982618
+##   [8]  9.403370  9.672300 10.397120 10.311247  9.934479 11.420685 10.792854
+##  [15]  8.997254  9.191216 10.966430  9.034053  9.348289  9.171866 10.576790
+##  [22]  8.661294  9.435206  8.679227 10.303668  7.119920 10.083972 10.131545
+##  [29] 11.600967  8.520303  8.967658 10.020827 10.628157 10.198577  9.604764
+##  [36]  9.042853 11.205429 10.151415 10.355200  7.951993  9.726897  8.430289
+##  [43]  8.240368 10.833405 10.976197 10.209288  9.898737 10.861087  9.036364
+##  [50]  9.534670 10.177564  9.972466 10.840945 10.160649 10.585251  8.179502
+##  [57]  9.576814 10.554801  9.747008  9.825619  9.425779 11.703494  7.063973
+##  [64] 11.000990  9.248774  8.986600 12.043990 10.292411 12.009150  8.931165
+##  [71] 11.426718 10.337038  9.432386 10.606934  9.149538 10.207681  8.459655
+##  [78]  9.277289 11.453650  9.369688  9.844200 10.189970  9.875580 10.175309
+##  [85]  9.101893  9.079843 11.809244 11.847961 11.168008  8.029775  9.973560
+##  [92] 10.443512  8.385808 10.753626  9.926479  8.728465  9.267827  9.862722
+##  [99]  7.864391  9.385178</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1"></a><span class="kw">hist</span>(normal_dist,<span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -273,7 +273,7 @@ An applied course using IPUMS data <br></p></a>
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.314   9.107   9.698   9.802  10.571  11.845</code></pre>
+##   7.064   9.166   9.953   9.882  10.579  12.044</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor">
@@ -304,9 +304,9 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb11-2"><a href="unit1.html#cb11-2"></a>                       <span class="kw">summary</span>(data2))</span>
 <span id="cb11-3"><a href="unit1.html#cb11-3"></a></span>
 <span id="cb11-4"><a href="unit1.html#cb11-4"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.   Median      Mean   3rd Qu.     Max.
-## [1,] 71.434452 93.48152 99.93135 100.06829 106.10613 131.1230
-## [2,] -9.997856 43.87796 59.07525  59.93912  75.28059 132.6076</code></pre>
+<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  70.67968 93.33299 99.20566 99.70582 106.08706 138.2364
+## [2,] -28.40743 44.23602 60.19264 60.00793  77.07114 139.7627</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1"></a><span class="kw">rownames</span>(norm_comp_tab) <span class="co">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -330,21 +330,21 @@ An applied course using IPUMS data <br></p></a>
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">71.434452</td>
-<td align="right">93.48152</td>
-<td align="right">99.93135</td>
-<td align="right">100.06829</td>
-<td align="right">106.10613</td>
-<td align="right">131.1230</td>
+<td align="right">70.67968</td>
+<td align="right">93.33299</td>
+<td align="right">99.20566</td>
+<td align="right">99.70582</td>
+<td align="right">106.08706</td>
+<td align="right">138.2364</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-9.997856</td>
-<td align="right">43.87796</td>
-<td align="right">59.07525</td>
-<td align="right">59.93912</td>
-<td align="right">75.28059</td>
-<td align="right">132.6076</td>
+<td align="right">-28.40743</td>
+<td align="right">44.23602</td>
+<td align="right">60.19264</td>
+<td align="right">60.00793</td>
+<td align="right">77.07114</td>
+<td align="right">139.7627</td>
 </tr>
 </tbody>
 </table>

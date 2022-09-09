@@ -4,10 +4,14 @@ title: |
   Data Science for Social Scientists:    
   An applied course using IPUMS data  <br>
 author: | 
-  | Developed by:  
+  | __Developed by:__  
   |   Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)
   |   Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)
   |   Current Version compiled: `r Sys.Date()`
+  | <br>  
+  | ![](ipums_i_logo.jpg){width=50%}
+  | ![](clemson_logo.png){width=50%}
+  | <br>  
   | <br>  
   | <br>  
 site: bookdown::bookdown_site
@@ -31,7 +35,7 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 |   [R](https://cran.r-project.org/), [RStudio](https://www.rstudio.com/products/rstudio/), [bookdown](https://bookdown.org/)  
 |
 | Driven by ^(nearly)^ open-source data -
-|   Harmonized across time and space, [IPUMS](https://ipums.org)
+|   Harmonized across time and space: [IPUMS](https://ipums.org)
 |
 |
 |
