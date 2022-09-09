@@ -36,8 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={ ``Data Science for Social Scientists''},
-  pdfauthor={Daniel E. Ehrlich, IPUMS, University of Minnesota; Anna Tremblay, Dept of Soc, Anth, \& CJ, Clemson University},
+  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -112,16 +111,14 @@
 \bibliographystyle{apalike}
 
 \title{\includegraphics{ipums_banner.png}\\
-``Data Science for Social Scientists''}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{An applied course using IPUMS data}
-\author{Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota} \and Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}}
-\date{Compiled on: 2022-09-09}
+Data Science for Social Scientists:\\
+An applied course using IPUMS data}
+\author{Developed by:\\
+\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
+\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
+\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2022-09-09\\
+~\\}
+\date{}
 
 \begin{document}
 \maketitle
@@ -142,9 +139,11 @@ Open-source and customizable -\\
 Made with open-source tools -\\
 \hspace*{0.333em}\hspace*{0.333em}\href{https://cran.r-project.org/}{R}, \href{https://www.rstudio.com/products/rstudio/}{RStudio}, \href{https://bookdown.org/}{bookdown}\\
 ~\\
-Driven by \textsubscript{(nearly)} open-source data -\\
-\hspace*{0.333em}\hspace*{0.333em}harmonized across time and space, \href{https://ipums.org}{IPUMS}\\
+Driven by \textsuperscript{(nearly)} open-source data -\\
+\hspace*{0.333em}\hspace*{0.333em}Harmonized across time and space, \href{https://ipums.org}{IPUMS}\\
 ~\\
+~\\
+
 ~\\
 
 \hypertarget{what-is-ipums}{%
@@ -315,6 +314,8 @@ The basic structure of this course is:
 \hypertarget{detailed-syllabus}{%
 \section*{Detailed Syllabus}\label{detailed-syllabus}}
 \addcontentsline{toc}{section}{Detailed Syllabus}
+
+\newpage
 
 \hypertarget{unit-1-understanding-and-testing-data}{%
 \subsection*{Unit 1 Understanding and Testing Data}\label{unit-1-understanding-and-testing-data}}
@@ -592,21 +593,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1]  9.548400 10.947651 11.199183 10.090638  9.660442  9.878456  9.830384
-##   [8]  8.495778 11.738001  8.586891 10.362392  9.517313 10.823611 10.247938
-##  [15]  9.719669 11.982272  8.677197 10.350284 12.204549 11.715157  9.635823
-##  [22] 11.173793  9.345690 11.345389  9.449188  9.974921  8.711481  9.344843
-##  [29]  8.879533  9.072149  8.754668 10.024892  9.508320 10.998324  9.724183
-##  [36]  6.765788 10.152996  9.699584  7.949813 10.888087 11.039904  8.705848
-##  [43]  8.483261  9.512216 11.907747  8.995151  9.161266 11.607102 10.305648
-##  [50]  8.418896 11.067916 11.289531  9.177431 11.209191  9.215945 10.126022
-##  [57] 10.203415 10.480910 10.328169 10.597458  8.752313 10.399006  9.138956
-##  [64]  9.746755 11.662992  8.890828 10.532916  8.728017 10.422601 10.981463
-##  [71] 10.546666 11.563222  9.852944 10.735363  8.801922  9.680110 10.753520
-##  [78] 10.342146  9.060413 10.973261  9.560488  9.274679  8.835083  9.226622
-##  [85]  8.537924 11.294473  9.905960  8.980669  9.884046 10.262419 10.131708
-##  [92]  7.811639 10.642745 11.999637  9.779702 10.016486 10.139199 12.626331
-##  [99] 10.171929  7.641653
+##   [1] 10.995397 10.133297  9.500441 10.735663 10.824745 10.048974  9.200535
+##   [8]  9.809935  9.863749 10.687651  8.553564 10.810880  9.172703  9.398599
+##  [15] 11.209710  7.579769 11.260979  9.482221  9.923045  9.216777  9.460783
+##  [22]  9.529605  7.663436 10.436015  9.045603  9.106446  9.710572  9.277195
+##  [29]  8.781733 11.317468 10.237507  9.913839  8.419357  9.931110  9.857338
+##  [36] 10.702036  9.455658  9.179196  9.290902 10.497032 10.441828 10.309545
+##  [43] 11.371964  9.702383  9.073079 11.302855 10.721005 11.632929  9.027538
+##  [50] 11.423169 11.091121  9.997215  9.959725 10.368222 10.955464 10.169575
+##  [57]  9.917531  9.694480 10.186419 10.586014  7.734602 10.237896  9.066447
+##  [64] 10.342953  9.135687  9.599815 10.445359  9.231747 10.610251 11.407912
+##  [71]  9.571438 11.960943 10.810771 11.548349  9.828721 10.108902  8.563938
+##  [78]  9.795225 10.269501  9.575902 11.304086  9.024656  9.828836 10.808818
+##  [85]  9.241347 10.670825 10.250496  8.949152 10.104522 10.513361  9.134856
+##  [92] 10.878563  9.771158  8.606362  9.100394 11.236865  9.968322  9.728169
+##  [99] 11.301754  9.553983
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -648,7 +649,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   6.766   9.173   9.940   9.971  10.740  12.626
+##   7.580   9.287   9.927   9.980  10.675  11.961
 \end{verbatim}
 
 Mean, standard deviation
@@ -716,9 +717,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median     Mean  3rd Qu.     Max.
-## [1,]  64.82827 92.93316 100.33835 99.85244 106.9754 130.5740
-## [2,] -19.35896 44.40334  60.99175 60.96322  78.1296 145.0542
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  68.73963 92.84027 99.54970 99.54494 106.34812 130.6835
+## [2,] -19.45481 42.98750 59.61884 59.44649  76.16423 142.8013
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -753,9 +754,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 64.82827 & 92.93316 & 100.33835 & 99.85244 & 106.9754 & 130.5740\\
+data1 & 68.73963 & 92.84027 & 99.54970 & 99.54494 & 106.34812 & 130.6835\\
 \hline
-data2 & -19.35896 & 44.40334 & 60.99175 & 60.96322 & 78.1296 & 145.0542\\
+data2 & -19.45481 & 42.98750 & 59.61884 & 59.44649 & 76.16423 & 142.8013\\
 \hline
 \end{tabular}
 

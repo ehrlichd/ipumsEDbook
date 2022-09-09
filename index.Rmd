@@ -1,12 +1,15 @@
 --- 
 title: |
   ![](ipums_banner.png)    
-  "Data Science for Social Scientists"  
-subtitle: "An applied course using IPUMS data"
-author: 
-  - Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)
-  - Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)
-date: "Compiled on: `r Sys.Date()`"
+  Data Science for Social Scientists:    
+  An applied course using IPUMS data  <br>
+author: | 
+  | Developed by:  
+  |   Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)
+  |   Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)
+  |   Current Version compiled: `r Sys.Date()`
+  | <br>  
+  | <br>  
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -17,6 +20,7 @@ github-repo: rstudio/bookdown-demo
 description: "This is an open source book. The output format for this example is bookdown::gitbook."
 ---
 
+
 # Preface {-}
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
 <h5>
@@ -26,13 +30,15 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 | Made with open-source tools -
 |   [R](https://cran.r-project.org/), [RStudio](https://www.rstudio.com/products/rstudio/), [bookdown](https://bookdown.org/)  
 |
-| Driven by ~(nearly)~ open-source data -
-|   harmonized across time and space, [IPUMS](https://ipums.org)
+| Driven by ^(nearly)^ open-source data -
+|   Harmonized across time and space, [IPUMS](https://ipums.org)
 |
 |
 |
 </h5>
 
+<br>  
+<br>  
 
 ## What is IPUMS {-}
 
@@ -132,9 +138,7 @@ The basic structure of this course is:
 
 ## Detailed Syllabus {-}
 
-
-<br>
-<br>
+\newpage
 
 ### Unit 1 Understanding and Testing Data {-}
 
