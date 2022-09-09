@@ -15,16 +15,29 @@ github-repo: rstudio/bookdown-demo
 description: "This is an open source book. The output format for this example is bookdown::gitbook."
 ---
 
+```{r, eval = FALSE}
+knitr::include_graphics("")
+```
+
 # Preface {-}
 
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
 
-Open-source and customizable - all materials available on [Github](https://github.com/ehrlichd/stats_book)
+<h3>
 
-Made with open-source tools - [R](https://cran.r-project.org/), [RStudio](https://www.rstudio.com/products/rstudio/), [bookdown](https://bookdown.org/) 
-
-Driven by (nearly) open-source data, harmonized across time and space. - [IPUMS](https://ipums.org)
-
+|
+|
+| Open-source and customizable - 
+|    All materials available on [Github](https://github.com/ehrlichd/stats_book) 
+|
+|
+| Made with open-source tools -
+|   [R](https://cran.r-project.org/), [RStudio](https://www.rstudio.com/products/rstudio/), [bookdown](https://bookdown.org/)  
+|
+|
+| Driven by ~(nearly)~ open-source data -
+|   harmonized across time and space, [IPUMS](https://ipums.org)
+</h3>
 
 
 ## What is IPUMS {-}
@@ -121,10 +134,13 @@ The basic structure of this course is:
 ## Detailed Syllabus {-}
 
 
-
+<br>
+<br>
 
 ### Unit 1 Understanding and Testing Data {-}
 
+<br>
+<br>
 
 Students become gain familiarity and comfortability navigating RStudio, coding in R and performing simple data manipulation and visualization exercises. Datasets in this section consist of real-world (or synthetic) data, but the focus is on understanding data types (EG: using Age as a continuous variable; sex, education, employment as categorical; etc). Instructors should acknowledge these as **educational** datasets and make explicit trends found within these data are devoid of context, and must be taken with a (rather large) grain of salt, if at all.
 

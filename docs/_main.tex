@@ -120,7 +120,7 @@
 \makeatother
 \subtitle{An applied course using IPUMS data}
 \author{Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota} \and Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}}
-\date{Compiled on: 2022-09-08}
+\date{Compiled on: 2022-09-09}
 
 \begin{document}
 \maketitle
@@ -129,17 +129,28 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{preface}{%
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
 
-Open-source and customizable - all materials available on \href{https://github.com/ehrlichd/stats_book}{Github}
-
-Made with open-source tools - \href{https://cran.r-project.org/}{R}, \href{https://www.rstudio.com/products/rstudio/}{RStudio}, \href{https://bookdown.org/}{bookdown}
-
-Driven by (nearly) open-source data, harmonized across time and space. - \href{https://ipums.org}{IPUMS}
+Open-source and customizable -\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}All materials available on \href{https://github.com/ehrlichd/stats_book}{Github}\\
+~\\
+~\\
+Made with open-source tools -\\
+\hspace*{0.333em}\hspace*{0.333em}\href{https://cran.r-project.org/}{R}, \href{https://www.rstudio.com/products/rstudio/}{RStudio}, \href{https://bookdown.org/}{bookdown}\\
+~\\
+~\\
+Driven by \textsubscript{(nearly)} open-source data -\\
+\hspace*{0.333em}\hspace*{0.333em}harmonized across time and space, \href{https://ipums.org}{IPUMS}
 
 \hypertarget{what-is-ipums}{%
 \section*{What is IPUMS}\label{what-is-ipums}}
@@ -586,21 +597,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 10.640003 11.335477 10.696800  7.940991  9.378810 11.158938 10.358443
-##   [8]  9.335207  9.913354 10.364507 11.111284  9.663179  8.460345 11.059331
-##  [15]  9.390150  9.886510  8.394740 10.707587  9.944541  9.756610 13.066961
-##  [22]  9.610115  8.928899  9.370855  9.604840  8.684002 10.818371  9.947986
-##  [29]  8.644595 10.121559  9.466146 10.234926 12.193999  9.816538  9.745556
-##  [36] 10.431175  9.373200  9.557036  9.427267  8.374522 10.253828  9.932229
-##  [43] 10.747812  9.428121 11.747044  7.131683 12.144114  9.958145  8.517905
-##  [50] 10.009615  9.000682 10.860729  8.361770 11.716648 10.235285  9.003695
-##  [57]  8.619146 10.409840 10.243579  9.910568  9.586047  9.488099 12.452762
-##  [64] 10.168890 10.113520  7.637835 10.561608  9.863173 10.760441 10.628929
-##  [71]  9.818885  9.002237 11.341899  8.743655  9.827232  8.299759 11.125096
-##  [78] 10.085853 10.564645 11.294765 10.394312  9.303190 11.580541  9.750376
-##  [85] 11.072313  9.471482 10.105742  9.004619 10.476570 10.636434  9.207190
-##  [92] 11.497606  8.482294  9.619367 10.630094 10.295705 10.256195 12.181595
-##  [99]  8.914229 11.631316
+##   [1] 11.478646 10.331263  8.834902  9.961564 11.245215 10.369800 12.182108
+##   [8] 10.815619 10.642496 10.096741  8.851044 12.193397  9.312289 12.325273
+##  [15] 10.157898 11.168569  9.052855 10.244365 10.082199  9.333650 10.446365
+##  [22]  6.294574  9.947701  9.238648  9.361780 10.661817 10.096049  8.037339
+##  [29]  9.678354 10.437560 10.493063  8.848172  8.714679  7.635926  9.761703
+##  [36] 10.571953 11.249762  8.977454  9.173229  9.076643 10.317893 11.758586
+##  [43] 11.166208 10.369127  9.882664 10.129603 11.888215  9.829739 10.621154
+##  [50]  9.800394  8.624825 12.424222 10.088494  9.911126 10.110451  9.222761
+##  [57] 10.605988  9.911060  9.447371  9.589187 10.587178 11.837349 11.117509
+##  [64] 10.851895  9.778163  9.457002 10.237196  8.658112  9.543992 10.223956
+##  [71]  9.559867 11.513343 10.143615  9.124337  8.739889  9.598971  9.450454
+##  [78]  9.931935 10.681716 11.309528 10.119992  9.655199  9.869252  8.987831
+##  [85] 11.168759  9.680862 10.471553 10.048201  9.936379 11.064880  8.564822
+##  [92]  8.543090 10.316112 10.674261  9.569134 11.190667 11.713518 10.348422
+##  [99] 10.639166  8.913141
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -642,7 +653,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.132   9.377   9.946  10.010  10.637  13.067
+##   6.295   9.450  10.092  10.069  10.640  12.424
 \end{verbatim}
 
 Mean, standard deviation
@@ -710,9 +721,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
-## [1,]  70.21137 93.21291 100.35383 100.12214 106.73892 138.5635
-## [2,] -21.11075 42.98612  59.61846  58.66419  75.57238 139.9773
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  68.91153 93.14111 99.53670 99.69213 106.19819 127.9187
+## [2,] -22.63174 44.29881 60.90239 60.89345  78.79853 127.2767
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -747,9 +758,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 70.21137 & 93.21291 & 100.35383 & 100.12214 & 106.73892 & 138.5635\\
+data1 & 68.91153 & 93.14111 & 99.53670 & 99.69213 & 106.19819 & 127.9187\\
 \hline
-data2 & -21.11075 & 42.98612 & 59.61846 & 58.66419 & 75.57238 & 139.9773\\
+data2 & -22.63174 & 44.29881 & 60.90239 & 60.89345 & 78.79853 & 127.2767\\
 \hline
 \end{tabular}
 
