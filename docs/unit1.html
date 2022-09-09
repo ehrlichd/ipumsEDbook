@@ -242,21 +242,21 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb1-5"><a href="unit1.html#cb1-5"></a></span>
 <span id="cb1-6"><a href="unit1.html#cb1-6"></a></span>
 <span id="cb1-7"><a href="unit1.html#cb1-7"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  9.995395 11.299018 10.883847 11.368616 10.196732  9.098661  9.982618
-##   [8]  9.403370  9.672300 10.397120 10.311247  9.934479 11.420685 10.792854
-##  [15]  8.997254  9.191216 10.966430  9.034053  9.348289  9.171866 10.576790
-##  [22]  8.661294  9.435206  8.679227 10.303668  7.119920 10.083972 10.131545
-##  [29] 11.600967  8.520303  8.967658 10.020827 10.628157 10.198577  9.604764
-##  [36]  9.042853 11.205429 10.151415 10.355200  7.951993  9.726897  8.430289
-##  [43]  8.240368 10.833405 10.976197 10.209288  9.898737 10.861087  9.036364
-##  [50]  9.534670 10.177564  9.972466 10.840945 10.160649 10.585251  8.179502
-##  [57]  9.576814 10.554801  9.747008  9.825619  9.425779 11.703494  7.063973
-##  [64] 11.000990  9.248774  8.986600 12.043990 10.292411 12.009150  8.931165
-##  [71] 11.426718 10.337038  9.432386 10.606934  9.149538 10.207681  8.459655
-##  [78]  9.277289 11.453650  9.369688  9.844200 10.189970  9.875580 10.175309
-##  [85]  9.101893  9.079843 11.809244 11.847961 11.168008  8.029775  9.973560
-##  [92] 10.443512  8.385808 10.753626  9.926479  8.728465  9.267827  9.862722
-##  [99]  7.864391  9.385178</code></pre>
+<pre><code>##   [1] 10.637089  9.543870  8.638486  9.786310  8.723175 10.635438  9.586733
+##   [8]  9.217027  9.608095  9.584021 10.910931 11.383508  8.652292  9.772219
+##  [15]  9.256026 10.281757 10.270194 10.144565 10.155293 10.298649 10.579677
+##  [22] 12.225693  9.672427 10.450908  9.639912  9.932057  8.301192 10.586838
+##  [29] 10.104178 10.785824  9.115705  9.235280 11.011148 10.240446 11.732514
+##  [36]  9.321622  8.794591  9.639897  9.185513 10.072357  9.344254  9.995931
+##  [43] 10.761096  9.448473 10.636393 11.287978  8.026008  9.512359  9.017015
+##  [50]  9.643451  9.981636  8.580526 12.046539  9.984433  9.506861 10.235584
+##  [57]  9.992786  9.265450 10.633445  8.346087 11.307110  9.028419  8.257883
+##  [64]  9.355255 10.098051  9.321443 10.656361  8.987274 10.006036  9.034832
+##  [71] 10.124257 10.570467  9.730651 10.757317 12.374816 11.155335  9.973777
+##  [78]  9.568412 11.563068  9.691898  9.890282 10.354340 10.098570 10.820536
+##  [85] 11.959153 10.908153 11.143826  8.224013  9.996205  9.077241 10.277446
+##  [92]  9.933106  9.457763 10.243923 10.205641 10.071262  9.451628  9.284086
+##  [99]  9.590194  9.528599</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1"></a><span class="kw">hist</span>(normal_dist,<span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -273,7 +273,7 @@ An applied course using IPUMS data <br></p></a>
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.064   9.166   9.953   9.882  10.579  12.044</code></pre>
+##   8.026   9.353   9.978   9.960  10.573  12.375</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor">
@@ -305,8 +305,8 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb11-3"><a href="unit1.html#cb11-3"></a></span>
 <span id="cb11-4"><a href="unit1.html#cb11-4"></a>norm_comp_tab</span></code></pre></div>
 <pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  70.67968 93.33299 99.20566 99.70582 106.08706 138.2364
-## [2,] -28.40743 44.23602 60.19264 60.00793  77.07114 139.7627</code></pre>
+## [1,]  68.31376 92.28024 99.41437 99.25905 106.00745 131.2724
+## [2,] -29.03802 43.32732 59.26531 59.73020  76.54504 131.6396</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1"></a><span class="kw">rownames</span>(norm_comp_tab) <span class="co">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -330,21 +330,21 @@ An applied course using IPUMS data <br></p></a>
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">70.67968</td>
-<td align="right">93.33299</td>
-<td align="right">99.20566</td>
-<td align="right">99.70582</td>
-<td align="right">106.08706</td>
-<td align="right">138.2364</td>
+<td align="right">68.31376</td>
+<td align="right">92.28024</td>
+<td align="right">99.41437</td>
+<td align="right">99.25905</td>
+<td align="right">106.00745</td>
+<td align="right">131.2724</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-28.40743</td>
-<td align="right">44.23602</td>
-<td align="right">60.19264</td>
-<td align="right">60.00793</td>
-<td align="right">77.07114</td>
-<td align="right">139.7627</td>
+<td align="right">-29.03802</td>
+<td align="right">43.32732</td>
+<td align="right">59.26531</td>
+<td align="right">59.73020</td>
+<td align="right">76.54504</td>
+<td align="right">131.6396</td>
 </tr>
 </tbody>
 </table>

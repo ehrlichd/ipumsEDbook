@@ -37,12 +37,8 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 | Driven by ^(nearly)^ open-source data -
 |   Harmonized across time and space: [IPUMS](https://ipums.org)
 |
-|
-|
-</h5>
 
-<br>  
-<br>  
+</h5>
 
 ## What is IPUMS {-}
 
