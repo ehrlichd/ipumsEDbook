@@ -59,7 +59,7 @@ IPUMS data is free to use for education and research purposes. Researchers just 
 ## Why make this course {-}
 
 
-While we (DEE) may be slightly biased, we think IPUms is a fantastic resource for **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an **applied context** we hope students (and instructors) will find engaging. We also know meany instructors may be teaching across multiple disciplines, in large departments, or be the only "data person" at their instutition. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `template`, to tailor this course to their subject or interest.
+In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `**template**`, to tailor this course to their subject or interest.
 
 
 # Course Description {-}
