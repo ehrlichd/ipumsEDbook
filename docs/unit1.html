@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Unit 1: The Basics | Data Science for Social Scientists</title>
+  <title>Chapter 1 Unit 1: The Basics |  “Data Science for Social Scientists”</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Unit 1: The Basics | Data Science for Social Scientists" />
+  <meta property="og:title" content="Chapter 1 Unit 1: The Basics |  “Data Science for Social Scientists”" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Unit 1: The Basics | Data Science for Social Scientists" />
+  <meta name="twitter:title" content="Chapter 1 Unit 1: The Basics |  “Data Science for Social Scientists”" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -217,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Social Scientists</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="ipums_banner.png" /><br />
+“Data Science for Social Scientists”</p></a>
           </h1>
         </div>
 
@@ -235,31 +236,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="normal-distributions" class="section level3 hasAnchor">
 <h3><span class="header-section-number">1.2.1</span> Normal Distributions<a href="unit1.html#normal-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First we’ll generate a normal distribution with the <code>rnorm()</code> function. This takes 3 arguments: <code>n, mean, sd</code>, which you can see filled in below. While we could print out a list of all these values, it’s not easy to <em>understand</em> a list of numbers</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="unit1.html#cb2-1"></a>normal_dist &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="co">## 100 samples</span></span>
-<span id="cb2-2"><a href="unit1.html#cb2-2"></a>                     <span class="dt">mean =</span> <span class="dv">10</span>, <span class="co">## with a mean of 10</span></span>
-<span id="cb2-3"><a href="unit1.html#cb2-3"></a>                     <span class="dt">sd =</span> <span class="dv">1</span> <span class="co">## and a standard deviation of 1</span></span>
-<span id="cb2-4"><a href="unit1.html#cb2-4"></a>                     )</span>
-<span id="cb2-5"><a href="unit1.html#cb2-5"></a></span>
-<span id="cb2-6"><a href="unit1.html#cb2-6"></a></span>
-<span id="cb2-7"><a href="unit1.html#cb2-7"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  7.461839 10.456571 10.404756 10.026180  8.645048  9.480195  8.549102
-##   [8] 11.175060 10.401080 10.532174  9.322400 10.194063  9.856722 10.036442
-##  [15]  9.381447  9.806179  9.175580  9.659158  9.075341  8.600018 10.328124
-##  [22]  9.867095  7.276169  9.520823  9.350129  9.234024  7.759589 11.383378
-##  [29] 10.807379  9.511660 10.437122  7.703788  9.100275  9.896336 10.491274
-##  [36] 11.232263 10.340884 10.522429  9.416830 10.023738  9.973556  9.422106
-##  [43]  7.478263  9.168345  9.628618  7.550416  9.254204  9.242008 10.732317
-##  [50] 10.411983  8.994269 10.880301  8.887697  9.597060 10.919286  8.821765
-##  [57] 12.144552  9.127145 10.690373  8.955970 10.564313  9.083137 10.703141
-##  [64] 10.158113  9.674965  8.282687 11.096314 10.796774 12.157927 11.877305
-##  [71]  9.276236  9.926104  9.840835  9.447622 10.780773  8.677770  9.608623
-##  [78]  9.562250 10.867946  9.150706 11.420946 11.196430 10.145878  9.510416
-##  [85] 11.167488 10.682747 10.173062 10.732322  9.724174  9.540781  9.704721
-##  [92]  8.234968 10.832485  8.173645  9.321298  8.851190 11.387092 10.147572
-##  [99] 11.247071 10.396218</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit1.html#cb1-1"></a>normal_dist &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="co">## 100 samples</span></span>
+<span id="cb1-2"><a href="unit1.html#cb1-2"></a>                     <span class="dt">mean =</span> <span class="dv">10</span>, <span class="co">## with a mean of 10</span></span>
+<span id="cb1-3"><a href="unit1.html#cb1-3"></a>                     <span class="dt">sd =</span> <span class="dv">1</span> <span class="co">## and a standard deviation of 1</span></span>
+<span id="cb1-4"><a href="unit1.html#cb1-4"></a>                     )</span>
+<span id="cb1-5"><a href="unit1.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="unit1.html#cb1-6"></a></span>
+<span id="cb1-7"><a href="unit1.html#cb1-7"></a>normal_dist</span></code></pre></div>
+<pre><code>##   [1] 10.083408 11.316442 10.963830  9.173689 10.013488  9.934359  9.223433
+##   [8]  9.311903  8.516754 10.231393  9.770875  9.465458 13.021767  9.876657
+##  [15] 10.872822 10.612565  8.358100  9.527938  9.647702 10.251490 11.270538
+##  [22] 10.092708  9.055526 10.139762 10.425269  7.888751  9.438391 10.825784
+##  [29] 11.318042 10.105417  9.221041  9.336187 11.251732  8.413591  9.332736
+##  [36]  9.878928  9.771448 10.813435 10.034860  9.183247 10.059526  9.835060
+##  [43]  9.489196 10.321768 10.868200 10.730360  9.498530  9.858303  8.627633
+##  [50]  9.499564 10.153568 11.018120  9.550356 11.284617  9.886955 10.188434
+##  [57]  8.986236 10.446454  8.178305  9.947353  9.481165  8.690054  9.861169
+##  [64]  8.236013 10.888841  9.019138 10.731811  9.922016  9.855802 10.247696
+##  [71]  8.057081  9.976622  9.349038 11.170419 10.614908  9.424202  7.924679
+##  [78]  9.774216 10.319427  8.954191  9.846669 10.540046 11.107432  9.933806
+##  [85] 10.427483 10.028573  8.882818 10.382994  9.271127  8.773150 10.082222
+##  [92]  9.162675 10.806837 11.711114 11.512440  9.022670  8.780307 10.142008
+##  [99] 10.390221  9.982583</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit1.html#cb4-1"></a><span class="kw">hist</span>(normal_dist,<span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1"></a><span class="kw">hist</span>(normal_dist,<span class="dt">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/norm_dist_plot-1.png" width="672" /></p>
 <p>Another way to visualize this would be with a d</p>
 </div>
@@ -269,52 +270,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">1.2.2.1</span> Quantitative summaries<a href="unit1.html#quantitative-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>5num summary
 * Min, 25th percentile, median, 75th percentile, Max</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1"></a>tab_normal_dist &lt;-<span class="st"> </span><span class="kw">summary</span>(normal_dist)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit1.html#cb4-1"></a>tab_normal_dist &lt;-<span class="st"> </span><span class="kw">summary</span>(normal_dist)</span></code></pre></div>
 <p>We can print the table in R by calling its name.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="unit1.html#cb6-1"></a>tab_normal_dist</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.276   9.219   9.824   9.824  10.540  12.158</code></pre>
+##   7.889   9.328   9.928   9.897  10.426  13.022</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor">
 <h4><span class="header-section-number">1.2.2.2</span> Meaningful Comparisons<a href="unit1.html#meaningful-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>How to compare apples to oranges? Standardize the units / standardize the data</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit1.html#cb8-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, </span>
-<span id="cb8-2"><a href="unit1.html#cb8-2"></a>              <span class="dt">mean =</span> <span class="dv">100</span>,</span>
-<span id="cb8-3"><a href="unit1.html#cb8-3"></a>              <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb8-4"><a href="unit1.html#cb8-4"></a></span>
-<span id="cb8-5"><a href="unit1.html#cb8-5"></a>data2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>,</span>
-<span id="cb8-6"><a href="unit1.html#cb8-6"></a>               <span class="dt">mean =</span> <span class="dv">60</span>, </span>
-<span id="cb8-7"><a href="unit1.html#cb8-7"></a>               <span class="dt">sd =</span> <span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="unit1.html#cb7-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, </span>
+<span id="cb7-2"><a href="unit1.html#cb7-2"></a>              <span class="dt">mean =</span> <span class="dv">100</span>,</span>
+<span id="cb7-3"><a href="unit1.html#cb7-3"></a>              <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb7-4"><a href="unit1.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="unit1.html#cb7-5"></a>data2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>,</span>
+<span id="cb7-6"><a href="unit1.html#cb7-6"></a>               <span class="dt">mean =</span> <span class="dv">60</span>, </span>
+<span id="cb7-7"><a href="unit1.html#cb7-7"></a>               <span class="dt">sd =</span> <span class="dv">25</span>)</span></code></pre></div>
 <p>Are these the same distribution?</p>
 <p>Any issues??</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="unit1.html#cb9-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb9-2"><a href="unit1.html#cb9-2"></a><span class="kw">hist</span>(data1)</span>
-<span id="cb9-3"><a href="unit1.html#cb9-3"></a><span class="kw">hist</span>(data2)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit1.html#cb8-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb8-2"><a href="unit1.html#cb8-2"></a><span class="kw">hist</span>(data1)</span>
+<span id="cb8-3"><a href="unit1.html#cb8-3"></a><span class="kw">hist</span>(data2)</span></code></pre></div>
 <p><img src="_main_files/figure-html/rnorm_hist_comp-1.png" width="672" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit1.html#cb10-1"></a>total_range &lt;-<span class="st"> </span><span class="kw">range</span>(data1, data2)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="unit1.html#cb9-1"></a>total_range &lt;-<span class="st"> </span><span class="kw">range</span>(data1, data2)</span></code></pre></div>
 <p>Are they the same?</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="unit1.html#cb11-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb11-2"><a href="unit1.html#cb11-2"></a><span class="kw">hist</span>(data1, <span class="dt">xlim =</span> total_range)</span>
-<span id="cb11-3"><a href="unit1.html#cb11-3"></a><span class="kw">hist</span>(data2, <span class="dt">xlim =</span> total_range)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit1.html#cb10-1"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="unit1.html#cb10-2"></a><span class="kw">hist</span>(data1, <span class="dt">xlim =</span> total_range)</span>
+<span id="cb10-3"><a href="unit1.html#cb10-3"></a><span class="kw">hist</span>(data2, <span class="dt">xlim =</span> total_range)</span></code></pre></div>
 <p><img src="_main_files/figure-html/rnorm_hist_comp_true-1.png" width="672" /></p>
 <p>Numerically / tabularly</p>
 <p>Often times its important to tables of <strong>summary statistics</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="unit1.html#cb12-1"></a>norm_comp_tab &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">summary</span>(data1),</span>
-<span id="cb12-2"><a href="unit1.html#cb12-2"></a>                       <span class="kw">summary</span>(data2))</span>
-<span id="cb12-3"><a href="unit1.html#cb12-3"></a></span>
-<span id="cb12-4"><a href="unit1.html#cb12-4"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  62.55605 92.93847 99.55269 99.79568 106.73526 131.1363
-## [2,] -17.99614 42.72685 59.52201 60.08914  77.28565 144.4799</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="unit1.html#cb11-1"></a>norm_comp_tab &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">summary</span>(data1),</span>
+<span id="cb11-2"><a href="unit1.html#cb11-2"></a>                       <span class="kw">summary</span>(data2))</span>
+<span id="cb11-3"><a href="unit1.html#cb11-3"></a></span>
+<span id="cb11-4"><a href="unit1.html#cb11-4"></a>norm_comp_tab</span></code></pre></div>
+<pre><code>##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
+## [1,]  69.22807 93.50519 100.03931 100.21584 107.06019 129.5310
+## [2,] -13.54366 43.55743  61.06316  61.35978  78.26978 169.6211</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="unit1.html#cb14-1"></a><span class="kw">rownames</span>(norm_comp_tab) <span class="co">## they&#39;re null</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1"></a><span class="kw">rownames</span>(norm_comp_tab) <span class="co">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit1.html#cb16-1"></a><span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">rownames</span>(norm_comp_tab))){</span>
-<span id="cb16-2"><a href="unit1.html#cb16-2"></a>  <span class="kw">rownames</span>(norm_comp_tab) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;data1&quot;</span>, <span class="st">&quot;data2&quot;</span>)</span>
-<span id="cb16-3"><a href="unit1.html#cb16-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unit1.html#cb15-1"></a><span class="cf">if</span>(<span class="kw">is.null</span>(<span class="kw">rownames</span>(norm_comp_tab))){</span>
+<span id="cb15-2"><a href="unit1.html#cb15-2"></a>  <span class="kw">rownames</span>(norm_comp_tab) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;data1&quot;</span>, <span class="st">&quot;data2&quot;</span>)</span>
+<span id="cb15-3"><a href="unit1.html#cb15-3"></a>}</span></code></pre></div>
 <p>When working with <strong>Rmarkdown</strong> we can take advantage of <code>knitr</code> and <code>pandoc</code> to nice looking tables even easier.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unit1.html#cb17-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(norm_comp_tab)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit1.html#cb16-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(norm_comp_tab)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -330,21 +331,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">62.55605</td>
-<td align="right">92.93847</td>
-<td align="right">99.55269</td>
-<td align="right">99.79568</td>
-<td align="right">106.73526</td>
-<td align="right">131.1363</td>
+<td align="right">69.22807</td>
+<td align="right">93.50519</td>
+<td align="right">100.03931</td>
+<td align="right">100.21584</td>
+<td align="right">107.06019</td>
+<td align="right">129.5310</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-17.99614</td>
-<td align="right">42.72685</td>
-<td align="right">59.52201</td>
-<td align="right">60.08914</td>
-<td align="right">77.28565</td>
-<td align="right">144.4799</td>
+<td align="right">-13.54366</td>
+<td align="right">43.55743</td>
+<td align="right">61.06316</td>
+<td align="right">61.35978</td>
+<td align="right">78.26978</td>
+<td align="right">169.6211</td>
 </tr>
 </tbody>
 </table>
