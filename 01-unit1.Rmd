@@ -6,7 +6,7 @@
 
 ### Data Types
 
-**Data** is defined as "facts and statistics collected together for reference or analysis." *This is from the internet and needs to be our words* As seen in Figure 1.1, there are two types of data: quantitative and qualitative. 
+**Data** is defined as "facts and statistics collected together for reference or analysis." *This is from the internet and needs to be our words* As seen in Figure 1.1, there are two types of data: **quantitative** and **qualitative**. Quanitative data are able to be expressed in numerical format and are countable. These data are either **discrete** or **continuous**... 
 
 ### Data Structures
 

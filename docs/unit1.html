@@ -249,7 +249,7 @@ An applied course using IPUMS data <br></p></a>
 </div>
 <div id="data-types" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Data Types<a href="unit1.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Data</strong> is defined as “facts and statistics collected together for reference or analysis.” <em>This is from the internet and needs to be our words</em> As seen in Figure 1.1, there are two types of data: quantitative and qualitative.</p>
+<p><strong>Data</strong> is defined as “facts and statistics collected together for reference or analysis.” <em>This is from the internet and needs to be our words</em> As seen in Figure 1.1, there are two types of data: <strong>quantitative</strong> and <strong>qualitative</strong>. Quanitative data are able to be expressed in numerical format and are countable. These data are either <strong>discrete</strong> or <strong>continuous</strong>…</p>
 </div>
 <div id="data-structures" class="section level3 hasAnchor" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> Data Structures<a href="unit1.html#data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -267,21 +267,21 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb1-5"><a href="unit1.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="unit1.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="unit1.html#cb1-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  9.884120 10.418187  9.486954 10.081521  9.099549 10.600962 11.180761
-##   [8]  9.755042 10.728535  9.612714 10.256490 10.715195 10.315489  9.473617
-##  [15] 11.662231  8.132190  9.312744 10.506850  9.481237 10.562680 11.396598
-##  [22]  8.634232 10.859780  9.590872 10.403037 10.361097  9.922486 10.691373
-##  [29] 11.616673 10.582918 10.763476  9.893372 10.982175 11.511166  9.493631
-##  [36] 10.464214 11.840655 10.623305 10.545686 10.463679  9.206828 10.400561
-##  [43]  9.694152  9.707894 10.175858  9.419030  9.273655 10.904799  7.404722
-##  [50]  7.344172 11.403661  9.272458 10.289780  8.714176  8.832113 10.815729
-##  [57]  9.394216 11.135970 11.323845 11.289032  9.596247  8.985435  9.826195
-##  [64]  9.621148 10.909975 10.647734  9.934720  9.906234 10.887281  8.594194
-##  [71] 10.450755 10.959571 10.666295 10.797573  9.975733 11.188053  9.449970
-##  [78] 11.421477  9.933551  8.021793  9.678413 10.281204 10.408145  9.439964
-##  [85] 10.893647  9.630950 11.174907 11.333065 11.011356 10.779558 10.956930
-##  [92]  8.758179 10.728845 10.509436 10.547267 10.103059  9.837871 10.209878
-##  [99]  8.481586 11.064220</code></pre>
+<pre><code>##   [1]  8.599598 11.549236  8.372485  8.446231  7.532960  9.492829  9.925340
+##   [8] 11.577570  8.474388  9.433135  9.866623 10.989876 11.960443 10.254014
+##  [15]  9.265931  8.988782  6.725083 10.187834 10.245291 10.734284  7.787533
+##  [22]  9.611261 11.997086  9.903942 10.980689  9.300111 11.520628  9.029120
+##  [29] 10.882818  8.730818 10.349445 10.995308 10.532758  9.938942 10.144455
+##  [36]  8.655762 12.171410 10.836089  9.261669 11.087441  8.420252  9.850458
+##  [43] 10.771936  9.010512  7.363655  7.545340  9.473335  9.194871  9.101064
+##  [50]  9.928814  8.859065  8.036924  8.864251 10.704196  9.974637 11.291433
+##  [57] 10.242104 10.889863  9.932612 10.453192  8.650745 10.213872  8.366025
+##  [64] 11.020566  8.882291 10.865093  9.365097  9.536810  9.927920 10.661389
+##  [71]  9.965194 10.901657 10.168461 10.319010 10.666562  8.623084 10.028878
+##  [78] 11.565616 10.969398  9.388016 10.441387  9.507470  9.362422 11.036244
+##  [85] 11.240732 11.071958 10.491177  9.021965  7.615119 10.293261  9.394655
+##  [92] 11.369032 10.162399 10.562452  9.751584 10.520380 10.376754 10.974473
+##  [99]  9.967268 11.776614</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -298,7 +298,7 @@ An applied course using IPUMS data <br></p></a>
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.344   9.595  10.338  10.155  10.802  11.841</code></pre>
+##   6.725   9.171   9.971   9.913  10.788  12.171</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor" number="1.2.2.2">
@@ -329,9 +329,9 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb11-2"><a href="unit1.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summary</span>(data2))</span>
 <span id="cb11-3"><a href="unit1.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="unit1.html#cb11-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
-## [1,]  71.55987 93.79896 100.54960 100.30774 107.02972 127.7964
-## [2,] -20.19487 41.25138  59.15578  58.65247  75.65273 162.4843</code></pre>
+<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,] 66.238098 92.59425 99.14487 99.43077 106.61556 133.0713
+## [2,] -7.729994 41.64719 59.14711 59.07712  76.11841 130.8359</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -355,21 +355,21 @@ An applied course using IPUMS data <br></p></a>
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">71.55987</td>
-<td align="right">93.79896</td>
-<td align="right">100.54960</td>
-<td align="right">100.30774</td>
-<td align="right">107.02972</td>
-<td align="right">127.7964</td>
+<td align="right">66.238098</td>
+<td align="right">92.59425</td>
+<td align="right">99.14487</td>
+<td align="right">99.43077</td>
+<td align="right">106.61556</td>
+<td align="right">133.0713</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-20.19487</td>
-<td align="right">41.25138</td>
-<td align="right">59.15578</td>
-<td align="right">58.65247</td>
-<td align="right">75.65273</td>
-<td align="right">162.4843</td>
+<td align="right">-7.729994</td>
+<td align="right">41.64719</td>
+<td align="right">59.14711</td>
+<td align="right">59.07712</td>
+<td align="right">76.11841</td>
+<td align="right">130.8359</td>
 </tr>
 </tbody>
 </table>
