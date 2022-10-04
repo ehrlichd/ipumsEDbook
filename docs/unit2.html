@@ -4,22 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 IPUMS |  Data Science for Social Scientists: An applied course using IPUMS data</title>
+  <title>Chapter 7 IPUMS | chapter_template</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 IPUMS |  Data Science for Social Scientists: An applied course using IPUMS data" />
+  <meta property="og:title" content="Chapter 7 IPUMS | chapter_template" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 IPUMS |  Data Science for Social Scientists: An applied course using IPUMS data" />
+  <meta name="twitter:title" content="Chapter 7 IPUMS | chapter_template" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
 
+<meta name="author" content="DEE" />
 
 
 
@@ -28,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="unit1.html"/>
+<link rel="prev" href="evaluateexercises.html"/>
 <link rel="next" href="unit3.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -47,25 +48,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,13 +85,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -118,6 +118,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -135,74 +157,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Beginning of a Syllabus</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a><ul>
+<li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
+<ul>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#course-aims"><i class="fa fa-check"></i>Course Aims</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#learning-outcomes"><i class="fa fa-check"></i>Learning Outcomes</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#guiding-principles"><i class="fa fa-check"></i>Guiding Principles</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html"><i class="fa fa-check"></i>Syllabus - Overview</a><ul>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html"><i class="fa fa-check"></i>Syllabus - Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a>
+<ul>
 <li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
 <li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
 <li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="dev-notes.html"><a href="dev-notes.html"><i class="fa fa-check"></i>DEV NOTES</a></li>
-<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a><ul>
+<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="unit1.html"><a href="unit1.html#week-1-intro-to-r-data-types-data-structures-1"><i class="fa fa-check"></i><b>1.1</b> Week 1: Intro to R, data types, data structures</a></li>
-<li class="chapter" data-level="1.2" data-path="unit1.html"><a href="unit1.html#week-2-plotting-data"><i class="fa fa-check"></i><b>1.2</b> Week 2: Plotting Data</a><ul>
+<li class="chapter" data-level="1.2" data-path="unit1.html"><a href="unit1.html#week-2-plotting-data"><i class="fa fa-check"></i><b>1.2</b> Week 2: Plotting Data</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="unit1.html"><a href="unit1.html#normal-distributions"><i class="fa fa-check"></i><b>1.2.1</b> Normal Distributions</a></li>
 <li class="chapter" data-level="1.2.2" data-path="unit1.html"><a href="unit1.html#what-is-normal"><i class="fa fa-check"></i><b>1.2.2</b> What <em>is</em> normal?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="unit1.html"><a href="unit1.html#skews"><i class="fa fa-check"></i><b>1.2.3</b> Skews</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="unit1.html"><a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1"><i class="fa fa-check"></i><b>1.3</b> Week 3: Statisitcal testing of simple data sets</a><ul>
+<li class="chapter" data-level="1.3" data-path="unit1.html"><a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1"><i class="fa fa-check"></i><b>1.3</b> Week 3: Statisitcal testing of simple data sets</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="unit1.html"><a href="unit1.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>1.3.1</b> t-tests, ANOVA, chi2</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="unit1.html"><a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets"><i class="fa fa-check"></i><b>1.4</b> Week 4: Relationships between variables in simple data sets</a><ul>
+<li class="chapter" data-level="1.4" data-path="unit1.html"><a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets"><i class="fa fa-check"></i><b>1.4</b> Week 4: Relationships between variables in simple data sets</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="unit1.html"><a href="unit1.html#correlation-linear-regression"><i class="fa fa-check"></i><b>1.4.1</b> Correlation, Linear Regression</a></li>
 <li class="chapter" data-level="1.4.2" data-path="unit1.html"><a href="unit1.html#genearlized-linear-model"><i class="fa fa-check"></i><b>1.4.2</b> Genearlized Linear Model</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="unit1.html"><a href="unit1.html#week-5"><i class="fa fa-check"></i><b>1.5</b> Week 5:</a></li>
 <li class="chapter" data-level="1.6" data-path="unit1.html"><a href="unit1.html#intro-to-rrstudio"><i class="fa fa-check"></i><b>1.6</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="1.7" data-path="unit1.html"><a href="unit1.html#reading-data-distributions"><i class="fa fa-check"></i><b>1.7</b> Reading Data / Distributions</a><ul>
+<li class="chapter" data-level="1.7" data-path="unit1.html"><a href="unit1.html#reading-data-distributions"><i class="fa fa-check"></i><b>1.7</b> Reading Data / Distributions</a>
+<ul>
 <li class="chapter" data-level="1.7.1" data-path="unit1.html"><a href="unit1.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>1.7.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>2</b> IPUMS</a><ul>
-<li class="chapter" data-level="2.1" data-path="unit2.html"><a href="unit2.html#week-6-introduction-to-ipums"><i class="fa fa-check"></i><b>2.1</b> Week 6 Introduction to IPUMS</a></li>
-<li class="chapter" data-level="2.2" data-path="unit2.html"><a href="unit2.html#exploratory"><i class="fa fa-check"></i><b>2.2</b> Week 7 Exploratory analysis</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="unit2.html"><a href="unit2.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>2.2.1</b> Advanced Exploration - Change Over Time</a></li>
+<li class="chapter" data-level="2" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>2</b> Engage</a></li>
+<li class="chapter" data-level="3" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>3</b> Explore</a></li>
+<li class="chapter" data-level="4" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>4</b> Explain</a></li>
+<li class="chapter" data-level="5" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>5</b> Elaborate</a></li>
+<li class="chapter" data-level="6" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>6</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="7" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>7</b> IPUMS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="unit2.html"><a href="unit2.html#week-6-introduction-to-ipums"><i class="fa fa-check"></i><b>7.1</b> Week 6 Introduction to IPUMS</a></li>
+<li class="chapter" data-level="7.2" data-path="unit2.html"><a href="unit2.html#exploratory"><i class="fa fa-check"></i><b>7.2</b> Week 7 Exploratory analysis</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="unit2.html"><a href="unit2.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>7.2.1</b> Advanced Exploration - Change Over Time</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="unit2.html"><a href="unit2.html#hypothesis"><i class="fa fa-check"></i><b>2.3</b> Week 8 Hypothesis Testing</a></li>
-<li class="chapter" data-level="2.4" data-path="unit2.html"><a href="unit2.html#week-9-statistical-inference-1"><i class="fa fa-check"></i><b>2.4</b> Week 9 Statistical Inference</a></li>
-<li class="chapter" data-level="2.5" data-path="unit2.html"><a href="unit2.html#week-10-tbd-1"><i class="fa fa-check"></i><b>2.5</b> Week 10 (TBD)</a></li>
-<li class="chapter" data-level="2.6" data-path="unit2.html"><a href="unit2.html#intro-to-ipums-website"><i class="fa fa-check"></i><b>2.6</b> Intro to IPUMS website</a><ul>
-<li class="chapter" data-level="2.6.1" data-path="unit2.html"><a href="unit2.html#background-on-ipums"><i class="fa fa-check"></i><b>2.6.1</b> background on ipums</a></li>
-<li class="chapter" data-level="2.6.2" data-path="unit2.html"><a href="unit2.html#navigating-website"><i class="fa fa-check"></i><b>2.6.2</b> navigating website</a></li>
+<li class="chapter" data-level="7.3" data-path="unit2.html"><a href="unit2.html#hypothesis"><i class="fa fa-check"></i><b>7.3</b> Week 8 Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.4" data-path="unit2.html"><a href="unit2.html#week-9-statistical-inference-1"><i class="fa fa-check"></i><b>7.4</b> Week 9 Statistical Inference</a></li>
+<li class="chapter" data-level="7.5" data-path="unit2.html"><a href="unit2.html#week-10-tbd-1"><i class="fa fa-check"></i><b>7.5</b> Week 10 (TBD)</a></li>
+<li class="chapter" data-level="7.6" data-path="unit2.html"><a href="unit2.html#intro-to-ipums-website"><i class="fa fa-check"></i><b>7.6</b> Intro to IPUMS website</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="unit2.html"><a href="unit2.html#background-on-ipums"><i class="fa fa-check"></i><b>7.6.1</b> background on ipums</a></li>
+<li class="chapter" data-level="7.6.2" data-path="unit2.html"><a href="unit2.html#navigating-website"><i class="fa fa-check"></i><b>7.6.2</b> navigating website</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="unit2.html"><a href="unit2.html#math-example"><i class="fa fa-check"></i><b>2.7</b> math example</a></li>
+<li class="chapter" data-level="7.7" data-path="unit2.html"><a href="unit2.html#math-example"><i class="fa fa-check"></i><b>7.7</b> math example</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>3</b> Unit 3: Independent Research</a><ul>
-<li class="chapter" data-level="3.1" data-path="unit3.html"><a href="unit3.html#week-11-students-develop-research-question-1"><i class="fa fa-check"></i><b>3.1</b> Week 11: Students develop research Question</a></li>
-<li class="chapter" data-level="3.2" data-path="unit3.html"><a href="unit3.html#week-12-students-find-relevant-variables-from-ipums-1"><i class="fa fa-check"></i><b>3.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
-<li class="chapter" data-level="3.3" data-path="unit3.html"><a href="unit3.html#week-13-students-test-and-evaluate-results-1"><i class="fa fa-check"></i><b>3.3</b> Week 13: Students test and evaluate results</a></li>
-<li class="chapter" data-level="3.4" data-path="unit3.html"><a href="unit3.html#week-14-students-prepare-presentations-of-results-1"><i class="fa fa-check"></i><b>3.4</b> Week 14: Students prepare presentations of results</a></li>
-<li class="chapter" data-level="3.5" data-path="unit3.html"><a href="unit3.html#week-15-students-present-work-slides-poster-podium-etc-1"><i class="fa fa-check"></i><b>3.5</b> Week 15: Students present work (slides, poster, podium, etc)</a></li>
-<li class="chapter" data-level="3.6" data-path="unit3.html"><a href="unit3.html#example-one"><i class="fa fa-check"></i><b>3.6</b> Example one</a></li>
-<li class="chapter" data-level="3.7" data-path="unit3.html"><a href="unit3.html#example-two"><i class="fa fa-check"></i><b>3.7</b> Example two</a></li>
+<li class="chapter" data-level="8" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>8</b> Unit 3: Independent Research</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="unit3.html"><a href="unit3.html#week-11-students-develop-research-question-1"><i class="fa fa-check"></i><b>8.1</b> Week 11: Students develop research Question</a></li>
+<li class="chapter" data-level="8.2" data-path="unit3.html"><a href="unit3.html#week-12-students-find-relevant-variables-from-ipums-1"><i class="fa fa-check"></i><b>8.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
+<li class="chapter" data-level="8.3" data-path="unit3.html"><a href="unit3.html#week-13-students-test-and-evaluate-results-1"><i class="fa fa-check"></i><b>8.3</b> Week 13: Students test and evaluate results</a></li>
+<li class="chapter" data-level="8.4" data-path="unit3.html"><a href="unit3.html#week-14-students-prepare-presentations-of-results-1"><i class="fa fa-check"></i><b>8.4</b> Week 14: Students prepare presentations of results</a></li>
+<li class="chapter" data-level="8.5" data-path="unit3.html"><a href="unit3.html#week-15-students-present-work-slides-poster-podium-etc-1"><i class="fa fa-check"></i><b>8.5</b> Week 15: Students present work (slides, poster, podium, etc)</a></li>
+<li class="chapter" data-level="8.6" data-path="unit3.html"><a href="unit3.html#example-one"><i class="fa fa-check"></i><b>8.6</b> Example one</a></li>
+<li class="chapter" data-level="8.7" data-path="unit3.html"><a href="unit3.html#example-two"><i class="fa fa-check"></i><b>8.7</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>4</b> Example RMD code</a><ul>
-<li class="chapter" data-level="4.1" data-path="ex_code.html"><a href="ex_code.html#core"><i class="fa fa-check"></i><b>4.1</b> Core</a></li>
-<li class="chapter" data-level="4.2" data-path="ex_code.html"><a href="ex_code.html#tips"><i class="fa fa-check"></i><b>4.2</b> Tips</a></li>
-<li class="chapter" data-level="4.3" data-path="ex_code.html"><a href="ex_code.html#syntax"><i class="fa fa-check"></i><b>4.3</b> Syntax</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="ex_code.html"><a href="ex_code.html#math"><i class="fa fa-check"></i><b>4.3.1</b> Math</a></li>
+<li class="chapter" data-level="9" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>9</b> Example RMD code</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ex_code.html"><a href="ex_code.html#core"><i class="fa fa-check"></i><b>9.1</b> Core</a></li>
+<li class="chapter" data-level="9.2" data-path="ex_code.html"><a href="ex_code.html#tips"><i class="fa fa-check"></i><b>9.2</b> Tips</a></li>
+<li class="chapter" data-level="9.3" data-path="ex_code.html"><a href="ex_code.html#syntax"><i class="fa fa-check"></i><b>9.3</b> Syntax</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ex_code.html"><a href="ex_code.html#math"><i class="fa fa-check"></i><b>9.3.1</b> Math</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="10" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>10</b> Engage</a></li>
+<li class="chapter" data-level="11" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>11</b> Explore</a></li>
+<li class="chapter" data-level="12" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>12</b> Explain</a></li>
+<li class="chapter" data-level="13" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>13</b> Elaborate</a></li>
+<li class="chapter" data-level="14" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>14</b> Evaluate/Exercises</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to something useful</a></li>
 
@@ -215,9 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="ipums_banner.png" /><br />
-Data Science for Social Scientists:<br />
-An applied course using IPUMS data <br></p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">chapter_template</a>
           </h1>
         </div>
 
@@ -225,13 +270,13 @@ An applied course using IPUMS data <br></p></a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="unit2" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 2</span> IPUMS<a href="unit2.html#unit2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="week-6-introduction-to-ipums" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.1</span> Week 6 Introduction to IPUMS<a href="unit2.html#week-6-introduction-to-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="unit2" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> IPUMS<a href="unit2.html#unit2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="week-6-introduction-to-ipums" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Week 6 Introduction to IPUMS<a href="unit2.html#week-6-introduction-to-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="exploratory" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Week 7 Exploratory analysis<a href="unit2.html#exploratory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exploratory" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Week 7 Exploratory analysis<a href="unit2.html#exploratory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you’ve just collected a survey, or other raw data, you may not know what you’re looking for. This is perfectly ok but goes against <em>the scientific method</em> most people learned in grade school (More on that to follow(<strong><em>include_link</em></strong>)).</p>
 <p>This unit begins by presenting data/distributions and asking students to begin interpreting the data . visual exploration is encouraged and basic of data manipulation are taught
 * <em>EG:</em> how to subset data, how to reshape data, how to recode data, how to convert from one <code>data type</code> to another.</p>
@@ -246,292 +291,292 @@ An applied course using IPUMS data <br></p></a>
 + how can you test this (maybe small group work)
 * write up/ present results
 + think on confounding factors / biases</p>
-<div id="advanced-exploration---change-over-time" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.2.1</span> Advanced Exploration - Change Over Time<a href="unit2.html#advanced-exploration---change-over-time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="advanced-exploration---change-over-time" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Advanced Exploration - Change Over Time<a href="unit2.html#advanced-exploration---change-over-time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we demonstrate an approach to looking at how Family Structure (inferred from household relationships) has changed over time.</p>
-<div id="setup-load-data" class="section level4 hasAnchor">
-<h4><span class="header-section-number">2.2.1.1</span> Setup / Load Data<a href="unit2.html#setup-load-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="setup-load-data" class="section level4 hasAnchor" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> Setup / Load Data<a href="unit2.html#setup-load-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Install/update R packages</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unit2.html#cb17-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;ipumsr&quot;</span>)</span>
-<span id="cb17-2"><a href="unit2.html#cb17-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unit2.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ipumsr&quot;</span>)</span>
+<span id="cb17-2"><a href="unit2.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Data extract created online using the datacart system.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="unit2.html#cb18-1"></a><span class="kw">library</span>(ipumsr)</span>
-<span id="cb18-2"><a href="unit2.html#cb18-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb18-3"><a href="unit2.html#cb18-3"></a></span>
-<span id="cb18-4"><a href="unit2.html#cb18-4"></a></span>
-<span id="cb18-5"><a href="unit2.html#cb18-5"></a>ddi &lt;-<span class="st"> </span><span class="kw">read_ipums_ddi</span>(<span class="st">&quot;Data/ipumsi_00005.xml&quot;</span>)</span>
-<span id="cb18-6"><a href="unit2.html#cb18-6"></a>data &lt;-<span class="st"> </span><span class="kw">read_ipums_micro</span>(ddi)</span></code></pre></div>
-<div id="inspect-the-data" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.1.1</span> Inspect the Data<a href="unit2.html#inspect-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="unit2.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
+<span id="cb18-2"><a href="unit2.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-3"><a href="unit2.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="unit2.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="unit2.html#cb18-5" aria-hidden="true" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;Data/ipumsi_00005.xml&quot;</span>)</span>
+<span id="cb18-6"><a href="unit2.html#cb18-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span></code></pre></div>
+<div id="inspect-the-data" class="section level5 hasAnchor" number="7.2.1.1.1">
+<h5><span class="header-section-number">7.2.1.1.1</span> Inspect the Data<a href="unit2.html#inspect-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Using <code>haven</code> labeled values.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="unit2.html#cb19-1"></a>data<span class="op">$</span>RELATE[<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>]</span>
-<span id="cb19-2"><a href="unit2.html#cb19-2"></a><span class="kw">class</span>(data<span class="op">$</span>RELATE)</span>
-<span id="cb19-3"><a href="unit2.html#cb19-3"></a></span>
-<span id="cb19-4"><a href="unit2.html#cb19-4"></a>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(RELATE)</span>
-<span id="cb19-5"><a href="unit2.html#cb19-5"></a>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SEX)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="unit2.html#cb19-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>RELATE[<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>]</span>
+<span id="cb19-2"><a href="unit2.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data<span class="sc">$</span>RELATE)</span>
+<span id="cb19-3"><a href="unit2.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="unit2.html#cb19-4" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(RELATE)</span>
+<span id="cb19-5"><a href="unit2.html#cb19-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(SEX)</span></code></pre></div>
 <p>What were those codes ??</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="unit2.html#cb20-1"></a><span class="co">## need to convert this to an image or something similar; kable table?</span></span>
-<span id="cb20-2"><a href="unit2.html#cb20-2"></a><span class="kw">ipums_view</span>(ddi)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="unit2.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">## need to convert this to an image or something similar; kable table?</span></span>
+<span id="cb20-2"><a href="unit2.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
 </div>
-<div id="visualize" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.1.2</span> Visualize<a href="unit2.html#visualize" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="visualize" class="section level5 hasAnchor" number="7.2.1.1.2">
+<h5><span class="header-section-number">7.2.1.1.2</span> Visualize<a href="unit2.html#visualize" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>A simple plot</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unit2.html#cb21-1"></a><span class="kw">plot</span>(AGE <span class="op">~</span><span class="st"> </span>YEAR, <span class="dt">data =</span> data)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unit2.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(AGE <span class="sc">~</span> YEAR, <span class="at">data =</span> data)</span></code></pre></div>
 <p>A fancier plot</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="unit2.html#cb22-1"></a><span class="kw">plot</span>(AGE<span class="op">~</span>YEAR, <span class="dt">data =</span> data, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Age by Sex, over Time, CO&quot;</span>)</span>
-<span id="cb22-2"><a href="unit2.html#cb22-2"></a><span class="kw">points</span>(data<span class="op">$</span>YEAR[data<span class="op">$</span>SEX<span class="op">==</span><span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>, data<span class="op">$</span>AGE[data<span class="op">$</span>SEX<span class="op">==</span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">6</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
-<span id="cb22-3"><a href="unit2.html#cb22-3"></a></span>
-<span id="cb22-4"><a href="unit2.html#cb22-4"></a><span class="kw">points</span>(data<span class="op">$</span>YEAR[data<span class="op">$</span>SEX<span class="op">==</span><span class="dv">2</span>]<span class="op">+</span><span class="dv">1</span>, data<span class="op">$</span>AGE[data<span class="op">$</span>SEX<span class="op">==</span><span class="dv">2</span>], <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="kw">hsv</span>(<span class="dv">1</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
-<span id="cb22-5"><a href="unit2.html#cb22-5"></a></span>
-<span id="cb22-6"><a href="unit2.html#cb22-6"></a><span class="kw">abline</span>(<span class="kw">lm</span>(AGE<span class="op">~</span>YEAR, <span class="dt">data =</span> data), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="unit2.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Age by Sex, over Time, CO&quot;</span>)</span>
+<span id="cb22-2"><a href="unit2.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">6</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
+<span id="cb22-3"><a href="unit2.html#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="unit2.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>]<span class="sc">+</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(<span class="dv">1</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
+<span id="cb22-5"><a href="unit2.html#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="unit2.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 </div>
-<div id="asking-logical-questions" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.1.3</span> Asking (logical) questions<a href="unit2.html#asking-logical-questions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="asking-logical-questions" class="section level5 hasAnchor" number="7.2.1.1.3">
+<h5><span class="header-section-number">7.2.1.1.3</span> Asking (logical) questions<a href="unit2.html#asking-logical-questions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Here we demonstrate how setting up logical questions can be used to easily filter/subset data.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="unit2.html#cb23-1"></a>age_test &lt;-<span class="st"> </span>data<span class="op">$</span>AGE <span class="op">&gt;</span><span class="st"> </span><span class="dv">18</span></span>
-<span id="cb23-2"><a href="unit2.html#cb23-2"></a></span>
-<span id="cb23-3"><a href="unit2.html#cb23-3"></a><span class="kw">class</span>(age_test)</span>
-<span id="cb23-4"><a href="unit2.html#cb23-4"></a></span>
-<span id="cb23-5"><a href="unit2.html#cb23-5"></a>age_test</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="unit2.html#cb23-1" aria-hidden="true" tabindex="-1"></a>age_test <span class="ot">&lt;-</span> data<span class="sc">$</span>AGE <span class="sc">&gt;</span> <span class="dv">18</span></span>
+<span id="cb23-2"><a href="unit2.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="unit2.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(age_test)</span>
+<span id="cb23-4"><a href="unit2.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="unit2.html#cb23-5" aria-hidden="true" tabindex="-1"></a>age_test</span></code></pre></div>
 <p>Logical vectors are stored as <code>TRUE</code> or <code>FALSE</code>, but can also be evaluated numerically as <code>1</code> or <code>0</code> respectively. We can therefore <code>sum()</code> the number of <code>TRUE</code> values and divide by total rows for a proportion.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="unit2.html#cb24-1"></a><span class="kw">sum</span>(age_test)<span class="op">/</span><span class="kw">nrow</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="unit2.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(age_test)<span class="sc">/</span><span class="fu">nrow</span>(data)</span></code></pre></div>
 </div>
-<div id="hh-vs-persons" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.1.4</span> HH vs persons<a href="unit2.html#hh-vs-persons" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="hh-vs-persons" class="section level5 hasAnchor" number="7.2.1.1.4">
+<h5><span class="header-section-number">7.2.1.1.4</span> HH vs persons<a href="unit2.html#hh-vs-persons" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>A unique characteristic of census and some survey data is the nested-structure with individuals being grouped into households. Often times it is necessary to choose to work at the hh or person level, and data must be appropriately manipulated to fit that case.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="unit2.html#cb25-1"></a>hh_total &lt;-<span class="st"> </span><span class="kw">length</span>(<span class="kw">unique</span>(data<span class="op">$</span>SERIAL))</span>
-<span id="cb25-2"><a href="unit2.html#cb25-2"></a>hh_total</span>
-<span id="cb25-3"><a href="unit2.html#cb25-3"></a><span class="kw">ipums_view</span>(ddi)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="unit2.html#cb25-1" aria-hidden="true" tabindex="-1"></a>hh_total <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(data<span class="sc">$</span>SERIAL))</span>
+<span id="cb25-2"><a href="unit2.html#cb25-2" aria-hidden="true" tabindex="-1"></a>hh_total</span>
+<span id="cb25-3"><a href="unit2.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
 </div>
 </div>
-<div id="nuclear-family" class="section level4 hasAnchor">
-<h4><span class="header-section-number">2.2.1.2</span> Nuclear Family<a href="unit2.html#nuclear-family" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="nuclear-family" class="section level4 hasAnchor" number="7.2.1.2">
+<h4><span class="header-section-number">7.2.1.2</span> Nuclear Family<a href="unit2.html#nuclear-family" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>First we look at a nuclear family, comprising only parents and their immediate children.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unit2.html#cb26-1"></a><span class="kw">library</span>(ipumsr)</span>
-<span id="cb26-2"><a href="unit2.html#cb26-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb26-3"><a href="unit2.html#cb26-3"></a></span>
-<span id="cb26-4"><a href="unit2.html#cb26-4"></a>ddi &lt;-<span class="st"> </span><span class="kw">read_ipums_ddi</span>(<span class="st">&quot;/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml&quot;</span>)</span>
-<span id="cb26-5"><a href="unit2.html#cb26-5"></a>all_data &lt;-<span class="st"> </span><span class="kw">read_ipums_micro</span>(ddi)</span>
-<span id="cb26-6"><a href="unit2.html#cb26-6"></a></span>
-<span id="cb26-7"><a href="unit2.html#cb26-7"></a>census_years &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1860</span>, <span class="dv">1870</span>, <span class="dv">1880</span>, <span class="dv">1900</span>, <span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>)</span>
-<span id="cb26-8"><a href="unit2.html#cb26-8"></a></span>
-<span id="cb26-9"><a href="unit2.html#cb26-9"></a><span class="co">## subset census only</span></span>
-<span id="cb26-10"><a href="unit2.html#cb26-10"></a>d2 &lt;-<span class="st"> </span>all_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(YEAR <span class="op">%in%</span><span class="st"> </span>census_years)</span>
-<span id="cb26-11"><a href="unit2.html#cb26-11"></a></span>
-<span id="cb26-12"><a href="unit2.html#cb26-12"></a><span class="co">## make a household dataframe</span></span>
-<span id="cb26-13"><a href="unit2.html#cb26-13"></a>hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(YEAR, SERIAL, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(YEAR,SERIAL,GEO1_US)</span>
-<span id="cb26-14"><a href="unit2.html#cb26-14"></a></span>
-<span id="cb26-15"><a href="unit2.html#cb26-15"></a>hhs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">View</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="unit2.html#cb27-1"></a>hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(RELATE <span class="op">==</span><span class="dv">4</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-2"><a href="unit2.html#cb27-2"></a><span class="st">  </span></span>
-<span id="cb27-3"><a href="unit2.html#cb27-3"></a><span class="st">  </span></span>
-<span id="cb27-4"><a href="unit2.html#cb27-4"></a><span class="st">  </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">extended_test=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">extended_test=</span><span class="kw">if_else</span>(<span class="kw">is.na</span>(extended_test),<span class="ot">FALSE</span>,<span class="ot">TRUE</span>))</span>
-<span id="cb27-5"><a href="unit2.html#cb27-5"></a>  </span>
-<span id="cb27-6"><a href="unit2.html#cb27-6"></a></span>
-<span id="cb27-7"><a href="unit2.html#cb27-7"></a></span>
-<span id="cb27-8"><a href="unit2.html#cb27-8"></a></span>
-<span id="cb27-9"><a href="unit2.html#cb27-9"></a></span>
-<span id="cb27-10"><a href="unit2.html#cb27-10"></a></span>
-<span id="cb27-11"><a href="unit2.html#cb27-11"></a></span>
-<span id="cb27-12"><a href="unit2.html#cb27-12"></a></span>
-<span id="cb27-13"><a href="unit2.html#cb27-13"></a></span>
-<span id="cb27-14"><a href="unit2.html#cb27-14"></a>hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span>RELATE <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="op">|</span></span>
-<span id="cb27-15"><a href="unit2.html#cb27-15"></a><span class="st">                  </span>(RELATE <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">&amp;</span></span>
-<span id="cb27-16"><a href="unit2.html#cb27-16"></a><span class="st">                     </span>MARST <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb27-17"><a href="unit2.html#cb27-17"></a>                ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-18"><a href="unit2.html#cb27-18"></a></span>
-<span id="cb27-19"><a href="unit2.html#cb27-19"></a><span class="st">  </span></span>
-<span id="cb27-20"><a href="unit2.html#cb27-20"></a><span class="st">  </span></span>
-<span id="cb27-21"><a href="unit2.html#cb27-21"></a><span class="st">  </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">nuclear_test =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">nuclear_test =</span> <span class="kw">if_else</span>(<span class="kw">is.na</span>(nuclear_test), <span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</span>
-<span id="cb27-22"><a href="unit2.html#cb27-22"></a></span>
-<span id="cb27-23"><a href="unit2.html#cb27-23"></a></span>
-<span id="cb27-24"><a href="unit2.html#cb27-24"></a></span>
-<span id="cb27-25"><a href="unit2.html#cb27-25"></a><span class="kw">table</span>(hhs<span class="op">$</span>extended_test,hhs<span class="op">$</span>nuclear_test)</span></code></pre></div>
-<div id="tabulate-results" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.2.1</span> Tabulate results<a href="unit2.html#tabulate-results" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="unit2.html#cb28-1"></a>  hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(RELATED <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">parent_test=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">parent_test=</span><span class="kw">if_else</span>(<span class="kw">is.na</span>(parent_test),<span class="ot">FALSE</span>,<span class="ot">TRUE</span>))</span>
-<span id="cb28-2"><a href="unit2.html#cb28-2"></a></span>
-<span id="cb28-3"><a href="unit2.html#cb28-3"></a></span>
-<span id="cb28-4"><a href="unit2.html#cb28-4"></a>  hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(RELATED <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">children_test=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">children_test=</span><span class="kw">if_else</span>(<span class="kw">is.na</span>(children_test),<span class="ot">FALSE</span>,<span class="ot">TRUE</span>))</span>
-<span id="cb28-5"><a href="unit2.html#cb28-5"></a>  </span>
-<span id="cb28-6"><a href="unit2.html#cb28-6"></a>  </span>
-<span id="cb28-7"><a href="unit2.html#cb28-7"></a>  res_tabs &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb28-8"><a href="unit2.html#cb28-8"></a>    <span class="st">&quot;nuclear_test&quot;</span> =<span class="st"> </span>hhs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(YEAR, nuclear_test,GEO1_US) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>(),</span>
-<span id="cb28-9"><a href="unit2.html#cb28-9"></a>  <span class="st">&quot;extended_test&quot;</span> =<span class="st"> </span>hhs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(YEAR, extended_test, GEO1_US) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>(),</span>
-<span id="cb28-10"><a href="unit2.html#cb28-10"></a>  <span class="st">&quot;parent_test&quot;</span> =<span class="st"> </span>hhs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(YEAR, parent_test, GEO1_US) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>(),</span>
-<span id="cb28-11"><a href="unit2.html#cb28-11"></a>  <span class="st">&quot;children_test&quot;</span> =<span class="st"> </span>hhs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(YEAR, children_test, GEO1_US) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb28-12"><a href="unit2.html#cb28-12"></a>  )</span>
-<span id="cb28-13"><a href="unit2.html#cb28-13"></a>  </span>
-<span id="cb28-14"><a href="unit2.html#cb28-14"></a>  </span>
-<span id="cb28-15"><a href="unit2.html#cb28-15"></a>  </span>
-<span id="cb28-16"><a href="unit2.html#cb28-16"></a>  </span>
-<span id="cb28-17"><a href="unit2.html#cb28-17"></a></span>
-<span id="cb28-18"><a href="unit2.html#cb28-18"></a>collapsed_results &lt;-<span class="st"> </span>res_tabs <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw">map</span>(<span class="cf">function</span>(x){</span>
-<span id="cb28-19"><a href="unit2.html#cb28-19"></a>  x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(<span class="kw">across</span>(<span class="kw">names</span>(x)[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="dt">n =</span> <span class="kw">sum</span>(n))</span>
-<span id="cb28-20"><a href="unit2.html#cb28-20"></a></span>
-<span id="cb28-21"><a href="unit2.html#cb28-21"></a>})</span>
-<span id="cb28-22"><a href="unit2.html#cb28-22"></a></span>
-<span id="cb28-23"><a href="unit2.html#cb28-23"></a></span>
-<span id="cb28-24"><a href="unit2.html#cb28-24"></a>collapsed_results &lt;-<span class="st"> </span><span class="kw">lapply</span>(collapsed_results, <span class="cf">function</span>(x){</span>
-<span id="cb28-25"><a href="unit2.html#cb28-25"></a>  <span class="kw">colnames</span>(x)[<span class="dv">2</span>] &lt;-<span class="st"> &quot;test&quot;</span></span>
-<span id="cb28-26"><a href="unit2.html#cb28-26"></a>  <span class="kw">colnames</span>(x)[<span class="dv">3</span>] &lt;-<span class="st"> &quot;state&quot;</span></span>
-<span id="cb28-27"><a href="unit2.html#cb28-27"></a>  <span class="kw">return</span>(x)</span>
-<span id="cb28-28"><a href="unit2.html#cb28-28"></a>})</span>
-<span id="cb28-29"><a href="unit2.html#cb28-29"></a></span>
-<span id="cb28-30"><a href="unit2.html#cb28-30"></a>combined &lt;-<span class="st"> </span>collapsed_results <span class="op">%&gt;%</span><span class="st"> </span>purrr<span class="op">::</span><span class="kw">reduce</span>(full_join, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>))</span>
-<span id="cb28-31"><a href="unit2.html#cb28-31"></a></span>
-<span id="cb28-32"><a href="unit2.html#cb28-32"></a></span>
-<span id="cb28-33"><a href="unit2.html#cb28-33"></a></span>
-<span id="cb28-34"><a href="unit2.html#cb28-34"></a><span class="kw">colnames</span>(combined) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;n_nuclear&quot;</span>, <span class="st">&quot;n_extended&quot;</span>, <span class="st">&quot;n_parent&quot;</span>, <span class="st">&quot;n_children&quot;</span>)</span>
-<span id="cb28-35"><a href="unit2.html#cb28-35"></a></span>
-<span id="cb28-36"><a href="unit2.html#cb28-36"></a>combined[<span class="kw">is.na</span>(combined)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb28-37"><a href="unit2.html#cb28-37"></a></span>
-<span id="cb28-38"><a href="unit2.html#cb28-38"></a></span>
-<span id="cb28-39"><a href="unit2.html#cb28-39"></a>to_plot &lt;-<span class="st"> </span>combined <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(YEAR, state) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">n_tot =</span> <span class="kw">sum</span>(n_nuclear)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">pct =</span>  <span class="kw">across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;n_&quot;</span>))<span class="op">/</span>n_tot) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(YEAR,test,state,pct)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unit2.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
+<span id="cb26-2"><a href="unit2.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-3"><a href="unit2.html#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="unit2.html#cb26-4" aria-hidden="true" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml&quot;</span>)</span>
+<span id="cb26-5"><a href="unit2.html#cb26-5" aria-hidden="true" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span>
+<span id="cb26-6"><a href="unit2.html#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="unit2.html#cb26-7" aria-hidden="true" tabindex="-1"></a>census_years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1860</span>, <span class="dv">1870</span>, <span class="dv">1880</span>, <span class="dv">1900</span>, <span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>)</span>
+<span id="cb26-8"><a href="unit2.html#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="unit2.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="do">## subset census only</span></span>
+<span id="cb26-10"><a href="unit2.html#cb26-10" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> all_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(YEAR <span class="sc">%in%</span> census_years)</span>
+<span id="cb26-11"><a href="unit2.html#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="unit2.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="do">## make a household dataframe</span></span>
+<span id="cb26-13"><a href="unit2.html#cb26-13" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,SERIAL,GEO1_US)</span>
+<span id="cb26-14"><a href="unit2.html#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="unit2.html#cb26-15" aria-hidden="true" tabindex="-1"></a>hhs <span class="sc">%&gt;%</span> <span class="fu">View</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="unit2.html#cb27-1" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATE <span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="unit2.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-3"><a href="unit2.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-4"><a href="unit2.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(extended_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb27-5"><a href="unit2.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-6"><a href="unit2.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="unit2.html#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="unit2.html#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="unit2.html#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="unit2.html#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="unit2.html#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="unit2.html#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="unit2.html#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="unit2.html#cb27-14" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>RELATE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">|</span></span>
+<span id="cb27-15"><a href="unit2.html#cb27-15" aria-hidden="true" tabindex="-1"></a>                  (RELATE <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span></span>
+<span id="cb27-16"><a href="unit2.html#cb27-16" aria-hidden="true" tabindex="-1"></a>                     MARST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb27-17"><a href="unit2.html#cb27-17" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-18"><a href="unit2.html#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="unit2.html#cb27-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-20"><a href="unit2.html#cb27-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-21"><a href="unit2.html#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(nuclear_test), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb27-22"><a href="unit2.html#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="unit2.html#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="unit2.html#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-25"><a href="unit2.html#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(hhs<span class="sc">$</span>extended_test,hhs<span class="sc">$</span>nuclear_test)</span></code></pre></div>
+<div id="tabulate-results" class="section level5 hasAnchor" number="7.2.1.2.1">
+<h5><span class="header-section-number">7.2.1.2.1</span> Tabulate results<a href="unit2.html#tabulate-results" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="unit2.html#cb28-1" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb28-2"><a href="unit2.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="unit2.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="unit2.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb28-5"><a href="unit2.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-6"><a href="unit2.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-7"><a href="unit2.html#cb28-7" aria-hidden="true" tabindex="-1"></a>  res_tabs <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb28-8"><a href="unit2.html#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;nuclear_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, nuclear_test,GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb28-9"><a href="unit2.html#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;extended_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, extended_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb28-10"><a href="unit2.html#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;parent_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, parent_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb28-11"><a href="unit2.html#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;children_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, children_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb28-12"><a href="unit2.html#cb28-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb28-13"><a href="unit2.html#cb28-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-14"><a href="unit2.html#cb28-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-15"><a href="unit2.html#cb28-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-16"><a href="unit2.html#cb28-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-17"><a href="unit2.html#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="unit2.html#cb28-18" aria-hidden="true" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> res_tabs <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">map</span>(<span class="cf">function</span>(x){</span>
+<span id="cb28-19"><a href="unit2.html#cb28-19" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="fu">across</span>(<span class="fu">names</span>(x)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb28-20"><a href="unit2.html#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="unit2.html#cb28-21" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb28-22"><a href="unit2.html#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="unit2.html#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-24"><a href="unit2.html#cb28-24" aria-hidden="true" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(collapsed_results, <span class="cf">function</span>(x){</span>
+<span id="cb28-25"><a href="unit2.html#cb28-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;test&quot;</span></span>
+<span id="cb28-26"><a href="unit2.html#cb28-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;state&quot;</span></span>
+<span id="cb28-27"><a href="unit2.html#cb28-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb28-28"><a href="unit2.html#cb28-28" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb28-29"><a href="unit2.html#cb28-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-30"><a href="unit2.html#cb28-30" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> collapsed_results <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">reduce</span>(full_join, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>))</span>
+<span id="cb28-31"><a href="unit2.html#cb28-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="unit2.html#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="unit2.html#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="unit2.html#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(combined) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;n_nuclear&quot;</span>, <span class="st">&quot;n_extended&quot;</span>, <span class="st">&quot;n_parent&quot;</span>, <span class="st">&quot;n_children&quot;</span>)</span>
+<span id="cb28-35"><a href="unit2.html#cb28-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-36"><a href="unit2.html#cb28-36" aria-hidden="true" tabindex="-1"></a>combined[<span class="fu">is.na</span>(combined)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb28-37"><a href="unit2.html#cb28-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-38"><a href="unit2.html#cb28-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-39"><a href="unit2.html#cb28-39" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> combined <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, state) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">n_tot =</span> <span class="fu">sum</span>(n_nuclear)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pct =</span>  <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;n_&quot;</span>))<span class="sc">/</span>n_tot) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,test,state,pct)</span></code></pre></div>
 </div>
-<div id="visualize-nuclear-families" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.2.2</span> Visualize Nuclear Families<a href="unit2.html#visualize-nuclear-families" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unit2.html#cb29-1"></a>to_plot &lt;-<span class="st"> </span>to_plot <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(test<span class="op">==</span><span class="ot">TRUE</span>)</span>
-<span id="cb29-2"><a href="unit2.html#cb29-2"></a></span>
-<span id="cb29-3"><a href="unit2.html#cb29-3"></a></span>
-<span id="cb29-4"><a href="unit2.html#cb29-4"></a></span>
-<span id="cb29-5"><a href="unit2.html#cb29-5"></a><span class="kw">plot</span>(to_plot<span class="op">$</span>YEAR, to_plot<span class="op">$</span>pct<span class="op">$</span>n_nuclear, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">4</span>, <span class="fl">.6</span>,.<span class="dv">8</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">ylim =</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;prop of hhs&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Nuclear HHs over time in CO&quot;</span>)</span></code></pre></div>
+<div id="visualize-nuclear-families" class="section level5 hasAnchor" number="7.2.1.2.2">
+<h5><span class="header-section-number">7.2.1.2.2</span> Visualize Nuclear Families<a href="unit2.html#visualize-nuclear-families" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unit2.html#cb29-1" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb29-2"><a href="unit2.html#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="unit2.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="unit2.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="unit2.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_nuclear, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">4</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;prop of hhs&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Nuclear HHs over time in CO&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="extended-family" class="section level4 hasAnchor">
-<h4><span class="header-section-number">2.2.1.3</span> Extended Family<a href="unit2.html#extended-family" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="extended-family" class="section level4 hasAnchor" number="7.2.1.3">
+<h4><span class="header-section-number">7.2.1.3</span> Extended Family<a href="unit2.html#extended-family" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Next we look at hhs with extended families present. IE, any that contain more relationships than just Parent/Child/Sibling (between children only)</p>
-<div id="gernerate-models" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.3.1</span> Gernerate models<a href="unit2.html#gernerate-models" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unit2.html#cb30-1"></a>to_plot &lt;-<span class="st"> </span>to_plot <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(test<span class="op">==</span><span class="ot">TRUE</span>)</span>
-<span id="cb30-2"><a href="unit2.html#cb30-2"></a></span>
-<span id="cb30-3"><a href="unit2.html#cb30-3"></a></span>
-<span id="cb30-4"><a href="unit2.html#cb30-4"></a>glm_hist &lt;-<span class="st"> </span><span class="kw">glm</span>(pct<span class="op">$</span>n_extended <span class="op">~</span><span class="st"> </span>YEAR, <span class="dt">data =</span> to_plot[to_plot<span class="op">$</span>YEAR <span class="op">&lt;</span><span class="st"> </span><span class="dv">1950</span>,], <span class="dt">family =</span> <span class="kw">quasibinomial</span>(<span class="dt">link=</span>logit))</span>
-<span id="cb30-5"><a href="unit2.html#cb30-5"></a></span>
-<span id="cb30-6"><a href="unit2.html#cb30-6"></a></span>
-<span id="cb30-7"><a href="unit2.html#cb30-7"></a></span>
-<span id="cb30-8"><a href="unit2.html#cb30-8"></a>glm_hist_x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1860</span>, <span class="dt">to =</span> <span class="dv">1910</span>, <span class="dt">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb30-9"><a href="unit2.html#cb30-9"></a>glm_hist_y &lt;-<span class="st"> </span><span class="kw">predict</span>(glm_hist, <span class="kw">list</span>(<span class="dt">YEAR =</span> glm_hist_x), <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb30-10"><a href="unit2.html#cb30-10"></a></span>
-<span id="cb30-11"><a href="unit2.html#cb30-11"></a>glm_mod &lt;-<span class="st"> </span><span class="kw">glm</span>(pct<span class="op">$</span>n_extended <span class="op">~</span><span class="st"> </span>YEAR, <span class="dt">data =</span> to_plot[to_plot<span class="op">$</span>YEAR<span class="op">&gt;</span><span class="st"> </span><span class="dv">1950</span>,], <span class="dt">family =</span> <span class="kw">quasibinomial</span>(<span class="dt">link=</span>logit))</span>
-<span id="cb30-12"><a href="unit2.html#cb30-12"></a></span>
-<span id="cb30-13"><a href="unit2.html#cb30-13"></a>glm_mod_x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1960</span>, <span class="dt">to =</span> <span class="dv">2010</span>, <span class="dt">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb30-14"><a href="unit2.html#cb30-14"></a>glm_mod_y &lt;-<span class="st"> </span><span class="kw">predict</span>(glm_mod, <span class="kw">list</span>(<span class="dt">YEAR =</span> glm_mod_x), <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb30-15"><a href="unit2.html#cb30-15"></a></span>
-<span id="cb30-16"><a href="unit2.html#cb30-16"></a>mods &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;hist&quot;</span>=<span class="kw">list</span>(),</span>
-<span id="cb30-17"><a href="unit2.html#cb30-17"></a>             <span class="st">&quot;mod&quot;</span> =<span class="st"> </span><span class="kw">list</span>()</span>
-<span id="cb30-18"><a href="unit2.html#cb30-18"></a>             )</span>
-<span id="cb30-19"><a href="unit2.html#cb30-19"></a>mods_plots &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;hist&quot;</span>=<span class="kw">list</span>(),</span>
-<span id="cb30-20"><a href="unit2.html#cb30-20"></a>                   <span class="st">&quot;mod&quot;</span> =<span class="kw">list</span>()</span>
-<span id="cb30-21"><a href="unit2.html#cb30-21"></a>                   )</span>
-<span id="cb30-22"><a href="unit2.html#cb30-22"></a></span>
-<span id="cb30-23"><a href="unit2.html#cb30-23"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">names</span>(to_plot<span class="op">$</span>pct)){</span>
-<span id="cb30-24"><a href="unit2.html#cb30-24"></a>  </span>
-<span id="cb30-25"><a href="unit2.html#cb30-25"></a>  hist_x &lt;-<span class="st"> </span>to_plot<span class="op">$</span>YEAR[to_plot<span class="op">$</span>YEAR <span class="op">&lt;</span><span class="st"> </span><span class="dv">1950</span>]</span>
-<span id="cb30-26"><a href="unit2.html#cb30-26"></a>mod_x &lt;-<span class="st"> </span>to_plot<span class="op">$</span>YEAR[to_plot<span class="op">$</span>YEAR <span class="op">&gt;</span><span class="st"> </span><span class="dv">1950</span>]</span>
-<span id="cb30-27"><a href="unit2.html#cb30-27"></a></span>
-<span id="cb30-28"><a href="unit2.html#cb30-28"></a>  mods<span class="op">$</span>hist[[i]] &lt;-<span class="st"> </span><span class="kw">lm</span>(pct[[i]] <span class="op">~</span><span class="st"> </span>YEAR, <span class="dt">data =</span> to_plot[to_plot<span class="op">$</span>YEAR <span class="op">&lt;</span><span class="st"> </span><span class="dv">1950</span>,])</span>
-<span id="cb30-29"><a href="unit2.html#cb30-29"></a>  </span>
-<span id="cb30-30"><a href="unit2.html#cb30-30"></a>  mods_plots<span class="op">$</span>hist[[i]] &lt;-<span class="st"> </span></span>
-<span id="cb30-31"><a href="unit2.html#cb30-31"></a><span class="st">    </span><span class="kw">data.frame</span>(<span class="st">&quot;x&quot;</span> =<span class="st"> </span>hist_x,</span>
-<span id="cb30-32"><a href="unit2.html#cb30-32"></a>               <span class="st">&quot;y&quot;</span> =<span class="st"> </span><span class="kw">predict</span>(mods<span class="op">$</span>hist[[i]], </span>
-<span id="cb30-33"><a href="unit2.html#cb30-33"></a>                             <span class="kw">list</span>(<span class="dt">YEAR =</span>hist_x), </span>
-<span id="cb30-34"><a href="unit2.html#cb30-34"></a>                             <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb30-35"><a href="unit2.html#cb30-35"></a>               )</span>
-<span id="cb30-36"><a href="unit2.html#cb30-36"></a>  </span>
-<span id="cb30-37"><a href="unit2.html#cb30-37"></a>  </span>
-<span id="cb30-38"><a href="unit2.html#cb30-38"></a>  </span>
-<span id="cb30-39"><a href="unit2.html#cb30-39"></a>  mods<span class="op">$</span>mod[[i]] &lt;-<span class="st"> </span><span class="kw">lm</span>(pct[[i]] <span class="op">~</span><span class="st"> </span>YEAR, <span class="dt">data =</span> to_plot[to_plot<span class="op">$</span>YEAR <span class="op">&gt;</span><span class="st"> </span><span class="dv">1950</span>,])</span>
-<span id="cb30-40"><a href="unit2.html#cb30-40"></a>  </span>
-<span id="cb30-41"><a href="unit2.html#cb30-41"></a>  </span>
-<span id="cb30-42"><a href="unit2.html#cb30-42"></a>  mods_plots<span class="op">$</span>mod[[i]] &lt;-<span class="st"> </span></span>
-<span id="cb30-43"><a href="unit2.html#cb30-43"></a><span class="st">    </span><span class="kw">data.frame</span>(<span class="st">&quot;x&quot;</span> =<span class="st"> </span>mod_x,</span>
-<span id="cb30-44"><a href="unit2.html#cb30-44"></a>               <span class="st">&quot;y&quot;</span> =<span class="st"> </span><span class="kw">predict</span>(mods<span class="op">$</span>mod[[i]], </span>
-<span id="cb30-45"><a href="unit2.html#cb30-45"></a>                             <span class="kw">list</span>(<span class="dt">YEAR =</span>mod_x), </span>
-<span id="cb30-46"><a href="unit2.html#cb30-46"></a>                             <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb30-47"><a href="unit2.html#cb30-47"></a>               )</span>
-<span id="cb30-48"><a href="unit2.html#cb30-48"></a>}</span></code></pre></div>
+<div id="gernerate-models" class="section level5 hasAnchor" number="7.2.1.3.1">
+<h5><span class="header-section-number">7.2.1.3.1</span> Gernerate models<a href="unit2.html#gernerate-models" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unit2.html#cb30-1" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb30-2"><a href="unit2.html#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="unit2.html#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="unit2.html#cb30-4" aria-hidden="true" tabindex="-1"></a>glm_hist <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
+<span id="cb30-5"><a href="unit2.html#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="unit2.html#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="unit2.html#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="unit2.html#cb30-8" aria-hidden="true" tabindex="-1"></a>glm_hist_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1860</span>, <span class="at">to =</span> <span class="dv">1910</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb30-9"><a href="unit2.html#cb30-9" aria-hidden="true" tabindex="-1"></a>glm_hist_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_hist, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_hist_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb30-10"><a href="unit2.html#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="unit2.html#cb30-11" aria-hidden="true" tabindex="-1"></a>glm_mod <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR<span class="sc">&gt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
+<span id="cb30-12"><a href="unit2.html#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="unit2.html#cb30-13" aria-hidden="true" tabindex="-1"></a>glm_mod_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1960</span>, <span class="at">to =</span> <span class="dv">2010</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb30-14"><a href="unit2.html#cb30-14" aria-hidden="true" tabindex="-1"></a>glm_mod_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_mod, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_mod_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb30-15"><a href="unit2.html#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="unit2.html#cb30-16" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
+<span id="cb30-17"><a href="unit2.html#cb30-17" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;mod&quot;</span> <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb30-18"><a href="unit2.html#cb30-18" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb30-19"><a href="unit2.html#cb30-19" aria-hidden="true" tabindex="-1"></a>mods_plots <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
+<span id="cb30-20"><a href="unit2.html#cb30-20" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;mod&quot;</span> <span class="ot">=</span><span class="fu">list</span>()</span>
+<span id="cb30-21"><a href="unit2.html#cb30-21" aria-hidden="true" tabindex="-1"></a>                   )</span>
+<span id="cb30-22"><a href="unit2.html#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="unit2.html#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">names</span>(to_plot<span class="sc">$</span>pct)){</span>
+<span id="cb30-24"><a href="unit2.html#cb30-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-25"><a href="unit2.html#cb30-25" aria-hidden="true" tabindex="-1"></a>  hist_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>]</span>
+<span id="cb30-26"><a href="unit2.html#cb30-26" aria-hidden="true" tabindex="-1"></a>mod_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>]</span>
+<span id="cb30-27"><a href="unit2.html#cb30-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-28"><a href="unit2.html#cb30-28" aria-hidden="true" tabindex="-1"></a>  mods<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,])</span>
+<span id="cb30-29"><a href="unit2.html#cb30-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-30"><a href="unit2.html#cb30-30" aria-hidden="true" tabindex="-1"></a>  mods_plots<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> </span>
+<span id="cb30-31"><a href="unit2.html#cb30-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> hist_x,</span>
+<span id="cb30-32"><a href="unit2.html#cb30-32" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>hist[[i]], </span>
+<span id="cb30-33"><a href="unit2.html#cb30-33" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>hist_x), </span>
+<span id="cb30-34"><a href="unit2.html#cb30-34" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb30-35"><a href="unit2.html#cb30-35" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb30-36"><a href="unit2.html#cb30-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-37"><a href="unit2.html#cb30-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-38"><a href="unit2.html#cb30-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-39"><a href="unit2.html#cb30-39" aria-hidden="true" tabindex="-1"></a>  mods<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>,])</span>
+<span id="cb30-40"><a href="unit2.html#cb30-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-41"><a href="unit2.html#cb30-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-42"><a href="unit2.html#cb30-42" aria-hidden="true" tabindex="-1"></a>  mods_plots<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> </span>
+<span id="cb30-43"><a href="unit2.html#cb30-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> mod_x,</span>
+<span id="cb30-44"><a href="unit2.html#cb30-44" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>mod[[i]], </span>
+<span id="cb30-45"><a href="unit2.html#cb30-45" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>mod_x), </span>
+<span id="cb30-46"><a href="unit2.html#cb30-46" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb30-47"><a href="unit2.html#cb30-47" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb30-48"><a href="unit2.html#cb30-48" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="visualize-1" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.3.2</span> Visualize<a href="unit2.html#visualize-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unit2.html#cb31-1"></a><span class="kw">plot</span>(to_plot<span class="op">$</span>YEAR, to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.6</span>,.<span class="dv">8</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">ylim =</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="dt">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb31-2"><a href="unit2.html#cb31-2"></a></span>
-<span id="cb31-3"><a href="unit2.html#cb31-3"></a></span>
-<span id="cb31-4"><a href="unit2.html#cb31-4"></a><span class="kw">lines</span>(glm_hist_x,glm_hist_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb31-5"><a href="unit2.html#cb31-5"></a><span class="kw">lines</span>(glm_mod_x, glm_mod_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb31-6"><a href="unit2.html#cb31-6"></a></span>
-<span id="cb31-7"><a href="unit2.html#cb31-7"></a></span>
-<span id="cb31-8"><a href="unit2.html#cb31-8"></a></span>
-<span id="cb31-9"><a href="unit2.html#cb31-9"></a></span>
-<span id="cb31-10"><a href="unit2.html#cb31-10"></a><span class="kw">points</span>(to_plot<span class="op">$</span>YEAR,</span>
-<span id="cb31-11"><a href="unit2.html#cb31-11"></a>       to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended,</span>
-<span id="cb31-12"><a href="unit2.html#cb31-12"></a>       <span class="dt">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb31-13"><a href="unit2.html#cb31-13"></a>       <span class="dt">bg =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="even-more-detail---maybe-remove" class="section level4 hasAnchor">
-<h4><span class="header-section-number">2.2.1.4</span> Even more DETAIL - maybe remove<a href="unit2.html#even-more-detail---maybe-remove" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unit2.html#cb32-1"></a><span class="kw">ipums_view</span>(ddi)</span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unit2.html#cb33-1"></a>  hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(RELATED <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb33-2"><a href="unit2.html#cb33-2"></a><span class="st">  </span></span>
-<span id="cb33-3"><a href="unit2.html#cb33-3"></a><span class="st">  </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">parent_test=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">parent_test=</span><span class="kw">if_else</span>(<span class="kw">is.na</span>(parent_test),<span class="ot">FALSE</span>,<span class="ot">TRUE</span>))</span>
-<span id="cb33-4"><a href="unit2.html#cb33-4"></a></span>
-<span id="cb33-5"><a href="unit2.html#cb33-5"></a>  hhs &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(RELATED <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(YEAR, SERIAL) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">children_test=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">right_join</span>(hhs, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">children_test=</span><span class="kw">if_else</span>(<span class="kw">is.na</span>(children_test),<span class="ot">FALSE</span>,<span class="ot">TRUE</span>))</span></code></pre></div>
-<div id="parents-supporting-parents" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.4.1</span> Parents Supporting Parents<a href="unit2.html#parents-supporting-parents" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unit2.html#cb34-1"></a><span class="kw">plot</span>(to_plot<span class="op">$</span>YEAR, to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.6</span>,.<span class="dv">8</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">ylim =</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="dt">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb34-2"><a href="unit2.html#cb34-2"></a></span>
-<span id="cb34-3"><a href="unit2.html#cb34-3"></a></span>
-<span id="cb34-4"><a href="unit2.html#cb34-4"></a><span class="kw">lines</span>(glm_hist_x,glm_hist_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb34-5"><a href="unit2.html#cb34-5"></a><span class="kw">lines</span>(glm_mod_x, glm_mod_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb34-6"><a href="unit2.html#cb34-6"></a></span>
-<span id="cb34-7"><a href="unit2.html#cb34-7"></a></span>
-<span id="cb34-8"><a href="unit2.html#cb34-8"></a><span class="kw">lines</span>(mods_plots<span class="op">$</span>hist<span class="op">$</span>n_parent,<span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">8</span>, <span class="fl">.3</span>,<span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb34-9"><a href="unit2.html#cb34-9"></a></span>
-<span id="cb34-10"><a href="unit2.html#cb34-10"></a><span class="kw">lines</span>(mods_plots<span class="op">$</span>mod<span class="op">$</span>n_parent, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">8</span>, <span class="fl">.3</span>,<span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb34-11"><a href="unit2.html#cb34-11"></a></span>
-<span id="cb34-12"><a href="unit2.html#cb34-12"></a><span class="kw">points</span>(to_plot<span class="op">$</span>YEAR,</span>
-<span id="cb34-13"><a href="unit2.html#cb34-13"></a>       to_plot<span class="op">$</span>pct<span class="op">$</span>n_parent,</span>
-<span id="cb34-14"><a href="unit2.html#cb34-14"></a>       <span class="dt">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb34-15"><a href="unit2.html#cb34-15"></a>       <span class="dt">bg =</span> <span class="kw">hsv</span>(.<span class="dv">8</span>, <span class="fl">.6</span>,.<span class="dv">8</span>))</span>
-<span id="cb34-16"><a href="unit2.html#cb34-16"></a></span>
-<span id="cb34-17"><a href="unit2.html#cb34-17"></a></span>
-<span id="cb34-18"><a href="unit2.html#cb34-18"></a><span class="kw">points</span>(to_plot<span class="op">$</span>YEAR,</span>
-<span id="cb34-19"><a href="unit2.html#cb34-19"></a>       to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended,</span>
-<span id="cb34-20"><a href="unit2.html#cb34-20"></a>       <span class="dt">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb34-21"><a href="unit2.html#cb34-21"></a>       <span class="dt">bg =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
-</div>
-<div id="parents-supporting-extended-children" class="section level5 hasAnchor">
-<h5><span class="header-section-number">2.2.1.4.2</span> Parents Supporting (extended) children<a href="unit2.html#parents-supporting-extended-children" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="unit2.html#cb35-1"></a><span class="kw">plot</span>(to_plot<span class="op">$</span>YEAR, to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.6</span>,.<span class="dv">8</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">ylim =</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="dt">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb35-2"><a href="unit2.html#cb35-2"></a></span>
-<span id="cb35-3"><a href="unit2.html#cb35-3"></a></span>
-<span id="cb35-4"><a href="unit2.html#cb35-4"></a><span class="kw">lines</span>(glm_hist_x,glm_hist_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb35-5"><a href="unit2.html#cb35-5"></a><span class="kw">lines</span>(glm_mod_x, glm_mod_y, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>, <span class="fl">.3</span>, <span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb35-6"><a href="unit2.html#cb35-6"></a></span>
-<span id="cb35-7"><a href="unit2.html#cb35-7"></a></span>
-<span id="cb35-8"><a href="unit2.html#cb35-8"></a></span>
-<span id="cb35-9"><a href="unit2.html#cb35-9"></a><span class="kw">lines</span>(mods_plots<span class="op">$</span>hist<span class="op">$</span>n_children, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb35-10"><a href="unit2.html#cb35-10"></a></span>
-<span id="cb35-11"><a href="unit2.html#cb35-11"></a></span>
-<span id="cb35-12"><a href="unit2.html#cb35-12"></a><span class="kw">lines</span>(mods_plots<span class="op">$</span>mod<span class="op">$</span>n_children, <span class="dt">col =</span> <span class="kw">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb35-13"><a href="unit2.html#cb35-13"></a></span>
-<span id="cb35-14"><a href="unit2.html#cb35-14"></a></span>
-<span id="cb35-15"><a href="unit2.html#cb35-15"></a><span class="kw">points</span>(to_plot<span class="op">$</span>YEAR,</span>
-<span id="cb35-16"><a href="unit2.html#cb35-16"></a>       to_plot<span class="op">$</span>pct<span class="op">$</span>n_children,</span>
-<span id="cb35-17"><a href="unit2.html#cb35-17"></a>       <span class="dt">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb35-18"><a href="unit2.html#cb35-18"></a>       <span class="dt">bg =</span> <span class="kw">hsv</span>(.<span class="dv">55</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span>
-<span id="cb35-19"><a href="unit2.html#cb35-19"></a></span>
-<span id="cb35-20"><a href="unit2.html#cb35-20"></a><span class="kw">points</span>(to_plot<span class="op">$</span>YEAR,</span>
-<span id="cb35-21"><a href="unit2.html#cb35-21"></a>       to_plot<span class="op">$</span>pct<span class="op">$</span>n_extended,</span>
-<span id="cb35-22"><a href="unit2.html#cb35-22"></a>       <span class="dt">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb35-23"><a href="unit2.html#cb35-23"></a>       <span class="dt">bg =</span> <span class="kw">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+<div id="visualize-1" class="section level5 hasAnchor" number="7.2.1.3.2">
+<h5><span class="header-section-number">7.2.1.3.2</span> Visualize<a href="unit2.html#visualize-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unit2.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb31-2"><a href="unit2.html#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="unit2.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="unit2.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb31-5"><a href="unit2.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb31-6"><a href="unit2.html#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="unit2.html#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="unit2.html#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="unit2.html#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="unit2.html#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb31-11"><a href="unit2.html#cb31-11" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb31-12"><a href="unit2.html#cb31-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb31-13"><a href="unit2.html#cb31-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
 </div>
 </div>
+<div id="even-more-detail---maybe-remove" class="section level4 hasAnchor" number="7.2.1.4">
+<h4><span class="header-section-number">7.2.1.4</span> Even more DETAIL - maybe remove<a href="unit2.html#even-more-detail---maybe-remove" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unit2.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unit2.html#cb33-1" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="unit2.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb33-3"><a href="unit2.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb33-4"><a href="unit2.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="unit2.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
+<div id="parents-supporting-parents" class="section level5 hasAnchor" number="7.2.1.4.1">
+<h5><span class="header-section-number">7.2.1.4.1</span> Parents Supporting Parents<a href="unit2.html#parents-supporting-parents" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unit2.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb34-2"><a href="unit2.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="unit2.html#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="unit2.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb34-5"><a href="unit2.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb34-6"><a href="unit2.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="unit2.html#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="unit2.html#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_parent,<span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb34-9"><a href="unit2.html#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="unit2.html#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_parent, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb34-11"><a href="unit2.html#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="unit2.html#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb34-13"><a href="unit2.html#cb34-13" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_parent,</span>
+<span id="cb34-14"><a href="unit2.html#cb34-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb34-15"><a href="unit2.html#cb34-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">6</span>,.<span class="dv">8</span>))</span>
+<span id="cb34-16"><a href="unit2.html#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="unit2.html#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-18"><a href="unit2.html#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb34-19"><a href="unit2.html#cb34-19" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb34-20"><a href="unit2.html#cb34-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb34-21"><a href="unit2.html#cb34-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+</div>
+<div id="parents-supporting-extended-children" class="section level5 hasAnchor" number="7.2.1.4.2">
+<h5><span class="header-section-number">7.2.1.4.2</span> Parents Supporting (extended) children<a href="unit2.html#parents-supporting-extended-children" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="unit2.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb35-2"><a href="unit2.html#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="unit2.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="unit2.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb35-5"><a href="unit2.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb35-6"><a href="unit2.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="unit2.html#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="unit2.html#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="unit2.html#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb35-10"><a href="unit2.html#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="unit2.html#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="unit2.html#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb35-13"><a href="unit2.html#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="unit2.html#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-15"><a href="unit2.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb35-16"><a href="unit2.html#cb35-16" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_children,</span>
+<span id="cb35-17"><a href="unit2.html#cb35-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb35-18"><a href="unit2.html#cb35-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span>
+<span id="cb35-19"><a href="unit2.html#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-20"><a href="unit2.html#cb35-20" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb35-21"><a href="unit2.html#cb35-21" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb35-22"><a href="unit2.html#cb35-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb35-23"><a href="unit2.html#cb35-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
 </div>
 </div>
-<div id="hypothesis" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.3</span> Week 8 Hypothesis Testing<a href="unit2.html#hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+</div>
+<div id="hypothesis" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Week 8 Hypothesis Testing<a href="unit2.html#hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional <em>scientific method</em>. With a question in mind, the first question is: where to look. What better place than <a href="https://ipums.org">IPUMS</a>!</p>
 <p>Begin introducing navigation of web resources - mainly IPUMS international</p>
 <p>Students should become comfortable working through lab exercises:
@@ -543,27 +588,27 @@ An applied course using IPUMS data <br></p></a>
 + Any obvious biases
 + Any obvious confounding factors</p>
 </div>
-<div id="week-9-statistical-inference-1" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.4</span> Week 9 Statistical Inference<a href="unit2.html#week-9-statistical-inference-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="week-9-statistical-inference-1" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Week 9 Statistical Inference<a href="unit2.html#week-9-statistical-inference-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="week-10-tbd-1" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.5</span> Week 10 (TBD)<a href="unit2.html#week-10-tbd-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="week-10-tbd-1" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Week 10 (TBD)<a href="unit2.html#week-10-tbd-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Some text to break up the sub-section headers</p>
 </div>
-<div id="intro-to-ipums-website" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.6</span> Intro to IPUMS website<a href="unit2.html#intro-to-ipums-website" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="background-on-ipums" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.6.1</span> background on ipums<a href="unit2.html#background-on-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="intro-to-ipums-website" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Intro to IPUMS website<a href="unit2.html#intro-to-ipums-website" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="background-on-ipums" class="section level3 hasAnchor" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> background on ipums<a href="unit2.html#background-on-ipums" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="navigating-website" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.6.2</span> navigating website<a href="unit2.html#navigating-website" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="navigating-website" class="section level3 hasAnchor" number="7.6.2">
+<h3><span class="header-section-number">7.6.2</span> navigating website<a href="unit2.html#navigating-website" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Find certain (very common) variables to answer (common) social science questions.</p>
 <p>We describe our methods in this chapter.</p>
 <p>Math can be added in body using usual syntax as follows. This may be useful, particularly for explaining the math side of things.</p>
 </div>
 </div>
-<div id="math-example" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.7</span> math example<a href="unit2.html#math-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="math-example" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> math example<a href="unit2.html#math-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="math inline">\(p\)</span> is unknown but expected to be around 1/3. Standard error will be approximated</p>
 <p><span class="math display">\[
 SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
@@ -589,7 +634,7 @@ SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
           </div>
         </div>
       </div>
-<a href="unit1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluateexercises.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="unit3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -621,7 +666,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ehrlichd/stats_book 02-unit2.Rmd",
+"link": "https://github.com/ehrlichd/stats_book 10-unit2.Rmd",
 "text": "Edit"
 },
 "history": {

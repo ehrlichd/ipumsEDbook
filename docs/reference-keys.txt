@@ -1,6 +1,9 @@
 week-6-intro-to-ipums
 unit1
 week-1-intro-to-r-data-types-data-structures-1
+intro-to-r
+data-types
+data-structures
 week-2-plotting-data
 normal-distributions
 what-is-normal
@@ -22,6 +25,7 @@ how-normal-is-it
 measuring-normality---single-sample
 comparing-normality---two-saples
 comparing-more-than-two---anova
+engage
 unit2
 week-6-introduction-to-ipums
 exploratory
@@ -60,3 +64,5 @@ core
 tips
 syntax
 math
+engage-1
+engage-2

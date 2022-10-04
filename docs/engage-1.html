@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Example RMD code | chapter_template</title>
+  <title>Chapter 10 Engage | chapter_template</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Example RMD code | chapter_template" />
+  <meta property="og:title" content="Chapter 10 Engage | chapter_template" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Example RMD code | chapter_template" />
+  <meta name="twitter:title" content="Chapter 10 Engage | chapter_template" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="unit3.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="references.html"/>
+<link rel="next" href="explore-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,75 +270,22 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ex_code" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Example RMD code<a href="ex_code.html#ex_code" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>For now, this chapter is a bit of a placeholder. I’m not sure what/how the <code>references.Rmd</code> file actually fits in to the code/construction (it looks automatic) so I want to keep that in place and need a section to note that.</p>
-<p>I also want a more centralized reference point to put any example code I find helpful while working in R/bookdown. This section could get really unrully really fast, but oh well.</p>
-<div id="core" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Core<a href="ex_code.html#core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>index.Rmd</code> is required and treated as file <code>00</code>. Chapters <em>should</em> be numbered for ease of sorting but custom orders are possible by specifying filenames somewhere <strong>in this file</strong></p>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.
-+ <strong>IE</strong> beyond the YAML header this file functions as a normal chapter since it starts with a top level header.
-+ Note that <code>index.Rmd</code> has its own YMAL in addition to the various .yml files…not sure exactly how these relate.</p>
-<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure @ref(fig:norm_dist_plot). Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table @ref(tab:norm_summary_tab).
-* Again, this prints an auto-generated numeral
-* also leaving this in the context of the plots in Chapter <a href="unit2.html#unit2">7</a></p>
-<p>You can write citations, too. See <code>knitr::write_bib()</code> for more on this. Quick example from demo/index (may not work without write_bib() though): we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2022</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>.
-* If included, “Refernces” section gets added to each chapter.
-* Not exactly sure where</p>
-<p>Embed html renders (EG, fancy tables (IPUMS_var_desc), or any shiny app) with <code>webshot</code> R package and <code>phantomJS</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="ex_code.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
-<span id="cb36-2"><a href="ex_code.html#cb36-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code></pre></div>
-</div>
-<div id="tips" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Tips<a href="ex_code.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>*<strong>Autonumber sections</strong> Note the <code>{-}</code> used to indicate “do not number this section” eg: preface.</p>
-<p><strong>LABEL EVERYTHING</strong> you’ll likely want to reference it later
-* code chunks that produce figures can be referenced via <code>@\ref(fig:[LABEL])</code></p>
-<p>You can label chapter and section titles using <code>{#label}</code> after them, e.g., we can reference Chapter <a href="unit1.html#unit1">1</a>. If you do not manually label them, there will be automatic labels anyway,
-* No idea how the automatic references work, so always be sure to declare them.
-* <strong>NOTE</strong> these display as the relevant Chapter <code>numeral</code>.</p>
-</div>
-<div id="syntax" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Syntax<a href="ex_code.html#syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>italics</em> or
-<em>italics</em> (can handle spaces)
-<strong>bold</strong>
-<code>code</code>
-<span class="math inline">\(equations\)</span></p>
-<div id="math" class="section level3 hasAnchor" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> Math<a href="ex_code.html#math" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Randal Pruim features an extensive list of common math expression on their <a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html">github page</a>. Here are some quick notes:</p>
-<p>In-line equations can be written within <code>$</code> and will be displayed right there: <span class="math inline">\(a^2 + b^2 = c^2\)</span>. In contrast, you can also add equation chunks by using <code>$$</code></p>
-<p>This can be coded in-line, <span class="math display">\[\sum_{n=1}^{10} n^2\]</span>, but will result in a page break.</p>
-<p>Alternatively, a more “classic” equation chunk:</p>
-<p>$$
-Plain text doesnt get spaces</p>
-<p>how</p>
-<p>very</p>
-<p>odd</p>
-<p>$$</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
-
-</div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-xie2015" class="csl-entry">
-Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-———. 2022. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
-</div>
+<div id="engage-1" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Engage<a href="engage-1.html#engage-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Brief example of an engaging phenomenon.
+* Poll students and discuss results
++ Does the <em>average</em> match up with individual experiences?
+* Real-world research example
+* Interrogating a commonly held assumption
++ the average height of humans is 5’5”</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="unit3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="explore-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -369,7 +316,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ehrlichd/stats_book 30-examples.Rmd",
+"link": "https://github.com/ehrlichd/stats_book chapter_template.Rmd",
 "text": "Edit"
 },
 "history": {

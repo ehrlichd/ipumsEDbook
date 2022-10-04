@@ -1,6 +1,15 @@
 # Unit 1: The Basics {#unit1}
 
 ## Week 1: Intro to R, data types, data structures 
+
+### Intro to R
+
+### Data Types
+
+**Data** is defined as "facts and statistics collected together for reference or analysis." *This is from the internet and needs to be our words* As seen in Figure 1.1, there are two types of data: **quantitative** and **qualitative**. Quanitative data are able to be expressed in numerical format and are countable. These data are either **discrete** or **continuous**... 
+
+### Data Structures
+
 ## Week 2: Plotting Data
 
 
@@ -205,4 +214,13 @@ something about tails
 standard / two-way t test
 
 #### comparing more than two - ANOVA
+
+#Glossary
+Data
+Quantitative
+Qualitative
+Discrete 
+Continuous
+Nominal
+Ordinal
 
