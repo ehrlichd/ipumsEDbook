@@ -110,14 +110,23 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={chapter\_template},
-  pdfauthor={DEE},
+  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data  },
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{chapter\_template}
-\author{DEE}
-\date{9/9/2022}
+\title{\includegraphics{ipums_banner.png}\\
+Data Science for Social Scientists:\\
+An applied course using IPUMS data }
+\author{\textbf{Developed by:}\\
+\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
+\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
+\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2022-10-04\\
+\strut \\
+\includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
+\includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
+\strut \\
+\strut \\}
+\date{}
 
 \begin{document}
 \maketitle
@@ -599,21 +608,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 10.428611  9.937063  8.469626 10.875006  9.668559  9.479215 10.750141
-##   [8]  9.927884  9.149510 11.679882  9.371622  7.431265 10.288876 11.147615
-##  [15] 10.414130  9.041930  9.649082 10.410982  9.385983  9.112118  8.309128
-##  [22] 10.185391 10.453520 10.813147 11.144047  9.736035  9.752492  8.284290
-##  [29] 10.369794  9.345064 10.067688  9.191221  9.701011 10.555558  8.353494
-##  [36] 11.439297 10.380290  9.046587 10.572640 10.361107 10.942115 11.314521
-##  [43] 10.507452 10.297347  7.940190 10.663172 10.764112 11.437358  9.395464
-##  [50] 10.819871 10.143669  9.625773 10.015800 10.147652 10.585023 10.818913
-##  [57] 10.082861  9.001683  9.852792 10.245230 10.446668  8.447009  8.771088
-##  [64] 11.004546  9.522678 10.228627 10.111393  9.089091 10.977232  9.907478
-##  [71]  9.822084  9.969819  9.573756  9.956800 10.834852 10.033411  9.357331
-##  [78] 10.343606 11.274408  9.362993  9.107094  9.078529  9.120177  8.235418
-##  [85]  9.169734 10.196320  9.901309  8.225129 10.455961 10.981566 10.304478
-##  [92] 12.187859  9.851846 11.087217  8.707737  9.951803 11.301330 10.237825
-##  [99]  8.228612 11.274672
+##   [1] 12.207750  9.488201 10.143631 11.777150 10.462924 10.951495 10.965456
+##   [8]  6.663210  9.705176  7.539057 11.464275 11.278150 11.229666  9.846772
+##  [15] 10.232778  9.514178 11.185970  9.457450 10.885543 10.377068 11.979342
+##  [22] 10.263676 10.713848 11.124728  8.801908 12.590908  9.507827  8.747049
+##  [29] 10.394889 10.579511  6.829335  9.746406  9.015062 10.319418 10.086287
+##  [36] 10.283072 10.500585  9.774555  9.122045 11.329245  7.747181 12.767696
+##  [43] 10.005641  7.292728 10.190221 11.362724  9.594289  9.772629 11.643140
+##  [50]  8.849443 11.477102 10.393754  8.771001  9.604028  9.247112  9.856262
+##  [57]  8.552806  9.209088  9.593418 10.181664  8.405191 10.542200 10.539106
+##  [64]  7.709958  8.669849 11.200683 10.341114 10.216504 10.504347  9.563556
+##  [71] 11.240896  9.981470  8.555686  8.415234 11.376714 10.462147 11.269495
+##  [78]  8.220545  9.780902  9.636280 11.208294 10.050102 10.467241  9.191991
+##  [85]  9.440387  9.596846  9.474228 10.088872 11.479274  9.047864 11.092903
+##  [92]  9.568522 11.220521 10.277722 10.250290  9.337796  9.737741  9.780389
+##  [99]  9.640681  9.953203
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -655,7 +664,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.431   9.362  10.051   9.959  10.560  12.188
+##   6.663   9.470  10.068  10.007  10.757  12.768
 \end{verbatim}
 
 Mean, standard deviation
@@ -723,9 +732,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  66.04070 93.44935 99.76117 99.68002 106.30449 137.6123
-## [2,] -27.60146 45.71936 61.62057 60.89362  77.43654 150.6141
+##           Min.  1st Qu.   Median      Mean   3rd Qu.     Max.
+## [1,]  62.53069 93.82756 100.3305 100.42024 107.54662 135.1034
+## [2,] -11.95487 44.97893  60.8532  60.83622  78.54388 150.9942
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -760,9 +769,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 66.04070 & 93.44935 & 99.76117 & 99.68002 & 106.30449 & 137.6123\\
+data1 & 62.53069 & 93.82756 & 100.33049 & 100.42024 & 107.54662 & 135.1034\\
 \hline
-data2 & -27.60146 & 45.71936 & 61.62057 & 60.89362 & 77.43654 & 150.6141\\
+data2 & -11.95487 & 44.97893 & 60.85319 & 60.83622 & 78.54388 & 150.9942\\
 \hline
 \end{tabular}
 
@@ -883,6 +892,11 @@ Discrete
 Continuous
 Nominal
 Ordinal
+
+\hypertarget{introsetup}{%
+\chapter{Intro/Setup}\label{introsetup}}
+
+\textbf{NOTE:} chapter templates \textbf{do not} require a yaml header (most .RMD docs do). Lay out sections using \texttt{\#} headers.
 
 \hypertarget{engage}{%
 \chapter{Engage}\label{engage}}
@@ -1542,7 +1556,7 @@ For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a 
 
 }
 
-\caption{the ipums logo}\label{fig:unnamed-chunk-30}
+\caption{the ipums logo}\label{fig:unnamed-chunk-29}
 \end{figure}
 
 \hypertarget{tips}{%
@@ -1589,6 +1603,11 @@ odd
 \$\$
 
 To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+
+\hypertarget{introsetup-1}{%
+\chapter{Intro/Setup}\label{introsetup-1}}
+
+\textbf{NOTE:} chapter templates \textbf{do not} require a yaml header (most .RMD docs do). Lay out sections using \texttt{\#} headers.
 
 \hypertarget{engage-1}{%
 \chapter{Engage}\label{engage-1}}

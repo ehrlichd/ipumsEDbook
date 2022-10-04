@@ -1,13 +1,7 @@
----
-title: "chapter_template"
-author: "DEE"
-date: "9/9/2022"
-output: html_document
----
+# Intro/Setup
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+**NOTE:** chapter templates **do not** require a yaml header (most .RMD docs do). Lay out sections using `#` headers.
+
 
 # Engage
 
