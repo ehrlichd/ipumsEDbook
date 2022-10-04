@@ -1,3 +1,4 @@
+fig:unnamed-chunk-30
 week-6-intro-to-ipums
 unit1
 week-1-intro-to-r-data-types-data-structures-1
@@ -26,6 +27,10 @@ measuring-normality---single-sample
 comparing-normality---two-saples
 comparing-more-than-two---anova
 engage
+explore
+explain
+elaborate
+evaluateexercises
 unit2
 week-6-introduction-to-ipums
 exploratory
@@ -65,4 +70,7 @@ tips
 syntax
 math
 engage-1
-engage-2
+explore-1
+explain-1
+elaborate-1
+evaluateexercises-1

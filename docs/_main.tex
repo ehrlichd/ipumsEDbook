@@ -4,10 +4,10 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,13 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -80,7 +73,8 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -89,7 +83,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -107,22 +101,23 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={chapter\_template},
+  pdfauthor={DEE},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
-\title{\includegraphics{ipums_banner.png}\\
-Data Science for Social Scientists:\\
-An applied course using IPUMS data}
-\author{\textbf{Developed by:}\\
-\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
-\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2022-09-09\\
-~\\
-\includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
-\includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
-~\\
-~\\}
-\date{}
+\title{chapter\_template}
+\author{DEE}
+\date{9/9/2022}
 
 \begin{document}
 \maketitle
@@ -139,10 +134,10 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 
 Open-source and customizable -\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}All materials available on \href{https://github.com/ehrlichd/stats_book}{Github}\\
-~\\
+\strut \\
 Made with open-source tools -\\
 \hspace*{0.333em}\hspace*{0.333em}\href{https://cran.r-project.org/}{R}, \href{https://www.rstudio.com/products/rstudio/}{RStudio}, \href{https://bookdown.org/}{bookdown}\\
-~\\
+\strut \\
 Driven by \textsuperscript{(nearly)} open-source data -\\
 \hspace*{0.333em}\hspace*{0.333em}Harmonized across time and space: \href{https://ipums.org}{IPUMS}\\
 
@@ -150,7 +145,7 @@ Driven by \textsuperscript{(nearly)} open-source data -\\
 \section*{What is IPUMS}\label{what-is-ipums}}
 \addcontentsline{toc}{section}{What is IPUMS}
 
-IPUMS started as a project to digitize the historical records of the US census. It has expanded to include \href{https://www.ipums.org/}{9 data collections}, which are united in their methods and principles of making soial science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably:
+IPUMS started as a project to digitize the historical records of the US census. It has expanded to include \href{https://www.ipums.org/}{9 data collections}, which are united in their methods and principles of making social science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably:
 
 \begin{itemize}
 \tightlist
@@ -502,7 +497,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 \addcontentsline{toc}{chapter}{DEV NOTES}
 
 \hypertarget{to-do}{%
-\paragraph{TO DO}\label{to-do}}
+\paragraph*{TO DO}\label{to-do}}
 \addcontentsline{toc}{paragraph}{TO DO}
 
 \begin{itemize}
@@ -527,7 +522,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 \end{itemize}
 
 \hypertarget{misc-ideas}{%
-\paragraph{MISC IDEAS}\label{misc-ideas}}
+\paragraph*{MISC IDEAS}\label{misc-ideas}}
 \addcontentsline{toc}{paragraph}{MISC IDEAS}
 
 \begin{itemize}
@@ -558,7 +553,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 \end{itemize}
 
 \hypertarget{documentation}{%
-\paragraph{Documentation}\label{documentation}}
+\paragraph*{Documentation}\label{documentation}}
 \addcontentsline{toc}{paragraph}{Documentation}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using \texttt{R-pacakgename}
@@ -572,6 +567,17 @@ This function grabs any packages in your project and adds them to a local list t
 \hypertarget{week-1-intro-to-r-data-types-data-structures-1}{%
 \section{Week 1: Intro to R, data types, data structures}\label{week-1-intro-to-r-data-types-data-structures-1}}
 
+\hypertarget{intro-to-r}{%
+\subsection{Intro to R}\label{intro-to-r}}
+
+\hypertarget{data-types}{%
+\subsection{Data Types}\label{data-types}}
+
+\textbf{Data} is defined as ``facts and statistics collected together for reference or analysis.'' \emph{This is from the internet and needs to be our words} As seen in Figure 1.1, there are two types of data: \textbf{quantitative} and \textbf{qualitative}. Quanitative data are able to be expressed in numerical format and are countable. These data are either \textbf{discrete} or \textbf{continuous}\ldots{}
+
+\hypertarget{data-structures}{%
+\subsection{Data Structures}\label{data-structures}}
+
 \hypertarget{week-2-plotting-data}{%
 \section{Week 2: Plotting Data}\label{week-2-plotting-data}}
 
@@ -582,32 +588,32 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{normal_dist <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{, }\CommentTok{## 100 samples}
-                     \DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\CommentTok{## with a mean of 10}
-                     \DataTypeTok{sd =} \DecValTok{1} \CommentTok{## and a standard deviation of 1}
+\NormalTok{normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\DocumentationTok{\#\# 100 samples}
+                     \AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\DocumentationTok{\#\# with a mean of 10}
+                     \AttributeTok{sd =} \DecValTok{1} \DocumentationTok{\#\# and a standard deviation of 1}
 \NormalTok{                     )}
 
 
-\NormalTok{normal_dist}
+\NormalTok{normal\_dist}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##   [1]  9.970043  9.975418  8.490564  9.314577  9.173341  9.293353 11.848438
-##   [8] 10.265961  8.576505  9.971175 11.076065 10.007036 11.218352  8.808945
-##  [15] 10.325266 10.560745 10.276874  9.898182  9.929287  8.671250  7.744099
-##  [22] 10.437463  9.869156  9.603304  9.733830  9.258772  9.076697 11.357306
-##  [29] 10.261048  9.819948 11.702091  8.354445 11.133806  9.344452  9.566937
-##  [36] 11.512688  9.079492 11.082133 11.051219  9.187922 10.404369  8.968782
-##  [43]  9.227770  9.106964  9.857561  9.459499 11.474360  9.822074  8.875002
-##  [50] 11.365133 10.494159 10.709924  9.155839  9.153039  9.772847 10.526362
-##  [57]  9.742686 10.714972  9.889756  9.204740 10.139313 10.470542 10.712078
-##  [64] 10.082997 10.814379 10.231897  8.979092 10.556832  9.990374  9.636622
-##  [71]  9.810268  9.142165 10.312991  9.926858  8.239178  8.957632 11.563338
-##  [78]  9.675528 10.072327  7.964287  9.192580 11.351947 10.638315  9.707418
-##  [85]  9.600551  8.621151 10.413114  9.678738  9.490455  9.772476 11.506268
-##  [92] 10.164448  9.879252 10.135134  9.821937 10.188821 10.760445 10.301840
-##  [99] 10.108241  9.310156
+##   [1] 11.214461  8.694534  9.332107  8.911323 11.054859  9.778740  8.993182
+##   [8] 10.761833 10.621199  8.467256  9.637717  9.545401  9.108842  9.414697
+##  [15] 10.719294 11.223581 10.519630 11.569280  9.971066  9.061314  9.319174
+##  [22]  9.952482 10.568586 10.124846  8.045733  8.616190 11.117656  9.436118
+##  [29]  9.085477  9.314522 10.479354  8.376964  9.609358 10.442525 11.419004
+##  [36]  9.801504  9.438599  9.239346  9.256506  9.267352 10.489208 10.123051
+##  [43] 10.685340  9.209459  9.662903  8.423936 10.624329  9.710164  8.998084
+##  [50]  9.607565 11.034620 10.507358 10.551401  9.854372  9.267117 10.654146
+##  [57]  9.282600 10.622289 10.317575 11.149847 11.597969  9.816142  9.525412
+##  [64] 11.654465 10.780633 10.516553 10.722217 10.725300  9.239157  9.730458
+##  [71] 10.517492  9.464276 11.352683 10.331018  9.666841 10.717898 10.900128
+##  [78] 11.745647 11.565378 11.387217  9.890903  8.986477  9.863902 10.213830
+##  [85]  9.842441 11.293145 10.296708 11.063484 11.296226  8.643745 10.287700
+##  [92] 10.182011 10.096620  9.354316  9.309954 10.301181  8.465279 11.020249
+##  [99] 10.094286  9.808483
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -616,7 +622,7 @@ In R, we use the \texttt{hist()} function to plot a histogram of data. We can (t
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{hist}\NormalTok{(normal_dist,}\DataTypeTok{breaks =} \DecValTok{5}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(normal\_dist,}\AttributeTok{breaks =} \DecValTok{5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -635,7 +641,7 @@ Another way to visualize this would be with a d
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tab_normal_dist <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(normal_dist)}
+\NormalTok{tab\_normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(normal\_dist)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -643,13 +649,13 @@ We can print the table in R by calling its name.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tab_normal_dist}
+\NormalTok{tab\_normal\_dist}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.744   9.285   9.894   9.927  10.446  11.848
+##   8.046   9.329  10.033  10.046  10.693  11.746
 \end{verbatim}
 
 Mean, standard deviation
@@ -661,13 +667,13 @@ How to compare apples to oranges? Standardize the units / standardize the data
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1000}\NormalTok{, }
-              \DataTypeTok{mean =} \DecValTok{100}\NormalTok{,}
-              \DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
+\NormalTok{data1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{, }
+              \AttributeTok{mean =} \DecValTok{100}\NormalTok{,}
+              \AttributeTok{sd =} \DecValTok{10}\NormalTok{)}
 
-\NormalTok{data2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1000}\NormalTok{,}
-               \DataTypeTok{mean =} \DecValTok{60}\NormalTok{, }
-               \DataTypeTok{sd =} \DecValTok{25}\NormalTok{)}
+\NormalTok{data2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{,}
+               \AttributeTok{mean =} \DecValTok{60}\NormalTok{, }
+               \AttributeTok{sd =} \DecValTok{25}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -677,9 +683,9 @@ Any issues??
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\KeywordTok{hist}\NormalTok{(data1)}
-\KeywordTok{hist}\NormalTok{(data2)}
+\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(data1)}
+\FunctionTok{hist}\NormalTok{(data2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -687,7 +693,7 @@ Any issues??
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{total_range <-}\StringTok{ }\KeywordTok{range}\NormalTok{(data1, data2)}
+\NormalTok{total\_range }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(data1, data2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -695,9 +701,9 @@ Are they the same?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\KeywordTok{hist}\NormalTok{(data1, }\DataTypeTok{xlim =}\NormalTok{ total_range)}
-\KeywordTok{hist}\NormalTok{(data2, }\DataTypeTok{xlim =}\NormalTok{ total_range)}
+\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(data1, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
+\FunctionTok{hist}\NormalTok{(data2, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -709,24 +715,24 @@ Often times its important to tables of \textbf{summary statistics}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{norm_comp_tab <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(}\KeywordTok{summary}\NormalTok{(data1),}
-                       \KeywordTok{summary}\NormalTok{(data2))}
+\NormalTok{norm\_comp\_tab }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(}\FunctionTok{summary}\NormalTok{(data1),}
+                       \FunctionTok{summary}\NormalTok{(data2))}
 
-\NormalTok{norm_comp_tab}
+\NormalTok{norm\_comp\_tab}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
-## [1,]  67.49332 93.08327 100.07175 100.07744 106.97339 130.7034
-## [2,] -13.32678 42.61544  58.96157  60.14837  76.93563 152.7480
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  68.20685 92.47337 99.62627 99.87993 107.07466 134.5889
+## [2,] -14.10622 43.92996 59.10958 59.97304  77.27069 140.7663
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{rownames}\NormalTok{(norm_comp_tab) }\CommentTok{## they're null}
+\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\DocumentationTok{\#\# they\textquotesingle{}re null}
 \end{Highlighting}
 \end{Shaded}
 
@@ -736,8 +742,8 @@ Making the table a little nicer. Also an example of \textbf{conditional programm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.null}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(norm_comp_tab)))\{}
-  \KeywordTok{rownames}\NormalTok{(norm_comp_tab) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab)))\{}
+  \FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -746,7 +752,7 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(norm_comp_tab)}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(norm\_comp\_tab)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -754,9 +760,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 67.49332 & 93.08327 & 100.07175 & 100.07744 & 106.97339 & 130.7034\\
+data1 & 68.20685 & 92.47337 & 99.62627 & 99.87993 & 107.07466 & 134.5889\\
 \hline
-data2 & -13.32678 & 42.61544 & 58.96157 & 60.14837 & 76.93563 & 152.7480\\
+data2 & -14.10622 & 43.92996 & 59.10958 & 59.97304 & 77.27069 & 140.7663\\
 \hline
 \end{tabular}
 
@@ -869,6 +875,58 @@ standard / two-way t test
 \hypertarget{comparing-more-than-two---anova}{%
 \subsubsection{comparing more than two - ANOVA}\label{comparing-more-than-two---anova}}
 
+\#Glossary
+Data
+Quantitative
+Qualitative
+Discrete
+Continuous
+Nominal
+Ordinal
+
+\hypertarget{engage}{%
+\chapter{Engage}\label{engage}}
+
+Brief example of an engaging phenomenon.
+* Poll students and discuss results
++ Does the \emph{average} match up with individual experiences?
+* Real-world research example
+* Interrogating a commonly held assumption
++ the average height of humans is 5'5''
+
+\hypertarget{explore}{%
+\chapter{Explore}\label{explore}}
+
+Explore other examples of this phenomenon.
+
+Build on the first one to show variation.
+* Other ways to represent the phenomenon/data
++ tabular
++ visually
+* can the example be grouped / broken into subgroups
++ does the same pattern/phenomenon apply?
+* Is there a corollary / inverse phenomenon?
+
+\hypertarget{explain}{%
+\chapter{Explain}\label{explain}}
+
+Discuss/interrogate the pattern of the data
+* does the shape imply anything
+* try to have it student led / guided
+* with time, students guess at what the data shows/doesn't show without labels
+
+\hypertarget{elaborate}{%
+\chapter{Elaborate}\label{elaborate}}
+
+Work through a new example, contextualizing the phenomenon using real-world data/examples.
+
+\hypertarget{evaluateexercises}{%
+\chapter{Evaluate/Exercises}\label{evaluateexercises}}
+
+short lab exercises for students to recreate / code in R
+
+Build on past concepts reinforcing basic data maniplutaions, summaries, etc.
+
 \hypertarget{unit2}{%
 \chapter{IPUMS}\label{unit2}}
 
@@ -908,8 +966,8 @@ Install/update R packages
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"ipumsr"}\NormalTok{)}
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ipumsr"}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -917,12 +975,12 @@ Data extract created online using the datacart system.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(ipumsr)}
-\KeywordTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ipumsr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
 
 
-\NormalTok{ddi <-}\StringTok{ }\KeywordTok{read_ipums_ddi}\NormalTok{(}\StringTok{"Data/ipumsi_00005.xml"}\NormalTok{)}
-\NormalTok{data <-}\StringTok{ }\KeywordTok{read_ipums_micro}\NormalTok{(ddi)}
+\NormalTok{ddi }\OtherTok{\textless{}{-}} \FunctionTok{read\_ipums\_ddi}\NormalTok{(}\StringTok{"Data/ipumsi\_00005.xml"}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read\_ipums\_micro}\NormalTok{(ddi)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -933,11 +991,11 @@ Using \texttt{haven} labeled values.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data}\OperatorTok{$}\NormalTok{RELATE[}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{]}
-\KeywordTok{class}\NormalTok{(data}\OperatorTok{$}\NormalTok{RELATE)}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{RELATE[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{]}
+\FunctionTok{class}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{RELATE)}
 
-\NormalTok{data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(RELATE)}
-\NormalTok{data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(SEX)}
+\NormalTok{data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(RELATE)}
+\NormalTok{data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(SEX)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -945,8 +1003,8 @@ What were those codes ??
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{## need to convert this to an image or something similar; kable table?}
-\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\DocumentationTok{\#\# need to convert this to an image or something similar; kable table?}
+\FunctionTok{ipums\_view}\NormalTok{(ddi)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -957,7 +1015,7 @@ A simple plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(AGE }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data)}
+\FunctionTok{plot}\NormalTok{(AGE }\SpecialCharTok{\textasciitilde{}}\NormalTok{ YEAR, }\AttributeTok{data =}\NormalTok{ data)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -965,12 +1023,12 @@ A fancier plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(AGE}\OperatorTok{~}\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Age by Sex, over Time, CO"}\NormalTok{)}
-\KeywordTok{points}\NormalTok{(data}\OperatorTok{$}\NormalTok{YEAR[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{1}\NormalTok{]}\OperatorTok{-}\DecValTok{1}\NormalTok{, data}\OperatorTok{$}\NormalTok{AGE[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{1}\NormalTok{], }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{6}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(AGE}\SpecialCharTok{\textasciitilde{}}\NormalTok{YEAR, }\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{type =} \StringTok{"n"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Age by Sex, over Time, CO"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{YEAR[data}\SpecialCharTok{$}\NormalTok{SEX}\SpecialCharTok{==}\DecValTok{1}\NormalTok{]}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, data}\SpecialCharTok{$}\NormalTok{AGE[data}\SpecialCharTok{$}\NormalTok{SEX}\SpecialCharTok{==}\DecValTok{1}\NormalTok{], }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{6}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
 
-\KeywordTok{points}\NormalTok{(data}\OperatorTok{$}\NormalTok{YEAR[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{2}\NormalTok{]}\OperatorTok{+}\DecValTok{1}\NormalTok{, data}\OperatorTok{$}\NormalTok{AGE[data}\OperatorTok{$}\NormalTok{SEX}\OperatorTok{==}\DecValTok{2}\NormalTok{], }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(}\DecValTok{1}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{YEAR[data}\SpecialCharTok{$}\NormalTok{SEX}\SpecialCharTok{==}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}\DecValTok{1}\NormalTok{, data}\SpecialCharTok{$}\NormalTok{AGE[data}\SpecialCharTok{$}\NormalTok{SEX}\SpecialCharTok{==}\DecValTok{2}\NormalTok{], }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(}\DecValTok{1}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
 
-\KeywordTok{abline}\NormalTok{(}\KeywordTok{lm}\NormalTok{(AGE}\OperatorTok{~}\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ data), }\DataTypeTok{col =} \StringTok{"green"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(AGE}\SpecialCharTok{\textasciitilde{}}\NormalTok{YEAR, }\AttributeTok{data =}\NormalTok{ data), }\AttributeTok{col =} \StringTok{"green"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -981,11 +1039,11 @@ Here we demonstrate how setting up logical questions can be used to easily filte
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{age_test <-}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{AGE }\OperatorTok{>}\StringTok{ }\DecValTok{18}
+\NormalTok{age\_test }\OtherTok{\textless{}{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{AGE }\SpecialCharTok{\textgreater{}} \DecValTok{18}
 
-\KeywordTok{class}\NormalTok{(age_test)}
+\FunctionTok{class}\NormalTok{(age\_test)}
 
-\NormalTok{age_test}
+\NormalTok{age\_test}
 \end{Highlighting}
 \end{Shaded}
 
@@ -993,7 +1051,7 @@ Logical vectors are stored as \texttt{TRUE} or \texttt{FALSE}, but can also be e
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{sum}\NormalTok{(age_test)}\OperatorTok{/}\KeywordTok{nrow}\NormalTok{(data)}
+\FunctionTok{sum}\NormalTok{(age\_test)}\SpecialCharTok{/}\FunctionTok{nrow}\NormalTok{(data)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1004,9 +1062,9 @@ A unique characteristic of census and some survey data is the nested-structure w
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{hh_total <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(data}\OperatorTok{$}\NormalTok{SERIAL))}
-\NormalTok{hh_total}
-\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\NormalTok{hh\_total }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{SERIAL))}
+\NormalTok{hh\_total}
+\FunctionTok{ipums\_view}\NormalTok{(ddi)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1017,30 +1075,30 @@ First we look at a nuclear family, comprising only parents and their immediate c
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(ipumsr)}
-\KeywordTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ipumsr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
 
-\NormalTok{ddi <-}\StringTok{ }\KeywordTok{read_ipums_ddi}\NormalTok{(}\StringTok{"/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml"}\NormalTok{)}
-\NormalTok{all_data <-}\StringTok{ }\KeywordTok{read_ipums_micro}\NormalTok{(ddi)}
+\NormalTok{ddi }\OtherTok{\textless{}{-}} \FunctionTok{read\_ipums\_ddi}\NormalTok{(}\StringTok{"/pkg/ipums/personal/ehrli097/AABA\_2022/Data/ipumsi\_00005.xml"}\NormalTok{)}
+\NormalTok{all\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_ipums\_micro}\NormalTok{(ddi)}
 
-\NormalTok{census_years <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1860}\NormalTok{, }\DecValTok{1870}\NormalTok{, }\DecValTok{1880}\NormalTok{, }\DecValTok{1900}\NormalTok{, }\DecValTok{1910}\NormalTok{, }\DecValTok{1960}\NormalTok{, }\DecValTok{1970}\NormalTok{, }\DecValTok{1980}\NormalTok{, }\DecValTok{1990}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{2010}\NormalTok{)}
+\NormalTok{census\_years }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1860}\NormalTok{, }\DecValTok{1870}\NormalTok{, }\DecValTok{1880}\NormalTok{, }\DecValTok{1900}\NormalTok{, }\DecValTok{1910}\NormalTok{, }\DecValTok{1960}\NormalTok{, }\DecValTok{1970}\NormalTok{, }\DecValTok{1980}\NormalTok{, }\DecValTok{1990}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{2010}\NormalTok{)}
 
-\CommentTok{## subset census only}
-\NormalTok{d2 <-}\StringTok{ }\NormalTok{all_data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(YEAR }\OperatorTok{%in%}\StringTok{ }\NormalTok{census_years)}
+\DocumentationTok{\#\# subset census only}
+\NormalTok{d2 }\OtherTok{\textless{}{-}}\NormalTok{ all\_data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(YEAR }\SpecialCharTok{\%in\%}\NormalTok{ census\_years)}
 
-\CommentTok{## make a household dataframe}
-\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL, }\DataTypeTok{.keep_all =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select}\NormalTok{(YEAR,SERIAL,GEO1_US)}
+\DocumentationTok{\#\# make a household dataframe}
+\NormalTok{hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL, }\AttributeTok{.keep\_all =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(YEAR,SERIAL,GEO1\_US)}
 
-\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{View}\NormalTok{()}
+\NormalTok{hhs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{View}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATE }\OperatorTok{==}\DecValTok{4}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }
-\StringTok{  }
-\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{extended_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{extended_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(extended_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\NormalTok{hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(RELATE }\SpecialCharTok{==}\DecValTok{4}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  
+  
+  \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{extended\_test=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{extended\_test=}\FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(extended\_test),}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{))}
   
 
 
@@ -1050,18 +1108,18 @@ First we look at a nuclear family, comprising only parents and their immediate c
 
 
 
-\NormalTok{hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\NormalTok{RELATE }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{) }\OperatorTok{|}
-\StringTok{                  }\NormalTok{(RELATE }\OperatorTok{==}\StringTok{ }\DecValTok{3} \OperatorTok{&}
-\StringTok{                     }\NormalTok{MARST }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{))}
-\NormalTok{                ) }\OperatorTok{%>%}\StringTok{ }
+\NormalTok{hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{RELATE }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{) }\SpecialCharTok{|}
+\NormalTok{                  (RELATE }\SpecialCharTok{==} \DecValTok{3} \SpecialCharTok{\&}
+\NormalTok{                     MARST }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\NormalTok{                ) }\SpecialCharTok{\%\textgreater{}\%} 
 
-\StringTok{  }
-\StringTok{  }
-\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{nuclear_test =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{nuclear_test =} \KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(nuclear_test), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{))}
+  
+  
+  \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{nuclear\_test =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{nuclear\_test =} \FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(nuclear\_test), }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{))}
 
 
 
-\KeywordTok{table}\NormalTok{(hhs}\OperatorTok{$}\NormalTok{extended_test,hhs}\OperatorTok{$}\NormalTok{nuclear_test)}
+\FunctionTok{table}\NormalTok{(hhs}\SpecialCharTok{$}\NormalTok{extended\_test,hhs}\SpecialCharTok{$}\NormalTok{nuclear\_test)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1070,45 +1128,45 @@ First we look at a nuclear family, comprising only parents and their immediate c
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(parent_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\NormalTok{  hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(RELATED }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{parent\_test=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{parent\_test=}\FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(parent\_test),}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{))}
 
 
-\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(children_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\NormalTok{  hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(RELATED }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{children\_test=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{children\_test=}\FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(children\_test),}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{))}
   
   
-\NormalTok{  res_tabs <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
-    \StringTok{"nuclear_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, nuclear_test,GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
-  \StringTok{"extended_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, extended_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
-  \StringTok{"parent_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, parent_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(),}
-  \StringTok{"children_test"}\NormalTok{ =}\StringTok{ }\NormalTok{hhs }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, children_test, GEO1_US) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{()}
+\NormalTok{  res\_tabs }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}
+    \StringTok{"nuclear\_test"} \OtherTok{=}\NormalTok{ hhs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(YEAR, nuclear\_test,GEO1\_US) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\AttributeTok{n =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"extended\_test"} \OtherTok{=}\NormalTok{ hhs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(YEAR, extended\_test, GEO1\_US) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\AttributeTok{n =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"parent\_test"} \OtherTok{=}\NormalTok{ hhs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(YEAR, parent\_test, GEO1\_US) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\AttributeTok{n =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{as.data.frame}\NormalTok{(),}
+  \StringTok{"children\_test"} \OtherTok{=}\NormalTok{ hhs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(YEAR, children\_test, GEO1\_US) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\AttributeTok{n =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{as.data.frame}\NormalTok{()}
 \NormalTok{  )}
   
   
   
   
 
-\NormalTok{collapsed_results <-}\StringTok{ }\NormalTok{res_tabs }\OperatorTok{%>%}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(x)\{}
-\NormalTok{  x <-}\StringTok{ }\NormalTok{x }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{names}\NormalTok{(x)[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{])) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\DataTypeTok{n =} \KeywordTok{sum}\NormalTok{(n))}
+\NormalTok{collapsed\_results }\OtherTok{\textless{}{-}}\NormalTok{ res\_tabs }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ purrr}\SpecialCharTok{::}\FunctionTok{map}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  x }\OtherTok{\textless{}{-}}\NormalTok{ x }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{names}\NormalTok{(x)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{])) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\AttributeTok{.groups=}\StringTok{"drop"}\NormalTok{,}\AttributeTok{n =} \FunctionTok{sum}\NormalTok{(n))}
 
 \NormalTok{\})}
 
 
-\NormalTok{collapsed_results <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(collapsed_results, }\ControlFlowTok{function}\NormalTok{(x)\{}
-  \KeywordTok{colnames}\NormalTok{(x)[}\DecValTok{2}\NormalTok{] <-}\StringTok{ "test"}
-  \KeywordTok{colnames}\NormalTok{(x)[}\DecValTok{3}\NormalTok{] <-}\StringTok{ "state"}
-  \KeywordTok{return}\NormalTok{(x)}
+\NormalTok{collapsed\_results }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(collapsed\_results, }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \FunctionTok{colnames}\NormalTok{(x)[}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"test"}
+  \FunctionTok{colnames}\NormalTok{(x)[}\DecValTok{3}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"state"}
+  \FunctionTok{return}\NormalTok{(x)}
 \NormalTok{\})}
 
-\NormalTok{combined <-}\StringTok{ }\NormalTok{collapsed_results }\OperatorTok{%>%}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{reduce}\NormalTok{(full_join, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{))}
+\NormalTok{combined }\OtherTok{\textless{}{-}}\NormalTok{ collapsed\_results }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ purrr}\SpecialCharTok{::}\FunctionTok{reduce}\NormalTok{(full\_join, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{))}
 
 
 
-\KeywordTok{colnames}\NormalTok{(combined) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{,}\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{, }\StringTok{"n_nuclear"}\NormalTok{, }\StringTok{"n_extended"}\NormalTok{, }\StringTok{"n_parent"}\NormalTok{, }\StringTok{"n_children"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(combined) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{,}\StringTok{"test"}\NormalTok{, }\StringTok{"state"}\NormalTok{, }\StringTok{"n\_nuclear"}\NormalTok{, }\StringTok{"n\_extended"}\NormalTok{, }\StringTok{"n\_parent"}\NormalTok{, }\StringTok{"n\_children"}\NormalTok{)}
 
-\NormalTok{combined[}\KeywordTok{is.na}\NormalTok{(combined)] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{combined[}\FunctionTok{is.na}\NormalTok{(combined)] }\OtherTok{\textless{}{-}} \DecValTok{0}
 
 
-\NormalTok{to_plot <-}\StringTok{ }\NormalTok{combined }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(YEAR, state) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{n_tot =} \KeywordTok{sum}\NormalTok{(n_nuclear)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{pct =}  \KeywordTok{across}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"n_"}\NormalTok{))}\OperatorTok{/}\NormalTok{n_tot) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select}\NormalTok{(YEAR,test,state,pct)}
+\NormalTok{to\_plot }\OtherTok{\textless{}{-}}\NormalTok{ combined }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(YEAR, state) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{n\_tot =} \FunctionTok{sum}\NormalTok{(n\_nuclear)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pct =}  \FunctionTok{across}\NormalTok{(}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"n\_"}\NormalTok{))}\SpecialCharTok{/}\NormalTok{n\_tot) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(YEAR,test,state,pct)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1117,11 +1175,11 @@ First we look at a nuclear family, comprising only parents and their immediate c
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{to_plot <-}\StringTok{ }\NormalTok{to_plot }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(test}\OperatorTok{==}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{to\_plot }\OtherTok{\textless{}{-}}\NormalTok{ to\_plot }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(test}\SpecialCharTok{==}\ConstantTok{TRUE}\NormalTok{)}
 
 
 
-\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_nuclear, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{4}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"prop of hhs"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Nuclear HHs over time in CO"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR, to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_nuclear, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{4}\NormalTok{, .}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{ylim =}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"prop of hhs"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Nuclear HHs over time in CO"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1135,52 +1193,52 @@ Next we look at hhs with extended families present. IE, any that contain more re
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{to_plot <-}\StringTok{ }\NormalTok{to_plot }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(test}\OperatorTok{==}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{to\_plot }\OtherTok{\textless{}{-}}\NormalTok{ to\_plot }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(test}\SpecialCharTok{==}\ConstantTok{TRUE}\NormalTok{)}
 
 
-\NormalTok{glm_hist <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(pct}\OperatorTok{$}\NormalTok{n_extended }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{,], }\DataTypeTok{family =} \KeywordTok{quasibinomial}\NormalTok{(}\DataTypeTok{link=}\NormalTok{logit))}
+\NormalTok{glm\_hist }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(pct}\SpecialCharTok{$}\NormalTok{n\_extended }\SpecialCharTok{\textasciitilde{}}\NormalTok{ YEAR, }\AttributeTok{data =}\NormalTok{ to\_plot[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR }\SpecialCharTok{\textless{}} \DecValTok{1950}\NormalTok{,], }\AttributeTok{family =} \FunctionTok{quasibinomial}\NormalTok{(}\AttributeTok{link=}\NormalTok{logit))}
 
 
 
-\NormalTok{glm_hist_x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from=}\DecValTok{1860}\NormalTok{, }\DataTypeTok{to =} \DecValTok{1910}\NormalTok{, }\DataTypeTok{length.out =} \DecValTok{100}\NormalTok{)}
-\NormalTok{glm_hist_y <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(glm_hist, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{ glm_hist_x), }\DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{glm\_hist\_x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{1860}\NormalTok{, }\AttributeTok{to =} \DecValTok{1910}\NormalTok{, }\AttributeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{glm\_hist\_y }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(glm\_hist, }\FunctionTok{list}\NormalTok{(}\AttributeTok{YEAR =}\NormalTok{ glm\_hist\_x), }\AttributeTok{type =} \StringTok{"response"}\NormalTok{)}
 
-\NormalTok{glm_mod <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(pct}\OperatorTok{$}\NormalTok{n_extended }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR}\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{,], }\DataTypeTok{family =} \KeywordTok{quasibinomial}\NormalTok{(}\DataTypeTok{link=}\NormalTok{logit))}
+\NormalTok{glm\_mod }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(pct}\SpecialCharTok{$}\NormalTok{n\_extended }\SpecialCharTok{\textasciitilde{}}\NormalTok{ YEAR, }\AttributeTok{data =}\NormalTok{ to\_plot[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR}\SpecialCharTok{\textgreater{}} \DecValTok{1950}\NormalTok{,], }\AttributeTok{family =} \FunctionTok{quasibinomial}\NormalTok{(}\AttributeTok{link=}\NormalTok{logit))}
 
-\NormalTok{glm_mod_x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{1960}\NormalTok{, }\DataTypeTok{to =} \DecValTok{2010}\NormalTok{, }\DataTypeTok{length.out =} \DecValTok{100}\NormalTok{)}
-\NormalTok{glm_mod_y <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(glm_mod, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{ glm_mod_x), }\DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{glm\_mod\_x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{1960}\NormalTok{, }\AttributeTok{to =} \DecValTok{2010}\NormalTok{, }\AttributeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{glm\_mod\_y }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(glm\_mod, }\FunctionTok{list}\NormalTok{(}\AttributeTok{YEAR =}\NormalTok{ glm\_mod\_x), }\AttributeTok{type =} \StringTok{"response"}\NormalTok{)}
 
-\NormalTok{mods <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\StringTok{"hist"}\NormalTok{=}\KeywordTok{list}\NormalTok{(),}
-             \StringTok{"mod"}\NormalTok{ =}\StringTok{ }\KeywordTok{list}\NormalTok{()}
+\NormalTok{mods }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\StringTok{"hist"}\OtherTok{=}\FunctionTok{list}\NormalTok{(),}
+             \StringTok{"mod"} \OtherTok{=} \FunctionTok{list}\NormalTok{()}
 \NormalTok{             )}
-\NormalTok{mods_plots <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\StringTok{"hist"}\NormalTok{=}\KeywordTok{list}\NormalTok{(),}
-                   \StringTok{"mod"}\NormalTok{ =}\KeywordTok{list}\NormalTok{()}
+\NormalTok{mods\_plots }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\StringTok{"hist"}\OtherTok{=}\FunctionTok{list}\NormalTok{(),}
+                   \StringTok{"mod"} \OtherTok{=}\FunctionTok{list}\NormalTok{()}
 \NormalTok{                   )}
 
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \KeywordTok{names}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{pct))\{}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \FunctionTok{names}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{pct))\{}
   
-\NormalTok{  hist_x <-}\StringTok{ }\NormalTok{to_plot}\OperatorTok{$}\NormalTok{YEAR[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{]}
-\NormalTok{mod_x <-}\StringTok{ }\NormalTok{to_plot}\OperatorTok{$}\NormalTok{YEAR[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{]}
+\NormalTok{  hist\_x }\OtherTok{\textless{}{-}}\NormalTok{ to\_plot}\SpecialCharTok{$}\NormalTok{YEAR[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR }\SpecialCharTok{\textless{}} \DecValTok{1950}\NormalTok{]}
+\NormalTok{mod\_x }\OtherTok{\textless{}{-}}\NormalTok{ to\_plot}\SpecialCharTok{$}\NormalTok{YEAR[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR }\SpecialCharTok{\textgreater{}} \DecValTok{1950}\NormalTok{]}
 
-\NormalTok{  mods}\OperatorTok{$}\NormalTok{hist[[i]] <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(pct[[i]] }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{<}\StringTok{ }\DecValTok{1950}\NormalTok{,])}
+\NormalTok{  mods}\SpecialCharTok{$}\NormalTok{hist[[i]] }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(pct[[i]] }\SpecialCharTok{\textasciitilde{}}\NormalTok{ YEAR, }\AttributeTok{data =}\NormalTok{ to\_plot[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR }\SpecialCharTok{\textless{}} \DecValTok{1950}\NormalTok{,])}
   
-\NormalTok{  mods_plots}\OperatorTok{$}\NormalTok{hist[[i]] <-}\StringTok{ }
-\StringTok{    }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"x"}\NormalTok{ =}\StringTok{ }\NormalTok{hist_x,}
-               \StringTok{"y"}\NormalTok{ =}\StringTok{ }\KeywordTok{predict}\NormalTok{(mods}\OperatorTok{$}\NormalTok{hist[[i]], }
-                             \KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{hist_x), }
-                             \DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{  mods\_plots}\SpecialCharTok{$}\NormalTok{hist[[i]] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{data.frame}\NormalTok{(}\StringTok{"x"} \OtherTok{=}\NormalTok{ hist\_x,}
+               \StringTok{"y"} \OtherTok{=} \FunctionTok{predict}\NormalTok{(mods}\SpecialCharTok{$}\NormalTok{hist[[i]], }
+                             \FunctionTok{list}\NormalTok{(}\AttributeTok{YEAR =}\NormalTok{hist\_x), }
+                             \AttributeTok{type =} \StringTok{"response"}\NormalTok{)}
 \NormalTok{               )}
   
   
   
-\NormalTok{  mods}\OperatorTok{$}\NormalTok{mod[[i]] <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(pct[[i]] }\OperatorTok{~}\StringTok{ }\NormalTok{YEAR, }\DataTypeTok{data =}\NormalTok{ to_plot[to_plot}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{>}\StringTok{ }\DecValTok{1950}\NormalTok{,])}
+\NormalTok{  mods}\SpecialCharTok{$}\NormalTok{mod[[i]] }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(pct[[i]] }\SpecialCharTok{\textasciitilde{}}\NormalTok{ YEAR, }\AttributeTok{data =}\NormalTok{ to\_plot[to\_plot}\SpecialCharTok{$}\NormalTok{YEAR }\SpecialCharTok{\textgreater{}} \DecValTok{1950}\NormalTok{,])}
   
   
-\NormalTok{  mods_plots}\OperatorTok{$}\NormalTok{mod[[i]] <-}\StringTok{ }
-\StringTok{    }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"x"}\NormalTok{ =}\StringTok{ }\NormalTok{mod_x,}
-               \StringTok{"y"}\NormalTok{ =}\StringTok{ }\KeywordTok{predict}\NormalTok{(mods}\OperatorTok{$}\NormalTok{mod[[i]], }
-                             \KeywordTok{list}\NormalTok{(}\DataTypeTok{YEAR =}\NormalTok{mod_x), }
-                             \DataTypeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{  mods\_plots}\SpecialCharTok{$}\NormalTok{mod[[i]] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{data.frame}\NormalTok{(}\StringTok{"x"} \OtherTok{=}\NormalTok{ mod\_x,}
+               \StringTok{"y"} \OtherTok{=} \FunctionTok{predict}\NormalTok{(mods}\SpecialCharTok{$}\NormalTok{mod[[i]], }
+                             \FunctionTok{list}\NormalTok{(}\AttributeTok{YEAR =}\NormalTok{mod\_x), }
+                             \AttributeTok{type =} \StringTok{"response"}\NormalTok{)}
 \NormalTok{               )}
 \NormalTok{\}}
 \end{Highlighting}
@@ -1191,19 +1249,19 @@ Next we look at hhs with extended families present. IE, any that contain more re
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR, to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{ylim =}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\AttributeTok{bg =} \StringTok{"grey"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
 
 
-\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_hist\_x,glm\_hist\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_mod\_x, glm\_mod\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
 
 
 
 
-\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
-\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
-       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
-       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR,}
+\NormalTok{       to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended,}
+       \AttributeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \AttributeTok{bg =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1212,17 +1270,17 @@ Next we look at hhs with extended families present. IE, any that contain more re
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ipums_view}\NormalTok{(ddi)}
+\FunctionTok{ipums\_view}\NormalTok{(ddi)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }
-\StringTok{  }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{parent_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(parent_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\NormalTok{  hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(RELATED }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{4200}\NormalTok{, }\DecValTok{4210}\NormalTok{, }\DecValTok{4211}\NormalTok{, }\DecValTok{4220}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{4510}\NormalTok{, }\DecValTok{4600}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  
+  \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{parent\_test=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{parent\_test=}\FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(parent\_test),}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{))}
 
-\NormalTok{  hhs <-}\StringTok{ }\NormalTok{d2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(RELATED }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(YEAR, SERIAL) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{right_join}\NormalTok{(hhs, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{children_test=}\KeywordTok{if_else}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(children_test),}\OtherTok{FALSE}\NormalTok{,}\OtherTok{TRUE}\NormalTok{))}
+\NormalTok{  hhs }\OtherTok{\textless{}{-}}\NormalTok{ d2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(RELATED }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{4100}\NormalTok{, }\DecValTok{4110}\NormalTok{, }\DecValTok{4120}\NormalTok{, }\DecValTok{4130}\NormalTok{, }\DecValTok{4300}\NormalTok{, }\DecValTok{4301}\NormalTok{, }\DecValTok{4302}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{distinct}\NormalTok{(YEAR, SERIAL) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{children\_test=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{right\_join}\NormalTok{(hhs, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"YEAR"}\NormalTok{, }\StringTok{"SERIAL"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{children\_test=}\FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(children\_test),}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1231,27 +1289,27 @@ Next we look at hhs with extended families present. IE, any that contain more re
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR, to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{ylim =}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\AttributeTok{bg =} \StringTok{"grey"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
 
 
-\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_hist\_x,glm\_hist\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_mod\_x, glm\_mod\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
 
 
-\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{hist}\OperatorTok{$}\NormalTok{n_parent,}\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(mods\_plots}\SpecialCharTok{$}\NormalTok{hist}\SpecialCharTok{$}\NormalTok{n\_parent,}\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
 
-\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{mod}\OperatorTok{$}\NormalTok{n_parent, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(mods\_plots}\SpecialCharTok{$}\NormalTok{mod}\SpecialCharTok{$}\NormalTok{n\_parent, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
 
-\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
-\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_parent,}
-       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
-       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR,}
+\NormalTok{       to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_parent,}
+       \AttributeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \AttributeTok{bg =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
 
 
-\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
-\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
-       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
-       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR,}
+\NormalTok{       to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended,}
+       \AttributeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \AttributeTok{bg =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1260,29 +1318,29 @@ Next we look at hhs with extended families present. IE, any that contain more re
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR, to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{ylim =}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\DataTypeTok{bg =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR, to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{), }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{ylim =}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{25}\NormalTok{), }\AttributeTok{bg =} \StringTok{"grey"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"pct of hhs with extended family"}\NormalTok{)}
 
 
-\KeywordTok{lines}\NormalTok{(glm_hist_x,glm_hist_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{lines}\NormalTok{(glm_mod_x, glm_mod_y, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_hist\_x,glm\_hist\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(glm\_mod\_x, glm\_mod\_y, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{, .}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
 
 
 
-\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{hist}\OperatorTok{$}\NormalTok{n_children, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(mods\_plots}\SpecialCharTok{$}\NormalTok{hist}\SpecialCharTok{$}\NormalTok{n\_children, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
 
 
-\KeywordTok{lines}\NormalTok{(mods_plots}\OperatorTok{$}\NormalTok{mod}\OperatorTok{$}\NormalTok{n_children, }\DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(mods\_plots}\SpecialCharTok{$}\NormalTok{mod}\SpecialCharTok{$}\NormalTok{n\_children, }\AttributeTok{col =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
 
 
-\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
-\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_children,}
-       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
-       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR,}
+\NormalTok{       to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_children,}
+       \AttributeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \AttributeTok{bg =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{55}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
 
-\KeywordTok{points}\NormalTok{(to_plot}\OperatorTok{$}\NormalTok{YEAR,}
-\NormalTok{       to_plot}\OperatorTok{$}\NormalTok{pct}\OperatorTok{$}\NormalTok{n_extended,}
-       \DataTypeTok{pch =} \DecValTok{23}\NormalTok{,}
-       \DataTypeTok{bg =} \KeywordTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
+\FunctionTok{points}\NormalTok{(to\_plot}\SpecialCharTok{$}\NormalTok{YEAR,}
+\NormalTok{       to\_plot}\SpecialCharTok{$}\NormalTok{pct}\SpecialCharTok{$}\NormalTok{n\_extended,}
+       \AttributeTok{pch =} \DecValTok{23}\NormalTok{,}
+       \AttributeTok{bg =} \FunctionTok{hsv}\NormalTok{(.}\DecValTok{95}\NormalTok{,.}\DecValTok{6}\NormalTok{,.}\DecValTok{8}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1465,10 +1523,27 @@ Embed html renders (EG, fancy tables (IPUMS\_var\_desc), or any shiny app) with 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
-\NormalTok{webshot}\OperatorTok{::}\KeywordTok{install_phantomjs}\NormalTok{()}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
+\NormalTok{webshot}\SpecialCharTok{::}\FunctionTok{install\_phantomjs}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
+
+Embed figures from a folder.
+
+For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a number of graphical paramerters you can set (or ignore)
+\texttt{out.width} will scale your image accordingly - irrespective of unit/display
+\texttt{fig.align} should be ``left'', ``right'', or ``center''
+\texttt{fig.cap} allows you to provide ``mouse over'' captions for the image.
+\texttt{echo=FALSE} is important if you ONLY want the image (IE the result of the code). If you want the code itself to show, (IE, or echo) set \texttt{echo=TRUE}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{imgs/ipums_i_logo} 
+
+}
+
+\caption{the ipums logo}\label{fig:unnamed-chunk-30}
+\end{figure}
 
 \hypertarget{tips}{%
 \section{Tips}\label{tips}}
@@ -1514,6 +1589,49 @@ odd
 \$\$
 
 To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+
+\hypertarget{engage-1}{%
+\chapter{Engage}\label{engage-1}}
+
+Brief example of an engaging phenomenon.
+* Poll students and discuss results
++ Does the \emph{average} match up with individual experiences?
+* Real-world research example
+* Interrogating a commonly held assumption
++ the average height of humans is 5'5''
+
+\hypertarget{explore-1}{%
+\chapter{Explore}\label{explore-1}}
+
+Explore other examples of this phenomenon.
+
+Build on the first one to show variation.
+* Other ways to represent the phenomenon/data
++ tabular
++ visually
+* can the example be grouped / broken into subgroups
++ does the same pattern/phenomenon apply?
+* Is there a corollary / inverse phenomenon?
+
+\hypertarget{explain-1}{%
+\chapter{Explain}\label{explain-1}}
+
+Discuss/interrogate the pattern of the data
+* does the shape imply anything
+* try to have it student led / guided
+* with time, students guess at what the data shows/doesn't show without labels
+
+\hypertarget{elaborate-1}{%
+\chapter{Elaborate}\label{elaborate-1}}
+
+Work through a new example, contextualizing the phenomenon using real-world data/examples.
+
+\hypertarget{evaluateexercises-1}{%
+\chapter{Evaluate/Exercises}\label{evaluateexercises-1}}
+
+short lab exercises for students to recreate / code in R
+
+Build on past concepts reinforcing basic data maniplutaions, summaries, etc.
 
   \bibliography{book.bib,packages.bib}
 
