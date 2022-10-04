@@ -32,6 +32,19 @@ install.packages("webshot")
 webshot::install_phantomjs()
 ```
   
+  
+Embed figures from a folder.
+
+For this, it's usually best to use a code-chunk and `knitr`. There are a number of graphical paramerters you can set (or ignore)
+`out.width` will scale your image accordingly - irrespective of unit/display
+`fig.align` should be "left", "right", or "center"
+`fig.cap` allows you to provide "mouse over" captions for the image. 
+`echo=FALSE` is important if you ONLY want the image (IE the result of the code). If you want the code itself to show, (IE, or echo) set `echo=TRUE`.
+
+
+```{r, out.width= 50%, fig.align='center', fig.cap='the ipums logo', echo = FALSE}
+knitr::include_graphics("imgs/ipums_i_logo.jpg")
+```
 ## Tips
 
 ***Autonumber sections** Note the `{-}` used to indicate "do not number this section" eg: preface.
