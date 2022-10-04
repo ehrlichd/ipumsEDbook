@@ -302,21 +302,21 @@ div.csl-indent {
 <span id="cb1-5"><a href="unit1.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="unit1.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="unit1.html#cb1-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  9.246915 11.517916 10.146929  9.824979 10.299873  8.843135  9.393725
-##   [8] 10.695924  9.647111  9.698588  9.814011 10.159781 10.175721  9.041962
-##  [15]  9.553755 10.434192  9.727913 11.932926 10.907175 10.359461 10.357976
-##  [22] 10.329439 11.806092  9.056530  9.795825  7.944009 10.130384  9.263790
-##  [29]  8.604236  9.684566 11.533915 10.324956  8.307456  9.186024  9.992504
-##  [36] 10.169455  8.203820 10.702649  9.104587  8.398839  9.425434 10.294284
-##  [43] 10.589408  9.582974  9.513568 10.237885 10.526379  9.987150  9.424284
-##  [50]  9.698588 10.171512  7.856645  9.879944  8.125408 10.170917  9.899381
-##  [57] 10.937824  9.401953 11.180736 11.262240  9.582679 10.136306  9.676494
-##  [64]  9.088431 10.013791 10.030516  9.558318 11.410323 12.255210  9.351230
-##  [71]  9.518848 11.080755  9.640823 10.121892 11.013234  7.486955  9.371996
-##  [78]  8.585695 12.373437  9.989263 11.445599  9.641905 11.621916 10.349978
-##  [85] 11.144595  9.573813  9.561772 11.869522 10.822878  8.524670  9.727563
-##  [92] 10.997236 10.316493 12.453599 10.615097 10.453075  9.559584  8.868333
-##  [99] 11.341449 11.431531</code></pre>
+<pre><code>##   [1]  9.655091 10.712831  9.588473  8.990751 11.604129  9.872910 10.985988
+##   [8]  9.662768 10.295994  9.153797 10.679453 10.627442 10.750896  9.380221
+##  [15]  8.690395 10.412148  8.342742  9.294922  9.946930  9.626403 10.026899
+##  [22] 11.368638  9.991511 10.741271  8.724790  9.744030 11.386593 10.191952
+##  [29]  9.139533  9.988766  8.320842 10.954355 10.375188 11.105332  9.359838
+##  [36] 10.195908  9.535340 11.571402 10.898776  8.382285 10.352914  9.058002
+##  [43]  9.589384  9.226031 10.027783 10.458814  9.007615  8.985020  8.069413
+##  [50] 10.679231 10.517796 10.626917 11.216839 10.651030  9.159620  8.464172
+##  [57]  9.443167 11.407484 10.535901  9.491709 11.480066 10.048641 10.356498
+##  [64]  8.562810 10.275443  8.813061  9.465947  9.731377 10.301465 10.404888
+##  [71]  8.917361  8.643560 10.518316 10.303450  9.413909 11.615408 11.361121
+##  [78]  9.499272  9.520077  8.299365  9.889055  9.987673 11.637758  9.103477
+##  [85] 11.293872 11.905892 10.623751 11.364890 11.479108  9.604010 10.695794
+##  [92]  9.919857  9.484596  9.094612  9.206924 10.229426 10.392678  8.618058
+##  [99] 10.991728 10.225626</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -333,7 +333,7 @@ div.csl-indent {
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.487   9.492   9.991  10.031  10.596  12.454</code></pre>
+##   8.069   9.344  10.009  10.005  10.658  11.906</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor" number="1.2.2.2">
@@ -365,8 +365,8 @@ div.csl-indent {
 <span id="cb11-3"><a href="unit1.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="unit1.html#cb11-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
 <pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  74.33714 93.09362 99.12665 99.48992 105.67779 136.8340
-## [2,] -14.45066 43.64514 60.46438 60.54251  78.56086 137.4766</code></pre>
+## [1,]  70.29219 93.33637 99.66896 99.86916 106.28694 131.3790
+## [2,] -19.20814 43.29850 58.72860 59.55997  76.36992 142.0127</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -390,21 +390,21 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">74.33714</td>
-<td align="right">93.09362</td>
-<td align="right">99.12665</td>
-<td align="right">99.48992</td>
-<td align="right">105.67779</td>
-<td align="right">136.8340</td>
+<td align="right">70.29219</td>
+<td align="right">93.33637</td>
+<td align="right">99.66896</td>
+<td align="right">99.86916</td>
+<td align="right">106.28694</td>
+<td align="right">131.3790</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-14.45066</td>
-<td align="right">43.64514</td>
-<td align="right">60.46438</td>
-<td align="right">60.54251</td>
-<td align="right">78.56086</td>
-<td align="right">137.4766</td>
+<td align="right">-19.20814</td>
+<td align="right">43.29850</td>
+<td align="right">58.72860</td>
+<td align="right">59.55997</td>
+<td align="right">76.36992</td>
+<td align="right">142.0127</td>
 </tr>
 </tbody>
 </table>
