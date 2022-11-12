@@ -15,7 +15,9 @@ author: |
   | <br>  
   | <br>  
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook:
+    split_by: section
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -25,7 +27,23 @@ description: "This is an open source book. The output format for this example is
 ---
 
 
+
+# Hello Anthropologists!! {-}
+
+
+### Getting Started {-}
+
+
+In order to use this textbook, you will need to:  
+  * set up an [IPUMS]()
+  * download and install [RStudio](https://posit.co/download/rstudio-desktop/) 
+    + This link also contains instructions and links to download [R from CRAN](https://cran.rstudio.com/) 
+    + Be sure you download the appropriate file for your Mac or PC
+
+
 # Preface {-}
+
+
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
 <h5>
 | Open-source and customizable - 
@@ -42,25 +60,38 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 
 ## What is IPUMS {-}
 
+IPUMS started as a project to digitize the historical records of the US census.
+It has expanded to include [9 data collections](https://www.ipums.org/), 
+which are united in their methods and principles of making social science
+research easier. IPUMS data consists of individual-level census and survey data
+from more than 100 countries around the world. Notably: 
 
-IPUMS started as a project to digitize the historical records of the US census. It has expanded to include [9 data collections](https://www.ipums.org/), which are united in their methods and principles of making social science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably: 
 
-  * IPUMS **harmonizes** these data, ensuring consistently coded values across time and space.
+  * IPUMS **harmonizes** these data - ensuring consistently coded values across time and space.
   * IPUMS provides harmonized **GIS Shapefiles** for most census and survey data.
   * IPUMS provides extensive **metadata**, including:
-    + Original questionnaire text
-    + Alerts about notable changes in variable definition, universe, or coding
+    + Original questionnaire text.
+    + Universe definition and comparability statements.
+    + Alerts about notable changes in variable definition, 
+    universe, or coding schema 
     
-    
-IPUMS data is free to use for education and research purposes. Researchers just need to register with an **email address** and brief project description. Nothing too formal - we're just trying to understand what kinds of questions researchers are interested in. For educators, we have additional resources to set up [classroom accounts](), making it easy to get your students registered and share IPUMS data with them.
+
+
+IPUMS data is free to use for education and research purposes. Researchers need
+only to register with an email address and brief project description. Nothing
+too formal - we’re just trying to understand what kinds of questions
+researchers are interested in. For educators, we have additional resources
+to facilitate set up of classroom accounts - making it easy to get your
+students registered and share IPUMS data with them.
+
+
 
 
 
 ## Why make this course {-}
 
 
-In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `**template**`, to tailor this course to their subject or interest.
-
+In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for both **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data is useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `lesson_template.Rmd` to tailor this course to their subject or interest.
 
 
 
@@ -70,13 +101,13 @@ In a world where information and data are increasingly accessible, it is of utmo
 This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
 
-## Course Aims {-}
+### Course Aims {-}
 
 Provide students with relevant, hands on, methodological training in data literacy and visualization. 
 
 
 
-## Learning Outcomes {-}
+### Learning Outcomes {-}
 
 After this course, students will be able to:
 
@@ -88,7 +119,7 @@ offer
   * Present the analysis in a poster format for other students
 
 
-## Guiding Principles {-}
+### Guiding Principles {-}
 
 * Phenomenon-based learning
   + try to start the class with a **question** or **problem**

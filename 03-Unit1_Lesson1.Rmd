@@ -2,10 +2,6 @@
 
 A test edit
 
-
-more test edits
-
-
 **NOTE:** chapter templates **do not** require a yaml header (most .RMD docs do). Lay out sections using `#` headers.
 
 

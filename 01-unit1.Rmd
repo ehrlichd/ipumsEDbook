@@ -1,17 +1,342 @@
 # Unit 1: The Basics {#unit1}
 
-## Week 1: Intro to R, data types, data structures 
+# Lesson 1: 
 
-### Intro to R
+## WHAT IS DATA 
 
-### Data Types
 
-**Data** is defined as "facts and statistics collected together for reference or analysis." *This is from the internet and needs to be our words* As seen in Figure 1.1, there are two types of data: **quantitative** and **qualitative**. Quanitative data are able to be expressed in numerical format and are countable. These data are either **discrete** or **continuous**... 
+### POV:  
+
+
+> In a social science class, your teacher tells you that the CDC
+> reports average male height in the United States to be 69
+> inches or 5ft 9in. You have been using online dating sites and
+> noticed that the men you match with all report that they are
+> 6ft or over. You become curious if this is a bias in reporting,
+> or if the area where you live and attend college has
+> significantly taller men. To test your theory, you want to
+> collect data on height from individuals in your data science
+> class to test if males are truly taller on campus than the
+> country average. 
+> 
+> **Source:** https://www.cdc.gov/nchs/fastats/body-measurements.htm**
+
+
+Data is defined as “facts and statistics collected together for 
+reference or analysis.”^[This is from the internet and needs to 
+be our words] As seen in Figure 1.1, there are two types of data:
+quantitative and qualitative. **Quantitative data** are able to 
+be expressed in numerical format and are countable. These data 
+are either discrete or continuous where **discrete data** uses 
+numeric bins. For example, we use our age as discrete 
+quantitative data, we round our age to the previous year (eg., 
+20, 21, 22). **Continuous data** does not use bins, but rather 
+includes all of the fractions between two whole numbers. An 
+example could be most physical measures like height, weight, the 
+speed at which an individual runs. 
+
+
+
+**Qualitative data** describes characteristics or categories and 
+can be broken down into two categories, nominal or ordinal. 
+**Nominal data** has no inherent ordering but it can be 
+categorized. Examples include country or origin, gender, hair 
+color, race, etc. **Ordinal data** can both be categorized and 
+orders (e.g., first, second, and third place is a race).
+
+
+> Going back to our hypothesis of male height on campus, heights 
+> are continuous, qualitative data. It is difficult for people to
+> report their specific height and you assume that most 
+> individuals will report it rounded to the closest inch. This 
+> makes the data you will actually use, discrete quantitative 
+> data.
+
+
+
+## COLLECTING DATA
+
+
+The first step to answering a research question is to collect 
+your data. Broadly, data comes in two forms, primary and 
+secondary. (Fig 1.2) **Primary data** is data that is collected 
+directly by the researcher. Surveys, observations, 
+experimentation, questionnaires, and interviews are all examples 
+of primary data. **Secondary data** is collected from published 
+or unpublished literature. It is collected by different 
+researchers and compiled for use by a second scientist.This type 
+of data includes data found in published articles, books, 
+journals, biographies, and government records like the US Census.
+
+Once compiled, you now have a data set which is comprised of 
+observations and variables. An **observation** is all of the
+measures taken for one person or item. A **variable** is what is 
+being measured. 
+
+> The US CDC data is secondary, but you are collecting height 
+> data yourself in class as a comparison. The survey or 
+> questionnaire you use on your classmates is primary data. Each 
+> individual is an observation and the variable of interest is 
+> height.
+
+
+## POPULATIONS AND SAMPLING
+ 
+ 
+**Random Sampling:** It is a sampling method in which all the 
+items have an equal chance of being selected and the individuals 
+who are selected are just like the ones who are not selected
+
+**Stratified Random Sampling:** It is a process to gather data by
+separating the actual population into the distinct subset or 
+strata, and then choosing simple random samples from each stratum
+Your research question is about the height of all males at your 
+college, but recording height data for each individual would be 
+very difficult and time consuming. You instead decide to use a 
+sample of males in your data science class. This is a random 
+sample as each male individual has an equally likely chance of 
+being samples (that is, unless a prerequisite exists).
+
+Sampling strategy can lead to **bias**
+
+> If you had chosen a different sample, like the men’s basketball
+> team, your results would have been biased. 
+
+
+
+
+# AAA "In-Class" Results {-}
+
+
+### Load the Data {-}
+
+
+Thanks for filling out our simple survey! Below, we'll tabulate results. Make sure to update the `data_template.xlsx` file located in: `inst/unit1_data`
+
+
+```{r}
+
+dir_path <- file.path("inst","unit1_data")
+survey_path <- file.path(dir_path, "data_template.xlsx")
+
+data <- readxl::read_excel(survey_path)
+```
+
+
+
+
+
+## Access the Data {-}
+
+What is `data`?? Below we call the `class()` function on `data` and see that it has 3 classes: 
+  `tbl_df` , `tbl` , `data.frame`
+  
+The first two classes, `tbl_df, tbl` indicate it is a special kind of table, in the `tibble` format. In general, you can interact with these like a `matrix` or `data.frame` but they have additional features. 
+
+
+```{r}
+class(data)
+```
+
+
+
+We can call `colnames()` on data, like a regular `data.frame` or `matrix`. Or we can take advantage of the `tibble` structure and use the `glimpse()` function which provides a succinct summary of your data.
+
+```{r}
+
+colnames(data)
+
+tibble::glimpse(data)
+
+```
+
+
+
+
+
+## Summarize Data {-}
+
+### Continuous Data {-}
+
+For continuous data, we often want to summarize our data by describing the **mean, median, and/or range**. **Mean** and **median** describe the *central tendency* of the data, while **range** describes the full extant of the data, as seen below. 
+
+NOTE: if `NA` are present in the data, be sure to use the `na.rm=TRUE` flag for these operations.
+
+
+```{r}
+
+mean(data$Height_inches, na.rm = T)
+median(data$Height_inches, na.rm = T)
+range(data$Height_inches, na.rm = T)
+
+```
+
+
+
+
+### All in summary() {-}
+
+
+**Mean**, **median**, and **range** will all be reported by calling `summary()` on a `numeric vector`, such as `Height_inches`. In addition, the lower and upper quartiles will be reported, along with the number of `NA` responses.
+
+
+NOTE: `summary()` does NOT require special handling for `NA` values, in fact - it expects them!
+
+```{r}
+summary(data$Height_inches)
+```
+
+
+
+
+### Mode Code {-}
+
+One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
+
+```{r}
+
+my_mode <- function(x){
+  tt <- table(x) ## find frequencies
+  tt <- tt[order(tt, decreasing = TRUE)] ## resort based on freq
+  
+  ## check number of modes
+  max <- max(tt)
+  n_max <- sum(tt==max)
+  
+  
+  if(n_max > 1 ){
+    warning("More than one mode detected")
+    return(tt[tt==max])
+  } else {
+    ## return only the first value
+    return(tt[1]) ## return whatever the highrst frequency is
+  }
+
+  
+}
+
+```
+
+### Mode Results {-}
+With this function, it's easy to find the **mode**
+
+
+```{r}
+
+my_mode(data$Height_inches)
+
+```
+
+
+
+## Visualizing Data {-}
+
+The above summaries describe data with numbers, but we can also describe data visually.
+
+
+
+### Continuous Data - Boxplots {-}
+
+
+Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
+
+  * the **median** is the black bar in the middle
+  * the **quartiles** (25th and 75th percentiles) are represented by the extents of the boxes
+  * The **range** is shown by the whiskers, with outliers shown indvidually, if needed.
+  
+  
+  
+```{r}
+boxplot(data$Height_inches)
+```
+
+
+### Continuous Data - Histograms {-}
+
+Continuous data, can also be broken into **bins** and plotted as a **histogram**. The `hist()` function will attempt to find the optimum number of bins for you, but you can specify a different number with the `breaks` argument.
+
+
+```{r}
+hist(data$Height_inches, main = "Histogram of Height", xlab = "Height (in)")
+```
+
+
+
+
+### Categorical Data {-}
+
+Categorical data is already in discrete units. In general with categorical data, we want to count the **frequency** of unique values. There are many ways to do this, but one of the easiest is the `table()` function. Saving the results of the table to an object, `birth_freq`, allows you to save and print the results at any time.
+
+```{r}
+
+birth_freq <- table(data$Birth_Month)
+
+birth_freq
+```
+
+
+We can also visualize our tabulated results using a **barplot** as below.
+
+
+```{r}
+
+barplot(birth_freq)
+
+```
+
+
+
+
+
+
+
+
+
+
+# Lesson 2: Intro to R, data types, data structures 
+
+## INTRO TO R
+
+### What is R?
+
+R is a statistical programing language. Using R, researchers can write instructions (code) that performs just about any data manipulation, analization, or visualization.
+
+
+
+Some highlights from the **C**omprehensive **R** **A**rchive **N**etwork (cran): 
+
+> “R is a language and environment for statistical computing and 
+> graphics…
+>
+> R provides a wide variety of statistical (linear and nonlinear 
+> modelling, classical statistical tests, time-series analysis, 
+> classification, clustering, …) and graphical techniques, and is > highly extensible. 
+>
+> The S language is often the vehicle of choice for research in 
+> statistical methodology, and R provides an Open Source route to > participation in that activity.
+>
+> One of R’s strengths is the ease with which well-designed
+> publication-quality plots can be produced, including 
+> mathematical symbols and formulae where needed. Great care has 
+> been taken over the defaults for the minor design choices in 
+> graphics, but the user retains full control.
+>
+> R is available as Free Software under the terms of the Free 
+> Software Foundation’s GNU General Public License in source code
+> form. It compiles and runs on a wide variety of UNIX platforms 
+> and similar systems (including FreeBSD and Linux), Windows and 
+> MacOS.”
+
+
+### Why use R?
 
 ### Data Structures
 
-## Week 2: Plotting Data
 
+
+# Lesson 3: Distributions
+
+## Data Distributions
 
 ### Normal Distributions
 
