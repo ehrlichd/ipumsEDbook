@@ -4,6 +4,20 @@
 %
 \documentclass[
 ]{book}
+\title{\includegraphics{ipums_banner.png}\\
+Data Science for Social Scientists:\\
+An applied course using IPUMS data }
+\author{\textbf{Developed by:}\\
+\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
+\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
+\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2022-11-17\\
+\strut \\
+\includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
+\includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
+\strut \\
+\strut \\}
+\date{}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -33,6 +47,13 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data  },
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -106,27 +127,6 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data  },
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-
-\title{\includegraphics{ipums_banner.png}\\
-Data Science for Social Scientists:\\
-An applied course using IPUMS data }
-\author{\textbf{Developed by:}\\
-\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
-\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2022-10-04\\
-\strut \\
-\includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
-\includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
-\strut \\
-\strut \\}
-\date{}
 
 \begin{document}
 \maketitle
@@ -135,6 +135,20 @@ An applied course using IPUMS data }
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\hypertarget{hello-anthropologists}{%
+\chapter*{Hello Anthropologists!!}\label{hello-anthropologists}}
+\addcontentsline{toc}{chapter}{Hello Anthropologists!!}
+
+\hypertarget{getting-started}{%
+\subsection*{Getting Started}\label{getting-started}}
+\addcontentsline{toc}{subsection}{Getting Started}
+
+In order to use this textbook, you will need to:\\
+* set up an \href{}{IPUMS}
+* download and install \href{https://posit.co/download/rstudio-desktop/}{RStudio}
++ This link also contains instructions and links to download \href{https://cran.rstudio.com/}{R from CRAN}
++ Be sure you download the appropriate file for your Mac or PC
+
 \hypertarget{preface}{%
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
@@ -154,12 +168,16 @@ Driven by \textsuperscript{(nearly)} open-source data -\\
 \section*{What is IPUMS}\label{what-is-ipums}}
 \addcontentsline{toc}{section}{What is IPUMS}
 
-IPUMS started as a project to digitize the historical records of the US census. It has expanded to include \href{https://www.ipums.org/}{9 data collections}, which are united in their methods and principles of making social science research easier. IPUMS data consists of individual-level census and survey data from more than 100 countries around the world. Notably:
+IPUMS started as a project to digitize the historical records of the US census.
+It has expanded to include \href{https://www.ipums.org/}{9 data collections},
+which are united in their methods and principles of making social science
+research easier. IPUMS data consists of individual-level census and survey data
+from more than 100 countries around the world. Notably:
 
 \begin{itemize}
 \tightlist
 \item
-  IPUMS \textbf{harmonizes} these data, ensuring consistently coded values across time and space.
+  IPUMS \textbf{harmonizes} these data - ensuring consistently coded values across time and space.
 \item
   IPUMS provides harmonized \textbf{GIS Shapefiles} for most census and survey data.
 \item
@@ -168,19 +186,27 @@ IPUMS started as a project to digitize the historical records of the US census. 
   \begin{itemize}
   \tightlist
   \item
-    Original questionnaire text
+    Original questionnaire text.
   \item
-    Alerts about notable changes in variable definition, universe, or coding
+    Universe definition and comparability statements.
+  \item
+    Alerts about notable changes in variable definition,
+    universe, or coding schema
   \end{itemize}
 \end{itemize}
 
-IPUMS data is free to use for education and research purposes. Researchers just need to register with an \textbf{email address} and brief project description. Nothing too formal - we're just trying to understand what kinds of questions researchers are interested in. For educators, we have additional resources to set up \href{}{classroom accounts}, making it easy to get your students registered and share IPUMS data with them.
+IPUMS data is free to use for education and research purposes. Researchers need
+only to register with an email address and brief project description. Nothing
+too formal - we're just trying to understand what kinds of questions
+researchers are interested in. For educators, we have additional resources
+to facilitate set up of classroom accounts - making it easy to get your
+students registered and share IPUMS data with them.
 
 \hypertarget{why-make-this-course}{%
 \section*{Why make this course}\label{why-make-this-course}}
 \addcontentsline{toc}{section}{Why make this course}
 
-In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for \textbf{Education} and \textbf{Research}. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only ``data person'' at their institution. We think IPUMS data will be useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our \texttt{**template**}, to tailor this course to their subject or interest.
+In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for both \textbf{Education} and \textbf{Research}. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only ``data person'' at their institution. We think IPUMS data is useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our \texttt{lesson\_template.Rmd} to tailor this course to their subject or interest.
 
 \hypertarget{course-description}{%
 \chapter*{Course Description}\label{course-description}}
@@ -189,14 +215,14 @@ In a world where information and data are increasingly accessible, it is of utmo
 This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
 \hypertarget{course-aims}{%
-\section*{Course Aims}\label{course-aims}}
-\addcontentsline{toc}{section}{Course Aims}
+\subsection*{Course Aims}\label{course-aims}}
+\addcontentsline{toc}{subsection}{Course Aims}
 
 Provide students with relevant, hands on, methodological training in data literacy and visualization.
 
 \hypertarget{learning-outcomes}{%
-\section*{Learning Outcomes}\label{learning-outcomes}}
-\addcontentsline{toc}{section}{Learning Outcomes}
+\subsection*{Learning Outcomes}\label{learning-outcomes}}
+\addcontentsline{toc}{subsection}{Learning Outcomes}
 
 After this course, students will be able to:
 
@@ -216,8 +242,8 @@ After this course, students will be able to:
 \end{itemize}
 
 \hypertarget{guiding-principles}{%
-\section*{Guiding Principles}\label{guiding-principles}}
-\addcontentsline{toc}{section}{Guiding Principles}
+\subsection*{Guiding Principles}\label{guiding-principles}}
+\addcontentsline{toc}{subsection}{Guiding Principles}
 
 \begin{itemize}
 \tightlist
@@ -573,22 +599,409 @@ This function grabs any packages in your project and adds them to a local list t
 \hypertarget{unit1}{%
 \chapter{Unit 1: The Basics}\label{unit1}}
 
-\hypertarget{week-1-intro-to-r-data-types-data-structures-1}{%
-\section{Week 1: Intro to R, data types, data structures}\label{week-1-intro-to-r-data-types-data-structures-1}}
+\hypertarget{lesson-1}{%
+\chapter{Lesson 1:}\label{lesson-1}}
+
+\hypertarget{what-is-data}{%
+\section{WHAT IS DATA}\label{what-is-data}}
+
+\hypertarget{pov}{%
+\subsection{POV:}\label{pov}}
+
+\begin{quote}
+In a social science class, your teacher tells you that the CDC
+reports average male height in the United States to be 69
+inches or 5ft 9in. You have been using online dating sites and
+noticed that the men you match with all report that they are
+6ft or over. You become curious if this is a bias in reporting,
+or if the area where you live and attend college has
+significantly taller men. To test your theory, you want to
+collect data on height from individuals in your data science
+class to test if males are truly taller on campus than the
+country average.
+
+\textbf{Source:} \url{https://www.cdc.gov/nchs/fastats/body-measurements.htm}**
+\end{quote}
+
+Data is defined as ``facts and statistics collected together for
+reference or analysis.''\footnote{This is from the internet and needs to
+  be our words} As seen in Figure 1.1, there are two types of data:
+quantitative and qualitative. \textbf{Quantitative data} are able to
+be expressed in numerical format and are countable. These data
+are either discrete or continuous where \textbf{discrete data} uses
+numeric bins. For example, we use our age as discrete
+quantitative data, we round our age to the previous year (eg.,
+20, 21, 22). \textbf{Continuous data} does not use bins, but rather
+includes all of the fractions between two whole numbers. An
+example could be most physical measures like height, weight, the
+speed at which an individual runs.
+
+\textbf{Qualitative data} describes characteristics or categories and
+can be broken down into two categories, nominal or ordinal.
+\textbf{Nominal data} has no inherent ordering but it can be
+categorized. Examples include country or origin, gender, hair
+color, race, etc. \textbf{Ordinal data} can both be categorized and
+orders (e.g., first, second, and third place is a race).
+
+\begin{quote}
+Going back to our hypothesis of male height on campus, heights
+are continuous, qualitative data. It is difficult for people to
+report their specific height and you assume that most
+individuals will report it rounded to the closest inch. This
+makes the data you will actually use, discrete quantitative
+data.
+\end{quote}
+
+\hypertarget{collecting-data}{%
+\section{COLLECTING DATA}\label{collecting-data}}
+
+The first step to answering a research question is to collect
+your data. Broadly, data comes in two forms, primary and
+secondary. (Fig 1.2) \textbf{Primary data} is data that is collected
+directly by the researcher. Surveys, observations,
+experimentation, questionnaires, and interviews are all examples
+of primary data. \textbf{Secondary data} is collected from published
+or unpublished literature. It is collected by different
+researchers and compiled for use by a second scientist.This type
+of data includes data found in published articles, books,
+journals, biographies, and government records like the US Census.
+
+Once compiled, you now have a data set which is comprised of
+observations and variables. An \textbf{observation} is all of the
+measures taken for one person or item. A \textbf{variable} is what is
+being measured.
+
+\begin{quote}
+The US CDC data is secondary, but you are collecting height
+data yourself in class as a comparison. The survey or
+questionnaire you use on your classmates is primary data. Each
+individual is an observation and the variable of interest is
+height.
+\end{quote}
+
+\hypertarget{populations-and-sampling}{%
+\section{POPULATIONS AND SAMPLING}\label{populations-and-sampling}}
+
+\textbf{Random Sampling:} It is a sampling method in which all the
+items have an equal chance of being selected and the individuals
+who are selected are just like the ones who are not selected
+
+\textbf{Stratified Random Sampling:} It is a process to gather data by
+separating the actual population into the distinct subset or
+strata, and then choosing simple random samples from each stratum
+Your research question is about the height of all males at your
+college, but recording height data for each individual would be
+very difficult and time consuming. You instead decide to use a
+sample of males in your data science class. This is a random
+sample as each male individual has an equally likely chance of
+being samples (that is, unless a prerequisite exists).
+
+Sampling strategy can lead to \textbf{bias}
+
+\begin{quote}
+If you had chosen a different sample, like the men's basketball
+team, your results would have been biased.
+\end{quote}
+
+\hypertarget{aaa-in-class-results}{%
+\chapter*{AAA ``In-Class'' Results}\label{aaa-in-class-results}}
+\addcontentsline{toc}{chapter}{AAA ``In-Class'' Results}
+
+\hypertarget{load-the-data}{%
+\subsection*{Load the Data}\label{load-the-data}}
+\addcontentsline{toc}{subsection}{Load the Data}
+
+Thanks for filling out our simple survey! Below, we'll tabulate results. Make sure to update the \texttt{data\_template.xlsx} file located in: \texttt{inst/unit1\_data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dir\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{"inst"}\NormalTok{,}\StringTok{"unit1\_data"}\NormalTok{)}
+\NormalTok{survey\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(dir\_path, }\StringTok{"data\_template.xlsx"}\NormalTok{)}
+
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(survey\_path)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{access-the-data}{%
+\section*{Access the Data}\label{access-the-data}}
+\addcontentsline{toc}{section}{Access the Data}
+
+What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
+\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+
+The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "tbl_df"     "tbl"        "data.frame"
+\end{verbatim}
+
+We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "individual"    "Birth_Month"   "Height_inches"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 52
+## Columns: 3
+## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
+## $ Birth_Month   <chr> "January", "September", "march", "april", NA, NA, NA, NA~
+## $ Height_inches <dbl> 70, 64, 72, 61, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+\end{verbatim}
+
+\hypertarget{summarize-data}{%
+\section*{Summarize Data}\label{summarize-data}}
+\addcontentsline{toc}{section}{Summarize Data}
+
+\hypertarget{continuous-data}{%
+\subsection*{Continuous Data}\label{continuous-data}}
+\addcontentsline{toc}{subsection}{Continuous Data}
+
+For continuous data, we often want to summarize our data by describing the \textbf{mean, median, and/or range}. \textbf{Mean} and \textbf{median} describe the \emph{central tendency} of the data, while \textbf{range} describes the full extant of the data, as seen below.
+
+NOTE: if \texttt{NA} are present in the data, be sure to use the \texttt{na.rm=TRUE} flag for these operations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 66.75
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 61 72
+\end{verbatim}
+
+\hypertarget{all-in-summary}{%
+\subsection*{All in summary()}\label{all-in-summary}}
+\addcontentsline{toc}{subsection}{All in summary()}
+
+\textbf{Mean}, \textbf{median}, and \textbf{range} will all be reported by calling \texttt{summary()} on a \texttt{numeric\ vector}, such as \texttt{Height\_inches}. In addition, the lower and upper quartiles will be reported, along with the number of \texttt{NA} responses.
+
+NOTE: \texttt{summary()} does NOT require special handling for \texttt{NA} values, in fact - it expects them!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   61.00   63.25   67.00   66.75   70.50   72.00      48
+\end{verbatim}
+
+\hypertarget{mode-code}{%
+\subsection*{Mode Code}\label{mode-code}}
+\addcontentsline{toc}{subsection}{Mode Code}
+
+One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_mode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  tt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(x) }\DocumentationTok{\#\# find frequencies}
+\NormalTok{  tt }\OtherTok{\textless{}{-}}\NormalTok{ tt[}\FunctionTok{order}\NormalTok{(tt, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)] }\DocumentationTok{\#\# resort based on freq}
+  
+  \DocumentationTok{\#\# check number of modes}
+\NormalTok{  max }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(tt)}
+\NormalTok{  n\_max }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(tt}\SpecialCharTok{==}\NormalTok{max)}
+  
+  
+  \ControlFlowTok{if}\NormalTok{(n\_max }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{ )\{}
+    \FunctionTok{warning}\NormalTok{(}\StringTok{"More than one mode detected"}\NormalTok{)}
+    \FunctionTok{return}\NormalTok{(tt[tt}\SpecialCharTok{==}\NormalTok{max])}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \DocumentationTok{\#\# return only the first value}
+    \FunctionTok{return}\NormalTok{(tt[}\DecValTok{1}\NormalTok{]) }\DocumentationTok{\#\# return whatever the highrst frequency is}
+\NormalTok{  \}}
+
+  
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{mode-results}{%
+\subsection*{Mode Results}\label{mode-results}}
+\addcontentsline{toc}{subsection}{Mode Results}
+
+With this function, it's easy to find the \textbf{mode}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{my\_mode}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in my_mode(data$Height_inches): More than one mode detected
+\end{verbatim}
+
+\begin{verbatim}
+## x
+## 61 64 70 72 
+##  1  1  1  1
+\end{verbatim}
+
+\hypertarget{visualizing-data}{%
+\section*{Visualizing Data}\label{visualizing-data}}
+\addcontentsline{toc}{section}{Visualizing Data}
+
+The above summaries describe data with numbers, but we can also describe data visually.
+
+\hypertarget{continuous-data---boxplots}{%
+\subsection*{Continuous Data - Boxplots}\label{continuous-data---boxplots}}
+\addcontentsline{toc}{subsection}{Continuous Data - Boxplots}
+
+Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
+
+\begin{itemize}
+\tightlist
+\item
+  the \textbf{median} is the black bar in the middle
+\item
+  the \textbf{quartiles} (25th and 75th percentiles) are represented by the extents of the boxes
+\item
+  The \textbf{range} is shown by the whiskers, with outliers shown indvidually, if needed.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\hypertarget{continuous-data---histograms}{%
+\subsection*{Continuous Data - Histograms}\label{continuous-data---histograms}}
+\addcontentsline{toc}{subsection}{Continuous Data - Histograms}
+
+Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{histogram}. The \texttt{hist()} function will attempt to find the optimum number of bins for you, but you can specify a different number with the \texttt{breaks} argument.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{main =} \StringTok{"Histogram of Height"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Height (in)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\hypertarget{categorical-data}{%
+\subsection*{Categorical Data}\label{categorical-data}}
+\addcontentsline{toc}{subsection}{Categorical Data}
+
+Categorical data is already in discrete units. In general with categorical data, we want to count the \textbf{frequency} of unique values. There are many ways to do this, but one of the easiest is the \texttt{table()} function. Saving the results of the table to an object, \texttt{birth\_freq}, allows you to save and print the results at any time.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{birth\_freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Birth\_Month)}
+
+\NormalTok{birth\_freq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     april   January     march September 
+##         1         1         1         1
+\end{verbatim}
+
+We can also visualize our tabulated results using a \textbf{barplot} as below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(birth\_freq)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\hypertarget{lesson-2-intro-to-r-data-types-data-structures}{%
+\chapter{Lesson 2: Intro to R, data types, data structures}\label{lesson-2-intro-to-r-data-types-data-structures}}
 
 \hypertarget{intro-to-r}{%
-\subsection{Intro to R}\label{intro-to-r}}
+\section{INTRO TO R}\label{intro-to-r}}
 
-\hypertarget{data-types}{%
-\subsection{Data Types}\label{data-types}}
+\hypertarget{what-is-r}{%
+\subsection{What is R?}\label{what-is-r}}
 
-\textbf{Data} is defined as ``facts and statistics collected together for reference or analysis.'' \emph{This is from the internet and needs to be our words} As seen in Figure 1.1, there are two types of data: \textbf{quantitative} and \textbf{qualitative}. Quanitative data are able to be expressed in numerical format and are countable. These data are either \textbf{discrete} or \textbf{continuous}\ldots{}
+R is a statistical programing language. Using R, researchers can write instructions (code) that performs just about any data manipulation, analization, or visualization.
+
+Some highlights from the \textbf{C}omprehensive \textbf{R} \textbf{A}rchive \textbf{N}etwork (cran):
+
+\begin{quote}
+``R is a language and environment for statistical computing and
+graphics\ldots{}
+
+R provides a wide variety of statistical (linear and nonlinear
+modelling, classical statistical tests, time-series analysis,
+classification, clustering, \ldots) and graphical techniques, and is \textgreater{} highly extensible.
+
+The S language is often the vehicle of choice for research in
+statistical methodology, and R provides an Open Source route to \textgreater{} participation in that activity.
+
+One of R's strengths is the ease with which well-designed
+publication-quality plots can be produced, including
+mathematical symbols and formulae where needed. Great care has
+been taken over the defaults for the minor design choices in
+graphics, but the user retains full control.
+
+R is available as Free Software under the terms of the Free
+Software Foundation's GNU General Public License in source code
+form. It compiles and runs on a wide variety of UNIX platforms
+and similar systems (including FreeBSD and Linux), Windows and
+MacOS.''
+\end{quote}
+
+\hypertarget{why-use-r}{%
+\subsection{Why use R?}\label{why-use-r}}
 
 \hypertarget{data-structures}{%
 \subsection{Data Structures}\label{data-structures}}
 
-\hypertarget{week-2-plotting-data}{%
-\section{Week 2: Plotting Data}\label{week-2-plotting-data}}
+\hypertarget{lesson-3-distributions}{%
+\chapter{Lesson 3: Distributions}\label{lesson-3-distributions}}
+
+\hypertarget{data-distributions}{%
+\section{Data Distributions}\label{data-distributions}}
 
 \hypertarget{normal-distributions}{%
 \subsection{Normal Distributions}\label{normal-distributions}}
@@ -608,21 +1021,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 12.207750  9.488201 10.143631 11.777150 10.462924 10.951495 10.965456
-##   [8]  6.663210  9.705176  7.539057 11.464275 11.278150 11.229666  9.846772
-##  [15] 10.232778  9.514178 11.185970  9.457450 10.885543 10.377068 11.979342
-##  [22] 10.263676 10.713848 11.124728  8.801908 12.590908  9.507827  8.747049
-##  [29] 10.394889 10.579511  6.829335  9.746406  9.015062 10.319418 10.086287
-##  [36] 10.283072 10.500585  9.774555  9.122045 11.329245  7.747181 12.767696
-##  [43] 10.005641  7.292728 10.190221 11.362724  9.594289  9.772629 11.643140
-##  [50]  8.849443 11.477102 10.393754  8.771001  9.604028  9.247112  9.856262
-##  [57]  8.552806  9.209088  9.593418 10.181664  8.405191 10.542200 10.539106
-##  [64]  7.709958  8.669849 11.200683 10.341114 10.216504 10.504347  9.563556
-##  [71] 11.240896  9.981470  8.555686  8.415234 11.376714 10.462147 11.269495
-##  [78]  8.220545  9.780902  9.636280 11.208294 10.050102 10.467241  9.191991
-##  [85]  9.440387  9.596846  9.474228 10.088872 11.479274  9.047864 11.092903
-##  [92]  9.568522 11.220521 10.277722 10.250290  9.337796  9.737741  9.780389
-##  [99]  9.640681  9.953203
+##   [1]  8.283281  9.986951 11.126084 10.059244 10.954517  8.551064  9.936085
+##   [8]  9.663171  9.476563 10.972992  9.078060  9.955959  8.966456  9.714395
+##  [15] 10.617533  8.436985 10.074293 10.269555 11.805408 10.162156 10.229569
+##  [22]  9.927926  8.379997 10.005866  7.660421 12.794830 11.987923 11.198557
+##  [29] 11.886719  9.601832 11.289638  9.712173  7.967336  9.554024  9.945227
+##  [36] 11.025337 11.496550  9.324674 10.592863  9.448456  9.248342 11.007543
+##  [43] 11.502264 11.279822 10.146802  9.054626  9.745818 10.299232 11.033905
+##  [50] 10.512997  9.295279  8.727555 10.719264  8.758891  9.876770  9.333231
+##  [57] 11.479955 10.589533  9.407144 10.427596  8.557797  9.335073  8.728427
+##  [64] 10.118108  9.871303  8.955949  9.307462 10.551194 10.133350 10.989681
+##  [71] 11.195571 10.159086  8.624714  9.008340  9.189561 10.441537 11.122525
+##  [78] 10.199072 10.389668  9.885721  9.980859 11.205213  9.400495  8.570012
+##  [85]  9.446789  9.727927 10.147285  8.429662  9.912394 10.442583 12.242780
+##  [92]  8.932087  8.967939 10.970121 10.095165 10.230579 11.343148  8.130177
+##  [99]  8.909377  9.699220
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -664,7 +1077,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   6.663   9.470  10.068  10.007  10.757  12.768
+##   7.660   9.304   9.968   9.981  10.599  12.795
 \end{verbatim}
 
 Mean, standard deviation
@@ -732,9 +1145,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.   Median      Mean   3rd Qu.     Max.
-## [1,]  62.53069 93.82756 100.3305 100.42024 107.54662 135.1034
-## [2,] -11.95487 44.97893  60.8532  60.83622  78.54388 150.9942
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  68.56394 92.42487 99.29497 99.48844 106.22977 136.5234
+## [2,] -19.41310 43.18450 60.50535 61.10462  79.04845 143.2749
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -769,9 +1182,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 62.53069 & 93.82756 & 100.33049 & 100.42024 & 107.54662 & 135.1034\\
+data1 & 68.56394 & 92.42487 & 99.29497 & 99.48844 & 106.22977 & 136.5234\\
 \hline
-data2 & -11.95487 & 44.97893 & 60.85319 & 60.83622 & 78.54388 & 150.9942\\
+data2 & -19.41310 & 43.18450 & 60.50535 & 61.10462 & 79.04845 & 143.2749\\
 \hline
 \end{tabular}
 
@@ -893,8 +1306,256 @@ Continuous
 Nominal
 Ordinal
 
+\hypertarget{week-2-collecting-data}{%
+\chapter{Week 2: Collecting Data}\label{week-2-collecting-data}}
+
+\hypertarget{load-the-data-1}{%
+\section*{Load the Data}\label{load-the-data-1}}
+\addcontentsline{toc}{section}{Load the Data}
+
+Thanks for filling out our simple survey! Below, we'll tabulate results. Make sure to update the \texttt{data\_template.xlsx} file located in: \texttt{inst/unit1\_data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dir\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{"inst"}\NormalTok{,}\StringTok{"unit1\_data"}\NormalTok{)}
+\NormalTok{survey\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(dir\_path, }\StringTok{"data\_template.xlsx"}\NormalTok{)}
+
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(survey\_path)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{access-the-data-1}{%
+\chapter*{Access the Data}\label{access-the-data-1}}
+\addcontentsline{toc}{chapter}{Access the Data}
+
+What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
+\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+
+The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "tbl_df"     "tbl"        "data.frame"
+\end{verbatim}
+
+We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "individual"    "Birth_Month"   "Height_inches"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 52
+## Columns: 3
+## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
+## $ Birth_Month   <chr> "January", "September", "march", "april", NA, NA, NA, NA~
+## $ Height_inches <dbl> 70, 64, 72, 61, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+\end{verbatim}
+
+\hypertarget{summarize-data-1}{%
+\chapter*{Summarize Data}\label{summarize-data-1}}
+\addcontentsline{toc}{chapter}{Summarize Data}
+
+\hypertarget{continuous-data-1}{%
+\section*{Continuous Data}\label{continuous-data-1}}
+\addcontentsline{toc}{section}{Continuous Data}
+
+For continuous data, we often want to summarize our data by describing the \textbf{mean, median, and/or range}. \textbf{Mean} and \textbf{median} describe the \emph{central tendency} of the data, while \textbf{range} describes the full extant of the data, as seen below.
+
+NOTE: if \texttt{NA} are present in the data, be sure to use the \texttt{na.rm=TRUE} flag for these operations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 66.75
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 61 72
+\end{verbatim}
+
+\hypertarget{all-in-summary-1}{%
+\section*{All in summary()}\label{all-in-summary-1}}
+\addcontentsline{toc}{section}{All in summary()}
+
+\textbf{Mean}, \textbf{median}, and \textbf{range} will all be reported by calling \texttt{summary()} on a \texttt{numeric\ vector}, such as \texttt{Height\_inches}. In addition, the lower and upper quartiles will be reported, along with the number of \texttt{NA} responses.
+
+NOTE: \texttt{summary()} does NOT require special handling for \texttt{NA} values, in fact - it expects them!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   61.00   63.25   67.00   66.75   70.50   72.00      48
+\end{verbatim}
+
+\hypertarget{mode}{%
+\section*{Mode}\label{mode}}
+\addcontentsline{toc}{section}{Mode}
+
+One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_mode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  tt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(x) }\DocumentationTok{\#\# find frequencies}
+\NormalTok{  tt }\OtherTok{\textless{}{-}}\NormalTok{ tt[}\FunctionTok{order}\NormalTok{(tt, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)] }\DocumentationTok{\#\# resort based on freq}
+  
+  \DocumentationTok{\#\# check number of modes}
+\NormalTok{  max }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(tt)}
+\NormalTok{  n\_max }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(tt}\SpecialCharTok{==}\NormalTok{max)}
+  
+  
+  \ControlFlowTok{if}\NormalTok{(n\_max }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{ )\{}
+    \FunctionTok{warning}\NormalTok{(}\StringTok{"More than one mode detected"}\NormalTok{)}
+    \FunctionTok{return}\NormalTok{(tt[tt}\SpecialCharTok{==}\NormalTok{max])}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \DocumentationTok{\#\# return only the first value}
+    \FunctionTok{return}\NormalTok{(tt[}\DecValTok{1}\NormalTok{]) }\DocumentationTok{\#\# return whatever the highrst frequency is}
+\NormalTok{  \}}
+
+  
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+With this function, it's easy to find the \textbf{mode}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{my\_mode}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in my_mode(data$Height_inches): More than one mode detected
+\end{verbatim}
+
+\begin{verbatim}
+## x
+## 61 64 70 72 
+##  1  1  1  1
+\end{verbatim}
+
+\hypertarget{visualizing-data-1}{%
+\chapter*{Visualizing Data}\label{visualizing-data-1}}
+\addcontentsline{toc}{chapter}{Visualizing Data}
+
+The above summaries describe data with numbers, but we can also describe data visually.
+
+\hypertarget{continuous-data---boxplots-1}{%
+\section*{Continuous Data - Boxplots}\label{continuous-data---boxplots-1}}
+\addcontentsline{toc}{section}{Continuous Data - Boxplots}
+
+Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
+
+\begin{itemize}
+\tightlist
+\item
+  the \textbf{median} is the black bar in the middle
+\item
+  the \textbf{quartiles} (25th and 75th percentiles) are represented by the extents of the boxes
+\item
+  The \textbf{range} is shown by the whiskers, with outliers shown indvidually, if needed.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-27-1.pdf}
+
+\hypertarget{continuous-data---histograms-1}{%
+\section*{Continuous Data - Histograms}\label{continuous-data---histograms-1}}
+\addcontentsline{toc}{section}{Continuous Data - Histograms}
+
+Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{histogram}. The \texttt{hist()} function will attempt to find the optimum number of bins for you, but you can specify a different number with the \texttt{breaks} argument.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{main =} \StringTok{"Histogram of Height"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Height (in)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-28-1.pdf}
+
+\hypertarget{categorical-data-1}{%
+\section*{Categorical Data}\label{categorical-data-1}}
+\addcontentsline{toc}{section}{Categorical Data}
+
+Categorical data is already in discrete units. In general with categorical data, we want to count the \textbf{frequency} of unique values. There are many ways to do this, but one of the easiest is the \texttt{table()} function. Saving the results of the table to an object, \texttt{birth\_freq}, allows you to save and print the results at any time.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{birth\_freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Birth\_Month)}
+
+\NormalTok{birth\_freq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     april   January     march September 
+##         1         1         1         1
+\end{verbatim}
+
+We can also visualize our tabulated results using a \textbf{barplot} as below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(birth\_freq)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-30-1.pdf}
+
 \hypertarget{introsetup}{%
 \chapter{Intro/Setup}\label{introsetup}}
+
+A test edit
 
 \textbf{NOTE:} chapter templates \textbf{do not} require a yaml header (most .RMD docs do). Lay out sections using \texttt{\#} headers.
 
@@ -936,6 +1597,58 @@ Work through a new example, contextualizing the phenomenon using real-world data
 
 \hypertarget{evaluateexercises}{%
 \chapter{Evaluate/Exercises}\label{evaluateexercises}}
+
+short lab exercises for students to recreate / code in R
+
+Build on past concepts reinforcing basic data maniplutaions, summaries, etc.
+
+\hypertarget{introsetup-1}{%
+\chapter{Intro/Setup}\label{introsetup-1}}
+
+A test edit
+
+more test edits
+
+\textbf{NOTE:} chapter templates \textbf{do not} require a yaml header (most .RMD docs do). Lay out sections using \texttt{\#} headers.
+
+\hypertarget{engage-1}{%
+\chapter{Engage}\label{engage-1}}
+
+Brief example of an engaging phenomenon.
+* Poll students and discuss results
++ Does the \emph{average} match up with individual experiences?
+* Real-world research example
+* Interrogating a commonly held assumption
++ the average height of humans is 5'5''
+
+\hypertarget{explore-1}{%
+\chapter{Explore}\label{explore-1}}
+
+Explore other examples of this phenomenon.
+
+Build on the first one to show variation.
+* Other ways to represent the phenomenon/data
++ tabular
++ visually
+* can the example be grouped / broken into subgroups
++ does the same pattern/phenomenon apply?
+* Is there a corollary / inverse phenomenon?
+
+\hypertarget{explain-1}{%
+\chapter{Explain}\label{explain-1}}
+
+Discuss/interrogate the pattern of the data
+* does the shape imply anything
+* try to have it student led / guided
+* with time, students guess at what the data shows/doesn't show without labels
+
+\hypertarget{elaborate-1}{%
+\chapter{Elaborate}\label{elaborate-1}}
+
+Work through a new example, contextualizing the phenomenon using real-world data/examples.
+
+\hypertarget{evaluateexercises-1}{%
+\chapter{Evaluate/Exercises}\label{evaluateexercises-1}}
 
 short lab exercises for students to recreate / code in R
 
@@ -1556,7 +2269,7 @@ For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a 
 
 }
 
-\caption{the ipums logo}\label{fig:unnamed-chunk-29}
+\caption{the ipums logo}\label{fig:unnamed-chunk-51}
 \end{figure}
 
 \hypertarget{tips}{%
@@ -1604,13 +2317,13 @@ odd
 
 To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
 
-\hypertarget{introsetup-1}{%
-\chapter{Intro/Setup}\label{introsetup-1}}
+\hypertarget{introsetup-2}{%
+\chapter{Intro/Setup}\label{introsetup-2}}
 
 \textbf{NOTE:} chapter templates \textbf{do not} require a yaml header (most .RMD docs do). Lay out sections using \texttt{\#} headers.
 
-\hypertarget{engage-1}{%
-\chapter{Engage}\label{engage-1}}
+\hypertarget{engage-2}{%
+\chapter{Engage}\label{engage-2}}
 
 Brief example of an engaging phenomenon.
 * Poll students and discuss results
@@ -1619,8 +2332,8 @@ Brief example of an engaging phenomenon.
 * Interrogating a commonly held assumption
 + the average height of humans is 5'5''
 
-\hypertarget{explore-1}{%
-\chapter{Explore}\label{explore-1}}
+\hypertarget{explore-2}{%
+\chapter{Explore}\label{explore-2}}
 
 Explore other examples of this phenomenon.
 
@@ -1632,21 +2345,21 @@ Build on the first one to show variation.
 + does the same pattern/phenomenon apply?
 * Is there a corollary / inverse phenomenon?
 
-\hypertarget{explain-1}{%
-\chapter{Explain}\label{explain-1}}
+\hypertarget{explain-2}{%
+\chapter{Explain}\label{explain-2}}
 
 Discuss/interrogate the pattern of the data
 * does the shape imply anything
 * try to have it student led / guided
 * with time, students guess at what the data shows/doesn't show without labels
 
-\hypertarget{elaborate-1}{%
-\chapter{Elaborate}\label{elaborate-1}}
+\hypertarget{elaborate-2}{%
+\chapter{Elaborate}\label{elaborate-2}}
 
 Work through a new example, contextualizing the phenomenon using real-world data/examples.
 
-\hypertarget{evaluateexercises-1}{%
-\chapter{Evaluate/Exercises}\label{evaluateexercises-1}}
+\hypertarget{evaluateexercises-2}{%
+\chapter{Evaluate/Exercises}\label{evaluateexercises-2}}
 
 short lab exercises for students to recreate / code in R
 

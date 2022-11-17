@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Unit 1: The Basics |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Unit 1: The Basics |  Data Science for Social Scientists: An applied course using IPUMS data  " />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="dev-notes.html"/>
-<link rel="next" href="introsetup.html"/>
+<link rel="next" href="lesson-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -156,10 +156,14 @@ div.csl-indent {
 <li><a href="./">A Beginning of a Syllabus</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Hello Anthropologists!!</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="what-is-ipums.html"><a href="what-is-ipums.html"><i class="fa fa-check"></i>What is IPUMS</a></li>
+<li class="chapter" data-level="" data-path="why-make-this-course.html"><a href="why-make-this-course.html"><i class="fa fa-check"></i>Why make this course</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
 <ul>
@@ -169,92 +173,146 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html"><i class="fa fa-check"></i>Syllabus - Overview</a>
 <ul>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a>
+<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html"><i class="fa fa-check"></i>Detailed Syllabus</a>
 <ul>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
+<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
+<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
+<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="dev-notes.html"><a href="dev-notes.html"><i class="fa fa-check"></i>DEV NOTES</a></li>
-<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a>
+<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a></li>
+<li class="chapter" data-level="2" data-path="lesson-1.html"><a href="lesson-1.html"><i class="fa fa-check"></i><b>2</b> Lesson 1:</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="unit1.html"><a href="unit1.html#week-1-intro-to-r-data-types-data-structures-1"><i class="fa fa-check"></i><b>1.1</b> Week 1: Intro to R, data types, data structures</a>
+<li class="chapter" data-level="2.1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>2.1</b> WHAT IS DATA</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="unit1.html"><a href="unit1.html#intro-to-r"><i class="fa fa-check"></i><b>1.1.1</b> Intro to R</a></li>
-<li class="chapter" data-level="1.1.2" data-path="unit1.html"><a href="unit1.html#data-types"><i class="fa fa-check"></i><b>1.1.2</b> Data Types</a></li>
-<li class="chapter" data-level="1.1.3" data-path="unit1.html"><a href="unit1.html#data-structures"><i class="fa fa-check"></i><b>1.1.3</b> Data Structures</a></li>
+<li class="chapter" data-level="2.1.1" data-path="what-is-data.html"><a href="what-is-data.html#pov"><i class="fa fa-check"></i><b>2.1.1</b> POV:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="unit1.html"><a href="unit1.html#week-2-plotting-data"><i class="fa fa-check"></i><b>1.2</b> Week 2: Plotting Data</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="unit1.html"><a href="unit1.html#normal-distributions"><i class="fa fa-check"></i><b>1.2.1</b> Normal Distributions</a></li>
-<li class="chapter" data-level="1.2.2" data-path="unit1.html"><a href="unit1.html#what-is-normal"><i class="fa fa-check"></i><b>1.2.2</b> What <em>is</em> normal?</a></li>
-<li class="chapter" data-level="1.2.3" data-path="unit1.html"><a href="unit1.html#skews"><i class="fa fa-check"></i><b>1.2.3</b> Skews</a></li>
+<li class="chapter" data-level="2.2" data-path="collecting-data.html"><a href="collecting-data.html"><i class="fa fa-check"></i><b>2.2</b> COLLECTING DATA</a></li>
+<li class="chapter" data-level="2.3" data-path="populations-and-sampling.html"><a href="populations-and-sampling.html"><i class="fa fa-check"></i><b>2.3</b> POPULATIONS AND SAMPLING</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="unit1.html"><a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1"><i class="fa fa-check"></i><b>1.3</b> Week 3: Statisitcal testing of simple data sets</a>
+<li class="chapter" data-level="" data-path="aaa-in-class-results.html"><a href="aaa-in-class-results.html"><i class="fa fa-check"></i>AAA “In-Class” Results</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="unit1.html"><a href="unit1.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>1.3.1</b> t-tests, ANOVA, chi2</a></li>
+<li class="chapter" data-level="" data-path="aaa-in-class-results.html"><a href="aaa-in-class-results.html#load-the-data"><i class="fa fa-check"></i>Load the Data</a></li>
+<li class="chapter" data-level="" data-path="access-the-data.html"><a href="access-the-data.html"><i class="fa fa-check"></i>Access the Data</a></li>
+<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html"><i class="fa fa-check"></i>Summarize Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#continuous-data"><i class="fa fa-check"></i>Continuous Data</a></li>
+<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#all-in-summary"><i class="fa fa-check"></i>All in summary()</a></li>
+<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#mode-code"><i class="fa fa-check"></i>Mode Code</a></li>
+<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#mode-results"><i class="fa fa-check"></i>Mode Results</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="unit1.html"><a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets"><i class="fa fa-check"></i><b>1.4</b> Week 4: Relationships between variables in simple data sets</a>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="unit1.html"><a href="unit1.html#correlation-linear-regression"><i class="fa fa-check"></i><b>1.4.1</b> Correlation, Linear Regression</a></li>
-<li class="chapter" data-level="1.4.2" data-path="unit1.html"><a href="unit1.html#genearlized-linear-model"><i class="fa fa-check"></i><b>1.4.2</b> Genearlized Linear Model</a></li>
-</ul></li>
-<li class="chapter" data-level="1.5" data-path="unit1.html"><a href="unit1.html#week-5"><i class="fa fa-check"></i><b>1.5</b> Week 5:</a></li>
-<li class="chapter" data-level="1.6" data-path="unit1.html"><a href="unit1.html#intro-to-rrstudio"><i class="fa fa-check"></i><b>1.6</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="1.7" data-path="unit1.html"><a href="unit1.html#reading-data-distributions"><i class="fa fa-check"></i><b>1.7</b> Reading Data / Distributions</a>
-<ul>
-<li class="chapter" data-level="1.7.1" data-path="unit1.html"><a href="unit1.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>1.7.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---boxplots"><i class="fa fa-check"></i>Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---histograms"><i class="fa fa-check"></i>Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#categorical-data"><i class="fa fa-check"></i>Categorical Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introsetup.html"><a href="introsetup.html"><i class="fa fa-check"></i><b>2</b> Intro/Setup</a></li>
-<li class="chapter" data-level="3" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>3</b> Engage</a></li>
-<li class="chapter" data-level="4" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>4</b> Explore</a></li>
-<li class="chapter" data-level="5" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>5</b> Explain</a></li>
-<li class="chapter" data-level="6" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>6</b> Elaborate</a></li>
-<li class="chapter" data-level="7" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>7</b> Evaluate/Exercises</a></li>
-<li class="chapter" data-level="8" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>8</b> IPUMS</a>
+<li class="chapter" data-level="3" data-path="lesson-2-intro-to-r-data-types-data-structures.html"><a href="lesson-2-intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>3</b> Lesson 2: Intro to R, data types, data structures</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="unit2.html"><a href="unit2.html#week-6-introduction-to-ipums"><i class="fa fa-check"></i><b>8.1</b> Week 6 Introduction to IPUMS</a></li>
-<li class="chapter" data-level="8.2" data-path="unit2.html"><a href="unit2.html#exploratory"><i class="fa fa-check"></i><b>8.2</b> Week 7 Exploratory analysis</a>
+<li class="chapter" data-level="3.1" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3.1</b> INTRO TO R</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="unit2.html"><a href="unit2.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>8.2.1</b> Advanced Exploration - Change Over Time</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="unit2.html"><a href="unit2.html#hypothesis"><i class="fa fa-check"></i><b>8.3</b> Week 8 Hypothesis Testing</a></li>
-<li class="chapter" data-level="8.4" data-path="unit2.html"><a href="unit2.html#week-9-statistical-inference-1"><i class="fa fa-check"></i><b>8.4</b> Week 9 Statistical Inference</a></li>
-<li class="chapter" data-level="8.5" data-path="unit2.html"><a href="unit2.html#week-10-tbd-1"><i class="fa fa-check"></i><b>8.5</b> Week 10 (TBD)</a></li>
-<li class="chapter" data-level="8.6" data-path="unit2.html"><a href="unit2.html#intro-to-ipums-website"><i class="fa fa-check"></i><b>8.6</b> Intro to IPUMS website</a>
-<ul>
-<li class="chapter" data-level="8.6.1" data-path="unit2.html"><a href="unit2.html#background-on-ipums"><i class="fa fa-check"></i><b>8.6.1</b> background on ipums</a></li>
-<li class="chapter" data-level="8.6.2" data-path="unit2.html"><a href="unit2.html#navigating-website"><i class="fa fa-check"></i><b>8.6.2</b> navigating website</a></li>
-</ul></li>
-<li class="chapter" data-level="8.7" data-path="unit2.html"><a href="unit2.html#math-example"><i class="fa fa-check"></i><b>8.7</b> math example</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>9</b> Unit 3: Independent Research</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="unit3.html"><a href="unit3.html#week-11-students-develop-research-question-1"><i class="fa fa-check"></i><b>9.1</b> Week 11: Students develop research Question</a></li>
-<li class="chapter" data-level="9.2" data-path="unit3.html"><a href="unit3.html#week-12-students-find-relevant-variables-from-ipums-1"><i class="fa fa-check"></i><b>9.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
-<li class="chapter" data-level="9.3" data-path="unit3.html"><a href="unit3.html#week-13-students-test-and-evaluate-results-1"><i class="fa fa-check"></i><b>9.3</b> Week 13: Students test and evaluate results</a></li>
-<li class="chapter" data-level="9.4" data-path="unit3.html"><a href="unit3.html#week-14-students-prepare-presentations-of-results-1"><i class="fa fa-check"></i><b>9.4</b> Week 14: Students prepare presentations of results</a></li>
-<li class="chapter" data-level="9.5" data-path="unit3.html"><a href="unit3.html#week-15-students-present-work-slides-poster-podium-etc-1"><i class="fa fa-check"></i><b>9.5</b> Week 15: Students present work (slides, poster, podium, etc)</a></li>
-<li class="chapter" data-level="9.6" data-path="unit3.html"><a href="unit3.html#example-one"><i class="fa fa-check"></i><b>9.6</b> Example one</a></li>
-<li class="chapter" data-level="9.7" data-path="unit3.html"><a href="unit3.html#example-two"><i class="fa fa-check"></i><b>9.7</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>10</b> Example RMD code</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="ex_code.html"><a href="ex_code.html#core"><i class="fa fa-check"></i><b>10.1</b> Core</a></li>
-<li class="chapter" data-level="10.2" data-path="ex_code.html"><a href="ex_code.html#tips"><i class="fa fa-check"></i><b>10.2</b> Tips</a></li>
-<li class="chapter" data-level="10.3" data-path="ex_code.html"><a href="ex_code.html#syntax"><i class="fa fa-check"></i><b>10.3</b> Syntax</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="ex_code.html"><a href="ex_code.html#math"><i class="fa fa-check"></i><b>10.3.1</b> Math</a></li>
+<li class="chapter" data-level="3.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#what-is-r"><i class="fa fa-check"></i><b>3.1.1</b> What is R?</a></li>
+<li class="chapter" data-level="3.1.2" data-path="intro-to-r.html"><a href="intro-to-r.html#why-use-r"><i class="fa fa-check"></i><b>3.1.2</b> Why use R?</a></li>
+<li class="chapter" data-level="3.1.3" data-path="intro-to-r.html"><a href="intro-to-r.html#data-structures"><i class="fa fa-check"></i><b>3.1.3</b> Data Structures</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="introsetup-1.html"><a href="introsetup-1.html"><i class="fa fa-check"></i><b>11</b> Intro/Setup</a></li>
-<li class="chapter" data-level="12" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>12</b> Engage</a></li>
-<li class="chapter" data-level="13" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>13</b> Explore</a></li>
-<li class="chapter" data-level="14" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>14</b> Explain</a></li>
-<li class="chapter" data-level="15" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>15</b> Elaborate</a></li>
-<li class="chapter" data-level="16" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>16</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="4" data-path="lesson-3-distributions.html"><a href="lesson-3-distributions.html"><i class="fa fa-check"></i><b>4</b> Lesson 3: Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>4.1</b> Data Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>4.1.1</b> Normal Distributions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>4.1.2</b> What <em>is</em> normal?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>4.1.3</b> Skews</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="week-3-statisitcal-testing-of-simple-data-sets-1.html"><a href="week-3-statisitcal-testing-of-simple-data-sets-1.html"><i class="fa fa-check"></i><b>4.2</b> Week 3: Statisitcal testing of simple data sets</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="week-3-statisitcal-testing-of-simple-data-sets-1.html"><a href="week-3-statisitcal-testing-of-simple-data-sets-1.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>4.2.1</b> t-tests, ANOVA, chi2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i><b>4.3</b> Week 4: Relationships between variables in simple data sets</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>4.3.1</b> Correlation, Linear Regression</a></li>
+<li class="chapter" data-level="4.3.2" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>4.3.2</b> Genearlized Linear Model</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="week-5.html"><a href="week-5.html"><i class="fa fa-check"></i><b>4.4</b> Week 5:</a></li>
+<li class="chapter" data-level="4.5" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>4.5</b> Intro to R/RStudio</a></li>
+<li class="chapter" data-level="4.6" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>4.6</b> Reading Data / Distributions</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>4.6.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-collecting-data.html"><a href="week-2-collecting-data.html"><i class="fa fa-check"></i><b>5</b> Week 2: Collecting Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="load-the-data-1.html"><a href="load-the-data-1.html"><i class="fa fa-check"></i>Load the Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="access-the-data-1.html"><a href="access-the-data-1.html"><i class="fa fa-check"></i>Access the Data</a></li>
+<li class="chapter" data-level="" data-path="summarize-data-1.html"><a href="summarize-data-1.html"><i class="fa fa-check"></i>Summarize Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="continuous-data-1.html"><a href="continuous-data-1.html"><i class="fa fa-check"></i>Continuous Data</a></li>
+<li class="chapter" data-level="" data-path="all-in-summary-1.html"><a href="all-in-summary-1.html"><i class="fa fa-check"></i>All in summary()</a></li>
+<li class="chapter" data-level="" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i>Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html"><i class="fa fa-check"></i>Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="continuous-data---boxplots-1.html"><a href="continuous-data---boxplots-1.html"><i class="fa fa-check"></i>Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="" data-path="continuous-data---histograms-1.html"><a href="continuous-data---histograms-1.html"><i class="fa fa-check"></i>Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="" data-path="categorical-data-1.html"><a href="categorical-data-1.html"><i class="fa fa-check"></i>Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introsetup.html"><a href="introsetup.html"><i class="fa fa-check"></i><b>6</b> Intro/Setup</a></li>
+<li class="chapter" data-level="7" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>7</b> Engage</a></li>
+<li class="chapter" data-level="8" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>8</b> Explore</a></li>
+<li class="chapter" data-level="9" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>9</b> Explain</a></li>
+<li class="chapter" data-level="10" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>10</b> Elaborate</a></li>
+<li class="chapter" data-level="11" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>11</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="12" data-path="introsetup-1.html"><a href="introsetup-1.html"><i class="fa fa-check"></i><b>12</b> Intro/Setup</a></li>
+<li class="chapter" data-level="13" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>13</b> Engage</a></li>
+<li class="chapter" data-level="14" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>14</b> Explore</a></li>
+<li class="chapter" data-level="15" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>15</b> Explain</a></li>
+<li class="chapter" data-level="16" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>16</b> Elaborate</a></li>
+<li class="chapter" data-level="17" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>17</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="18" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>18</b> IPUMS</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="week-6-introduction-to-ipums.html"><a href="week-6-introduction-to-ipums.html"><i class="fa fa-check"></i><b>18.1</b> Week 6 Introduction to IPUMS</a></li>
+<li class="chapter" data-level="18.2" data-path="exploratory.html"><a href="exploratory.html"><i class="fa fa-check"></i><b>18.2</b> Week 7 Exploratory analysis</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="exploratory.html"><a href="exploratory.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>18.2.1</b> Advanced Exploration - Change Over Time</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="hypothesis.html"><a href="hypothesis.html"><i class="fa fa-check"></i><b>18.3</b> Week 8 Hypothesis Testing</a></li>
+<li class="chapter" data-level="18.4" data-path="week-9-statistical-inference-1.html"><a href="week-9-statistical-inference-1.html"><i class="fa fa-check"></i><b>18.4</b> Week 9 Statistical Inference</a></li>
+<li class="chapter" data-level="18.5" data-path="week-10-tbd-1.html"><a href="week-10-tbd-1.html"><i class="fa fa-check"></i><b>18.5</b> Week 10 (TBD)</a></li>
+<li class="chapter" data-level="18.6" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html"><i class="fa fa-check"></i><b>18.6</b> Intro to IPUMS website</a>
+<ul>
+<li class="chapter" data-level="18.6.1" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html#background-on-ipums"><i class="fa fa-check"></i><b>18.6.1</b> background on ipums</a></li>
+<li class="chapter" data-level="18.6.2" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html#navigating-website"><i class="fa fa-check"></i><b>18.6.2</b> navigating website</a></li>
+</ul></li>
+<li class="chapter" data-level="18.7" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>18.7</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>19</b> Unit 3: Independent Research</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="week-11-students-develop-research-question-1.html"><a href="week-11-students-develop-research-question-1.html"><i class="fa fa-check"></i><b>19.1</b> Week 11: Students develop research Question</a></li>
+<li class="chapter" data-level="19.2" data-path="week-12-students-find-relevant-variables-from-ipums-1.html"><a href="week-12-students-find-relevant-variables-from-ipums-1.html"><i class="fa fa-check"></i><b>19.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
+<li class="chapter" data-level="19.3" data-path="week-13-students-test-and-evaluate-results-1.html"><a href="week-13-students-test-and-evaluate-results-1.html"><i class="fa fa-check"></i><b>19.3</b> Week 13: Students test and evaluate results</a></li>
+<li class="chapter" data-level="19.4" data-path="week-14-students-prepare-presentations-of-results-1.html"><a href="week-14-students-prepare-presentations-of-results-1.html"><i class="fa fa-check"></i><b>19.4</b> Week 14: Students prepare presentations of results</a></li>
+<li class="chapter" data-level="19.5" data-path="week-15-students-present-work-slides-poster-podium-etc-1.html"><a href="week-15-students-present-work-slides-poster-podium-etc-1.html"><i class="fa fa-check"></i><b>19.5</b> Week 15: Students present work (slides, poster, podium, etc)</a></li>
+<li class="chapter" data-level="19.6" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>19.6</b> Example one</a></li>
+<li class="chapter" data-level="19.7" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>19.7</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>20</b> Example RMD code</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="core.html"><a href="core.html"><i class="fa fa-check"></i><b>20.1</b> Core</a></li>
+<li class="chapter" data-level="20.2" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>20.2</b> Tips</a></li>
+<li class="chapter" data-level="20.3" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>20.3</b> Syntax</a>
+<ul>
+<li class="chapter" data-level="20.3.1" data-path="syntax.html"><a href="syntax.html#math"><i class="fa fa-check"></i><b>20.3.1</b> Math</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="introsetup-2.html"><a href="introsetup-2.html"><i class="fa fa-check"></i><b>21</b> Intro/Setup</a></li>
+<li class="chapter" data-level="22" data-path="engage-2.html"><a href="engage-2.html"><i class="fa fa-check"></i><b>22</b> Engage</a></li>
+<li class="chapter" data-level="23" data-path="explore-2.html"><a href="explore-2.html"><i class="fa fa-check"></i><b>23</b> Explore</a></li>
+<li class="chapter" data-level="24" data-path="explain-2.html"><a href="explain-2.html"><i class="fa fa-check"></i><b>24</b> Explain</a></li>
+<li class="chapter" data-level="25" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>25</b> Elaborate</a></li>
+<li class="chapter" data-level="26" data-path="evaluateexercises-2.html"><a href="evaluateexercises-2.html"><i class="fa fa-check"></i><b>26</b> Evaluate/Exercises</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to something useful</a></li>
@@ -280,241 +338,6 @@ An applied course using IPUMS data <br></p></a>
             <section class="normal" id="section-">
 <div id="unit1" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Unit 1: The Basics<a href="unit1.html#unit1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="week-1-intro-to-r-data-types-data-structures-1" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Week 1: Intro to R, data types, data structures<a href="unit1.html#week-1-intro-to-r-data-types-data-structures-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="intro-to-r" class="section level3 hasAnchor" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Intro to R<a href="unit1.html#intro-to-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="data-types" class="section level3 hasAnchor" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Data Types<a href="unit1.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Data</strong> is defined as “facts and statistics collected together for reference or analysis.” <em>This is from the internet and needs to be our words</em> As seen in Figure 1.1, there are two types of data: <strong>quantitative</strong> and <strong>qualitative</strong>. Quanitative data are able to be expressed in numerical format and are countable. These data are either <strong>discrete</strong> or <strong>continuous</strong>…</p>
-</div>
-<div id="data-structures" class="section level3 hasAnchor" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Data Structures<a href="unit1.html#data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="week-2-plotting-data" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Week 2: Plotting Data<a href="unit1.html#week-2-plotting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="normal-distributions" class="section level3 hasAnchor" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Normal Distributions<a href="unit1.html#normal-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>First we’ll generate a normal distribution with the <code>rnorm()</code> function. This takes 3 arguments: <code>n, mean, sd</code>, which you can see filled in below. While we could print out a list of all these values, it’s not easy to <em>understand</em> a list of numbers</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unit1.html#cb1-1" aria-hidden="true" tabindex="-1"></a>normal_dist <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="do">## 100 samples</span></span>
-<span id="cb1-2"><a href="unit1.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mean =</span> <span class="dv">10</span>, <span class="do">## with a mean of 10</span></span>
-<span id="cb1-3"><a href="unit1.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="dv">1</span> <span class="do">## and a standard deviation of 1</span></span>
-<span id="cb1-4"><a href="unit1.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                     )</span>
-<span id="cb1-5"><a href="unit1.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="unit1.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="unit1.html#cb1-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1]  8.346100  8.649020  9.987020 10.499397 10.397306 11.062404 10.309260
-##   [8] 10.381302 10.890750  7.698089 10.989495 10.290098 10.993880  8.972121
-##  [15] 11.061651 10.332380 10.144272 11.093168  8.575113 10.119710 10.248629
-##  [22] 10.210088 12.086883 10.836807  9.290734  9.823997  9.522466 11.276935
-##  [29]  9.165405 10.550194  8.313463 10.914374  9.087373  8.989635 10.752610
-##  [36]  9.843457 10.458252 11.728818 10.681699  9.314066 10.053595 10.762485
-##  [43]  9.167486 10.548800 10.687324  9.889948 10.589951  9.689793 10.806441
-##  [50]  8.497890  8.371323 11.213885 11.023949  9.564357 12.475143  9.374551
-##  [57]  9.455458 10.020276  9.316703  9.761230  9.723335  8.968686 10.533146
-##  [64] 10.350615  8.933822 10.076724  9.748426 11.022175  9.240201 11.042219
-##  [71] 10.334400  9.250375  9.970865 11.000627  9.476267 10.496223 10.515002
-##  [78] 11.583087 10.074339  9.995727  8.571759 12.037772  9.643108 10.759074
-##  [85] 10.723287 10.650248 10.671886 10.208314 10.281487 10.998582  9.342311
-##  [92] 10.722476 10.324829  9.222152 10.725546  9.771766  8.328675 10.277643
-##  [99]  9.092791  8.138671</code></pre>
-<p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
-<p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unit1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/norm_dist_plot-1.png" width="672" /></p>
-<p>Another way to visualize this would be with a d</p>
-</div>
-<div id="what-is-normal" class="section level3 hasAnchor" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> What <em>is</em> normal?<a href="unit1.html#what-is-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="quantitative-summaries" class="section level4 hasAnchor" number="1.2.2.1">
-<h4><span class="header-section-number">1.2.2.1</span> Quantitative summaries<a href="unit1.html#quantitative-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>5num summary
-* Min, 25th percentile, median, 75th percentile, Max</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unit1.html#cb4-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist <span class="ot">&lt;-</span> <span class="fu">summary</span>(normal_dist)</span></code></pre></div>
-<p>We can print the table in R by calling its name.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unit1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.698   9.366  10.229  10.080  10.724  12.475</code></pre>
-<p>Mean, standard deviation</p>
-</div>
-<div id="meaningful-comparisons" class="section level4 hasAnchor" number="1.2.2.2">
-<h4><span class="header-section-number">1.2.2.2</span> Meaningful Comparisons<a href="unit1.html#meaningful-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>How to compare apples to oranges? Standardize the units / standardize the data</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="unit1.html#cb7-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, </span>
-<span id="cb7-2"><a href="unit1.html#cb7-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean =</span> <span class="dv">100</span>,</span>
-<span id="cb7-3"><a href="unit1.html#cb7-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb7-4"><a href="unit1.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="unit1.html#cb7-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,</span>
-<span id="cb7-6"><a href="unit1.html#cb7-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">mean =</span> <span class="dv">60</span>, </span>
-<span id="cb7-7"><a href="unit1.html#cb7-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd =</span> <span class="dv">25</span>)</span></code></pre></div>
-<p>Are these the same distribution?</p>
-<p>Any issues??</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unit1.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb8-2"><a href="unit1.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data1)</span>
-<span id="cb8-3"><a href="unit1.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data2)</span></code></pre></div>
-<p><img src="_main_files/figure-html/rnorm_hist_comp-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="unit1.html#cb9-1" aria-hidden="true" tabindex="-1"></a>total_range <span class="ot">&lt;-</span> <span class="fu">range</span>(data1, data2)</span></code></pre></div>
-<p>Are they the same?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unit1.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>))</span>
-<span id="cb10-2"><a href="unit1.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data1, <span class="at">xlim =</span> total_range)</span>
-<span id="cb10-3"><a href="unit1.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data2, <span class="at">xlim =</span> total_range)</span></code></pre></div>
-<p><img src="_main_files/figure-html/rnorm_hist_comp_true-1.png" width="672" /></p>
-<p>Numerically / tabularly</p>
-<p>Often times its important to tables of <strong>summary statistics</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="unit1.html#cb11-1" aria-hidden="true" tabindex="-1"></a>norm_comp_tab <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">summary</span>(data1),</span>
-<span id="cb11-2"><a href="unit1.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summary</span>(data2))</span>
-<span id="cb11-3"><a href="unit1.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="unit1.html#cb11-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  59.56415 93.13170 99.67909 99.51359 105.92513 134.5895
-## [2,] -15.74402 42.63895 59.62234 59.41336  76.77487 136.3092</code></pre>
-<p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unit1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
-<pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unit1.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(<span class="fu">rownames</span>(norm_comp_tab))){</span>
-<span id="cb15-2"><a href="unit1.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(norm_comp_tab) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;data1&quot;</span>, <span class="st">&quot;data2&quot;</span>)</span>
-<span id="cb15-3"><a href="unit1.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>When working with <strong>Rmarkdown</strong> we can take advantage of <code>knitr</code> and <code>pandoc</code> to nice looking tables even easier.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unit1.html#cb16-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(norm_comp_tab)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">Min.</th>
-<th align="right">1st Qu.</th>
-<th align="right">Median</th>
-<th align="right">Mean</th>
-<th align="right">3rd Qu.</th>
-<th align="right">Max.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">data1</td>
-<td align="right">59.56415</td>
-<td align="right">93.13170</td>
-<td align="right">99.67909</td>
-<td align="right">99.51359</td>
-<td align="right">105.92513</td>
-<td align="right">134.5895</td>
-</tr>
-<tr class="even">
-<td align="left">data2</td>
-<td align="right">-15.74402</td>
-<td align="right">42.63895</td>
-<td align="right">59.62234</td>
-<td align="right">59.41336</td>
-<td align="right">76.77487</td>
-<td align="right">136.3092</td>
-</tr>
-</tbody>
-</table>
-<p><strong>How</strong> transform the data</p>
-<p>Simple transformation (multiply all values by 100)
-* to convert units
-* other examples?</p>
-<p>Complex transformations
-* log-transformation (<em>DEE: not a fan</em>)
-* z-scores (<em>DEE: a better option</em>)</p>
-<p><strong>Why</strong> transform the data?
-* Real world applications?
-* Is it always appropriate to transform data?</p>
-</div>
-</div>
-<div id="skews" class="section level3 hasAnchor" number="1.2.3">
-<h3><span class="header-section-number">1.2.3</span> Skews<a href="unit1.html#skews" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>What to do if the data are <strong>not</strong> normal?</p>
-</div>
-</div>
-<div id="week-3-statisitcal-testing-of-simple-data-sets-1" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Week 3: Statisitcal testing of simple data sets<a href="unit1.html#week-3-statisitcal-testing-of-simple-data-sets-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="t-tests-anova-chi2" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> t-tests, ANOVA, chi2<a href="unit1.html#t-tests-anova-chi2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="week-4-relationships-between-variables-in-simple-data-sets" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Week 4: Relationships between variables in simple data sets<a href="unit1.html#week-4-relationships-between-variables-in-simple-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="correlation-linear-regression" class="section level3 hasAnchor" number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> Correlation, Linear Regression<a href="unit1.html#correlation-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="simple-lm" class="section level4 hasAnchor" number="1.4.1.1">
-<h4><span class="header-section-number">1.4.1.1</span> Simple LM<a href="unit1.html#simple-lm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-<div id="complex-lm" class="section level4 hasAnchor" number="1.4.1.2">
-<h4><span class="header-section-number">1.4.1.2</span> Complex LM<a href="unit1.html#complex-lm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="genearlized-linear-model" class="section level3 hasAnchor" number="1.4.2">
-<h3><span class="header-section-number">1.4.2</span> Genearlized Linear Model<a href="unit1.html#genearlized-linear-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="week-5" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> Week 5:<a href="unit1.html#week-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For now, I have 3 main chapters for each of the main sections:
-* Basics of data science / R <a href="unit1.html#unit1">1</a>
-* Applications/critiques using IPUMS data <a href="unit2.html#unit2">8</a>
-* Student-driven projects <a href="unit3.html#unit3">9</a></p>
-<p>Each of these <strong>Chapters</strong> contains multiple sections. We’ll likely want to break these sections out into their own <code>.Rmd</code> files as they get fleshed out. For now, I’ll try to keep the abundance of files limited.</p>
-<p><strong>NOTE:</strong> As these actually get filled out, we will probably want to insert different <code>part</code>s to the book (EG, the content of Unit 1 is covered in <code>Part I</code>).
-* Declare parts with <code># (PART) Part I {-}</code> immediately before the first chapter <code>#</code> it contains.</p>
-<p><strong>Topics to include:</strong>
-* What is data?
-* Everything can be data
-* How do we interpret data
-* Tables
-* Plots
-* Univariate distributions
-* What can they tell us
-* Multi-modality in distributions
-* Categorical vs continuous data
-* Don’t need to get ahead of this yet
-* Add in a grouping category - multi state/multi-national dataset
-* Ttest / anova</p>
-<p><strong>Type of Data:</strong>
-Age distributions
-Specifically generate a dataset with old/young folks over-represented to highlight a bimodal distribution</p>
-<p>Start with single state/country
-Add a second state/country to demo ttest
-Add more to demo anova</p>
-<p>Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)</p>
-</div>
-<div id="intro-to-rrstudio" class="section level2 hasAnchor" number="1.6">
-<h2><span class="header-section-number">1.6</span> Intro to R/RStudio<a href="unit1.html#intro-to-rrstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="reading-data-distributions" class="section level2 hasAnchor" number="1.7">
-<h2><span class="header-section-number">1.7</span> Reading Data / Distributions<a href="unit1.html#reading-data-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="what-is-a-normal-distribution" class="section level3 hasAnchor" number="1.7.1">
-<h3><span class="header-section-number">1.7.1</span> What <em>is</em> a <strong>normal distribution</strong><a href="unit1.html#what-is-a-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="how-normal-is-it" class="section level4 hasAnchor" number="1.7.1.1">
-<h4><span class="header-section-number">1.7.1.1</span> How normal is it?<a href="unit1.html#how-normal-is-it" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>show increasingly unclear examples of normal vs not</p>
-<p>introduce tests of normality</p>
-</div>
-<div id="measuring-normality---single-sample" class="section level4 hasAnchor" number="1.7.1.2">
-<h4><span class="header-section-number">1.7.1.2</span> Measuring normality - single sample<a href="unit1.html#measuring-normality---single-sample" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>reinforce [concept of statistical] <strong>normality</strong></p>
-<p>is a value from a sample? - one way ttest
-something about tails</p>
-</div>
-<div id="comparing-normality---two-saples" class="section level4 hasAnchor" number="1.7.1.3">
-<h4><span class="header-section-number">1.7.1.3</span> comparing normality - two saples<a href="unit1.html#comparing-normality---two-saples" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>standard / two-way t test</p>
-</div>
-<div id="comparing-more-than-two---anova" class="section level4 hasAnchor" number="1.7.1.4">
-<h4><span class="header-section-number">1.7.1.4</span> comparing more than two - ANOVA<a href="unit1.html#comparing-more-than-two---anova" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>#Glossary
-Data
-Quantitative
-Qualitative
-Discrete
-Continuous
-Nominal
-Ordinal</p>
-
-</div>
-</div>
-</div>
 </div>
             </section>
 
@@ -522,7 +345,7 @@ Ordinal</p>
         </div>
       </div>
 <a href="dev-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introsetup.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
