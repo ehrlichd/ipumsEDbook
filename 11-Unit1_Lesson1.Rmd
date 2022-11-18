@@ -1,11 +1,8 @@
-# Unit 1: The Basics {#unit1}
 
-# Lesson 1: 
-
-## WHAT IS DATA 
+# Lesson 1: WHAT IS DATA 
 
 
-### POV:  
+## POV:  
 
 
 > In a social science class, your teacher tells you that the CDC
@@ -105,10 +102,10 @@ Sampling strategy can lead to **bias**
 
 
 
-# AAA "In-Class" Results {-}
+## Review "In-Class" Results 
 
 
-### Load the Data {-}
+### Load the Data 
 
 
 Thanks for filling out our simple survey! Below, we'll tabulate results. Make sure to update the `data_template.xlsx` file located in: `inst/unit1_data`
@@ -126,7 +123,7 @@ data <- readxl::read_excel(survey_path)
 
 
 
-## Access the Data {-}
+### Inspect the Data 
 
 What is `data`?? Below we call the `class()` function on `data` and see that it has 3 classes: 
   `tbl_df` , `tbl` , `data.frame`
@@ -187,9 +184,22 @@ summary(data$Height_inches)
 ```
 
 
+## Mode 
+
+You're probably familiar with **mean** and **median** being talked about with a 
+third term, **mode**. The **mode** is the most commonly occuring value in a 
+dataset. It's often important to know the **modal response** of survey data. 
+While a commonly reported metric(??), there is no `mode()` function included in 
+`base r`...  
 
 
-### Mode Code {-}
+
+
+so we'll just have to create our own!   
+
+
+
+### Mode Code 
 
 One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
 
@@ -217,8 +227,10 @@ my_mode <- function(x){
 
 ```
 
-### Mode Results {-}
-With this function, it's easy to find the **mode**
+### Mode Results  
+
+
+Now that we've created out own `function`, it's easy to find the **mode**
 
 
 ```{r}
@@ -229,13 +241,13 @@ my_mode(data$Height_inches)
 
 
 
-## Visualizing Data {-}
+## Visualizing Data 
 
 The above summaries describe data with numbers, but we can also describe data visually.
 
 
 
-### Continuous Data - Boxplots {-}
+### Continuous Data - Boxplots 
 
 
 Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
@@ -251,7 +263,7 @@ boxplot(data$Height_inches)
 ```
 
 
-### Continuous Data - Histograms {-}
+### Continuous Data - Histograms 
 
 Continuous data, can also be broken into **bins** and plotted as a **histogram**. The `hist()` function will attempt to find the optimum number of bins for you, but you can specify a different number with the `breaks` argument.
 
@@ -263,7 +275,7 @@ hist(data$Height_inches, main = "Histogram of Height", xlab = "Height (in)")
 
 
 
-### Categorical Data {-}
+### Categorical Data 
 
 Categorical data is already in discrete units. In general with categorical data, we want to count the **frequency** of unique values. There are many ways to do this, but one of the easiest is the `table()` function. Saving the results of the table to an object, `birth_freq`, allows you to save and print the results at any time.
 
@@ -288,5 +300,5 @@ barplot(birth_freq)
 
 
 
-#Glossary
+## Glossary
 

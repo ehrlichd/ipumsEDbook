@@ -212,7 +212,7 @@ standard / two-way t test
 
 #### comparing more than two - ANOVA
 
-#Glossary
+## Glossary
 Data
 Quantitative
 Qualitative

@@ -1,7 +1,19 @@
-# IPUMS {#unit2}
+# IPUMS {-}
 
-## Week 6 Introduction to IPUMS
-## Week 7 Exploratory analysis {#exploratory}
+## Lesson 6 Introduction to IPUMS {-}
+
+
+
+Some text to break up the sub-section headers
+
+### Intro to IPUMS website {-}
+### background on ipums {-}
+### navigating website {-}
+
+Find certain (very common) variables to answer (common) social science questions.
+
+
+## Lesson 7 Exploratory analysis {-}
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against *the scientific method* most people learned in grade school (More on that to follow(**_include_link_**)).
 
@@ -22,12 +34,12 @@ Students given a data set (xls, csv, etc)
     + think on confounding factors / biases
 
 
-### Advanced Exploration - Change Over Time
+### Advanced Exploration - Change Over Time {-}
 
 Here we demonstrate an approach to looking at how Family Structure (inferred from household relationships) has changed over time.
 
 
-#### Setup / Load Data
+#### Setup / Load Data {-}
 
 Install/update R packages
 
@@ -51,7 +63,7 @@ data <- read_ipums_micro(ddi)
 ```
 
 
-##### Inspect the Data
+##### Inspect the Data {-}
 
 Using `haven` labeled values. 
 
@@ -74,7 +86,7 @@ ipums_view(ddi)
 ```
 
 
-##### Visualize
+##### Visualize {-}
 
 A simple plot
 
@@ -99,7 +111,7 @@ abline(lm(AGE~YEAR, data = data), col = "green")
 ```
 
 
-##### Asking (logical) questions
+##### Asking (logical) questions {-}
 
 Here we demonstrate how setting up logical questions can be used to easily filter/subset data.
 
@@ -123,7 +135,7 @@ sum(age_test)/nrow(data)
 
 
 
-##### HH vs persons
+##### HH vs persons {-}
 
 A unique characteristic of census and some survey data is the nested-structure with individuals being grouped into households. Often times it is necessary to choose to work at the hh or person level, and data must be appropriately manipulated to fit that case.
 
@@ -135,7 +147,7 @@ ipums_view(ddi)
 ```
 
 
-#### Nuclear Family
+#### Nuclear Family {-}
 
 First we look at a nuclear family, comprising only parents and their immediate children. 
 
@@ -194,7 +206,7 @@ table(hhs$extended_test,hhs$nuclear_test)
 ```
 
 
-##### Tabulate results 
+##### Tabulate results  {-}
 
 
 ```{r, eval = FALSE}
@@ -241,7 +253,7 @@ to_plot <- combined %>% group_by(YEAR, state) %>% mutate(n_tot = sum(n_nuclear))
 ```
 
 
-##### Visualize Nuclear Families
+##### Visualize Nuclear Families {-}
 
 ```{r, eval = FALSE}
 to_plot <- to_plot %>% filter(test==TRUE)
@@ -256,13 +268,13 @@ plot(to_plot$YEAR, to_plot$pct$n_nuclear, col = hsv(.4, .6,.8), pch = 16, ylim =
 
 
 
-#### Extended Family
+#### Extended Family {-}
 
 
 Next we look at hhs with extended families present. IE, any that contain more relationships than just Parent/Child/Sibling (between children only)
 
 
-##### Gernerate models
+##### Gernerate models {-}
 
 ```{r, eval = FALSE}
 
@@ -322,7 +334,7 @@ mod_x <- to_plot$YEAR[to_plot$YEAR > 1950]
 
 
 
-##### Visualize
+##### Visualize {-}
 
 ```{r, eval = FALSE}
 
@@ -343,7 +355,7 @@ points(to_plot$YEAR,
 ```
 
 
-#### Even more DETAIL - maybe remove
+#### Even more DETAIL - maybe remove {-}
 
 ```{r, eval = FALSE}
 
@@ -366,7 +378,7 @@ ipums_view(ddi)
 ```
 
 
-##### Parents Supporting Parents
+##### Parents Supporting Parents {-}
 
 ```{r, eval = FALSE}
 
@@ -398,7 +410,7 @@ points(to_plot$YEAR,
 
 
 
-##### Parents Supporting (extended) children
+##### Parents Supporting (extended) children {-}
 
 ```{r, eval = FALSE}
 
@@ -432,7 +444,7 @@ points(to_plot$YEAR,
 
 
 
-## Week 8 Hypothesis Testing {#hypothesis}
+## Lesosn 8: Hypothesis Testing {-}
 
 
 If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional *scientific method*. With a question in mind, the first question is: where to look. What better place than [IPUMS](https://ipums.org)!
@@ -449,40 +461,11 @@ Students should become comfortable working through lab exercises:
     + Any obvious confounding factors
 
 
-## Week 9 Statistical Inference
-## Week 10 (TBD)
-
-
-Some text to break up the sub-section headers
-
-## Intro to IPUMS website
-### background on ipums
-### navigating website
-
-Find certain (very common) variables to answer (common) social science questions.
+## Lesson 9: Statistical Inference {-}
+## Lesson 10: (TBD) {-}
 
 
 We describe our methods in this chapter.
 
 Math can be added in body using usual syntax as follows. This may be useful, particularly for explaining the math side of things. 
 
-## math example
-
-
-$p$ is unknown but expected to be around 1/3. Standard error will be approximated
-
-$$
-SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-$$
-
-You can also use math in footnotes like this^[where we mention $p = \frac{a}{b}$]. Footnotes are helpful because they re-link to where you left off.
-
-We will approximate standard error to 0.027[^longnote]
-
-[^longnote]: $p$ is unknown but expected to be around 1/3. Standard error will be approximated
-
-    $$
-    SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-    $$
-
-The `longnote` footnote seems particularly useful.

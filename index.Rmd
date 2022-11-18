@@ -293,7 +293,7 @@ We provide some examples here but encourage instructors (or students) to bring i
 
 
 
-# DEV NOTES {-}
+# DEV NOTES {.unlisted .unnumbered}
 
 ### TO DO {-}
 
