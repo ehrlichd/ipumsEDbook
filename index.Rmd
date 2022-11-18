@@ -28,19 +28,6 @@ description: "This is an open source book. The output format for this example is
 
 
 
-# Hello Anthropologists!! {-}
-
-
-### Getting Started {-}
-
-
-In order to use this textbook, you will need to:  
-  * set up an [IPUMS]()
-  * download and install [RStudio](https://posit.co/download/rstudio-desktop/) 
-    + This link also contains instructions and links to download [R from CRAN](https://cran.rstudio.com/) 
-    + Be sure you download the appropriate file for your Mac or PC
-
-
 # Preface {-}
 
 
@@ -96,6 +83,20 @@ In a world where information and data are increasingly accessible, it is of utmo
 
 
 
+## Getting Started {-}
+
+
+In order to use this textbook, you will need to:  
+
+  * download and install [RStudio](https://posit.co/download/rstudio-desktop/) 
+    + This link also contains instructions and links to download [R from CRAN](https://cran.rstudio.com/) 
+    + Be sure you download the appropriate file for your Mac or PC
+    
+  * Register for an with [IPUMS](https://ipums.org) account. We provide **limited example data**, but in order take full advantage of these exercises: 
+    + [IPUMS registration for individuals](https://international.ipums.org/international-action/menu)
+    + [IPUMS registration for instructors](https://international.ipums.org/international/classroom_accounts.shtml)
+
+
 # Course Description {-}
 
 This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
@@ -134,8 +135,10 @@ offer
 
 
 
-# Syllabus - Overview {-}
+# Syllabus {-}
 
+
+## Overview {-}
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
@@ -169,7 +172,8 @@ The basic structure of this course is:
 
 ## Detailed Syllabus {-}
 
-\newpage
+
+
 
 ### Unit 1 Understanding and Testing Data {-}
 
@@ -291,7 +295,9 @@ We provide some examples here but encourage instructors (or students) to bring i
 
 # DEV NOTES {-}
 
-##### TO DO {-}
+### TO DO {-}
+
+* **UPDATE TODO LIST**
 
 * Make chapter 1 chapter 2
 * Anna Adds chapter con data science intro exclusive of R/IPUMS
@@ -303,7 +309,7 @@ We provide some examples here but encourage instructors (or students) to bring i
   + are we pro-hyphens, or are they pedantic?
 
 
-##### MISC IDEAS {-}
+### MISC IDEAS {-}
 
 * Application forward
 * Present research/ analysis/results FIRST, then explain the mathematical principals behind it
@@ -315,7 +321,7 @@ daily/weekly “recent research”
   + Encourage students to find articles for extra credit
 
 
-##### Documentation {-}
+### Documentation {-}
 
 This function grabs any packages in your project and adds them to a local list that can be referenced using `R-pacakgename`
   * **NOTE** in practice, that needs to be wrapped in markdown syntax, eg:

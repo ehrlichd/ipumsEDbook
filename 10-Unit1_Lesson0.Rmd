@@ -1,0 +1,22 @@
+# Unit 1: The Basics {#unit1}
+
+# Lesson 0:
+
+Lesson 0 files should contain a brief summary of the topics within each unit
+
+Lesson 0 can also be used for a brainstorming space to sketch out ideas before creating `Unit#_Lesson#` files.
+
+
+# Lesson 1: What IS Data / Collecting / Visualizing Data
+# Lesson 2: Intro to R, data types, data structures
+# Lesson 3: Comparing Data 
+# Lesson 4:
+# Lesson 5:
+
+
+
+# Unit-wide glossary?
+
+
+
+
