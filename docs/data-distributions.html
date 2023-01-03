@@ -315,21 +315,21 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb32-5"><a href="data-distributions.html#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-6"><a href="data-distributions.html#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-7"><a href="data-distributions.html#cb32-7" aria-hidden="true" tabindex="-1"></a>normal_dist</span></code></pre></div>
-<pre><code>##   [1] 11.244875  8.316264  9.753808 10.880810 11.293163 11.559784 10.737992
-##   [8] 10.671983  9.508178  9.349562  9.970754 10.921499 10.203839 10.400163
-##  [15]  9.491659  8.949977 11.215772  9.796781 10.009862  9.719971 10.172098
-##  [22]  9.430759 10.541745 10.704390  9.864863  8.547092 11.586923  9.801552
-##  [29] 11.437507 10.405921  9.262609 11.735115  9.185765  9.304024 10.810140
-##  [36]  9.307798 10.041785  7.521683 11.183289 10.319474  9.191607 10.472521
-##  [43] 11.175118  9.203944  8.245468 10.021009 10.161611 10.924208 10.759418
-##  [50]  9.035355  9.374979  9.569833  9.036200  8.270925  9.018758  9.629955
-##  [57]  9.598454 12.130480  9.047603  8.462547  9.932083 10.683066 10.574071
-##  [64]  9.631433 11.301407  8.931716 11.243329  9.790878  9.898669  8.952306
-##  [71]  9.570461 11.054787  9.136799 10.231108  9.078821 10.979389  9.905622
-##  [78] 10.722587 11.425819 12.119868 12.087640  9.468510  9.926546 11.162899
-##  [85]  8.334504 10.924185  9.910304  9.954453  8.740017  8.753237 10.885516
-##  [92] 10.468874 10.150281 10.256271  9.236800  9.738177 10.464718  9.663013
-##  [99]  7.352227  9.948300</code></pre>
+<pre><code>##   [1] 11.033366  9.898426  8.527631  9.000407 10.567453  9.261737 10.784133
+##   [8] 10.196316  9.596039  9.652958 11.803506  9.782730  7.892478  8.964921
+##  [15] 11.903000  8.327455 10.955006 10.384499  9.184496  8.876272 10.014546
+##  [22] 10.947839  9.377991 11.275663 11.881416  9.542130  9.430469 10.630176
+##  [29] 11.332625  9.770613 10.620092 10.407247 10.982575 10.462003 11.594119
+##  [36]  8.595702 12.024458 10.409541 12.638350 10.425532  9.434331  9.059532
+##  [43] 10.214823  9.613746  9.808930  9.826191 11.329693  8.664299 10.967364
+##  [50] 11.154400 11.260316 11.259814 10.626657  9.863892 10.303320  8.996032
+##  [57]  9.491170  9.854138  9.044213  9.548698  9.637663 10.439747  9.231080
+##  [64]  9.721376 10.382222  9.341962 10.482648  9.953244  8.747843  9.687644
+##  [71]  9.898628 11.203476  9.972045  9.731631 11.244294  9.129175 10.480150
+##  [78] 11.255686 11.817830  7.962031  9.687979 10.008245 10.751265  9.385402
+##  [85] 10.213426 11.398303  8.763754 10.663619  8.747653  9.456983  9.977204
+##  [92]  8.868263  9.469935 10.416273 10.395349 10.295861  8.176995 11.055390
+##  [99] 10.198196  9.020451</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-distributions.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(normal_dist,<span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -346,7 +346,7 @@ An applied course using IPUMS data <br></p></a>
 <p>We can print the table in R by calling its name.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-distributions.html#cb36-1" aria-hidden="true" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.352   9.307   9.940  10.011  10.743  12.130</code></pre>
+##   7.892   9.419   9.975  10.065  10.686  12.638</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor" number="3.1.2.2">
@@ -377,9 +377,9 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb42-2"><a href="data-distributions.html#cb42-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summary</span>(data2))</span>
 <span id="cb42-3"><a href="data-distributions.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-4"><a href="data-distributions.html#cb42-4" aria-hidden="true" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
-<pre><code>##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  52.72671 92.57295 99.53230 99.50535 106.58413 129.2382
-## [2,] -19.14212 41.79520 57.96348 58.76813  75.66703 134.8911</code></pre>
+<pre><code>##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
+## [1,]  71.12463 93.93172 100.76089 100.42009 107.15136 131.6195
+## [2,] -14.00461 43.45118  60.27731  60.05146  77.69576 141.7187</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-distributions.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -403,21 +403,21 @@ An applied course using IPUMS data <br></p></a>
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">52.72671</td>
-<td align="right">92.57295</td>
-<td align="right">99.53230</td>
-<td align="right">99.50535</td>
-<td align="right">106.58413</td>
-<td align="right">129.2382</td>
+<td align="right">71.12463</td>
+<td align="right">93.93172</td>
+<td align="right">100.76089</td>
+<td align="right">100.42009</td>
+<td align="right">107.15136</td>
+<td align="right">131.6195</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-19.14212</td>
-<td align="right">41.79520</td>
-<td align="right">57.96348</td>
-<td align="right">58.76813</td>
-<td align="right">75.66703</td>
-<td align="right">134.8911</td>
+<td align="right">-14.00461</td>
+<td align="right">43.45118</td>
+<td align="right">60.27731</td>
+<td align="right">60.05146</td>
+<td align="right">77.69576</td>
+<td align="right">141.7187</td>
 </tr>
 </tbody>
 </table>
