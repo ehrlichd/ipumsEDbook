@@ -1,6 +1,6 @@
-# IPUMS {-}
+# Unit 2: IPUMS {-}
 
-## Lesson 6 Introduction to IPUMS {-}
+## Lesson 6 Introduction to IPUMS {.unlisted .unnumbered}
 
 
 
@@ -13,7 +13,7 @@ Some text to break up the sub-section headers
 Find certain (very common) variables to answer (common) social science questions.
 
 
-## Lesson 7 Exploratory analysis {-}
+## Lesson 7 Exploratory analysis {.unlisted .unnumbered}
 
 If you've just collected a survey, or other raw data, you may not know what you're looking for. This is perfectly ok but goes against *the scientific method* most people learned in grade school (More on that to follow(**_include_link_**)).
 
@@ -444,7 +444,7 @@ points(to_plot$YEAR,
 
 
 
-## Lesosn 8: Hypothesis Testing {-}
+## Lesosn 8: Hypothesis Testing {.unlisted .unnumbered}
 
 
 If, on the other hand you have an a pre-existing idea you want to test. We can follow the traditional *scientific method*. With a question in mind, the first question is: where to look. What better place than [IPUMS](https://ipums.org)!
@@ -461,8 +461,8 @@ Students should become comfortable working through lab exercises:
     + Any obvious confounding factors
 
 
-## Lesson 9: Statistical Inference {-}
-## Lesson 10: (TBD) {-}
+## Lesson 9: Statistical Inference {.unlisted .unnumbered}
+## Lesson 10: (TBD) {.unlisted .unnumbered}
 
 
 We describe our methods in this chapter.

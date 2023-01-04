@@ -8,13 +8,13 @@ In this section we encourage the instructor to provide ample time for independen
 
 We provide some examples here but encourage instructors (or students) to bring in recent journal/popular articles that do (or do not) apply data science methods well.
 
-## Lesson 11: Students develop research Question {-}
-## Lesson 12: Students find relevant variables from IPUMS {-}
-## Lesson 13: Students test and evaluate results {-}
-## Lesson 14: Students prepare presentations of results {-}
-## Lesson 15: Students present work (slides, poster, podium, etc) {-}
+## Lesson 11: Students develop research Question {.unlisted .unnumbered}
+## Lesson 12: Students find relevant variables from IPUMS {.unlisted .unnumbered}
+## Lesson 13: Students test and evaluate results {.unlisted .unnumbered}
+## Lesson 14: Students prepare presentations of results {.unlisted .unnumbered}
+## Lesson 15: Students present work (slides, poster, podium, etc) {.unlisted .unnumbered}
 
-By this point, students should be familiar with basic concepts from Chapter \@ref(unit1). These include:
+By this point, students should be familiar with basic concepts from Chapter Unit 1. These include:
 
 * Basic Coding
   + read/write data in/out of R
@@ -23,7 +23,7 @@ By this point, students should be familiar with basic concepts from Chapter \@re
   + looking at data distributions
   + formal assessment of distributions
   
-Students will also be familiar with how these concepts are applied from Chapter \@ref(unit2). Hopefully students will be able to:
+Students will also be familiar with how these concepts are applied from Chapter Unit 2. Hopefully students will be able to:
 
 * Come up with a social science question they are interested in
   + Critically think about target variable(s) of interest. Any *a priori* covariates? confounders?
@@ -37,6 +37,6 @@ Students will also be familiar with how these concepts are applied from Chapter 
 During this Unit, we suggest giving ample class time for independent student research, peer-to-peer collaboration, and basic R/stats troubleshooting. This would also be a great time to model how to give respectful criticism by discussing recent research papers. 
   * We could maybe come up with 1-2 seed examples, with a few talking points
 
-## Example one
+### Example one
 
-## Example two
+### Example two

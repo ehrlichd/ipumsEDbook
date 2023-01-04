@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">A Beginning of a Syllabus</a></li>
       after: |
-        <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to something useful</a></li>
+        <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to the github repo.</a></li>
     edit: https://github.com/ehrlichd/stats_book %s
     download: ["pdf", "epub"]
 bookdown::pdf_book:

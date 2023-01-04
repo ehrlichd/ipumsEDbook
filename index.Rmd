@@ -45,7 +45,7 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 
 </h5>
 
-## What is IPUMS {-}
+### What is IPUMS {-}
 
 IPUMS started as a project to digitize the historical records of the US census.
 It has expanded to include [9 data collections](https://www.ipums.org/), 
@@ -75,7 +75,7 @@ students registered and share IPUMS data with them.
 
 
 
-## Why make this course {-}
+### Why make this course {-}
 
 
 In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for both **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data is useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `lesson_template.Rmd` to tailor this course to their subject or interest.
@@ -83,7 +83,7 @@ In a world where information and data are increasingly accessible, it is of utmo
 
 
 
-## Getting Started {-}
+### Getting Started {-}
 
 
 In order to use this textbook, you will need to:  
@@ -97,7 +97,7 @@ In order to use this textbook, you will need to:
     + [IPUMS registration for instructors](https://international.ipums.org/international/classroom_accounts.shtml)
 
 
-# Course Description {-}
+## Course Description {-}
 
 This course is broken down into 3, 5-week units. Unit 1 focuses on familiarizing yourself with R and the IPUMS dataset. In Unit 2, each week will showcase a method/analysis using preselected variables. In class, students will walk through a given problem set and produce a lab report by the end of class. In Unit 3, students will work towards answering a research question that they pose, creating a research paper with literature review, data analysis, conclusion, and data outputs.
 
@@ -135,10 +135,8 @@ offer
 
 
 
-# Syllabus {-}
 
-
-## Overview {-}
+## Syllabus - General {-}
 
 This syllabus is initially envisioned as 3 5-week sections. However, compilation and content are intended to be modular with templates for instructors to include their own specialties.
 
@@ -170,7 +168,7 @@ The basic structure of this course is:
 
 
 
-## Detailed Syllabus {-}
+## Syllabus - Detailed {-}
 
 
 
