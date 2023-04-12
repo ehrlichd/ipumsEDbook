@@ -1,0 +1,133 @@
+# Intro to R/Rstudio
+
+
+# Engage
+
+## Class poll: Who has used R before
+
+tabulate Y/N 
+calculate frequncies
+draw boxplot
+  side by side counts
+  stacked counts
+  stacked frequencies
+  *which is the most informative*
+
+## Class poll: who has done ANY kind of coding
+
+Might be redundant to do again
+
+## Interpreting R
+
+Describe what the following R code does, in plain words.
+
+```{r, eval = FALSE, echo = TRUE}
+
+my_data <- read_excel("//filepath/directory/filename.xlsx")
+
+```
+
+
+*Hint:* There are 4 elements in the above code: 
+  `my_data`, 
+  `<-`, 
+  `read_excel()`, 
+  `//filepath/directory/filename.xlsx`
+
+
+
+# Explore
+
+**see old_ file for more examples**
+
+The best way to learn R is to jump into it. Ideally, this lesson can be in a 
+computer lab or with laptop access.
+
+
+# Explain - lecture/read
+
+## Some Basics
+
+### R vs RStudio vs POSIT
+
+* If `R` is the engine, then `RStudio` is the car.
+
+* If `R` is the text, Rstudio is the text-editor.
+
+* `R` is the **programming language**, `Rstudio` is the **Integrated Development Environment (IDE)**.
+  * *What do you think some differences are between R and RStudio?*
+
+
+`RStudio` is a program/app just like Google Chrome or Microsoft Word. Each
+of these programs provide a **Graphical User Interface (GUI)**, a pretty way for 
+a user to use a mouse and keyboard to do *something.*
+
+An **IDE** is a special kind of program/app that provides MANY tools for writing and running code.
+
+### We will use Rstudio, to write R scripts that will analyze and visualize data.
+
+R is a language that can DO a lot.
+RStudio is a program that lets YOU do a lot USING the R language (and others)
+
+### How to install
+
+Go to posit
+
+
+## Navigating RStudio
+
+### Lots of Panes, not a pain!
+
+You get used to it, promise.
+
+## Writing R
+
+### Writing R in Console
+
+Direct input
+Direct output
+
+LIMITED
+
+### Writing R in Scripts (The 4th pane)
+
+Save your work, find typos, re-run easy!
+
+
+## Object-oriented progrmaing in R
+
+### R objects
+### R classes
+### R Projects
+
+## How to find help
+
+### In R
+### the web!
+
+stackexchange
+rdrr.io
+
+
+# Elaborate
+
+
+Set up R project
+Read data into R
+For one variable (height)
+Visualize data
+Calculate mean, median, range
+HOW TO FIND MODE??
+
+save out results file
+
+
+
+# Evaluate/Exercises
+
+Students should set up their own Rproject and repeat the steps above for EACH 
+variable, including height. 
+Students should replicate in-class work by reading in class data and finding mean, median, and mode for ALL variables (there may be errors!)
+Reflect: What `class()` is each variable. Does it make sense to ALWAYS look for mean, median, mode? 
+
+ 

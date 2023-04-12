@@ -1,0 +1,56 @@
+
+# Hypothesis Testing - ANOVA and LM
+
+
+# Engage
+Compare MORE than 2 groups
+
+Post-it histogram - height separated by Birth Mo (reclassified to birth quarter)
+
+
+
+# Explore
+
+Pose questions to explore
+
+Are the four distributions similar? different?
+
+
+
+
+
+# Explain - lecture/read
+
+
+What is ANOVA, how to interpret tabularly, graphically (box-whisker, histo, density); non-parametric alternative (KS)
+What is a linear model? LM vs Correlation vs ANOVA
+What does a linear relationship imply?
+LM = continuous ~ continuous
+ANOVA = continuous ~ categorical
+
+# Elaborate
+
+Conduct recoding for birth quarter
+conduct ANOVA
+Conduct Linear Model
+
+
+Work through the same process/analysis on new data. Either a different 
+variable(s) in the same sample, or applying/demonstrating the phenomenon 
+using real-world data/examples.
+
+
+* Reiterate/reinforc the process/task of the lesson
+* Does this fit in to other steps/analysis
+* does this fit in to other thematic topics?
+
+(Possibly) Build on the first one to show variation.
+  * Other ways to represent the phenomenon/data
+    + tabular
+    + visually
+
+
+
+# Evaluate/Exercises
+
+Formulate a hypothesis and test it using class survey data.

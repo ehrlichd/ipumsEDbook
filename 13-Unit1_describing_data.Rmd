@@ -1,0 +1,69 @@
+
+# Comparing Data
+
+**see old_ for some examples, not very exstenive**
+
+# Engage
+
+post-it note histogram of height:
+  * one with MANY bins
+  * one with FEW bins
+  * *do these graphs tell the same story??*
+
+
+
+# Explore
+
+How do we describe this meaningfully??
+can we determine the "average"
+
+
+
+have class guess at average (likely the heighest point of histo)
+  * Interrogating a commonly held assumption
+    + the average height of humans is 5'5"
+
+
+Pose questions to explore
+
+what does "average" mean??
+
+
+
+# Explain - lecture/read
+
+## How do we describe data - summary statistics
+## How do we describe the distribution of data 
+## How do we manipulate data 
+### coding/categorizing free response/ “binning” a continuous variable
+
+Height, while we treat as continuous, is actually "binned" into ~60 unique values.
+
+## Normality
+
+What does it mean to be normally distributed. (how measures of central tendency compare)
+discuss skew / kurtosis
+specialized vocabulary to describe data
+Why people care about normality (what tests can/t you use and why)
+
+
+# Elaborate
+
+Read/write data
+Visualize data - describe the distribution; compare to board results
+Tabulate Data - describe with summary statistics 
+Test of normality: one-way t-test ; QQ plot ; shapiro-wilks (note high rate of rejection)
+Demo binnig of ages
+
+
+
+# Evaluate/Exercises
+
+Write an R script that: 
+1. reads in data
+1. tests normality across variables
+1. print results as table
+1. prints results as graph.
+
+Reflect: Are any variables non-normal? Do you have any interpretations as to why?
+Do you have any questions to test
