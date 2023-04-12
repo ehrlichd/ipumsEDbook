@@ -1,9 +1,9 @@
 # Intro to R/Rstudio
 
 
-# Engage
+## Engage
 
-## Class poll: Who has used R before
+### Class poll: Who has used R before
 
 tabulate Y/N 
 calculate frequncies
@@ -13,11 +13,11 @@ draw boxplot
   stacked frequencies
   *which is the most informative*
 
-## Class poll: who has done ANY kind of coding
+### Class poll: who has done ANY kind of coding
 
 Might be redundant to do again
 
-## Interpreting R
+### Interpreting R
 
 Describe what the following R code does, in plain words.
 
@@ -36,7 +36,7 @@ my_data <- read_excel("//filepath/directory/filename.xlsx")
 
 
 
-# Explore
+## Explore
 
 **see old_ file for more examples**
 
@@ -44,7 +44,7 @@ The best way to learn R is to jump into it. Ideally, this lesson can be in a
 computer lab or with laptop access.
 
 
-# Explain - lecture/read
+## Explain - lecture/read
 
 ## Some Basics
 
@@ -109,7 +109,7 @@ stackexchange
 rdrr.io
 
 
-# Elaborate
+## Elaborate
 
 
 Set up R project
@@ -123,7 +123,7 @@ save out results file
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Students should set up their own Rproject and repeat the steps above for EACH 
 variable, including height. 

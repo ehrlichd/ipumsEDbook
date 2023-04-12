@@ -120,7 +120,7 @@ An applied course using IPUMS data }
 \author{\textbf{Developed by:}\\
 \hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
 \hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-01-04\\
+\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-04-12\\
 \strut \\
 \includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
 \includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
@@ -644,207 +644,180 @@ Lesson 0 can also be used for a brainstorming space to sketch out ideas before c
 \emph{Is this redundant?}
 
 \hypertarget{what-is-data}{%
-\chapter{\texorpdfstring{What \emph{is} data?}{What is data?}}\label{what-is-data}}
-
-\hypertarget{pov}{%
-\section{POV:}\label{pov}}
-
-\begin{quote}
-In a social science class, your teacher tells you that the CDC
-reports average male height in the United States to be 69
-inches or 5ft 9in. While browsing dating apps, you notice that
-nearly all the men report that they are 6ft or over. You wonder
-if this is a bias in reporting, or if the area where you live
-and attend college has significantly taller men. To test your
-theory, you want to collect data on height from individuals in
-your data science class to test if males are truly taller on campus
-than the country average.
-
-\textbf{Source:} \url{https://www.cdc.gov/nchs/fastats/body-measurements.htm}**
-\end{quote}
-
-\hypertarget{activity---collect-data-on-height}{%
-\subsection{ACTIVITY - collect data on height}\label{activity---collect-data-on-height}}
-
-\textbf{If in-person}
-* Create a histogram (x axis) on a blackboard/wall, have students place their heights
-with a post-it note
-+ Start with one distribution for whole class
-+ Repeat with separate distributions for M/F
-+ \emph{DEE: I want to find a way to acknowledge this dichotomy ignores non-binary individuals, and include some suggestions on how to discuss it.}
-
-\hypertarget{activity---collect-data-on-birth-month}{%
-\subsection{ACTIVITY - collect data on birth month}\label{activity---collect-data-on-birth-month}}
-
-\begin{itemize}
-\tightlist
-\item
-  Create a histogram (x axis) on a blackboard/wall, have students place their heights
-  with a post-it note
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Students place post-it notes on month of birth
-  \end{itemize}
-\end{itemize}
-
-\textbf{IDEALLY:} Have both a histogram of height AND histogram of birth month visible
-at the same time. Compare/contrast distributions of the two data sets.
-
-\hypertarget{explore}{%
-\section{Explore}\label{explore}}
-
-Questions to consider:
-* \emph{Why do we plot data}
-* \emph{What does the} \textbf{distribution} \emph{of post-it notes look like?}
-* \emph{What can you infer from the distribution(s)}
-* \emph{How does the distribution of height differ from birth month?}
-
-\hypertarget{example-datasets}{%
-\subsection{Example Datasets}\label{example-datasets}}
-
-If you're working through this course on your own, or are unable to facilitate a classroom activity, see the companion R package, \texttt{ipumsED}, which includes example data sets for each lesson, as well as custom code and functions to facilitate learning data science with IPUMS data.
-
-\emph{DEE: This could probably be stated at the begining of unit 1}
-
-\hypertarget{activity---calculate-by-hand}{%
-\subsection{ACTIVITY - Calculate by hand}\label{activity---calculate-by-hand}}
-
-In our hypothetical setup, we are interested in the \textbf{average} height.
-* \emph{What does it mean to be} \textbf{\emph{average}}
-* \emph{Which height would you say is average? (eyeballing)}
-* \emph{Which Birth Month would you say is average? - is there one?}
-
-Write out steps for calculating \textbf{mean} - trivial as it may seem.
-
-\hypertarget{explain}{%
-\section{Explain}\label{explain}}
-
-In the context of this example, we \textbf{collected} data on height and birth month for individuals in our class.
-Plotting our data allows us to \textbf{visualize} the data, making it easy to interpret.
-
-\hypertarget{ellaborate}{%
-\section{Ellaborate}\label{ellaborate}}
-
-\hypertarget{so-what-is-data}{%
-\subsection{So what is data?}\label{so-what-is-data}}
-
-Data is defined as ``facts and statistics collected together for
-reference or analysis.''\footnote{This is from the internet and needs to
-  be our words} As seen in Figure 1.1, there are two types of data:
-quantitative and qualitative. \textbf{Quantitative data} are able to
-be expressed in numerical format and are countable. These data
-are either discrete or continuous where \textbf{discrete data} uses
-numeric bins. For example, we use our age as discrete
-quantitative data, we round our age to the previous year (eg.,
-20, 21, 22). \textbf{Continuous data} does not use bins, but rather
-includes all of the fractions between two whole numbers. An
-example could be most physical measures like height, weight, the
-speed at which an individual runs.
-
-\textbf{Qualitative data} describes characteristics or categories and
-can be broken down into two categories, nominal or ordinal.
-\textbf{Nominal data} has no inherent ordering but it can be
-categorized. Examples include country or origin, gender, hair
-color, race, etc. \textbf{Ordinal data} can both be categorized and
-ordered (e.g., first, second, and third place is a race).
-
-\begin{quote}
-Going back to our hypothesis of male height on campus, heights
-are continuous, qualitative data. It is difficult for people to
-report their specific height and you assume that most
-individuals will report it rounded to the closest inch. This
-makes the data you will actually use, discrete quantitative
-data.
-\end{quote}
-
-\hypertarget{collecting-data}{%
-\subsection{Collecting Data}\label{collecting-data}}
-
-The first step to answering a research question is to collect
-your data. Broadly, data comes in two forms, primary and
-secondary. (Fig 1.2) \textbf{Primary data} is data that is collected
-directly by the researcher. Surveys, observations,
-experimentation, questionnaires, and interviews are all examples
-of primary data. \textbf{Secondary data} is collected from published
-or unpublished literature. It is collected by different
-researchers and compiled for use by a second scientist. This type
-of data includes data found in published articles, books,
-journals, biographies, and government records like the US Census.
-
-Once compiled, you now have a data set which is comprised of
-observations and variables. An \textbf{observation} is all of the
-measures taken for one person or item. A \textbf{variable} is what is
-being measured.
-
-\begin{quote}
-The US CDC data is secondary, but you are collecting height
-data yourself in class as a comparison. The survey or
-questionnaire you use on your classmates is primary data. Each
-individual is an observation and the variable of interest is
-height.
-\end{quote}
-
-\hypertarget{populations-and-sampling}{%
-\subsection{POPULATIONS AND SAMPLING}\label{populations-and-sampling}}
-
-\textbf{Random Sampling:} It is a sampling method in which all the
-items have an equal chance of being selected and the individuals
-who are selected are just like the ones who are not selected
-
-\textbf{Stratified Random Sampling:} It is a process to gather data by
-separating the actual population into the distinct subset or
-strata, and then choosing simple random samples from each stratum
-Your research question is about the height of all males at your
-college, but recording height data for each individual would be
-very difficult and time consuming. You instead decide to use a
-sample of males in your data science class. This is a random
-sample as each male individual has an equally likely chance of
-being samples (that is, unless a prerequisite exists).
-
-Sampling strategy can lead to \textbf{bias}
-
-\begin{quote}
-If you had chosen a different sample, like the men's basketball
-team, your results would have been biased.
-\end{quote}
-
-\hypertarget{evaluation}{%
-\section{Evaluation}\label{evaluation}}
-
-\hypertarget{review-questions}{%
-\subsection{Review Questions}\label{review-questions}}
-
-\begin{itemize}
-\tightlist
-\item
-  What is one example of collecting/visualizing data from your own life
-\item
-  Is height a \textbf{continuous} or \textbf{discrete} variable and Why?
-\end{itemize}
-
-\hypertarget{exercises}{%
-\subsection{Exercises}\label{exercises}}
-
-Brainstorm 3 topics/questions that are of interest to you personally, or academically.
-* What \textbf{variable(s)} will you need to collect to study this phenomenon?
-* Describe these variable(s), are they qualitative or quantitative? Continuous or ordinal?
-
-\hypertarget{glossary}{%
-\section*{Glossary}\label{glossary}}
-\addcontentsline{toc}{section}{Glossary}
-
-\hypertarget{intro-to-r-data-types-data-structures}{%
-\chapter{Intro to R, data types, data structures}\label{intro-to-r-data-types-data-structures}}
-
-In the previous lesson, we began thinking about \textbf{data}, how to talk about it,
-and how to \textbf{visualize} it. We also talked about one type of average, the \textbf{mean.}
+\chapter{WHAT IS DATA}\label{what-is-data}}
 
 \hypertarget{engage}{%
 \section{Engage}\label{engage}}
 
-\emph{What do you think the following code does?}
+Brainstorm/word cloud on ``what is data''
+
+\hypertarget{explore}{%
+\section{Explore}\label{explore}}
+
+Brainstorm ``what do we DO with data''
+Brainstorm/word cloud ``where do we get data''
+We can collect it!
+* quick poll: how many people have \emph{\textbf{(participated in a survey? analyzed data?)}
+* XX\% of this class has done }\_\_\_
+
+Pose questions to explore
+
+\hypertarget{explain---what-are-data}{%
+\section{Explain - ``what ARE data??''}\label{explain---what-are-data}}
+
+Data are defined as ``facts and statistics collected together for reference or analysis.''1 As seen in Figure 1.1, there are two types of data: quantitative and qualitative. Quantitative data are able to be expressed in numerical format and are countable. These data are either discrete or continuous where discrete data uses numeric bins. For example, we use our age as discrete quantitative data, we round our age to the previous year (eg., 20, 21, 22). Continuous data does not use bins, but rather includes all of the fractions between two whole numbers. An example could be most physical measures like height, weight, the speed at which an individual runs.
+Qualitative data describe characteristics or categories and can be broken down into two categories, nominal or ordinal. Nominal data have no inherent ordering but it can be categorized. Examples include country or origin, gender, hair color, race, etc. Ordinal data can both be categorized and ordered (e.g., first, second, and third place is a race).
+Going back to our hypothesis of male height on campus, heights are continuous, qualitative data. It is difficult for people to report their specific height and you assume that most individuals will report it rounded to the closest inch. This makes the data you will actually use, discrete quantitative data.
+
+\hypertarget{what-do-we-do-with-data}{%
+\section{``what do we DO with data''}\label{what-do-we-do-with-data}}
+
+generally compare data and visualize it
+
+\hypertarget{examples-from-recent-academic-articles}{%
+\subsection{examples from recent academic articles}\label{examples-from-recent-academic-articles}}
+
+article graphs, citations, instructors research, etc
+
+\hypertarget{examples-from-non-academic}{%
+\subsection{examples from non-academic}\label{examples-from-non-academic}}
+
+customer satisfaction; workplace/department culture; r\&D;
+
+\hypertarget{but-really-it-depends-on-study-design}{%
+\subsection{but really it depends on study design}\label{but-really-it-depends-on-study-design}}
+
+\hypertarget{study-design}{%
+\section{Study Design}\label{study-design}}
+
+\hypertarget{hypothesisresearch-question}{%
+\subsection{Hypothesis/Research Question}\label{hypothesisresearch-question}}
+
+\hypertarget{or-not-ie-exploratory-get-to-know-you}{%
+\subsection{Or Not! ie exploratory/ ``get to know you''}\label{or-not-ie-exploratory-get-to-know-you}}
+
+\hypertarget{study-sample}{%
+\section{Study sample}\label{study-sample}}
+
+\hypertarget{how-do-we-get-data}{%
+\subsection{``HOW do we get data??''}\label{how-do-we-get-data}}
+
+The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These type of data include data found in published articles, books, journals, biographies, and government records like the US Census.
+Once compiled, you now have a data set which is comprised of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
+The US CDC data is secondary, but you are collecting height data yourself in class as a comparison. The survey or questionnaire you use on your classmates is primary data. Each individual is an observation and the variable of interest is height.
+
+\hypertarget{study-design-considerations---sampling}{%
+\section{Study Design Considerations - Sampling}\label{study-design-considerations---sampling}}
+
+\hypertarget{sample-vs-population}{%
+\subsection{Sample vs Population}\label{sample-vs-population}}
+
+Is the study sample a representative sample of the population?
+
+\hypertarget{how-to-draw-samples}{%
+\subsection{How to draw samples}\label{how-to-draw-samples}}
+
+Random Sampling: It is a sampling method in which all the items have an equal chance of being selected and the individuals who are selected are just like the ones who are not selected
+Stratified Random Sampling: It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
+Sampling strategy can lead to bias. Statistical bias is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men's basketball team, your results would have been biased as basketball players are taller on average.
+
+\hypertarget{study-design-considerations---data}{%
+\section{Study Design Considerations - Data}\label{study-design-considerations---data}}
+
+\hypertarget{types-of-data}{%
+\subsection{Types of Data}\label{types-of-data}}
+
+Yes/No
+
+Continuous vs categorical
+
+within categorical:
+ordered (factor, ordinal) vs unordered (categories)
+
+Free response
+
+\hypertarget{study-design-considerantions---bias}{%
+\section{Study Design Considerantions - Bias}\label{study-design-considerantions---bias}}
+
+is there bias in the sampling?
+is there bias in the data types collected?
+
+If so, Be explicit
+Our classroom represents a subset of individuals in this country:
+college aged
+attending college
+specific geography
+specific time period
+
+we group categories a,b,c to make new groups for analysis.
+
+In doing so, we limit our interpreations to \_\_\_\_\_
+
+\hypertarget{elaborate}{%
+\section{Elaborate}\label{elaborate}}
+
+\textbf{Consider reframing the explanation to quetions}
+
+So we are going to start off this class with a Study
+Our study will not have an explicit research question, but rather be a
+``get to know you'' survey of this class.
+
+We're going to collect primary data by asking all students to complete a survey.
+We plan to describe the data and from there may begin toform specific hypotheses to test
+Work through the same process/analysis on new data. Either a different
+variable(s) in the same sample, or applying/demonstrating the phenomenon
+using real-world data/examples.
+
+\begin{itemize}
+\tightlist
+\item
+  Reiterate/reinforc the process/task of the lesson
+\item
+  Does this fit in to other steps/analysis
+\item
+  does this fit in to other thematic topics?
+\end{itemize}
+
+(Possibly) Build on the first one to show variation.
+* Other ways to represent the phenomenon/data
++ tabular
++ visually
+
+\hypertarget{evaluateexercises}{%
+\section{Evaluate/Exercises}\label{evaluateexercises}}
+
+Students complete Short class survey:
+Height, Birth Year, Birth Month, Birth Day, academic major/interest, favorite food, favorite color, handedness, hours slept (avg).
+
+Reflect on survey, are there other variables students want to add??
+Reflect: How do you plan to use data in your college/grad work. Will you collect primary data? Will you perform a secondary analysis of data? A meta-analysis of previously published studies?
+
+\hypertarget{intro-to-rrstudio}{%
+\chapter{Intro to R/Rstudio}\label{intro-to-rrstudio}}
+
+\hypertarget{engage-1}{%
+\section{Engage}\label{engage-1}}
+
+\hypertarget{class-poll-who-has-used-r-before}{%
+\subsection{Class poll: Who has used R before}\label{class-poll-who-has-used-r-before}}
+
+tabulate Y/N
+calculate frequncies
+draw boxplot
+side by side counts
+stacked counts
+stacked frequencies
+\emph{which is the most informative}
+
+\hypertarget{class-poll-who-has-done-any-kind-of-coding}{%
+\subsection{Class poll: who has done ANY kind of coding}\label{class-poll-who-has-done-any-kind-of-coding}}
+
+Might be redundant to do again
+
+\hypertarget{interpreting-r}{%
+\subsection{Interpreting R}\label{interpreting-r}}
+
+Describe what the following R code does, in plain words.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -852,14 +825,28 @@ and how to \textbf{visualize} it. We also talked about one type of average, the 
 \end{Highlighting}
 \end{Shaded}
 
-\emph{Hint:} There are 4 ``things'' in the above code:
+\emph{Hint:} There are 4 elements in the above code:
 \texttt{my\_data},
 \texttt{\textless{}-},
 \texttt{read\_excel()},
 \texttt{//filepath/directory/filename.xlsx}
 
-\hypertarget{r-vs-rstudio}{%
-\subsection{R vs RStudio}\label{r-vs-rstudio}}
+\hypertarget{explore-1}{%
+\section{Explore}\label{explore-1}}
+
+\textbf{see old\_ file for more examples}
+
+The best way to learn R is to jump into it. Ideally, this lesson can be in a
+computer lab or with laptop access.
+
+\hypertarget{explain---lectureread}{%
+\section{Explain - lecture/read}\label{explain---lectureread}}
+
+\hypertarget{some-basics}{%
+\section{Some Basics}\label{some-basics}}
+
+\hypertarget{r-vs-rstudio-vs-posit}{%
+\subsection{R vs RStudio vs POSIT}\label{r-vs-rstudio-vs-posit}}
 
 \begin{itemize}
 \item
@@ -882,653 +869,290 @@ a user to use a mouse and keyboard to do \emph{something.}
 
 An \textbf{IDE} is a special kind of program/app that provides MANY tools for writing and running code.
 
-\hypertarget{orientation-to-rstudio}{%
-\subsection{Orientation to RStudio}\label{orientation-to-rstudio}}
+\hypertarget{we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data.}{%
+\subsection{We will use Rstudio, to write R scripts that will analyze and visualize data.}\label{we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data.}}
 
-\emph{SUGGESTION: Instructor live demos interacting with RStudio while students follow along on computers}
+R is a language that can DO a lot.
+RStudio is a program that lets YOU do a lot USING the R language (and others)
 
-When you first open RStudio, you'll see 3 \textbf{panes}, all of which will look fairly empty at the moment.
+\hypertarget{how-to-install}{%
+\subsection{How to install}\label{how-to-install}}
 
-If you're using the default layout, you should see:
-* On the left, the \texttt{Console} \textbf{pane}
-* On the Top-right, the \texttt{Environment} \textbf{pane}
-* On the Bottom-right, the \texttt{Files} \textbf{pane}
+Go to posit
 
-A keen eye will also notice that each of these \textbf{panes} contains multiple \textbf{tabs}. We will go over the uses of many of these \textbf{tabs}, but for now let's start with \texttt{Console.}
+\hypertarget{navigating-rstudio}{%
+\section{Navigating RStudio}\label{navigating-rstudio}}
 
-The \texttt{Console} is where you input \texttt{R\ code}, run it, and see the results.
+\hypertarget{lots-of-panes-not-a-pain}{%
+\subsection{Lots of Panes, not a pain!}\label{lots-of-panes-not-a-pain}}
 
-At it's simplest \texttt{RStudio} is a calculator. Try typing \texttt{4\ +\ 4} into the \texttt{Console},
-then press the \texttt{{[}Enter{]}} key to run the code. Immediately, \texttt{R} prints the result as we see here:
+You get used to it, promise.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{4} \SpecialCharTok{+} \DecValTok{4}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{writing-r}{%
+\section{Writing R}\label{writing-r}}
 
-\begin{verbatim}
-## [1] 8
-\end{verbatim}
+\hypertarget{writing-r-in-console}{%
+\subsection{Writing R in Console}\label{writing-r-in-console}}
 
-The \texttt{Console} serves as a running log of all your operations for your current session, but it can be helpful to temporarily save your results as \texttt{R\ objects}. We do this using the \textbf{assignment operator} we saw earlier: \texttt{\textless{}-}
+Direct input
+Direct output
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{answer }\OtherTok{\textless{}{-}} \DecValTok{4}\SpecialCharTok{+}\DecValTok{4}
-\end{Highlighting}
-\end{Shaded}
+LIMITED
 
-By default, \texttt{Console} only prints results if they have no where else to go. If they're stored as an \texttt{Robject}, no result is printed, but you should now see \texttt{answer} listed in the \texttt{Environment} \textbf{pane}.
-
-\hypertarget{explore---interacting-with-r-objects}{%
-\section{Explore - Interacting with R objects}\label{explore---interacting-with-r-objects}}
-
-\hypertarget{load-the-data}{%
-\subsection{Load the Data}\label{load-the-data}}
+\hypertarget{writing-r-in-scripts-the-4th-pane}{%
+\subsection{Writing R in Scripts (The 4th pane)}\label{writing-r-in-scripts-the-4th-pane}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dir\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{"inst"}\NormalTok{,}\StringTok{"unit1\_data"}\NormalTok{)}
-\NormalTok{survey\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(dir\_path, }\StringTok{"data\_template.xlsx"}\NormalTok{)}
+Save your work, find typos, re-run easy!
 
-\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(survey\_path)}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{object-oriented-progrmaing-in-r}{%
+\section{Object-oriented progrmaing in R}\label{object-oriented-progrmaing-in-r}}
 
-What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
-\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+\hypertarget{r-objects}{%
+\subsection{R objects}\label{r-objects}}
 
-The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
+\hypertarget{r-classes}{%
+\subsection{R classes}\label{r-classes}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{class}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{r-projects}{%
+\subsection{R Projects}\label{r-projects}}
 
-\begin{verbatim}
-## [1] "tbl_df"     "tbl"        "data.frame"
-\end{verbatim}
+\hypertarget{how-to-find-help}{%
+\section{How to find help}\label{how-to-find-help}}
 
-We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{colnames}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "individual"    "Birth_Month"   "Height_inches"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Rows: 32
-## Columns: 3
-## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
-## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~
-## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~
-\end{verbatim}
-
-\hypertarget{inspect-the-data}{%
-\subsection{Inspect the Data}\label{inspect-the-data}}
-
-What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
-\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+\hypertarget{in-r}{%
+\subsection{In R}\label{in-r}}
 
-The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{class}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "tbl_df"     "tbl"        "data.frame"
-\end{verbatim}
-
-We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{colnames}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "individual"    "Birth_Month"   "Height_inches"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Rows: 32
-## Columns: 3
-## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
-## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~
-## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~
-\end{verbatim}
-
-\hypertarget{summarize-data}{%
-\section*{Summarize Data}\label{summarize-data}}
-\addcontentsline{toc}{section}{Summarize Data}
-
-\hypertarget{continuous-data}{%
-\subsection*{Continuous Data}\label{continuous-data}}
-\addcontentsline{toc}{subsection}{Continuous Data}
-
-For continuous data, we often want to summarize our data by describing the \textbf{mean, median, and/or range}. \textbf{Mean} and \textbf{median} describe the \emph{central tendency} of the data, while \textbf{range} describes the full extant of the data, as seen below.
-
-NOTE: if \texttt{NA} are present in the data, be sure to use the \texttt{na.rm=TRUE} flag for these operations.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 66.5625
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{median}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 66.5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{range}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 55 76
-\end{verbatim}
-
-\hypertarget{all-in-summary}{%
-\subsection*{All in summary()}\label{all-in-summary}}
-\addcontentsline{toc}{subsection}{All in summary()}
-
-\textbf{Mean}, \textbf{median}, and \textbf{range} will all be reported by calling \texttt{summary()} on a \texttt{numeric\ vector}, such as \texttt{Height\_inches}. In addition, the lower and upper quartiles will be reported, along with the number of \texttt{NA} responses.
-
-NOTE: \texttt{summary()} does NOT require special handling for \texttt{NA} values, in fact - it expects them!
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   55.00   64.00   66.50   66.56   70.00   76.00
-\end{verbatim}
-
-\hypertarget{mode}{%
-\section{Mode}\label{mode}}
-
-You're probably familiar with \textbf{mean} and \textbf{median} being talked about with a
-third term, \textbf{mode}. The \textbf{mode} is the most commonly occuring value in a
-dataset. It's often important to know the \textbf{modal response} of survey data.
-While a commonly reported metric(??), there is no \texttt{mode()} function included in
-\texttt{base\ r}\ldots{}
-
-so we'll just have to create our own!
-
-\hypertarget{mode-code}{%
-\subsection{Mode Code}\label{mode-code}}
-
-One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{my\_mode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{}
-\NormalTok{  tt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(x) }\DocumentationTok{\#\# find frequencies}
-\NormalTok{  tt }\OtherTok{\textless{}{-}}\NormalTok{ tt[}\FunctionTok{order}\NormalTok{(tt, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)] }\DocumentationTok{\#\# resort based on freq}
-  
-  \DocumentationTok{\#\# check number of modes}
-\NormalTok{  max }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(tt)}
-\NormalTok{  n\_max }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(tt}\SpecialCharTok{==}\NormalTok{max)}
-  
-  
-  \ControlFlowTok{if}\NormalTok{(n\_max }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{ )\{}
-    \FunctionTok{warning}\NormalTok{(}\StringTok{"More than one mode detected"}\NormalTok{)}
-    \FunctionTok{return}\NormalTok{(tt[tt}\SpecialCharTok{==}\NormalTok{max])}
-\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
-    \DocumentationTok{\#\# return only the first value}
-    \FunctionTok{return}\NormalTok{(tt[}\DecValTok{1}\NormalTok{]) }\DocumentationTok{\#\# return whatever the highrst frequency is}
-\NormalTok{  \}}
-
-  
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{mode-results}{%
-\subsection{Mode Results}\label{mode-results}}
-
-Now that we've created out own \texttt{function}, it's easy to find the \textbf{mode}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{my\_mode}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Warning in my_mode(data$Height_inches): More than one mode detected
-\end{verbatim}
-
-\begin{verbatim}
-## x
-## 64 65 69 70 
-##  4  4  4  4
-\end{verbatim}
-
-\hypertarget{visualizing-data}{%
-\section{Visualizing Data}\label{visualizing-data}}
-
-The above summaries describe data with numbers, but we can also describe data visually.
-
-\hypertarget{continuous-data---boxplots}{%
-\subsection{Continuous Data - Boxplots}\label{continuous-data---boxplots}}
-
-Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
+\hypertarget{the-web}{%
+\subsection{the web!}\label{the-web}}
+
+stackexchange
+rdrr.io
+
+\hypertarget{elaborate-1}{%
+\section{Elaborate}\label{elaborate-1}}
+
+Set up R project
+Read data into R
+For one variable (height)
+Visualize data
+Calculate mean, median, range
+HOW TO FIND MODE??
+
+save out results file
+
+\hypertarget{evaluateexercises-1}{%
+\section{Evaluate/Exercises}\label{evaluateexercises-1}}
+
+Students should set up their own Rproject and repeat the steps above for EACH
+variable, including height.
+Students should replicate in-class work by reading in class data and finding mean, median, and mode for ALL variables (there may be errors!)
+Reflect: What \texttt{class()} is each variable. Does it make sense to ALWAYS look for mean, median, mode?
+
+\hypertarget{describing-data}{%
+\chapter{Describing Data}\label{describing-data}}
+
+\textbf{see old\_ for some examples, not very exstenive}
+
+\hypertarget{engage-2}{%
+\section{Engage}\label{engage-2}}
+
+post-it note histogram of height:
+* one with MANY bins
+* one with FEW bins
+* \emph{do these graphs tell the same story??}
+
+\hypertarget{explore-2}{%
+\section{Explore}\label{explore-2}}
+
+How do we describe this meaningfully??
+can we determine the ``average''
+
+have class guess at average (likely the heighest point of histo)
+* Interrogating a commonly held assumption
++ the average height of humans is 5'5''
+
+Pose questions to explore
+
+what does ``average'' mean??
+
+\hypertarget{explain---lectureread-1}{%
+\section{Explain - lecture/read}\label{explain---lectureread-1}}
+
+\hypertarget{how-do-we-describe-data---summary-statistics}{%
+\subsection{How do we describe data - summary statistics}\label{how-do-we-describe-data---summary-statistics}}
+
+\hypertarget{how-do-we-describe-the-distribution-of-data}{%
+\subsection{How do we describe the distribution of data}\label{how-do-we-describe-the-distribution-of-data}}
+
+\hypertarget{how-do-we-manipulate-data}{%
+\subsection{How do we manipulate data}\label{how-do-we-manipulate-data}}
+
+\hypertarget{codingcategorizing-free-response-binning-a-continuous-variable}{%
+\subsubsection{coding/categorizing free response/ ``binning'' a continuous variable}\label{codingcategorizing-free-response-binning-a-continuous-variable}}
+
+Height, while we treat as continuous, is actually ``binned'' into \textasciitilde60 unique values.
+
+\hypertarget{normality}{%
+\section{Normality}\label{normality}}
+
+What does it mean to be normally distributed. (how measures of central tendency compare)
+discuss skew / kurtosis
+specialized vocabulary to describe data
+Why people care about normality (what tests can/t you use and why)
+
+\hypertarget{elaborate-2}{%
+\section{Elaborate}\label{elaborate-2}}
+
+Read/write data
+Visualize data - describe the distribution; compare to board results
+Tabulate Data - describe with summary statistics
+Test of normality: one-way t-test ; QQ plot ; shapiro-wilks (note high rate of rejection)
+Demo binnig of ages
+
+\hypertarget{evaluateexercises-2}{%
+\section{Evaluate/Exercises}\label{evaluateexercises-2}}
+
+Write an R script that:
+1. reads in data
+1. tests normality across variables
+1. print results as table
+1. prints results as graph.
+
+Reflect: Are any variables non-normal? Do you have any interpretations as to why?
+Do you have any questions to test
+
+\hypertarget{hypothesis-testing---comparison-and-correlations}{%
+\chapter{Hypothesis Testing - Comparison and Correlations}\label{hypothesis-testing---comparison-and-correlations}}
+
+\hypertarget{engage-3}{%
+\section{Engage}\label{engage-3}}
+
+Post-it histogram - height separated by birth month (may require a lot of board space)
+
+Are the distributions similar? different? \textbf{too many small samples to tell}?
+
+\hypertarget{explore-3}{%
+\section{Explore}\label{explore-3}}
+
+How do we \textbf{group} data in order to compare it.
+
+The most simple question in statisitics is:
+Is x bigger than y
+
+How can we do that for our groups here?
+
+Summer/Winter?
+
+conduct demo/small-scale experiment/analysis
+Ask leading questions, form hypotheses;
+* can the example be grouped / broken into subgroups
++ does the same pattern/phenomenon apply?
+* Is there a corollary / inverse phenomenon?
+
+Pose questions to explore
+
+Discuss/interrogate the pattern of the data
+* does the shape imply anything
+* try to have it student led / guided
+* with time, students guess at what the data shows/doesn't show without labels
+
+\hypertarget{explain---lectureread-2}{%
+\section{Explain - lecture/read}\label{explain---lectureread-2}}
+
+demo recode: birth month -\textgreater{} Summer/Winter (daylight-savings or not);
+recode favorite food to sweet/savory
+
+\hypertarget{why-2-groups}{%
+\subsection{Why 2 groups?}\label{why-2-groups}}
+
+Historical problem of statistics. We've developed very good methods for very un-reasonable
+situations. In order to make these tests work, we often have to \textbf{manipulate}
+our data in order to meet the \textbf{assumptions} of the specific test or analysis
+that we'd like to perform.
+
+\hypertarget{common-tests-to-compare-2-groups}{%
+\subsection{Common tests to compare 2 groups}\label{common-tests-to-compare-2-groups}}
+
+t-test and chisq \textbar{} box-whisker, histogram, density distribution
+
+\hypertarget{correlations}{%
+\subsection{Correlation(s)}\label{correlations}}
+
+correlation (pearson, spearman) \textbar{} scatter plot
+height \textasciitilde{} hrs\_slept ; height \textasciitilde{} fav\_food\_category
+
+\hypertarget{elaborate-3}{%
+\section{Elaborate}\label{elaborate-3}}
+
+demo recode: birth month -\textgreater{} Summer/Winter (daylight-savings or not); recode favorite food to sweet/savory
+t-test and chisq \textbar{} box-whisker, histogram, density distribution
+height \textasciitilde{} birth\_SW
+correlation (pearson, spearman) \textbar{} scatter plot
+height \textasciitilde{} hrs\_slept ; height \textasciitilde{} fav\_food\_category
+What is an hypothesis??
+
+\hypertarget{evaluateexercises-3}{%
+\section{Evaluate/Exercises}\label{evaluateexercises-3}}
+
+Formulate a hypothesis and test it using class survey data.
+Recode birth month to birth\_quarter; recode favorite food to 3 or more categories
+
+\hypertarget{hypothesis-testing---anova-and-lm}{%
+\chapter{Hypothesis Testing - ANOVA and LM}\label{hypothesis-testing---anova-and-lm}}
+
+\hypertarget{engage-4}{%
+\section{Engage}\label{engage-4}}
+
+Compare MORE than 2 groups
+
+Post-it histogram - height separated by Birth Mo (reclassified to birth quarter)
+
+\hypertarget{explore-4}{%
+\section{Explore}\label{explore-4}}
+
+Pose questions to explore
+
+Are the four distributions similar? different?
+
+\hypertarget{explain---lectureread-3}{%
+\section{Explain - lecture/read}\label{explain---lectureread-3}}
+
+What is ANOVA, how to interpret tabularly, graphically (box-whisker, histo, density); non-parametric alternative (KS)
+What is a linear model? LM vs Correlation vs ANOVA
+What does a linear relationship imply?
+LM = continuous \textasciitilde{} continuous
+ANOVA = continuous \textasciitilde{} categorical
+
+\hypertarget{elaborate-4}{%
+\section{Elaborate}\label{elaborate-4}}
+
+Conduct recoding for birth quarter
+conduct ANOVA
+Conduct Linear Model
+
+Work through the same process/analysis on new data. Either a different
+variable(s) in the same sample, or applying/demonstrating the phenomenon
+using real-world data/examples.
 
 \begin{itemize}
 \tightlist
 \item
-  the \textbf{median} is the black bar in the middle
+  Reiterate/reinforc the process/task of the lesson
 \item
-  the \textbf{quartiles} (25th and 75th percentiles) are represented by the extents of the boxes
+  Does this fit in to other steps/analysis
 \item
-  The \textbf{range} is shown by the whiskers, with outliers shown indvidually, if needed.
+  does this fit in to other thematic topics?
 \end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{boxplot}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-14-1.pdf}
-
-\hypertarget{continuous-data---histograms}{%
-\subsection{Continuous Data - Histograms}\label{continuous-data---histograms}}
-
-Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{histogram}. The \texttt{hist()} function will attempt to find the optimum number of bins for you, but you can specify a different number with the \texttt{breaks} argument.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{main =} \StringTok{"Histogram of Height"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Height (in)"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-15-1.pdf}
-
-\hypertarget{categorical-data}{%
-\subsection{Categorical Data}\label{categorical-data}}
-
-Categorical data is already in discrete units. In general with categorical data, we want to count the \textbf{frequency} of unique values. There are many ways to do this, but one of the easiest is the \texttt{table()} function. Saving the results of the table to an object, \texttt{birth\_freq}, allows you to save and print the results at any time.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{birth\_freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Birth\_Month)}
-
-\NormalTok{birth\_freq}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-##     April    August  December  February   January      July      June     March 
-##         4         2         3         1         3         2         3         2 
-##       May  November   October September 
-##         4         4         2         2
-\end{verbatim}
-
-We can also visualize our tabulated results using a \textbf{barplot} as below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{barplot}\NormalTok{(birth\_freq)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-17-1.pdf}
-
-\hypertarget{glossary-1}{%
-\section*{Glossary}\label{glossary-1}}
-\addcontentsline{toc}{section}{Glossary}
-
-\hypertarget{comparing-data}{%
-\chapter{Comparing Data}\label{comparing-data}}
-
-\textbf{NEEDS A LOT OF WORK}
-
-\hypertarget{data-distributions}{%
-\section{Data Distributions}\label{data-distributions}}
-
-\hypertarget{normal-distributions}{%
-\subsection{Normal Distributions}\label{normal-distributions}}
-
-First we'll generate a normal distribution with the \texttt{rnorm()} function. This takes 3 arguments: \texttt{n,\ mean,\ sd}, which you can see filled in below. While we could print out a list of all these values, it's not easy to \emph{understand} a list of numbers
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\DocumentationTok{\#\# 100 samples}
-                     \AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\DocumentationTok{\#\# with a mean of 10}
-                     \AttributeTok{sd =} \DecValTok{1} \DocumentationTok{\#\# and a standard deviation of 1}
-\NormalTok{                     )}
-
-
-\NormalTok{normal\_dist}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   [1] 11.461743  9.228759 10.344360  9.011577 10.213482 10.412601  9.794298
-##   [8] 10.493866  9.504083 11.064996  9.699334  9.528765  9.695063 10.451686
-##  [15] 10.087802 11.458674  9.130766 11.169342 10.501660 10.984828 11.153812
-##  [22]  9.105005  8.527781  9.019875 10.992873  9.472671  9.630453 11.930379
-##  [29]  9.709972  8.915032  9.977849  9.884639 11.264260  8.107857 10.610282
-##  [36]  9.271024 11.340466  9.056360  9.240962 10.841711  9.398378 10.762601
-##  [43] 10.920869 10.909921 12.515859  9.062207 10.473640  9.640756 10.307330
-##  [50]  9.751568  9.465202  9.822931 10.427316  8.177950 10.831855  9.578186
-##  [57]  9.241150 11.090053 10.497670  8.966486  8.757531  8.188186 10.269957
-##  [64] 12.410783  9.922728 11.798599  9.000495  9.854824  9.246429 11.089729
-##  [71] 10.751389 10.548314 11.734746  9.533314  9.581124 10.169512 10.257509
-##  [78]  9.636182  8.602800 10.572997  9.692793  9.875417 11.153376 10.208966
-##  [85] 11.528380 10.993645  9.387126 10.528465 11.308611 10.159791 10.715990
-##  [92] 11.469583  9.847889  9.435087  9.826541 10.593494 11.558613 11.376639
-##  [99] 10.062645 10.289308
-\end{verbatim}
-
-Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
-
-In R, we use the \texttt{hist()} function to plot a histogram of data. We can (try to) control the number of bins with the \texttt{breaks} argument, but note that it doesn't always match up. The \texttt{hist()} function will adjust based on the distribution of the data.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(normal\_dist,}\AttributeTok{breaks =} \DecValTok{5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/norm_dist_plot-1.pdf}
-
-Another way to visualize this would be with a d
-
-\hypertarget{what-is-normal}{%
-\subsection{\texorpdfstring{What \emph{is} normal?}{What is normal?}}\label{what-is-normal}}
-
-\hypertarget{quantitative-summaries}{%
-\subsubsection{Quantitative summaries}\label{quantitative-summaries}}
-
-5num summary
-* Min, 25th percentile, median, 75th percentile, Max
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tab\_normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(normal\_dist)}
-\end{Highlighting}
-\end{Shaded}
-
-We can print the table in R by calling its name.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tab\_normal\_dist}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   8.108   9.496  10.165  10.161  10.859  12.516
-\end{verbatim}
-
-Mean, standard deviation
-
-\hypertarget{meaningful-comparisons}{%
-\subsubsection{Meaningful Comparisons}\label{meaningful-comparisons}}
-
-How to compare apples to oranges? Standardize the units / standardize the data
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{data1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{, }
-              \AttributeTok{mean =} \DecValTok{100}\NormalTok{,}
-              \AttributeTok{sd =} \DecValTok{10}\NormalTok{)}
-
-\NormalTok{data2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{,}
-               \AttributeTok{mean =} \DecValTok{60}\NormalTok{, }
-               \AttributeTok{sd =} \DecValTok{25}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Are these the same distribution?
-
-Any issues??
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\FunctionTok{hist}\NormalTok{(data1)}
-\FunctionTok{hist}\NormalTok{(data2)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/rnorm_hist_comp-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{total\_range }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(data1, data2)}
-\end{Highlighting}
-\end{Shaded}
-
-Are they the same?
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
-\FunctionTok{hist}\NormalTok{(data1, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
-\FunctionTok{hist}\NormalTok{(data2, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/rnorm_hist_comp_true-1.pdf}
-
-Numerically / tabularly
-
-Often times its important to tables of \textbf{summary statistics}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{norm\_comp\_tab }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(}\FunctionTok{summary}\NormalTok{(data1),}
-                       \FunctionTok{summary}\NormalTok{(data2))}
-
-\NormalTok{norm\_comp\_tab}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
-## [1,]  61.97265 93.25935 100.31955 99.83822 106.85430 133.9527
-## [2,] -34.25198 42.98023  59.75894 59.52261  76.50663 150.4806
-\end{verbatim}
-
-Making the table a little nicer. Also an example of \textbf{conditional programming}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\DocumentationTok{\#\# they\textquotesingle{}re null}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## NULL
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab)))\{}
-  \FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and \texttt{pandoc} to nice looking tables even easier.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(norm\_comp\_tab)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{tabular}{l|r|r|r|r|r|r}
-\hline
-  & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
-\hline
-data1 & 61.97265 & 93.25935 & 100.31955 & 99.83822 & 106.85430 & 133.9527\\
-\hline
-data2 & -34.25198 & 42.98023 & 59.75894 & 59.52261 & 76.50663 & 150.4806\\
-\hline
-\end{tabular}
-
-\textbf{How} transform the data
-
-Simple transformation (multiply all values by 100)
-* to convert units
-* other examples?
-
-Complex transformations
-* log-transformation (\emph{DEE: not a fan})
-* z-scores (\emph{DEE: a better option})
-
-\textbf{Why} transform the data?
-* Real world applications?
-* Is it always appropriate to transform data?
-
-\hypertarget{skews}{%
-\subsection{Skews}\label{skews}}
-
-What to do if the data are \textbf{not} normal?
-
-\hypertarget{statisitcal-testing-of-simple-data-sets}{%
-\section{Statisitcal testing of simple data sets}\label{statisitcal-testing-of-simple-data-sets}}
-
-\hypertarget{t-tests-anova-chi2}{%
-\subsection{t-tests, ANOVA, chi2}\label{t-tests-anova-chi2}}
-
-\hypertarget{relationships-between-variables-in-simple-data-sets}{%
-\section{Relationships between variables in simple data sets}\label{relationships-between-variables-in-simple-data-sets}}
-
-\hypertarget{correlation-linear-regression}{%
-\subsection{Correlation, Linear Regression}\label{correlation-linear-regression}}
-
-\hypertarget{simple-lm}{%
-\subsubsection{Simple LM}\label{simple-lm}}
-
-\hypertarget{complex-lm}{%
-\subsubsection{Complex LM}\label{complex-lm}}
-
-\hypertarget{genearlized-linear-model}{%
-\subsection{Genearlized Linear Model}\label{genearlized-linear-model}}
-
-For now, I have 3 main chapters for each of the main sections:
-* Basics of data science / R \ref{unit1}
-* Applications/critiques using IPUMS data \ref{unit2}
-* Student-driven projects \ref{unit3}
-
-Each of these \textbf{Chapters} contains multiple sections. We'll likely want to break these sections out into their own \texttt{.Rmd} files as they get fleshed out. For now, I'll try to keep the abundance of files limited.
-
-\textbf{NOTE:} As these actually get filled out, we will probably want to insert different \texttt{part}s to the book (EG, the content of Unit 1 is covered in \texttt{Part\ I}).
-* Declare parts with \texttt{\#\ (PART)\ Part\ I\ \{-\}} immediately before the first chapter \texttt{\#} it contains.
-
-\textbf{Topics to include:}
-* What is data?
-* Everything can be data
-* How do we interpret data
-* Tables
-* Plots
-* Univariate distributions
-* What can they tell us
-* Multi-modality in distributions
-* Categorical vs continuous data
-* Don't need to get ahead of this yet
-* Add in a grouping category - multi state/multi-national dataset
-* Ttest / anova
-
-\textbf{Type of Data:}
-Age distributions
-Specifically generate a dataset with old/young folks over-represented to highlight a bimodal distribution
-
-Start with single state/country
-Add a second state/country to demo ttest
-Add more to demo anova
-
-Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)
-
-\hypertarget{intro-to-rrstudio}{%
-\section{Intro to R/RStudio}\label{intro-to-rrstudio}}
-
-\hypertarget{reading-data-distributions}{%
-\section{Reading Data / Distributions}\label{reading-data-distributions}}
-
-\hypertarget{what-is-a-normal-distribution}{%
-\subsection{\texorpdfstring{What \emph{is} a \textbf{normal distribution}}{What is a normal distribution}}\label{what-is-a-normal-distribution}}
-
-\hypertarget{how-normal-is-it}{%
-\subsubsection{How normal is it?}\label{how-normal-is-it}}
-
-show increasingly unclear examples of normal vs not
-
-introduce tests of normality
-
-\hypertarget{measuring-normality---single-sample}{%
-\subsubsection{Measuring normality - single sample}\label{measuring-normality---single-sample}}
-
-reinforce {[}concept of statistical{]} \textbf{normality}
-
-is a value from a sample? - one way ttest
-something about tails
-
-\hypertarget{comparing-normality---two-saples}{%
-\subsubsection{comparing normality - two saples}\label{comparing-normality---two-saples}}
-
-standard / two-way t test
-
-\hypertarget{comparing-more-than-two---anova}{%
-\subsubsection{comparing more than two - ANOVA}\label{comparing-more-than-two---anova}}
-
-\hypertarget{glossary-2}{%
-\section*{Glossary}\label{glossary-2}}
-\addcontentsline{toc}{section}{Glossary}
-
-Data
-Quantitative
-Qualitative
-Discrete
-Continuous
-Nominal
-Ordinal
+(Possibly) Build on the first one to show variation.
+* Other ways to represent the phenomenon/data
++ tabular
++ visually
+
+\hypertarget{evaluateexercises-4}{%
+\section{Evaluate/Exercises}\label{evaluateexercises-4}}
+
+Formulate a hypothesis and test it using class survey data.
 
 \hypertarget{unit-2-ipums}{%
 \chapter*{Unit 2: IPUMS}\label{unit-2-ipums}}
@@ -1606,8 +1230,8 @@ Data extract created online using the datacart system.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{inspect-the-data-1}{%
-\paragraph*{Inspect the Data}\label{inspect-the-data-1}}
+\hypertarget{inspect-the-data}{%
+\paragraph*{Inspect the Data}\label{inspect-the-data}}
 \addcontentsline{toc}{paragraph}{Inspect the Data}
 
 Using \texttt{haven} labeled values.
@@ -2146,7 +1770,7 @@ For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a 
 
 }
 
-\caption{the ipums logo}\label{fig:unnamed-chunk-45}
+\caption{the ipums logo}\label{fig:unnamed-chunk-23}
 \end{figure}
 
 \hypertarget{tips}{%
@@ -2212,6 +1836,893 @@ We will approximate standard error to 0.027\footnote{\(p\) is unknown but expect
 The \texttt{longnote} footnote seems particularly useful.
 
 To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+
+\hypertarget{what-is-data-1}{%
+\chapter{\texorpdfstring{What \emph{is} data?}{What is data?}}\label{what-is-data-1}}
+
+\hypertarget{pov}{%
+\section{POV:}\label{pov}}
+
+\begin{quote}
+In a social science class, your teacher tells you that the CDC
+reports average male height in the United States to be 69
+inches or 5ft 9in. While browsing dating apps, you notice that
+nearly all the men report that they are 6ft or over. You wonder
+if this is a bias in reporting, or if the area where you live
+and attend college has significantly taller men. To test your
+theory, you want to collect data on height from individuals in
+your data science class to test if males are truly taller on campus
+than the country average.
+
+\textbf{Source:} \url{https://www.cdc.gov/nchs/fastats/body-measurements.htm}**
+\end{quote}
+
+\hypertarget{activity---collect-data-on-height}{%
+\subsection{ACTIVITY - collect data on height}\label{activity---collect-data-on-height}}
+
+\textbf{If in-person}
+* Create a histogram (x axis) on a blackboard/wall, have students place their heights
+with a post-it note
++ Start with one distribution for whole class
++ Repeat with separate distributions for M/F
++ \emph{DEE: I want to find a way to acknowledge this dichotomy ignores non-binary individuals, and include some suggestions on how to discuss it.}
+
+\hypertarget{activity---collect-data-on-birth-month}{%
+\subsection{ACTIVITY - collect data on birth month}\label{activity---collect-data-on-birth-month}}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a histogram (x axis) on a blackboard/wall, have students place their heights
+  with a post-it note
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Students place post-it notes on month of birth
+  \end{itemize}
+\end{itemize}
+
+\textbf{IDEALLY:} Have both a histogram of height AND histogram of birth month visible
+at the same time. Compare/contrast distributions of the two data sets.
+
+\hypertarget{explore-5}{%
+\section{Explore}\label{explore-5}}
+
+Questions to consider:
+* \emph{Why do we plot data}
+* \emph{What does the} \textbf{distribution} \emph{of post-it notes look like?}
+* \emph{What can you infer from the distribution(s)}
+* \emph{How does the distribution of height differ from birth month?}
+
+\hypertarget{example-datasets}{%
+\subsection{Example Datasets}\label{example-datasets}}
+
+If you're working through this course on your own, or are unable to facilitate a classroom activity, see the companion R package, \texttt{ipumsED}, which includes example data sets for each lesson, as well as custom code and functions to facilitate learning data science with IPUMS data.
+
+\emph{DEE: This could probably be stated at the begining of unit 1}
+
+\hypertarget{activity---calculate-by-hand}{%
+\subsection{ACTIVITY - Calculate by hand}\label{activity---calculate-by-hand}}
+
+In our hypothetical setup, we are interested in the \textbf{average} height.
+* \emph{What does it mean to be} \textbf{\emph{average}}
+* \emph{Which height would you say is average? (eyeballing)}
+* \emph{Which Birth Month would you say is average? - is there one?}
+
+Write out steps for calculating \textbf{mean} - trivial as it may seem.
+
+\hypertarget{explain}{%
+\section{Explain}\label{explain}}
+
+In the context of this example, we \textbf{collected} data on height and birth month for individuals in our class.
+Plotting our data allows us to \textbf{visualize} the data, making it easy to interpret.
+
+\hypertarget{ellaborate}{%
+\section{Ellaborate}\label{ellaborate}}
+
+\hypertarget{so-what-is-data}{%
+\subsection{So what is data?}\label{so-what-is-data}}
+
+Data is defined as ``facts and statistics collected together for
+reference or analysis.''\footnote{This is from the internet and needs to
+  be our words} As seen in Figure 1.1, there are two types of data:
+quantitative and qualitative. \textbf{Quantitative data} are able to
+be expressed in numerical format and are countable. These data
+are either discrete or continuous where \textbf{discrete data} uses
+numeric bins. For example, we use our age as discrete
+quantitative data, we round our age to the previous year (eg.,
+20, 21, 22). \textbf{Continuous data} does not use bins, but rather
+includes all of the fractions between two whole numbers. An
+example could be most physical measures like height, weight, the
+speed at which an individual runs.
+
+\textbf{Qualitative data} describes characteristics or categories and
+can be broken down into two categories, nominal or ordinal.
+\textbf{Nominal data} has no inherent ordering but it can be
+categorized. Examples include country or origin, gender, hair
+color, race, etc. \textbf{Ordinal data} can both be categorized and
+ordered (e.g., first, second, and third place is a race).
+
+\begin{quote}
+Going back to our hypothesis of male height on campus, heights
+are continuous, qualitative data. It is difficult for people to
+report their specific height and you assume that most
+individuals will report it rounded to the closest inch. This
+makes the data you will actually use, discrete quantitative
+data.
+\end{quote}
+
+\hypertarget{collecting-data}{%
+\subsection{Collecting Data}\label{collecting-data}}
+
+The first step to answering a research question is to collect
+your data. Broadly, data comes in two forms, primary and
+secondary. (Fig 1.2) \textbf{Primary data} is data that is collected
+directly by the researcher. Surveys, observations,
+experimentation, questionnaires, and interviews are all examples
+of primary data. \textbf{Secondary data} is collected from published
+or unpublished literature. It is collected by different
+researchers and compiled for use by a second scientist. This type
+of data includes data found in published articles, books,
+journals, biographies, and government records like the US Census.
+
+Once compiled, you now have a data set which is comprised of
+observations and variables. An \textbf{observation} is all of the
+measures taken for one person or item. A \textbf{variable} is what is
+being measured.
+
+\begin{quote}
+The US CDC data is secondary, but you are collecting height
+data yourself in class as a comparison. The survey or
+questionnaire you use on your classmates is primary data. Each
+individual is an observation and the variable of interest is
+height.
+\end{quote}
+
+\hypertarget{populations-and-sampling}{%
+\subsection{POPULATIONS AND SAMPLING}\label{populations-and-sampling}}
+
+\textbf{Random Sampling:} It is a sampling method in which all the
+items have an equal chance of being selected and the individuals
+who are selected are just like the ones who are not selected
+
+\textbf{Stratified Random Sampling:} It is a process to gather data by
+separating the actual population into the distinct subset or
+strata, and then choosing simple random samples from each stratum
+Your research question is about the height of all males at your
+college, but recording height data for each individual would be
+very difficult and time consuming. You instead decide to use a
+sample of males in your data science class. This is a random
+sample as each male individual has an equally likely chance of
+being samples (that is, unless a prerequisite exists).
+
+Sampling strategy can lead to \textbf{bias}
+
+\begin{quote}
+If you had chosen a different sample, like the men's basketball
+team, your results would have been biased.
+\end{quote}
+
+\hypertarget{evaluation}{%
+\section{Evaluation}\label{evaluation}}
+
+\hypertarget{review-questions}{%
+\subsection{Review Questions}\label{review-questions}}
+
+\begin{itemize}
+\tightlist
+\item
+  What is one example of collecting/visualizing data from your own life
+\item
+  Is height a \textbf{continuous} or \textbf{discrete} variable and Why?
+\end{itemize}
+
+\hypertarget{exercises}{%
+\subsection{Exercises}\label{exercises}}
+
+Brainstorm 3 topics/questions that are of interest to you personally, or academically.
+* What \textbf{variable(s)} will you need to collect to study this phenomenon?
+* Describe these variable(s), are they qualitative or quantitative? Continuous or ordinal?
+
+\hypertarget{glossary}{%
+\section*{Glossary}\label{glossary}}
+\addcontentsline{toc}{section}{Glossary}
+
+\hypertarget{intro-to-r-data-types-data-structures}{%
+\chapter{Intro to R, data types, data structures}\label{intro-to-r-data-types-data-structures}}
+
+In the previous lesson, we began thinking about \textbf{data}, how to talk about it,
+and how to \textbf{visualize} it. We also talked about one type of average, the \textbf{mean.}
+
+\hypertarget{engage-5}{%
+\section{Engage}\label{engage-5}}
+
+\emph{What do you think the following code does?}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"//filepath/directory/filename.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\emph{Hint:} There are 4 ``things'' in the above code:
+\texttt{my\_data},
+\texttt{\textless{}-},
+\texttt{read\_excel()},
+\texttt{//filepath/directory/filename.xlsx}
+
+\hypertarget{r-vs-rstudio}{%
+\subsection{R vs RStudio}\label{r-vs-rstudio}}
+
+\begin{itemize}
+\item
+  If \texttt{R} is the engine, then \texttt{RStudio} is the car.
+\item
+  If \texttt{R} is the text, Rstudio is the text-editor.
+\item
+  \texttt{R} is the \textbf{programming language}, \texttt{Rstudio} is the \textbf{Integrated Development Environment (IDE)}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{What do you think some differences are between R and RStudio?}
+  \end{itemize}
+\end{itemize}
+
+\texttt{RStudio} is a program/app just like Google Chrome or Microsoft Word. Each
+of these programs provide a \textbf{Graphical User Interface (GUI)}, a pretty way for
+a user to use a mouse and keyboard to do \emph{something.}
+
+An \textbf{IDE} is a special kind of program/app that provides MANY tools for writing and running code.
+
+\hypertarget{orientation-to-rstudio}{%
+\subsection{Orientation to RStudio}\label{orientation-to-rstudio}}
+
+\emph{SUGGESTION: Instructor live demos interacting with RStudio while students follow along on computers}
+
+When you first open RStudio, you'll see 3 \textbf{panes}, all of which will look fairly empty at the moment.
+
+If you're using the default layout, you should see:
+* On the left, the \texttt{Console} \textbf{pane}
+* On the Top-right, the \texttt{Environment} \textbf{pane}
+* On the Bottom-right, the \texttt{Files} \textbf{pane}
+
+A keen eye will also notice that each of these \textbf{panes} contains multiple \textbf{tabs}. We will go over the uses of many of these \textbf{tabs}, but for now let's start with \texttt{Console.}
+
+The \texttt{Console} is where you input \texttt{R\ code}, run it, and see the results.
+
+At it's simplest \texttt{RStudio} is a calculator. Try typing \texttt{4\ +\ 4} into the \texttt{Console},
+then press the \texttt{{[}Enter{]}} key to run the code. Immediately, \texttt{R} prints the result as we see here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4} \SpecialCharTok{+} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 8
+\end{verbatim}
+
+The \texttt{Console} serves as a running log of all your operations for your current session, but it can be helpful to temporarily save your results as \texttt{R\ objects}. We do this using the \textbf{assignment operator} we saw earlier: \texttt{\textless{}-}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{answer }\OtherTok{\textless{}{-}} \DecValTok{4}\SpecialCharTok{+}\DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+By default, \texttt{Console} only prints results if they have no where else to go. If they're stored as an \texttt{Robject}, no result is printed, but you should now see \texttt{answer} listed in the \texttt{Environment} \textbf{pane}.
+
+\hypertarget{explore---interacting-with-r-objects}{%
+\section{Explore - Interacting with R objects}\label{explore---interacting-with-r-objects}}
+
+\hypertarget{load-the-data}{%
+\subsection{Load the Data}\label{load-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dir\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{"inst"}\NormalTok{,}\StringTok{"unit1\_data"}\NormalTok{)}
+\NormalTok{survey\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(dir\_path, }\StringTok{"data\_template.xlsx"}\NormalTok{)}
+
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(survey\_path)}
+\end{Highlighting}
+\end{Shaded}
+
+What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
+\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+
+The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "tbl_df"     "tbl"        "data.frame"
+\end{verbatim}
+
+We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "individual"    "Birth_Month"   "Height_inches"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 32
+## Columns: 3
+## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
+## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~
+## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~
+\end{verbatim}
+
+\hypertarget{inspect-the-data-1}{%
+\subsection{Inspect the Data}\label{inspect-the-data-1}}
+
+What is \texttt{data}?? Below we call the \texttt{class()} function on \texttt{data} and see that it has 3 classes:
+\texttt{tbl\_df} , \texttt{tbl} , \texttt{data.frame}
+
+The first two classes, \texttt{tbl\_df,\ tbl} indicate it is a special kind of table, in the \texttt{tibble} format. In general, you can interact with these like a \texttt{matrix} or \texttt{data.frame} but they have additional features.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "tbl_df"     "tbl"        "data.frame"
+\end{verbatim}
+
+We can call \texttt{colnames()} on data, like a regular \texttt{data.frame} or \texttt{matrix}. Or we can take advantage of the \texttt{tibble} structure and use the \texttt{glimpse()} function which provides a succinct summary of your data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "individual"    "Birth_Month"   "Height_inches"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{glimpse}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 32
+## Columns: 3
+## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
+## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~
+## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~
+\end{verbatim}
+
+\hypertarget{summarize-data}{%
+\section*{Summarize Data}\label{summarize-data}}
+\addcontentsline{toc}{section}{Summarize Data}
+
+\hypertarget{continuous-data}{%
+\subsection*{Continuous Data}\label{continuous-data}}
+\addcontentsline{toc}{subsection}{Continuous Data}
+
+For continuous data, we often want to summarize our data by describing the \textbf{mean, median, and/or range}. \textbf{Mean} and \textbf{median} describe the \emph{central tendency} of the data, while \textbf{range} describes the full extant of the data, as seen below.
+
+NOTE: if \texttt{NA} are present in the data, be sure to use the \texttt{na.rm=TRUE} flag for these operations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 66.5625
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 66.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55 76
+\end{verbatim}
+
+\hypertarget{all-in-summary}{%
+\subsection*{All in summary()}\label{all-in-summary}}
+\addcontentsline{toc}{subsection}{All in summary()}
+
+\textbf{Mean}, \textbf{median}, and \textbf{range} will all be reported by calling \texttt{summary()} on a \texttt{numeric\ vector}, such as \texttt{Height\_inches}. In addition, the lower and upper quartiles will be reported, along with the number of \texttt{NA} responses.
+
+NOTE: \texttt{summary()} does NOT require special handling for \texttt{NA} values, in fact - it expects them!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   55.00   64.00   66.50   66.56   70.00   76.00
+\end{verbatim}
+
+\hypertarget{mode}{%
+\section{Mode}\label{mode}}
+
+You're probably familiar with \textbf{mean} and \textbf{median} being talked about with a
+third term, \textbf{mode}. The \textbf{mode} is the most commonly occuring value in a
+dataset. It's often important to know the \textbf{modal response} of survey data.
+While a commonly reported metric(??), there is no \texttt{mode()} function included in
+\texttt{base\ r}\ldots{}
+
+so we'll just have to create our own!
+
+\hypertarget{mode-code}{%
+\subsection{Mode Code}\label{mode-code}}
+
+One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_mode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  tt }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(x) }\DocumentationTok{\#\# find frequencies}
+\NormalTok{  tt }\OtherTok{\textless{}{-}}\NormalTok{ tt[}\FunctionTok{order}\NormalTok{(tt, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)] }\DocumentationTok{\#\# resort based on freq}
+  
+  \DocumentationTok{\#\# check number of modes}
+\NormalTok{  max }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(tt)}
+\NormalTok{  n\_max }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(tt}\SpecialCharTok{==}\NormalTok{max)}
+  
+  
+  \ControlFlowTok{if}\NormalTok{(n\_max }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{ )\{}
+    \FunctionTok{warning}\NormalTok{(}\StringTok{"More than one mode detected"}\NormalTok{)}
+    \FunctionTok{return}\NormalTok{(tt[tt}\SpecialCharTok{==}\NormalTok{max])}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \DocumentationTok{\#\# return only the first value}
+    \FunctionTok{return}\NormalTok{(tt[}\DecValTok{1}\NormalTok{]) }\DocumentationTok{\#\# return whatever the highrst frequency is}
+\NormalTok{  \}}
+
+  
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{mode-results}{%
+\subsection{Mode Results}\label{mode-results}}
+
+Now that we've created out own \texttt{function}, it's easy to find the \textbf{mode}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{my\_mode}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in my_mode(data$Height_inches): More than one mode detected
+\end{verbatim}
+
+\begin{verbatim}
+## x
+## 64 65 69 70 
+##  4  4  4  4
+\end{verbatim}
+
+\hypertarget{visualizing-data}{%
+\section{Visualizing Data}\label{visualizing-data}}
+
+The above summaries describe data with numbers, but we can also describe data visually.
+
+\hypertarget{continuous-data---boxplots}{%
+\subsection{Continuous Data - Boxplots}\label{continuous-data---boxplots}}
+
+Univariate continuous data, like height, can be visualized using a box and whisker plot, which shows many of the components of summary:
+
+\begin{itemize}
+\tightlist
+\item
+  the \textbf{median} is the black bar in the middle
+\item
+  the \textbf{quartiles} (25th and 75th percentiles) are represented by the extents of the boxes
+\item
+  The \textbf{range} is shown by the whiskers, with outliers shown indvidually, if needed.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-36-1.pdf}
+
+\hypertarget{continuous-data---histograms}{%
+\subsection{Continuous Data - Histograms}\label{continuous-data---histograms}}
+
+Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{histogram}. The \texttt{hist()} function will attempt to find the optimum number of bins for you, but you can specify a different number with the \texttt{breaks} argument.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Height\_inches, }\AttributeTok{main =} \StringTok{"Histogram of Height"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Height (in)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-37-1.pdf}
+
+\hypertarget{categorical-data}{%
+\subsection{Categorical Data}\label{categorical-data}}
+
+Categorical data is already in discrete units. In general with categorical data, we want to count the \textbf{frequency} of unique values. There are many ways to do this, but one of the easiest is the \texttt{table()} function. Saving the results of the table to an object, \texttt{birth\_freq}, allows you to save and print the results at any time.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{birth\_freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Birth\_Month)}
+
+\NormalTok{birth\_freq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     April    August  December  February   January      July      June     March 
+##         4         2         3         1         3         2         3         2 
+##       May  November   October September 
+##         4         4         2         2
+\end{verbatim}
+
+We can also visualize our tabulated results using a \textbf{barplot} as below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(birth\_freq)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-39-1.pdf}
+
+\hypertarget{glossary-1}{%
+\section*{Glossary}\label{glossary-1}}
+\addcontentsline{toc}{section}{Glossary}
+
+\hypertarget{comparing-data}{%
+\chapter{Comparing Data}\label{comparing-data}}
+
+\textbf{NEEDS A LOT OF WORK}
+
+\hypertarget{data-distributions}{%
+\section{Data Distributions}\label{data-distributions}}
+
+\hypertarget{normal-distributions}{%
+\subsection{Normal Distributions}\label{normal-distributions}}
+
+First we'll generate a normal distribution with the \texttt{rnorm()} function. This takes 3 arguments: \texttt{n,\ mean,\ sd}, which you can see filled in below. While we could print out a list of all these values, it's not easy to \emph{understand} a list of numbers
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\DocumentationTok{\#\# 100 samples}
+                     \AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\DocumentationTok{\#\# with a mean of 10}
+                     \AttributeTok{sd =} \DecValTok{1} \DocumentationTok{\#\# and a standard deviation of 1}
+\NormalTok{                     )}
+
+
+\NormalTok{normal\_dist}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 10.715877 11.168263  9.029188 10.690680 12.397212 10.405594  9.647557
+##   [8] 10.623685  9.430201  7.852573 10.437198  9.565627 10.439313 11.622554
+##  [15]  9.707839  9.933526 10.497026 11.547758 10.406160 10.299818 12.087692
+##  [22] 10.700559  9.960483 11.225391  8.712002  8.187827 10.453038  9.454404
+##  [29] 10.814494  9.520780  9.325184  8.342912 12.134211 10.281580 10.747584
+##  [36] 11.058429 11.363765  9.493137 10.351836 10.453592 11.952126  8.522668
+##  [43]  9.328287  9.838693 11.507584 11.052674 10.724610 10.460097 11.145261
+##  [50] 10.148972 11.902287  9.248793  9.628833  8.994737  9.687324  8.703115
+##  [57]  8.773126 11.480806  9.914308  9.660096  7.693052  8.480897  9.391595
+##  [64] 11.340748  9.971235 11.249177  9.049603  9.559861 10.894344  7.324965
+##  [71] 10.659121  8.936693  9.297853  9.733822 10.292614 10.502678 11.867480
+##  [78]  7.424295 11.783423  9.207669 10.152397  8.204459 10.589547 11.604871
+##  [85]  8.811960 11.712799 10.989764 10.968640 11.215739 11.363787  9.248667
+##  [92] 10.689120 10.043453 11.729921 10.075689 11.143211  9.125138  9.769555
+##  [99]  8.322084  8.955837
+\end{verbatim}
+
+Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
+
+In R, we use the \texttt{hist()} function to plot a histogram of data. We can (try to) control the number of bins with the \texttt{breaks} argument, but note that it doesn't always match up. The \texttt{hist()} function will adjust based on the distribution of the data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(normal\_dist,}\AttributeTok{breaks =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/norm_dist_plot-1.pdf}
+
+Another way to visualize this would be with a d
+
+\hypertarget{what-is-normal}{%
+\subsection{\texorpdfstring{What \emph{is} normal?}{What is normal?}}\label{what-is-normal}}
+
+\hypertarget{quantitative-summaries}{%
+\subsubsection{Quantitative summaries}\label{quantitative-summaries}}
+
+5num summary
+* Min, 25th percentile, median, 75th percentile, Max
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab\_normal\_dist }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(normal\_dist)}
+\end{Highlighting}
+\end{Shaded}
+
+We can print the table in R by calling its name.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab\_normal\_dist}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   7.325   9.328  10.287  10.131  11.005  12.397
+\end{verbatim}
+
+Mean, standard deviation
+
+\hypertarget{meaningful-comparisons}{%
+\subsubsection{Meaningful Comparisons}\label{meaningful-comparisons}}
+
+How to compare apples to oranges? Standardize the units / standardize the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data1 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{, }
+              \AttributeTok{mean =} \DecValTok{100}\NormalTok{,}
+              \AttributeTok{sd =} \DecValTok{10}\NormalTok{)}
+
+\NormalTok{data2 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{1000}\NormalTok{,}
+               \AttributeTok{mean =} \DecValTok{60}\NormalTok{, }
+               \AttributeTok{sd =} \DecValTok{25}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Are these the same distribution?
+
+Any issues??
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(data1)}
+\FunctionTok{hist}\NormalTok{(data2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/rnorm_hist_comp-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{total\_range }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(data1, data2)}
+\end{Highlighting}
+\end{Shaded}
+
+Are they the same?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(data1, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
+\FunctionTok{hist}\NormalTok{(data2, }\AttributeTok{xlim =}\NormalTok{ total\_range)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/rnorm_hist_comp_true-1.pdf}
+
+Numerically / tabularly
+
+Often times its important to tables of \textbf{summary statistics}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{norm\_comp\_tab }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(}\FunctionTok{summary}\NormalTok{(data1),}
+                       \FunctionTok{summary}\NormalTok{(data2))}
+
+\NormalTok{norm\_comp\_tab}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  68.95749 92.43148 99.50169 99.63049 106.73078 133.3285
+## [2,] -11.13767 41.45965 59.19661 58.87243  76.31034 132.9263
+\end{verbatim}
+
+Making the table a little nicer. Also an example of \textbf{conditional programming}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\DocumentationTok{\#\# they\textquotesingle{}re null}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\FunctionTok{is.null}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(norm\_comp\_tab)))\{}
+  \FunctionTok{rownames}\NormalTok{(norm\_comp\_tab) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"data1"}\NormalTok{, }\StringTok{"data2"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and \texttt{pandoc} to nice looking tables even easier.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(norm\_comp\_tab)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r|r|r|r|r|r}
+\hline
+  & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
+\hline
+data1 & 68.95749 & 92.43148 & 99.50169 & 99.63049 & 106.73078 & 133.3285\\
+\hline
+data2 & -11.13767 & 41.45965 & 59.19661 & 58.87243 & 76.31034 & 132.9263\\
+\hline
+\end{tabular}
+
+\textbf{How} transform the data
+
+Simple transformation (multiply all values by 100)
+* to convert units
+* other examples?
+
+Complex transformations
+* log-transformation (\emph{DEE: not a fan})
+* z-scores (\emph{DEE: a better option})
+
+\textbf{Why} transform the data?
+* Real world applications?
+* Is it always appropriate to transform data?
+
+\hypertarget{skews}{%
+\subsection{Skews}\label{skews}}
+
+What to do if the data are \textbf{not} normal?
+
+\hypertarget{statisitcal-testing-of-simple-data-sets}{%
+\section{Statisitcal testing of simple data sets}\label{statisitcal-testing-of-simple-data-sets}}
+
+\hypertarget{t-tests-anova-chi2}{%
+\subsection{t-tests, ANOVA, chi2}\label{t-tests-anova-chi2}}
+
+\hypertarget{relationships-between-variables-in-simple-data-sets}{%
+\section{Relationships between variables in simple data sets}\label{relationships-between-variables-in-simple-data-sets}}
+
+\hypertarget{correlation-linear-regression}{%
+\subsection{Correlation, Linear Regression}\label{correlation-linear-regression}}
+
+\hypertarget{simple-lm}{%
+\subsubsection{Simple LM}\label{simple-lm}}
+
+\hypertarget{complex-lm}{%
+\subsubsection{Complex LM}\label{complex-lm}}
+
+\hypertarget{genearlized-linear-model}{%
+\subsection{Genearlized Linear Model}\label{genearlized-linear-model}}
+
+For now, I have 3 main chapters for each of the main sections:
+* Basics of data science / R \ref{unit1}
+* Applications/critiques using IPUMS data \ref{unit2}
+* Student-driven projects \ref{unit3}
+
+Each of these \textbf{Chapters} contains multiple sections. We'll likely want to break these sections out into their own \texttt{.Rmd} files as they get fleshed out. For now, I'll try to keep the abundance of files limited.
+
+\textbf{NOTE:} As these actually get filled out, we will probably want to insert different \texttt{part}s to the book (EG, the content of Unit 1 is covered in \texttt{Part\ I}).
+* Declare parts with \texttt{\#\ (PART)\ Part\ I\ \{-\}} immediately before the first chapter \texttt{\#} it contains.
+
+\textbf{Topics to include:}
+* What is data?
+* Everything can be data
+* How do we interpret data
+* Tables
+* Plots
+* Univariate distributions
+* What can they tell us
+* Multi-modality in distributions
+* Categorical vs continuous data
+* Don't need to get ahead of this yet
+* Add in a grouping category - multi state/multi-national dataset
+* Ttest / anova
+
+\textbf{Type of Data:}
+Age distributions
+Specifically generate a dataset with old/young folks over-represented to highlight a bimodal distribution
+
+Start with single state/country
+Add a second state/country to demo ttest
+Add more to demo anova
+
+Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)
+
+\hypertarget{intro-to-rrstudio-1}{%
+\section{Intro to R/RStudio}\label{intro-to-rrstudio-1}}
+
+\hypertarget{reading-data-distributions}{%
+\section{Reading Data / Distributions}\label{reading-data-distributions}}
+
+\hypertarget{what-is-a-normal-distribution}{%
+\subsection{\texorpdfstring{What \emph{is} a \textbf{normal distribution}}{What is a normal distribution}}\label{what-is-a-normal-distribution}}
+
+\hypertarget{how-normal-is-it}{%
+\subsubsection{How normal is it?}\label{how-normal-is-it}}
+
+show increasingly unclear examples of normal vs not
+
+introduce tests of normality
+
+\hypertarget{measuring-normality---single-sample}{%
+\subsubsection{Measuring normality - single sample}\label{measuring-normality---single-sample}}
+
+reinforce {[}concept of statistical{]} \textbf{normality}
+
+is a value from a sample? - one way ttest
+something about tails
+
+\hypertarget{comparing-normality---two-saples}{%
+\subsubsection{comparing normality - two saples}\label{comparing-normality---two-saples}}
+
+standard / two-way t test
+
+\hypertarget{comparing-more-than-two---anova}{%
+\subsubsection{comparing more than two - ANOVA}\label{comparing-more-than-two---anova}}
+
+\hypertarget{glossary-2}{%
+\section*{Glossary}\label{glossary-2}}
+\addcontentsline{toc}{section}{Glossary}
+
+Data
+Quantitative
+Qualitative
+Discrete
+Continuous
+Nominal
+Ordinal
 
   \bibliography{book.bib,packages.bib}
 

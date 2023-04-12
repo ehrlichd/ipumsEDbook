@@ -1,7 +1,7 @@
 # Hypothesis Testing - Comparison and Correlations
 
 
-# Engage
+## Engage
 
 Post-it histogram - height separated by birth month (may require a lot of board space)
 
@@ -9,7 +9,7 @@ Are the distributions similar? different? **too many small samples to tell**?
 
 
 
-# Explore
+## Explore
 
 How do we **group** data in order to compare it.
 
@@ -37,30 +37,29 @@ Discuss/interrogate the pattern of the data
 
 
 
-# Explain - lecture/read
+## Explain - lecture/read
 
 demo recode: birth month -> Summer/Winter (daylight-savings or not); 
 recode favorite food to sweet/savory
 
-## Why 2 groups?
+### Why 2 groups?
 
 Historical problem of statistics. We've developed very good methods for very un-reasonable
 situations. In order to make these tests work, we often have to **manipulate**
 our data in order to meet the **assumptions** of the specific test or analysis
 that we'd like to perform.
 
-## Common tests to compare 2 groups
+### Common tests to compare 2 groups
 t-test and chisq | box-whisker, histogram, density distribution
 
-## Correlation(s)
+### Correlation(s)
 correlation (pearson, spearman) | scatter plot
 height ~ hrs_slept ; height ~ fav_food_category
 
 
 
-TEXT
 
-# Elaborate
+## Elaborate
 demo recode: birth month -> Summer/Winter (daylight-savings or not); recode favorite food to sweet/savory
 t-test and chisq | box-whisker, histogram, density distribution
 height ~ birth_SW
@@ -71,7 +70,7 @@ What is an hypothesis??
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Formulate a hypothesis and test it using class survey data.
 Recode birth month to birth_quarter; recode favorite food to 3 or more categories

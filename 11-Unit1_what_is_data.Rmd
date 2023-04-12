@@ -1,12 +1,12 @@
 
 # WHAT IS DATA
 
-# Engage
+## Engage
 
 Brainstorm/word cloud on “what is data”
 
 
-# Explore
+## Explore
 Brainstorm “what do we DO with data”
 Brainstorm/word cloud “where do we get data”
 We can collect it!
@@ -18,9 +18,7 @@ Pose questions to explore
 
 
 
-# Explain - lecture/read
-
-## "what ARE data??"
+## Explain - "what ARE data??"
 
 Data are defined as “facts and statistics collected together for reference or analysis.”1 As seen in Figure 1.1, there are two types of data: quantitative and qualitative. Quantitative data are able to be expressed in numerical format and are countable. These data are either discrete or continuous where discrete data uses numeric bins. For example, we use our age as discrete quantitative data, we round our age to the previous year (eg., 20, 21, 22). Continuous data does not use bins, but rather includes all of the fractions between two whole numbers. An example could be most physical measures like height, weight, the speed at which an individual runs.
 Qualitative data describe characteristics or categories and can be broken down into two categories, nominal or ordinal. Nominal data have no inherent ordering but it can be categorized. Examples include country or origin, gender, hair color, race, etc. Ordinal data can both be categorized and ordered (e.g., first, second, and third place is a race).
@@ -28,13 +26,14 @@ Going back to our hypothesis of male height on campus, heights are continuous, q
 
 
 ## “what do we DO with data”
-### generally compare data and visualize it 
 
-#### examples from recent academic articles
+generally compare data and visualize it 
+
+### examples from recent academic articles
 
 article graphs, citations, instructors research, etc
 
-#### examples from non-academic
+### examples from non-academic
 
 customer satisfaction; workplace/department culture; r&D; 
 
@@ -52,7 +51,7 @@ customer satisfaction; workplace/department culture; r&D;
 
 ## Study sample
 
-## "HOW do we get data??"
+### "HOW do we get data??"
 
 The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These type of data include data found in published articles, books, journals, biographies, and government records like the US Census.
 Once compiled, you now have a data set which is comprised of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
@@ -60,11 +59,8 @@ The US CDC data is secondary, but you are collecting height data yourself in cla
 
 
 
-### Types of Data
 
-Just INTRO the ideas here, will follow up more in later lessons/the whole course.
-
-## Study Design Considerations
+## Study Design Considerations - Sampling
 
 ### Sample vs Population
 
@@ -76,9 +72,24 @@ Random Sampling: It is a sampling method in which all the items have an equal ch
 Stratified Random Sampling: It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
 Sampling strategy can lead to bias. Statistical bias is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men’s basketball team, your results would have been biased as basketball players are taller on average.
 
-### Bias 
 
-is there bias in the data?
+## Study Design Considerations - Data
+
+### Types of Data
+
+Yes/No
+
+Continuous vs categorical
+
+within categorical:
+ ordered (factor, ordinal) vs unordered (categories)
+
+Free response
+
+## Study Design Considerantions - Bias 
+
+is there bias in the sampling?
+is there bias in the data types collected?
 
 If so, Be explicit 
 Our classroom represents a subset of individuals in this country:
@@ -87,8 +98,11 @@ attending college
 specific geography 
 specific time period
 
+we group categories a,b,c to make new groups for analysis.
 
-# Elaborate
+In doing so, we limit our interpreations to _____
+
+## Elaborate
 
 
 **Consider reframing the explanation to quetions**
@@ -115,7 +129,7 @@ using real-world data/examples.
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Students complete Short class survey:
 Height, Birth Year, Birth Month, Birth Day, academic major/interest, favorite food, favorite color, handedness, hours slept (avg).

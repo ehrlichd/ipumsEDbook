@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.11)  4 JAN 2023 15:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.11)  12 APR 2023 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,241 +724,269 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 5.
-[3])
+[3] [4])
 \tf@toc=\write5
 \openout5 = `_main.toc'.
 
-[4]
+[5] [6
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 144--152
 
  []
 
-[5
+[7] [8] [9] [10]
 
-] [6] [7] [8]
-
-LaTeX Warning: Reference `exploratory' on page 9 undefined on input line 460.
+LaTeX Warning: Reference `exploratory' on page 11 undefined on input line 460.
 
 
-LaTeX Warning: Reference `hypothesis' on page 9 undefined on input line 462.
+LaTeX Warning: Reference `hypothesis' on page 11 undefined on input line 462.
 
-[9] [10] [11] [12
+[11] [12] [13] [14
 
-] [13] [14] [15
+] [15] [16] [17
 
-] [16
+] [18
 
 ]
 Chapter 1.
-
-Underfull \hbox (badness 1460) in paragraph at lines 663--664
-[]\TU/lmr/bx/n/10 Source: []$[][][][][] [] [] [] [][][] [] [][][] [] [][][] [] [][][][] [] [][][][][][][] [] [][][][] [][] [][][][][][][][][][][][] []
- []
-
-[17] [18] [19] [20]
+[19] [20] [21] [22]
 Chapter 2.
-[21
+[23
 
-] [22]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 978--978
-[]\TU/lmtt/m/n/10 ## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 978--978
-[]\TU/lmtt/m/n/10 ## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 978--978
-[]\TU/lmtt/m/n/10 ## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~[] 
- []
-
-[23]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1022--1022
-[]\TU/lmtt/m/n/10 ## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1022--1022
-[]\TU/lmtt/m/n/10 ## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1022--1022
-[]\TU/lmtt/m/n/10 ## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~[] 
- []
-
-[24]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1103.
-
-LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 1104.
-
-[25]
-Overfull \hbox (22.5pt too wide) in paragraph at lines 1138--1138
-[]\TU/lmtt/m/n/10 ## Warning in my_mode(data$Height_inches): More than one mode detected[] 
- []
-
-[26]
-File: _main_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-14-1.pdf>
-File: _main_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-15-1.pdf>
+] [24] [25] [26]
+Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[27]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1206--1206
+[27
+
+] [28]
+Chapter 4.
+[29
+
+]
+Overfull \hbox (30.97565pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 30 \TU/lmr/m/sl/10 CHAPTER 4.  HYPOTHESIS TESTING - COMPARISON AND CORRELATIONS
+ []
+
+[30]
+Chapter 5.
+[31
+
+] [32] [33
+
+]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1253.
+
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 1253.
+
+[34] [35] [36] [37] [38] [39] [40] [41] [42
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[43] [44] [45] [46
+
+]
+Chapter 6.
+
+LaTeX Warning: Reference `unit2' on page 47 undefined on input line 1744.
+
+[47]
+File: imgs/ipums_i_logo.jpg Graphic file (type bmp)
+<imgs/ipums_i_logo.jpg>
+
+LaTeX Warning: Reference `unit1' on page 48 undefined on input line 1784.
+
+[48] [49] [50
+
+]
+Chapter 7.
+
+Underfull \hbox (badness 1460) in paragraph at lines 1857--1858
+[]\TU/lmr/bx/n/10 Source: []$[][][][][] [] [] [] [][][] [] [][][] [] [][][] [] [][][][] [] [][][][][][][] [] [][][][] [][] [][][][][][][][][][][][] []
+ []
+
+[51] [52] [53] [54]
+Chapter 8.
+[55
+
+] [56]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2172--2172
+[]\TU/lmtt/m/n/10 ## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2172--2172
+[]\TU/lmtt/m/n/10 ## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2172--2172
+[]\TU/lmtt/m/n/10 ## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~[] 
+ []
+
+[57]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2216--2216
+[]\TU/lmtt/m/n/10 ## $ individual    <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2216--2216
+[]\TU/lmtt/m/n/10 ## $ Birth_Month   <chr> "January", "September", "March", "April", "April", "Octo~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2216--2216
+[]\TU/lmtt/m/n/10 ## $ Height_inches <dbl> 70, 64, 72, 61, 55, 65, 72, 75, 69, 75, 76, 70, 70, 69, ~[] 
+ []
+
+[58] [59]
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2332--2332
+[]\TU/lmtt/m/n/10 ## Warning in my_mode(data$Height_inches): More than one mode detected[] 
+ []
+
+[60]
+File: _main_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-36-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-37-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[61]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2400--2400
 []\TU/lmtt/m/n/10 ##     April    August  December  February   January      July      June     March[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1206--1206
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2400--2400
 []\TU/lmtt/m/n/10 ##         4         2         3         1         3         2         3         2[] 
  []
 
-File: _main_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-17-1.pdf>
-[28] [29] [30
+File: _main_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-39-1.pdf>
+[62] [63] [64
 
 ]
-Chapter 3.
+Chapter 9.
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##   [1] 11.461743  9.228759 10.344360  9.011577 10.213482 10.412601  9.794298[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##   [1] 10.715877 11.168263  9.029188 10.690680 12.397212 10.405594  9.647557[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##   [8] 10.493866  9.504083 11.064996  9.699334  9.528765  9.695063 10.451686[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##   [8] 10.623685  9.430201  7.852573 10.437198  9.565627 10.439313 11.622554[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [15] 10.087802 11.458674  9.130766 11.169342 10.501660 10.984828 11.153812[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [15]  9.707839  9.933526 10.497026 11.547758 10.406160 10.299818 12.087692[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [22]  9.105005  8.527781  9.019875 10.992873  9.472671  9.630453 11.930379[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [22] 10.700559  9.960483 11.225391  8.712002  8.187827 10.453038  9.454404[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [29]  9.709972  8.915032  9.977849  9.884639 11.264260  8.107857 10.610282[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [29] 10.814494  9.520780  9.325184  8.342912 12.134211 10.281580 10.747584[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [36]  9.271024 11.340466  9.056360  9.240962 10.841711  9.398378 10.762601[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [36] 11.058429 11.363765  9.493137 10.351836 10.453592 11.952126  8.522668[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [43] 10.920869 10.909921 12.515859  9.062207 10.473640  9.640756 10.307330[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [43]  9.328287  9.838693 11.507584 11.052674 10.724610 10.460097 11.145261[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [50]  9.751568  9.465202  9.822931 10.427316  8.177950 10.831855  9.578186[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [50] 10.148972 11.902287  9.248793  9.628833  8.994737  9.687324  8.703115[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [57]  9.241150 11.090053 10.497670  8.966486  8.757531  8.188186 10.269957[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [57]  8.773126 11.480806  9.914308  9.660096  7.693052  8.480897  9.391595[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [64] 12.410783  9.922728 11.798599  9.000495  9.854824  9.246429 11.089729[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [64] 11.340748  9.971235 11.249177  9.049603  9.559861 10.894344  7.324965[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [71] 10.751389 10.548314 11.734746  9.533314  9.581124 10.169512 10.257509[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [71] 10.659121  8.936693  9.297853  9.733822 10.292614 10.502678 11.867480[] 
  []
 
-[31]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [78]  9.636182  8.602800 10.572997  9.692793  9.875417 11.153376 10.208966[] 
- []
-
-
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [85] 11.528380 10.993645  9.387126 10.528465 11.308611 10.159791 10.715990[] 
+[65]
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [78]  7.424295 11.783423  9.207669 10.152397  8.204459 10.589547 11.604871[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10 ##  [92] 11.469583  9.847889  9.435087  9.826541 10.593494 11.558613 11.376639[] 
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [85]  8.811960 11.712799 10.989764 10.968640 11.215739 11.363787  9.248667[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2457--2457
+[]\TU/lmtt/m/n/10 ##  [92] 10.689120 10.043453 11.729921 10.075689 11.143211  9.125138  9.769555[] 
  []
 
 File: _main_files/figure-latex/norm_dist_plot-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/norm_dist_plot-1.pdf>
-[32]
+[66]
 File: _main_files/figure-latex/rnorm_hist_comp-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/rnorm_hist_comp-1.pdf>
 
 Underfull \vbox (badness 6995) has occurred while \output is active []
 
-[33]
+[67]
 File: _main_files/figure-latex/rnorm_hist_comp_true-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/rnorm_hist_comp_true-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[34] [35]
-Overfull \hbox (5.86006pt too wide) in paragraph at lines 1405--1414
+[68] [69]
+Overfull \hbox (0.86006pt too wide) in paragraph at lines 2599--2608
 [][] 
  []
 
 
-LaTeX Warning: Reference `unit1' on page 36 undefined on input line 1456.
+LaTeX Warning: Reference `unit1' on page 70 undefined on input line 2650.
 
 
-LaTeX Warning: Reference `unit2' on page 36 undefined on input line 1457.
+LaTeX Warning: Reference `unit2' on page 70 undefined on input line 2651.
 
 
-LaTeX Warning: Reference `unit3' on page 36 undefined on input line 1458.
+LaTeX Warning: Reference `unit3' on page 70 undefined on input line 2652.
 
-[36] [37] [38] [39
+[70] (./_main.bbl [71] [72]) [73
 
-] [40] [41] [42] [43] [44] [45] [46] [47] [48
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[49] [50] [51] [52
-
-]
-Chapter 4.
-
-LaTeX Warning: Reference `unit2' on page 53 undefined on input line 2120.
-
-[53]
-File: imgs/ipums_i_logo.jpg Graphic file (type bmp)
-<imgs/ipums_i_logo.jpg>
-
-LaTeX Warning: Reference `unit1' on page 54 undefined on input line 2160.
-
-[54] (./_main.bbl [55] [56
-
-]) [57] (./_main.aux)
+] (./_main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 2C909C42D382932EA0F7716EAC45D63E;4511.
+(rerunfilecheck)             Checksum: A1D7E8C2F050360B6BCA1F03E74D188A;10409.
  ) 
 Here is how much of TeX's memory you used:
- 17671 strings out of 477643
- 328443 string characters out of 5839156
- 819817 words of memory out of 5000000
- 38556 multiletter control sequences out of 15000+600000
+ 17748 strings out of 477643
+ 330143 string characters out of 5839156
+ 823843 words of memory out of 5000000
+ 38633 multiletter control sequences out of 15000+600000
  475782 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,8n,121p,1085b,476s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (57 pages).
+Output written on _main.pdf (73 pages).

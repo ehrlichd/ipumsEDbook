@@ -1,9 +1,9 @@
 
-# Comparing Data
+# Describing Data
 
 **see old_ for some examples, not very exstenive**
 
-# Engage
+## Engage
 
 post-it note histogram of height:
   * one with MANY bins
@@ -12,7 +12,7 @@ post-it note histogram of height:
 
 
 
-# Explore
+## Explore
 
 How do we describe this meaningfully??
 can we determine the "average"
@@ -30,12 +30,12 @@ what does "average" mean??
 
 
 
-# Explain - lecture/read
+## Explain - lecture/read
 
-## How do we describe data - summary statistics
-## How do we describe the distribution of data 
-## How do we manipulate data 
-### coding/categorizing free response/ “binning” a continuous variable
+### How do we describe data - summary statistics
+### How do we describe the distribution of data 
+### How do we manipulate data 
+#### coding/categorizing free response/ “binning” a continuous variable
 
 Height, while we treat as continuous, is actually "binned" into ~60 unique values.
 
@@ -47,7 +47,7 @@ specialized vocabulary to describe data
 Why people care about normality (what tests can/t you use and why)
 
 
-# Elaborate
+## Elaborate
 
 Read/write data
 Visualize data - describe the distribution; compare to board results
@@ -57,7 +57,7 @@ Demo binnig of ages
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Write an R script that: 
 1. reads in data

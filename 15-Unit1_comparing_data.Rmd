@@ -2,14 +2,14 @@
 # Hypothesis Testing - ANOVA and LM
 
 
-# Engage
+## Engage
 Compare MORE than 2 groups
 
 Post-it histogram - height separated by Birth Mo (reclassified to birth quarter)
 
 
 
-# Explore
+## Explore
 
 Pose questions to explore
 
@@ -19,7 +19,7 @@ Are the four distributions similar? different?
 
 
 
-# Explain - lecture/read
+## Explain - lecture/read
 
 
 What is ANOVA, how to interpret tabularly, graphically (box-whisker, histo, density); non-parametric alternative (KS)
@@ -28,7 +28,7 @@ What does a linear relationship imply?
 LM = continuous ~ continuous
 ANOVA = continuous ~ categorical
 
-# Elaborate
+## Elaborate
 
 Conduct recoding for birth quarter
 conduct ANOVA
@@ -51,6 +51,6 @@ using real-world data/examples.
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Formulate a hypothesis and test it using class survey data.
