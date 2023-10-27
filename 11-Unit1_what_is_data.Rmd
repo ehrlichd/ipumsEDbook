@@ -28,6 +28,8 @@ Going back to our hypothesis of male height on campus, heights are continuous, q
 
 
 
+
+
 > *Fun fact: A single data point is called a datum which is Latin for “something given”. The word data can be either singular or plural depending on how you use it. It can be used as a mass noun the same way we discuss sand on a beach or hair on our head. However, in science we are usually referring to multiple datums within a data set making it a plural noun. Therefore, data is cool and data are cool!*
 >
 > --- Sources
@@ -133,7 +135,11 @@ These go along with range, outliers and sample size.
   * Outlier
   * Range
 
+
+>
 > What is a statistic?
+>
+
 
 
 ### Exploring height
@@ -144,11 +150,13 @@ If you do not have class data on height, we will be using the following simple d
 * What do `person, height` represent in relationship to `ex_height`??
  
 <details>
- <summary> *Click to show answer* </summary>
-  <p> 
-    We **create** the **R object** `ex_height` using the **assignment operator** `<-`
-    `ex_height` is a **data.frame**, a table, with two columns: `person` and `height` <br>
-    `person, height` are the two columns, or variables, of `ex_height`
+ <summary> *Click to show answer* </summary> <br> 
+  <p>
+  > We **create** the **R object** `ex_height` using the **assignment operator** `<-`
+  > `ex_height` is a **data.frame**, a table, with two columns: `person` and `height` <br>
+  >  `person, height` are the two columns, or variables, of `ex_height`
+  >
+  
   </p>
 </details>
 
@@ -182,7 +190,7 @@ $\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}$
 $\frac{26.75}{5}$
 $5.35$
 
-In `r`, we can write this out "by hand." Since `r` is a **statistical programming language**, r recognizes basic mathematical expressions. We can `code` the following to calcualte the mean:
+In `R`, we can write this out "by hand." Since `R` is a **statistical programming language**, r recognizes basic mathematical expressions. We can `code` the following to calcualte the mean:
 
 
 ```{r}
@@ -193,7 +201,7 @@ In `r`, we can write this out "by hand." Since `r` is a **statistical programmin
 
 
 
-Since `r` is an **object-oriented programming language**, we don't need to write out individual numbers for each calculation. Instead, we can refer to the `ex_height` **object**. Since `ex_height` is a **data.frame**, we can refer to it variables by name with the `$` operator. We also take advantage of some of the built-in mathematical functions of `r`: `sum(), length()`
+Since `R` is an **object-oriented programming language**, we don't need to write out individual numbers for each calculation. Instead, we can refer to the `ex_height` **object**. Since `ex_height` is a **data.frame**, we can refer to it variables by name with the `$` operator. We also take advantage of some of the built-in mathematical functions of `R`: `sum(), length()`
 
 ```{r}
 
@@ -206,14 +214,21 @@ sum(ex_height$height)/length(ex_height$person)
 The **median** is calculated by ordering all values from small to large. If there are an **odd** numberof values, there will be a single value at the middle. 
 
 Our original data:
-$ 5.5, 5, 6,  5.25,  5$
 
-Our data re-ordered from small to large:
-$ 5, 5, 5.25, 5.5, 6 $ 
 
-$ ~~5, 5,~~ 5.25, ~~5.5, 6 ~~ $ 
+$5.5, 5, 6,  5.25,  5$
 
-~~5, 5,~~ 5.25, ~~5.5, 6~~
+Our data re-ordered from small to large, then we simply cross off values from either end to find the middle value:
+
+
+$5, 5, 5.25, 5.5, 6$ 
+
+
+$~~5~~, 5, 5.25, 5.5, ~~6~~$ 
+
+
+$~~5~~, ~~5~~, 5.25, ~~5.5~~, ~~6~~$ 
+
 
 
 If we had an even number of values, we would wind up with two "middle values", in which case we take the mean of these two. 
@@ -221,16 +236,23 @@ If we had an even number of values, we would wind up with two "middle values", i
 If we had one more value, let's say `5.75`, we wind up with both `5.25` and `5.5` as middle values. 
 
 
-$ 5, 5, ~~5.25, 5.5,~~ 5.75, 6 $
+$5, 5, 5.25, 5.5, 5.75, 6$ 
+
+$~~5~~, 5, 5.25, 5.5, 5.75, ~~6~~$ 
+
+$~~5~~, ~~5~~, 5.25, 5.5, ~~5.75~~, ~~6~~$
 
 
 The median is the **mean** of these two values:
 
+
+
 $\frac{5.25+5.5}{2}$
+
 $5.375$
 
 
-In a small dataset, it's easy to pick out the middle value. Fortunately, there's an `r` function for this as well:
+In a small dataset, it's easy to pick out the middle value. Fortunately, there's an `R` function for this as well:
 
 
 ```{r}
@@ -242,12 +264,16 @@ median(ex_height$height)
 median(c(ex_height$height, 5.75))
 ```
 
+
+>
 > Did you notice the `c()` function above? What does it do?
+>
+
 
 
 ### Modal height
 
-The **mode** is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a `height` of `5`, and all other values are repsented by just one person. There's actually no build-in `r` function to calculate the **mode**...
+The **mode** is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a `height` of `5`, and all other values are represented by just one person. There's actually no build-in `R` function to calculate the **mode**...
 
 
 But don't worry, there are functions that let you decide the **mode** and more!! A very useful function is `table()`, used to make **counts** of values. In a small dataset, we see that two individuals have a height of 5. Our **mode** is 5!
@@ -271,7 +297,7 @@ range(ex_height$height)
 ```
 
 
-Though, if you want just the **minimum** or **maximum** value, you can use `min()` or `max():
+Though, if you want just the **minimum** or **maximum** value, you can use `min()` or `max()`:
 
 ```{r}
 
@@ -349,8 +375,13 @@ answer the following questions about our data set.
 **Are the data quantitative or nominal?**
 
 <details>
- <summary> *Click to show answer* </summary>
-  <p> Age data is quantitative.
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  > 
+  > Age data is quantitative.
+  >
+    
   </p>
 </details>
 
@@ -359,9 +390,15 @@ answer the following questions about our data set.
 **Are the data discrete or continuous?**
 
 <details>
-  <summary> *Click to show answer* </summary>
-  <p> Age data is could be continuous depending on how you measure and record it, 
+  <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  >
+  > Age data is could be continuous depending on how you measure and record it, 
   but the way we generally talk about 'Years of Age' is actually discrete.
+  >
+  
+  
   </p>
 </details>
 
@@ -369,8 +406,11 @@ answer the following questions about our data set.
 **Is the dataset primary or secondary data?**
 
 <details>
-  <summary> *Click to show answer* </summary>
-  <p> That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.</p>
+  <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  > That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.
+  
+  </p>
 </details>
 
 
@@ -378,8 +418,12 @@ answer the following questions about our data set.
 **What sampling method was used?**
 
 <details>
- <summary> *Click to show answer* </summary>
-  <p> Age data is quantitative.
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  > 
+  > Age data is quantitative.
+
   </p>
 </details>
 
@@ -389,8 +433,11 @@ answer the following questions about our data set.
 **Does any statistical bias exist?**
 
 <details>
- <summary> *Click to show answer* </summary>
-  <p> Age data is quantitative.
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  > 
+  > Age data is quantitative.
+  
   </p>
 </details>
 
@@ -400,8 +447,11 @@ answer the following questions about our data set.
 **Which measure of central tendency is best to describe this data? Mean, Median or Mode.**
 
 <details>
- <summary> *Click to show answer* </summary>
-  <p> Age data is quantitative.
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  >
+  >Age data is quantitative.
+  
   </p>
 </details>
 
