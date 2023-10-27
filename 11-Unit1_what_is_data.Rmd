@@ -219,16 +219,10 @@ $ ~~5, 5,~~ 5.25, ~~5.5, 6 ~~ $
 If we had an even number of values, we would wind up with two "middle values", in which case we take the mean of these two. 
 
 If we had one more value, let's say `5.75`, we wind up with both `5.25` and `5.5` as middle values. 
-```{r}
 
-5
-5
-`5.25`
-`5.5`
-5.75
-6
 
-```
+$ 5, 5, ~~5.25, 5.5,~~ 5.75, 6 $
+
 
 The median is the **mean** of these two values:
 

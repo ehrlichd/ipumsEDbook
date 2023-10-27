@@ -191,20 +191,26 @@ div.csl-indent {
 <li class="chapter" data-level="1.3.1" data-path="explain.html"><a href="explain.html#what-are-data"><i class="fa fa-check"></i><b>1.3.1</b> WHAT ARE DATA</a></li>
 <li class="chapter" data-level="1.3.2" data-path="explain.html"><a href="explain.html#collecting-data"><i class="fa fa-check"></i><b>1.3.2</b> COLLECTING DATA</a></li>
 <li class="chapter" data-level="1.3.3" data-path="explain.html"><a href="explain.html#populations-and-sampling"><i class="fa fa-check"></i><b>1.3.3</b> POPULATIONS AND SAMPLING</a></li>
-<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.4</b> EXPLORATORY DATA ANALYSIS</a></li>
-<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#study-design"><i class="fa fa-check"></i><b>1.3.5</b> Study Design</a></li>
-<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#study-sample"><i class="fa fa-check"></i><b>1.3.6</b> Study sample</a></li>
-<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#study-design-considerations---sampling"><i class="fa fa-check"></i><b>1.3.7</b> Study Design Considerations - Sampling</a></li>
-<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#study-design-considerations---data"><i class="fa fa-check"></i><b>1.3.8</b> Study Design Considerations - Data</a></li>
-<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.9</b> Study Design Considerantions - Bias</a></li>
+<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.4</b> Study Design Considerantions - Bias</a></li>
+<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.5</b> EXPLORATORY DATA ANALYSIS</a></li>
+<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#exploring-height"><i class="fa fa-check"></i><b>1.3.6</b> Exploring height</a></li>
+<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#mean-height"><i class="fa fa-check"></i><b>1.3.7</b> Mean height</a></li>
+<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#median-height"><i class="fa fa-check"></i><b>1.3.8</b> Median height</a></li>
+<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#modal-height"><i class="fa fa-check"></i><b>1.3.9</b> Modal height</a></li>
+<li class="chapter" data-level="1.3.10" data-path="explain.html"><a href="explain.html#range"><i class="fa fa-check"></i><b>1.3.10</b> Range</a></li>
+<li class="chapter" data-level="1.3.11" data-path="explain.html"><a href="explain.html#outliers"><i class="fa fa-check"></i><b>1.3.11</b> Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a></li>
+<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn-would-we-have-done-this-before-or-is-this-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn! (<em>would we have done this before or is this the first time??</em>)</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
 <ul>
 <li class="chapter" data-level="1.5.1" data-path="evaluateexercises.html"><a href="evaluateexercises.html#context"><i class="fa fa-check"></i><b>1.5.1</b> Context:</a></li>
 <li class="chapter" data-level="1.5.2" data-path="evaluateexercises.html"><a href="evaluateexercises.html#questions"><i class="fa fa-check"></i><b>1.5.2</b> Questions:</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>1.6</b> GLOSSARY</a></li>
+<li class="chapter" data-level="1.7" data-path="additional-content.html"><a href="additional-content.html"><i class="fa fa-check"></i><b>1.7</b> Additional Content</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
@@ -423,25 +429,25 @@ An applied course using IPUMS data <br></p></a>
 <li>The <strong>range</strong> is shown by the whiskers, with outliers shown indvidually, if needed.</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="visualizing-data-1.html#cb50-1" tabindex="-1"></a><span class="fu">boxplot</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="visualizing-data-1.html#cb68-1" tabindex="-1"></a><span class="fu">boxplot</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
 </details>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
 </div>
 <div id="continuous-data---histograms" class="section level3 hasAnchor" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Continuous Data - Histograms<a href="visualizing-data-1.html#continuous-data---histograms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Continuous data, can also be broken into <strong>bins</strong> and plotted as a <strong>histogram</strong>. The <code>hist()</code> function will attempt to find the optimum number of bins for you, but you can specify a different number with the <code>breaks</code> argument.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="visualizing-data-1.html#cb51-1" tabindex="-1"></a><span class="fu">hist</span>(data<span class="sc">$</span>Height_inches, <span class="at">main =</span> <span class="st">&quot;Histogram of Height&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Height (in)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="visualizing-data-1.html#cb69-1" tabindex="-1"></a><span class="fu">hist</span>(data<span class="sc">$</span>Height_inches, <span class="at">main =</span> <span class="st">&quot;Histogram of Height&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Height (in)&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 </div>
 <div id="categorical-data" class="section level3 hasAnchor" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> Categorical Data<a href="visualizing-data-1.html#categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Categorical data is already in discrete units. In general with categorical data, we want to count the <strong>frequency</strong> of unique values. There are many ways to do this, but one of the easiest is the <code>table()</code> function. Saving the results of the table to an object, <code>birth_freq</code>, allows you to save and print the results at any time.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="visualizing-data-1.html#cb52-1" tabindex="-1"></a>birth_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(data<span class="sc">$</span>Birth_Month)</span>
-<span id="cb52-2"><a href="visualizing-data-1.html#cb52-2" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="visualizing-data-1.html#cb52-3" tabindex="-1"></a>birth_freq</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="visualizing-data-1.html#cb70-1" tabindex="-1"></a>birth_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(data<span class="sc">$</span>Birth_Month)</span>
+<span id="cb70-2"><a href="visualizing-data-1.html#cb70-2" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="visualizing-data-1.html#cb70-3" tabindex="-1"></a>birth_freq</span></code></pre></div>
 </details>
 <pre><code>## 
 ##     April    August  December  February   January      July      June     March 
@@ -450,9 +456,9 @@ An applied course using IPUMS data <br></p></a>
 ##         4         4         2         2</code></pre>
 <p>We can also visualize our tabulated results using a <strong>barplot</strong> as below.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="visualizing-data-1.html#cb54-1" tabindex="-1"></a><span class="fu">barplot</span>(birth_freq)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="visualizing-data-1.html#cb72-1" tabindex="-1"></a><span class="fu">barplot</span>(birth_freq)</span></code></pre></div>
 </details>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 </div>
 </div>
             </section>

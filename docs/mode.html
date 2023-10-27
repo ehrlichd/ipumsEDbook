@@ -191,20 +191,26 @@ div.csl-indent {
 <li class="chapter" data-level="1.3.1" data-path="explain.html"><a href="explain.html#what-are-data"><i class="fa fa-check"></i><b>1.3.1</b> WHAT ARE DATA</a></li>
 <li class="chapter" data-level="1.3.2" data-path="explain.html"><a href="explain.html#collecting-data"><i class="fa fa-check"></i><b>1.3.2</b> COLLECTING DATA</a></li>
 <li class="chapter" data-level="1.3.3" data-path="explain.html"><a href="explain.html#populations-and-sampling"><i class="fa fa-check"></i><b>1.3.3</b> POPULATIONS AND SAMPLING</a></li>
-<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.4</b> EXPLORATORY DATA ANALYSIS</a></li>
-<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#study-design"><i class="fa fa-check"></i><b>1.3.5</b> Study Design</a></li>
-<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#study-sample"><i class="fa fa-check"></i><b>1.3.6</b> Study sample</a></li>
-<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#study-design-considerations---sampling"><i class="fa fa-check"></i><b>1.3.7</b> Study Design Considerations - Sampling</a></li>
-<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#study-design-considerations---data"><i class="fa fa-check"></i><b>1.3.8</b> Study Design Considerations - Data</a></li>
-<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.9</b> Study Design Considerantions - Bias</a></li>
+<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.4</b> Study Design Considerantions - Bias</a></li>
+<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.5</b> EXPLORATORY DATA ANALYSIS</a></li>
+<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#exploring-height"><i class="fa fa-check"></i><b>1.3.6</b> Exploring height</a></li>
+<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#mean-height"><i class="fa fa-check"></i><b>1.3.7</b> Mean height</a></li>
+<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#median-height"><i class="fa fa-check"></i><b>1.3.8</b> Median height</a></li>
+<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#modal-height"><i class="fa fa-check"></i><b>1.3.9</b> Modal height</a></li>
+<li class="chapter" data-level="1.3.10" data-path="explain.html"><a href="explain.html#range"><i class="fa fa-check"></i><b>1.3.10</b> Range</a></li>
+<li class="chapter" data-level="1.3.11" data-path="explain.html"><a href="explain.html#outliers"><i class="fa fa-check"></i><b>1.3.11</b> Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a></li>
+<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn-would-we-have-done-this-before-or-is-this-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn! (<em>would we have done this before or is this the first time??</em>)</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
 <ul>
 <li class="chapter" data-level="1.5.1" data-path="evaluateexercises.html"><a href="evaluateexercises.html#context"><i class="fa fa-check"></i><b>1.5.1</b> Context:</a></li>
 <li class="chapter" data-level="1.5.2" data-path="evaluateexercises.html"><a href="evaluateexercises.html#questions"><i class="fa fa-check"></i><b>1.5.2</b> Questions:</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>1.6</b> GLOSSARY</a></li>
+<li class="chapter" data-level="1.7" data-path="additional-content.html"><a href="additional-content.html"><i class="fa fa-check"></i><b>1.7</b> Additional Content</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
@@ -423,32 +429,32 @@ While a commonly reported metric(??), there is no <code>mode()</code> function i
 <h3><span class="header-section-number">8.3.1</span> Mode Code<a href="mode.html#mode-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="mode.html#cb46-1" tabindex="-1"></a>my_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb46-2"><a href="mode.html#cb46-2" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> <span class="fu">table</span>(x) <span class="do">## find frequencies</span></span>
-<span id="cb46-3"><a href="mode.html#cb46-3" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> tt[<span class="fu">order</span>(tt, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)] <span class="do">## resort based on freq</span></span>
-<span id="cb46-4"><a href="mode.html#cb46-4" tabindex="-1"></a>  </span>
-<span id="cb46-5"><a href="mode.html#cb46-5" tabindex="-1"></a>  <span class="do">## check number of modes</span></span>
-<span id="cb46-6"><a href="mode.html#cb46-6" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(tt)</span>
-<span id="cb46-7"><a href="mode.html#cb46-7" tabindex="-1"></a>  n_max <span class="ot">&lt;-</span> <span class="fu">sum</span>(tt<span class="sc">==</span>max)</span>
-<span id="cb46-8"><a href="mode.html#cb46-8" tabindex="-1"></a>  </span>
-<span id="cb46-9"><a href="mode.html#cb46-9" tabindex="-1"></a>  </span>
-<span id="cb46-10"><a href="mode.html#cb46-10" tabindex="-1"></a>  <span class="cf">if</span>(n_max <span class="sc">&gt;</span> <span class="dv">1</span> ){</span>
-<span id="cb46-11"><a href="mode.html#cb46-11" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">&quot;More than one mode detected&quot;</span>)</span>
-<span id="cb46-12"><a href="mode.html#cb46-12" tabindex="-1"></a>    <span class="fu">return</span>(tt[tt<span class="sc">==</span>max])</span>
-<span id="cb46-13"><a href="mode.html#cb46-13" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb46-14"><a href="mode.html#cb46-14" tabindex="-1"></a>    <span class="do">## return only the first value</span></span>
-<span id="cb46-15"><a href="mode.html#cb46-15" tabindex="-1"></a>    <span class="fu">return</span>(tt[<span class="dv">1</span>]) <span class="do">## return whatever the highrst frequency is</span></span>
-<span id="cb46-16"><a href="mode.html#cb46-16" tabindex="-1"></a>  }</span>
-<span id="cb46-17"><a href="mode.html#cb46-17" tabindex="-1"></a></span>
-<span id="cb46-18"><a href="mode.html#cb46-18" tabindex="-1"></a>  </span>
-<span id="cb46-19"><a href="mode.html#cb46-19" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="mode.html#cb64-1" tabindex="-1"></a>my_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb64-2"><a href="mode.html#cb64-2" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> <span class="fu">table</span>(x) <span class="do">## find frequencies</span></span>
+<span id="cb64-3"><a href="mode.html#cb64-3" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> tt[<span class="fu">order</span>(tt, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)] <span class="do">## resort based on freq</span></span>
+<span id="cb64-4"><a href="mode.html#cb64-4" tabindex="-1"></a>  </span>
+<span id="cb64-5"><a href="mode.html#cb64-5" tabindex="-1"></a>  <span class="do">## check number of modes</span></span>
+<span id="cb64-6"><a href="mode.html#cb64-6" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(tt)</span>
+<span id="cb64-7"><a href="mode.html#cb64-7" tabindex="-1"></a>  n_max <span class="ot">&lt;-</span> <span class="fu">sum</span>(tt<span class="sc">==</span>max)</span>
+<span id="cb64-8"><a href="mode.html#cb64-8" tabindex="-1"></a>  </span>
+<span id="cb64-9"><a href="mode.html#cb64-9" tabindex="-1"></a>  </span>
+<span id="cb64-10"><a href="mode.html#cb64-10" tabindex="-1"></a>  <span class="cf">if</span>(n_max <span class="sc">&gt;</span> <span class="dv">1</span> ){</span>
+<span id="cb64-11"><a href="mode.html#cb64-11" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">&quot;More than one mode detected&quot;</span>)</span>
+<span id="cb64-12"><a href="mode.html#cb64-12" tabindex="-1"></a>    <span class="fu">return</span>(tt[tt<span class="sc">==</span>max])</span>
+<span id="cb64-13"><a href="mode.html#cb64-13" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb64-14"><a href="mode.html#cb64-14" tabindex="-1"></a>    <span class="do">## return only the first value</span></span>
+<span id="cb64-15"><a href="mode.html#cb64-15" tabindex="-1"></a>    <span class="fu">return</span>(tt[<span class="dv">1</span>]) <span class="do">## return whatever the highrst frequency is</span></span>
+<span id="cb64-16"><a href="mode.html#cb64-16" tabindex="-1"></a>  }</span>
+<span id="cb64-17"><a href="mode.html#cb64-17" tabindex="-1"></a></span>
+<span id="cb64-18"><a href="mode.html#cb64-18" tabindex="-1"></a>  </span>
+<span id="cb64-19"><a href="mode.html#cb64-19" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 </div>
 <div id="mode-results" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Mode Results<a href="mode.html#mode-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that we’ve created out own <code>function</code>, it’s easy to find the <strong>mode</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="mode.html#cb47-1" tabindex="-1"></a><span class="fu">my_mode</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="mode.html#cb65-1" tabindex="-1"></a><span class="fu">my_mode</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
 </details>
 <pre><code>## Warning in my_mode(data$Height_inches): More than one mode detected</code></pre>
 <pre><code>## x
