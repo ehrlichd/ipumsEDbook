@@ -1,4 +1,4 @@
-fig:unnamed-chunk-30
+fig:unnamed-chunk-38
 week-6-intro-to-ipums
 lesson-0
 what-is-data
@@ -21,8 +21,9 @@ median-height
 modal-height
 range
 outliers
+find-outliers
 elaborate
-your-turn-would-we-have-done-this-before-or-is-this-the-first-time
+your-turn
 evaluateexercises
 context
 questions

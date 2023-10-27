@@ -1,19 +1,15 @@
 --- 
-title: |
-  ![](ipums_banner.png)    
-  Data Science for Social Scientists:    
-  An applied course using IPUMS data  <br>
+title: "Data Science for Social Scientists: An applied course using IPUMS data"     
 author: | 
+  | ![](ipums_banner.png)
+  | <br>  
+  | <br>  
   | __Developed by:__  
-  |   Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)
-  |   Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)
-  |   Current Version compiled: `r Sys.Date()`
-  | <br>  
-  | ![](ipums_i_logo.jpg){width=50%}
-  | ![](clemson_logo.png){width=50%}
-  | <br>  
-  | <br>  
-  | <br>  
+  |    Daniel E. Ehrlich, [IPUMS, University of Minnesota](https://international.ipums.org/international/)  
+  |    Anna Tremblay, [Dept of Soc, Anth, & CJ, Clemson University](https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html)  
+  |    Current Version compiled: `r Sys.Date()`
+  | ![](ipums_i_logo.jpg){width=40%} ![](clemson_logo.png){width=40%}
+  | <br> <br>
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
@@ -351,5 +347,15 @@ This function grabs any packages in your project and adds them to a local list t
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
+```
+
+
+
+
+Testing title fix
+
+```{js, echo = FALSE}
+title=document.getElementById('header');  
+title.innerHTML = '<img src="ipums_banner.png" alt = "IPUMS Banner">' + title.innerHTML
 ```
 

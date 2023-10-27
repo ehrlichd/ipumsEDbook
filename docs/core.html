@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.1 Core |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
+  <title>6.1 Core | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.1 Core |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta property="og:title" content="6.1 Core | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.1 Core |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta name="twitter:title" content="6.1 Core | Data Science for Social Scientists: An applied course using IPUMS data" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -47,7 +47,6 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -158,7 +157,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Beginning of a Syllabus</a></li>
+<li><a href="./"> ipumsEDbook </a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -199,10 +198,11 @@ div.csl-indent {
 <li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#modal-height"><i class="fa fa-check"></i><b>1.3.9</b> Modal height</a></li>
 <li class="chapter" data-level="1.3.10" data-path="explain.html"><a href="explain.html#range"><i class="fa fa-check"></i><b>1.3.10</b> Range</a></li>
 <li class="chapter" data-level="1.3.11" data-path="explain.html"><a href="explain.html#outliers"><i class="fa fa-check"></i><b>1.3.11</b> Outliers</a></li>
+<li class="chapter" data-level="1.3.12" data-path="explain.html"><a href="explain.html#find-outliers"><i class="fa fa-check"></i><b>1.3.12</b> Find Outliers</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn-would-we-have-done-this-before-or-is-this-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn! (<em>would we have done this before or is this the first time??</em>)</a></li>
+<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
 <ul>
@@ -396,7 +396,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.10" data-path="evaluateexercises-5.html"><a href="evaluateexercises-5.html"><i class="fa fa-check"></i><b>10.10</b> Evaluate/Exercises</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to the github repo.</a></li>
+<li><a href="https://github.com/ehrlichd/ipumsEDbook" target="blank">A link to the github repo.</a></li>
 
 </ul>
 
@@ -407,9 +407,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="ipums_banner.png" /><br />
-Data Science for Social Scientists:<br />
-An applied course using IPUMS data <br></p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Social Scientists: An applied course using IPUMS data</a>
           </h1>
         </div>
 
@@ -430,17 +428,15 @@ An applied course using IPUMS data <br></p></a>
 * If included, “Refernces” section gets added to each chapter.
 * Not exactly sure where</p>
 <p>Embed html renders (EG, fancy tables (IPUMS_var_desc), or any shiny app) with <code>webshot</code> R package and <code>phantomJS</code>.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="core.html#cb38-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
-<span id="cb38-2"><a href="core.html#cb38-2" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code></pre></div>
-</details>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="core.html#cb57-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
+<span id="cb57-2"><a href="core.html#cb57-2" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code></pre></div>
 <p>Embed figures from a folder.</p>
 <p>For this, it’s usually best to use a code-chunk and <code>knitr</code>. There are a number of graphical paramerters you can set (or ignore)
 <code>out.width</code> will scale your image accordingly - irrespective of unit/display
 <code>fig.align</code> should be “left”, “right”, or “center”
 <code>fig.cap</code> allows you to provide “mouse over” captions for the image.
 <code>echo=FALSE</code> is important if you ONLY want the image (IE the result of the code). If you want the code itself to show, (IE, or echo) set <code>echo=TRUE</code>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-38"></span>
 <img src="imgs/ipums_i_logo.jpg" alt="the ipums logo" width="50%" />
 <p class="caption">
 Figure 6.1: the ipums logo
@@ -492,10 +488,7 @@ gitbook.start({
 "family": "sans",
 "size": 2
 },
-"edit": {
-"link": "https://github.com/ehrlichd/stats_book 40-examples.Rmd",
-"text": "Edit"
-},
+"edit": null,
 "history": {
 "link": null,
 "text": null

@@ -186,8 +186,8 @@ knitr::kable(ex_height)
 
 You probably already know this one. The (arithmatic) mean is calculated by adding all **values** together, and dividing by the **number of observations**. For our dataset, we add all 5 heights together and divide by the number of individuals (5):
 
-$\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}$
-$\frac{26.75}{5}$
+$\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}$  
+$\frac{26.75}{5}$  
 $5.35$
 
 In `R`, we can write this out "by hand." Since `R` is a **statistical programming language**, r recognizes basic mathematical expressions. We can `code` the following to calcualte the mean:
@@ -216,18 +216,18 @@ The **median** is calculated by ordering all values from small to large. If ther
 Our original data:
 
 
-$5.5, 5, 6,  5.25,  5$
+5.5, 5, 6,  5.25,  5
 
 Our data re-ordered from small to large, then we simply cross off values from either end to find the middle value:
 
 
-$5, 5, 5.25, 5.5, 6$ 
+5, 5, 5.25, 5.5, 6
 
 
-$~~5~~, 5, 5.25, 5.5, ~~6~~$ 
+~~5~~, 5, 5.25, 5.5, ~~6~~
 
 
-$~~5~~, ~~5~~, 5.25, ~~5.5~~, ~~6~~$ 
+~~5~~, ~~5~~, 5.25, ~~5.5~~, ~~6~~ 
 
 
 
@@ -236,11 +236,11 @@ If we had an even number of values, we would wind up with two "middle values", i
 If we had one more value, let's say `5.75`, we wind up with both `5.25` and `5.5` as middle values. 
 
 
-$5, 5, 5.25, 5.5, 5.75, 6$ 
+5, 5, 5.25, 5.5, 5.75, 6
 
-$~~5~~, 5, 5.25, 5.5, 5.75, ~~6~~$ 
+~~5~~, 5, 5.25, 5.5, 5.75, ~~6~~
 
-$~~5~~, ~~5~~, 5.25, 5.5, ~~5.75~~, ~~6~~$
+~~5~~, ~~5~~, 5.25, 5.5, ~~5.75~~, ~~6~~
 
 
 The median is the **mean** of these two values:
@@ -312,12 +312,101 @@ max(ex_height$height)
 
 So far, some of these examples may have so obvious you may be thinking: *what's the point??*
 
-For a slightly more practical demonstration, try out the above functions on your `class_data`. If you don't have class data available you can access the 
+For a slightly more practical demonstration, try out the above functions on your `class_data`. You can also access our sample dataset, curtousey of, [IPUMS-Health Surveys](nhis.ipums.org). The heights and weights dataset is included in the accompanying `ipumsED` R package. 
+
+There are a few ways to actually get your data into `R`, depending on the file type your data is saved as. If it is a `.csv`, you can use the base-R function `read.csv()`. If you have data in an Excel file (.xls, .xlsx) you will need install the `readxl` R package in order to use the add-on function of `read.xlsx()`.
+
+>
+> Notice the simliarity between `read.csv()` and `read.xlsx()??`
+> While packages are created by the R community, they often try to maintain syntanx/coding conventions from base R.
+>
+
+
+In order to keep things organized, we will first create an object called `my_data_path` that contains the **file path** to the data I want to read. You can type this out as a single character string, or use the `file.path()` function, which adds in `/`s for you. Next we **pass** our new object, `my_data_path`, as the **argument** to either `read.csv()` or `read.xlsx` 
+
+
+```{r}
+## for now
+
+my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
+
+
+my_data <- read.csv(my_data_path)
+
+```
+
+
+If you have the `ipumsED` package installed, you can load the dataset into your local environment simply by using the `data()` function. 
+
+
+```{r, eval = FALSE}
+data(nhis_data)
+```
+
+
+We can inspect our data object with some basic functions. Notice how the output differs when the function is called on a `data.frame` versus when it is called on a `vector`.
+
+
+```{r}
+class(my_data)
+summary(my_data)
+
+class(my_data$HEIGHT)
+summary(my_data$HEIGHT)
+
+```
+
+
+Calling the R object itself usually prints the contents. For something this big, that's probably inadvisable, so we print just the first 10 records using the `head()` function. 
+
+>
+> There's also a `tail()` function for printing the last 10 recods
+>
+
+```{r, eval = FALSE}
+my_data
+```
+
+```{r}
+
+head(my_data)
+```
+### Find Outliers
+
+1000 records is probably too much to review manually (and who would want to!?). Instead, we can **visualize** our data as one method to detect outliers. a **box-and-whisker plot** or **boxplot** is a common graph to plot continuous data like height.
+
+
+Box-and-whisker plots, by default, show you which values are outliers! The box represents the middle 75% of the dataset. The whiskers account for another 11% on either end of the box. The **median** is represented by a thick black line. Any observations outside the whiskers are considered outliers
+
+
+```{r}
+boxplot(my_data$HEIGHT, main = "Height in Inches")
+
+```
+
+
+In this case, the values of 0, 95,96,97,98,99 all represent special coded values. `0` Indicates someone Not In Universe - someone for whom this question wasn't asked. This may be an infant too young to meaningfully be measured. In this case higher values represent a value of `unknown` for various reasons. Both of these values represent missing data, but they mean different things.
+
+>
+> Why do you think we have more than one value to represent missing data? How does a value of 0 compare to a value of 99??
+>  
+
+We may want to exclude these special cases from our analysis. We can easily perform a data modification by filtering out values that equal any of our special cases. You can see the **range** of the graph is smaller, though visually, the box and whiskers are larger. Do we still see outliers in height?
+
+```{r}
+library(dplyr)
+
+new_data <- my_data %>% filter(HEIGHT > 0 & HEIGHT < 95)
+boxplot(new_data$HEIGHT)
+
+```
+
+
 
 
 ## Elaborate
 
-### Your Turn! (*would we have done this before or is this the first time??*)
+### Your Turn! 
 
 For this example, you can use data collected in class, or the example dataset available in `ipumsED` R package: `class_ipums_data`
 
@@ -346,14 +435,14 @@ following statistics:
 
 * `mean()`
 * `meadian()`
-* **mode**
+* `mode`
 * `range()`
 
 In addition, include at least one plot or table and use it to discuss if your dataset contains any outliers. What criteria are you using to define an outlier?
 
 
 > Where's the `mode()`?? As a statistical programing language, R was developed with
-> built-in functions for `mean`, `median`, and `range`. But `mode` wasn't important
+> built-in functions for `mean()`, `median()`, and `range()`. But `mode` wasn't important
 > enough to warrant its own function. In part, because it's so easy to code, even you
 > can do it!
 >
@@ -387,6 +476,7 @@ answer the following questions about our data set.
 
 
 
+
 **Are the data discrete or continuous?**
 
 <details>
@@ -403,6 +493,8 @@ answer the following questions about our data set.
 </details>
 
 
+
+
 **Is the dataset primary or secondary data?**
 
 <details>
@@ -412,6 +504,7 @@ answer the following questions about our data set.
   
   </p>
 </details>
+
 
 
 
@@ -454,6 +547,7 @@ answer the following questions about our data set.
   
   </p>
 </details>
+
 
 
 

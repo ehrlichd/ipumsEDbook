@@ -114,22 +114,20 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={ Data Science for Social Scientists: An applied course using IPUMS data  },
+  pdftitle={Data Science for Social Scientists: An applied course using IPUMS data},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\includegraphics{ipums_banner.png}\\
-Data Science for Social Scientists:\\
-An applied course using IPUMS data }
-\author{\textbf{Developed by:}\\
-\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
-\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-10-27\\
+\title{Data Science for Social Scientists: An applied course using IPUMS data}
+\author{\includegraphics{ipums_banner.png}\\
 \strut \\
-\includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
-\includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
 \strut \\
-\strut \\}
+\textbf{Developed by:}\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-10-27\\
+\includegraphics[width=0.4\textwidth,height=\textheight]{ipums_i_logo.jpg} \includegraphics[width=0.4\textwidth,height=\textheight]{clemson_logo.png}\\
+}
 \date{}
 
 \begin{document}
@@ -635,6 +633,8 @@ This function grabs any packages in your project and adds them to a local list t
 \texttt{{[}@R-bookdown{]}}
 * See help files for more info - might be able to create/add a \texttt{citation} file
 
+Testing title fix
+
 \hypertarget{unit-1-the-basics}{%
 \chapter*{Unit 1: The Basics}\label{unit-1-the-basics}}
 \addcontentsline{toc}{chapter}{Unit 1: The Basics}
@@ -829,9 +829,11 @@ If you do not have class data on height, we will be using the following simple d
 
 \emph{Click to show answer}
 
+\begin{quote}
 We \textbf{create} the \textbf{R object} \texttt{ex\_height} using the \textbf{assignment operator} \texttt{\textless{}-}
 \texttt{ex\_height} is a \textbf{data.frame}, a table, with two columns: \texttt{person} and \texttt{height}
 \texttt{person,\ height} are the two columns, or variables, of \texttt{ex\_height}
+\end{quote}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -871,11 +873,11 @@ Ind\_e & 5.00\\
 
 You probably already know this one. The (arithmatic) mean is calculated by adding all \textbf{values} together, and dividing by the \textbf{number of observations}. For our dataset, we add all 5 heights together and divide by the number of individuals (5):
 
-\(\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}\)
-\(\frac{26.75}{5}\)
+\(\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}\)\\
+\(\frac{26.75}{5}\)\\
 \(5.35\)
 
-In \texttt{r}, we can write this out ``by hand.'' Since \texttt{r} is a \textbf{statistical programming language}, r recognizes basic mathematical expressions. We can \texttt{code} the following to calcualte the mean:
+In \texttt{R}, we can write this out ``by hand.'' Since \texttt{R} is a \textbf{statistical programming language}, r recognizes basic mathematical expressions. We can \texttt{code} the following to calcualte the mean:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -887,7 +889,7 @@ In \texttt{r}, we can write this out ``by hand.'' Since \texttt{r} is a \textbf{
 ## [1] 5.35
 \end{verbatim}
 
-Since \texttt{r} is an \textbf{object-oriented programming language}, we don't need to write out individual numbers for each calculation. Instead, we can refer to the \texttt{ex\_height} \textbf{object}. Since \texttt{ex\_height} is a \textbf{data.frame}, we can refer to it variables by name with the \texttt{\$} operator. We also take advantage of some of the built-in mathematical functions of \texttt{r}: \texttt{sum(),\ length()}
+Since \texttt{R} is an \textbf{object-oriented programming language}, we don't need to write out individual numbers for each calculation. Instead, we can refer to the \texttt{ex\_height} \textbf{object}. Since \texttt{ex\_height} is a \textbf{data.frame}, we can refer to it variables by name with the \texttt{\$} operator. We also take advantage of some of the built-in mathematical functions of \texttt{R}: \texttt{sum(),\ length()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -905,27 +907,34 @@ Since \texttt{r} is an \textbf{object-oriented programming language}, we don't n
 The \textbf{median} is calculated by ordering all values from small to large. If there are an \textbf{odd} numberof values, there will be a single value at the middle.
 
 Our original data:
-\$ 5.5, 5, 6, 5.25, 5\$
 
-Our data re-ordered from small to large:
-\$ 5, 5, 5.25, 5.5, 6 \$
+5.5, 5, 6, 5.25, 5
 
-\$ \st{5, 5,} 5.25, \textasciitilde\textasciitilde5.5, 6 \textasciitilde\textasciitilde{} \$
+Our data re-ordered from small to large, then we simply cross off values from either end to find the middle value:
 
-\st{5, 5,} 5.25, \st{5.5, 6}
+5, 5, 5.25, 5.5, 6
+
+\st{5}, 5, 5.25, 5.5, \st{6}
+
+\st{5}, \st{5}, 5.25, \st{5.5}, \st{6}
 
 If we had an even number of values, we would wind up with two ``middle values'', in which case we take the mean of these two.
 
 If we had one more value, let's say \texttt{5.75}, we wind up with both \texttt{5.25} and \texttt{5.5} as middle values.
 
-\$ 5, 5, \st{5.25, 5.5,} 5.75, 6 \$
+5, 5, 5.25, 5.5, 5.75, 6
+
+\st{5}, 5, 5.25, 5.5, 5.75, \st{6}
+
+\st{5}, \st{5}, 5.25, 5.5, \st{5.75}, \st{6}
 
 The median is the \textbf{mean} of these two values:
 
 \(\frac{5.25+5.5}{2}\)
+
 \(5.375\)
 
-In a small dataset, it's easy to pick out the middle value. Fortunately, there's an \texttt{r} function for this as well:
+In a small dataset, it's easy to pick out the middle value. Fortunately, there's an \texttt{R} function for this as well:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -956,7 +965,7 @@ Did you notice the \texttt{c()} function above? What does it do?
 \hypertarget{modal-height}{%
 \subsection{Modal height}\label{modal-height}}
 
-The \textbf{mode} is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a \texttt{height} of \texttt{5}, and all other values are repsented by just one person. There's actually no build-in \texttt{r} function to calculate the \textbf{mode}\ldots{}
+The \textbf{mode} is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a \texttt{height} of \texttt{5}, and all other values are represented by just one person. There's actually no build-in \texttt{R} function to calculate the \textbf{mode}\ldots{}
 
 But don't worry, there are functions that let you decide the \textbf{mode} and more!! A very useful function is \texttt{table()}, used to make \textbf{counts} of values. In a small dataset, we see that two individuals have a height of 5. Our \textbf{mode} is 5!
 
@@ -987,7 +996,7 @@ The \textbf{range} of the data is two numbers, the lowest, and highest values wi
 ## [1] 5 6
 \end{verbatim}
 
-Though, if you want just the \textbf{minimum} or \textbf{maximum} value, you can use \texttt{min()} or `max():
+Though, if you want just the \textbf{minimum} or \textbf{maximum} value, you can use \texttt{min()} or \texttt{max()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1014,13 +1023,180 @@ Though, if you want just the \textbf{minimum} or \textbf{maximum} value, you can
 
 So far, some of these examples may have so obvious you may be thinking: \emph{what's the point??}
 
-For a slightly more practical demonstration, try out the above functions on your \texttt{class\_data}. If you don't have class data available you can access the
+For a slightly more practical demonstration, try out the above functions on your \texttt{class\_data}. You can also access our sample dataset, curtousey of, \href{nhis.ipums.org}{IPUMS-Health Surveys}. The heights and weights dataset is included in the accompanying \texttt{ipumsED} R package.
+
+There are a few ways to actually get your data into \texttt{R}, depending on the file type your data is saved as. If it is a \texttt{.csv}, you can use the base-R function \texttt{read.csv()}. If you have data in an Excel file (.xls, .xlsx) you will need install the \texttt{readxl} R package in order to use the add-on function of \texttt{read.xlsx()}.
+
+\begin{quote}
+Notice the simliarity between \texttt{read.csv()} and \texttt{read.xlsx()??}
+While packages are created by the R community, they often try to maintain syntanx/coding conventions from base R.
+\end{quote}
+
+In order to keep things organized, we will first create an object called \texttt{my\_data\_path} that contains the \textbf{file path} to the data I want to read. You can type this out as a single character string, or use the \texttt{file.path()} function, which adds in \texttt{/}s for you. Next we \textbf{pass} our new object, \texttt{my\_data\_path}, as the \textbf{argument} to either \texttt{read.csv()} or \texttt{read.xlsx}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# for now}
+
+\NormalTok{my\_data\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{".."}\NormalTok{, }\StringTok{"ipumsED"}\NormalTok{, }\StringTok{"data"}\NormalTok{, }\StringTok{"nhis\_sample.csv"}\NormalTok{)}
+
+
+\NormalTok{my\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(my\_data\_path)}
+\end{Highlighting}
+\end{Shaded}
+
+If you have the \texttt{ipumsED} package installed, you can load the dataset into your local environment simply by using the \texttt{data()} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(nhis\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+We can inspect our data object with some basic functions. Notice how the output differs when the function is called on a \texttt{data.frame} versus when it is called on a \texttt{vector}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(my\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(my\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      SERIAL            AGE              SEX            HEIGHT     
+##  Min.   :   1.0   Min.   :  0.00   Min.   :1.000   Min.   : 0.00  
+##  1st Qu.: 247.0   1st Qu.: 29.00   1st Qu.:1.000   1st Qu.:63.00  
+##  Median : 495.0   Median : 49.00   Median :2.000   Median :66.00  
+##  Mean   : 498.3   Mean   : 47.56   Mean   :1.517   Mean   :62.84  
+##  3rd Qu.: 748.0   3rd Qu.: 66.00   3rd Qu.:2.000   3rd Qu.:70.00  
+##  Max.   :1000.0   Max.   :997.00   Max.   :2.000   Max.   :99.00  
+##      WEIGHT     
+##  Min.   :  0.0  
+##  1st Qu.:136.0  
+##  Median :170.0  
+##  Mean   :216.4  
+##  3rd Qu.:205.0  
+##  Max.   :999.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(my\_data}\SpecialCharTok{$}\NormalTok{HEIGHT)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(my\_data}\SpecialCharTok{$}\NormalTok{HEIGHT)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00   63.00   66.00   62.84   70.00   99.00
+\end{verbatim}
+
+Calling the R object itself usually prints the contents. For something this big, that's probably inadvisable, so we print just the first 10 records using the \texttt{head()} function.
+
+\begin{quote}
+There's also a \texttt{tail()} function for printing the last 10 recods
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(my\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   SERIAL AGE SEX HEIGHT WEIGHT
+## 1    698  18   1     68    130
+## 2    651  28   1     72    275
+## 3    651   3   2      0      0
+## 4    542  32   2     68    174
+## 5    870  44   1     71    180
+## 6    870   5   2      0      0
+\end{verbatim}
+
+\hypertarget{find-outliers}{%
+\subsection{Find Outliers}\label{find-outliers}}
+
+1000 records is probably too much to review manually (and who would want to!?). Instead, we can \textbf{visualize} our data as one method to detect outliers. a \textbf{box-and-whisker plot} or \textbf{boxplot} is a common graph to plot continuous data like height.
+
+Box-and-whisker plots, by default, show you which values are outliers! The box represents the middle 75\% of the dataset. The whiskers account for another 11\% on either end of the box. The \textbf{median} is represented by a thick black line. Any observations outside the whiskers are considered outliers
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(my\_data}\SpecialCharTok{$}\NormalTok{HEIGHT, }\AttributeTok{main =} \StringTok{"Height in Inches"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+In this case, the values of 0, 95,96,97,98,99 all represent special coded values. \texttt{0} Indicates someone Not In Universe - someone for whom this question wasn't asked. This may be an infant too young to meaningfully be measured. In this case higher values represent a value of \texttt{unknown} for various reasons. Both of these values represent missing data, but they mean different things.
+
+\begin{quote}
+Why do you think we have more than one value to represent missing data? How does a value of 0 compare to a value of 99??
+\end{quote}
+
+We may want to exclude these special cases from our analysis. We can easily perform a data modification by filtering out values that equal any of our special cases. You can see the \textbf{range} of the graph is smaller, though visually, the box and whiskers are larger. Do we still see outliers in height?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{new\_data }\OtherTok{\textless{}{-}}\NormalTok{ my\_data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(HEIGHT }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ HEIGHT }\SpecialCharTok{\textless{}} \DecValTok{95}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(new\_data}\SpecialCharTok{$}\NormalTok{HEIGHT)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-17-1.pdf}
 
 \hypertarget{elaborate}{%
 \section{Elaborate}\label{elaborate}}
 
-\hypertarget{your-turn-would-we-have-done-this-before-or-is-this-the-first-time}{%
-\subsection{\texorpdfstring{Your Turn! (\emph{would we have done this before or is this the first time??})}{Your Turn! (would we have done this before or is this the first time??)}}\label{your-turn-would-we-have-done-this-before-or-is-this-the-first-time}}
+\hypertarget{your-turn}{%
+\subsection{Your Turn!}\label{your-turn}}
 
 For this example, you can use data collected in class, or the example dataset available in \texttt{ipumsED} R package: \texttt{class\_ipums\_data}
 
@@ -1053,7 +1229,7 @@ following statistics:
 \item
   \texttt{meadian()}
 \item
-  \textbf{mode}
+  \texttt{mode}
 \item
   \texttt{range()}
 \end{itemize}
@@ -1062,7 +1238,7 @@ In addition, include at least one plot or table and use it to discuss if your da
 
 \begin{quote}
 Where's the \texttt{mode()}?? As a statistical programing language, R was developed with
-built-in functions for \texttt{mean}, \texttt{median}, and \texttt{range}. But \texttt{mode} wasn't important
+built-in functions for \texttt{mean()}, \texttt{median()}, and \texttt{range()}. But \texttt{mode} wasn't important
 enough to warrant its own function. In part, because it's so easy to code, even you
 can do it!
 
@@ -1085,38 +1261,50 @@ answer the following questions about our data set.
 
 \emph{Click to show answer}
 
+\begin{quote}
 Age data is quantitative.
+\end{quote}
 
 \textbf{Are the data discrete or continuous?}
 
 \emph{Click to show answer}
 
+\begin{quote}
 Age data is could be continuous depending on how you measure and record it,
 but the way we generally talk about `Years of Age' is actually discrete.
+\end{quote}
 
 \textbf{Is the dataset primary or secondary data?}
 
 \emph{Click to show answer}
 
+\begin{quote}
 That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.
+\end{quote}
 
 \textbf{What sampling method was used?}
 
 \emph{Click to show answer}
 
+\begin{quote}
 Age data is quantitative.
+\end{quote}
 
 \textbf{Does any statistical bias exist?}
 
 \emph{Click to show answer}
 
+\begin{quote}
 Age data is quantitative.
+\end{quote}
 
 \textbf{Which measure of central tendency is best to describe this data? Mean, Median or Mode.}
 
 \emph{Click to show answer}
 
+\begin{quote}
 Age data is quantitative.
+\end{quote}
 
 \hypertarget{glossary}{%
 \section{GLOSSARY}\label{glossary}}
@@ -2048,7 +2236,7 @@ For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a 
 
 }
 
-\caption{the ipums logo}\label{fig:unnamed-chunk-30}
+\caption{the ipums logo}\label{fig:unnamed-chunk-38}
 \end{figure}
 
 \hypertarget{tips}{%
@@ -2641,7 +2829,7 @@ Univariate continuous data, like height, can be visualized using a box and whisk
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-51-1.pdf}
 
 \hypertarget{continuous-data---histograms}{%
 \subsection{Continuous Data - Histograms}\label{continuous-data---histograms}}
@@ -2654,7 +2842,7 @@ Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-52-1.pdf}
 
 \hypertarget{categorical-data}{%
 \subsection{Categorical Data}\label{categorical-data}}
@@ -2685,7 +2873,7 @@ We can also visualize our tabulated results using a \textbf{barplot} as below.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-46-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 \hypertarget{glossary-2}{%
 \section*{Glossary}\label{glossary-2}}
@@ -2717,21 +2905,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 12.096187  9.063288 10.035401 11.063791  9.837189  9.089204  8.604504
-##   [8] 10.150055 10.103744 11.917996 11.094494  8.689366 10.379045 11.095553
-##  [15] 10.133967  9.863973  7.918765 11.866967 10.359582 11.308020 10.236947
-##  [22]  9.440288  9.727848 10.192262  9.738432 10.719231  9.313872  9.213342
-##  [29]  9.921573 10.639739 10.343193 10.761314 10.087411 10.866710 10.954950
-##  [36]  8.921808  8.449944 10.940489  9.074733 11.446449  8.516850  9.519014
-##  [43] 11.515339  9.140594  9.089195  8.314220 11.570946 11.933840 12.073437
-##  [50]  9.804545  8.577039  9.741245  8.363967  9.206891  9.603425 10.937461
-##  [57] 11.215600  9.362411  9.921103 11.274265 10.409081 12.386278 10.030399
-##  [64]  9.485404  9.576027 10.372938  9.102650 10.669883 11.114526  8.411416
-##  [71]  9.626944 10.862305  8.506351  9.974707 11.839042  9.712197  7.068216
-##  [78] 10.226467  9.050270 11.165947 10.108264  7.957977  9.154538  9.632176
-##  [85]  8.982447  9.054662 11.448440 10.273734 11.850361 11.875200  9.587213
-##  [92] 10.828019  9.022568  9.371284  8.816699 11.171981  9.128859  9.007527
-##  [99]  9.180344  8.810909
+##   [1]  8.337401 12.636717  9.034441  9.985594  9.441283  8.814507  9.497926
+##   [8] 11.090898  9.973562  8.536830 10.853581 10.514513  9.390229 10.090005
+##  [15]  9.283634 11.263686  9.376098  8.152423 10.028629  8.908104  9.041070
+##  [22]  8.825566  9.358029 10.819677  8.520057 10.827133  8.476237  9.633745
+##  [29] 10.384361 10.104667  9.186541  9.391535  9.834262 11.127550 10.759986
+##  [36] 10.328285 10.045791  9.458369 10.536795  8.831998 10.210988 11.128877
+##  [43] 10.985643  9.638641  7.884426  9.419527  8.420143 11.611813 10.028828
+##  [50]  9.877186 10.030201 10.555385  9.501956 10.884437 12.007795 11.641694
+##  [57] 10.429978 10.957456  9.424235  9.704019  7.804490 11.989802  8.941630
+##  [64]  8.795059  9.843051 10.362648 10.883769  8.673795  9.531833 11.431609
+##  [71] 10.946275  9.105940  9.471950  9.964797  8.787057 10.505757 10.814520
+##  [78] 11.623001  9.625696  9.324316 10.473219  9.839307 10.083176 10.517031
+##  [85]  8.449486 10.650492 10.153613 10.124417 10.388209 10.448069 11.312373
+##  [92]  9.368135  9.028224  7.271055 11.209182 10.389031  8.846703  8.601245
+##  [99]  8.100601  8.901323
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -2773,7 +2961,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.068   9.122   9.921  10.002  10.884  12.386
+##   7.271   9.090   9.921   9.876  10.541  12.637
 \end{verbatim}
 
 Mean, standard deviation
@@ -2841,9 +3029,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
-## [1,]  71.92113 93.93151 100.37142 100.59791 107.28247 132.9136
-## [2,] -26.65886 42.95530  60.00086  60.29788  77.06518 143.8973
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  64.24020 93.21665 99.69142 99.50109 106.21032 133.3169
+## [2,] -13.47768 44.39830 59.44956 60.56405  77.17997 135.8029
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -2878,9 +3066,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 71.92113 & 93.93151 & 100.37142 & 100.59791 & 107.28247 & 132.9136\\
+data1 & 64.24020 & 93.21665 & 99.69142 & 99.50109 & 106.21032 & 133.3169\\
 \hline
-data2 & -26.65886 & 42.95530 & 60.00086 & 60.29788 & 77.06518 & 143.8973\\
+data2 & -13.47768 & 44.39830 & 59.44956 & 60.56405 & 77.17997 & 135.8029\\
 \hline
 \end{tabular}
 

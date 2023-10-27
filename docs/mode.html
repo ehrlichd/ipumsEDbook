@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.3 Mode |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
+  <title>8.3 Mode | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.3 Mode |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta property="og:title" content="8.3 Mode | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.3 Mode |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta name="twitter:title" content="8.3 Mode | Data Science for Social Scientists: An applied course using IPUMS data" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -47,7 +47,6 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -158,7 +157,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Beginning of a Syllabus</a></li>
+<li><a href="./"> ipumsEDbook </a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -199,10 +198,11 @@ div.csl-indent {
 <li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#modal-height"><i class="fa fa-check"></i><b>1.3.9</b> Modal height</a></li>
 <li class="chapter" data-level="1.3.10" data-path="explain.html"><a href="explain.html#range"><i class="fa fa-check"></i><b>1.3.10</b> Range</a></li>
 <li class="chapter" data-level="1.3.11" data-path="explain.html"><a href="explain.html#outliers"><i class="fa fa-check"></i><b>1.3.11</b> Outliers</a></li>
+<li class="chapter" data-level="1.3.12" data-path="explain.html"><a href="explain.html#find-outliers"><i class="fa fa-check"></i><b>1.3.12</b> Find Outliers</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn-would-we-have-done-this-before-or-is-this-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn! (<em>would we have done this before or is this the first time??</em>)</a></li>
+<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
 <ul>
@@ -396,7 +396,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.10" data-path="evaluateexercises-5.html"><a href="evaluateexercises-5.html"><i class="fa fa-check"></i><b>10.10</b> Evaluate/Exercises</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to the github repo.</a></li>
+<li><a href="https://github.com/ehrlichd/ipumsEDbook" target="blank">A link to the github repo.</a></li>
 
 </ul>
 
@@ -407,9 +407,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="ipums_banner.png" /><br />
-Data Science for Social Scientists:<br />
-An applied course using IPUMS data <br></p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Social Scientists: An applied course using IPUMS data</a>
           </h1>
         </div>
 
@@ -428,34 +426,30 @@ While a commonly reported metric(??), there is no <code>mode()</code> function i
 <div id="mode-code" class="section level3 hasAnchor" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Mode Code<a href="mode.html#mode-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One common measure of data reported is the mode, or most frequently occuring value. For whatever reason, this is not a default function in R, but we can easily write our own function like so:</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="mode.html#cb64-1" tabindex="-1"></a>my_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb64-2"><a href="mode.html#cb64-2" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> <span class="fu">table</span>(x) <span class="do">## find frequencies</span></span>
-<span id="cb64-3"><a href="mode.html#cb64-3" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> tt[<span class="fu">order</span>(tt, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)] <span class="do">## resort based on freq</span></span>
-<span id="cb64-4"><a href="mode.html#cb64-4" tabindex="-1"></a>  </span>
-<span id="cb64-5"><a href="mode.html#cb64-5" tabindex="-1"></a>  <span class="do">## check number of modes</span></span>
-<span id="cb64-6"><a href="mode.html#cb64-6" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(tt)</span>
-<span id="cb64-7"><a href="mode.html#cb64-7" tabindex="-1"></a>  n_max <span class="ot">&lt;-</span> <span class="fu">sum</span>(tt<span class="sc">==</span>max)</span>
-<span id="cb64-8"><a href="mode.html#cb64-8" tabindex="-1"></a>  </span>
-<span id="cb64-9"><a href="mode.html#cb64-9" tabindex="-1"></a>  </span>
-<span id="cb64-10"><a href="mode.html#cb64-10" tabindex="-1"></a>  <span class="cf">if</span>(n_max <span class="sc">&gt;</span> <span class="dv">1</span> ){</span>
-<span id="cb64-11"><a href="mode.html#cb64-11" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">&quot;More than one mode detected&quot;</span>)</span>
-<span id="cb64-12"><a href="mode.html#cb64-12" tabindex="-1"></a>    <span class="fu">return</span>(tt[tt<span class="sc">==</span>max])</span>
-<span id="cb64-13"><a href="mode.html#cb64-13" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb64-14"><a href="mode.html#cb64-14" tabindex="-1"></a>    <span class="do">## return only the first value</span></span>
-<span id="cb64-15"><a href="mode.html#cb64-15" tabindex="-1"></a>    <span class="fu">return</span>(tt[<span class="dv">1</span>]) <span class="do">## return whatever the highrst frequency is</span></span>
-<span id="cb64-16"><a href="mode.html#cb64-16" tabindex="-1"></a>  }</span>
-<span id="cb64-17"><a href="mode.html#cb64-17" tabindex="-1"></a></span>
-<span id="cb64-18"><a href="mode.html#cb64-18" tabindex="-1"></a>  </span>
-<span id="cb64-19"><a href="mode.html#cb64-19" tabindex="-1"></a>}</span></code></pre></div>
-</details>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="mode.html#cb83-1" tabindex="-1"></a>my_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb83-2"><a href="mode.html#cb83-2" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> <span class="fu">table</span>(x) <span class="do">## find frequencies</span></span>
+<span id="cb83-3"><a href="mode.html#cb83-3" tabindex="-1"></a>  tt <span class="ot">&lt;-</span> tt[<span class="fu">order</span>(tt, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)] <span class="do">## resort based on freq</span></span>
+<span id="cb83-4"><a href="mode.html#cb83-4" tabindex="-1"></a>  </span>
+<span id="cb83-5"><a href="mode.html#cb83-5" tabindex="-1"></a>  <span class="do">## check number of modes</span></span>
+<span id="cb83-6"><a href="mode.html#cb83-6" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(tt)</span>
+<span id="cb83-7"><a href="mode.html#cb83-7" tabindex="-1"></a>  n_max <span class="ot">&lt;-</span> <span class="fu">sum</span>(tt<span class="sc">==</span>max)</span>
+<span id="cb83-8"><a href="mode.html#cb83-8" tabindex="-1"></a>  </span>
+<span id="cb83-9"><a href="mode.html#cb83-9" tabindex="-1"></a>  </span>
+<span id="cb83-10"><a href="mode.html#cb83-10" tabindex="-1"></a>  <span class="cf">if</span>(n_max <span class="sc">&gt;</span> <span class="dv">1</span> ){</span>
+<span id="cb83-11"><a href="mode.html#cb83-11" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">&quot;More than one mode detected&quot;</span>)</span>
+<span id="cb83-12"><a href="mode.html#cb83-12" tabindex="-1"></a>    <span class="fu">return</span>(tt[tt<span class="sc">==</span>max])</span>
+<span id="cb83-13"><a href="mode.html#cb83-13" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb83-14"><a href="mode.html#cb83-14" tabindex="-1"></a>    <span class="do">## return only the first value</span></span>
+<span id="cb83-15"><a href="mode.html#cb83-15" tabindex="-1"></a>    <span class="fu">return</span>(tt[<span class="dv">1</span>]) <span class="do">## return whatever the highrst frequency is</span></span>
+<span id="cb83-16"><a href="mode.html#cb83-16" tabindex="-1"></a>  }</span>
+<span id="cb83-17"><a href="mode.html#cb83-17" tabindex="-1"></a></span>
+<span id="cb83-18"><a href="mode.html#cb83-18" tabindex="-1"></a>  </span>
+<span id="cb83-19"><a href="mode.html#cb83-19" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="mode-results" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Mode Results<a href="mode.html#mode-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that we’ve created out own <code>function</code>, it’s easy to find the <strong>mode</strong></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="mode.html#cb65-1" tabindex="-1"></a><span class="fu">my_mode</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
-</details>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="mode.html#cb84-1" tabindex="-1"></a><span class="fu">my_mode</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
 <pre><code>## Warning in my_mode(data$Height_inches): More than one mode detected</code></pre>
 <pre><code>## x
 ## 64 65 69 70 
@@ -498,10 +492,7 @@ gitbook.start({
 "family": "sans",
 "size": 2
 },
-"edit": {
-"link": "https://github.com/ehrlichd/stats_book 42-Unit1_data_in_r.Rmd",
-"text": "Edit"
-},
+"edit": null,
 "history": {
 "link": null,
 "text": null
