@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lesson 7 Exploratory analysis |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lesson 7 Exploratory analysis |  Data Science for Social Scientists: An applied course using IPUMS data  " />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lesson 7 Exploratory analysis |  Data Science for Social Scientists: An applied course using IPUMS data  " />
@@ -47,6 +47,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -118,6 +119,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -158,8 +163,9 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-r"><i class="fa fa-check"></i>What is R</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
 <ul>
@@ -175,81 +181,47 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="unit-1-the-basics.html"><a href="unit-1-the-basics.html"><i class="fa fa-check"></i>Unit 1: The Basics</a>
-<ul>
-<li class="chapter" data-level="" data-path="unit-wide-glossary.html"><a href="unit-wide-glossary.html"><i class="fa fa-check"></i>Unit-wide Glossary</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="unit-1-the-basics.html"><a href="unit-1-the-basics.html"><i class="fa fa-check"></i>Unit 1: The Basics</a></li>
 <li class="chapter" data-level="1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>1</b> WHAT IS DATA</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>1.1</b> Engage</a></li>
 <li class="chapter" data-level="1.2" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>1.2</b> Explore</a></li>
-<li class="chapter" data-level="1.3" data-path="explain---what-are-data.html"><a href="explain---what-are-data.html"><i class="fa fa-check"></i><b>1.3</b> Explain - “what ARE data??”</a></li>
-<li class="chapter" data-level="1.4" data-path="what-do-we-do-with-data.html"><a href="what-do-we-do-with-data.html"><i class="fa fa-check"></i><b>1.4</b> “what do we DO with data”</a>
+<li class="chapter" data-level="1.3" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>1.3</b> Explain</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="what-do-we-do-with-data.html"><a href="what-do-we-do-with-data.html#examples-from-recent-academic-articles"><i class="fa fa-check"></i><b>1.4.1</b> examples from recent academic articles</a></li>
-<li class="chapter" data-level="1.4.2" data-path="what-do-we-do-with-data.html"><a href="what-do-we-do-with-data.html#examples-from-non-academic"><i class="fa fa-check"></i><b>1.4.2</b> examples from non-academic</a></li>
-<li class="chapter" data-level="1.4.3" data-path="what-do-we-do-with-data.html"><a href="what-do-we-do-with-data.html#but-really-it-depends-on-study-design"><i class="fa fa-check"></i><b>1.4.3</b> but really it depends on study design</a></li>
+<li class="chapter" data-level="1.3.1" data-path="explain.html"><a href="explain.html#what-are-data"><i class="fa fa-check"></i><b>1.3.1</b> WHAT ARE DATA</a></li>
+<li class="chapter" data-level="1.3.2" data-path="explain.html"><a href="explain.html#collecting-data"><i class="fa fa-check"></i><b>1.3.2</b> COLLECTING DATA</a></li>
+<li class="chapter" data-level="1.3.3" data-path="explain.html"><a href="explain.html#populations-and-sampling"><i class="fa fa-check"></i><b>1.3.3</b> POPULATIONS AND SAMPLING</a></li>
+<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.4</b> EXPLORATORY DATA ANALYSIS</a></li>
+<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#study-design"><i class="fa fa-check"></i><b>1.3.5</b> Study Design</a></li>
+<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#study-sample"><i class="fa fa-check"></i><b>1.3.6</b> Study sample</a></li>
+<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#study-design-considerations---sampling"><i class="fa fa-check"></i><b>1.3.7</b> Study Design Considerations - Sampling</a></li>
+<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#study-design-considerations---data"><i class="fa fa-check"></i><b>1.3.8</b> Study Design Considerations - Data</a></li>
+<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.9</b> Study Design Considerantions - Bias</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>1.5</b> Study Design</a>
+<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a></li>
+<li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="study-design.html"><a href="study-design.html#hypothesisresearch-question"><i class="fa fa-check"></i><b>1.5.1</b> Hypothesis/Research Question</a></li>
-<li class="chapter" data-level="1.5.2" data-path="study-design.html"><a href="study-design.html#or-not-ie-exploratory-get-to-know-you"><i class="fa fa-check"></i><b>1.5.2</b> Or Not! ie exploratory/ “get to know you”</a></li>
+<li class="chapter" data-level="1.5.1" data-path="evaluateexercises.html"><a href="evaluateexercises.html#context"><i class="fa fa-check"></i><b>1.5.1</b> Context:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="evaluateexercises.html"><a href="evaluateexercises.html#questions"><i class="fa fa-check"></i><b>1.5.2</b> Questions:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="study-sample.html"><a href="study-sample.html"><i class="fa fa-check"></i><b>1.6</b> Study sample</a>
+<li class="chapter" data-level="1.6" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>1.6</b> GLOSSARY</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="study-sample.html"><a href="study-sample.html#how-do-we-get-data"><i class="fa fa-check"></i><b>1.6.1</b> “HOW do we get data??”</a></li>
-</ul></li>
-<li class="chapter" data-level="1.7" data-path="study-design-considerations---sampling.html"><a href="study-design-considerations---sampling.html"><i class="fa fa-check"></i><b>1.7</b> Study Design Considerations - Sampling</a>
-<ul>
-<li class="chapter" data-level="1.7.1" data-path="study-design-considerations---sampling.html"><a href="study-design-considerations---sampling.html#sample-vs-population"><i class="fa fa-check"></i><b>1.7.1</b> Sample vs Population</a></li>
-<li class="chapter" data-level="1.7.2" data-path="study-design-considerations---sampling.html"><a href="study-design-considerations---sampling.html#how-to-draw-samples"><i class="fa fa-check"></i><b>1.7.2</b> How to draw samples</a></li>
-</ul></li>
-<li class="chapter" data-level="1.8" data-path="study-design-considerations---data.html"><a href="study-design-considerations---data.html"><i class="fa fa-check"></i><b>1.8</b> Study Design Considerations - Data</a>
-<ul>
-<li class="chapter" data-level="1.8.1" data-path="study-design-considerations---data.html"><a href="study-design-considerations---data.html#types-of-data"><i class="fa fa-check"></i><b>1.8.1</b> Types of Data</a></li>
-</ul></li>
-<li class="chapter" data-level="1.9" data-path="study-design-considerantions---bias.html"><a href="study-design-considerantions---bias.html"><i class="fa fa-check"></i><b>1.9</b> Study Design Considerantions - Bias</a></li>
-<li class="chapter" data-level="1.10" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.10</b> Elaborate</a></li>
-<li class="chapter" data-level="1.11" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.11</b> Evaluate/Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>2</b> Intro to R/Rstudio</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#class-poll-who-has-used-r-before"><i class="fa fa-check"></i><b>2.1.1</b> Class poll: Who has used R before</a></li>
-<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#class-poll-who-has-done-any-kind-of-coding"><i class="fa fa-check"></i><b>2.1.2</b> Class poll: who has done ANY kind of coding</a></li>
-<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#interpreting-r"><i class="fa fa-check"></i><b>2.1.3</b> Interpreting R</a></li>
-</ul></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
-<li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a></li>
-<li class="chapter" data-level="2.4" data-path="some-basics.html"><a href="some-basics.html"><i class="fa fa-check"></i><b>2.4</b> Some Basics</a>
+<li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="some-basics.html"><a href="some-basics.html#r-vs-rstudio-vs-posit"><i class="fa fa-check"></i><b>2.4.1</b> R vs RStudio vs POSIT</a></li>
-<li class="chapter" data-level="2.4.2" data-path="some-basics.html"><a href="some-basics.html#we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data."><i class="fa fa-check"></i><b>2.4.2</b> We will use Rstudio, to write R scripts that will analyze and visualize data.</a></li>
-<li class="chapter" data-level="2.4.3" data-path="some-basics.html"><a href="some-basics.html#how-to-install"><i class="fa fa-check"></i><b>2.4.3</b> How to install</a></li>
+<li class="chapter" data-level="2.3.1" data-path="explain---lectureread.html"><a href="explain---lectureread.html#single-variable-visualization"><i class="fa fa-check"></i><b>2.3.1</b> Single Variable Visualization</a></li>
+<li class="chapter" data-level="2.3.2" data-path="explain---lectureread.html"><a href="explain---lectureread.html#multi-variable-visualizations"><i class="fa fa-check"></i><b>2.3.2</b> Multi variable visualizations</a></li>
+<li class="chapter" data-level="2.3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html#data-tables"><i class="fa fa-check"></i><b>2.3.3</b> Data Tables</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i><b>2.5</b> Navigating RStudio</a>
+<li class="chapter" data-level="2.4" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.4</b> Elaborate</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#lots-of-panes-not-a-pain"><i class="fa fa-check"></i><b>2.5.1</b> Lots of Panes, not a pain!</a></li>
+<li class="chapter" data-level="2.4.1" data-path="elaborate-1.html"><a href="elaborate-1.html#making-visualizations-in-r"><i class="fa fa-check"></i><b>2.4.1</b> Making visualizations in R</a></li>
+<li class="chapter" data-level="2.4.2" data-path="elaborate-1.html"><a href="elaborate-1.html#which-visualization-is-best-for-my-data-things-to-consider"><i class="fa fa-check"></i><b>2.4.2</b> Which visualization is best for my data? Things to consider</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="writing-r.html"><a href="writing-r.html"><i class="fa fa-check"></i><b>2.6</b> Writing R</a>
-<ul>
-<li class="chapter" data-level="2.6.1" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-console"><i class="fa fa-check"></i><b>2.6.1</b> Writing R in Console</a></li>
-<li class="chapter" data-level="2.6.2" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-scripts-the-4th-pane"><i class="fa fa-check"></i><b>2.6.2</b> Writing R in Scripts (The 4th pane)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.7" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html"><i class="fa fa-check"></i><b>2.7</b> Object-oriented progrmaing in R</a>
-<ul>
-<li class="chapter" data-level="2.7.1" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-objects"><i class="fa fa-check"></i><b>2.7.1</b> R objects</a></li>
-<li class="chapter" data-level="2.7.2" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-classes"><i class="fa fa-check"></i><b>2.7.2</b> R classes</a></li>
-<li class="chapter" data-level="2.7.3" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-projects"><i class="fa fa-check"></i><b>2.7.3</b> R Projects</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i><b>2.8</b> How to find help</a>
-<ul>
-<li class="chapter" data-level="2.8.1" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>2.8.1</b> In R</a></li>
-<li class="chapter" data-level="2.8.2" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>2.8.2</b> the web!</a></li>
-</ul></li>
-<li class="chapter" data-level="2.9" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.9</b> Elaborate</a></li>
-<li class="chapter" data-level="2.10" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>2.10</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>2.5</b> Evaluate/Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i><b>3</b> Describing Data</a>
 <ul>
@@ -309,19 +281,19 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.1" data-path="explore-5.html"><a href="explore-5.html#example-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Example Datasets</a></li>
 <li class="chapter" data-level="7.2.2" data-path="explore-5.html"><a href="explore-5.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>7.2.2</b> ACTIVITY - Calculate by hand</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>7.3</b> Explain</a></li>
+<li class="chapter" data-level="7.3" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>7.3</b> Explain</a></li>
 <li class="chapter" data-level="7.4" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i><b>7.4</b> Ellaborate</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>7.4.1</b> So what is data?</a></li>
-<li class="chapter" data-level="7.4.2" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data"><i class="fa fa-check"></i><b>7.4.2</b> Collecting Data</a></li>
-<li class="chapter" data-level="7.4.3" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling"><i class="fa fa-check"></i><b>7.4.3</b> POPULATIONS AND SAMPLING</a></li>
+<li class="chapter" data-level="7.4.2" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data-1"><i class="fa fa-check"></i><b>7.4.2</b> Collecting Data</a></li>
+<li class="chapter" data-level="7.4.3" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling-1"><i class="fa fa-check"></i><b>7.4.3</b> POPULATIONS AND SAMPLING</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a>
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>7.5.1</b> Review Questions</a></li>
 <li class="chapter" data-level="7.5.2" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>7.5.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>8</b> Intro to R, data types, data structures</a>
 <ul>
@@ -345,13 +317,13 @@ div.csl-indent {
 <li class="chapter" data-level="8.3.1" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>8.3.1</b> Mode Code</a></li>
 <li class="chapter" data-level="8.3.2" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>8.3.2</b> Mode Results</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8.4</b> Visualizing Data</a>
+<li class="chapter" data-level="8.4" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html"><i class="fa fa-check"></i><b>8.4</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>8.4.1</b> Continuous Data - Boxplots</a></li>
-<li class="chapter" data-level="8.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---histograms"><i class="fa fa-check"></i><b>8.4.2</b> Continuous Data - Histograms</a></li>
-<li class="chapter" data-level="8.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#categorical-data"><i class="fa fa-check"></i><b>8.4.3</b> Categorical Data</a></li>
+<li class="chapter" data-level="8.4.1" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>8.4.1</b> Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="8.4.2" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---histograms"><i class="fa fa-check"></i><b>8.4.2</b> Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="8.4.3" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#categorical-data"><i class="fa fa-check"></i><b>8.4.3</b> Categorical Data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i><b>9</b> Comparing Data</a>
 <ul>
@@ -370,14 +342,53 @@ div.csl-indent {
 <li class="chapter" data-level="9.3.1" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>9.3.1</b> Correlation, Linear Regression</a></li>
 <li class="chapter" data-level="9.3.2" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>9.3.2</b> Genearlized Linear Model</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="intro-to-rrstudio-1.html"><a href="intro-to-rrstudio-1.html"><i class="fa fa-check"></i><b>9.4</b> Intro to R/RStudio</a></li>
+<li class="chapter" data-level="9.4" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>9.4</b> Intro to R/RStudio</a></li>
 <li class="chapter" data-level="9.5" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>9.5</b> Reading Data / Distributions</a>
 <ul>
 <li class="chapter" data-level="9.5.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>9.5.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="glossary-3.html"><a href="glossary-3.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="10" data-path="intro-to-rrstudio-1.html"><a href="intro-to-rrstudio-1.html"><i class="fa fa-check"></i><b>10</b> Intro to R/Rstudio</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="engage-6.html"><a href="engage-6.html"><i class="fa fa-check"></i><b>10.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="engage-6.html"><a href="engage-6.html#class-poll-who-has-used-r-before"><i class="fa fa-check"></i><b>10.1.1</b> Class poll: Who has used R before</a></li>
+<li class="chapter" data-level="10.1.2" data-path="engage-6.html"><a href="engage-6.html#class-poll-who-has-done-any-kind-of-coding"><i class="fa fa-check"></i><b>10.1.2</b> Class poll: who has done ANY kind of coding</a></li>
+<li class="chapter" data-level="10.1.3" data-path="engage-6.html"><a href="engage-6.html#interpreting-r"><i class="fa fa-check"></i><b>10.1.3</b> Interpreting R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="explore-6.html"><a href="explore-6.html"><i class="fa fa-check"></i><b>10.2</b> Explore</a></li>
+<li class="chapter" data-level="10.3" data-path="explain---lectureread-4.html"><a href="explain---lectureread-4.html"><i class="fa fa-check"></i><b>10.3</b> Explain - lecture/read</a></li>
+<li class="chapter" data-level="10.4" data-path="some-basics.html"><a href="some-basics.html"><i class="fa fa-check"></i><b>10.4</b> Some Basics</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="some-basics.html"><a href="some-basics.html#r-vs-rstudio-vs-posit"><i class="fa fa-check"></i><b>10.4.1</b> R vs RStudio vs POSIT</a></li>
+<li class="chapter" data-level="10.4.2" data-path="some-basics.html"><a href="some-basics.html#we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data."><i class="fa fa-check"></i><b>10.4.2</b> We will use Rstudio, to write R scripts that will analyze and visualize data.</a></li>
+<li class="chapter" data-level="10.4.3" data-path="some-basics.html"><a href="some-basics.html#how-to-install"><i class="fa fa-check"></i><b>10.4.3</b> How to install</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i><b>10.5</b> Navigating RStudio</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#lots-of-panes-not-a-pain"><i class="fa fa-check"></i><b>10.5.1</b> Lots of Panes, not a pain!</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="writing-r.html"><a href="writing-r.html"><i class="fa fa-check"></i><b>10.6</b> Writing R</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-console"><i class="fa fa-check"></i><b>10.6.1</b> Writing R in Console</a></li>
+<li class="chapter" data-level="10.6.2" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-scripts-the-4th-pane"><i class="fa fa-check"></i><b>10.6.2</b> Writing R in Scripts (The 4th pane)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html"><i class="fa fa-check"></i><b>10.7</b> Object-oriented progrmaing in R</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-objects"><i class="fa fa-check"></i><b>10.7.1</b> R objects</a></li>
+<li class="chapter" data-level="10.7.2" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-classes"><i class="fa fa-check"></i><b>10.7.2</b> R classes</a></li>
+<li class="chapter" data-level="10.7.3" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-projects"><i class="fa fa-check"></i><b>10.7.3</b> R Projects</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i><b>10.8</b> How to find help</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>10.8.1</b> In R</a></li>
+<li class="chapter" data-level="10.8.2" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>10.8.2</b> the web!</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="elaborate-5.html"><a href="elaborate-5.html"><i class="fa fa-check"></i><b>10.9</b> Elaborate</a></li>
+<li class="chapter" data-level="10.10" data-path="evaluateexercises-5.html"><a href="evaluateexercises-5.html"><i class="fa fa-check"></i><b>10.10</b> Evaluate/Exercises</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to the github repo.</a></li>
 
@@ -422,150 +433,176 @@ An applied course using IPUMS data <br></p></a>
 <div id="setup-load-data" class="section level4 unnumbered hasAnchor">
 <h4>Setup / Load Data<a href="lesson-7-exploratory-analysis.html#setup-load-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Install/update R packages</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lesson-7-exploratory-analysis.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ipumsr&quot;</span>)</span>
-<span id="cb2-2"><a href="lesson-7-exploratory-analysis.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lesson-7-exploratory-analysis.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ipumsr&quot;</span>)</span>
+<span id="cb1-2"><a href="lesson-7-exploratory-analysis.html#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+</details>
 <p>Data extract created online using the datacart system.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="lesson-7-exploratory-analysis.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
-<span id="cb3-2"><a href="lesson-7-exploratory-analysis.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-3"><a href="lesson-7-exploratory-analysis.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="lesson-7-exploratory-analysis.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="lesson-7-exploratory-analysis.html#cb3-5" aria-hidden="true" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;Data/ipumsi_00005.xml&quot;</span>)</span>
-<span id="cb3-6"><a href="lesson-7-exploratory-analysis.html#cb3-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lesson-7-exploratory-analysis.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
+<span id="cb2-2"><a href="lesson-7-exploratory-analysis.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="lesson-7-exploratory-analysis.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="lesson-7-exploratory-analysis.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="lesson-7-exploratory-analysis.html#cb2-5" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;Data/ipumsi_00005.xml&quot;</span>)</span>
+<span id="cb2-6"><a href="lesson-7-exploratory-analysis.html#cb2-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span></code></pre></div>
+</details>
 <div id="inspect-the-data" class="section level5 unnumbered hasAnchor">
 <h5>Inspect the Data<a href="lesson-7-exploratory-analysis.html#inspect-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Using <code>haven</code> labeled values.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lesson-7-exploratory-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>RELATE[<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>]</span>
-<span id="cb4-2"><a href="lesson-7-exploratory-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data<span class="sc">$</span>RELATE)</span>
-<span id="cb4-3"><a href="lesson-7-exploratory-analysis.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="lesson-7-exploratory-analysis.html#cb4-4" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(RELATE)</span>
-<span id="cb4-5"><a href="lesson-7-exploratory-analysis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(SEX)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="lesson-7-exploratory-analysis.html#cb3-1" tabindex="-1"></a>data<span class="sc">$</span>RELATE[<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>]</span>
+<span id="cb3-2"><a href="lesson-7-exploratory-analysis.html#cb3-2" tabindex="-1"></a><span class="fu">class</span>(data<span class="sc">$</span>RELATE)</span>
+<span id="cb3-3"><a href="lesson-7-exploratory-analysis.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="lesson-7-exploratory-analysis.html#cb3-4" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(RELATE)</span>
+<span id="cb3-5"><a href="lesson-7-exploratory-analysis.html#cb3-5" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">count</span>(SEX)</span></code></pre></div>
+</details>
 <p>What were those codes ??</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lesson-7-exploratory-analysis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## need to convert this to an image or something similar; kable table?</span></span>
-<span id="cb5-2"><a href="lesson-7-exploratory-analysis.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lesson-7-exploratory-analysis.html#cb4-1" tabindex="-1"></a><span class="do">## need to convert this to an image or something similar; kable table?</span></span>
+<span id="cb4-2"><a href="lesson-7-exploratory-analysis.html#cb4-2" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+</details>
 </div>
 <div id="visualize" class="section level5 unnumbered hasAnchor">
 <h5>Visualize<a href="lesson-7-exploratory-analysis.html#visualize" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>A simple plot</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lesson-7-exploratory-analysis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(AGE <span class="sc">~</span> YEAR, <span class="at">data =</span> data)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lesson-7-exploratory-analysis.html#cb5-1" tabindex="-1"></a><span class="fu">plot</span>(AGE <span class="sc">~</span> YEAR, <span class="at">data =</span> data)</span></code></pre></div>
+</details>
 <p>A fancier plot</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lesson-7-exploratory-analysis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Age by Sex, over Time, CO&quot;</span>)</span>
-<span id="cb7-2"><a href="lesson-7-exploratory-analysis.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">6</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
-<span id="cb7-3"><a href="lesson-7-exploratory-analysis.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="lesson-7-exploratory-analysis.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>]<span class="sc">+</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(<span class="dv">1</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
-<span id="cb7-5"><a href="lesson-7-exploratory-analysis.html#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="lesson-7-exploratory-analysis.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lesson-7-exploratory-analysis.html#cb6-1" tabindex="-1"></a><span class="fu">plot</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Age by Sex, over Time, CO&quot;</span>)</span>
+<span id="cb6-2"><a href="lesson-7-exploratory-analysis.html#cb6-2" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">1</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">6</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
+<span id="cb6-3"><a href="lesson-7-exploratory-analysis.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="lesson-7-exploratory-analysis.html#cb6-4" tabindex="-1"></a><span class="fu">points</span>(data<span class="sc">$</span>YEAR[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>]<span class="sc">+</span><span class="dv">1</span>, data<span class="sc">$</span>AGE[data<span class="sc">$</span>SEX<span class="sc">==</span><span class="dv">2</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">hsv</span>(<span class="dv">1</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,.<span class="dv">2</span>))</span>
+<span id="cb6-5"><a href="lesson-7-exploratory-analysis.html#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="lesson-7-exploratory-analysis.html#cb6-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(AGE<span class="sc">~</span>YEAR, <span class="at">data =</span> data), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="asking-logical-questions" class="section level5 unnumbered hasAnchor">
 <h5>Asking (logical) questions<a href="lesson-7-exploratory-analysis.html#asking-logical-questions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Here we demonstrate how setting up logical questions can be used to easily filter/subset data.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lesson-7-exploratory-analysis.html#cb8-1" aria-hidden="true" tabindex="-1"></a>age_test <span class="ot">&lt;-</span> data<span class="sc">$</span>AGE <span class="sc">&gt;</span> <span class="dv">18</span></span>
-<span id="cb8-2"><a href="lesson-7-exploratory-analysis.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="lesson-7-exploratory-analysis.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(age_test)</span>
-<span id="cb8-4"><a href="lesson-7-exploratory-analysis.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="lesson-7-exploratory-analysis.html#cb8-5" aria-hidden="true" tabindex="-1"></a>age_test</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lesson-7-exploratory-analysis.html#cb7-1" tabindex="-1"></a>age_test <span class="ot">&lt;-</span> data<span class="sc">$</span>AGE <span class="sc">&gt;</span> <span class="dv">18</span></span>
+<span id="cb7-2"><a href="lesson-7-exploratory-analysis.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="lesson-7-exploratory-analysis.html#cb7-3" tabindex="-1"></a><span class="fu">class</span>(age_test)</span>
+<span id="cb7-4"><a href="lesson-7-exploratory-analysis.html#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="lesson-7-exploratory-analysis.html#cb7-5" tabindex="-1"></a>age_test</span></code></pre></div>
+</details>
 <p>Logical vectors are stored as <code>TRUE</code> or <code>FALSE</code>, but can also be evaluated numerically as <code>1</code> or <code>0</code> respectively. We can therefore <code>sum()</code> the number of <code>TRUE</code> values and divide by total rows for a proportion.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="lesson-7-exploratory-analysis.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(age_test)<span class="sc">/</span><span class="fu">nrow</span>(data)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lesson-7-exploratory-analysis.html#cb8-1" tabindex="-1"></a><span class="fu">sum</span>(age_test)<span class="sc">/</span><span class="fu">nrow</span>(data)</span></code></pre></div>
+</details>
 </div>
 <div id="hh-vs-persons" class="section level5 unnumbered hasAnchor">
 <h5>HH vs persons<a href="lesson-7-exploratory-analysis.html#hh-vs-persons" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>A unique characteristic of census and some survey data is the nested-structure with individuals being grouped into households. Often times it is necessary to choose to work at the hh or person level, and data must be appropriately manipulated to fit that case.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="lesson-7-exploratory-analysis.html#cb10-1" aria-hidden="true" tabindex="-1"></a>hh_total <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(data<span class="sc">$</span>SERIAL))</span>
-<span id="cb10-2"><a href="lesson-7-exploratory-analysis.html#cb10-2" aria-hidden="true" tabindex="-1"></a>hh_total</span>
-<span id="cb10-3"><a href="lesson-7-exploratory-analysis.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="lesson-7-exploratory-analysis.html#cb9-1" tabindex="-1"></a>hh_total <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(data<span class="sc">$</span>SERIAL))</span>
+<span id="cb9-2"><a href="lesson-7-exploratory-analysis.html#cb9-2" tabindex="-1"></a>hh_total</span>
+<span id="cb9-3"><a href="lesson-7-exploratory-analysis.html#cb9-3" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="nuclear-family" class="section level4 unnumbered hasAnchor">
 <h4>Nuclear Family<a href="lesson-7-exploratory-analysis.html#nuclear-family" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>First we look at a nuclear family, comprising only parents and their immediate children.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="lesson-7-exploratory-analysis.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
-<span id="cb11-2"><a href="lesson-7-exploratory-analysis.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb11-3"><a href="lesson-7-exploratory-analysis.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="lesson-7-exploratory-analysis.html#cb11-4" aria-hidden="true" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml&quot;</span>)</span>
-<span id="cb11-5"><a href="lesson-7-exploratory-analysis.html#cb11-5" aria-hidden="true" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span>
-<span id="cb11-6"><a href="lesson-7-exploratory-analysis.html#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="lesson-7-exploratory-analysis.html#cb11-7" aria-hidden="true" tabindex="-1"></a>census_years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1860</span>, <span class="dv">1870</span>, <span class="dv">1880</span>, <span class="dv">1900</span>, <span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>)</span>
-<span id="cb11-8"><a href="lesson-7-exploratory-analysis.html#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="lesson-7-exploratory-analysis.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">## subset census only</span></span>
-<span id="cb11-10"><a href="lesson-7-exploratory-analysis.html#cb11-10" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> all_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(YEAR <span class="sc">%in%</span> census_years)</span>
-<span id="cb11-11"><a href="lesson-7-exploratory-analysis.html#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="lesson-7-exploratory-analysis.html#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="do">## make a household dataframe</span></span>
-<span id="cb11-13"><a href="lesson-7-exploratory-analysis.html#cb11-13" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,SERIAL,GEO1_US)</span>
-<span id="cb11-14"><a href="lesson-7-exploratory-analysis.html#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="lesson-7-exploratory-analysis.html#cb11-15" aria-hidden="true" tabindex="-1"></a>hhs <span class="sc">%&gt;%</span> <span class="fu">View</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lesson-7-exploratory-analysis.html#cb12-1" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATE <span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="lesson-7-exploratory-analysis.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-3"><a href="lesson-7-exploratory-analysis.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-4"><a href="lesson-7-exploratory-analysis.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(extended_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
-<span id="cb12-5"><a href="lesson-7-exploratory-analysis.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-6"><a href="lesson-7-exploratory-analysis.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="lesson-7-exploratory-analysis.html#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="lesson-7-exploratory-analysis.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="lesson-7-exploratory-analysis.html#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="lesson-7-exploratory-analysis.html#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="lesson-7-exploratory-analysis.html#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="lesson-7-exploratory-analysis.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="lesson-7-exploratory-analysis.html#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="lesson-7-exploratory-analysis.html#cb12-14" aria-hidden="true" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>RELATE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">|</span></span>
-<span id="cb12-15"><a href="lesson-7-exploratory-analysis.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                  (RELATE <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span></span>
-<span id="cb12-16"><a href="lesson-7-exploratory-analysis.html#cb12-16" aria-hidden="true" tabindex="-1"></a>                     MARST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb12-17"><a href="lesson-7-exploratory-analysis.html#cb12-17" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-18"><a href="lesson-7-exploratory-analysis.html#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="lesson-7-exploratory-analysis.html#cb12-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-20"><a href="lesson-7-exploratory-analysis.html#cb12-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-21"><a href="lesson-7-exploratory-analysis.html#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(nuclear_test), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
-<span id="cb12-22"><a href="lesson-7-exploratory-analysis.html#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="lesson-7-exploratory-analysis.html#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-24"><a href="lesson-7-exploratory-analysis.html#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="lesson-7-exploratory-analysis.html#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(hhs<span class="sc">$</span>extended_test,hhs<span class="sc">$</span>nuclear_test)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="lesson-7-exploratory-analysis.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(ipumsr)</span>
+<span id="cb10-2"><a href="lesson-7-exploratory-analysis.html#cb10-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-3"><a href="lesson-7-exploratory-analysis.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="lesson-7-exploratory-analysis.html#cb10-4" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">&quot;/pkg/ipums/personal/ehrli097/AABA_2022/Data/ipumsi_00005.xml&quot;</span>)</span>
+<span id="cb10-5"><a href="lesson-7-exploratory-analysis.html#cb10-5" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span>
+<span id="cb10-6"><a href="lesson-7-exploratory-analysis.html#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="lesson-7-exploratory-analysis.html#cb10-7" tabindex="-1"></a>census_years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1860</span>, <span class="dv">1870</span>, <span class="dv">1880</span>, <span class="dv">1900</span>, <span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>)</span>
+<span id="cb10-8"><a href="lesson-7-exploratory-analysis.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="lesson-7-exploratory-analysis.html#cb10-9" tabindex="-1"></a><span class="do">## subset census only</span></span>
+<span id="cb10-10"><a href="lesson-7-exploratory-analysis.html#cb10-10" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> all_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(YEAR <span class="sc">%in%</span> census_years)</span>
+<span id="cb10-11"><a href="lesson-7-exploratory-analysis.html#cb10-11" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="lesson-7-exploratory-analysis.html#cb10-12" tabindex="-1"></a><span class="do">## make a household dataframe</span></span>
+<span id="cb10-13"><a href="lesson-7-exploratory-analysis.html#cb10-13" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,SERIAL,GEO1_US)</span>
+<span id="cb10-14"><a href="lesson-7-exploratory-analysis.html#cb10-14" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="lesson-7-exploratory-analysis.html#cb10-15" tabindex="-1"></a>hhs <span class="sc">%&gt;%</span> <span class="fu">View</span>()</span></code></pre></div>
+</details>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="lesson-7-exploratory-analysis.html#cb11-1" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATE <span class="sc">==</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="lesson-7-exploratory-analysis.html#cb11-2" tabindex="-1"></a>  </span>
+<span id="cb11-3"><a href="lesson-7-exploratory-analysis.html#cb11-3" tabindex="-1"></a>  </span>
+<span id="cb11-4"><a href="lesson-7-exploratory-analysis.html#cb11-4" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">extended_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(extended_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb11-5"><a href="lesson-7-exploratory-analysis.html#cb11-5" tabindex="-1"></a>  </span>
+<span id="cb11-6"><a href="lesson-7-exploratory-analysis.html#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="lesson-7-exploratory-analysis.html#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="lesson-7-exploratory-analysis.html#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="lesson-7-exploratory-analysis.html#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="lesson-7-exploratory-analysis.html#cb11-10" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="lesson-7-exploratory-analysis.html#cb11-11" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="lesson-7-exploratory-analysis.html#cb11-12" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="lesson-7-exploratory-analysis.html#cb11-13" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="lesson-7-exploratory-analysis.html#cb11-14" tabindex="-1"></a>hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>RELATE <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">|</span></span>
+<span id="cb11-15"><a href="lesson-7-exploratory-analysis.html#cb11-15" tabindex="-1"></a>                  (RELATE <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span></span>
+<span id="cb11-16"><a href="lesson-7-exploratory-analysis.html#cb11-16" tabindex="-1"></a>                     MARST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb11-17"><a href="lesson-7-exploratory-analysis.html#cb11-17" tabindex="-1"></a>                ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-18"><a href="lesson-7-exploratory-analysis.html#cb11-18" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="lesson-7-exploratory-analysis.html#cb11-19" tabindex="-1"></a>  </span>
+<span id="cb11-20"><a href="lesson-7-exploratory-analysis.html#cb11-20" tabindex="-1"></a>  </span>
+<span id="cb11-21"><a href="lesson-7-exploratory-analysis.html#cb11-21" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nuclear_test =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(nuclear_test), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb11-22"><a href="lesson-7-exploratory-analysis.html#cb11-22" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="lesson-7-exploratory-analysis.html#cb11-23" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="lesson-7-exploratory-analysis.html#cb11-24" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="lesson-7-exploratory-analysis.html#cb11-25" tabindex="-1"></a><span class="fu">table</span>(hhs<span class="sc">$</span>extended_test,hhs<span class="sc">$</span>nuclear_test)</span></code></pre></div>
+</details>
 <div id="tabulate-results" class="section level5 unnumbered hasAnchor">
 <h5>Tabulate results<a href="lesson-7-exploratory-analysis.html#tabulate-results" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="lesson-7-exploratory-analysis.html#cb13-1" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
-<span id="cb13-2"><a href="lesson-7-exploratory-analysis.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="lesson-7-exploratory-analysis.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="lesson-7-exploratory-analysis.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
-<span id="cb13-5"><a href="lesson-7-exploratory-analysis.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-6"><a href="lesson-7-exploratory-analysis.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-7"><a href="lesson-7-exploratory-analysis.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  res_tabs <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb13-8"><a href="lesson-7-exploratory-analysis.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;nuclear_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, nuclear_test,GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
-<span id="cb13-9"><a href="lesson-7-exploratory-analysis.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;extended_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, extended_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
-<span id="cb13-10"><a href="lesson-7-exploratory-analysis.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;parent_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, parent_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
-<span id="cb13-11"><a href="lesson-7-exploratory-analysis.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;children_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, children_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb13-12"><a href="lesson-7-exploratory-analysis.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-13"><a href="lesson-7-exploratory-analysis.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-14"><a href="lesson-7-exploratory-analysis.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-15"><a href="lesson-7-exploratory-analysis.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-16"><a href="lesson-7-exploratory-analysis.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-17"><a href="lesson-7-exploratory-analysis.html#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="lesson-7-exploratory-analysis.html#cb13-18" aria-hidden="true" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> res_tabs <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">map</span>(<span class="cf">function</span>(x){</span>
-<span id="cb13-19"><a href="lesson-7-exploratory-analysis.html#cb13-19" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="fu">across</span>(<span class="fu">names</span>(x)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">sum</span>(n))</span>
-<span id="cb13-20"><a href="lesson-7-exploratory-analysis.html#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-21"><a href="lesson-7-exploratory-analysis.html#cb13-21" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb13-22"><a href="lesson-7-exploratory-analysis.html#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="lesson-7-exploratory-analysis.html#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-24"><a href="lesson-7-exploratory-analysis.html#cb13-24" aria-hidden="true" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(collapsed_results, <span class="cf">function</span>(x){</span>
-<span id="cb13-25"><a href="lesson-7-exploratory-analysis.html#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;test&quot;</span></span>
-<span id="cb13-26"><a href="lesson-7-exploratory-analysis.html#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;state&quot;</span></span>
-<span id="cb13-27"><a href="lesson-7-exploratory-analysis.html#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
-<span id="cb13-28"><a href="lesson-7-exploratory-analysis.html#cb13-28" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb13-29"><a href="lesson-7-exploratory-analysis.html#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="lesson-7-exploratory-analysis.html#cb13-30" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> collapsed_results <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">reduce</span>(full_join, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>))</span>
-<span id="cb13-31"><a href="lesson-7-exploratory-analysis.html#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="lesson-7-exploratory-analysis.html#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a href="lesson-7-exploratory-analysis.html#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-34"><a href="lesson-7-exploratory-analysis.html#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(combined) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;n_nuclear&quot;</span>, <span class="st">&quot;n_extended&quot;</span>, <span class="st">&quot;n_parent&quot;</span>, <span class="st">&quot;n_children&quot;</span>)</span>
-<span id="cb13-35"><a href="lesson-7-exploratory-analysis.html#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="lesson-7-exploratory-analysis.html#cb13-36" aria-hidden="true" tabindex="-1"></a>combined[<span class="fu">is.na</span>(combined)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb13-37"><a href="lesson-7-exploratory-analysis.html#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="lesson-7-exploratory-analysis.html#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-39"><a href="lesson-7-exploratory-analysis.html#cb13-39" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> combined <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, state) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">n_tot =</span> <span class="fu">sum</span>(n_nuclear)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pct =</span>  <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;n_&quot;</span>))<span class="sc">/</span>n_tot) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,test,state,pct)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lesson-7-exploratory-analysis.html#cb12-1" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb12-2"><a href="lesson-7-exploratory-analysis.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="lesson-7-exploratory-analysis.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="lesson-7-exploratory-analysis.html#cb12-4" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb12-5"><a href="lesson-7-exploratory-analysis.html#cb12-5" tabindex="-1"></a>  </span>
+<span id="cb12-6"><a href="lesson-7-exploratory-analysis.html#cb12-6" tabindex="-1"></a>  </span>
+<span id="cb12-7"><a href="lesson-7-exploratory-analysis.html#cb12-7" tabindex="-1"></a>  res_tabs <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb12-8"><a href="lesson-7-exploratory-analysis.html#cb12-8" tabindex="-1"></a>    <span class="st">&quot;nuclear_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, nuclear_test,GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb12-9"><a href="lesson-7-exploratory-analysis.html#cb12-9" tabindex="-1"></a>  <span class="st">&quot;extended_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, extended_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb12-10"><a href="lesson-7-exploratory-analysis.html#cb12-10" tabindex="-1"></a>  <span class="st">&quot;parent_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, parent_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>(),</span>
+<span id="cb12-11"><a href="lesson-7-exploratory-analysis.html#cb12-11" tabindex="-1"></a>  <span class="st">&quot;children_test&quot;</span> <span class="ot">=</span> hhs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, children_test, GEO1_US) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb12-12"><a href="lesson-7-exploratory-analysis.html#cb12-12" tabindex="-1"></a>  )</span>
+<span id="cb12-13"><a href="lesson-7-exploratory-analysis.html#cb12-13" tabindex="-1"></a>  </span>
+<span id="cb12-14"><a href="lesson-7-exploratory-analysis.html#cb12-14" tabindex="-1"></a>  </span>
+<span id="cb12-15"><a href="lesson-7-exploratory-analysis.html#cb12-15" tabindex="-1"></a>  </span>
+<span id="cb12-16"><a href="lesson-7-exploratory-analysis.html#cb12-16" tabindex="-1"></a>  </span>
+<span id="cb12-17"><a href="lesson-7-exploratory-analysis.html#cb12-17" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="lesson-7-exploratory-analysis.html#cb12-18" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> res_tabs <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">map</span>(<span class="cf">function</span>(x){</span>
+<span id="cb12-19"><a href="lesson-7-exploratory-analysis.html#cb12-19" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="fu">across</span>(<span class="fu">names</span>(x)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">.groups=</span><span class="st">&quot;drop&quot;</span>,<span class="at">n =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb12-20"><a href="lesson-7-exploratory-analysis.html#cb12-20" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="lesson-7-exploratory-analysis.html#cb12-21" tabindex="-1"></a>})</span>
+<span id="cb12-22"><a href="lesson-7-exploratory-analysis.html#cb12-22" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="lesson-7-exploratory-analysis.html#cb12-23" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="lesson-7-exploratory-analysis.html#cb12-24" tabindex="-1"></a>collapsed_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(collapsed_results, <span class="cf">function</span>(x){</span>
+<span id="cb12-25"><a href="lesson-7-exploratory-analysis.html#cb12-25" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;test&quot;</span></span>
+<span id="cb12-26"><a href="lesson-7-exploratory-analysis.html#cb12-26" tabindex="-1"></a>  <span class="fu">colnames</span>(x)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">&quot;state&quot;</span></span>
+<span id="cb12-27"><a href="lesson-7-exploratory-analysis.html#cb12-27" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb12-28"><a href="lesson-7-exploratory-analysis.html#cb12-28" tabindex="-1"></a>})</span>
+<span id="cb12-29"><a href="lesson-7-exploratory-analysis.html#cb12-29" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="lesson-7-exploratory-analysis.html#cb12-30" tabindex="-1"></a>combined <span class="ot">&lt;-</span> collapsed_results <span class="sc">%&gt;%</span> purrr<span class="sc">::</span><span class="fu">reduce</span>(full_join, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>))</span>
+<span id="cb12-31"><a href="lesson-7-exploratory-analysis.html#cb12-31" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="lesson-7-exploratory-analysis.html#cb12-32" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="lesson-7-exploratory-analysis.html#cb12-33" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="lesson-7-exploratory-analysis.html#cb12-34" tabindex="-1"></a><span class="fu">colnames</span>(combined) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;test&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;n_nuclear&quot;</span>, <span class="st">&quot;n_extended&quot;</span>, <span class="st">&quot;n_parent&quot;</span>, <span class="st">&quot;n_children&quot;</span>)</span>
+<span id="cb12-35"><a href="lesson-7-exploratory-analysis.html#cb12-35" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="lesson-7-exploratory-analysis.html#cb12-36" tabindex="-1"></a>combined[<span class="fu">is.na</span>(combined)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-37"><a href="lesson-7-exploratory-analysis.html#cb12-37" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="lesson-7-exploratory-analysis.html#cb12-38" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="lesson-7-exploratory-analysis.html#cb12-39" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> combined <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(YEAR, state) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">n_tot =</span> <span class="fu">sum</span>(n_nuclear)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pct =</span>  <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;n_&quot;</span>))<span class="sc">/</span>n_tot) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR,test,state,pct)</span></code></pre></div>
+</details>
 </div>
 <div id="visualize-nuclear-families" class="section level5 unnumbered hasAnchor">
 <h5>Visualize Nuclear Families<a href="lesson-7-exploratory-analysis.html#visualize-nuclear-families" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="lesson-7-exploratory-analysis.html#cb14-1" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-2"><a href="lesson-7-exploratory-analysis.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="lesson-7-exploratory-analysis.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="lesson-7-exploratory-analysis.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="lesson-7-exploratory-analysis.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_nuclear, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">4</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;prop of hhs&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Nuclear HHs over time in CO&quot;</span>)</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="lesson-7-exploratory-analysis.html#cb13-1" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb13-2"><a href="lesson-7-exploratory-analysis.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="lesson-7-exploratory-analysis.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="lesson-7-exploratory-analysis.html#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="lesson-7-exploratory-analysis.html#cb13-5" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_nuclear, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">4</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;prop of hhs&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Nuclear HHs over time in CO&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="extended-family" class="section level4 unnumbered hasAnchor">
@@ -573,129 +610,141 @@ An applied course using IPUMS data <br></p></a>
 <p>Next we look at hhs with extended families present. IE, any that contain more relationships than just Parent/Child/Sibling (between children only)</p>
 <div id="gernerate-models" class="section level5 unnumbered hasAnchor">
 <h5>Gernerate models<a href="lesson-7-exploratory-analysis.html#gernerate-models" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="lesson-7-exploratory-analysis.html#cb15-1" aria-hidden="true" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
-<span id="cb15-2"><a href="lesson-7-exploratory-analysis.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="lesson-7-exploratory-analysis.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="lesson-7-exploratory-analysis.html#cb15-4" aria-hidden="true" tabindex="-1"></a>glm_hist <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
-<span id="cb15-5"><a href="lesson-7-exploratory-analysis.html#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="lesson-7-exploratory-analysis.html#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="lesson-7-exploratory-analysis.html#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="lesson-7-exploratory-analysis.html#cb15-8" aria-hidden="true" tabindex="-1"></a>glm_hist_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1860</span>, <span class="at">to =</span> <span class="dv">1910</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb15-9"><a href="lesson-7-exploratory-analysis.html#cb15-9" aria-hidden="true" tabindex="-1"></a>glm_hist_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_hist, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_hist_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb15-10"><a href="lesson-7-exploratory-analysis.html#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="lesson-7-exploratory-analysis.html#cb15-11" aria-hidden="true" tabindex="-1"></a>glm_mod <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR<span class="sc">&gt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
-<span id="cb15-12"><a href="lesson-7-exploratory-analysis.html#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="lesson-7-exploratory-analysis.html#cb15-13" aria-hidden="true" tabindex="-1"></a>glm_mod_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1960</span>, <span class="at">to =</span> <span class="dv">2010</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb15-14"><a href="lesson-7-exploratory-analysis.html#cb15-14" aria-hidden="true" tabindex="-1"></a>glm_mod_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_mod, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_mod_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb15-15"><a href="lesson-7-exploratory-analysis.html#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="lesson-7-exploratory-analysis.html#cb15-16" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
-<span id="cb15-17"><a href="lesson-7-exploratory-analysis.html#cb15-17" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;mod&quot;</span> <span class="ot">=</span> <span class="fu">list</span>()</span>
-<span id="cb15-18"><a href="lesson-7-exploratory-analysis.html#cb15-18" aria-hidden="true" tabindex="-1"></a>             )</span>
-<span id="cb15-19"><a href="lesson-7-exploratory-analysis.html#cb15-19" aria-hidden="true" tabindex="-1"></a>mods_plots <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
-<span id="cb15-20"><a href="lesson-7-exploratory-analysis.html#cb15-20" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;mod&quot;</span> <span class="ot">=</span><span class="fu">list</span>()</span>
-<span id="cb15-21"><a href="lesson-7-exploratory-analysis.html#cb15-21" aria-hidden="true" tabindex="-1"></a>                   )</span>
-<span id="cb15-22"><a href="lesson-7-exploratory-analysis.html#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-23"><a href="lesson-7-exploratory-analysis.html#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">names</span>(to_plot<span class="sc">$</span>pct)){</span>
-<span id="cb15-24"><a href="lesson-7-exploratory-analysis.html#cb15-24" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-25"><a href="lesson-7-exploratory-analysis.html#cb15-25" aria-hidden="true" tabindex="-1"></a>  hist_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>]</span>
-<span id="cb15-26"><a href="lesson-7-exploratory-analysis.html#cb15-26" aria-hidden="true" tabindex="-1"></a>mod_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>]</span>
-<span id="cb15-27"><a href="lesson-7-exploratory-analysis.html#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-28"><a href="lesson-7-exploratory-analysis.html#cb15-28" aria-hidden="true" tabindex="-1"></a>  mods<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,])</span>
-<span id="cb15-29"><a href="lesson-7-exploratory-analysis.html#cb15-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-30"><a href="lesson-7-exploratory-analysis.html#cb15-30" aria-hidden="true" tabindex="-1"></a>  mods_plots<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> </span>
-<span id="cb15-31"><a href="lesson-7-exploratory-analysis.html#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> hist_x,</span>
-<span id="cb15-32"><a href="lesson-7-exploratory-analysis.html#cb15-32" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>hist[[i]], </span>
-<span id="cb15-33"><a href="lesson-7-exploratory-analysis.html#cb15-33" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>hist_x), </span>
-<span id="cb15-34"><a href="lesson-7-exploratory-analysis.html#cb15-34" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb15-35"><a href="lesson-7-exploratory-analysis.html#cb15-35" aria-hidden="true" tabindex="-1"></a>               )</span>
-<span id="cb15-36"><a href="lesson-7-exploratory-analysis.html#cb15-36" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-37"><a href="lesson-7-exploratory-analysis.html#cb15-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-38"><a href="lesson-7-exploratory-analysis.html#cb15-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-39"><a href="lesson-7-exploratory-analysis.html#cb15-39" aria-hidden="true" tabindex="-1"></a>  mods<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>,])</span>
-<span id="cb15-40"><a href="lesson-7-exploratory-analysis.html#cb15-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-41"><a href="lesson-7-exploratory-analysis.html#cb15-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-42"><a href="lesson-7-exploratory-analysis.html#cb15-42" aria-hidden="true" tabindex="-1"></a>  mods_plots<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> </span>
-<span id="cb15-43"><a href="lesson-7-exploratory-analysis.html#cb15-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> mod_x,</span>
-<span id="cb15-44"><a href="lesson-7-exploratory-analysis.html#cb15-44" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>mod[[i]], </span>
-<span id="cb15-45"><a href="lesson-7-exploratory-analysis.html#cb15-45" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>mod_x), </span>
-<span id="cb15-46"><a href="lesson-7-exploratory-analysis.html#cb15-46" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
-<span id="cb15-47"><a href="lesson-7-exploratory-analysis.html#cb15-47" aria-hidden="true" tabindex="-1"></a>               )</span>
-<span id="cb15-48"><a href="lesson-7-exploratory-analysis.html#cb15-48" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="lesson-7-exploratory-analysis.html#cb14-1" tabindex="-1"></a>to_plot <span class="ot">&lt;-</span> to_plot <span class="sc">%&gt;%</span> <span class="fu">filter</span>(test<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb14-2"><a href="lesson-7-exploratory-analysis.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="lesson-7-exploratory-analysis.html#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="lesson-7-exploratory-analysis.html#cb14-4" tabindex="-1"></a>glm_hist <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
+<span id="cb14-5"><a href="lesson-7-exploratory-analysis.html#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="lesson-7-exploratory-analysis.html#cb14-6" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="lesson-7-exploratory-analysis.html#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="lesson-7-exploratory-analysis.html#cb14-8" tabindex="-1"></a>glm_hist_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1860</span>, <span class="at">to =</span> <span class="dv">1910</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb14-9"><a href="lesson-7-exploratory-analysis.html#cb14-9" tabindex="-1"></a>glm_hist_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_hist, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_hist_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb14-10"><a href="lesson-7-exploratory-analysis.html#cb14-10" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="lesson-7-exploratory-analysis.html#cb14-11" tabindex="-1"></a>glm_mod <span class="ot">&lt;-</span> <span class="fu">glm</span>(pct<span class="sc">$</span>n_extended <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR<span class="sc">&gt;</span> <span class="dv">1950</span>,], <span class="at">family =</span> <span class="fu">quasibinomial</span>(<span class="at">link=</span>logit))</span>
+<span id="cb14-12"><a href="lesson-7-exploratory-analysis.html#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="lesson-7-exploratory-analysis.html#cb14-13" tabindex="-1"></a>glm_mod_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1960</span>, <span class="at">to =</span> <span class="dv">2010</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb14-14"><a href="lesson-7-exploratory-analysis.html#cb14-14" tabindex="-1"></a>glm_mod_y <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm_mod, <span class="fu">list</span>(<span class="at">YEAR =</span> glm_mod_x), <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb14-15"><a href="lesson-7-exploratory-analysis.html#cb14-15" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="lesson-7-exploratory-analysis.html#cb14-16" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
+<span id="cb14-17"><a href="lesson-7-exploratory-analysis.html#cb14-17" tabindex="-1"></a>             <span class="st">&quot;mod&quot;</span> <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb14-18"><a href="lesson-7-exploratory-analysis.html#cb14-18" tabindex="-1"></a>             )</span>
+<span id="cb14-19"><a href="lesson-7-exploratory-analysis.html#cb14-19" tabindex="-1"></a>mods_plots <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;hist&quot;</span><span class="ot">=</span><span class="fu">list</span>(),</span>
+<span id="cb14-20"><a href="lesson-7-exploratory-analysis.html#cb14-20" tabindex="-1"></a>                   <span class="st">&quot;mod&quot;</span> <span class="ot">=</span><span class="fu">list</span>()</span>
+<span id="cb14-21"><a href="lesson-7-exploratory-analysis.html#cb14-21" tabindex="-1"></a>                   )</span>
+<span id="cb14-22"><a href="lesson-7-exploratory-analysis.html#cb14-22" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="lesson-7-exploratory-analysis.html#cb14-23" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">names</span>(to_plot<span class="sc">$</span>pct)){</span>
+<span id="cb14-24"><a href="lesson-7-exploratory-analysis.html#cb14-24" tabindex="-1"></a>  </span>
+<span id="cb14-25"><a href="lesson-7-exploratory-analysis.html#cb14-25" tabindex="-1"></a>  hist_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>]</span>
+<span id="cb14-26"><a href="lesson-7-exploratory-analysis.html#cb14-26" tabindex="-1"></a>mod_x <span class="ot">&lt;-</span> to_plot<span class="sc">$</span>YEAR[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>]</span>
+<span id="cb14-27"><a href="lesson-7-exploratory-analysis.html#cb14-27" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="lesson-7-exploratory-analysis.html#cb14-28" tabindex="-1"></a>  mods<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&lt;</span> <span class="dv">1950</span>,])</span>
+<span id="cb14-29"><a href="lesson-7-exploratory-analysis.html#cb14-29" tabindex="-1"></a>  </span>
+<span id="cb14-30"><a href="lesson-7-exploratory-analysis.html#cb14-30" tabindex="-1"></a>  mods_plots<span class="sc">$</span>hist[[i]] <span class="ot">&lt;-</span> </span>
+<span id="cb14-31"><a href="lesson-7-exploratory-analysis.html#cb14-31" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> hist_x,</span>
+<span id="cb14-32"><a href="lesson-7-exploratory-analysis.html#cb14-32" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>hist[[i]], </span>
+<span id="cb14-33"><a href="lesson-7-exploratory-analysis.html#cb14-33" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>hist_x), </span>
+<span id="cb14-34"><a href="lesson-7-exploratory-analysis.html#cb14-34" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb14-35"><a href="lesson-7-exploratory-analysis.html#cb14-35" tabindex="-1"></a>               )</span>
+<span id="cb14-36"><a href="lesson-7-exploratory-analysis.html#cb14-36" tabindex="-1"></a>  </span>
+<span id="cb14-37"><a href="lesson-7-exploratory-analysis.html#cb14-37" tabindex="-1"></a>  </span>
+<span id="cb14-38"><a href="lesson-7-exploratory-analysis.html#cb14-38" tabindex="-1"></a>  </span>
+<span id="cb14-39"><a href="lesson-7-exploratory-analysis.html#cb14-39" tabindex="-1"></a>  mods<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(pct[[i]] <span class="sc">~</span> YEAR, <span class="at">data =</span> to_plot[to_plot<span class="sc">$</span>YEAR <span class="sc">&gt;</span> <span class="dv">1950</span>,])</span>
+<span id="cb14-40"><a href="lesson-7-exploratory-analysis.html#cb14-40" tabindex="-1"></a>  </span>
+<span id="cb14-41"><a href="lesson-7-exploratory-analysis.html#cb14-41" tabindex="-1"></a>  </span>
+<span id="cb14-42"><a href="lesson-7-exploratory-analysis.html#cb14-42" tabindex="-1"></a>  mods_plots<span class="sc">$</span>mod[[i]] <span class="ot">&lt;-</span> </span>
+<span id="cb14-43"><a href="lesson-7-exploratory-analysis.html#cb14-43" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> mod_x,</span>
+<span id="cb14-44"><a href="lesson-7-exploratory-analysis.html#cb14-44" tabindex="-1"></a>               <span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="fu">predict</span>(mods<span class="sc">$</span>mod[[i]], </span>
+<span id="cb14-45"><a href="lesson-7-exploratory-analysis.html#cb14-45" tabindex="-1"></a>                             <span class="fu">list</span>(<span class="at">YEAR =</span>mod_x), </span>
+<span id="cb14-46"><a href="lesson-7-exploratory-analysis.html#cb14-46" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb14-47"><a href="lesson-7-exploratory-analysis.html#cb14-47" tabindex="-1"></a>               )</span>
+<span id="cb14-48"><a href="lesson-7-exploratory-analysis.html#cb14-48" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 <div id="visualize-1" class="section level5 unnumbered hasAnchor">
 <h5>Visualize<a href="lesson-7-exploratory-analysis.html#visualize-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="lesson-7-exploratory-analysis.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb16-2"><a href="lesson-7-exploratory-analysis.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="lesson-7-exploratory-analysis.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="lesson-7-exploratory-analysis.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb16-5"><a href="lesson-7-exploratory-analysis.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb16-6"><a href="lesson-7-exploratory-analysis.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="lesson-7-exploratory-analysis.html#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="lesson-7-exploratory-analysis.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="lesson-7-exploratory-analysis.html#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="lesson-7-exploratory-analysis.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
-<span id="cb16-11"><a href="lesson-7-exploratory-analysis.html#cb16-11" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
-<span id="cb16-12"><a href="lesson-7-exploratory-analysis.html#cb16-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb16-13"><a href="lesson-7-exploratory-analysis.html#cb16-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="lesson-7-exploratory-analysis.html#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb15-2"><a href="lesson-7-exploratory-analysis.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="lesson-7-exploratory-analysis.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="lesson-7-exploratory-analysis.html#cb15-4" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb15-5"><a href="lesson-7-exploratory-analysis.html#cb15-5" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb15-6"><a href="lesson-7-exploratory-analysis.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="lesson-7-exploratory-analysis.html#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="lesson-7-exploratory-analysis.html#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="lesson-7-exploratory-analysis.html#cb15-9" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="lesson-7-exploratory-analysis.html#cb15-10" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb15-11"><a href="lesson-7-exploratory-analysis.html#cb15-11" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb15-12"><a href="lesson-7-exploratory-analysis.html#cb15-12" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb15-13"><a href="lesson-7-exploratory-analysis.html#cb15-13" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="even-more-detail---maybe-remove" class="section level4 unnumbered hasAnchor">
 <h4>Even more DETAIL - maybe remove<a href="lesson-7-exploratory-analysis.html#even-more-detail---maybe-remove" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="lesson-7-exploratory-analysis.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="lesson-7-exploratory-analysis.html#cb18-1" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2"><a href="lesson-7-exploratory-analysis.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb18-3"><a href="lesson-7-exploratory-analysis.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
-<span id="cb18-4"><a href="lesson-7-exploratory-analysis.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="lesson-7-exploratory-analysis.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="lesson-7-exploratory-analysis.html#cb16-1" tabindex="-1"></a><span class="fu">ipums_view</span>(ddi)</span></code></pre></div>
+</details>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="lesson-7-exploratory-analysis.html#cb17-1" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4200</span>, <span class="dv">4210</span>, <span class="dv">4211</span>, <span class="dv">4220</span>, <span class="dv">4500</span>, <span class="dv">4510</span>, <span class="dv">4600</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="lesson-7-exploratory-analysis.html#cb17-2" tabindex="-1"></a>  </span>
+<span id="cb17-3"><a href="lesson-7-exploratory-analysis.html#cb17-3" tabindex="-1"></a>  <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">parent_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(parent_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb17-4"><a href="lesson-7-exploratory-analysis.html#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="lesson-7-exploratory-analysis.html#cb17-5" tabindex="-1"></a>  hhs <span class="ot">&lt;-</span> d2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RELATED <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4100</span>, <span class="dv">4110</span>, <span class="dv">4120</span>, <span class="dv">4130</span>, <span class="dv">4300</span>, <span class="dv">4301</span>, <span class="dv">4302</span>)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(YEAR, SERIAL) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(hhs, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;YEAR&quot;</span>, <span class="st">&quot;SERIAL&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">children_test=</span><span class="fu">if_else</span>(<span class="fu">is.na</span>(children_test),<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
+</details>
 <div id="parents-supporting-parents" class="section level5 unnumbered hasAnchor">
 <h5>Parents Supporting Parents<a href="lesson-7-exploratory-analysis.html#parents-supporting-parents" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="lesson-7-exploratory-analysis.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb19-2"><a href="lesson-7-exploratory-analysis.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="lesson-7-exploratory-analysis.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="lesson-7-exploratory-analysis.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb19-5"><a href="lesson-7-exploratory-analysis.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb19-6"><a href="lesson-7-exploratory-analysis.html#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="lesson-7-exploratory-analysis.html#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="lesson-7-exploratory-analysis.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_parent,<span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb19-9"><a href="lesson-7-exploratory-analysis.html#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="lesson-7-exploratory-analysis.html#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_parent, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb19-11"><a href="lesson-7-exploratory-analysis.html#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="lesson-7-exploratory-analysis.html#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
-<span id="cb19-13"><a href="lesson-7-exploratory-analysis.html#cb19-13" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_parent,</span>
-<span id="cb19-14"><a href="lesson-7-exploratory-analysis.html#cb19-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb19-15"><a href="lesson-7-exploratory-analysis.html#cb19-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">6</span>,.<span class="dv">8</span>))</span>
-<span id="cb19-16"><a href="lesson-7-exploratory-analysis.html#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-17"><a href="lesson-7-exploratory-analysis.html#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="lesson-7-exploratory-analysis.html#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
-<span id="cb19-19"><a href="lesson-7-exploratory-analysis.html#cb19-19" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
-<span id="cb19-20"><a href="lesson-7-exploratory-analysis.html#cb19-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb19-21"><a href="lesson-7-exploratory-analysis.html#cb19-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="lesson-7-exploratory-analysis.html#cb18-1" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb18-2"><a href="lesson-7-exploratory-analysis.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="lesson-7-exploratory-analysis.html#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="lesson-7-exploratory-analysis.html#cb18-4" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb18-5"><a href="lesson-7-exploratory-analysis.html#cb18-5" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb18-6"><a href="lesson-7-exploratory-analysis.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="lesson-7-exploratory-analysis.html#cb18-7" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="lesson-7-exploratory-analysis.html#cb18-8" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_parent,<span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb18-9"><a href="lesson-7-exploratory-analysis.html#cb18-9" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="lesson-7-exploratory-analysis.html#cb18-10" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_parent, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb18-11"><a href="lesson-7-exploratory-analysis.html#cb18-11" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="lesson-7-exploratory-analysis.html#cb18-12" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb18-13"><a href="lesson-7-exploratory-analysis.html#cb18-13" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_parent,</span>
+<span id="cb18-14"><a href="lesson-7-exploratory-analysis.html#cb18-14" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb18-15"><a href="lesson-7-exploratory-analysis.html#cb18-15" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">8</span>, .<span class="dv">6</span>,.<span class="dv">8</span>))</span>
+<span id="cb18-16"><a href="lesson-7-exploratory-analysis.html#cb18-16" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="lesson-7-exploratory-analysis.html#cb18-17" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="lesson-7-exploratory-analysis.html#cb18-18" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb18-19"><a href="lesson-7-exploratory-analysis.html#cb18-19" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb18-20"><a href="lesson-7-exploratory-analysis.html#cb18-20" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb18-21"><a href="lesson-7-exploratory-analysis.html#cb18-21" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+</details>
 </div>
 <div id="parents-supporting-extended-children" class="section level5 unnumbered hasAnchor">
 <h5>Parents Supporting (extended) children<a href="lesson-7-exploratory-analysis.html#parents-supporting-extended-children" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="lesson-7-exploratory-analysis.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
-<span id="cb20-2"><a href="lesson-7-exploratory-analysis.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="lesson-7-exploratory-analysis.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="lesson-7-exploratory-analysis.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb20-5"><a href="lesson-7-exploratory-analysis.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb20-6"><a href="lesson-7-exploratory-analysis.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="lesson-7-exploratory-analysis.html#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="lesson-7-exploratory-analysis.html#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="lesson-7-exploratory-analysis.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb20-10"><a href="lesson-7-exploratory-analysis.html#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="lesson-7-exploratory-analysis.html#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="lesson-7-exploratory-analysis.html#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb20-13"><a href="lesson-7-exploratory-analysis.html#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="lesson-7-exploratory-analysis.html#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-15"><a href="lesson-7-exploratory-analysis.html#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
-<span id="cb20-16"><a href="lesson-7-exploratory-analysis.html#cb20-16" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_children,</span>
-<span id="cb20-17"><a href="lesson-7-exploratory-analysis.html#cb20-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb20-18"><a href="lesson-7-exploratory-analysis.html#cb20-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span>
-<span id="cb20-19"><a href="lesson-7-exploratory-analysis.html#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-20"><a href="lesson-7-exploratory-analysis.html#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
-<span id="cb20-21"><a href="lesson-7-exploratory-analysis.html#cb20-21" aria-hidden="true" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
-<span id="cb20-22"><a href="lesson-7-exploratory-analysis.html#cb20-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
-<span id="cb20-23"><a href="lesson-7-exploratory-analysis.html#cb20-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="lesson-7-exploratory-analysis.html#cb19-1" tabindex="-1"></a><span class="fu">plot</span>(to_plot<span class="sc">$</span>YEAR, to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">6</span>,.<span class="dv">8</span>), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">25</span>), <span class="at">bg =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;pct of hhs with extended family&quot;</span>)</span>
+<span id="cb19-2"><a href="lesson-7-exploratory-analysis.html#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="lesson-7-exploratory-analysis.html#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="lesson-7-exploratory-analysis.html#cb19-4" tabindex="-1"></a><span class="fu">lines</span>(glm_hist_x,glm_hist_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb19-5"><a href="lesson-7-exploratory-analysis.html#cb19-5" tabindex="-1"></a><span class="fu">lines</span>(glm_mod_x, glm_mod_y, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>, .<span class="dv">3</span>, <span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb19-6"><a href="lesson-7-exploratory-analysis.html#cb19-6" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="lesson-7-exploratory-analysis.html#cb19-7" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="lesson-7-exploratory-analysis.html#cb19-8" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="lesson-7-exploratory-analysis.html#cb19-9" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>hist<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb19-10"><a href="lesson-7-exploratory-analysis.html#cb19-10" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="lesson-7-exploratory-analysis.html#cb19-11" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="lesson-7-exploratory-analysis.html#cb19-12" tabindex="-1"></a><span class="fu">lines</span>(mods_plots<span class="sc">$</span>mod<span class="sc">$</span>n_children, <span class="at">col =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb19-13"><a href="lesson-7-exploratory-analysis.html#cb19-13" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="lesson-7-exploratory-analysis.html#cb19-14" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="lesson-7-exploratory-analysis.html#cb19-15" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb19-16"><a href="lesson-7-exploratory-analysis.html#cb19-16" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_children,</span>
+<span id="cb19-17"><a href="lesson-7-exploratory-analysis.html#cb19-17" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb19-18"><a href="lesson-7-exploratory-analysis.html#cb19-18" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">55</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span>
+<span id="cb19-19"><a href="lesson-7-exploratory-analysis.html#cb19-19" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="lesson-7-exploratory-analysis.html#cb19-20" tabindex="-1"></a><span class="fu">points</span>(to_plot<span class="sc">$</span>YEAR,</span>
+<span id="cb19-21"><a href="lesson-7-exploratory-analysis.html#cb19-21" tabindex="-1"></a>       to_plot<span class="sc">$</span>pct<span class="sc">$</span>n_extended,</span>
+<span id="cb19-22"><a href="lesson-7-exploratory-analysis.html#cb19-22" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">23</span>,</span>
+<span id="cb19-23"><a href="lesson-7-exploratory-analysis.html#cb19-23" tabindex="-1"></a>       <span class="at">bg =</span> <span class="fu">hsv</span>(.<span class="dv">95</span>,.<span class="dv">6</span>,.<span class="dv">8</span>))</span></code></pre></div>
+</details>
 </div>
 </div>
 </div>

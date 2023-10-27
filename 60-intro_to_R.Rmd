@@ -1,5 +1,6 @@
 # Intro to R/Rstudio
 
+**NOTE:** Some of this can get summarized in the preface, but I think we should flesh out a whole lesson on it anyway. Supplemental/optional
 
 ## Engage
 

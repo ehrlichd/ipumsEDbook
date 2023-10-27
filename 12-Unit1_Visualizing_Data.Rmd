@@ -1,0 +1,56 @@
+# Visualizing Data
+
+**CURRENTLY JUST A COPY OF THE OLD 1.2, what is R; needs to be updated **
+
+## Engage
+
+show two data viz side by side and ask best for the data. 
+
+## Explore
+
+What do you want it to show vs what it shows. Maybe find a real data image from news that is clearly not good visualization
+
+## Explain - lecture/read
+
+### Single Variable Visualization
+
+
+* Histogram,
+* Box Plot, 
+* bar graphs,
+* pie charts, etc.
+
+### Multi variable visualizations
+
+ * scatter plots, line graphs
+ 
+ 
+### Data Tables
+
+
+
+## Elaborate
+
+### Making visualizations in R
+Histograms:
+Box Plots:
+Bar Graphs:
+Pie Charts:
+Scatter Plots:
+Line Graphs:
+Tables:
+More: ______
+
+
+
+### Which visualization is best for my data? Things to consider
+
+List things to consider for a visualization
+
+
+
+## Evaluate/Exercises
+
+Give them a data set and have them think through why they choose a specific visualization. Have the create and answer questions about it.
+We will go through the list of possible visualizations for the same data and explain which work, which dont, and why
+

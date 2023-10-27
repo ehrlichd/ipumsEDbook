@@ -18,11 +18,12 @@ site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
     split_by: section
+    code_folding: hide
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: ehrlichd/ipumsEDbook
 description: "This is an open source book. The output format for this example is bookdown::gitbook."
 ---
 
@@ -34,7 +35,7 @@ description: "This is an open source book. The output format for this example is
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
 <h5>
 | Open-source and customizable - 
-|    All materials available on [Github](https://github.com/ehrlichd/stats_book) 
+|    All materials available on [Github](https://github.com/ehrlichd/ipumsEDbook) 
 |
 | Made with open-source tools -
 |   [R](https://cran.r-project.org/), [RStudio](https://www.rstudio.com/products/rstudio/), [bookdown](https://bookdown.org/)  
@@ -44,6 +45,15 @@ An applied methods class for social scientists that uses real-world IPUMS data. 
 |
 
 </h5>
+
+
+
+### Why make this course {-}
+
+
+In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for both **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data is useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `lesson_template.Rmd` to tailor this course to their subject or interest.
+
+
 
 ### What is IPUMS {-}
 
@@ -73,13 +83,24 @@ students registered and share IPUMS data with them.
 
 
 
+### What is R {-}
+
+R is a programming language. Learning to use R is learning how to code, which teaches logic, and programmatic thinking.
+Since R is a *statistical* programming language, it has many built-in features to facilitate a range of mathematical calculations. 
+Since R is open-source, it is customizable and expandable! Base R refers to the core set of functions needed to run R. It's the bare-minimum to use R, available from CRAN. Base R can be expanded by downloading add-on R packages, either from CRAN, from a github.page, or by making your own!
+
+While you *can* interact with R by itself, pretty much everyone agrees the experience can be better. We reccomend using Rstudio, which provides a GUI and many additional handy features that make coding in R fun!
+
+In addition to a GUI, Rstudio is an Integrated Development Environment (IDE), which allowes a user to both write and run code, but also develop R packages ( or textbooks).
+
+**NOTE:** 
+ * Rstudio as an organization is now known/rebranding as posit
+ * Rstudio as a program is now known/will be produced as quarto
+   * This is because the quarto IDE supports python, javascript, etc in addition to R
 
 
-### Why make this course {-}
-
-
-In a world where information and data are increasingly accessible, it is of utmost importance for individuals to understand data science and the interpretation of data. We believe that education should be easily accessible and teaching resources should be freely available to aid in this endeavor. While we (DEE) may be slightly biased, we think IPUMS is a fantastic resource for both **Education** and **Research**. Real-world example datasets provide the bulk of the content for this course, providing an applied context we hope students (and instructors) will find engaging. We also know many instructors may be teaching across multiple disciplines, in large departments, or be the only “data person” at their institution. We think IPUMS data is useful to virtually any social science field. We provide some example lessons, and encourage instructors to develop their own, using our `lesson_template.Rmd` to tailor this course to their subject or interest.
-
+This book, and all analyses, are done using R. 
+**ADD IN CONTENT FROM CURRENT 1.2 - WHAT IS R**
 
 
 

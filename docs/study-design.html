@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.5 Study Design |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.5 Study Design |  Data Science for Social Scientists: An applied course using IPUMS data  " />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="1.5 Study Design |  Data Science for Social Scientists: An applied course using IPUMS data  " />
@@ -52,92 +52,10 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -159,6 +77,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-r"><i class="fa fa-check"></i>What is R</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
@@ -173,6 +92,9 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
 <li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
 <li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#to-do"><i class="fa fa-check"></i>TO DO</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#misc-ideas"><i class="fa fa-check"></i>MISC IDEAS</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#documentation"><i class="fa fa-check"></i>Documentation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="unit-1-the-basics.html"><a href="unit-1-the-basics.html"><i class="fa fa-check"></i>Unit 1: The Basics</a>
@@ -212,172 +134,172 @@ div.csl-indent {
 <li class="chapter" data-level="1.10" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.10</b> Elaborate</a></li>
 <li class="chapter" data-level="1.11" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.11</b> Evaluate/Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>2</b> Intro to R/Rstudio</a>
+<li class="chapter" data-level="2" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i><b>2</b> Describing Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#class-poll-who-has-used-r-before"><i class="fa fa-check"></i><b>2.1.1</b> Class poll: Who has used R before</a></li>
-<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#class-poll-who-has-done-any-kind-of-coding"><i class="fa fa-check"></i><b>2.1.2</b> Class poll: who has done ANY kind of coding</a></li>
-<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#interpreting-r"><i class="fa fa-check"></i><b>2.1.3</b> Interpreting R</a></li>
-</ul></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
-<li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a></li>
-<li class="chapter" data-level="2.4" data-path="some-basics.html"><a href="some-basics.html"><i class="fa fa-check"></i><b>2.4</b> Some Basics</a>
+<li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="some-basics.html"><a href="some-basics.html#r-vs-rstudio-vs-posit"><i class="fa fa-check"></i><b>2.4.1</b> R vs RStudio vs POSIT</a></li>
-<li class="chapter" data-level="2.4.2" data-path="some-basics.html"><a href="some-basics.html#we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data."><i class="fa fa-check"></i><b>2.4.2</b> We will use Rstudio, to write R scripts that will analyze and visualize data.</a></li>
-<li class="chapter" data-level="2.4.3" data-path="some-basics.html"><a href="some-basics.html#how-to-install"><i class="fa fa-check"></i><b>2.4.3</b> How to install</a></li>
+<li class="chapter" data-level="2.3.1" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-data---summary-statistics"><i class="fa fa-check"></i><b>2.3.1</b> How do we describe data - summary statistics</a></li>
+<li class="chapter" data-level="2.3.2" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-the-distribution-of-data"><i class="fa fa-check"></i><b>2.3.2</b> How do we describe the distribution of data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-manipulate-data"><i class="fa fa-check"></i><b>2.3.3</b> How do we manipulate data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i><b>2.5</b> Navigating RStudio</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#lots-of-panes-not-a-pain"><i class="fa fa-check"></i><b>2.5.1</b> Lots of Panes, not a pain!</a></li>
+<li class="chapter" data-level="2.4" data-path="normality.html"><a href="normality.html"><i class="fa fa-check"></i><b>2.4</b> Normality</a></li>
+<li class="chapter" data-level="2.5" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.5</b> Elaborate</a></li>
+<li class="chapter" data-level="2.6" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>2.6</b> Evaluate/Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="writing-r.html"><a href="writing-r.html"><i class="fa fa-check"></i><b>2.6</b> Writing R</a>
-<ul>
-<li class="chapter" data-level="2.6.1" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-console"><i class="fa fa-check"></i><b>2.6.1</b> Writing R in Console</a></li>
-<li class="chapter" data-level="2.6.2" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-scripts-the-4th-pane"><i class="fa fa-check"></i><b>2.6.2</b> Writing R in Scripts (The 4th pane)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.7" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html"><i class="fa fa-check"></i><b>2.7</b> Object-oriented progrmaing in R</a>
-<ul>
-<li class="chapter" data-level="2.7.1" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-objects"><i class="fa fa-check"></i><b>2.7.1</b> R objects</a></li>
-<li class="chapter" data-level="2.7.2" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-classes"><i class="fa fa-check"></i><b>2.7.2</b> R classes</a></li>
-<li class="chapter" data-level="2.7.3" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-projects"><i class="fa fa-check"></i><b>2.7.3</b> R Projects</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i><b>2.8</b> How to find help</a>
-<ul>
-<li class="chapter" data-level="2.8.1" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>2.8.1</b> In R</a></li>
-<li class="chapter" data-level="2.8.2" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>2.8.2</b> the web!</a></li>
-</ul></li>
-<li class="chapter" data-level="2.9" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.9</b> Elaborate</a></li>
-<li class="chapter" data-level="2.10" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>2.10</b> Evaluate/Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i><b>3</b> Describing Data</a>
+<li class="chapter" data-level="3" data-path="hypothesis-testing---comparison-and-correlations.html"><a href="hypothesis-testing---comparison-and-correlations.html"><i class="fa fa-check"></i><b>3</b> Hypothesis Testing - Comparison and Correlations</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="engage-2.html"><a href="engage-2.html"><i class="fa fa-check"></i><b>3.1</b> Engage</a></li>
 <li class="chapter" data-level="3.2" data-path="explore-2.html"><a href="explore-2.html"><i class="fa fa-check"></i><b>3.2</b> Explore</a></li>
 <li class="chapter" data-level="3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html"><i class="fa fa-check"></i><b>3.3</b> Explain - lecture/read</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-describe-data---summary-statistics"><i class="fa fa-check"></i><b>3.3.1</b> How do we describe data - summary statistics</a></li>
-<li class="chapter" data-level="3.3.2" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-describe-the-distribution-of-data"><i class="fa fa-check"></i><b>3.3.2</b> How do we describe the distribution of data</a></li>
-<li class="chapter" data-level="3.3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-manipulate-data"><i class="fa fa-check"></i><b>3.3.3</b> How do we manipulate data</a></li>
+<li class="chapter" data-level="3.3.1" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#why-2-groups"><i class="fa fa-check"></i><b>3.3.1</b> Why 2 groups?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#common-tests-to-compare-2-groups"><i class="fa fa-check"></i><b>3.3.2</b> Common tests to compare 2 groups</a></li>
+<li class="chapter" data-level="3.3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#correlations"><i class="fa fa-check"></i><b>3.3.3</b> Correlation(s)</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="normality.html"><a href="normality.html"><i class="fa fa-check"></i><b>3.4</b> Normality</a></li>
-<li class="chapter" data-level="3.5" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>3.5</b> Elaborate</a></li>
-<li class="chapter" data-level="3.6" data-path="evaluateexercises-2.html"><a href="evaluateexercises-2.html"><i class="fa fa-check"></i><b>3.6</b> Evaluate/Exercises</a></li>
+<li class="chapter" data-level="3.4" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>3.4</b> Elaborate</a></li>
+<li class="chapter" data-level="3.5" data-path="evaluateexercises-2.html"><a href="evaluateexercises-2.html"><i class="fa fa-check"></i><b>3.5</b> Evaluate/Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="hypothesis-testing---comparison-and-correlations.html"><a href="hypothesis-testing---comparison-and-correlations.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing - Comparison and Correlations</a>
+<li class="chapter" data-level="4" data-path="hypothesis-testing---anova-and-lm.html"><a href="hypothesis-testing---anova-and-lm.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing - ANOVA and LM</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="engage-3.html"><a href="engage-3.html"><i class="fa fa-check"></i><b>4.1</b> Engage</a></li>
 <li class="chapter" data-level="4.2" data-path="explore-3.html"><a href="explore-3.html"><i class="fa fa-check"></i><b>4.2</b> Explore</a></li>
-<li class="chapter" data-level="4.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html"><i class="fa fa-check"></i><b>4.3</b> Explain - lecture/read</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#why-2-groups"><i class="fa fa-check"></i><b>4.3.1</b> Why 2 groups?</a></li>
-<li class="chapter" data-level="4.3.2" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#common-tests-to-compare-2-groups"><i class="fa fa-check"></i><b>4.3.2</b> Common tests to compare 2 groups</a></li>
-<li class="chapter" data-level="4.3.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#correlations"><i class="fa fa-check"></i><b>4.3.3</b> Correlation(s)</a></li>
-</ul></li>
+<li class="chapter" data-level="4.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html"><i class="fa fa-check"></i><b>4.3</b> Explain - lecture/read</a></li>
 <li class="chapter" data-level="4.4" data-path="elaborate-3.html"><a href="elaborate-3.html"><i class="fa fa-check"></i><b>4.4</b> Elaborate</a></li>
 <li class="chapter" data-level="4.5" data-path="evaluateexercises-3.html"><a href="evaluateexercises-3.html"><i class="fa fa-check"></i><b>4.5</b> Evaluate/Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="hypothesis-testing---anova-and-lm.html"><a href="hypothesis-testing---anova-and-lm.html"><i class="fa fa-check"></i><b>5</b> Hypothesis Testing - ANOVA and LM</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="engage-4.html"><a href="engage-4.html"><i class="fa fa-check"></i><b>5.1</b> Engage</a></li>
-<li class="chapter" data-level="5.2" data-path="explore-4.html"><a href="explore-4.html"><i class="fa fa-check"></i><b>5.2</b> Explore</a></li>
-<li class="chapter" data-level="5.3" data-path="explain---lectureread-3.html"><a href="explain---lectureread-3.html"><i class="fa fa-check"></i><b>5.3</b> Explain - lecture/read</a></li>
-<li class="chapter" data-level="5.4" data-path="elaborate-4.html"><a href="elaborate-4.html"><i class="fa fa-check"></i><b>5.4</b> Elaborate</a></li>
-<li class="chapter" data-level="5.5" data-path="evaluateexercises-4.html"><a href="evaluateexercises-4.html"><i class="fa fa-check"></i><b>5.5</b> Evaluate/Exercises</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="unit-2-ipums.html"><a href="unit-2-ipums.html"><i class="fa fa-check"></i>Unit 2: IPUMS</a></li>
 <li class="chapter" data-level="" data-path="unit-3-independent-research.html"><a href="unit-3-independent-research.html"><i class="fa fa-check"></i>Unit 3: Independent Research</a></li>
-<li class="chapter" data-level="6" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>6</b> Example RMD code</a>
+<li class="chapter" data-level="5" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>5</b> Example RMD code</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="core.html"><a href="core.html"><i class="fa fa-check"></i><b>6.1</b> Core</a></li>
-<li class="chapter" data-level="6.2" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>6.2</b> Tips</a></li>
-<li class="chapter" data-level="6.3" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>6.3</b> Syntax</a>
+<li class="chapter" data-level="5.1" data-path="core.html"><a href="core.html"><i class="fa fa-check"></i><b>5.1</b> Core</a></li>
+<li class="chapter" data-level="5.2" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>5.2</b> Tips</a></li>
+<li class="chapter" data-level="5.3" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>5.3</b> Syntax</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="syntax.html"><a href="syntax.html#math"><i class="fa fa-check"></i><b>6.3.1</b> Math</a></li>
+<li class="chapter" data-level="5.3.1" data-path="syntax.html"><a href="syntax.html#math"><i class="fa fa-check"></i><b>5.3.1</b> Math</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="what-is-data-1.html"><a href="what-is-data-1.html"><i class="fa fa-check"></i><b>7</b> What <em>is</em> data?</a>
+<li class="chapter" data-level="6" data-path="what-is-data-1.html"><a href="what-is-data-1.html"><i class="fa fa-check"></i><b>6</b> What <em>is</em> data?</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="pov.html"><a href="pov.html"><i class="fa fa-check"></i><b>7.1</b> POV:</a>
+<li class="chapter" data-level="6.1" data-path="pov.html"><a href="pov.html"><i class="fa fa-check"></i><b>6.1</b> POV:</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="pov.html"><a href="pov.html#activity---collect-data-on-height"><i class="fa fa-check"></i><b>7.1.1</b> ACTIVITY - collect data on height</a></li>
-<li class="chapter" data-level="7.1.2" data-path="pov.html"><a href="pov.html#activity---collect-data-on-birth-month"><i class="fa fa-check"></i><b>7.1.2</b> ACTIVITY - collect data on birth month</a></li>
+<li class="chapter" data-level="6.1.1" data-path="pov.html"><a href="pov.html#activity---collect-data-on-height"><i class="fa fa-check"></i><b>6.1.1</b> ACTIVITY - collect data on height</a></li>
+<li class="chapter" data-level="6.1.2" data-path="pov.html"><a href="pov.html#activity---collect-data-on-birth-month"><i class="fa fa-check"></i><b>6.1.2</b> ACTIVITY - collect data on birth month</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="explore-5.html"><a href="explore-5.html"><i class="fa fa-check"></i><b>7.2</b> Explore</a>
+<li class="chapter" data-level="6.2" data-path="explore-4.html"><a href="explore-4.html"><i class="fa fa-check"></i><b>6.2</b> Explore</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="explore-5.html"><a href="explore-5.html#example-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Example Datasets</a></li>
-<li class="chapter" data-level="7.2.2" data-path="explore-5.html"><a href="explore-5.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>7.2.2</b> ACTIVITY - Calculate by hand</a></li>
+<li class="chapter" data-level="6.2.1" data-path="explore-4.html"><a href="explore-4.html#example-datasets"><i class="fa fa-check"></i><b>6.2.1</b> Example Datasets</a></li>
+<li class="chapter" data-level="6.2.2" data-path="explore-4.html"><a href="explore-4.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>6.2.2</b> ACTIVITY - Calculate by hand</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>7.3</b> Explain</a></li>
-<li class="chapter" data-level="7.4" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i><b>7.4</b> Ellaborate</a>
+<li class="chapter" data-level="6.3" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>6.3</b> Explain</a></li>
+<li class="chapter" data-level="6.4" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i><b>6.4</b> Ellaborate</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>7.4.1</b> So what is data?</a></li>
-<li class="chapter" data-level="7.4.2" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data"><i class="fa fa-check"></i><b>7.4.2</b> Collecting Data</a></li>
-<li class="chapter" data-level="7.4.3" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling"><i class="fa fa-check"></i><b>7.4.3</b> POPULATIONS AND SAMPLING</a></li>
+<li class="chapter" data-level="6.4.1" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>6.4.1</b> So what is data?</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data"><i class="fa fa-check"></i><b>6.4.2</b> Collecting Data</a></li>
+<li class="chapter" data-level="6.4.3" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling"><i class="fa fa-check"></i><b>6.4.3</b> POPULATIONS AND SAMPLING</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a>
+<li class="chapter" data-level="6.5" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>6.5</b> Evaluation</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>7.5.1</b> Review Questions</a></li>
-<li class="chapter" data-level="7.5.2" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>7.5.2</b> Exercises</a></li>
+<li class="chapter" data-level="6.5.1" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>6.5.1</b> Review Questions</a></li>
+<li class="chapter" data-level="6.5.2" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>6.5.2</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>8</b> Intro to R, data types, data structures</a>
+<li class="chapter" data-level="7" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>7</b> Intro to R, data types, data structures</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="engage-5.html"><a href="engage-5.html"><i class="fa fa-check"></i><b>8.1</b> Engage</a>
+<li class="chapter" data-level="7.1" data-path="engage-4.html"><a href="engage-4.html"><i class="fa fa-check"></i><b>7.1</b> Engage</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="engage-5.html"><a href="engage-5.html#r-vs-rstudio"><i class="fa fa-check"></i><b>8.1.1</b> R vs RStudio</a></li>
-<li class="chapter" data-level="8.1.2" data-path="engage-5.html"><a href="engage-5.html#orientation-to-rstudio"><i class="fa fa-check"></i><b>8.1.2</b> Orientation to RStudio</a></li>
+<li class="chapter" data-level="7.1.1" data-path="engage-4.html"><a href="engage-4.html#r-vs-rstudio"><i class="fa fa-check"></i><b>7.1.1</b> R vs RStudio</a></li>
+<li class="chapter" data-level="7.1.2" data-path="engage-4.html"><a href="engage-4.html#orientation-to-rstudio"><i class="fa fa-check"></i><b>7.1.2</b> Orientation to RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html"><i class="fa fa-check"></i><b>8.2</b> Explore - Interacting with R objects</a>
+<li class="chapter" data-level="7.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html"><i class="fa fa-check"></i><b>7.2</b> Explore - Interacting with R objects</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#load-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Load the Data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#inspect-the-data-1"><i class="fa fa-check"></i><b>8.2.2</b> Inspect the Data</a></li>
+<li class="chapter" data-level="7.2.1" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#load-the-data"><i class="fa fa-check"></i><b>7.2.1</b> Load the Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#inspect-the-data-1"><i class="fa fa-check"></i><b>7.2.2</b> Inspect the Data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html"><i class="fa fa-check"></i>Summarize Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#continuous-data"><i class="fa fa-check"></i>Continuous Data</a></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#all-in-summary"><i class="fa fa-check"></i>All in summary()</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i><b>8.3</b> Mode</a>
+<li class="chapter" data-level="7.3" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i><b>7.3</b> Mode</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>8.3.1</b> Mode Code</a></li>
-<li class="chapter" data-level="8.3.2" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>8.3.2</b> Mode Results</a></li>
+<li class="chapter" data-level="7.3.1" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>7.3.1</b> Mode Code</a></li>
+<li class="chapter" data-level="7.3.2" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>7.3.2</b> Mode Results</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8.4</b> Visualizing Data</a>
+<li class="chapter" data-level="7.4" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>7.4</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>8.4.1</b> Continuous Data - Boxplots</a></li>
-<li class="chapter" data-level="8.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---histograms"><i class="fa fa-check"></i><b>8.4.2</b> Continuous Data - Histograms</a></li>
-<li class="chapter" data-level="8.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#categorical-data"><i class="fa fa-check"></i><b>8.4.3</b> Categorical Data</a></li>
+<li class="chapter" data-level="7.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>7.4.1</b> Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---histograms"><i class="fa fa-check"></i><b>7.4.2</b> Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#categorical-data"><i class="fa fa-check"></i><b>7.4.3</b> Categorical Data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i><b>9</b> Comparing Data</a>
+<li class="chapter" data-level="8" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i><b>8</b> Comparing Data</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>9.1</b> Data Distributions</a>
+<li class="chapter" data-level="8.1" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>8.1</b> Data Distributions</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>9.1.1</b> Normal Distributions</a></li>
-<li class="chapter" data-level="9.1.2" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>9.1.2</b> What <em>is</em> normal?</a></li>
-<li class="chapter" data-level="9.1.3" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>9.1.3</b> Skews</a></li>
+<li class="chapter" data-level="8.1.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>8.1.1</b> Normal Distributions</a></li>
+<li class="chapter" data-level="8.1.2" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>8.1.2</b> What <em>is</em> normal?</a></li>
+<li class="chapter" data-level="8.1.3" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>8.1.3</b> Skews</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html"><i class="fa fa-check"></i><b>9.2</b> Statisitcal testing of simple data sets</a>
+<li class="chapter" data-level="8.2" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html"><i class="fa fa-check"></i><b>8.2</b> Statisitcal testing of simple data sets</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>9.2.1</b> t-tests, ANOVA, chi2</a></li>
+<li class="chapter" data-level="8.2.1" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>8.2.1</b> t-tests, ANOVA, chi2</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i><b>9.3</b> Relationships between variables in simple data sets</a>
+<li class="chapter" data-level="8.3" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i><b>8.3</b> Relationships between variables in simple data sets</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>9.3.1</b> Correlation, Linear Regression</a></li>
-<li class="chapter" data-level="9.3.2" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>9.3.2</b> Genearlized Linear Model</a></li>
+<li class="chapter" data-level="8.3.1" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>8.3.1</b> Correlation, Linear Regression</a></li>
+<li class="chapter" data-level="8.3.2" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>8.3.2</b> Genearlized Linear Model</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="intro-to-rrstudio-1.html"><a href="intro-to-rrstudio-1.html"><i class="fa fa-check"></i><b>9.4</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="9.5" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>9.5</b> Reading Data / Distributions</a>
+<li class="chapter" data-level="8.4" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>8.4</b> Intro to R/RStudio</a></li>
+<li class="chapter" data-level="8.5" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>8.5</b> Reading Data / Distributions</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>9.5.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
+<li class="chapter" data-level="8.5.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>8.5.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="9" data-path="intro-to-rrstudio-1.html"><a href="intro-to-rrstudio-1.html"><i class="fa fa-check"></i><b>9</b> Intro to R/Rstudio</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="engage-5.html"><a href="engage-5.html"><i class="fa fa-check"></i><b>9.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="engage-5.html"><a href="engage-5.html#class-poll-who-has-used-r-before"><i class="fa fa-check"></i><b>9.1.1</b> Class poll: Who has used R before</a></li>
+<li class="chapter" data-level="9.1.2" data-path="engage-5.html"><a href="engage-5.html#class-poll-who-has-done-any-kind-of-coding"><i class="fa fa-check"></i><b>9.1.2</b> Class poll: who has done ANY kind of coding</a></li>
+<li class="chapter" data-level="9.1.3" data-path="engage-5.html"><a href="engage-5.html#interpreting-r"><i class="fa fa-check"></i><b>9.1.3</b> Interpreting R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="explore-5.html"><a href="explore-5.html"><i class="fa fa-check"></i><b>9.2</b> Explore</a></li>
+<li class="chapter" data-level="9.3" data-path="explain---lectureread-3.html"><a href="explain---lectureread-3.html"><i class="fa fa-check"></i><b>9.3</b> Explain - lecture/read</a></li>
+<li class="chapter" data-level="9.4" data-path="some-basics.html"><a href="some-basics.html"><i class="fa fa-check"></i><b>9.4</b> Some Basics</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="some-basics.html"><a href="some-basics.html#r-vs-rstudio-vs-posit"><i class="fa fa-check"></i><b>9.4.1</b> R vs RStudio vs POSIT</a></li>
+<li class="chapter" data-level="9.4.2" data-path="some-basics.html"><a href="some-basics.html#we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data."><i class="fa fa-check"></i><b>9.4.2</b> We will use Rstudio, to write R scripts that will analyze and visualize data.</a></li>
+<li class="chapter" data-level="9.4.3" data-path="some-basics.html"><a href="some-basics.html#how-to-install"><i class="fa fa-check"></i><b>9.4.3</b> How to install</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i><b>9.5</b> Navigating RStudio</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#lots-of-panes-not-a-pain"><i class="fa fa-check"></i><b>9.5.1</b> Lots of Panes, not a pain!</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="writing-r.html"><a href="writing-r.html"><i class="fa fa-check"></i><b>9.6</b> Writing R</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-console"><i class="fa fa-check"></i><b>9.6.1</b> Writing R in Console</a></li>
+<li class="chapter" data-level="9.6.2" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-scripts-the-4th-pane"><i class="fa fa-check"></i><b>9.6.2</b> Writing R in Scripts (The 4th pane)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html"><i class="fa fa-check"></i><b>9.7</b> Object-oriented progrmaing in R</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-objects"><i class="fa fa-check"></i><b>9.7.1</b> R objects</a></li>
+<li class="chapter" data-level="9.7.2" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-classes"><i class="fa fa-check"></i><b>9.7.2</b> R classes</a></li>
+<li class="chapter" data-level="9.7.3" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-projects"><i class="fa fa-check"></i><b>9.7.3</b> R Projects</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i><b>9.8</b> How to find help</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>9.8.1</b> In R</a></li>
+<li class="chapter" data-level="9.8.2" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>9.8.2</b> the web!</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="elaborate-4.html"><a href="elaborate-4.html"><i class="fa fa-check"></i><b>9.9</b> Elaborate</a></li>
+<li class="chapter" data-level="9.10" data-path="evaluateexercises-4.html"><a href="evaluateexercises-4.html"><i class="fa fa-check"></i><b>9.10</b> Evaluate/Exercises</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to the github repo.</a></li>
 
@@ -469,20 +391,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

@@ -18,40 +18,34 @@ Pose questions to explore
 
 
 
-## Explain - "what ARE data??"
+## Explain 
+
+### WHAT ARE DATA
 
 Data are defined as “facts and statistics collected together for reference or analysis.”1 As seen in Figure 1.1, there are two types of data: quantitative and qualitative. Quantitative data are able to be expressed in numerical format and are countable. These data are either discrete or continuous where discrete data uses numeric bins. For example, we use our age as discrete quantitative data, we round our age to the previous year (eg., 20, 21, 22). Continuous data does not use bins, but rather includes all of the fractions between two whole numbers. An example could be most physical measures like height, weight, the speed at which an individual runs.
 Qualitative data describe characteristics or categories and can be broken down into two categories, nominal or ordinal. Nominal data have no inherent ordering but it can be categorized. Examples include country or origin, gender, hair color, race, etc. Ordinal data can both be categorized and ordered (e.g., first, second, and third place is a race).
 Going back to our hypothesis of male height on campus, heights are continuous, qualitative data. It is difficult for people to report their specific height and you assume that most individuals will report it rounded to the closest inch. This makes the data you will actually use, discrete quantitative data.
 
 
-## “what do we DO with data”
 
-generally compare data and visualize it 
-
-### examples from recent academic articles
-
-article graphs, citations, instructors research, etc
-
-### examples from non-academic
-
-customer satisfaction; workplace/department culture; r&D; 
-
-
-### but really it depends on study design
+> *Fun fact: A single data point is called a datum which is Latin for “something given”. The word data can be either singular or plural depending on how you use it. It can be used as a mass noun the same way we discuss sand on a beach or hair on our head. However, in science we are usually referring to multiple datums within a data set making it a plural noun. Therefore, data is cool and data are cool!*
+>
+> --- Sources
 
 
 
-## Study Design
+### COLLECTING DATA
 
-### Hypothesis/Research Question
-
-###  Or Not! ie exploratory/ “get to know you”
+The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These types of data include data found in published articles, books, journals, biographies, and government records like the US Census.
 
 
-## Study sample
+Once compiled, you now have a data set which is composed of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
 
-### "HOW do we get data??"
+
+The US CDC data is secondary, but you are collecting height data yourself in class as a comparison. The survey or questionnaire you use on your classmates is primary data. Each individual is an observation and the variable of interest is height.
+
+
+#### "HOW do we get data??"
 
 The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These type of data include data found in published articles, books, journals, biographies, and government records like the US Census.
 Once compiled, you now have a data set which is comprised of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
@@ -60,33 +54,55 @@ The US CDC data is secondary, but you are collecting height data yourself in cla
 
 
 
-## Study Design Considerations - Sampling
+#### TYPES OF DATA
 
-### Sample vs Population
+There are a lot of different ways to record observations. Its important to choose an appropriate format to record your data. Some pretty broad categories are:
+
+* Yes/No
+* Tallies
+* Categorization
+* Measurments
+* Open-ended text
+
+If you were to ask your friend: "What is your favorite food?" You would not expect
+them to give an answer of "yes" or "no". Asking an open-ended question often/always prompts an open-ended response. This can be informative and inclusive, allowing respondents to answer with exactly the answer they feel best answers the question. However, it can make analyzing and drawing interpretations from the data dificult to impossible!
+
+If instead, we ask "Is your favorite food pizza?" We expect a yes/no answer. Asking this question of 100 people, we can easily answer the question "What percentage of people's favorite food is pizza?"
+
+##### Continuous vs categorical
+
+One of the biggest differences in classifying data is based on the uniuque values we expect from the data. Continuous variables are...
+
+Categorical variables can be ordered (EG Factors, ordinations) or they can be undoredered (EG, categories)
+
+###  POPULATIONS AND SAMPLING
+
+
+**Random Sampling:** It is a sampling method in which all the items have an equal chance of being selected and the individuals who are selected are just like the ones who are not selected
+
+**Stratified Random Sampling:** It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
+
+
+Sampling strategy can lead to bias. **Statistical bias** is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men’s basketball team, your results would have been biased as basketball players are taller on average.
+
+
+
+#### Sample vs Population
 
 Is the study sample a representative sample of the population? 
 
-### How to draw samples
+#### How to draw samples
 
 Random Sampling: It is a sampling method in which all the items have an equal chance of being selected and the individuals who are selected are just like the ones who are not selected
 Stratified Random Sampling: It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
 Sampling strategy can lead to bias. Statistical bias is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men’s basketball team, your results would have been biased as basketball players are taller on average.
 
 
-## Study Design Considerations - Data
 
-### Types of Data
 
-Yes/No
 
-Continuous vs categorical
 
-within categorical:
- ordered (factor, ordinal) vs unordered (categories)
-
-Free response
-
-## Study Design Considerantions - Bias 
+### Study Design Considerantions - Bias 
 
 is there bias in the sampling?
 is there bias in the data types collected?
@@ -102,40 +118,334 @@ we group categories a,b,c to make new groups for analysis.
 
 In doing so, we limit our interpreations to _____
 
+
+
+### EXPLORATORY DATA ANALYSIS
+
+
+The first step in understanding and interpreting our data is called an exploratory data analysis. We will use a few measurements to quickly look at the data and then we can use some simple graphing techniques to turn our data into visualizations. The first three M’s, you are likely familiar with and are often referred to as measures of central tendency: Mean, Median, and Mode. 
+These go along with range, outliers and sample size. 
+
+
+  * Mean
+  * Median
+  * Mode
+  * Outlier
+  * Range
+
+> What is a statistic?
+
+
+### Exploring height
+
+If you do not have class data on height, we will be using the following simple dataset of 5 individuals:
+
+* Can you describe what is happening in the following `codechunk`??
+* What do `person, height` represent in relationship to `ex_height`??
+ 
+<details>
+ <summary> *Click to show answer* </summary>
+  <p> 
+    We **create** the **R object** `ex_height` using the **assignment operator** `<-`
+    `ex_height` is a **data.frame**, a table, with two columns: `person` and `height` <br>
+    `person, height` are the two columns, or variables, of `ex_height`
+  </p>
+</details>
+
+ 
+```{r}
+
+ex_height <- data.frame(
+  "person" = paste("Ind", 
+                   c("a", "b","c","d","e"), 
+                   sep = "_"),
+  "height" = c(5.5, 5, 6, 5.25, 5)
+)
+
+
+```
+
+
+
+```{r, results = 'asis'}
+
+
+knitr::kable(ex_height)
+```
+
+
+### Mean height
+
+You probably already know this one. The (arithmatic) mean is calculated by adding all **values** together, and dividing by the **number of observations**. For our dataset, we add all 5 heights together and divide by the number of individuals (5):
+
+$\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}$
+$\frac{26.75}{5}$
+$5.35$
+
+In `r`, we can write this out "by hand." Since `r` is a **statistical programming language**, r recognizes basic mathematical expressions. We can `code` the following to calcualte the mean:
+
+
+```{r}
+
+(5.5 + 5 + 6 + 5.25 + 5)/5
+
+```
+
+
+
+Since `r` is an **object-oriented programming language**, we don't need to write out individual numbers for each calculation. Instead, we can refer to the `ex_height` **object**. Since `ex_height` is a **data.frame**, we can refer to it variables by name with the `$` operator. We also take advantage of some of the built-in mathematical functions of `r`: `sum(), length()`
+
+```{r}
+
+sum(ex_height$height)/length(ex_height$person)
+
+```
+
+### Median height
+
+The **median** is calculated by ordering all values from small to large. If there are an **odd** numberof values, there will be a single value at the middle. 
+
+Our original data:
+$ 5.5, 5, 6,  5.25,  5$
+
+Our data re-ordered from small to large:
+$ 5, 5, 5.25, 5.5, 6 $ 
+
+$ ~~5, 5,~~ 5.25, ~~5.5, 6 ~~ $ 
+
+~~5, 5,~~ 5.25, ~~5.5, 6~~
+
+
+If we had an even number of values, we would wind up with two "middle values", in which case we take the mean of these two. 
+
+If we had one more value, let's say `5.75`, we wind up with both `5.25` and `5.5` as middle values. 
+```{r}
+
+5
+5
+`5.25`
+`5.5`
+5.75
+6
+
+```
+
+The median is the **mean** of these two values:
+
+$\frac{5.25+5.5}{2}$
+$5.375$
+
+
+In a small dataset, it's easy to pick out the middle value. Fortunately, there's an `r` function for this as well:
+
+
+```{r}
+
+## With 5 Individuals 
+median(ex_height$height)
+
+## With 6 individuals
+median(c(ex_height$height, 5.75))
+```
+
+> Did you notice the `c()` function above? What does it do?
+
+
+### Modal height
+
+The **mode** is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a `height` of `5`, and all other values are repsented by just one person. There's actually no build-in `r` function to calculate the **mode**...
+
+
+But don't worry, there are functions that let you decide the **mode** and more!! A very useful function is `table()`, used to make **counts** of values. In a small dataset, we see that two individuals have a height of 5. Our **mode** is 5!
+
+```{r}
+
+table(ex_height$height)
+
+```
+
+
+
+### Range
+
+The **range** of the data is two numbers, the lowest, and highest values within the data:
+
+```{r}
+
+range(ex_height$height)
+
+```
+
+
+Though, if you want just the **minimum** or **maximum** value, you can use `min()` or `max():
+
+```{r}
+
+min(ex_height$height)
+max(ex_height$height)
+```
+
+
+
+
+### Outliers
+
+So far, some of these examples may have so obvious you may be thinking: *what's the point??*
+
+For a slightly more practical demonstration, try out the above functions on your `class_data`. If you don't have class data available you can access the 
+
+
 ## Elaborate
 
+### Your Turn! (*would we have done this before or is this the first time??*)
 
-**Consider reframing the explanation to quetions**
+For this example, you can use data collected in class, or the example dataset available in `ipumsED` R package: `class_ipums_data`
 
-So we are going to start off this class with a Study
-Our study will not have an explicit research question, but rather be a 
-“get to know you” survey of this class.
+For in-class *survey* data, you are looking at the age of each individual in class. 
+For the IPUMS data, you are looking at age as recorded in the American Community Survey
+([ACS](https://www.census.gov/programs-surveys/acs)). This survey is fielded 
+annually. It contains more detailed questions that supplement the decennial census. **Raw data** are available directly from the [US Census Bureau](https://www.census.gov/programs-surveys/acs/data.html). However, we will be working with [IPUMS data](https://ipums.org), **harmonzied.**. This process standardizes variable coding schema across all samples within the IPUMS dataset. IPUMS makes it easy for researchers to conduct analysis across time and space. 
 
-We’re going to collect primary data by asking all students to complete a survey. 
-We plan to describe the data and from there may begin toform specific hypotheses to test
-Work through the same process/analysis on new data. Either a different 
-variable(s) in the same sample, or applying/demonstrating the phenomenon 
-using real-world data/examples.
+> IPUMS began as a PhD project digitizing historic US census data and reconciling
+> it with the coding schema of the current US Census (1990s). IPUMS-International grew out
+> of this by employing our harmonization practices on Census samples from other countries.
+> IPUMS has partnerships with over 100 countries and is working on building partnerships with the 
+> remainng **82** countries!
+>
+> Partnerships with IPUMS may look slightly different for each country, but they always
+> involve IPUMS commitment to being responsible stewards of the partner-country's data.
+> Our goal is to make data as open as possible, while maintaining responsible disclosure risk controls.
 
 
-* Reiterate/reinforc the process/task of the lesson
-* Does this fit in to other steps/analysis
-* does this fit in to other thematic topics?
+Example data used throughout this book come from IPUMS-International so that values may be contextualized for a readers interested in one of the 103 countries that have data sharing agreements with IPUMS.
 
-(Possibly) Build on the first one to show variation.
-  * Other ways to represent the phenomenon/data
-    + tabular
-    + visually
+
+
+Write and `Rscript` that reads in your chosen dataset, and calculates the 
+following statistics:
+
+* `mean()`
+* `meadian()`
+* **mode**
+* `range()`
+
+In addition, include at least one plot or table and use it to discuss if your dataset contains any outliers. What criteria are you using to define an outlier?
+
+
+> Where's the `mode()`?? As a statistical programing language, R was developed with
+> built-in functions for `mean`, `median`, and `range`. But `mode` wasn't important
+> enough to warrant its own function. In part, because it's so easy to code, even you
+> can do it!
+>
+> Yep, we're serious!
 
 
 
 ## Evaluate/Exercises
 
-Students complete Short class survey:
-Height, Birth Year, Birth Month, Birth Day, academic major/interest, favorite food, favorite color, handedness, hours slept (avg).
 
-Reflect on survey, are there other variables students want to add??
-Reflect: How do you plan to use data in your college/grad work. Will you collect primary data? Will you perform a secondary analysis of data? A meta-analysis of previously published studies?
+### Context:
+
+Using the data set from Section 1.4 and the R statistics you produced, 
+answer the following questions about our data set.
+ 
+### Questions:
+
+  
+**Are the data quantitative or nominal?**
+
+<details>
+ <summary> *Click to show answer* </summary>
+  <p> Age data is quantitative.
+  </p>
+</details>
 
 
+
+**Are the data discrete or continuous?**
+
+<details>
+  <summary> *Click to show answer* </summary>
+  <p> Age data is could be continuous depending on how you measure and record it, 
+  but the way we generally talk about 'Years of Age' is actually discrete.
+  </p>
+</details>
+
+
+**Is the dataset primary or secondary data?**
+
+<details>
+  <summary> *Click to show answer* </summary>
+  <p> That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.</p>
+</details>
+
+
+
+**What sampling method was used?**
+
+<details>
+ <summary> *Click to show answer* </summary>
+  <p> Age data is quantitative.
+  </p>
+</details>
+
+
+
+
+**Does any statistical bias exist?**
+
+<details>
+ <summary> *Click to show answer* </summary>
+  <p> Age data is quantitative.
+  </p>
+</details>
+
+
+
+
+**Which measure of central tendency is best to describe this data? Mean, Median or Mode.**
+
+<details>
+ <summary> *Click to show answer* </summary>
+  <p> Age data is quantitative.
+  </p>
+</details>
+
+
+
+## GLOSSARY
+
+
+Quantitative Data
+Discrete Data
+Continuous data:
+Nominal Data: 
+Ordinal Data:
+Primary Data:
+Secondary Data:
+Data Set:
+Observation:
+Variable:
+Random Sampling:
+Stratified Random Sampling:
+Statistical Bias:
+Mean:
+Median: 
+Mode:
+Range:
+Outlier:
+Statistic:
+Sample Size:
+
+
+
+## Additional Content
+
+#### examples from recent academic articles
+
+article graphs, citations, instructors research, etc
+
+#### examples from non-academic
+
+customer satisfaction; workplace/department culture; r&D; 
 
