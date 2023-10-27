@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9.1 Data Distributions |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9.1 Data Distributions |  Data Science for Social Scientists: An applied course using IPUMS data  " />
   <meta property="og:type" content="book" />
@@ -431,21 +431,21 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb73-6"><a href="data-distributions.html#cb73-6" tabindex="-1"></a></span>
 <span id="cb73-7"><a href="data-distributions.html#cb73-7" tabindex="-1"></a>normal_dist</span></code></pre></div>
 </details>
-<pre><code>##   [1] 10.940082  9.986373 10.338317 11.888184  9.605808 10.300936 10.125541
-##   [8] 10.475295 10.949892  8.246087 10.742317  9.531176  8.864209 10.915505
-##  [15]  9.878262  9.957846  9.870961 11.288366 11.450557 10.355953  9.565525
-##  [22]  9.079231 10.102419 10.278482 11.342112 10.080806  9.166562  8.829335
-##  [29]  9.303705 10.360598 10.054221 10.533864 10.149061 10.158971 10.579556
-##  [36] 11.130508 12.023645 10.455836  9.973870  8.085424  9.765375 11.162961
-##  [43] 10.068804  9.886964 10.201305 10.972879  9.541582  8.193021  9.958643
-##  [50]  7.892269  9.301077 10.596770 10.386808 10.324958  8.798587 10.579076
-##  [57]  9.989175  9.956437 10.360046  9.727435 10.870550 10.914661 11.001659
-##  [64]  9.991991  9.487856 10.405006  9.863313  9.618061  9.605519 11.654320
-##  [71]  9.922419  9.196158 10.129750  9.984446  8.873785  7.467006  8.852460
-##  [78]  9.948810 10.934099  8.431481 11.388709  9.344922 10.543179 10.944178
-##  [85]  7.789398  9.835934  9.850758 10.918317  9.087522 10.185856 10.025604
-##  [92]  8.143787 10.910822  8.798803 10.982528 11.578188 11.088730  9.086830
-##  [99] 10.241613 10.739509</code></pre>
+<pre><code>##   [1] 11.115273 11.550922  9.293895  9.179139  9.217900 10.553469  9.396580
+##   [8]  8.414364  9.980840 10.320621  9.285650  9.148621 10.682962  9.439709
+##  [15] 10.285458 10.016215 10.210436  9.927059  9.567944 11.581131 10.176992
+##  [22] 10.798204  9.886324 10.414379 10.785039 11.040334  9.226104 10.429032
+##  [29]  9.718736  9.440581  9.120032 10.537826  9.143465 10.780867 12.009174
+##  [36] 10.893307  9.099485  8.728350 10.289233  9.663881 11.238742 10.858387
+##  [43] 11.801688  9.710946  9.797556 10.566517 10.624872 10.278108 12.139453
+##  [50] 10.541094 10.919697  9.901862 10.302357 10.338353  9.055066 11.698114
+##  [57] 10.679092 11.642035  8.800815  9.959223  9.775619  9.428860  8.408072
+##  [64] 10.867580 12.247706  9.643760  8.791532 10.467016  7.622723 10.716653
+##  [71]  9.683083  9.702219  9.405278 11.585239 10.354104  8.102502 10.610409
+##  [78] 11.271089 10.310418  9.369043 11.324441  9.555536  8.214232 10.440503
+##  [85]  8.621999 10.468164 10.072254 10.295015 11.128993 10.512336  8.648654
+##  [92]  9.260867  9.759799 11.996121  9.493186  8.888337 11.602989  9.165066
+##  [99] 10.591752 12.506652</code></pre>
 <p>Another better way to look at data would be to <strong>visualize</strong> or <strong>plot</strong> it. One way to to that is with a <strong>histogram</strong>, which groups <strong>continuous values</strong> into <strong>bins</strong>, then plots the <strong>frequency</strong> for each bin.</p>
 <p>In R, we use the <code>hist()</code> function to plot a histogram of data. We can (try to) control the number of bins with the <code>breaks</code> argument, but note that it doesn’t always match up. The <code>hist()</code> function will adjust based on the distribution of the data.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -468,7 +468,7 @@ An applied course using IPUMS data <br></p></a>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-distributions.html#cb77-1" tabindex="-1"></a>tab_normal_dist</span></code></pre></div>
 </details>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.467   9.560  10.075  10.033  10.632  12.024</code></pre>
+##   7.623   9.403  10.244  10.131  10.733  12.507</code></pre>
 <p>Mean, standard deviation</p>
 </div>
 <div id="meaningful-comparisons" class="section level4 hasAnchor" number="9.1.2.2">
@@ -509,9 +509,9 @@ An applied course using IPUMS data <br></p></a>
 <span id="cb83-3"><a href="data-distributions.html#cb83-3" tabindex="-1"></a></span>
 <span id="cb83-4"><a href="data-distributions.html#cb83-4" tabindex="-1"></a>norm_comp_tab</span></code></pre></div>
 </details>
-<pre><code>##           Min. 1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,]  64.47697 92.9841 99.92792 99.82809 106.63574 128.9769
-## [2,] -30.46525 43.2340 59.97307 60.58128  77.81369 137.4682</code></pre>
+<pre><code>##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
+## [1,]  67.84418 93.45611 100.18330 99.79821 105.84879 129.7621
+## [2,] -32.53124 41.96640  58.00647 58.70090  75.56396 142.7094</code></pre>
 <p>Making the table a little nicer. Also an example of <strong>conditional programming</strong>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-distributions.html#cb85-1" tabindex="-1"></a><span class="fu">rownames</span>(norm_comp_tab) <span class="do">## they&#39;re null</span></span></code></pre></div>
@@ -541,21 +541,21 @@ An applied course using IPUMS data <br></p></a>
 <tbody>
 <tr class="odd">
 <td align="left">data1</td>
-<td align="right">64.47697</td>
-<td align="right">92.9841</td>
-<td align="right">99.92792</td>
-<td align="right">99.82809</td>
-<td align="right">106.63574</td>
-<td align="right">128.9769</td>
+<td align="right">67.84418</td>
+<td align="right">93.45611</td>
+<td align="right">100.18330</td>
+<td align="right">99.79821</td>
+<td align="right">105.84879</td>
+<td align="right">129.7621</td>
 </tr>
 <tr class="even">
 <td align="left">data2</td>
-<td align="right">-30.46525</td>
-<td align="right">43.2340</td>
-<td align="right">59.97307</td>
-<td align="right">60.58128</td>
-<td align="right">77.81369</td>
-<td align="right">137.4682</td>
+<td align="right">-32.53124</td>
+<td align="right">41.96640</td>
+<td align="right">58.00647</td>
+<td align="right">58.70090</td>
+<td align="right">75.56396</td>
+<td align="right">142.7094</td>
 </tr>
 </tbody>
 </table>

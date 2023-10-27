@@ -99,6 +99,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{soul}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -123,7 +124,7 @@ An applied course using IPUMS data }
 \author{\textbf{Developed by:}\\
 \hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
 \hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-10-23\\
+\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2023-10-27\\
 \strut \\
 \includegraphics[width=0.5\textwidth,height=\textheight]{ipums_i_logo.jpg}\\
 \includegraphics[width=0.5\textwidth,height=\textheight]{clemson_logo.png}\\
@@ -713,6 +714,44 @@ Once compiled, you now have a data set which is composed of observations and var
 
 The US CDC data is secondary, but you are collecting height data yourself in class as a comparison. The survey or questionnaire you use on your classmates is primary data. Each individual is an observation and the variable of interest is height.
 
+\hypertarget{how-do-we-get-data}{%
+\subsubsection{``HOW do we get data??''}\label{how-do-we-get-data}}
+
+The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These type of data include data found in published articles, books, journals, biographies, and government records like the US Census.
+Once compiled, you now have a data set which is comprised of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
+The US CDC data is secondary, but you are collecting height data yourself in class as a comparison. The survey or questionnaire you use on your classmates is primary data. Each individual is an observation and the variable of interest is height.
+
+\hypertarget{types-of-data}{%
+\subsubsection{TYPES OF DATA}\label{types-of-data}}
+
+There are a lot of different ways to record observations. Its important to choose an appropriate format to record your data. Some pretty broad categories are:
+
+\begin{itemize}
+\tightlist
+\item
+  Yes/No
+\item
+  Tallies
+\item
+  Categorization
+\item
+  Measurments
+\item
+  Open-ended text
+\end{itemize}
+
+If you were to ask your friend: ``What is your favorite food?'' You would not expect
+them to give an answer of ``yes'' or ``no''. Asking an open-ended question often/always prompts an open-ended response. This can be informative and inclusive, allowing respondents to answer with exactly the answer they feel best answers the question. However, it can make analyzing and drawing interpretations from the data dificult to impossible!
+
+If instead, we ask ``Is your favorite food pizza?'' We expect a yes/no answer. Asking this question of 100 people, we can easily answer the question ``What percentage of people's favorite food is pizza?''
+
+\hypertarget{continuous-vs-categorical}{%
+\paragraph{Continuous vs categorical}\label{continuous-vs-categorical}}
+
+One of the biggest differences in classifying data is based on the uniuque values we expect from the data. Continuous variables are\ldots{}
+
+Categorical variables can be ordered (EG Factors, ordinations) or they can be undoredered (EG, categories)
+
 \hypertarget{populations-and-sampling}{%
 \subsection{POPULATIONS AND SAMPLING}\label{populations-and-sampling}}
 
@@ -721,62 +760,6 @@ The US CDC data is secondary, but you are collecting height data yourself in cla
 \textbf{Stratified Random Sampling:} It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
 
 Sampling strategy can lead to bias. \textbf{Statistical bias} is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men's basketball team, your results would have been biased as basketball players are taller on average.
-
-\hypertarget{exploratory-data-analysis}{%
-\subsection{EXPLORATORY DATA ANALYSIS}\label{exploratory-data-analysis}}
-
-The first step in understanding and interpreting our data is called an exploratory data analysis. We will use a few measurements to quickly look at the data and then we can use some simple graphing techniques to turn our data into visualizations. The first three M's, you are likely familiar with and are often referred to as measures of central tendency: Mean, Median, and Mode.
-These go along with range, outliers and sample size.
-
-\begin{quote}
-What is a statistic?
-\end{quote}
-
-\begin{itemize}
-\tightlist
-\item
-  Mean
-\item
-  Median
-\item
-  Mode
-\item
-  Outlier
-\item
-  Range
-\end{itemize}
-
-\hypertarget{examples-from-recent-academic-articles}{%
-\subsubsection{examples from recent academic articles}\label{examples-from-recent-academic-articles}}
-
-article graphs, citations, instructors research, etc
-
-\hypertarget{examples-from-non-academic}{%
-\subsubsection{examples from non-academic}\label{examples-from-non-academic}}
-
-customer satisfaction; workplace/department culture; r\&D;
-
-\hypertarget{study-design}{%
-\subsection{Study Design}\label{study-design}}
-
-\hypertarget{hypothesisresearch-question}{%
-\subsubsection{Hypothesis/Research Question}\label{hypothesisresearch-question}}
-
-\hypertarget{or-not-ie-exploratory-get-to-know-you}{%
-\subsubsection{Or Not! ie exploratory/ ``get to know you''}\label{or-not-ie-exploratory-get-to-know-you}}
-
-\hypertarget{study-sample}{%
-\subsection{Study sample}\label{study-sample}}
-
-\hypertarget{how-do-we-get-data}{%
-\subsubsection{``HOW do we get data??''}\label{how-do-we-get-data}}
-
-The first step to answering a research question is to collect your data. Broadly, data comes in two forms, primary and secondary. (Fig 1.2) Primary data are data that is collected directly by the researcher. Surveys, observations, experimentation, questionnaires, and interviews are all examples of primary data. Secondary data are collected from published or unpublished literature. It is collected by different researchers and compiled for use by a second scientist. These type of data include data found in published articles, books, journals, biographies, and government records like the US Census.
-Once compiled, you now have a data set which is comprised of observations and variables. An observation is all of the measures taken for one person or item. A variable is what is being measured.
-The US CDC data is secondary, but you are collecting height data yourself in class as a comparison. The survey or questionnaire you use on your classmates is primary data. Each individual is an observation and the variable of interest is height.
-
-\hypertarget{study-design-considerations---sampling}{%
-\subsection{Study Design Considerations - Sampling}\label{study-design-considerations---sampling}}
 
 \hypertarget{sample-vs-population}{%
 \subsubsection{Sample vs Population}\label{sample-vs-population}}
@@ -789,21 +772,6 @@ Is the study sample a representative sample of the population?
 Random Sampling: It is a sampling method in which all the items have an equal chance of being selected and the individuals who are selected are just like the ones who are not selected
 Stratified Random Sampling: It is a process to gather data by separating the actual population into the distinct subset or strata, and then choosing simple random samples from each stratum Your research question is about the height of all males at your college but recording height data for each individual would be very difficult and time consuming. You instead decide to use a sample of males in your data science class. This is a random sample as each male individual has an equally likely chance of being samples (that is, unless a prerequisite exists).
 Sampling strategy can lead to bias. Statistical bias is a systematic tendency which causes differences between results and facts. If instead of your classmates, you had chosen a different sample, like the men's basketball team, your results would have been biased as basketball players are taller on average.
-
-\hypertarget{study-design-considerations---data}{%
-\subsection{Study Design Considerations - Data}\label{study-design-considerations---data}}
-
-\hypertarget{types-of-data}{%
-\subsubsection{Types of Data}\label{types-of-data}}
-
-Yes/No
-
-Continuous vs categorical
-
-within categorical:
-ordered (factor, ordinal) vs unordered (categories)
-
-Free response
 
 \hypertarget{study-design-considerantions---bias}{%
 \subsection{Study Design Considerantions - Bias}\label{study-design-considerantions---bias}}
@@ -822,35 +790,284 @@ we group categories a,b,c to make new groups for analysis.
 
 In doing so, we limit our interpreations to \_\_\_\_\_
 
-\hypertarget{elaborate}{%
-\section{Elaborate}\label{elaborate}}
+\hypertarget{exploratory-data-analysis}{%
+\subsection{EXPLORATORY DATA ANALYSIS}\label{exploratory-data-analysis}}
 
-\textbf{Consider reframing the explanation to quetions}
-
-So we are going to start off this class with a Study
-Our study will not have an explicit research question, but rather be a
-``get to know you'' survey of this class.
-
-We're going to collect primary data by asking all students to complete a survey.
-We plan to describe the data and from there may begin toform specific hypotheses to test
-Work through the same process/analysis on new data. Either a different
-variable(s) in the same sample, or applying/demonstrating the phenomenon
-using real-world data/examples.
+The first step in understanding and interpreting our data is called an exploratory data analysis. We will use a few measurements to quickly look at the data and then we can use some simple graphing techniques to turn our data into visualizations. The first three M's, you are likely familiar with and are often referred to as measures of central tendency: Mean, Median, and Mode.
+These go along with range, outliers and sample size.
 
 \begin{itemize}
 \tightlist
 \item
-  Reiterate/reinforc the process/task of the lesson
+  Mean
 \item
-  Does this fit in to other steps/analysis
+  Median
 \item
-  does this fit in to other thematic topics?
+  Mode
+\item
+  Outlier
+\item
+  Range
 \end{itemize}
 
-(Possibly) Build on the first one to show variation.
-* Other ways to represent the phenomenon/data
-+ tabular
-+ visually
+\begin{quote}
+What is a statistic?
+\end{quote}
+
+\hypertarget{exploring-height}{%
+\subsection{Exploring height}\label{exploring-height}}
+
+If you do not have class data on height, we will be using the following simple dataset of 5 individuals:
+
+\begin{itemize}
+\tightlist
+\item
+  Can you describe what is happening in the following \texttt{codechunk}??
+\item
+  What do \texttt{person,\ height} represent in relationship to \texttt{ex\_height}??
+\end{itemize}
+
+\emph{Click to show answer}
+
+We \textbf{create} the \textbf{R object} \texttt{ex\_height} using the \textbf{assignment operator} \texttt{\textless{}-}
+\texttt{ex\_height} is a \textbf{data.frame}, a table, with two columns: \texttt{person} and \texttt{height}
+\texttt{person,\ height} are the two columns, or variables, of \texttt{ex\_height}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ex\_height }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \StringTok{"person"} \OtherTok{=} \FunctionTok{paste}\NormalTok{(}\StringTok{"Ind"}\NormalTok{, }
+                   \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{,}\StringTok{"d"}\NormalTok{,}\StringTok{"e"}\NormalTok{), }
+                   \AttributeTok{sep =} \StringTok{"\_"}\NormalTok{),}
+  \StringTok{"height"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{5.5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\FloatTok{5.25}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(ex\_height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+person & height\\
+\hline
+Ind\_a & 5.50\\
+\hline
+Ind\_b & 5.00\\
+\hline
+Ind\_c & 6.00\\
+\hline
+Ind\_d & 5.25\\
+\hline
+Ind\_e & 5.00\\
+\hline
+\end{tabular}
+
+\hypertarget{mean-height}{%
+\subsection{Mean height}\label{mean-height}}
+
+You probably already know this one. The (arithmatic) mean is calculated by adding all \textbf{values} together, and dividing by the \textbf{number of observations}. For our dataset, we add all 5 heights together and divide by the number of individuals (5):
+
+\(\frac{(5.5 + 5 + 6 + 5.25 + 5)}{5}\)
+\(\frac{26.75}{5}\)
+\(5.35\)
+
+In \texttt{r}, we can write this out ``by hand.'' Since \texttt{r} is a \textbf{statistical programming language}, r recognizes basic mathematical expressions. We can \texttt{code} the following to calcualte the mean:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{5.5} \SpecialCharTok{+} \DecValTok{5} \SpecialCharTok{+} \DecValTok{6} \SpecialCharTok{+} \FloatTok{5.25} \SpecialCharTok{+} \DecValTok{5}\NormalTok{)}\SpecialCharTok{/}\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.35
+\end{verbatim}
+
+Since \texttt{r} is an \textbf{object-oriented programming language}, we don't need to write out individual numbers for each calculation. Instead, we can refer to the \texttt{ex\_height} \textbf{object}. Since \texttt{ex\_height} is a \textbf{data.frame}, we can refer to it variables by name with the \texttt{\$} operator. We also take advantage of some of the built-in mathematical functions of \texttt{r}: \texttt{sum(),\ length()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{person)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.35
+\end{verbatim}
+
+\hypertarget{median-height}{%
+\subsection{Median height}\label{median-height}}
+
+The \textbf{median} is calculated by ordering all values from small to large. If there are an \textbf{odd} numberof values, there will be a single value at the middle.
+
+Our original data:
+\$ 5.5, 5, 6, 5.25, 5\$
+
+Our data re-ordered from small to large:
+\$ 5, 5, 5.25, 5.5, 6 \$
+
+\$ \st{5, 5,} 5.25, \textasciitilde\textasciitilde5.5, 6 \textasciitilde\textasciitilde{} \$
+
+\st{5, 5,} 5.25, \st{5.5, 6}
+
+If we had an even number of values, we would wind up with two ``middle values'', in which case we take the mean of these two.
+
+If we had one more value, let's say \texttt{5.75}, we wind up with both \texttt{5.25} and \texttt{5.5} as middle values.
+
+\$ 5, 5, \st{5.25, 5.5,} 5.75, 6 \$
+
+The median is the \textbf{mean} of these two values:
+
+\(\frac{5.25+5.5}{2}\)
+\(5.375\)
+
+In a small dataset, it's easy to pick out the middle value. Fortunately, there's an \texttt{r} function for this as well:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# With 5 Individuals }
+\FunctionTok{median}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# With 6 individuals}
+\FunctionTok{median}\NormalTok{(}\FunctionTok{c}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height, }\FloatTok{5.75}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.375
+\end{verbatim}
+
+\begin{quote}
+Did you notice the \texttt{c()} function above? What does it do?
+\end{quote}
+
+\hypertarget{modal-height}{%
+\subsection{Modal height}\label{modal-height}}
+
+The \textbf{mode} is the most common value in the dataset. Here again, it's easy to pick out there are 2 people with a \texttt{height} of \texttt{5}, and all other values are repsented by just one person. There's actually no build-in \texttt{r} function to calculate the \textbf{mode}\ldots{}
+
+But don't worry, there are functions that let you decide the \textbf{mode} and more!! A very useful function is \texttt{table()}, used to make \textbf{counts} of values. In a small dataset, we see that two individuals have a height of 5. Our \textbf{mode} is 5!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##    5 5.25  5.5    6 
+##    2    1    1    1
+\end{verbatim}
+
+\hypertarget{range}{%
+\subsection{Range}\label{range}}
+
+The \textbf{range} of the data is two numbers, the lowest, and highest values within the data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5 6
+\end{verbatim}
+
+Though, if you want just the \textbf{minimum} or \textbf{maximum} value, you can use \texttt{min()} or `max():
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{min}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{max}\NormalTok{(ex\_height}\SpecialCharTok{$}\NormalTok{height)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\hypertarget{outliers}{%
+\subsection{Outliers}\label{outliers}}
+
+So far, some of these examples may have so obvious you may be thinking: \emph{what's the point??}
+
+For a slightly more practical demonstration, try out the above functions on your \texttt{class\_data}. If you don't have class data available you can access the
+
+\hypertarget{elaborate}{%
+\section{Elaborate}\label{elaborate}}
+
+\hypertarget{your-turn-would-we-have-done-this-before-or-is-this-the-first-time}{%
+\subsection{\texorpdfstring{Your Turn! (\emph{would we have done this before or is this the first time??})}{Your Turn! (would we have done this before or is this the first time??)}}\label{your-turn-would-we-have-done-this-before-or-is-this-the-first-time}}
+
+For this example, you can use data collected in class, or the example dataset available in \texttt{ipumsED} R package: \texttt{class\_ipums\_data}
+
+For in-class \emph{survey} data, you are looking at the age of each individual in class.
+For the IPUMS data, you are looking at age as recorded in the American Community Survey
+(\href{https://www.census.gov/programs-surveys/acs}{ACS}). This survey is fielded
+annually. It contains more detailed questions that supplement the decennial census. \textbf{Raw data} are available directly from the \href{https://www.census.gov/programs-surveys/acs/data.html}{US Census Bureau}. However, we will be working with \href{https://ipums.org}{IPUMS data}, \textbf{harmonzied.}. This process standardizes variable coding schema across all samples within the IPUMS dataset. IPUMS makes it easy for researchers to conduct analysis across time and space.
+
+\begin{quote}
+IPUMS began as a PhD project digitizing historic US census data and reconciling
+it with the coding schema of the current US Census (1990s). IPUMS-International grew out
+of this by employing our harmonization practices on Census samples from other countries.
+IPUMS has partnerships with over 100 countries and is working on building partnerships with the
+remainng \textbf{82} countries!
+
+Partnerships with IPUMS may look slightly different for each country, but they always
+involve IPUMS commitment to being responsible stewards of the partner-country's data.
+Our goal is to make data as open as possible, while maintaining responsible disclosure risk controls.
+\end{quote}
+
+Example data used throughout this book come from IPUMS-International so that values may be contextualized for a readers interested in one of the 103 countries that have data sharing agreements with IPUMS.
+
+Write and \texttt{Rscript} that reads in your chosen dataset, and calculates the
+following statistics:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{mean()}
+\item
+  \texttt{meadian()}
+\item
+  \textbf{mode}
+\item
+  \texttt{range()}
+\end{itemize}
+
+In addition, include at least one plot or table and use it to discuss if your dataset contains any outliers. What criteria are you using to define an outlier?
+
+\begin{quote}
+Where's the \texttt{mode()}?? As a statistical programing language, R was developed with
+built-in functions for \texttt{mean}, \texttt{median}, and \texttt{range}. But \texttt{mode} wasn't important
+enough to warrant its own function. In part, because it's so easy to code, even you
+can do it!
+
+Yep, we're serious!
+\end{quote}
 
 \hypertarget{evaluateexercises}{%
 \section{Evaluate/Exercises}\label{evaluateexercises}}
@@ -925,6 +1142,19 @@ Outlier:
 Statistic:
 Sample Size:
 
+\hypertarget{additional-content}{%
+\section{Additional Content}\label{additional-content}}
+
+\hypertarget{examples-from-recent-academic-articles}{%
+\subsubsection{examples from recent academic articles}\label{examples-from-recent-academic-articles}}
+
+article graphs, citations, instructors research, etc
+
+\hypertarget{examples-from-non-academic}{%
+\subsubsection{examples from non-academic}\label{examples-from-non-academic}}
+
+customer satisfaction; workplace/department culture; r\&D;
+
 \hypertarget{visualizing-data}{%
 \chapter{Visualizing Data}\label{visualizing-data}}
 
@@ -933,7 +1163,7 @@ Sample Size:
 \hypertarget{engage-1}{%
 \section{Engage}\label{engage-1}}
 
-show an image and ask what visualization is best for the data.
+show two data viz side by side and ask best for the data.
 
 \hypertarget{explore-1}{%
 \section{Explore}\label{explore-1}}
@@ -1818,7 +2048,7 @@ For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a 
 
 }
 
-\caption{the ipums logo}\label{fig:unnamed-chunk-22}
+\caption{the ipums logo}\label{fig:unnamed-chunk-30}
 \end{figure}
 
 \hypertarget{tips}{%
@@ -2411,7 +2641,7 @@ Univariate continuous data, like height, can be visualized using a box and whisk
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-35-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 \hypertarget{continuous-data---histograms}{%
 \subsection{Continuous Data - Histograms}\label{continuous-data---histograms}}
@@ -2424,7 +2654,7 @@ Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-36-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 \hypertarget{categorical-data}{%
 \subsection{Categorical Data}\label{categorical-data}}
@@ -2455,7 +2685,7 @@ We can also visualize our tabulated results using a \textbf{barplot} as below.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-38-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 \hypertarget{glossary-2}{%
 \section*{Glossary}\label{glossary-2}}
@@ -2487,21 +2717,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 11.537900 12.230843  9.783934 11.638102 10.819810  8.884389 11.237918
-##   [8] 10.484164  8.958392 11.191537  9.585657 10.070964  9.989649  8.554190
-##  [15] 11.632869  9.977183  9.986973  9.997940  9.702035  9.863078  9.108852
-##  [22] 10.977101  9.928956  9.505096 10.760630  9.399610  7.990385  8.863747
-##  [29] 11.251202  8.909156 10.780205  9.872169 11.189949 10.418650 10.139815
-##  [36]  9.669975 10.255224  9.603590 10.470181 10.507391 11.304423 10.848670
-##  [43] 11.161807 10.502005 10.362521 10.039480  8.815069 10.330564 10.424526
-##  [50]  8.985779 11.403513  9.609161  9.442699  9.715473 10.199337  9.643779
-##  [57]  8.808920  9.410609 10.213969 10.107270  9.554548 10.556422  9.929254
-##  [64]  9.966880 10.432740 10.533889 11.197724 10.241179 10.132247  9.826712
-##  [71]  9.420594 11.028721 11.771268  9.718610 11.360527 10.727834 10.464667
-##  [78] 13.116985  9.483617 11.226165  8.702682  8.641365  8.254288  8.742169
-##  [85]  9.736579  8.616814  9.514880 11.470254 11.634169  9.819328 10.785552
-##  [92]  9.607980  9.764129  8.838644  9.943936 10.503370 11.655516 10.470353
-##  [99]  9.880572  9.053648
+##   [1] 12.096187  9.063288 10.035401 11.063791  9.837189  9.089204  8.604504
+##   [8] 10.150055 10.103744 11.917996 11.094494  8.689366 10.379045 11.095553
+##  [15] 10.133967  9.863973  7.918765 11.866967 10.359582 11.308020 10.236947
+##  [22]  9.440288  9.727848 10.192262  9.738432 10.719231  9.313872  9.213342
+##  [29]  9.921573 10.639739 10.343193 10.761314 10.087411 10.866710 10.954950
+##  [36]  8.921808  8.449944 10.940489  9.074733 11.446449  8.516850  9.519014
+##  [43] 11.515339  9.140594  9.089195  8.314220 11.570946 11.933840 12.073437
+##  [50]  9.804545  8.577039  9.741245  8.363967  9.206891  9.603425 10.937461
+##  [57] 11.215600  9.362411  9.921103 11.274265 10.409081 12.386278 10.030399
+##  [64]  9.485404  9.576027 10.372938  9.102650 10.669883 11.114526  8.411416
+##  [71]  9.626944 10.862305  8.506351  9.974707 11.839042  9.712197  7.068216
+##  [78] 10.226467  9.050270 11.165947 10.108264  7.957977  9.154538  9.632176
+##  [85]  8.982447  9.054662 11.448440 10.273734 11.850361 11.875200  9.587213
+##  [92] 10.828019  9.022568  9.371284  8.816699 11.171981  9.128859  9.007527
+##  [99]  9.180344  8.810909
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -2543,7 +2773,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.990   9.578  10.019  10.134  10.766  13.117
+##   7.068   9.122   9.921  10.002  10.884  12.386
 \end{verbatim}
 
 Mean, standard deviation
@@ -2611,9 +2841,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
-## [1,] 65.580311 93.35516 99.92603 99.89189 106.55760 137.6375
-## [2,] -6.632962 43.71457 60.26168 60.37539  77.69238 139.0114
+##           Min.  1st Qu.    Median      Mean   3rd Qu.     Max.
+## [1,]  71.92113 93.93151 100.37142 100.59791 107.28247 132.9136
+## [2,] -26.65886 42.95530  60.00086  60.29788  77.06518 143.8973
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -2648,9 +2878,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 65.580311 & 93.35516 & 99.92603 & 99.89189 & 106.55760 & 137.6375\\
+data1 & 71.92113 & 93.93151 & 100.37142 & 100.59791 & 107.28247 & 132.9136\\
 \hline
-data2 & -6.632962 & 43.71457 & 60.26168 & 60.37539 & 77.69238 & 139.0114\\
+data2 & -26.65886 & 42.95530 & 60.00086 & 60.29788 & 77.06518 & 143.8973\\
 \hline
 \end{tabular}
 
