@@ -2,50 +2,9 @@
 
 **NOTE:** Some of this can get summarized in the preface, but I think we should flesh out a whole lesson on it anyway. Supplemental/optional
 
-## Engage
-
-### Class poll: Who has used R before
-
-tabulate Y/N 
-calculate frequncies
-draw boxplot
-  side by side counts
-  stacked counts
-  stacked frequencies
-  *which is the most informative*
-
-### Class poll: who has done ANY kind of coding
-
-Might be redundant to do again
-
-### Interpreting R
-
-Describe what the following R code does, in plain words.
-
-```{r, eval = FALSE, echo = TRUE}
-
-my_data <- read_excel("//filepath/directory/filename.xlsx")
-
-```
 
 
-*Hint:* There are 4 elements in the above code: 
-  `my_data`, 
-  `<-`, 
-  `read_excel()`, 
-  `//filepath/directory/filename.xlsx`
-
-
-
-## Explore
-
-**see old_ file for more examples**
-
-The best way to learn R is to jump into it. Ideally, this lesson can be in a 
-computer lab or with laptop access.
-
-
-## Explain - lecture/read
+## Explain
 
 ## Some Basics
 
@@ -77,20 +36,371 @@ Go to posit
 
 ## Navigating RStudio
 
-### Lots of Panes, not a pain!
 
-You get used to it, promise.
+**Lots of Panes, not a pain!**
 
-## Writing R
+> You get used to it, promise.
 
-### Writing R in Console
 
-Direct input
-Direct output
 
-LIMITED
+### Navigating... Console
 
-### Writing R in Scripts (The 4th pane)
+The console is where you interact with `R` directly. 
+
+The console is where you actually input the code into R
+
+#### Writing R code - give it a try
+
+At its simplest, R is a calcultor. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.
+
+The exact output you recieve depends on the intput!
+
+
+
+```{r}
+
+2+2
+
+```
+
+
+
+As a statistical programing language, R is capable of basic arithmetic and following order of operations. 
+
+
+
+
+```{r}
+
+(2+2)^2/2
+
+```
+
+
+#### R Objects
+
+R is also an oject oriented programing language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or **clases** of R objects.
+
+Let's start simple. Try to describe, in plain language, what's going on in the code below. In other words, how do you as a human, interpret the code.
+
+What do you think will happen when we **run the code**
+
+```{r}
+
+my_answer <- 1+2+3+4+5+6+7+8+9
+
+```
+
+
+
+
+
+<details>
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  > 
+  > In the code chunk above, we create a new R object called my_answer. This
+  > object is the result or sum of the numbers 1 through 9.
+  >
+    
+  </p>
+</details>
+
+
+
+
+So what *is* `my_answer`???
+
+In the above code chunk, we add up the numbers 1 through 9 and save the result to a new R object, which we call `my_answer`. R will print results by default, as we saw in the first math expressions. But in the above codechunk, we "catch" the result, so to speak, in out R object. We can access the result by calling the R object by name.
+
+
+
+```{r}
+
+my_answer
+
+```
+
+#### R functions
+
+In addition to objects, a second important concept to programing in R is **functions**. Functions are actually just a special **class** of R object. What makes functions special is that they **do** something. In gneral functions take one or more **arguments** as **input**, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of **output**
+
+R functions are easily recognizable because they end in parentheses `()`. Arguments to the function go within the parentheses.
+
+
+
+Instead of typing the `+` sign multiple times, as we did above, we could use the `sum()` function. In the code on the right, we pass the numbers 1 though 9 as arguments to the `sum()` functiom. The arguments go within the `()` separated by commas.
+
+
+.pull-left[
+```{r}
+
+1+2+3+4+5+6+7+8+9
+
+```
+
+
+]
+
+
+
+.pull-right[
+
+```{r}
+
+sum(1,2,3,4,5,6,7,8,9)
+
+```
+
+]
+
+
+
+When we create objects in R, we use `<-`, which is known as the **assignment operator**. The assignment operator is a special function. instead of using `()`, Everything to the right of the assignment operator is taken as the input. Whatever is to the left of the assignment operator is also input! This becomes the name of the R object. 
+
+
+The output of the assignment operator is the R object itself. 
+
+```{r}
+
+my_sum <- sum(1,2,3,4,5,6,7,8,9)
+
+my_sum
+
+```
+
+
+
+>
+> Notice how we create the object, `my_sum` and then call the object, by name,
+> on the next line, in order to print the results.
+>
+
+
+**Be careful!** The assignment operator **does** have some limitations on what it can/can't take as input. Try to run the following code in your own R session:
+
+```{r, eval = FALSE}
+
+
+my_sum <- 1,2,3,4,5
+
+```
+
+
+
+
+<details>
+ <summary> *If you can't run the code, click to show result* </summary> <br> 
+  <p> 
+  
+  > ```
+  > Error: unexpected ',' in "my_sum <- 1,"
+  > ```
+  >
+  
+  </p>
+</details>
+
+
+So what went wrong??
+
+
+Technically, the assignment operator is expecting just one thing to the right of it. In the working code `my_sum <- sum(1,2,3,4,5,6,7,8,9)` , R interprets, or evaluates, the `sum()` function, calculating a result that is a single value, `r sum(1:9)`, which we give the name `my_sum`.
+
+
+If you want to store a list of values, you need to **concatenate** them first. This is probably a common concept to anyone with some kind of programing experience before. To concatenate something is simply to put it together. In `R`, you will get **very** used to using the concatenate function - in fact, it's so common the creators of R wisely gave it a very simple, easy to remember name: `c()`. 
+
+
+Using `c()` is easy. It takes any number of inputs, and joins them together into a single **vector**. A **vector** is an R object that lists several values. Notice the difference?
+
+
+.pull-left[
+```{r}
+
+my_value <- sum(1,2,3,4,5,6,7,8,9)
+
+my_value
+```
+
+]
+
+
+.pull-right[
+```{r}
+my_vector <- c(1,2,3,4,5,6,7,8,9)
+
+my_vector
+```
+
+]
+
+
+#### Interacting with Objects and Functions
+
+We can use some basic R functions to interact with our R objects. The first function tells us the `class` of our R object. While `length()` tells us how long the object is. Notice how `my_value` and `my_vector` have the same class, but different lengths. 
+
+
+
+.pull-left[
+```{r}
+
+my_value <- sum(1,2,3,4,5,6,7,8,9)
+
+class(my_value)
+length(my_value)
+
+```
+
+]
+
+
+.pull-right[
+```{r}
+my_vector <- c(1,2,3,4,5,6,7,8,9)
+
+class(my_vector)
+length(my_vector)
+```
+
+]
+
+
+There is technically no end to the number of R object classes that can exist in R. That's because classes can be built upon and modified to suit specialized purporses. Creating your own object classes is an advanced topic, for now, you will be interacting with pretty basic classes of objects.
+
+
+Below are several different vectors that represent some of the most basic object classes. Notice how these classes align closely with data classes.
+
+```{r}
+
+my_logical <- c(TRUE, TRUE, FALSE, TRUE, FALSE,TRUE,FALSE,FALSE, TRUE)
+
+my_numeric <- c(1,2,3,4,5,6,7,8,9)
+
+my_character <- c("a", "b", "c", "d", "e", "f", "g","h", "i")
+
+```
+
+
+A vector stores one or more values of the same type of data.
+
+
+If we want to combine multiple vectors together, we can do that with the `data.frame()` function. This function takes multiple vectors as inputs and combines them together into a single object, as long as they're the same length!
+
+
+.pull-left[
+
+**Why does this data.frame fail??**
+
+```{r}
+
+my_df <- data.frame(
+  "logical" = my_logical,
+  "numeric" = my_numeric,
+  "character" = my_character,
+  "numbers" = c(2,4,6)
+)
+
+```
+
+]
+
+
+.pull-right[
+
+
+```{r}
+
+my_df <- data.frame(
+  "logical" = my_logical,
+  "numeric" = my_numeric,
+  "character" = my_character
+)
+
+```
+
+
+]
+
+
+Notice the arguments we pass to `data.frame()`. Do you see how each piece fits together?
+
+Can describe how each argument goes from input to output?
+
+
+<details>
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  > 
+  > In this example, we pass `data.frame()` three arguments, each separated by a comma `,`. 
+  > In each argument, we specify an R object to the right of an equal sign `=` and 
+  > a character string within quotes `""` to the left of the equal sign. 
+  >
+  > The characters to the left of the equal sign become the **names** of each column. The R objects, specified verbatim, become the contents of each column. 
+  >
+    
+  </p>
+</details>
+
+
+
+```{r}
+
+knitr::kable(my_df)
+```
+
+
+
+You're bound to create **MANY** R objects throughout your work, and that can be a lot to keep track of. Fortunately, you don't need to track this all yourself - that's what the environment tab is for!
+
+
+### Navigating ... Environments
+
+Finally, we come to the second tab of Rstudio. In addition to Environment, you may see tabs for `History, Connections`. You may also see tabs for `Build` or `Git` depending on if you have these tools installed. 
+
+While you *may* interact with these other tabs depending on your project needs, you will **always** want to reference R objects stored in your **local environment**. In the environment panel, you will find each R object listed by name and organized broadly into categories of `Values` (vectors), `Data` (data frames, matrices, and other more complex structures), User-created `Functions` will also recieve their own section. 
+
+
+Your local environent is a temporary space. When you close your R session, you will lose any work you do not save or **write out** to a separate file. 
+
+
+
+Of course, that doesn't mean you can't re-run old code, and it doesn't mean that you can't save your progress in between sessions. In fact, there are **Several** options for how RStudio handles your environment. By default, R will attempt to preserve a copy of all data in your local environement. It will also try to restore whatever you were working on most recently when you open a new session.
+
+
+These may seem like handy convenience features, but in practice we find them prone to cause issues (outlined below).
+
+
+
+#### Our Reccomendations
+
+Here we outline what we consider to be best practice for maintaining an R environment/ R project.
+
+##### CHANGE GLOBAL OPTIONS
+
+
+For the most part, we strive to use the default installations/parameters when using R/Rstudio. This facilitates reproducibility for a researcher working across different computers, and reproducibility if a colleague wishes to replicate the code themselves. 
+
+However, one setting we **DO** reccomend changing the following under `Tools/Global Options/General` Uncheck all boxes that begin `Restore`..
+
+ * Restore last R project
+ * Restore previous source files
+ 
+ * Restore .RData
+ 
+Also, we reccomend changing the option for `Save a copy of .RData` to `NEVER`.
+
+The reason for this is that if an R session crashes, trying to load the latest autogenerated backup is likely to cause the error and make the session fail again. It can also be timely if you last worked on a really large project that takes a while to open and restore all files. 
+
+In practice, it's better to intentionally save and close your project. Then open up whichever project you want to work on each time you start a new R session. 
+
+
+
+
+### Writing R in Scripts (Breaking the 4th Pane)
+
+
 
 Save your work, find typos, re-run easy!
 
@@ -108,6 +418,38 @@ Save your work, find typos, re-run easy!
 
 stackexchange
 rdrr.io
+
+
+
+
+
+
+## Explore / Exercises
+
+**see old_ file for more examples**
+
+The best way to learn R is to jump into it. Ideally, this lesson can be in a 
+computer lab or with laptop access.
+
+
+
+### Interpreting R
+
+Describe what the following R code does, in plain words.
+
+```{r, eval = FALSE, echo = TRUE}
+
+my_data <- read_excel("//filepath/directory/filename.xlsx")
+
+```
+
+
+*Hint:* There are 4 elements in the above code: 
+  `my_data`, 
+  `<-`, 
+  `read_excel()`, 
+  `//filepath/directory/filename.xlsx`
+
 
 
 ## Elaborate

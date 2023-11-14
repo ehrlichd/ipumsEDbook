@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Summarize Data | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Summarize Data | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
@@ -118,10 +118,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -214,7 +210,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#vis-1"><i class="fa fa-check"></i><b>2.1.1</b> Vis 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#vis-2"><i class="fa fa-check"></i><b>2.1.2</b> Vis 2</a></li>
+<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
 <li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
@@ -421,18 +422,18 @@ div.csl-indent {
 <h3>Continuous Data<a href="summarize-data.html#continuous-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For continuous data, we often want to summarize our data by describing the <strong>mean, median, and/or range</strong>. <strong>Mean</strong> and <strong>median</strong> describe the <em>central tendency</em> of the data, while <strong>range</strong> describes the full extant of the data, as seen below.</p>
 <p>NOTE: if <code>NA</code> are present in the data, be sure to use the <code>na.rm=TRUE</code> flag for these operations.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="summarize-data.html#cb75-1" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="summarize-data.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 66.5625</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="summarize-data.html#cb77-1" tabindex="-1"></a><span class="fu">median</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="summarize-data.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 66.5</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="summarize-data.html#cb79-1" tabindex="-1"></a><span class="fu">range</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="summarize-data.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(data<span class="sc">$</span>Height_inches, <span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 55 76</code></pre>
 </div>
 <div id="all-in-summary" class="section level3 unnumbered hasAnchor">
 <h3>All in summary()<a href="summarize-data.html#all-in-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Mean</strong>, <strong>median</strong>, and <strong>range</strong> will all be reported by calling <code>summary()</code> on a <code>numeric vector</code>, such as <code>Height_inches</code>. In addition, the lower and upper quartiles will be reported, along with the number of <code>NA</code> responses.</p>
 <p>NOTE: <code>summary()</code> does NOT require special handling for <code>NA</code> values, in fact - it expects them!</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="summarize-data.html#cb81-1" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="summarize-data.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>Height_inches)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   55.00   64.00   66.50   66.56   70.00   76.00</code></pre>
 </div>

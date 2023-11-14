@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8.1 Engage | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8.1 Engage | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
@@ -118,10 +118,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -214,7 +210,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#vis-1"><i class="fa fa-check"></i><b>2.1.1</b> Vis 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#vis-2"><i class="fa fa-check"></i><b>2.1.2</b> Vis 2</a></li>
+<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
 <li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
@@ -418,7 +419,7 @@ div.csl-indent {
 <div id="engage-5" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Engage<a href="engage-5.html#engage-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>What do you think the following code does?</em></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="engage-5.html#cb58-1" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;//filepath/directory/filename.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="engage-5.html#cb58-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;//filepath/directory/filename.xlsx&quot;</span>)</span></code></pre></div>
 <p><em>Hint:</em> There are 4 “things” in the above code:
 <code>my_data</code>,
 <code>&lt;-</code>,
@@ -451,10 +452,10 @@ a user to use a mouse and keyboard to do <em>something.</em></p>
 <p>The <code>Console</code> is where you input <code>R code</code>, run it, and see the results.</p>
 <p>At it’s simplest <code>RStudio</code> is a calculator. Try typing <code>4 + 4</code> into the <code>Console</code>,
 then press the <code>[Enter]</code> key to run the code. Immediately, <code>R</code> prints the result as we see here:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="engage-5.html#cb59-1" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="engage-5.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>The <code>Console</code> serves as a running log of all your operations for your current session, but it can be helpful to temporarily save your results as <code>R objects</code>. We do this using the <strong>assignment operator</strong> we saw earlier: <code>&lt;-</code></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="engage-5.html#cb61-1" tabindex="-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="engage-5.html#cb61-1" aria-hidden="true" tabindex="-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div>
 <p>By default, <code>Console</code> only prints results if they have no where else to go. If they’re stored as an <code>Robject</code>, no result is printed, but you should now see <code>answer</code> listed in the <code>Environment</code> <strong>pane</strong>.</p>
 </div>
 </div>

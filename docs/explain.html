@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.3 Explain | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.3 Explain | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
@@ -118,10 +118,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -214,7 +210,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#vis-1"><i class="fa fa-check"></i><b>2.1.1</b> Vis 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#vis-2"><i class="fa fa-check"></i><b>2.1.2</b> Vis 2</a></li>
+<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
 <li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
@@ -522,13 +523,13 @@ These go along with range, outliers and sample size.</p>
 </blockquote>
 </p>
 </details>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="explain.html#cb1-1" tabindex="-1"></a>ex_height <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-2"><a href="explain.html#cb1-2" tabindex="-1"></a>  <span class="st">&quot;person&quot;</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;Ind&quot;</span>, </span>
-<span id="cb1-3"><a href="explain.html#cb1-3" tabindex="-1"></a>                   <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>), </span>
-<span id="cb1-4"><a href="explain.html#cb1-4" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>),</span>
-<span id="cb1-5"><a href="explain.html#cb1-5" tabindex="-1"></a>  <span class="st">&quot;height&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">5.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">5.25</span>, <span class="dv">5</span>)</span>
-<span id="cb1-6"><a href="explain.html#cb1-6" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="explain.html#cb2-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(ex_height)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="explain.html#cb1-1" aria-hidden="true" tabindex="-1"></a>ex_height <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="explain.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;person&quot;</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;Ind&quot;</span>, </span>
+<span id="cb1-3"><a href="explain.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>), </span>
+<span id="cb1-4"><a href="explain.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>),</span>
+<span id="cb1-5"><a href="explain.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;height&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">5.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">5.25</span>, <span class="dv">5</span>)</span>
+<span id="cb1-6"><a href="explain.html#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="explain.html#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(ex_height)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -567,10 +568,10 @@ These go along with range, outliers and sample size.</p>
 <span class="math inline">\(\frac{26.75}{5}\)</span><br />
 <span class="math inline">\(5.35\)</span></p>
 <p>In <code>R</code>, we can write this out “by hand.” Since <code>R</code> is a <strong>statistical programming language</strong>, r recognizes basic mathematical expressions. We can <code>code</code> the following to calcualte the mean:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="explain.html#cb3-1" tabindex="-1"></a>(<span class="fl">5.5</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fl">5.25</span> <span class="sc">+</span> <span class="dv">5</span>)<span class="sc">/</span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="explain.html#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">5.5</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fl">5.25</span> <span class="sc">+</span> <span class="dv">5</span>)<span class="sc">/</span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 5.35</code></pre>
 <p>Since <code>R</code> is an <strong>object-oriented programming language</strong>, we don’t need to write out individual numbers for each calculation. Instead, we can refer to the <code>ex_height</code> <strong>object</strong>. Since <code>ex_height</code> is a <strong>data.frame</strong>, we can refer to it variables by name with the <code>$</code> operator. We also take advantage of some of the built-in mathematical functions of <code>R</code>: <code>sum(), length()</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="explain.html#cb5-1" tabindex="-1"></a><span class="fu">sum</span>(ex_height<span class="sc">$</span>height)<span class="sc">/</span><span class="fu">length</span>(ex_height<span class="sc">$</span>person)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="explain.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ex_height<span class="sc">$</span>height)<span class="sc">/</span><span class="fu">length</span>(ex_height<span class="sc">$</span>person)</span></code></pre></div>
 <pre><code>## [1] 5.35</code></pre>
 </div>
 <div id="median-height" class="section level3 hasAnchor" number="1.3.8">
@@ -591,11 +592,11 @@ These go along with range, outliers and sample size.</p>
 <p><span class="math inline">\(\frac{5.25+5.5}{2}\)</span></p>
 <p><span class="math inline">\(5.375\)</span></p>
 <p>In a small dataset, it’s easy to pick out the middle value. Fortunately, there’s an <code>R</code> function for this as well:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="explain.html#cb7-1" tabindex="-1"></a><span class="do">## With 5 Individuals </span></span>
-<span id="cb7-2"><a href="explain.html#cb7-2" tabindex="-1"></a><span class="fu">median</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="explain.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## With 5 Individuals </span></span>
+<span id="cb7-2"><a href="explain.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
 <pre><code>## [1] 5.25</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="explain.html#cb9-1" tabindex="-1"></a><span class="do">## With 6 individuals</span></span>
-<span id="cb9-2"><a href="explain.html#cb9-2" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">c</span>(ex_height<span class="sc">$</span>height, <span class="fl">5.75</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="explain.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## With 6 individuals</span></span>
+<span id="cb9-2"><a href="explain.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">c</span>(ex_height<span class="sc">$</span>height, <span class="fl">5.75</span>))</span></code></pre></div>
 <pre><code>## [1] 5.375</code></pre>
 <blockquote>
 <p>Did you notice the <code>c()</code> function above? What does it do?</p>
@@ -605,7 +606,7 @@ These go along with range, outliers and sample size.</p>
 <h3><span class="header-section-number">1.3.9</span> Modal height<a href="explain.html#modal-height" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>mode</strong> is the most common value in the dataset. Here again, it’s easy to pick out there are 2 people with a <code>height</code> of <code>5</code>, and all other values are represented by just one person. There’s actually no build-in <code>R</code> function to calculate the <strong>mode</strong>…</p>
 <p>But don’t worry, there are functions that let you decide the <strong>mode</strong> and more!! A very useful function is <code>table()</code>, used to make <strong>counts</strong> of values. In a small dataset, we see that two individuals have a height of 5. Our <strong>mode</strong> is 5!</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="explain.html#cb11-1" tabindex="-1"></a><span class="fu">table</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="explain.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
 <pre><code>## 
 ##    5 5.25  5.5    6 
 ##    2    1    1    1</code></pre>
@@ -613,12 +614,12 @@ These go along with range, outliers and sample size.</p>
 <div id="range" class="section level3 hasAnchor" number="1.3.10">
 <h3><span class="header-section-number">1.3.10</span> Range<a href="explain.html#range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>range</strong> of the data is two numbers, the lowest, and highest values within the data:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="explain.html#cb13-1" tabindex="-1"></a><span class="fu">range</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="explain.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
 <pre><code>## [1] 5 6</code></pre>
 <p>Though, if you want just the <strong>minimum</strong> or <strong>maximum</strong> value, you can use <code>min()</code> or <code>max()</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="explain.html#cb15-1" tabindex="-1"></a><span class="fu">min</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="explain.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="explain.html#cb17-1" tabindex="-1"></a><span class="fu">max</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="explain.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ex_height<span class="sc">$</span>height)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 </div>
 <div id="outliers" class="section level3 hasAnchor" number="1.3.11">
@@ -631,18 +632,18 @@ These go along with range, outliers and sample size.</p>
 While packages are created by the R community, they often try to maintain syntanx/coding conventions from base R.</p>
 </blockquote>
 <p>In order to keep things organized, we will first create an object called <code>my_data_path</code> that contains the <strong>file path</strong> to the data I want to read. You can type this out as a single character string, or use the <code>file.path()</code> function, which adds in <code>/</code>s for you. Next we <strong>pass</strong> our new object, <code>my_data_path</code>, as the <strong>argument</strong> to either <code>read.csv()</code> or <code>read.xlsx</code></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="explain.html#cb19-1" tabindex="-1"></a><span class="do">## for now</span></span>
-<span id="cb19-2"><a href="explain.html#cb19-2" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="explain.html#cb19-3" tabindex="-1"></a>my_data_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">&quot;..&quot;</span>, <span class="st">&quot;ipumsED&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;nhis_sample.csv&quot;</span>)</span>
-<span id="cb19-4"><a href="explain.html#cb19-4" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="explain.html#cb19-5" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="explain.html#cb19-6" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(my_data_path)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="explain.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## for now</span></span>
+<span id="cb19-2"><a href="explain.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="explain.html#cb19-3" aria-hidden="true" tabindex="-1"></a>my_data_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">&quot;..&quot;</span>, <span class="st">&quot;ipumsED&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;nhis_sample.csv&quot;</span>)</span>
+<span id="cb19-4"><a href="explain.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="explain.html#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="explain.html#cb19-6" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(my_data_path)</span></code></pre></div>
 <p>If you have the <code>ipumsED</code> package installed, you can load the dataset into your local environment simply by using the <code>data()</code> function.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="explain.html#cb20-1" tabindex="-1"></a><span class="fu">data</span>(nhis_data)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="explain.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(nhis_data)</span></code></pre></div>
 <p>We can inspect our data object with some basic functions. Notice how the output differs when the function is called on a <code>data.frame</code> versus when it is called on a <code>vector</code>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="explain.html#cb21-1" tabindex="-1"></a><span class="fu">class</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="explain.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_data)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="explain.html#cb23-1" tabindex="-1"></a><span class="fu">summary</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="explain.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_data)</span></code></pre></div>
 <pre><code>##      SERIAL            AGE              SEX            HEIGHT     
 ##  Min.   :   1.0   Min.   :  0.00   Min.   :1.000   Min.   : 0.00  
 ##  1st Qu.: 247.0   1st Qu.: 29.00   1st Qu.:1.000   1st Qu.:63.00  
@@ -657,17 +658,17 @@ While packages are created by the R community, they often try to maintain syntan
 ##  Mean   :216.4  
 ##  3rd Qu.:205.0  
 ##  Max.   :999.0</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="explain.html#cb25-1" tabindex="-1"></a><span class="fu">class</span>(my_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="explain.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="explain.html#cb27-1" tabindex="-1"></a><span class="fu">summary</span>(my_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="explain.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    0.00   63.00   66.00   62.84   70.00   99.00</code></pre>
 <p>Calling the R object itself usually prints the contents. For something this big, that’s probably inadvisable, so we print just the first 10 records using the <code>head()</code> function.</p>
 <blockquote>
 <p>There’s also a <code>tail()</code> function for printing the last 10 recods</p>
 </blockquote>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="explain.html#cb29-1" tabindex="-1"></a>my_data</span></code></pre></div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="explain.html#cb30-1" tabindex="-1"></a><span class="fu">head</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="explain.html#cb29-1" aria-hidden="true" tabindex="-1"></a>my_data</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="explain.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(my_data)</span></code></pre></div>
 <pre><code>##   SERIAL AGE SEX HEIGHT WEIGHT
 ## 1    698  18   1     68    130
 ## 2    651  28   1     72    275
@@ -680,14 +681,14 @@ While packages are created by the R community, they often try to maintain syntan
 <h3><span class="header-section-number">1.3.12</span> Find Outliers<a href="explain.html#find-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>1000 records is probably too much to review manually (and who would want to!?). Instead, we can <strong>visualize</strong> our data as one method to detect outliers. a <strong>box-and-whisker plot</strong> or <strong>boxplot</strong> is a common graph to plot continuous data like height.</p>
 <p>Box-and-whisker plots, by default, show you which values are outliers! The box represents the middle 75% of the dataset. The whiskers account for another 11% on either end of the box. The <strong>median</strong> is represented by a thick black line. Any observations outside the whiskers are considered outliers</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="explain.html#cb32-1" tabindex="-1"></a><span class="fu">boxplot</span>(my_data<span class="sc">$</span>HEIGHT, <span class="at">main =</span> <span class="st">&quot;Height in Inches&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="explain.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(my_data<span class="sc">$</span>HEIGHT, <span class="at">main =</span> <span class="st">&quot;Height in Inches&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>In this case, the values of 0, 95,96,97,98,99 all represent special coded values. <code>0</code> Indicates someone Not In Universe - someone for whom this question wasn’t asked. This may be an infant too young to meaningfully be measured. In this case higher values represent a value of <code>unknown</code> for various reasons. Both of these values represent missing data, but they mean different things.</p>
 <blockquote>
 <p>Why do you think we have more than one value to represent missing data? How does a value of 0 compare to a value of 99??</p>
 </blockquote>
 <p>We may want to exclude these special cases from our analysis. We can easily perform a data modification by filtering out values that equal any of our special cases. You can see the <strong>range</strong> of the graph is smaller, though visually, the box and whiskers are larger. Do we still see outliers in height?</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="explain.html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="explain.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -696,8 +697,8 @@ While packages are created by the R community, they often try to maintain syntan
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="explain.html#cb37-1" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HEIGHT <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> HEIGHT <span class="sc">&lt;</span> <span class="dv">95</span>)</span>
-<span id="cb37-2"><a href="explain.html#cb37-2" tabindex="-1"></a><span class="fu">boxplot</span>(new_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="explain.html#cb37-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> my_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HEIGHT <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> HEIGHT <span class="sc">&lt;</span> <span class="dv">95</span>)</span>
+<span id="cb37-2"><a href="explain.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(new_data<span class="sc">$</span>HEIGHT)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 </div>

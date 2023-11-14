@@ -2,9 +2,35 @@
 
 **CURRENTLY JUST A COPY OF THE OLD 1.2, what is R; needs to be updated **
 
-## Engage
+## Engage {.tabset}
 
 show two data viz side by side and ask best for the data. 
+
+### Vis 1
+
+**Pose a question**
+
+
+
+<details>
+ <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  > 
+  > ANSWER HERE
+  >
+    
+  </p>
+</details>
+
+
+
+### Vis 2
+
+### Vis 3
+
+
+
 
 ## Explore
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.1 Core | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.1 Core | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
@@ -118,10 +118,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -214,7 +210,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a></li>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#vis-1"><i class="fa fa-check"></i><b>2.1.1</b> Vis 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#vis-2"><i class="fa fa-check"></i><b>2.1.2</b> Vis 2</a></li>
+<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
 <li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
 <ul>
@@ -424,12 +425,12 @@ div.csl-indent {
 <p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure @ref(fig:norm_dist_plot). Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table @ref(tab:norm_summary_tab).
 * Again, this prints an auto-generated numeral
 * also leaving this in the context of the plots in Chapter <a href="#unit2"><strong>??</strong></a></p>
-<p>You can write citations, too. See <code>knitr::write_bib()</code> for more on this. Quick example from demo/index (may not work without write_bib() though): we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown">Xie 2023</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015">Xie 2015</a>)</span>.
+<p>You can write citations, too. See <code>knitr::write_bib()</code> for more on this. Quick example from demo/index (may not work without write_bib() though): we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2022</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>.
 * If included, “Refernces” section gets added to each chapter.
 * Not exactly sure where</p>
 <p>Embed html renders (EG, fancy tables (IPUMS_var_desc), or any shiny app) with <code>webshot</code> R package and <code>phantomJS</code>.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="core.html#cb57-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
-<span id="cb57-2"><a href="core.html#cb57-2" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="core.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)</span>
+<span id="cb57-2"><a href="core.html#cb57-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code></pre></div>
 <p>Embed figures from a folder.</p>
 <p>For this, it’s usually best to use a code-chunk and <code>knitr</code>. There are a number of graphical paramerters you can set (or ignore)
 <code>out.width</code> will scale your image accordingly - irrespective of unit/display
@@ -449,7 +450,7 @@ Figure 6.1: the ipums logo
 Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
 </div>
 <div id="ref-R-bookdown" class="csl-entry">
-———. 2023. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+———. 2022. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
 </div>
             </section>
