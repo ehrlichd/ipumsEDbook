@@ -1,14 +1,10 @@
 # Intro to R/Rstudio
 
-**NOTE:** Some of this can get summarized in the preface, but I think we should flesh out a whole lesson on it anyway. Supplemental/optional
 
 
 
-## Explain
 
-## Some Basics
-
-### R vs RStudio vs POSIT
+## R vs RStudio vs POSIT
 
 * If `R` is the engine, then `RStudio` is the car.
 
@@ -24,12 +20,19 @@ a user to use a mouse and keyboard to do *something.*
 
 An **IDE** is a special kind of program/app that provides MANY tools for writing and running code.
 
-### We will use Rstudio, to write R scripts that will analyze and visualize data.
+Throughout this text, we will use **RStudio**, to write (aka, **code**) **R-scripts** that will transform, analyze, and/or visualize data.
 
-R is a language that can DO a lot.
-RStudio is a program that lets YOU do a lot USING the R language (and others)
+**R** is a language that can DO a lot.
+**RStudio** is a program that lets **YOU** do a lot **USING** the **R language** (and other languages).
 
-### How to install
+Finally, **POSIT** is a new name/re brand of the company that produces the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
+Now, POSIT (company) produces RStudio (software), along with Quarto (software), in addition to other resource for data scientists.
+
+
+
+
+
+## How to install
 
 Go to posit
 
@@ -51,9 +54,9 @@ The console is where you actually input the code into R
 
 #### Writing R code - give it a try
 
-At its simplest, R is a calcultor. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.
+At its simplest, R is a calculator. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.
 
-The exact output you recieve depends on the intput!
+The exact output you receive depends on the input!
 
 
 
@@ -405,32 +408,130 @@ In practice, it's better to intentionally save and close your project. Then open
 Save your work, find typos, re-run easy!
 
 
-## Object-oriented progrmaing in R
+## R-specific Quirks
 
-### R objects
+### R objects, Functions
+
+R is an object-oriented programming language. Everything in R is either an object or a function. R objects generally store or define some kind of data. R functions, generally, take R objects as input, do some kind of operation, and produce some kind of output. 
+
+In the context of **language**, objects are the nouns and functions are the verbs.
+
+When you write R code, you usually create R objects that represent data of interest, then apply various R functions to transform, analyze, or visualize the data. In the below code, we are creating an **object** called `my_data`, which represents the integers one through 10. We are using the `c()` **function** which takes any number of input **objects** as **input** and **concatenates** them together into a character string. 
+
+The **input(s)** to a function go within the parentheses seperated by commas. You can usually tell the difference between R obects and R functions because R functions always have `()` written after their name.
+
+In most cases, the **output** of an R function will be printed to the console, unless it is saved into a new R object. We do this using the **assignment opperator**, `<-`. This is a special function R function that takes whatever is on the right-hand side of the `<-` and creates or overwrites an R object with the name specified to the left-hand side of the `<-`. In the example below, we use the **assignment opperator** to "catch" the result of the `c()`, which is the character string of intengers from 1 to 10.
+
+
+Calling the name of an R object will *usually* print its contents in the console.
+
+
+
+```{r}
+
+my_data <- c(1,2,3,4,5,6,7,8,9,10)
+
+
+
+my_data
+
+```
+
+
+
+We say usually because objects have different properties depending on their **class**. 
+
+
+
+> NOTE: We sometimes use the term **class** to refer to the class of data of something. Is a given number sequence comprised of integers, factors, or real numbers? In R, and in this text, when we use **class** we are explicitly referring to the R-object-class of an object. Because R is a statistical programming language, the data-class of an object and the object-class of an object are sometimes synonymous (EG factors, logical, character), other times, the names may be slightly different (EG the R-class numeric comprises both integer numbers and complex numbers).
+
+
+
 ### R classes
+
+R classes determine the characteristics of the R object. They may set parameters about what kind of data can/can't be included in the R object. They may also define or modify preset ways these R objects interact with other R objects. You can use the `class()` function on any R object to find out it's class(es). 
+
+That's right, an R object can have more than one class.
+
+Some basic R classes are **vectors**, **data,frames**, and **functions**. That's right! a function is actually just a certain **class** of R object. You can see below that in our example, `my_data` hass the class **vector**.
+
+```{r}
+
+class(my_data)
+
+```
+
 ### R Projects
+
+
+R projects are an essential way to organize your data analysis, research, or even scratch work in R. Projects let you create self-contained environments that can feature their own R libraries, containg packages that are different from your day-to-day operations. 
+
+### R code vs R scripts vs R markdown
+
+R **code** can go anywhere. It gets input into the console to actually run the commands. But if you want to keep a record of your code and document it, you probably want to write an **R script**. A script is simply a text file, that contains code. Presumably, the code takes some inputs, does some operations, and produces helpful output. 
+
+Sometimes we use scripts as a start-to-finish record of what we did in our work. This is often the case for research projects. A script might read data from a source, analyze it, visualize it, and save out results.
+
+If we ever need to re-do this work, it's as simple as "re-runing" the script (literally a click of a button).
+
+Scripts can also be helpful to automate workflows. If the same data transofrmations need to occur across many samples, a script can be written to **iterate** across a set of inputs, perform the same calculations/transformations, and output results in some way.
+
+R markdown is just another script, but has a few more bells and whistles that make writing and documenting code a much more enjoyable experience. In fact, this whole book was written using Rmarkdown!!
 
 ## How to find help
 
 ### In R
+
+All R functions *should* come with their hown help file. There are a few different ways to access this page.
+
+In RStudio, you can click on the Help tab of the File/Plots/Packages...(**HELP**, Viewer, Presentation) panel - the Lower-Right panel by default. 
+
+Here the serach box will search the help files for any R package you have installed. 
+
+You could also access the help files by pressing the `F1` key while your cursor is at the end of an r function.
+
+![](Screenshot of cursor placement after function name, before open parentheses)
+
 ### the web!
 
-stackexchange
-rdrr.io
+Google (or duck-duck-go or, i guess, bing) it!
+
+"How to calculate area under the curve in R"
+
+You may be directed directly to an R package tailor made for that purpose. In this case, the [AUC package](https://search.r-project.org/CRAN/refmans/DescTools/html/AUC.html) was the first result from the official CRAN page.
+
+You can search CRAN if you know you want a package to do a particular thing. 
+
+Alternatively, doing an internet search for a specific error message will often yield results on stackexchange or stackoverflow. These are two public sites where users submit responses and upvote helpful responses while downvoting unhelpful ones.
+
+NOTE: posting directly to these sites CAN be helpful, but oftentimes someone has already asked the question and doing an internet search will get you the answer more quickly.
 
 
 
 
+In general, people don't put out bad or malicious information about R, so you can trust any reasonable responses from the above websites. In addition, there are a few notable people or teams who consistently put out good (read amazing) R-related tips/help.
 
 
-## Explore / Exercises
+RStudio (Posit)
+Yihui
 
-**see old_ file for more examples**
+Tidyverse
+  Hadley Wickam
+  Jenny Bryan
+  
 
-The best way to learn R is to jump into it. Ideally, this lesson can be in a 
-computer lab or with laptop access.
 
+
+
+## Example Workflow
+
+
+### Create a new R project
+### Load a dataset
+### Visualize/Analyze data
+### Save out results
+
+## Excercises
 
 
 ### Interpreting R
@@ -452,25 +553,11 @@ my_data <- read_excel("//filepath/directory/filename.xlsx")
 
 
 
-## Elaborate
+### Try setting up a project
 
-
-Set up R project
-Read data into R
-For one variable (height)
-Visualize data
-Calculate mean, median, range
-HOW TO FIND MODE??
-
-save out results file
-
-
-
-## Evaluate/Exercises
-
-Students should set up their own Rproject and repeat the steps above for EACH 
-variable, including height. 
-Students should replicate in-class work by reading in class data and finding mean, median, and mode for ALL variables (there may be errors!)
-Reflect: What `class()` is each variable. Does it make sense to ALWAYS look for mean, median, mode? 
+* Read data in from outside the R project
+* Save data within your R project
+* Save data external to your R project
+* Visualize a dataset or trend.
 
  
