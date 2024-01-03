@@ -4,11 +4,34 @@
 
 ## Engage {.tabset}
 
-show two data viz side by side and ask best for the data. 
+
+
+
+**Which visualization best represents the data?** 
+
+
+**Are there any problems with the visualizations?**
+
+
+
+
+
+
+
+
+```{r, echo = FALSE}
+
+## UPDATE
+nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
+ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
+## this is very wrong
+ipums_ddi <- readRDS(file.path("..","ipumsED","data","ipumsi_ddi.rda"))
+
+ff_sex <- factor(ipums_data$SEX, labels = c("Male", "Female"))
+```
+
 
 ### Vis 1
-
-**Pose a question**
 
 
 
@@ -17,7 +40,7 @@ show two data viz side by side and ask best for the data.
   <p> 
   
   > 
-  > ANSWER HERE
+  > Barplots tend to be good choices to represent categorical data. They categories can be visualized side-by-side or stacked.
   >
     
   </p>
@@ -25,48 +48,280 @@ show two data viz side by side and ask best for the data.
 
 
 
+.pull-left[
+```{r}
+
+
+barplot(table(ff_sex))
+
+
+```
+]
+
+
+
+.pull-right[
+
+
+```{r}
+
+barplot(table(ipums_data$AGE))
+
+```
+
+
+]
+
+
+
 ### Vis 2
+
+
+```{r}
+
+
+plot(ff_sex, beside = FALSE)
+
+```
+
 
 ### Vis 3
 
 
+```{r}
+
+
+table(ff_marst)
+
+round(prop.table(table(ff_marst)),2)
+```
 
 
 ## Explore
 
 What do you want it to show vs what it shows. Maybe find a real data image from news that is clearly not good visualization
 
-## Explain - lecture/read
-
-### Single Variable Visualization
+## Explain
 
 
-* Histogram,
-* Box Plot, 
-* bar graphs,
-* pie charts, etc.
+*this section should mostly describe, examples will come in elaborate*
 
-### Multi variable visualizations
 
- * scatter plots, line graphs
+
+
+Visualizing data is the process of crafting a visual argument. All data visualizations require some level of subjective decsion making. Therefore any graph or table has some level of inherent bias. Effective data visualization involves crafting a visual argument, often one that conveys a direct story to the viewer. 
+
+As responsible researchers, educators, and data analysts we have a responsiblility to carefully consider our visual arguments.
+
+
+
+An effective **and responsible** data visualization will lay out all relevant information (within reason), providing all the information for the reader to understand and build the visual argument for themselves.
+
+
+
+
+
+
+### Single Variable - Continuous
+
+
+
+
+In general, your choice of visualization will depend on the **data type** that you are interested in. Continuous variables often get visually summarized using histograms, or box and whisker plots. These plots all serve to visually summarize the distrubtion and skew of a continuous variable. 
+
+
+* Continuous
+    + Histogram
+    + Box Plot
+    + Summary Tables
+    + plot by index - *example of not so helpful*
+    
+    
+    
+### Single Variable - Categorical
+
+
+Categorical variables, are often better visualized using bar graphs, pie charts, or other **quantity/count plots**. 
+
+
+* Categorical
+    + bar graphs
+    + pie charts
+    + freq/prop tables
+    
+    
+    
+
+### Multi variable - continuous
+
+ * scatter plots
+ * line graphs
+ * Cross Tabs
+ 
+### Mutli variable - mixed
+
+
+* continuous ~ categorical
+    + series of boxplots
+
+* categorical ~ categorical
+    + *does this exist??*
+ 
+* categorical ~ continuous
+    + logistic regression - kind of
  
  
 ### Data Tables
 
 
+**This could go into the R section**
+
+
+
 
 ## Elaborate
 
-### Making visualizations in R
-Histograms:
-Box Plots:
-Bar Graphs:
-Pie Charts:
-Scatter Plots:
-Line Graphs:
-Tables:
-More: ______
 
+
+
+In the next sections we will demonstrate some common visualzation using R. We will highlight common misteps and tips and tricks along the way. For each function we encourage you to try to come up with the syntax on your own, but you can click the `code` button to see how to generate the plots.
+
+
+
+
+### Making visualizations in R {.tabset}
+
+#### Boxplot
+
+Boxplots provide a great way to understand the distribution of the data at a glance. Three-quarters of the data are represented within the box portion of the plot. The full range of the data represented by the fences at the end of the vertical lines. 
+
+If there is an extreme range in the data, individual values will be plotted for the most extreme (3% of)
+
+
+
+
+##### Visualizations
+
+
+```{r}
+
+boxplot(ipums_data$AGE)
+
+```
+
+##### Summary Tables
+
+
+The `summary()` function can be applied to many data types. When applying to a continuous variable, it will returns a **5-number summary** along with the **mean**.
+
+
+
+
+**Which numbers are included in the 5-number summary? How do these values relate to the box plot?**
+
+<details>
+  <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  >
+  > The 5-number summary describes a dataset by providing the minimum, maximum, and median values. In a addition, the lower and upper quartiles are returned.
+  >
+  >
+  > These 5 numbers represent key points on the boxplot. The extent of whiskers (minimum and maximum), the extent of the box (lower quartile and upper quartile), and the median.
+  >
+  
+  
+  </p>
+</details>
+
+```{r}
+
+summary(ipums_data$AGE)
+```
+
+
+#### Histograms
+
+
+
+
+Histograms divide a continuous variable into several `bins`. 
+
+
+
+
+Try out the `hist()` function on a continuous varible like `AGE`.
+
+
+##### Visualizations
+
+```{r}
+
+hist(ipums_data$AGE)
+
+```
+
+
+##### Summary Tables
+
+
+
+The same summary information applies to histograms.
+
+
+#### Bar Chart
+
+
+##### Visualizations
+
+```{r}
+class(ipums_data$SEX)
+barplot(table(ipums_data$SEX))
+
+```
+
+
+##### Summary Tables
+
+
+
+#### Pie Charts
+
+
+##### Visualizations
+
+
+##### Summary Tables
+
+
+
+
+#### Scatter Plots
+
+
+##### Visualizations
+
+
+##### Summary Tables
+
+
+
+#### Line Graphs
+
+
+##### Visualizations
+
+
+##### Summary Tables
+
+
+
+
+#### Cross Tabs
+
+*can these be worked into the above sections?*
+
+**Others...**
 
 
 ### Which visualization is best for my data? Things to consider
