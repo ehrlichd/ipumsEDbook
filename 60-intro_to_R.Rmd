@@ -4,13 +4,13 @@
 
 
 
-## R vs RStudio vs POSIT
+## R vs RStudio
 
 * If `R` is the engine, then `RStudio` is the car.
 
-* If `R` is the text, Rstudio is the text-editor.
+* If `R` is the text, `RStudio` is the text-editor.
 
-* `R` is the **programming language**, `Rstudio` is the **Integrated Development Environment (IDE)**.
+* `R` is the **programming language**, `RStudio` is the **Integrated Development Environment (IDE)**.
   * *What do you think some differences are between R and RStudio?*
 
 
@@ -25,8 +25,15 @@ Throughout this text, we will use **RStudio**, to write (aka, **code**) **R-scri
 **R** is a language that can DO a lot.
 **RStudio** is a program that lets **YOU** do a lot **USING** the **R language** (and other languages).
 
-Finally, **POSIT** is a new name/re brand of the company that produces the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
-Now, POSIT (company) produces RStudio (software), along with Quarto (software), in addition to other resource for data scientists.
+
+
+## RStudio vs POSIT
+
+
+One last bit of definitions: **POSIT** is a new name/re brand of the company that produces the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
+
+
+Now, POSIT (company) produces RStudio (software), along with Quarto (software), and other resource for data scientists.
 
 
 
@@ -34,7 +41,11 @@ Now, POSIT (company) produces RStudio (software), along with Quarto (software), 
 
 ## How to install
 
-Go to posit
+
+
+R is available directly from the Comprehensive R Archive Network, CRAN, located at https://cran.r-project.org/. You can find the latest official and development versions of base-R and all contributed packages hosted by CRAN.
+
+You can also go straight to the POSIT website, https://posit.co/download/rstudio-desktop/, where you can find download links for both R and Rstudio.
 
 
 ## Navigating RStudio
