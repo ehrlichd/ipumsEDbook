@@ -326,8 +326,8 @@ In order to keep things organized, we will first create an object called `my_dat
 
 
 ```{r}
-## for now
 
+## for now
 my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
 
 
