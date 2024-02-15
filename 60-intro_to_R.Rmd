@@ -3,16 +3,44 @@
 
 
 
+A crash course to teach you everthing you need to know...
+
+
+
+
+To teach yourself more with the rest of this book!
+
+
+
+
 
 ## R vs RStudio
 
-* If `R` is the engine, then `RStudio` is the car.
 
-* If `R` is the text, `RStudio` is the text-editor.
 
-* `R` is the **programming language**, `RStudio` is the **Integrated Development Environment (IDE)**.
-  * *What do you think some differences are between R and RStudio?*
+Let's start with some analogies:
 
+  * If `R` is the engine, then `RStudio` is the car.
+  
+  * If `R` is the text, `RStudio` is the text-editor.
+  
+  
+    
+    
+**What do you think some differences are between R and RStudio?**
+
+<details>
+  <summary> *Click to show answer* </summary> <br> 
+  <p> 
+  
+  >
+  > `R` is technically the **programming language**, 
+  > `RStudio` is the **Integrated Development Environment (IDE)**
+  >
+  
+  
+  </p>
+</details>
 
 `RStudio` is a program/app just like Google Chrome or Microsoft Word. Each
 of these programs provide a **Graphical User Interface (GUI)**, a pretty way for 
@@ -30,7 +58,7 @@ Throughout this text, we will use **RStudio**, to write (aka, **code**) **R-scri
 ## RStudio vs POSIT
 
 
-One last bit of definitions: **POSIT** is a new name/re brand of the company that produces the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
+One last bit of definitions: **POSIT** is a new name/re brand of the company that produces and maintains the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
 
 
 Now, POSIT (company) produces RStudio (software), along with Quarto (software), and other resource for data scientists.
@@ -43,9 +71,73 @@ Now, POSIT (company) produces RStudio (software), along with Quarto (software), 
 
 
 
-R is available directly from the Comprehensive R Archive Network, CRAN, located at https://cran.r-project.org/. You can find the latest official and development versions of base-R and all contributed packages hosted by CRAN.
+R is available directly from the Comprehensive R Archive Network, CRAN, located at https://cran.r-project.org/. You can find the latest official and development versions of **base-R** and all contributed packages hosted by CRAN.
 
 You can also go straight to the POSIT website, https://posit.co/download/rstudio-desktop/, where you can find download links for both R and Rstudio.
+
+
+
+
+### Base R and beyond
+
+
+
+**Base R** Generally refers to the core set of **R packages** that come bundled together when you download R from CRAN or POSIT. **Packages** are collections of R code that can expand the functionality that is not included with the base R packages. For example, this book was made using the `bookdown` Rpackage which itself extends the `Rmarkdown` package. Together, these packages make it easy to produce high quality textbook style materials using only R!.
+
+This section will focus on using base R commands to orient users, however this book does draw on several additional packages, namely the IPUMS packages: 
+
+  * ipumsr
+  * ipumsED
+  * ipumsEDbook (that's the text you're reading!)
+  
+  
+  
+R packages need to **installed** one time which downloads a copy to your local R package library. This is most often done using the `install.packages()` command, which whill download R packages straight from CRAN. 
+
+For example, you could run the following to download the packages mentioned above. Note how the `c()` function is needed in order to provide a list of R packages the user wishes to download.
+
+```{r, eval = FALSE}
+
+## One package
+install.packages("ipumsr")
+
+
+## Several packages
+
+install.packages(c("ipumsr", "ipumsED", "ipumsEDbook"))
+
+```
+
+
+
+
+
+Then, any time you want to use functionality from that package, you can use the `library()` function at the start of your **R session**. In general, your **R session** lasts for the entire time you are actively working. You can **restart** your session in order to clear your workspace, memory, etc. Or, if your computer goes to sleep, your session will also (most likely) automatically restart.
+
+
+Note that `library()` does not expect a characer string (in quotes `""`), and that it only takes a single package name. 
+
+
+```{r, eval = FALSE}
+
+library(ipumsr)
+library(ipumsED)
+
+```
+
+
+
+
+Note also that while downloading `ipumsEDbook` provides all the source code for this document, it is unlikely that you would ever need to load the package with `library()`. Instead, you can use the following notation to call a specific function without loading the entire package. In this case, we call a function which will regenerate the html version of this document. 
+
+
+
+
+```{r, eval = FALSE}
+
+ipumsEDbook::regenerate_book()
+
+```
 
 
 ## Navigating RStudio
