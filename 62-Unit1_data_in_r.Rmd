@@ -1,11 +1,13 @@
 
-# Intro to R, data types, data structures 
+# Appendix 3b: Additional lessons / content to transfer over: {.unnumbered}
+
+## Intro to R, data types, data structures {.unnumbered}
 
 
 In the previous lesson, we began thinking about **data**, how to talk about it, 
 and how to **visualize** it. We also talked about one type of average, the **mean.**
 
-## Engage
+## Engage {.unnumbered}
 
 *What do you think the following code does?*
 
@@ -88,7 +90,7 @@ By default, `Console` only prints results if they have no where else to go. If t
 
 
 
-## Explore - Interacting with R objects  
+## Explore - Interacting with R objects  {.unnumbered}
 
 
 
@@ -196,7 +198,7 @@ summary(data$Height_inches)
 ```
 
 
-## Mode 
+## Mode {.unnumbered}
 
 You're probably familiar with **mean** and **median** being talked about with a 
 third term, **mode**. The **mode** is the most commonly occuring value in a 
@@ -253,7 +255,7 @@ my_mode(data$Height_inches)
 
 
 
-## Visualizing Data 
+## Visualizing Data {.unnumbered}
 
 The above summaries describe data with numbers, but we can also describe data visually.
 
@@ -310,6 +312,6 @@ barplot(birth_freq)
 
 
 
-## Glossary {-}
+## Glossary {.unnumbered}
 
 

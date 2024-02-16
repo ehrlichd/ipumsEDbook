@@ -21,13 +21,23 @@
 
 ```{r, echo = FALSE}
 
-## UPDATE
-nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
-ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
+## tmp locations
+nhis_data <- read.csv(file.path("..", "Projects", "IPUMS", "ipumsED", "data", "nhis_sample.csv"))
+ipums_data <- read.csv(file.path("..", "Projects", "IPUMS", "ipumsED", "data", "ipumsi_sample.csv"))
 ## this is very wrong
-ipums_ddi <- readRDS(file.path("..","ipumsED","data","ipumsi_ddi.rda"))
+# ipums_ddi <- readRDS(file.path("..", "Projects", "IPUMS","ipumsED","data","ipumsi_ddi.rda"))
 
+# 
+# ## UPDATE
+# nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
+# ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
+# ## this is very wrong
+# ipums_ddi <- readRDS(file.path("..","ipumsED","data","ipumsi_ddi.rda"))
+
+## see ipumsi.cbk for these labels
 ff_sex <- factor(ipums_data$SEX, labels = c("Male", "Female"))
+ff_marst <- factor(ipums_data$MARST, labels = c("Single", "Married", "Separated", "Widowed")) 
+
 ```
 
 

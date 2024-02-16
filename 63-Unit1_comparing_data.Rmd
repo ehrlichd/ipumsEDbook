@@ -1,12 +1,14 @@
 
 
-# Comparing Data
+# Appendix 3b: Additional lessons / content to transfer over: {.unnumbered}
+
+## Comparing Data {.unnumbered}
 
 
 **NEEDS A LOT OF WORK**
 
 
-## Data Distributions
+## Data Distributions {.unnumbered}
 
 ### Normal Distributions
 
@@ -145,11 +147,11 @@ Complex transformations
 
 What to do if the data are **not** normal?
 
-##  Statisitcal testing of simple data sets
+##  Statisitcal testing of simple data sets {.unnumbered}
 
 ### t-tests, ANOVA, chi2
 
-## Relationships between variables in simple data sets
+## Relationships between variables in simple data sets {.unnumbered}
 ### Correlation, Linear Regression
 #### Simple LM
 #### Complex LM
@@ -158,9 +160,9 @@ What to do if the data are **not** normal?
 
 
 For now, I have 3 main chapters for each of the main sections: 
-  * Basics of data science / R \@ref(unit1) 
-  * Applications/critiques using IPUMS data \@ref(unit2)
-  * Student-driven projects \@ref(unit3)
+  * Basics of data science / R 
+  * Applications/critiques using IPUMS data 
+  * Student-driven projects 
 
 Each of these **Chapters** contains multiple sections. We'll likely want to break these sections out into their own `.Rmd` files as they get fleshed out. For now, I'll try to keep the abundance of files limited.
 
@@ -191,8 +193,8 @@ Add more to demo anova
 
 Alternatively, income by education level - may be more interesting/relevant to college students (or depressing)
 
-## Intro to R/RStudio
-## Reading Data / Distributions
+## Intro to R/RStudio {.unnumbered}
+## Reading Data / Distributions {.unnumbered}
 ### What *is* a **normal distribution**
 #### How normal is it?
 show increasingly unclear examples of normal vs not
@@ -212,7 +214,7 @@ standard / two-way t test
 
 #### comparing more than two - ANOVA
 
-## Glossary {-}
+## Glossary {.unnumbered }
 Data
 Quantitative
 Qualitative

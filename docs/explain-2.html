@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 24 Explain |  Data Science for Social Scientists: An applied course using IPUMS data  </title>
+  <title>Explain | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 24 Explain |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta property="og:title" content="Explain | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 24 Explain |  Data Science for Social Scientists: An applied course using IPUMS data  " />
+  <meta name="twitter:title" content="Explain | Data Science for Social Scientists: An applied course using IPUMS data" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="explore-2.html"/>
-<link rel="next" href="elaborate-2.html"/>
+<link rel="prev" href="explore-5.html"/>
+<link rel="next" href="ellaborate.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -153,169 +157,250 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Beginning of a Syllabus</a></li>
+<li><a href="./"> ipumsEDbook </a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Hello Anthropologists!!</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-make-this-course"><i class="fa fa-check"></i>Why make this course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-ipums"><i class="fa fa-check"></i>What is IPUMS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-r"><i class="fa fa-check"></i>What is R</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="" data-path="what-is-ipums.html"><a href="what-is-ipums.html"><i class="fa fa-check"></i>What is IPUMS</a></li>
-<li class="chapter" data-level="" data-path="why-make-this-course.html"><a href="why-make-this-course.html"><i class="fa fa-check"></i>Why make this course</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html"><i class="fa fa-check"></i>Course Description</a>
 <ul>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#course-aims"><i class="fa fa-check"></i>Course Aims</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#learning-outcomes"><i class="fa fa-check"></i>Learning Outcomes</a></li>
 <li class="chapter" data-level="" data-path="course-description.html"><a href="course-description.html#guiding-principles"><i class="fa fa-check"></i>Guiding Principles</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="syllabus---overview.html"><a href="syllabus---overview.html"><i class="fa fa-check"></i>Syllabus - Overview</a>
+<li class="chapter" data-level="" data-path="syllabus---general.html"><a href="syllabus---general.html"><i class="fa fa-check"></i>Syllabus - General</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html"><i class="fa fa-check"></i>Syllabus - Detailed</a>
 <ul>
-<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html"><i class="fa fa-check"></i>Detailed Syllabus</a>
-<ul>
-<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
-<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
-<li class="chapter" data-level="" data-path="detailed-syllabus.html"><a href="detailed-syllabus.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-1-understanding-and-testing-data"><i class="fa fa-check"></i>Unit 1 Understanding and Testing Data</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-2-finding-data-and-asking-questions-using-ipums-data"><i class="fa fa-check"></i>Unit 2 Finding Data and Asking Questions (Using IPUMS Data)</a></li>
+<li class="chapter" data-level="" data-path="syllabus---detailed.html"><a href="syllabus---detailed.html#unit-3-discussing-data-and-student-research"><i class="fa fa-check"></i>Unit 3 Discussing Data and Student Research</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="dev-notes.html"><a href="dev-notes.html"><i class="fa fa-check"></i>DEV NOTES</a></li>
-<li class="chapter" data-level="1" data-path="unit1.html"><a href="unit1.html"><i class="fa fa-check"></i><b>1</b> Unit 1: The Basics</a></li>
-<li class="chapter" data-level="2" data-path="lesson-1.html"><a href="lesson-1.html"><i class="fa fa-check"></i><b>2</b> Lesson 1:</a>
+<li class="chapter" data-level="" data-path="unit-1-the-basics.html"><a href="unit-1-the-basics.html"><i class="fa fa-check"></i>Unit 1: The Basics</a></li>
+<li class="chapter" data-level="1" data-path="unit1_ch1.html"><a href="unit1_ch1.html"><i class="fa fa-check"></i><b>1</b> WHAT IS DATA</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>2.1</b> WHAT IS DATA</a>
+<li class="chapter" data-level="1.1" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>1.1</b> Engage</a></li>
+<li class="chapter" data-level="1.2" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>1.2</b> Explore</a></li>
+<li class="chapter" data-level="1.3" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>1.3</b> Explain</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="what-is-data.html"><a href="what-is-data.html#pov"><i class="fa fa-check"></i><b>2.1.1</b> POV:</a></li>
+<li class="chapter" data-level="1.3.1" data-path="explain.html"><a href="explain.html#what-are-data"><i class="fa fa-check"></i><b>1.3.1</b> WHAT ARE DATA</a></li>
+<li class="chapter" data-level="1.3.2" data-path="explain.html"><a href="explain.html#collecting-data"><i class="fa fa-check"></i><b>1.3.2</b> COLLECTING DATA</a></li>
+<li class="chapter" data-level="1.3.3" data-path="explain.html"><a href="explain.html#populations-and-sampling"><i class="fa fa-check"></i><b>1.3.3</b> POPULATIONS AND SAMPLING</a></li>
+<li class="chapter" data-level="1.3.4" data-path="explain.html"><a href="explain.html#study-design-considerantions---bias"><i class="fa fa-check"></i><b>1.3.4</b> Study Design Considerantions - Bias</a></li>
+<li class="chapter" data-level="1.3.5" data-path="explain.html"><a href="explain.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.3.5</b> EXPLORATORY DATA ANALYSIS</a></li>
+<li class="chapter" data-level="1.3.6" data-path="explain.html"><a href="explain.html#exploring-height"><i class="fa fa-check"></i><b>1.3.6</b> Exploring height</a></li>
+<li class="chapter" data-level="1.3.7" data-path="explain.html"><a href="explain.html#mean-height"><i class="fa fa-check"></i><b>1.3.7</b> Mean height</a></li>
+<li class="chapter" data-level="1.3.8" data-path="explain.html"><a href="explain.html#median-height"><i class="fa fa-check"></i><b>1.3.8</b> Median height</a></li>
+<li class="chapter" data-level="1.3.9" data-path="explain.html"><a href="explain.html#modal-height"><i class="fa fa-check"></i><b>1.3.9</b> Modal height</a></li>
+<li class="chapter" data-level="1.3.10" data-path="explain.html"><a href="explain.html#range"><i class="fa fa-check"></i><b>1.3.10</b> Range</a></li>
+<li class="chapter" data-level="1.3.11" data-path="explain.html"><a href="explain.html#outliers"><i class="fa fa-check"></i><b>1.3.11</b> Outliers</a></li>
+<li class="chapter" data-level="1.3.12" data-path="explain.html"><a href="explain.html#find-outliers"><i class="fa fa-check"></i><b>1.3.12</b> Find Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="collecting-data.html"><a href="collecting-data.html"><i class="fa fa-check"></i><b>2.2</b> COLLECTING DATA</a></li>
-<li class="chapter" data-level="2.3" data-path="populations-and-sampling.html"><a href="populations-and-sampling.html"><i class="fa fa-check"></i><b>2.3</b> POPULATIONS AND SAMPLING</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="aaa-in-class-results.html"><a href="aaa-in-class-results.html"><i class="fa fa-check"></i>AAA “In-Class” Results</a>
+<li class="chapter" data-level="1.4" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>1.4</b> Elaborate</a>
 <ul>
-<li class="chapter" data-level="" data-path="aaa-in-class-results.html"><a href="aaa-in-class-results.html#load-the-data"><i class="fa fa-check"></i>Load the Data</a></li>
-<li class="chapter" data-level="" data-path="access-the-data.html"><a href="access-the-data.html"><i class="fa fa-check"></i>Access the Data</a></li>
+<li class="chapter" data-level="1.4.1" data-path="elaborate.html"><a href="elaborate.html#your-turn"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>1.5</b> Evaluate/Exercises</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="evaluateexercises.html"><a href="evaluateexercises.html#context"><i class="fa fa-check"></i><b>1.5.1</b> Context:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="evaluateexercises.html"><a href="evaluateexercises.html#questions"><i class="fa fa-check"></i><b>1.5.2</b> Questions:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>1.6</b> GLOSSARY</a></li>
+<li class="chapter" data-level="1.7" data-path="additional-content.html"><a href="additional-content.html"><i class="fa fa-check"></i><b>1.7</b> Additional Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>2</b> Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>2.1</b> Engage</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="engage-1.html"><a href="engage-1.html#vis-1"><i class="fa fa-check"></i><b>2.1.1</b> Vis 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="engage-1.html"><a href="engage-1.html#vis-2"><i class="fa fa-check"></i><b>2.1.2</b> Vis 2</a></li>
+<li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
+<li class="chapter" data-level="2.3" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>2.3</b> Explain</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="explain-1.html"><a href="explain-1.html#single-variable---continuous"><i class="fa fa-check"></i><b>2.3.1</b> Single Variable - Continuous</a></li>
+<li class="chapter" data-level="2.3.2" data-path="explain-1.html"><a href="explain-1.html#single-variable---categorical"><i class="fa fa-check"></i><b>2.3.2</b> Single Variable - Categorical</a></li>
+<li class="chapter" data-level="2.3.3" data-path="explain-1.html"><a href="explain-1.html#multi-variable---continuous"><i class="fa fa-check"></i><b>2.3.3</b> Multi variable - continuous</a></li>
+<li class="chapter" data-level="2.3.4" data-path="explain-1.html"><a href="explain-1.html#mutli-variable---mixed"><i class="fa fa-check"></i><b>2.3.4</b> Mutli variable - mixed</a></li>
+<li class="chapter" data-level="2.3.5" data-path="explain-1.html"><a href="explain-1.html#data-tables"><i class="fa fa-check"></i><b>2.3.5</b> Data Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.4</b> Elaborate</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="elaborate-1.html"><a href="elaborate-1.html#making-visualizations-in-r"><i class="fa fa-check"></i><b>2.4.1</b> Making visualizations in R</a></li>
+<li class="chapter" data-level="2.4.2" data-path="elaborate-1.html"><a href="elaborate-1.html#which-visualization-is-best-for-my-data-things-to-consider"><i class="fa fa-check"></i><b>2.4.2</b> Which visualization is best for my data? Things to consider</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>2.5</b> Evaluate/Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i><b>3</b> Describing Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="engage-2.html"><a href="engage-2.html"><i class="fa fa-check"></i><b>3.1</b> Engage</a></li>
+<li class="chapter" data-level="3.2" data-path="explore-2.html"><a href="explore-2.html"><i class="fa fa-check"></i><b>3.2</b> Explore</a></li>
+<li class="chapter" data-level="3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>3.3</b> Explain - lecture/read</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-data---summary-statistics"><i class="fa fa-check"></i><b>3.3.1</b> How do we describe data - summary statistics</a></li>
+<li class="chapter" data-level="3.3.2" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-the-distribution-of-data"><i class="fa fa-check"></i><b>3.3.2</b> How do we describe the distribution of data</a></li>
+<li class="chapter" data-level="3.3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-manipulate-data"><i class="fa fa-check"></i><b>3.3.3</b> How do we manipulate data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="normality.html"><a href="normality.html"><i class="fa fa-check"></i><b>3.4</b> Normality</a></li>
+<li class="chapter" data-level="3.5" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>3.5</b> Elaborate</a></li>
+<li class="chapter" data-level="3.6" data-path="evaluateexercises-2.html"><a href="evaluateexercises-2.html"><i class="fa fa-check"></i><b>3.6</b> Evaluate/Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="hypothesis-testing---comparison-and-correlations.html"><a href="hypothesis-testing---comparison-and-correlations.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing - Comparison and Correlations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="engage-3.html"><a href="engage-3.html"><i class="fa fa-check"></i><b>4.1</b> Engage</a></li>
+<li class="chapter" data-level="4.2" data-path="explore-3.html"><a href="explore-3.html"><i class="fa fa-check"></i><b>4.2</b> Explore</a></li>
+<li class="chapter" data-level="4.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html"><i class="fa fa-check"></i><b>4.3</b> Explain - lecture/read</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#why-2-groups"><i class="fa fa-check"></i><b>4.3.1</b> Why 2 groups?</a></li>
+<li class="chapter" data-level="4.3.2" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#common-tests-to-compare-2-groups"><i class="fa fa-check"></i><b>4.3.2</b> Common tests to compare 2 groups</a></li>
+<li class="chapter" data-level="4.3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#correlations"><i class="fa fa-check"></i><b>4.3.3</b> Correlation(s)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="elaborate-3.html"><a href="elaborate-3.html"><i class="fa fa-check"></i><b>4.4</b> Elaborate</a></li>
+<li class="chapter" data-level="4.5" data-path="evaluateexercises-3.html"><a href="evaluateexercises-3.html"><i class="fa fa-check"></i><b>4.5</b> Evaluate/Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="hypothesis-testing---anova-and-lm.html"><a href="hypothesis-testing---anova-and-lm.html"><i class="fa fa-check"></i><b>5</b> Hypothesis Testing - ANOVA and LM</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="engage-4.html"><a href="engage-4.html"><i class="fa fa-check"></i><b>5.1</b> Engage</a></li>
+<li class="chapter" data-level="5.2" data-path="explore-4.html"><a href="explore-4.html"><i class="fa fa-check"></i><b>5.2</b> Explore</a></li>
+<li class="chapter" data-level="5.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html"><i class="fa fa-check"></i><b>5.3</b> Explain - lecture/read</a></li>
+<li class="chapter" data-level="5.4" data-path="elaborate-4.html"><a href="elaborate-4.html"><i class="fa fa-check"></i><b>5.4</b> Elaborate</a></li>
+<li class="chapter" data-level="5.5" data-path="evaluateexercises-4.html"><a href="evaluateexercises-4.html"><i class="fa fa-check"></i><b>5.5</b> Evaluate/Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="unit-2-ipums.html"><a href="unit-2-ipums.html"><i class="fa fa-check"></i>Unit 2: IPUMS</a></li>
+<li class="chapter" data-level="" data-path="unit-3-independent-research.html"><a href="unit-3-independent-research.html"><i class="fa fa-check"></i>Unit 3: Independent Research</a></li>
+<li class="chapter" data-level="" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i>Appendix 1: Example RMD code</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="appendix-2-intro-to-rrstudio.html"><a href="appendix-2-intro-to-rrstudio.html"><i class="fa fa-check"></i>Appendix 2: Intro to R/Rstudio</a>
+<ul>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Basics</a>
+<ul>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#r-vs-rstudio"><i class="fa fa-check"></i>R vs RStudio</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#rstudio-vs-posit"><i class="fa fa-check"></i>RStudio vs POSIT</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="how-to-install.html"><a href="how-to-install.html"><i class="fa fa-check"></i>How to install</a>
+<ul>
+<li class="chapter" data-level="" data-path="how-to-install.html"><a href="how-to-install.html#base-r-and-beyond"><i class="fa fa-check"></i>Base R and beyond</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i>Navigating RStudio</a>
+<ul>
+<li class="chapter" data-level="5.5.9" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#navigating-console"><i class="fa fa-check"></i><b>5.5.9</b> Navigating… Console</a></li>
+<li class="chapter" data-level="5.5.10" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#navigating-environments"><i class="fa fa-check"></i><b>5.5.10</b> Navigating … Environments</a></li>
+<li class="chapter" data-level="5.5.11" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#writing-r-in-scripts-breaking-the-4th-pane"><i class="fa fa-check"></i><b>5.5.11</b> Writing R in Scripts (Breaking the 4th Pane)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html"><i class="fa fa-check"></i>R-specific Quirks</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-objects-functions"><i class="fa fa-check"></i>R objects, Functions</a></li>
+<li class="chapter" data-level="5.5.12" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-classes"><i class="fa fa-check"></i><b>5.5.12</b> R classes</a></li>
+<li class="chapter" data-level="5.5.13" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-projects"><i class="fa fa-check"></i><b>5.5.13</b> R Projects</a></li>
+<li class="chapter" data-level="5.5.14" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-code-vs-r-scripts-vs-r-markdown"><i class="fa fa-check"></i><b>5.5.14</b> R code vs R scripts vs R markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i>How to find help</a>
+<ul>
+<li class="chapter" data-level="5.5.15" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>5.5.15</b> In R</a></li>
+<li class="chapter" data-level="5.5.16" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>5.5.16</b> the web!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-workflow.html"><a href="example-workflow.html"><i class="fa fa-check"></i>Example Workflow</a>
+<ul>
+<li class="chapter" data-level="5.5.17" data-path="example-workflow.html"><a href="example-workflow.html#create-a-new-r-project"><i class="fa fa-check"></i><b>5.5.17</b> Create a new R project</a></li>
+<li class="chapter" data-level="5.5.18" data-path="example-workflow.html"><a href="example-workflow.html#load-a-dataset"><i class="fa fa-check"></i><b>5.5.18</b> Load a dataset</a></li>
+<li class="chapter" data-level="5.5.19" data-path="example-workflow.html"><a href="example-workflow.html#visualizeanalyze-data"><i class="fa fa-check"></i><b>5.5.19</b> Visualize/Analyze data</a></li>
+<li class="chapter" data-level="5.5.20" data-path="example-workflow.html"><a href="example-workflow.html#save-out-results"><i class="fa fa-check"></i><b>5.5.20</b> Save out results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="excercises.html"><a href="excercises.html"><i class="fa fa-check"></i>Excercises</a>
+<ul>
+<li class="chapter" data-level="5.5.21" data-path="excercises.html"><a href="excercises.html#interpreting-r"><i class="fa fa-check"></i><b>5.5.21</b> Interpreting R</a></li>
+<li class="chapter" data-level="5.5.22" data-path="excercises.html"><a href="excercises.html#try-setting-up-a-project"><i class="fa fa-check"></i><b>5.5.22</b> Try setting up a project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-3a-additional-lessons-content-to-transfer-over-what-is-data.html"><a href="appendix-3a-additional-lessons-content-to-transfer-over-what-is-data.html"><i class="fa fa-check"></i>Appendix 3a: Additional lessons / content to transfer over: What <em>is</em> data?</a>
+<ul>
+<li class="chapter" data-level="" data-path="pov.html"><a href="pov.html"><i class="fa fa-check"></i>POV:</a>
+<ul>
+<li class="chapter" data-level="5.5.23" data-path="pov.html"><a href="pov.html#activity---collect-data-on-height"><i class="fa fa-check"></i><b>5.5.23</b> ACTIVITY - collect data on height</a></li>
+<li class="chapter" data-level="5.5.24" data-path="pov.html"><a href="pov.html#activity---collect-data-on-birth-month"><i class="fa fa-check"></i><b>5.5.24</b> ACTIVITY - collect data on birth month</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="explore-5.html"><a href="explore-5.html"><i class="fa fa-check"></i>Explore</a>
+<ul>
+<li class="chapter" data-level="5.5.25" data-path="explore-5.html"><a href="explore-5.html#example-datasets"><i class="fa fa-check"></i><b>5.5.25</b> Example Datasets</a></li>
+<li class="chapter" data-level="5.5.26" data-path="explore-5.html"><a href="explore-5.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>5.5.26</b> ACTIVITY - Calculate by hand</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="explain-2.html"><a href="explain-2.html"><i class="fa fa-check"></i>Explain</a></li>
+<li class="chapter" data-level="" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i>Ellaborate</a>
+<ul>
+<li class="chapter" data-level="5.5.27" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>5.5.27</b> So what is data?</a></li>
+<li class="chapter" data-level="5.5.28" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data-1"><i class="fa fa-check"></i><b>5.5.28</b> Collecting Data</a></li>
+<li class="chapter" data-level="5.5.29" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling-1"><i class="fa fa-check"></i><b>5.5.29</b> POPULATIONS AND SAMPLING</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a>
+<ul>
+<li class="chapter" data-level="5.5.30" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>5.5.30</b> Review Questions</a></li>
+<li class="chapter" data-level="5.5.31" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>5.5.31</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-3b-additional-lessons-content-to-transfer-over.html"><a href="appendix-3b-additional-lessons-content-to-transfer-over.html"><i class="fa fa-check"></i>Appendix 3b: Additional lessons / content to transfer over:</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i>Intro to R, data types, data structures</a></li>
+<li class="chapter" data-level="" data-path="engage-5.html"><a href="engage-5.html"><i class="fa fa-check"></i>Engage</a>
+<ul>
+<li class="chapter" data-level="5.5.32" data-path="engage-5.html"><a href="engage-5.html#r-vs-rstudio-1"><i class="fa fa-check"></i><b>5.5.32</b> R vs RStudio</a></li>
+<li class="chapter" data-level="5.5.33" data-path="engage-5.html"><a href="engage-5.html#orientation-to-rstudio"><i class="fa fa-check"></i><b>5.5.33</b> Orientation to RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html"><i class="fa fa-check"></i>Explore - Interacting with R objects</a>
+<ul>
+<li class="chapter" data-level="5.5.34" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#load-the-data"><i class="fa fa-check"></i><b>5.5.34</b> Load the Data</a></li>
+<li class="chapter" data-level="5.5.35" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#inspect-the-data-1"><i class="fa fa-check"></i><b>5.5.35</b> Inspect the Data</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html"><i class="fa fa-check"></i>Summarize Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#continuous-data"><i class="fa fa-check"></i>Continuous Data</a></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#all-in-summary"><i class="fa fa-check"></i>All in summary()</a></li>
-<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#mode-code"><i class="fa fa-check"></i>Mode Code</a></li>
-<li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#mode-results"><i class="fa fa-check"></i>Mode Results</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing Data</a>
+<li class="chapter" data-level="" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i>Mode</a>
 <ul>
-<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---boxplots"><i class="fa fa-check"></i>Continuous Data - Boxplots</a></li>
-<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#continuous-data---histograms"><i class="fa fa-check"></i>Continuous Data - Histograms</a></li>
-<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#categorical-data"><i class="fa fa-check"></i>Categorical Data</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="lesson-2-intro-to-r-data-types-data-structures.html"><a href="lesson-2-intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>3</b> Lesson 2: Intro to R, data types, data structures</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3.1</b> INTRO TO R</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="intro-to-r.html"><a href="intro-to-r.html#what-is-r"><i class="fa fa-check"></i><b>3.1.1</b> What is R?</a></li>
-<li class="chapter" data-level="3.1.2" data-path="intro-to-r.html"><a href="intro-to-r.html#why-use-r"><i class="fa fa-check"></i><b>3.1.2</b> Why use R?</a></li>
-<li class="chapter" data-level="3.1.3" data-path="intro-to-r.html"><a href="intro-to-r.html#data-structures"><i class="fa fa-check"></i><b>3.1.3</b> Data Structures</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="lesson-3-distributions.html"><a href="lesson-3-distributions.html"><i class="fa fa-check"></i><b>4</b> Lesson 3: Distributions</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>4.1</b> Data Distributions</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>4.1.1</b> Normal Distributions</a></li>
-<li class="chapter" data-level="4.1.2" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>4.1.2</b> What <em>is</em> normal?</a></li>
-<li class="chapter" data-level="4.1.3" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>4.1.3</b> Skews</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="week-3-statisitcal-testing-of-simple-data-sets-1.html"><a href="week-3-statisitcal-testing-of-simple-data-sets-1.html"><i class="fa fa-check"></i><b>4.2</b> Week 3: Statisitcal testing of simple data sets</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="week-3-statisitcal-testing-of-simple-data-sets-1.html"><a href="week-3-statisitcal-testing-of-simple-data-sets-1.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>4.2.1</b> t-tests, ANOVA, chi2</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i><b>4.3</b> Week 4: Relationships between variables in simple data sets</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>4.3.1</b> Correlation, Linear Regression</a></li>
-<li class="chapter" data-level="4.3.2" data-path="week-4-relationships-between-variables-in-simple-data-sets.html"><a href="week-4-relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>4.3.2</b> Genearlized Linear Model</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="week-5.html"><a href="week-5.html"><i class="fa fa-check"></i><b>4.4</b> Week 5:</a></li>
-<li class="chapter" data-level="4.5" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>4.5</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="4.6" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>4.6</b> Reading Data / Distributions</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>4.6.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="week-2-collecting-data.html"><a href="week-2-collecting-data.html"><i class="fa fa-check"></i><b>5</b> Week 2: Collecting Data</a>
-<ul>
-<li class="chapter" data-level="" data-path="load-the-data-1.html"><a href="load-the-data-1.html"><i class="fa fa-check"></i>Load the Data</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="access-the-data-1.html"><a href="access-the-data-1.html"><i class="fa fa-check"></i>Access the Data</a></li>
-<li class="chapter" data-level="" data-path="summarize-data-1.html"><a href="summarize-data-1.html"><i class="fa fa-check"></i>Summarize Data</a>
-<ul>
-<li class="chapter" data-level="" data-path="continuous-data-1.html"><a href="continuous-data-1.html"><i class="fa fa-check"></i>Continuous Data</a></li>
-<li class="chapter" data-level="" data-path="all-in-summary-1.html"><a href="all-in-summary-1.html"><i class="fa fa-check"></i>All in summary()</a></li>
-<li class="chapter" data-level="" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i>Mode</a></li>
+<li class="chapter" data-level="5.5.36" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>5.5.36</b> Mode Code</a></li>
+<li class="chapter" data-level="5.5.37" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>5.5.37</b> Mode Results</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html"><i class="fa fa-check"></i>Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="" data-path="continuous-data---boxplots-1.html"><a href="continuous-data---boxplots-1.html"><i class="fa fa-check"></i>Continuous Data - Boxplots</a></li>
-<li class="chapter" data-level="" data-path="continuous-data---histograms-1.html"><a href="continuous-data---histograms-1.html"><i class="fa fa-check"></i>Continuous Data - Histograms</a></li>
-<li class="chapter" data-level="" data-path="categorical-data-1.html"><a href="categorical-data-1.html"><i class="fa fa-check"></i>Categorical Data</a></li>
+<li class="chapter" data-level="5.5.38" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>5.5.38</b> Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="5.5.39" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---histograms"><i class="fa fa-check"></i><b>5.5.39</b> Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="5.5.40" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#categorical-data"><i class="fa fa-check"></i><b>5.5.40</b> Categorical Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="introsetup.html"><a href="introsetup.html"><i class="fa fa-check"></i><b>6</b> Intro/Setup</a></li>
-<li class="chapter" data-level="7" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>7</b> Engage</a></li>
-<li class="chapter" data-level="8" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>8</b> Explore</a></li>
-<li class="chapter" data-level="9" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i><b>9</b> Explain</a></li>
-<li class="chapter" data-level="10" data-path="elaborate.html"><a href="elaborate.html"><i class="fa fa-check"></i><b>10</b> Elaborate</a></li>
-<li class="chapter" data-level="11" data-path="evaluateexercises.html"><a href="evaluateexercises.html"><i class="fa fa-check"></i><b>11</b> Evaluate/Exercises</a></li>
-<li class="chapter" data-level="12" data-path="introsetup-1.html"><a href="introsetup-1.html"><i class="fa fa-check"></i><b>12</b> Intro/Setup</a></li>
-<li class="chapter" data-level="13" data-path="engage-1.html"><a href="engage-1.html"><i class="fa fa-check"></i><b>13</b> Engage</a></li>
-<li class="chapter" data-level="14" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>14</b> Explore</a></li>
-<li class="chapter" data-level="15" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>15</b> Explain</a></li>
-<li class="chapter" data-level="16" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>16</b> Elaborate</a></li>
-<li class="chapter" data-level="17" data-path="evaluateexercises-1.html"><a href="evaluateexercises-1.html"><i class="fa fa-check"></i><b>17</b> Evaluate/Exercises</a></li>
-<li class="chapter" data-level="18" data-path="unit2.html"><a href="unit2.html"><i class="fa fa-check"></i><b>18</b> IPUMS</a>
+<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-3b-additional-lessons-content-to-transfer-over-1.html"><a href="appendix-3b-additional-lessons-content-to-transfer-over-1.html"><i class="fa fa-check"></i>Appendix 3b: Additional lessons / content to transfer over:</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="week-6-introduction-to-ipums.html"><a href="week-6-introduction-to-ipums.html"><i class="fa fa-check"></i><b>18.1</b> Week 6 Introduction to IPUMS</a></li>
-<li class="chapter" data-level="18.2" data-path="exploratory.html"><a href="exploratory.html"><i class="fa fa-check"></i><b>18.2</b> Week 7 Exploratory analysis</a>
+<li class="chapter" data-level="" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i>Comparing Data</a></li>
+<li class="chapter" data-level="" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i>Data Distributions</a>
 <ul>
-<li class="chapter" data-level="18.2.1" data-path="exploratory.html"><a href="exploratory.html#advanced-exploration---change-over-time"><i class="fa fa-check"></i><b>18.2.1</b> Advanced Exploration - Change Over Time</a></li>
+<li class="chapter" data-level="5.5.41" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>5.5.41</b> Normal Distributions</a></li>
+<li class="chapter" data-level="5.5.42" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>5.5.42</b> What <em>is</em> normal?</a></li>
+<li class="chapter" data-level="5.5.43" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>5.5.43</b> Skews</a></li>
 </ul></li>
-<li class="chapter" data-level="18.3" data-path="hypothesis.html"><a href="hypothesis.html"><i class="fa fa-check"></i><b>18.3</b> Week 8 Hypothesis Testing</a></li>
-<li class="chapter" data-level="18.4" data-path="week-9-statistical-inference-1.html"><a href="week-9-statistical-inference-1.html"><i class="fa fa-check"></i><b>18.4</b> Week 9 Statistical Inference</a></li>
-<li class="chapter" data-level="18.5" data-path="week-10-tbd-1.html"><a href="week-10-tbd-1.html"><i class="fa fa-check"></i><b>18.5</b> Week 10 (TBD)</a></li>
-<li class="chapter" data-level="18.6" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html"><i class="fa fa-check"></i><b>18.6</b> Intro to IPUMS website</a>
+<li class="chapter" data-level="" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html"><i class="fa fa-check"></i>Statisitcal testing of simple data sets</a>
 <ul>
-<li class="chapter" data-level="18.6.1" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html#background-on-ipums"><i class="fa fa-check"></i><b>18.6.1</b> background on ipums</a></li>
-<li class="chapter" data-level="18.6.2" data-path="intro-to-ipums-website.html"><a href="intro-to-ipums-website.html#navigating-website"><i class="fa fa-check"></i><b>18.6.2</b> navigating website</a></li>
+<li class="chapter" data-level="5.5.44" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>5.5.44</b> t-tests, ANOVA, chi2</a></li>
 </ul></li>
-<li class="chapter" data-level="18.7" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>18.7</b> math example</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="unit3.html"><a href="unit3.html"><i class="fa fa-check"></i><b>19</b> Unit 3: Independent Research</a>
+<li class="chapter" data-level="" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i>Relationships between variables in simple data sets</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="week-11-students-develop-research-question-1.html"><a href="week-11-students-develop-research-question-1.html"><i class="fa fa-check"></i><b>19.1</b> Week 11: Students develop research Question</a></li>
-<li class="chapter" data-level="19.2" data-path="week-12-students-find-relevant-variables-from-ipums-1.html"><a href="week-12-students-find-relevant-variables-from-ipums-1.html"><i class="fa fa-check"></i><b>19.2</b> Week 12: Students find relevant variables from IPUMS</a></li>
-<li class="chapter" data-level="19.3" data-path="week-13-students-test-and-evaluate-results-1.html"><a href="week-13-students-test-and-evaluate-results-1.html"><i class="fa fa-check"></i><b>19.3</b> Week 13: Students test and evaluate results</a></li>
-<li class="chapter" data-level="19.4" data-path="week-14-students-prepare-presentations-of-results-1.html"><a href="week-14-students-prepare-presentations-of-results-1.html"><i class="fa fa-check"></i><b>19.4</b> Week 14: Students prepare presentations of results</a></li>
-<li class="chapter" data-level="19.5" data-path="week-15-students-present-work-slides-poster-podium-etc-1.html"><a href="week-15-students-present-work-slides-poster-podium-etc-1.html"><i class="fa fa-check"></i><b>19.5</b> Week 15: Students present work (slides, poster, podium, etc)</a></li>
-<li class="chapter" data-level="19.6" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>19.6</b> Example one</a></li>
-<li class="chapter" data-level="19.7" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>19.7</b> Example two</a></li>
+<li class="chapter" data-level="5.5.45" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>5.5.45</b> Correlation, Linear Regression</a></li>
+<li class="chapter" data-level="5.5.46" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>5.5.46</b> Genearlized Linear Model</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>20</b> Example RMD code</a>
+<li class="chapter" data-level="" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i>Intro to R/RStudio</a></li>
+<li class="chapter" data-level="" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i>Reading Data / Distributions</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="core.html"><a href="core.html"><i class="fa fa-check"></i><b>20.1</b> Core</a></li>
-<li class="chapter" data-level="20.2" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>20.2</b> Tips</a></li>
-<li class="chapter" data-level="20.3" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>20.3</b> Syntax</a>
-<ul>
-<li class="chapter" data-level="20.3.1" data-path="syntax.html"><a href="syntax.html#math"><i class="fa fa-check"></i><b>20.3.1</b> Math</a></li>
+<li class="chapter" data-level="5.5.47" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>5.5.47</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="glossary-3.html"><a href="glossary-3.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="introsetup-2.html"><a href="introsetup-2.html"><i class="fa fa-check"></i><b>21</b> Intro/Setup</a></li>
-<li class="chapter" data-level="22" data-path="engage-2.html"><a href="engage-2.html"><i class="fa fa-check"></i><b>22</b> Engage</a></li>
-<li class="chapter" data-level="23" data-path="explore-2.html"><a href="explore-2.html"><i class="fa fa-check"></i><b>23</b> Explore</a></li>
-<li class="chapter" data-level="24" data-path="explain-2.html"><a href="explain-2.html"><i class="fa fa-check"></i><b>24</b> Explain</a></li>
-<li class="chapter" data-level="25" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>25</b> Elaborate</a></li>
-<li class="chapter" data-level="26" data-path="evaluateexercises-2.html"><a href="evaluateexercises-2.html"><i class="fa fa-check"></i><b>26</b> Evaluate/Exercises</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ehrlichd/stats_book" target="blank">A link to something useful</a></li>
+<li><a href="https://github.com/ehrlichd/ipumsEDbook" target="blank">A link to the github repo.</a></li>
 
 </ul>
 
@@ -326,9 +411,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="ipums_banner.png" /><br />
-Data Science for Social Scientists:<br />
-An applied course using IPUMS data <br></p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Social Scientists: An applied course using IPUMS data</a>
           </h1>
         </div>
 
@@ -336,20 +419,18 @@ An applied course using IPUMS data <br></p></a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="explain-2" class="section level1 hasAnchor" number="24">
-<h1><span class="header-section-number">Chapter 24</span> Explain<a href="explain-2.html#explain-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Discuss/interrogate the pattern of the data
-* does the shape imply anything
-* try to have it student led / guided
-* with time, students guess at what the data shows/doesn’t show without labels</p>
+<div id="explain-2" class="section level2 unnumbered hasAnchor">
+<h2>Explain<a href="explain-2.html#explain-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the context of this example, we <strong>collected</strong> data on height and birth month for individuals in our class.
+Plotting our data allows us to <strong>visualize</strong> the data, making it easy to interpret.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="explore-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="elaborate-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="explore-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ellaborate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -379,10 +460,7 @@ gitbook.start({
 "family": "sans",
 "size": 2
 },
-"edit": {
-"link": "https://github.com/ehrlichd/stats_book 39-chapter_template.Rmd",
-"text": "Edit"
-},
+"edit": null,
 "history": {
 "link": null,
 "text": null

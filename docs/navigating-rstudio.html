@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10.5 Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data</title>
+  <title>Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data</title>
   <meta name="description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10.5 Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data" />
+  <meta property="og:title" content="Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="ehrlichd/ipumsEDbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10.5 Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data" />
+  <meta name="twitter:title" content="Navigating RStudio | Data Science for Social Scientists: An applied course using IPUMS data" />
   
   <meta name="twitter:description" content="This is an open source book. The output format for this example is bookdown::gitbook." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="some-basics.html"/>
-<link rel="next" href="writing-r.html"/>
+<link rel="prev" href="how-to-install.html"/>
+<link rel="next" href="r-specific-quirks.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -118,6 +118,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 <style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
 div.csl-entry {
@@ -177,7 +181,7 @@ div.csl-indent {
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="unit-1-the-basics.html"><a href="unit-1-the-basics.html"><i class="fa fa-check"></i>Unit 1: The Basics</a></li>
-<li class="chapter" data-level="1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>1</b> WHAT IS DATA</a>
+<li class="chapter" data-level="1" data-path="unit1_ch1.html"><a href="unit1_ch1.html"><i class="fa fa-check"></i><b>1</b> WHAT IS DATA</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="engage.html"><a href="engage.html"><i class="fa fa-check"></i><b>1.1</b> Engage</a></li>
 <li class="chapter" data-level="1.2" data-path="explore.html"><a href="explore.html"><i class="fa fa-check"></i><b>1.2</b> Explore</a></li>
@@ -217,11 +221,13 @@ div.csl-indent {
 <li class="chapter" data-level="2.1.3" data-path="engage-1.html"><a href="engage-1.html#vis-3"><i class="fa fa-check"></i><b>2.1.3</b> Vis 3</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="explore-1.html"><a href="explore-1.html"><i class="fa fa-check"></i><b>2.2</b> Explore</a></li>
-<li class="chapter" data-level="2.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>2.3</b> Explain - lecture/read</a>
+<li class="chapter" data-level="2.3" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>2.3</b> Explain</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="explain---lectureread.html"><a href="explain---lectureread.html#single-variable-visualization"><i class="fa fa-check"></i><b>2.3.1</b> Single Variable Visualization</a></li>
-<li class="chapter" data-level="2.3.2" data-path="explain---lectureread.html"><a href="explain---lectureread.html#multi-variable-visualizations"><i class="fa fa-check"></i><b>2.3.2</b> Multi variable visualizations</a></li>
-<li class="chapter" data-level="2.3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html#data-tables"><i class="fa fa-check"></i><b>2.3.3</b> Data Tables</a></li>
+<li class="chapter" data-level="2.3.1" data-path="explain-1.html"><a href="explain-1.html#single-variable---continuous"><i class="fa fa-check"></i><b>2.3.1</b> Single Variable - Continuous</a></li>
+<li class="chapter" data-level="2.3.2" data-path="explain-1.html"><a href="explain-1.html#single-variable---categorical"><i class="fa fa-check"></i><b>2.3.2</b> Single Variable - Categorical</a></li>
+<li class="chapter" data-level="2.3.3" data-path="explain-1.html"><a href="explain-1.html#multi-variable---continuous"><i class="fa fa-check"></i><b>2.3.3</b> Multi variable - continuous</a></li>
+<li class="chapter" data-level="2.3.4" data-path="explain-1.html"><a href="explain-1.html#mutli-variable---mixed"><i class="fa fa-check"></i><b>2.3.4</b> Mutli variable - mixed</a></li>
+<li class="chapter" data-level="2.3.5" data-path="explain-1.html"><a href="explain-1.html#data-tables"><i class="fa fa-check"></i><b>2.3.5</b> Data Tables</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="elaborate-1.html"><a href="elaborate-1.html"><i class="fa fa-check"></i><b>2.4</b> Elaborate</a>
 <ul>
@@ -234,11 +240,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="engage-2.html"><a href="engage-2.html"><i class="fa fa-check"></i><b>3.1</b> Engage</a></li>
 <li class="chapter" data-level="3.2" data-path="explore-2.html"><a href="explore-2.html"><i class="fa fa-check"></i><b>3.2</b> Explore</a></li>
-<li class="chapter" data-level="3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html"><i class="fa fa-check"></i><b>3.3</b> Explain - lecture/read</a>
+<li class="chapter" data-level="3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html"><i class="fa fa-check"></i><b>3.3</b> Explain - lecture/read</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-describe-data---summary-statistics"><i class="fa fa-check"></i><b>3.3.1</b> How do we describe data - summary statistics</a></li>
-<li class="chapter" data-level="3.3.2" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-describe-the-distribution-of-data"><i class="fa fa-check"></i><b>3.3.2</b> How do we describe the distribution of data</a></li>
-<li class="chapter" data-level="3.3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#how-do-we-manipulate-data"><i class="fa fa-check"></i><b>3.3.3</b> How do we manipulate data</a></li>
+<li class="chapter" data-level="3.3.1" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-data---summary-statistics"><i class="fa fa-check"></i><b>3.3.1</b> How do we describe data - summary statistics</a></li>
+<li class="chapter" data-level="3.3.2" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-describe-the-distribution-of-data"><i class="fa fa-check"></i><b>3.3.2</b> How do we describe the distribution of data</a></li>
+<li class="chapter" data-level="3.3.3" data-path="explain---lectureread.html"><a href="explain---lectureread.html#how-do-we-manipulate-data"><i class="fa fa-check"></i><b>3.3.3</b> How do we manipulate data</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="normality.html"><a href="normality.html"><i class="fa fa-check"></i><b>3.4</b> Normality</a></li>
 <li class="chapter" data-level="3.5" data-path="elaborate-2.html"><a href="elaborate-2.html"><i class="fa fa-check"></i><b>3.5</b> Elaborate</a></li>
@@ -248,11 +254,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="engage-3.html"><a href="engage-3.html"><i class="fa fa-check"></i><b>4.1</b> Engage</a></li>
 <li class="chapter" data-level="4.2" data-path="explore-3.html"><a href="explore-3.html"><i class="fa fa-check"></i><b>4.2</b> Explore</a></li>
-<li class="chapter" data-level="4.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html"><i class="fa fa-check"></i><b>4.3</b> Explain - lecture/read</a>
+<li class="chapter" data-level="4.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html"><i class="fa fa-check"></i><b>4.3</b> Explain - lecture/read</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#why-2-groups"><i class="fa fa-check"></i><b>4.3.1</b> Why 2 groups?</a></li>
-<li class="chapter" data-level="4.3.2" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#common-tests-to-compare-2-groups"><i class="fa fa-check"></i><b>4.3.2</b> Common tests to compare 2 groups</a></li>
-<li class="chapter" data-level="4.3.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html#correlations"><i class="fa fa-check"></i><b>4.3.3</b> Correlation(s)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#why-2-groups"><i class="fa fa-check"></i><b>4.3.1</b> Why 2 groups?</a></li>
+<li class="chapter" data-level="4.3.2" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#common-tests-to-compare-2-groups"><i class="fa fa-check"></i><b>4.3.2</b> Common tests to compare 2 groups</a></li>
+<li class="chapter" data-level="4.3.3" data-path="explain---lectureread-1.html"><a href="explain---lectureread-1.html#correlations"><i class="fa fa-check"></i><b>4.3.3</b> Correlation(s)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="elaborate-3.html"><a href="elaborate-3.html"><i class="fa fa-check"></i><b>4.4</b> Elaborate</a></li>
 <li class="chapter" data-level="4.5" data-path="evaluateexercises-3.html"><a href="evaluateexercises-3.html"><i class="fa fa-check"></i><b>4.5</b> Evaluate/Exercises</a></li>
@@ -261,140 +267,137 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.1" data-path="engage-4.html"><a href="engage-4.html"><i class="fa fa-check"></i><b>5.1</b> Engage</a></li>
 <li class="chapter" data-level="5.2" data-path="explore-4.html"><a href="explore-4.html"><i class="fa fa-check"></i><b>5.2</b> Explore</a></li>
-<li class="chapter" data-level="5.3" data-path="explain---lectureread-3.html"><a href="explain---lectureread-3.html"><i class="fa fa-check"></i><b>5.3</b> Explain - lecture/read</a></li>
+<li class="chapter" data-level="5.3" data-path="explain---lectureread-2.html"><a href="explain---lectureread-2.html"><i class="fa fa-check"></i><b>5.3</b> Explain - lecture/read</a></li>
 <li class="chapter" data-level="5.4" data-path="elaborate-4.html"><a href="elaborate-4.html"><i class="fa fa-check"></i><b>5.4</b> Elaborate</a></li>
 <li class="chapter" data-level="5.5" data-path="evaluateexercises-4.html"><a href="evaluateexercises-4.html"><i class="fa fa-check"></i><b>5.5</b> Evaluate/Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="unit-2-ipums.html"><a href="unit-2-ipums.html"><i class="fa fa-check"></i>Unit 2: IPUMS</a></li>
 <li class="chapter" data-level="" data-path="unit-3-independent-research.html"><a href="unit-3-independent-research.html"><i class="fa fa-check"></i>Unit 3: Independent Research</a></li>
-<li class="chapter" data-level="6" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i><b>6</b> Example RMD code</a>
+<li class="chapter" data-level="" data-path="ex_code.html"><a href="ex_code.html"><i class="fa fa-check"></i>Appendix 1: Example RMD code</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="appendix-2-intro-to-rrstudio.html"><a href="appendix-2-intro-to-rrstudio.html"><i class="fa fa-check"></i>Appendix 2: Intro to R/Rstudio</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="core.html"><a href="core.html"><i class="fa fa-check"></i><b>6.1</b> Core</a></li>
-<li class="chapter" data-level="6.2" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>6.2</b> Tips</a></li>
-<li class="chapter" data-level="6.3" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>6.3</b> Syntax</a>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Basics</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="syntax.html"><a href="syntax.html#math"><i class="fa fa-check"></i><b>6.3.1</b> Math</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#r-vs-rstudio"><i class="fa fa-check"></i>R vs RStudio</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#rstudio-vs-posit"><i class="fa fa-check"></i>RStudio vs POSIT</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="how-to-install.html"><a href="how-to-install.html"><i class="fa fa-check"></i>How to install</a>
+<ul>
+<li class="chapter" data-level="" data-path="how-to-install.html"><a href="how-to-install.html#base-r-and-beyond"><i class="fa fa-check"></i>Base R and beyond</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i>Navigating RStudio</a>
+<ul>
+<li class="chapter" data-level="5.5.9" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#navigating-console"><i class="fa fa-check"></i><b>5.5.9</b> Navigating… Console</a></li>
+<li class="chapter" data-level="5.5.10" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#navigating-environments"><i class="fa fa-check"></i><b>5.5.10</b> Navigating … Environments</a></li>
+<li class="chapter" data-level="5.5.11" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#writing-r-in-scripts-breaking-the-4th-pane"><i class="fa fa-check"></i><b>5.5.11</b> Writing R in Scripts (Breaking the 4th Pane)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html"><i class="fa fa-check"></i>R-specific Quirks</a>
+<ul>
+<li class="chapter" data-level="" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-objects-functions"><i class="fa fa-check"></i>R objects, Functions</a></li>
+<li class="chapter" data-level="5.5.12" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-classes"><i class="fa fa-check"></i><b>5.5.12</b> R classes</a></li>
+<li class="chapter" data-level="5.5.13" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-projects"><i class="fa fa-check"></i><b>5.5.13</b> R Projects</a></li>
+<li class="chapter" data-level="5.5.14" data-path="r-specific-quirks.html"><a href="r-specific-quirks.html#r-code-vs-r-scripts-vs-r-markdown"><i class="fa fa-check"></i><b>5.5.14</b> R code vs R scripts vs R markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i>How to find help</a>
+<ul>
+<li class="chapter" data-level="5.5.15" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>5.5.15</b> In R</a></li>
+<li class="chapter" data-level="5.5.16" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>5.5.16</b> the web!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-workflow.html"><a href="example-workflow.html"><i class="fa fa-check"></i>Example Workflow</a>
+<ul>
+<li class="chapter" data-level="5.5.17" data-path="example-workflow.html"><a href="example-workflow.html#create-a-new-r-project"><i class="fa fa-check"></i><b>5.5.17</b> Create a new R project</a></li>
+<li class="chapter" data-level="5.5.18" data-path="example-workflow.html"><a href="example-workflow.html#load-a-dataset"><i class="fa fa-check"></i><b>5.5.18</b> Load a dataset</a></li>
+<li class="chapter" data-level="5.5.19" data-path="example-workflow.html"><a href="example-workflow.html#visualizeanalyze-data"><i class="fa fa-check"></i><b>5.5.19</b> Visualize/Analyze data</a></li>
+<li class="chapter" data-level="5.5.20" data-path="example-workflow.html"><a href="example-workflow.html#save-out-results"><i class="fa fa-check"></i><b>5.5.20</b> Save out results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="excercises.html"><a href="excercises.html"><i class="fa fa-check"></i>Excercises</a>
+<ul>
+<li class="chapter" data-level="5.5.21" data-path="excercises.html"><a href="excercises.html#interpreting-r"><i class="fa fa-check"></i><b>5.5.21</b> Interpreting R</a></li>
+<li class="chapter" data-level="5.5.22" data-path="excercises.html"><a href="excercises.html#try-setting-up-a-project"><i class="fa fa-check"></i><b>5.5.22</b> Try setting up a project</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="what-is-data-1.html"><a href="what-is-data-1.html"><i class="fa fa-check"></i><b>7</b> What <em>is</em> data?</a>
+<li class="chapter" data-level="" data-path="appendix-3a-additional-lessons-content-to-transfer-over-what-is-data.html"><a href="appendix-3a-additional-lessons-content-to-transfer-over-what-is-data.html"><i class="fa fa-check"></i>Appendix 3a: Additional lessons / content to transfer over: What <em>is</em> data?</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="pov.html"><a href="pov.html"><i class="fa fa-check"></i><b>7.1</b> POV:</a>
+<li class="chapter" data-level="" data-path="pov.html"><a href="pov.html"><i class="fa fa-check"></i>POV:</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="pov.html"><a href="pov.html#activity---collect-data-on-height"><i class="fa fa-check"></i><b>7.1.1</b> ACTIVITY - collect data on height</a></li>
-<li class="chapter" data-level="7.1.2" data-path="pov.html"><a href="pov.html#activity---collect-data-on-birth-month"><i class="fa fa-check"></i><b>7.1.2</b> ACTIVITY - collect data on birth month</a></li>
+<li class="chapter" data-level="5.5.23" data-path="pov.html"><a href="pov.html#activity---collect-data-on-height"><i class="fa fa-check"></i><b>5.5.23</b> ACTIVITY - collect data on height</a></li>
+<li class="chapter" data-level="5.5.24" data-path="pov.html"><a href="pov.html#activity---collect-data-on-birth-month"><i class="fa fa-check"></i><b>5.5.24</b> ACTIVITY - collect data on birth month</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="explore-5.html"><a href="explore-5.html"><i class="fa fa-check"></i><b>7.2</b> Explore</a>
+<li class="chapter" data-level="" data-path="explore-5.html"><a href="explore-5.html"><i class="fa fa-check"></i>Explore</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="explore-5.html"><a href="explore-5.html#example-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Example Datasets</a></li>
-<li class="chapter" data-level="7.2.2" data-path="explore-5.html"><a href="explore-5.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>7.2.2</b> ACTIVITY - Calculate by hand</a></li>
+<li class="chapter" data-level="5.5.25" data-path="explore-5.html"><a href="explore-5.html#example-datasets"><i class="fa fa-check"></i><b>5.5.25</b> Example Datasets</a></li>
+<li class="chapter" data-level="5.5.26" data-path="explore-5.html"><a href="explore-5.html#activity---calculate-by-hand"><i class="fa fa-check"></i><b>5.5.26</b> ACTIVITY - Calculate by hand</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="explain-1.html"><a href="explain-1.html"><i class="fa fa-check"></i><b>7.3</b> Explain</a></li>
-<li class="chapter" data-level="7.4" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i><b>7.4</b> Ellaborate</a>
+<li class="chapter" data-level="" data-path="explain-2.html"><a href="explain-2.html"><i class="fa fa-check"></i>Explain</a></li>
+<li class="chapter" data-level="" data-path="ellaborate.html"><a href="ellaborate.html"><i class="fa fa-check"></i>Ellaborate</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>7.4.1</b> So what is data?</a></li>
-<li class="chapter" data-level="7.4.2" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data-1"><i class="fa fa-check"></i><b>7.4.2</b> Collecting Data</a></li>
-<li class="chapter" data-level="7.4.3" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling-1"><i class="fa fa-check"></i><b>7.4.3</b> POPULATIONS AND SAMPLING</a></li>
+<li class="chapter" data-level="5.5.27" data-path="ellaborate.html"><a href="ellaborate.html#so-what-is-data"><i class="fa fa-check"></i><b>5.5.27</b> So what is data?</a></li>
+<li class="chapter" data-level="5.5.28" data-path="ellaborate.html"><a href="ellaborate.html#collecting-data-1"><i class="fa fa-check"></i><b>5.5.28</b> Collecting Data</a></li>
+<li class="chapter" data-level="5.5.29" data-path="ellaborate.html"><a href="ellaborate.html#populations-and-sampling-1"><i class="fa fa-check"></i><b>5.5.29</b> POPULATIONS AND SAMPLING</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a>
+<li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>7.5.1</b> Review Questions</a></li>
-<li class="chapter" data-level="7.5.2" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>7.5.2</b> Exercises</a></li>
+<li class="chapter" data-level="5.5.30" data-path="evaluation.html"><a href="evaluation.html#review-questions"><i class="fa fa-check"></i><b>5.5.30</b> Review Questions</a></li>
+<li class="chapter" data-level="5.5.31" data-path="evaluation.html"><a href="evaluation.html#exercises"><i class="fa fa-check"></i><b>5.5.31</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i><b>8</b> Intro to R, data types, data structures</a>
+<li class="chapter" data-level="" data-path="appendix-3b-additional-lessons-content-to-transfer-over.html"><a href="appendix-3b-additional-lessons-content-to-transfer-over.html"><i class="fa fa-check"></i>Appendix 3b: Additional lessons / content to transfer over:</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="engage-5.html"><a href="engage-5.html"><i class="fa fa-check"></i><b>8.1</b> Engage</a>
+<li class="chapter" data-level="" data-path="intro-to-r-data-types-data-structures.html"><a href="intro-to-r-data-types-data-structures.html"><i class="fa fa-check"></i>Intro to R, data types, data structures</a></li>
+<li class="chapter" data-level="" data-path="engage-5.html"><a href="engage-5.html"><i class="fa fa-check"></i>Engage</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="engage-5.html"><a href="engage-5.html#r-vs-rstudio"><i class="fa fa-check"></i><b>8.1.1</b> R vs RStudio</a></li>
-<li class="chapter" data-level="8.1.2" data-path="engage-5.html"><a href="engage-5.html#orientation-to-rstudio"><i class="fa fa-check"></i><b>8.1.2</b> Orientation to RStudio</a></li>
+<li class="chapter" data-level="5.5.32" data-path="engage-5.html"><a href="engage-5.html#r-vs-rstudio-1"><i class="fa fa-check"></i><b>5.5.32</b> R vs RStudio</a></li>
+<li class="chapter" data-level="5.5.33" data-path="engage-5.html"><a href="engage-5.html#orientation-to-rstudio"><i class="fa fa-check"></i><b>5.5.33</b> Orientation to RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html"><i class="fa fa-check"></i><b>8.2</b> Explore - Interacting with R objects</a>
+<li class="chapter" data-level="" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html"><i class="fa fa-check"></i>Explore - Interacting with R objects</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#load-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Load the Data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#inspect-the-data-1"><i class="fa fa-check"></i><b>8.2.2</b> Inspect the Data</a></li>
+<li class="chapter" data-level="5.5.34" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#load-the-data"><i class="fa fa-check"></i><b>5.5.34</b> Load the Data</a></li>
+<li class="chapter" data-level="5.5.35" data-path="explore---interacting-with-r-objects.html"><a href="explore---interacting-with-r-objects.html#inspect-the-data-1"><i class="fa fa-check"></i><b>5.5.35</b> Inspect the Data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html"><i class="fa fa-check"></i>Summarize Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#continuous-data"><i class="fa fa-check"></i>Continuous Data</a></li>
 <li class="chapter" data-level="" data-path="summarize-data.html"><a href="summarize-data.html#all-in-summary"><i class="fa fa-check"></i>All in summary()</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i><b>8.3</b> Mode</a>
+<li class="chapter" data-level="" data-path="mode.html"><a href="mode.html"><i class="fa fa-check"></i>Mode</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>8.3.1</b> Mode Code</a></li>
-<li class="chapter" data-level="8.3.2" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>8.3.2</b> Mode Results</a></li>
+<li class="chapter" data-level="5.5.36" data-path="mode.html"><a href="mode.html#mode-code"><i class="fa fa-check"></i><b>5.5.36</b> Mode Code</a></li>
+<li class="chapter" data-level="5.5.37" data-path="mode.html"><a href="mode.html#mode-results"><i class="fa fa-check"></i><b>5.5.37</b> Mode Results</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html"><i class="fa fa-check"></i><b>8.4</b> Visualizing Data</a>
+<li class="chapter" data-level="" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html"><i class="fa fa-check"></i>Visualizing Data</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>8.4.1</b> Continuous Data - Boxplots</a></li>
-<li class="chapter" data-level="8.4.2" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---histograms"><i class="fa fa-check"></i><b>8.4.2</b> Continuous Data - Histograms</a></li>
-<li class="chapter" data-level="8.4.3" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#categorical-data"><i class="fa fa-check"></i><b>8.4.3</b> Categorical Data</a></li>
+<li class="chapter" data-level="5.5.38" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---boxplots"><i class="fa fa-check"></i><b>5.5.38</b> Continuous Data - Boxplots</a></li>
+<li class="chapter" data-level="5.5.39" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#continuous-data---histograms"><i class="fa fa-check"></i><b>5.5.39</b> Continuous Data - Histograms</a></li>
+<li class="chapter" data-level="5.5.40" data-path="visualizing-data-1.html"><a href="visualizing-data-1.html#categorical-data"><i class="fa fa-check"></i><b>5.5.40</b> Categorical Data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i><b>9</b> Comparing Data</a>
+<li class="chapter" data-level="" data-path="appendix-3b-additional-lessons-content-to-transfer-over-1.html"><a href="appendix-3b-additional-lessons-content-to-transfer-over-1.html"><i class="fa fa-check"></i>Appendix 3b: Additional lessons / content to transfer over:</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>9.1</b> Data Distributions</a>
+<li class="chapter" data-level="" data-path="comparing-data.html"><a href="comparing-data.html"><i class="fa fa-check"></i>Comparing Data</a></li>
+<li class="chapter" data-level="" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i>Data Distributions</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>9.1.1</b> Normal Distributions</a></li>
-<li class="chapter" data-level="9.1.2" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>9.1.2</b> What <em>is</em> normal?</a></li>
-<li class="chapter" data-level="9.1.3" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>9.1.3</b> Skews</a></li>
+<li class="chapter" data-level="5.5.41" data-path="data-distributions.html"><a href="data-distributions.html#normal-distributions"><i class="fa fa-check"></i><b>5.5.41</b> Normal Distributions</a></li>
+<li class="chapter" data-level="5.5.42" data-path="data-distributions.html"><a href="data-distributions.html#what-is-normal"><i class="fa fa-check"></i><b>5.5.42</b> What <em>is</em> normal?</a></li>
+<li class="chapter" data-level="5.5.43" data-path="data-distributions.html"><a href="data-distributions.html#skews"><i class="fa fa-check"></i><b>5.5.43</b> Skews</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html"><i class="fa fa-check"></i><b>9.2</b> Statisitcal testing of simple data sets</a>
+<li class="chapter" data-level="" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html"><i class="fa fa-check"></i>Statisitcal testing of simple data sets</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>9.2.1</b> t-tests, ANOVA, chi2</a></li>
+<li class="chapter" data-level="5.5.44" data-path="statisitcal-testing-of-simple-data-sets.html"><a href="statisitcal-testing-of-simple-data-sets.html#t-tests-anova-chi2"><i class="fa fa-check"></i><b>5.5.44</b> t-tests, ANOVA, chi2</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i><b>9.3</b> Relationships between variables in simple data sets</a>
+<li class="chapter" data-level="" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html"><i class="fa fa-check"></i>Relationships between variables in simple data sets</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>9.3.1</b> Correlation, Linear Regression</a></li>
-<li class="chapter" data-level="9.3.2" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>9.3.2</b> Genearlized Linear Model</a></li>
+<li class="chapter" data-level="5.5.45" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#correlation-linear-regression"><i class="fa fa-check"></i><b>5.5.45</b> Correlation, Linear Regression</a></li>
+<li class="chapter" data-level="5.5.46" data-path="relationships-between-variables-in-simple-data-sets.html"><a href="relationships-between-variables-in-simple-data-sets.html#genearlized-linear-model"><i class="fa fa-check"></i><b>5.5.46</b> Genearlized Linear Model</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i><b>9.4</b> Intro to R/RStudio</a></li>
-<li class="chapter" data-level="9.5" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i><b>9.5</b> Reading Data / Distributions</a>
+<li class="chapter" data-level="" data-path="intro-to-rrstudio.html"><a href="intro-to-rrstudio.html"><i class="fa fa-check"></i>Intro to R/RStudio</a></li>
+<li class="chapter" data-level="" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html"><i class="fa fa-check"></i>Reading Data / Distributions</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>9.5.1</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
+<li class="chapter" data-level="5.5.47" data-path="reading-data-distributions.html"><a href="reading-data-distributions.html#what-is-a-normal-distribution"><i class="fa fa-check"></i><b>5.5.47</b> What <em>is</em> a <strong>normal distribution</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glossary-3.html"><a href="glossary-3.html"><i class="fa fa-check"></i>Glossary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="10" data-path="intro-to-rrstudio-1.html"><a href="intro-to-rrstudio-1.html"><i class="fa fa-check"></i><b>10</b> Intro to R/Rstudio</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="engage-6.html"><a href="engage-6.html"><i class="fa fa-check"></i><b>10.1</b> Engage</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="engage-6.html"><a href="engage-6.html#class-poll-who-has-used-r-before"><i class="fa fa-check"></i><b>10.1.1</b> Class poll: Who has used R before</a></li>
-<li class="chapter" data-level="10.1.2" data-path="engage-6.html"><a href="engage-6.html#class-poll-who-has-done-any-kind-of-coding"><i class="fa fa-check"></i><b>10.1.2</b> Class poll: who has done ANY kind of coding</a></li>
-<li class="chapter" data-level="10.1.3" data-path="engage-6.html"><a href="engage-6.html#interpreting-r"><i class="fa fa-check"></i><b>10.1.3</b> Interpreting R</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="explore-6.html"><a href="explore-6.html"><i class="fa fa-check"></i><b>10.2</b> Explore</a></li>
-<li class="chapter" data-level="10.3" data-path="explain---lectureread-4.html"><a href="explain---lectureread-4.html"><i class="fa fa-check"></i><b>10.3</b> Explain - lecture/read</a></li>
-<li class="chapter" data-level="10.4" data-path="some-basics.html"><a href="some-basics.html"><i class="fa fa-check"></i><b>10.4</b> Some Basics</a>
-<ul>
-<li class="chapter" data-level="10.4.1" data-path="some-basics.html"><a href="some-basics.html#r-vs-rstudio-vs-posit"><i class="fa fa-check"></i><b>10.4.1</b> R vs RStudio vs POSIT</a></li>
-<li class="chapter" data-level="10.4.2" data-path="some-basics.html"><a href="some-basics.html#we-will-use-rstudio-to-write-r-scripts-that-will-analyze-and-visualize-data."><i class="fa fa-check"></i><b>10.4.2</b> We will use Rstudio, to write R scripts that will analyze and visualize data.</a></li>
-<li class="chapter" data-level="10.4.3" data-path="some-basics.html"><a href="some-basics.html#how-to-install"><i class="fa fa-check"></i><b>10.4.3</b> How to install</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html"><i class="fa fa-check"></i><b>10.5</b> Navigating RStudio</a>
-<ul>
-<li class="chapter" data-level="10.5.1" data-path="navigating-rstudio.html"><a href="navigating-rstudio.html#lots-of-panes-not-a-pain"><i class="fa fa-check"></i><b>10.5.1</b> Lots of Panes, not a pain!</a></li>
-</ul></li>
-<li class="chapter" data-level="10.6" data-path="writing-r.html"><a href="writing-r.html"><i class="fa fa-check"></i><b>10.6</b> Writing R</a>
-<ul>
-<li class="chapter" data-level="10.6.1" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-console"><i class="fa fa-check"></i><b>10.6.1</b> Writing R in Console</a></li>
-<li class="chapter" data-level="10.6.2" data-path="writing-r.html"><a href="writing-r.html#writing-r-in-scripts-the-4th-pane"><i class="fa fa-check"></i><b>10.6.2</b> Writing R in Scripts (The 4th pane)</a></li>
-</ul></li>
-<li class="chapter" data-level="10.7" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html"><i class="fa fa-check"></i><b>10.7</b> Object-oriented progrmaing in R</a>
-<ul>
-<li class="chapter" data-level="10.7.1" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-objects"><i class="fa fa-check"></i><b>10.7.1</b> R objects</a></li>
-<li class="chapter" data-level="10.7.2" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-classes"><i class="fa fa-check"></i><b>10.7.2</b> R classes</a></li>
-<li class="chapter" data-level="10.7.3" data-path="object-oriented-progrmaing-in-r.html"><a href="object-oriented-progrmaing-in-r.html#r-projects"><i class="fa fa-check"></i><b>10.7.3</b> R Projects</a></li>
-</ul></li>
-<li class="chapter" data-level="10.8" data-path="how-to-find-help.html"><a href="how-to-find-help.html"><i class="fa fa-check"></i><b>10.8</b> How to find help</a>
-<ul>
-<li class="chapter" data-level="10.8.1" data-path="how-to-find-help.html"><a href="how-to-find-help.html#in-r"><i class="fa fa-check"></i><b>10.8.1</b> In R</a></li>
-<li class="chapter" data-level="10.8.2" data-path="how-to-find-help.html"><a href="how-to-find-help.html#the-web"><i class="fa fa-check"></i><b>10.8.2</b> the web!</a></li>
-</ul></li>
-<li class="chapter" data-level="10.9" data-path="elaborate-5.html"><a href="elaborate-5.html"><i class="fa fa-check"></i><b>10.9</b> Elaborate</a></li>
-<li class="chapter" data-level="10.10" data-path="evaluateexercises-5.html"><a href="evaluateexercises-5.html"><i class="fa fa-check"></i><b>10.10</b> Evaluate/Exercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ehrlichd/ipumsEDbook" target="blank">A link to the github repo.</a></li>
@@ -416,11 +419,250 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="navigating-rstudio" class="section level2 hasAnchor" number="10.5">
-<h2><span class="header-section-number">10.5</span> Navigating RStudio<a href="navigating-rstudio.html#navigating-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="lots-of-panes-not-a-pain" class="section level3 hasAnchor" number="10.5.1">
-<h3><span class="header-section-number">10.5.1</span> Lots of Panes, not a pain!<a href="navigating-rstudio.html#lots-of-panes-not-a-pain" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="navigating-rstudio" class="section level2 unnumbered hasAnchor">
+<h2>Navigating RStudio<a href="navigating-rstudio.html#navigating-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Lots of Panes, not a pain!</strong></p>
+<blockquote>
 <p>You get used to it, promise.</p>
+</blockquote>
+<div id="navigating-console" class="section level3 hasAnchor" number="5.5.9">
+<h3><span class="header-section-number">5.5.9</span> Navigating… Console<a href="navigating-rstudio.html#navigating-console" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The console is where you interact with <code>R</code> directly.</p>
+<p>The console is where you actually input the code into R</p>
+<div id="writing-r-code---give-it-a-try" class="section level4 hasAnchor" number="5.5.9.1">
+<h4><span class="header-section-number">5.5.9.1</span> Writing R code - give it a try<a href="navigating-rstudio.html#writing-r-code---give-it-a-try" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>At its simplest, R is a calculator. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.</p>
+<p>The exact output you receive depends on the input!</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="navigating-rstudio.html#cb75-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>As a statistical programing language, R is capable of basic arithmetic and following order of operations.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="navigating-rstudio.html#cb77-1" tabindex="-1"></a>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+</div>
+<div id="r-objects" class="section level4 hasAnchor" number="5.5.9.2">
+<h4><span class="header-section-number">5.5.9.2</span> R Objects<a href="navigating-rstudio.html#r-objects" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>R is also an oject oriented programing language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or <strong>clases</strong> of R objects.</p>
+<p>Let’s start simple. Try to describe, in plain language, what’s going on in the code below. In other words, how do you as a human, interpret the code.</p>
+<p>What do you think will happen when we <strong>run the code</strong></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="navigating-rstudio.html#cb79-1" tabindex="-1"></a>my_answer <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">6</span><span class="sc">+</span><span class="dv">7</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">9</span></span></code></pre></div>
+<details>
+<summary>
+<em>Click to show answer</em>
+</summary>
+<br>
+<p>
+<blockquote>
+<p>In the code chunk above, we create a new R object called my_answer. This
+object is the result or sum of the numbers 1 through 9.</p>
+</blockquote>
+</p>
+</details>
+<p>So what <em>is</em> <code>my_answer</code>???</p>
+<p>In the above code chunk, we add up the numbers 1 through 9 and save the result to a new R object, which we call <code>my_answer</code>. R will print results by default, as we saw in the first math expressions. But in the above codechunk, we “catch” the result, so to speak, in out R object. We can access the result by calling the R object by name.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="navigating-rstudio.html#cb80-1" tabindex="-1"></a>my_answer</span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+</div>
+<div id="r-functions" class="section level4 unnumbered hasAnchor">
+<h4>R functions<a href="navigating-rstudio.html#r-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In addition to objects, a second important concept to programing in R is <strong>functions</strong>. Functions are actually just a special <strong>class</strong> of R object. What makes functions special is that they <strong>do</strong> something. In gneral functions take one or more <strong>arguments</strong> as <strong>input</strong>, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of <strong>output</strong></p>
+<p>R functions are easily recognizable because they end in parentheses <code>()</code>. Arguments to the function go within the parentheses.</p>
+<p>Instead of typing the <code>+</code> sign multiple times, as we did above, we could use the <code>sum()</code> function. In the code on the right, we pass the numbers 1 though 9 as arguments to the <code>sum()</code> functiom. The arguments go within the <code>()</code> separated by commas.</p>
+<p>.pull-left[</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="navigating-rstudio.html#cb82-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">6</span><span class="sc">+</span><span class="dv">7</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">9</span></span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<p>]</p>
+<p>.pull-right[</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="navigating-rstudio.html#cb84-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<p>]</p>
+<p>When we create objects in R, we use <code>&lt;-</code>, which is known as the <strong>assignment operator</strong>. The assignment operator is a special function. instead of using <code>()</code>, Everything to the right of the assignment operator is taken as the input. Whatever is to the left of the assignment operator is also input! This becomes the name of the R object.</p>
+<p>The output of the assignment operator is the R object itself.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="navigating-rstudio.html#cb86-1" tabindex="-1"></a>my_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb86-2"><a href="navigating-rstudio.html#cb86-2" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="navigating-rstudio.html#cb86-3" tabindex="-1"></a>my_sum</span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<blockquote>
+<p>Notice how we create the object, <code>my_sum</code> and then call the object, by name,
+on the next line, in order to print the results.</p>
+</blockquote>
+<p><strong>Be careful!</strong> The assignment operator <strong>does</strong> have some limitations on what it can/can’t take as input. Try to run the following code in your own R session:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="navigating-rstudio.html#cb88-1" tabindex="-1"></a>my_sum <span class="ot">&lt;-</span> <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span></span></code></pre></div>
+<details>
+<summary>
+<em>If you can’t run the code, click to show result</em>
+</summary>
+<br>
+<p>
+<blockquote>
+<pre><code>Error: unexpected &#39;,&#39; in &quot;my_sum &lt;- 1,&quot;</code></pre>
+</blockquote>
+</p>
+</details>
+<p>So what went wrong??</p>
+<p>Technically, the assignment operator is expecting just one thing to the right of it. In the working code <code>my_sum &lt;- sum(1,2,3,4,5,6,7,8,9)</code> , R interprets, or evaluates, the <code>sum()</code> function, calculating a result that is a single value, 45, which we give the name <code>my_sum</code>.</p>
+<p>If you want to store a list of values, you need to <strong>concatenate</strong> them first. This is probably a common concept to anyone with some kind of programing experience before. To concatenate something is simply to put it together. In <code>R</code>, you will get <strong>very</strong> used to using the concatenate function - in fact, it’s so common the creators of R wisely gave it a very simple, easy to remember name: <code>c()</code>.</p>
+<p>Using <code>c()</code> is easy. It takes any number of inputs, and joins them together into a single <strong>vector</strong>. A <strong>vector</strong> is an R object that lists several values. Notice the difference?</p>
+<p>.pull-left[</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="navigating-rstudio.html#cb90-1" tabindex="-1"></a>my_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb90-2"><a href="navigating-rstudio.html#cb90-2" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="navigating-rstudio.html#cb90-3" tabindex="-1"></a>my_value</span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<p>]</p>
+<p>.pull-right[</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="navigating-rstudio.html#cb92-1" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb92-2"><a href="navigating-rstudio.html#cb92-2" tabindex="-1"></a></span>
+<span id="cb92-3"><a href="navigating-rstudio.html#cb92-3" tabindex="-1"></a>my_vector</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6 7 8 9</code></pre>
+<p>]</p>
+</div>
+<div id="interacting-with-objects-and-functions" class="section level4 hasAnchor" number="5.5.9.3">
+<h4><span class="header-section-number">5.5.9.3</span> Interacting with Objects and Functions<a href="navigating-rstudio.html#interacting-with-objects-and-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can use some basic R functions to interact with our R objects. The first function tells us the <code>class</code> of our R object. While <code>length()</code> tells us how long the object is. Notice how <code>my_value</code> and <code>my_vector</code> have the same class, but different lengths.</p>
+<p>.pull-left[</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="navigating-rstudio.html#cb94-1" tabindex="-1"></a>my_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb94-2"><a href="navigating-rstudio.html#cb94-2" tabindex="-1"></a></span>
+<span id="cb94-3"><a href="navigating-rstudio.html#cb94-3" tabindex="-1"></a><span class="fu">class</span>(my_value)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="navigating-rstudio.html#cb96-1" tabindex="-1"></a><span class="fu">length</span>(my_value)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>]</p>
+<p>.pull-right[</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="navigating-rstudio.html#cb98-1" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb98-2"><a href="navigating-rstudio.html#cb98-2" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="navigating-rstudio.html#cb98-3" tabindex="-1"></a><span class="fu">class</span>(my_vector)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="navigating-rstudio.html#cb100-1" tabindex="-1"></a><span class="fu">length</span>(my_vector)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p>]</p>
+<p>There is technically no end to the number of R object classes that can exist in R. That’s because classes can be built upon and modified to suit specialized purporses. Creating your own object classes is an advanced topic, for now, you will be interacting with pretty basic classes of objects.</p>
+<p>Below are several different vectors that represent some of the most basic object classes. Notice how these classes align closely with data classes.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="navigating-rstudio.html#cb102-1" tabindex="-1"></a>my_logical <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb102-2"><a href="navigating-rstudio.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="navigating-rstudio.html#cb102-3" tabindex="-1"></a>my_numeric <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb102-4"><a href="navigating-rstudio.html#cb102-4" tabindex="-1"></a></span>
+<span id="cb102-5"><a href="navigating-rstudio.html#cb102-5" tabindex="-1"></a>my_character <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;g&quot;</span>,<span class="st">&quot;h&quot;</span>, <span class="st">&quot;i&quot;</span>)</span></code></pre></div>
+<p>A vector stores one or more values of the same type of data.</p>
+<p>If we want to combine multiple vectors together, we can do that with the <code>data.frame()</code> function. This function takes multiple vectors as inputs and combines them together into a single object, as long as they’re the same length!</p>
+<p>.pull-left[</p>
+<p><strong>Why does this data.frame fail??</strong></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="navigating-rstudio.html#cb103-1" tabindex="-1"></a>my_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb103-2"><a href="navigating-rstudio.html#cb103-2" tabindex="-1"></a>  <span class="st">&quot;logical&quot;</span> <span class="ot">=</span> my_logical,</span>
+<span id="cb103-3"><a href="navigating-rstudio.html#cb103-3" tabindex="-1"></a>  <span class="st">&quot;numeric&quot;</span> <span class="ot">=</span> my_numeric,</span>
+<span id="cb103-4"><a href="navigating-rstudio.html#cb103-4" tabindex="-1"></a>  <span class="st">&quot;character&quot;</span> <span class="ot">=</span> my_character,</span>
+<span id="cb103-5"><a href="navigating-rstudio.html#cb103-5" tabindex="-1"></a>  <span class="st">&quot;numbers&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb103-6"><a href="navigating-rstudio.html#cb103-6" tabindex="-1"></a>)</span></code></pre></div>
+<p>]</p>
+<p>.pull-right[</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="navigating-rstudio.html#cb104-1" tabindex="-1"></a>my_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb104-2"><a href="navigating-rstudio.html#cb104-2" tabindex="-1"></a>  <span class="st">&quot;logical&quot;</span> <span class="ot">=</span> my_logical,</span>
+<span id="cb104-3"><a href="navigating-rstudio.html#cb104-3" tabindex="-1"></a>  <span class="st">&quot;numeric&quot;</span> <span class="ot">=</span> my_numeric,</span>
+<span id="cb104-4"><a href="navigating-rstudio.html#cb104-4" tabindex="-1"></a>  <span class="st">&quot;character&quot;</span> <span class="ot">=</span> my_character</span>
+<span id="cb104-5"><a href="navigating-rstudio.html#cb104-5" tabindex="-1"></a>)</span></code></pre></div>
+<p>]</p>
+<p>Notice the arguments we pass to <code>data.frame()</code>. Do you see how each piece fits together?</p>
+<p>Can describe how each argument goes from input to output?</p>
+<details>
+<summary>
+<em>Click to show answer</em>
+</summary>
+<br>
+<p>
+<blockquote>
+<p>In this example, we pass <code>data.frame()</code> three arguments, each separated by a comma <code>,</code>.
+In each argument, we specify an R object to the right of an equal sign <code>=</code> and
+a character string within quotes <code>""</code> to the left of the equal sign.</p>
+<p>The characters to the left of the equal sign become the <strong>names</strong> of each column. The R objects, specified verbatim, become the contents of each column.</p>
+</blockquote>
+</p>
+</details>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="navigating-rstudio.html#cb105-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(my_df)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">logical</th>
+<th align="right">numeric</th>
+<th align="left">character</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">a</td>
+</tr>
+<tr class="even">
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">b</td>
+</tr>
+<tr class="odd">
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">c</td>
+</tr>
+<tr class="even">
+<td align="left">TRUE</td>
+<td align="right">4</td>
+<td align="left">d</td>
+</tr>
+<tr class="odd">
+<td align="left">FALSE</td>
+<td align="right">5</td>
+<td align="left">e</td>
+</tr>
+<tr class="even">
+<td align="left">TRUE</td>
+<td align="right">6</td>
+<td align="left">f</td>
+</tr>
+<tr class="odd">
+<td align="left">FALSE</td>
+<td align="right">7</td>
+<td align="left">g</td>
+</tr>
+<tr class="even">
+<td align="left">FALSE</td>
+<td align="right">8</td>
+<td align="left">h</td>
+</tr>
+<tr class="odd">
+<td align="left">TRUE</td>
+<td align="right">9</td>
+<td align="left">i</td>
+</tr>
+</tbody>
+</table>
+<p>You’re bound to create <strong>MANY</strong> R objects throughout your work, and that can be a lot to keep track of. Fortunately, you don’t need to track this all yourself - that’s what the environment tab is for!</p>
+</div>
+</div>
+<div id="navigating-environments" class="section level3 hasAnchor" number="5.5.10">
+<h3><span class="header-section-number">5.5.10</span> Navigating … Environments<a href="navigating-rstudio.html#navigating-environments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, we come to the second tab of Rstudio. In addition to Environment, you may see tabs for <code>History, Connections</code>. You may also see tabs for <code>Build</code> or <code>Git</code> depending on if you have these tools installed.</p>
+<p>While you <em>may</em> interact with these other tabs depending on your project needs, you will <strong>always</strong> want to reference R objects stored in your <strong>local environment</strong>. In the environment panel, you will find each R object listed by name and organized broadly into categories of <code>Values</code> (vectors), <code>Data</code> (data frames, matrices, and other more complex structures), User-created <code>Functions</code> will also recieve their own section.</p>
+<p>Your local environent is a temporary space. When you close your R session, you will lose any work you do not save or <strong>write out</strong> to a separate file.</p>
+<p>Of course, that doesn’t mean you can’t re-run old code, and it doesn’t mean that you can’t save your progress in between sessions. In fact, there are <strong>Several</strong> options for how RStudio handles your environment. By default, R will attempt to preserve a copy of all data in your local environement. It will also try to restore whatever you were working on most recently when you open a new session.</p>
+<p>These may seem like handy convenience features, but in practice we find them prone to cause issues (outlined below).</p>
+<div id="our-reccomendations" class="section level4 hasAnchor" number="5.5.10.1">
+<h4><span class="header-section-number">5.5.10.1</span> Our Reccomendations<a href="navigating-rstudio.html#our-reccomendations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here we outline what we consider to be best practice for maintaining an R environment/ R project.</p>
+<div id="change-global-options" class="section level5 hasAnchor" number="5.5.10.1.1">
+<h5><span class="header-section-number">5.5.10.1.1</span> CHANGE GLOBAL OPTIONS<a href="navigating-rstudio.html#change-global-options" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>For the most part, we strive to use the default installations/parameters when using R/Rstudio. This facilitates reproducibility for a researcher working across different computers, and reproducibility if a colleague wishes to replicate the code themselves.</p>
+<p>However, one setting we <strong>DO</strong> reccomend changing the following under <code>Tools/Global Options/General</code> Uncheck all boxes that begin <code>Restore</code>..</p>
+<ul>
+<li><p>Restore last R project</p></li>
+<li><p>Restore previous source files</p></li>
+<li><p>Restore .RData</p></li>
+</ul>
+<p>Also, we reccomend changing the option for <code>Save a copy of .RData</code> to <code>NEVER</code>.</p>
+<p>The reason for this is that if an R session crashes, trying to load the latest autogenerated backup is likely to cause the error and make the session fail again. It can also be timely if you last worked on a really large project that takes a while to open and restore all files.</p>
+<p>In practice, it’s better to intentionally save and close your project. Then open up whichever project you want to work on each time you start a new R session.</p>
+</div>
+</div>
+</div>
+<div id="writing-r-in-scripts-breaking-the-4th-pane" class="section level3 hasAnchor" number="5.5.11">
+<h3><span class="header-section-number">5.5.11</span> Writing R in Scripts (Breaking the 4th Pane)<a href="navigating-rstudio.html#writing-r-in-scripts-breaking-the-4th-pane" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Save your work, find typos, re-run easy!</p>
 </div>
 </div>
             </section>
@@ -428,8 +670,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="some-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="writing-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-install.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-specific-quirks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

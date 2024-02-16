@@ -1,8 +1,8 @@
 
-# What *is* data?
+# Appendix 3a: Additional lessons / content to transfer over:  What *is* data? {.unnumbered}
 
 
-## POV:  
+## POV:  {.unnumbered}
 
 
 > In a social science class, your teacher tells you that the CDC
@@ -41,7 +41,7 @@ at the same time. Compare/contrast distributions of the two data sets.
 
 
 
-## Explore
+## Explore {.unnumbered}
 
 
 Questions to consider:
@@ -75,13 +75,13 @@ Write out steps for calculating **mean** - trivial as it may seem.
 
 
 
-## Explain
+## Explain {.unnumbered}
 
 In the context of this example, we **collected** data on height and birth month for individuals in our class. 
 Plotting our data allows us to **visualize** the data, making it easy to interpret.
 
 
-## Ellaborate
+## Ellaborate {.unnumbered}
 
 ### So what is data?
 
@@ -166,7 +166,7 @@ Sampling strategy can lead to **bias**
 > team, your results would have been biased. 
 
 
-## Evaluation
+## Evaluation {.unnumbered}
 
 
 ### Review Questions
@@ -181,5 +181,5 @@ Brainstorm 3 topics/questions that are of interest to you personally, or academi
   * Describe these variable(s), are they qualitative or quantitative? Continuous or ordinal?
 
 
-## Glossary {-}
+## Glossary {.unnumbered}
 

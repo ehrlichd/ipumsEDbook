@@ -1,4 +1,4 @@
-# Intro to R/Rstudio
+# Appendix 2: Intro to R/Rstudio {.unnumbered}
 
 
 
@@ -12,9 +12,9 @@ To teach yourself more with the rest of this book!
 
 
 
+## Basics {.unnumbered}
 
-
-## R vs RStudio
+### R vs RStudio {.unnumbered}
 
 
 
@@ -55,7 +55,7 @@ Throughout this text, we will use **RStudio**, to write (aka, **code**) **R-scri
 
 
 
-## RStudio vs POSIT
+### RStudio vs POSIT {.unnumbered}
 
 
 One last bit of definitions: **POSIT** is a new name/re brand of the company that produces and maintains the RStudio software. In the past, the RStudio (company) produced the RStudio (software).
@@ -67,7 +67,7 @@ Now, POSIT (company) produces RStudio (software), along with Quarto (software), 
 
 
 
-## How to install
+## How to install {.unnumbered}
 
 
 
@@ -78,7 +78,7 @@ You can also go straight to the POSIT website, https://posit.co/download/rstudio
 
 
 
-### Base R and beyond
+### Base R and beyond {.unnumbered}
 
 
 
@@ -139,8 +139,8 @@ ipumsEDbook::regenerate_book()
 
 ```
 
-
-## Navigating RStudio
+ 
+## Navigating RStudio {.unnumbered}
 
 
 **Lots of Panes, not a pain!**
@@ -228,7 +228,7 @@ my_answer
 
 ```
 
-#### R functions
+#### R functions {.unnumbered}
 
 In addition to objects, a second important concept to programing in R is **functions**. Functions are actually just a special **class** of R object. What makes functions special is that they **do** something. In gneral functions take one or more **arguments** as **input**, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of **output**
 
@@ -342,7 +342,7 @@ my_vector
 ]
 
 
-#### Interacting with Objects and Functions
+#### Interacting with Objects and Functions 
 
 We can use some basic R functions to interact with our R objects. The first function tells us the `class` of our R object. While `length()` tells us how long the object is. Notice how `my_value` and `my_vector` have the same class, but different lengths. 
 
@@ -461,7 +461,7 @@ knitr::kable(my_df)
 You're bound to create **MANY** R objects throughout your work, and that can be a lot to keep track of. Fortunately, you don't need to track this all yourself - that's what the environment tab is for!
 
 
-### Navigating ... Environments
+### Navigating ... Environments 
 
 Finally, we come to the second tab of Rstudio. In addition to Environment, you may see tabs for `History, Connections`. You may also see tabs for `Build` or `Git` depending on if you have these tools installed. 
 
@@ -511,9 +511,9 @@ In practice, it's better to intentionally save and close your project. Then open
 Save your work, find typos, re-run easy!
 
 
-## R-specific Quirks
+## R-specific Quirks {.unnumbered}
 
-### R objects, Functions
+### R objects, Functions {.unnumbered}
 
 R is an object-oriented programming language. Everything in R is either an object or a function. R objects generally store or define some kind of data. R functions, generally, take R objects as input, do some kind of operation, and produce some kind of output. 
 
@@ -581,7 +581,7 @@ Scripts can also be helpful to automate workflows. If the same data transofrmati
 
 R markdown is just another script, but has a few more bells and whistles that make writing and documenting code a much more enjoyable experience. In fact, this whole book was written using Rmarkdown!!
 
-## How to find help
+## How to find help {.unnumbered}
 
 ### In R
 
@@ -593,7 +593,7 @@ Here the serach box will search the help files for any R package you have instal
 
 You could also access the help files by pressing the `F1` key while your cursor is at the end of an r function.
 
-![](Screenshot of cursor placement after function name, before open parentheses)
+*todo: Screenshot of cursor placement after function name, before open parentheses*
 
 ### the web!
 
@@ -626,7 +626,7 @@ Tidyverse
 
 
 
-## Example Workflow
+## Example Workflow {.unnumbered}
 
 
 ### Create a new R project
@@ -634,7 +634,7 @@ Tidyverse
 ### Visualize/Analyze data
 ### Save out results
 
-## Excercises
+## Excercises {.unnumbered}
 
 
 ### Interpreting R

@@ -233,9 +233,9 @@ By the end of Unit 1, students will understand
 
 ### Unit 2 Finding Data and Asking Questions (Using IPUMS Data)  {-}
 
-Here we demonstrate two **different** approaches to conducting research. Students become familiar writing up short lab reports detailing their findings. For Section \@ref(exploratory), we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings. 
+Here we demonstrate two **different** approaches to conducting research. Students become familiar writing up short lab reports detailing their findings. For Section regarding exploratory analysis, we/instructor provides students with simple datasets from IPUMS (or other real-world data). Students will learn exploratory data analysis techniques and how to create lab reports to summarize key findings. 
 
-For unit \@ref(hypothesis), students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate [ipums.org](https://ipums.org), and create **data extracts**, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings. 
+For unit dealing with hypothesis testing, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate [ipums.org](https://ipums.org), and create **data extracts**, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings. 
 
 #### Week 6: Intro to IPUMS
 #### Week 7: Exploratory analysis {-}

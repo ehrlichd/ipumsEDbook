@@ -1,5 +1,5 @@
 
-# WHAT IS DATA
+# WHAT IS DATA {#unit1_ch1}
 
 ## Engage
 
@@ -22,14 +22,24 @@ Pose questions to explore
 
 ### WHAT ARE DATA
 
+
+
+
 Data are defined as “facts and statistics collected together for reference or analysis.”1 As seen in Figure 1.1, there are two types of data: quantitative and qualitative. Quantitative data are able to be expressed in numerical format and are countable. These data are either discrete or continuous where discrete data uses numeric bins. For example, we use our age as discrete quantitative data, we round our age to the previous year (eg., 20, 21, 22). Continuous data does not use bins, but rather includes all of the fractions between two whole numbers. An example could be most physical measures like height, weight, the speed at which an individual runs.
+
+
 Qualitative data describe characteristics or categories and can be broken down into two categories, nominal or ordinal. Nominal data have no inherent ordering but it can be categorized. Examples include country or origin, gender, hair color, race, etc. Ordinal data can both be categorized and ordered (e.g., first, second, and third place is a race).
-Going back to our hypothesis of male height on campus, heights are continuous, qualitative data. It is difficult for people to report their specific height and you assume that most individuals will report it rounded to the closest inch. This makes the data you will actually use, discrete quantitative data.
+
+
+Going back to our hypothesis of male height on campus, heights are continuous, qualitative data. 
+It is difficult for people to report their specific height and you assume that most individuals will report it rounded to the closest inch.
+This makes the data you will actually use, discrete quantitative data.
 
 
 
 
-
+>
+>
 > *Fun fact: A single data point is called a datum which is Latin for “something given”. The word data can be either singular or plural depending on how you use it. It can be used as a mass noun the same way we discuss sand on a beach or hair on our head. However, in science we are usually referring to multiple datums within a data set making it a plural noun. Therefore, data is cool and data are cool!*
 >
 > --- Sources
@@ -175,7 +185,7 @@ ex_height <- data.frame(
 
 
 
-```{r, results = 'asis'}
+```{r height_table, results = 'asis'}
 
 
 knitr::kable(ex_height)
@@ -327,8 +337,13 @@ In order to keep things organized, we will first create an object called `my_dat
 
 ```{r}
 
-## for now
-my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
+## to delet, reading from desktop copy
+
+my_data_path <- file.path("..", "Projects", "IPUMS", "ipumsED", "data", "nhis_sample.csv")
+
+## for now working copy for dan
+# my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
+
 
 
 my_data <- read.csv(my_data_path)
@@ -347,7 +362,7 @@ data(nhis_data)
 We can inspect our data object with some basic functions. Notice how the output differs when the function is called on a `data.frame` versus when it is called on a `vector`.
 
 
-```{r}
+```{r basic_code}
 class(my_data)
 summary(my_data)
 
@@ -393,7 +408,7 @@ In this case, the values of 0, 95,96,97,98,99 all represent special coded values
 
 We may want to exclude these special cases from our analysis. We can easily perform a data modification by filtering out values that equal any of our special cases. You can see the **range** of the graph is smaller, though visually, the box and whiskers are larger. Do we still see outliers in height?
 
-```{r}
+```{r height_boxplot}
 library(dplyr)
 
 new_data <- my_data %>% filter(HEIGHT > 0 & HEIGHT < 95)
