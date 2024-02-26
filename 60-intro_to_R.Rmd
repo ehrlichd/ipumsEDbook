@@ -1,9 +1,9 @@
-# Appendix 2: Intro to R/Rstudio {.unnumbered}
+# Appendix 1: Intro to R/Rstudio {.unnumbered}
 
 
 
 
-A crash course to teach you everthing you need to know...
+A crash course to teach you everything you need to know...
 
 
 
@@ -34,13 +34,15 @@ Let's start with some analogies:
   <p> 
   
   >
-  > `R` is technically the **programming language**, 
+  > `R` is the **programming language**, 
   > `RStudio` is the **Integrated Development Environment (IDE)**
   >
   
   
-  </p>
+  </p> <br> 
 </details>
+
+
 
 `RStudio` is a program/app just like Google Chrome or Microsoft Word. Each
 of these programs provide a **Graphical User Interface (GUI)**, a pretty way for 
@@ -70,6 +72,7 @@ Now, POSIT (company) produces RStudio (software), along with Quarto (software), 
 ## How to install {.unnumbered}
 
 
+### R, RStudio
 
 R is available directly from the Comprehensive R Archive Network, CRAN, located at https://cran.r-project.org/. You can find the latest official and development versions of **base-R** and all contributed packages hosted by CRAN.
 
@@ -78,7 +81,7 @@ You can also go straight to the POSIT website, https://posit.co/download/rstudio
 
 
 
-### Base R and beyond {.unnumbered}
+### Beyond Base R {.unnumbered}
 
 
 
@@ -92,7 +95,7 @@ This section will focus on using base R commands to orient users, however this b
   
   
   
-R packages need to **installed** one time which downloads a copy to your local R package library. This is most often done using the `install.packages()` command, which whill download R packages straight from CRAN. 
+R packages need to be **installed** one time which downloads a copy to your local R package library. This is most often done using the `install.packages()` command, which whill download R packages straight from CRAN. 
 
 For example, you could run the following to download the packages mentioned above. Note how the `c()` function is needed in order to provide a list of R packages the user wishes to download.
 
@@ -126,6 +129,37 @@ library(ipumsED)
 ```
 
 
+### ipumsEDbook
+
+If you want to edit the book text directly, you'll need a few additional tools.
+
+
+
+First, you'll need the R `devtools` package. This can be downloaded with `install.packages(devtools)`. You will also need `Rtools`, which is not an R package and must be downloaded manually from CRAN.
+
+OS-specfic versions can be found here:
+  [Windows](https://cran.r-project.org/bin/windows/Rtools/)
+  [Mac](https://cran.r-project.org/bin/macosx/tools/)
+  [Linux](https://cran.r-project.org/bin/linux/)
+
+
+In addition to devtools and Rtools, you will need **GIT**. GIT is a version-control system that is commonly used to track and maintain software. GIT provides MANY tools that most researchers won't really need to interact with. The main reason we use GIT is to host a **repository** on a website, like **github.com**.
+
+By hosting our project on a remote site like github, we ensure that a version is always available. Other researchers can create a copy of their own, and download whatever the latest version.
+
+
+
+#### Setting up GIT
+
+
+
+Download instructions for GIT can be found [here](https://git-scm.com/downloads).
+
+
+
+#### Setting up GITHUB
+
+#### Downloading from GITHUB
 
 
 Note also that while downloading `ipumsEDbook` provides all the source code for this document, it is unlikely that you would ever need to load the package with `library()`. Instead, you can use the following notation to call a specific function without loading the entire package. In this case, we call a function which will regenerate the html version of this document. 
@@ -135,6 +169,8 @@ Note also that while downloading `ipumsEDbook` provides all the source code for 
 
 ```{r, eval = FALSE}
 
+
+## need to add a function to make it easy to recompile
 ipumsEDbook::regenerate_book()
 
 ```
@@ -149,13 +185,14 @@ ipumsEDbook::regenerate_book()
 
 
 
-### Navigating... Console
+### Console
 
 The console is where you interact with `R` directly. 
 
-The console is where you actually input the code into R
+The console is technically where you input the code to be run in R.
 
-#### Writing R code - give it a try
+
+#### Simple Code
 
 At its simplest, R is a calculator. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.
 
@@ -171,7 +208,7 @@ The exact output you receive depends on the input!
 
 
 
-As a statistical programing language, R is capable of basic arithmetic and following order of operations. 
+As a statistical programming language, R is capable of basic arithmetic and following order of operations. 
 
 
 
@@ -183,9 +220,11 @@ As a statistical programing language, R is capable of basic arithmetic and follo
 ```
 
 
+
+
 #### R Objects
 
-R is also an oject oriented programing language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or **clases** of R objects.
+R is also an object oriented programming language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or **classes** of other R objects.
 
 Let's start simple. Try to describe, in plain language, what's going on in the code below. In other words, how do you as a human, interpret the code.
 
@@ -210,7 +249,7 @@ my_answer <- 1+2+3+4+5+6+7+8+9
   > object is the result or sum of the numbers 1 through 9.
   >
     
-  </p>
+  </p> <br>
 </details>
 
 
@@ -230,13 +269,13 @@ my_answer
 
 #### R functions {.unnumbered}
 
-In addition to objects, a second important concept to programing in R is **functions**. Functions are actually just a special **class** of R object. What makes functions special is that they **do** something. In gneral functions take one or more **arguments** as **input**, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of **output**
+In addition to objects, a second important concept to programming in R is **functions**. Functions are actually just a special **class** of R object. What makes functions special is that they **do** something. In general functions take one or more **arguments** as **input**, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of **output**
 
 R functions are easily recognizable because they end in parentheses `()`. Arguments to the function go within the parentheses.
 
 
 
-Instead of typing the `+` sign multiple times, as we did above, we could use the `sum()` function. In the code on the right, we pass the numbers 1 though 9 as arguments to the `sum()` functiom. The arguments go within the `()` separated by commas.
+Instead of typing the `+` sign multiple times, as we did above, we could use the `sum()` function. In the code on the right, we pass the numbers 1 though 9 as arguments to the `sum()` function. The arguments go within the `()` separated by commas.
 
 
 .pull-left[
@@ -305,7 +344,7 @@ my_sum <- 1,2,3,4,5
   > ```
   >
   
-  </p>
+  </p> <br>
 </details>
 
 
@@ -342,7 +381,8 @@ my_vector
 ]
 
 
-#### Interacting with Objects and Functions 
+#### Calling functions on objects
+
 
 We can use some basic R functions to interact with our R objects. The first function tells us the `class` of our R object. While `length()` tells us how long the object is. Notice how `my_value` and `my_vector` have the same class, but different lengths. 
 
@@ -446,7 +486,7 @@ Can describe how each argument goes from input to output?
   > The characters to the left of the equal sign become the **names** of each column. The R objects, specified verbatim, become the contents of each column. 
   >
     
-  </p>
+  </p> <br>
 </details>
 
 
@@ -461,11 +501,11 @@ knitr::kable(my_df)
 You're bound to create **MANY** R objects throughout your work, and that can be a lot to keep track of. Fortunately, you don't need to track this all yourself - that's what the environment tab is for!
 
 
-### Navigating ... Environments 
+### Environments (The 2nd Pane)
 
 Finally, we come to the second tab of Rstudio. In addition to Environment, you may see tabs for `History, Connections`. You may also see tabs for `Build` or `Git` depending on if you have these tools installed. 
 
-While you *may* interact with these other tabs depending on your project needs, you will **always** want to reference R objects stored in your **local environment**. In the environment panel, you will find each R object listed by name and organized broadly into categories of `Values` (vectors), `Data` (data frames, matrices, and other more complex structures), User-created `Functions` will also recieve their own section. 
+While you *may* interact with these other tabs depending on your project needs, you will **always** want to reference R objects stored in your **local environment**. In the environment panel, you will find each R object listed by name and organized broadly into categories of `Values` (vectors), `Data` (data frames, matrices, and other more complex structures), User-created `Functions` will also receive their own section. 
 
 
 Your local environent is a temporary space. When you close your R session, you will lose any work you do not save or **write out** to a separate file. 
@@ -475,7 +515,7 @@ Your local environent is a temporary space. When you close your R session, you w
 Of course, that doesn't mean you can't re-run old code, and it doesn't mean that you can't save your progress in between sessions. In fact, there are **Several** options for how RStudio handles your environment. By default, R will attempt to preserve a copy of all data in your local environement. It will also try to restore whatever you were working on most recently when you open a new session.
 
 
-These may seem like handy convenience features, but in practice we find them prone to cause issues (outlined below).
+These may seem like handy convenience features, but in practice we find them prone to cause issues (outlined below). 
 
 
 
@@ -483,24 +523,44 @@ These may seem like handy convenience features, but in practice we find them pro
 
 Here we outline what we consider to be best practice for maintaining an R environment/ R project.
 
-##### CHANGE GLOBAL OPTIONS
+##### Global Options
 
 
 For the most part, we strive to use the default installations/parameters when using R/Rstudio. This facilitates reproducibility for a researcher working across different computers, and reproducibility if a colleague wishes to replicate the code themselves. 
 
-However, one setting we **DO** reccomend changing the following under `Tools/Global Options/General` Uncheck all boxes that begin `Restore`..
+However, one setting we **DO** recommend changing the following under `Tools/Global Options/General` Uncheck all boxes that begin `Restore`..
 
  * Restore last R project
  * Restore previous source files
  
  * Restore .RData
  
-Also, we reccomend changing the option for `Save a copy of .RData` to `NEVER`.
+Also, we recommend changing the option for `Save a copy of .RData` to `NEVER`.
 
 The reason for this is that if an R session crashes, trying to load the latest autogenerated backup is likely to cause the error and make the session fail again. It can also be timely if you last worked on a really large project that takes a while to open and restore all files. 
 
 In practice, it's better to intentionally save and close your project. Then open up whichever project you want to work on each time you start a new R session. 
 
+
+### Files, Plots, Packages, oh my! (The 3rd Pane)
+
+The bottom-right pane (by default) contains a lot of tabs, many of which you will likely use!
+
+They functions of these tabs are largely self explanatory. `Files` provides a file browser, which defaults to your **working directory**. Usually, your working directory is the same as your R Project Folder.
+
+`Plots` is a graphical device, this is where (most) data visualizations will be rendered by default.
+Past plots can be viewed with the arrow keys, and new ones will be placed last in the sequence. 
+
+NOTE: these plots are temporary renders made for your current R session. Be sure to export any visualizations if you will need to access them later.
+
+`Packages` lists all the R packages you currently have installed on your machine. The check box *can* be used to load packages as desired. In fact, clicking the check box is the same as the `library()` function, which in practice, is usually the preffered way to load packages. Remember, you only need to `install.packages()` once, but you need to load R packages with `library()` each session.
+
+
+
+
+The `Help` tab provides direct access to the help files housed within R. Each function *should* have a helpfile which you can search for by name. Alternatively, you can press `F1` while your cursor is located at the end of a function name, but before the opening parentheses.
+
+The `Viewer` and `Presentation` panes will be used if you are using certain R packages that produce special outputs. See various package-specific help fules for those.
 
 
 
@@ -511,7 +571,26 @@ In practice, it's better to intentionally save and close your project. Then open
 Save your work, find typos, re-run easy!
 
 
-## R-specific Quirks {.unnumbered}
+Up until now, you've likely have been passing code directly to Console. While it makes it easy to hit the ground running, this aproach is not very efficient for actually conducting a project. Entering code line-by-line is error prone and does not provide an easy reference of the work you have done. 
+
+Instead of entering code directly to console, we usually want to save our work in the form of an R script.
+
+An R script is simply a text document that contains R code. Importantly, it is **assumed** that everything within the Rscript is R code **to be run**.
+
+
+
+## Reveiw of R-specific Quirks {.unnumbered}
+
+
+Here is a summary of some of the information outlined previously. 
+
+### Global options
+
+
+
+*refer to the global options outlined above*
+
+
 
 ### R objects, Functions {.unnumbered}
 
@@ -521,9 +600,9 @@ In the context of **language**, objects are the nouns and functions are the verb
 
 When you write R code, you usually create R objects that represent data of interest, then apply various R functions to transform, analyze, or visualize the data. In the below code, we are creating an **object** called `my_data`, which represents the integers one through 10. We are using the `c()` **function** which takes any number of input **objects** as **input** and **concatenates** them together into a character string. 
 
-The **input(s)** to a function go within the parentheses seperated by commas. You can usually tell the difference between R obects and R functions because R functions always have `()` written after their name.
+The **input(s)** to a function go within the parentheses separated by commas. You can usually tell the difference between R objects and R functions because R functions always have `()` written after their name.
 
-In most cases, the **output** of an R function will be printed to the console, unless it is saved into a new R object. We do this using the **assignment opperator**, `<-`. This is a special function R function that takes whatever is on the right-hand side of the `<-` and creates or overwrites an R object with the name specified to the left-hand side of the `<-`. In the example below, we use the **assignment opperator** to "catch" the result of the `c()`, which is the character string of intengers from 1 to 10.
+In most cases, the **output** of an R function will be printed to the console, unless it is saved into a new R object. We do this using the **assignment opperator**, `<-`. This is a special function R function that takes whatever is on the right-hand side of the `<-` and creates or overwrites an R object with the name specified to the left-hand side of the `<-`. In the example below, we use the **assignment opperator** to "catch" the result of the `c()`, which is the character string of integers from 1 to 10.
 
 
 Calling the name of an R object will *usually* print its contents in the console.
@@ -564,12 +643,18 @@ class(my_data)
 
 ```
 
-### R Projects
+### R Projects, R packages
 
 
 R projects are an essential way to organize your data analysis, research, or even scratch work in R. Projects let you create self-contained environments that can feature their own R libraries, containg packages that are different from your day-to-day operations. 
 
+
+
+R packages are collections of R functions and R objects (datasets) that extend the functionality of R. In general, an R package is also an R project. However, an R project, doesn't have to be an R package. 
+
 ### R code vs R scripts vs R markdown
+
+
 
 R **code** can go anywhere. It gets input into the console to actually run the commands. But if you want to keep a record of your code and document it, you probably want to write an **R script**. A script is simply a text file, that contains code. Presumably, the code takes some inputs, does some operations, and produces helpful output. 
 
@@ -581,9 +666,19 @@ Scripts can also be helpful to automate workflows. If the same data transofrmati
 
 R markdown is just another script, but has a few more bells and whistles that make writing and documenting code a much more enjoyable experience. In fact, this whole book was written using Rmarkdown!!
 
-## How to find help {.unnumbered}
 
-### In R
+
+
+
+
+
+### How to find help {.unnumbered}
+
+
+
+#### In R
+
+
 
 All R functions *should* come with their hown help file. There are a few different ways to access this page.
 
@@ -595,7 +690,7 @@ You could also access the help files by pressing the `F1` key while your cursor 
 
 *todo: Screenshot of cursor placement after function name, before open parentheses*
 
-### the web!
+#### the web!
 
 Google (or duck-duck-go or, i guess, bing) it!
 

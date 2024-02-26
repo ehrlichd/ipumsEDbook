@@ -167,7 +167,7 @@ If you do not have class data on height, we will be using the following simple d
   >  `person, height` are the two columns, or variables, of `ex_height`
   >
   
-  </p>
+  </p> <br>
 </details>
 
  
@@ -337,12 +337,8 @@ In order to keep things organized, we will first create an object called `my_dat
 
 ```{r}
 
-## to delet, reading from desktop copy
-
-my_data_path <- file.path("..", "Projects", "IPUMS", "ipumsED", "data", "nhis_sample.csv")
-
 ## for now working copy for dan
-# my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
+my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
 
 
 
@@ -486,7 +482,7 @@ answer the following questions about our data set.
   > Age data is quantitative.
   >
     
-  </p>
+  </p> <br>
 </details>
 
 
@@ -504,7 +500,7 @@ answer the following questions about our data set.
   >
   
   
-  </p>
+  </p> <br>
 </details>
 
 
@@ -517,7 +513,7 @@ answer the following questions about our data set.
   <p> 
   > That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.
   
-  </p>
+  </p> <br>
 </details>
 
 
@@ -532,7 +528,7 @@ answer the following questions about our data set.
   > 
   > Age data is quantitative.
 
-  </p>
+  </p> <br>
 </details>
 
 
@@ -546,7 +542,7 @@ answer the following questions about our data set.
   > 
   > Age data is quantitative.
   
-  </p>
+  </p> <br>
 </details>
 
 
@@ -560,7 +556,7 @@ answer the following questions about our data set.
   >
   >Age data is quantitative.
   
-  </p>
+  </p> <br>
 </details>
 
 

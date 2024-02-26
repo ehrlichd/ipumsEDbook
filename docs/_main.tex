@@ -125,7 +125,7 @@
 \textbf{Developed by:}\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Daniel E. Ehrlich, \href{https://international.ipums.org/international/}{IPUMS, University of Minnesota}\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Anna Tremblay, \href{https://www.clemson.edu/cbshs/departments/sacj/degrees/anthropology.html}{Dept of Soc, Anth, \& CJ, Clemson University}\\
-\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2024-02-16\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}Current Version compiled: 2024-02-26\\
 \includegraphics[width=0.4\textwidth,height=\textheight]{ipums_i_logo.jpg} \includegraphics[width=0.4\textwidth,height=\textheight]{clemson_logo.png}\\
 }
 \date{}
@@ -668,8 +668,6 @@ Lesson 0 can also be used for a brainstorming space to sketch out ideas before c
 \subsection*{Unit-wide Glossary}\label{unit-wide-glossary}}
 \addcontentsline{toc}{subsection}{Unit-wide Glossary}
 
-\emph{Is this redundant?}
-
 \hypertarget{unit1_ch1}{%
 \chapter{WHAT IS DATA}\label{unit1_ch1}}
 
@@ -1040,12 +1038,8 @@ In order to keep things organized, we will first create an object called \texttt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DocumentationTok{\#\# to delet, reading from desktop copy}
-
-\NormalTok{my\_data\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{".."}\NormalTok{, }\StringTok{"Projects"}\NormalTok{, }\StringTok{"IPUMS"}\NormalTok{, }\StringTok{"ipumsED"}\NormalTok{, }\StringTok{"data"}\NormalTok{, }\StringTok{"nhis\_sample.csv"}\NormalTok{)}
-
 \DocumentationTok{\#\# for now working copy for dan}
-\CommentTok{\# my\_data\_path \textless{}{-} file.path("..", "ipumsED", "data", "nhis\_sample.csv")}
+\NormalTok{my\_data\_path }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(}\StringTok{".."}\NormalTok{, }\StringTok{"ipumsED"}\NormalTok{, }\StringTok{"data"}\NormalTok{, }\StringTok{"nhis\_sample.csv"}\NormalTok{)}
 
 
 
@@ -2464,255 +2458,11 @@ During this Unit, we suggest giving ample class time for independent student res
 \hypertarget{example-two}{%
 \subsection{Example two}\label{example-two}}
 
-\hypertarget{ex_code}{%
-\chapter*{Appendix 1: Example RMD code}\label{ex_code}}
-\addcontentsline{toc}{chapter}{Appendix 1: Example RMD code}
-
-\hypertarget{intro}{%
-\section*{Intro}\label{intro}}
-
-For now, this chapter is a bit of a placeholder. I'm not sure what/how
-the \texttt{references.Rmd} file actually fits in to the code/construction (it
-looks automatic) so I want to keep that in place and need a section to
-note that.
-
-I also want a more centralized reference point to put any example code I
-find helpful while working in R/bookdown. This section could get really
-unruly really fast, but oh well.
-
-\hypertarget{navigating-the-bookdown}{%
-\section*{Navigating the bookdown}\label{navigating-the-bookdown}}
-
-All chapter files need a 2 digit prefix (except \texttt{index.Rmd}) which
-dictates the chapter order. Note, this is not automatic and a little
-tedious to re-do.
-
-\begin{itemize}
-\item
-  \texttt{index.Rmd} is a required file and treated as file
-  \texttt{00}.
-\item
-  Chapters \emph{should} be numbered for ease of sorting but custom
-  orders are possible by specifying filenames somewhere \texttt{in\ a\ certain\ file...but\ i\textquotesingle{}m\ not\ sure\ where}.
-\end{itemize}
-
-Remember each Rmd file contains one and only one chapter, and a chapter
-is defined by the first-level heading \texttt{\#}.
-* Unlike usual Rmd files, chapters DO not contain a YAML header
-* Note that \texttt{index.Rmd} has its own YMAL for the title page and some bookwide parameters.
-
-\hypertarget{include-images}{%
-\section*{Include Images}\label{include-images}}
-
-\hypertarget{figures-in-a-folder}{%
-\subsection{Figures in a folder}\label{figures-in-a-folder}}
-
-Embed figures from a folder.
-
-For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a
-number of graphical paramerters you can set (or ignore) \texttt{out.width} will
-scale your image accordingly - irrespective of unit/display \texttt{fig.align}
-should be ``left'', ``right'', or ``center'' \texttt{fig.cap} allows you to provide
-``mouse over'' captions for the image. \texttt{echo=FALSE} is important if you
-ONLY want the image (IE the result of the code). If you want the code
-itself to show, (IE, or echo) set \texttt{echo=TRUE}.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{imgs/ipums_i_logo} 
-
-}
-
-\caption{the ipums logo}\label{fig:unnamed-chunk-43}
-\end{figure}
-
-\hypertarget{fancy-renders}{%
-\subsection{Fancy renders}\label{fancy-renders}}
-
-Embed html renders (EG, fancy tables (IPUMS\_var\_desc), or any shiny app)
-with \texttt{webshot} R package and \texttt{phantomJS}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
-\NormalTok{webshot}\SpecialCharTok{::}\FunctionTok{install\_phantomjs}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{tips}{%
-\section*{Tips}\label{tips}}
-
-\begin{itemize}
-\tightlist
-\item
-  Each section (chapters) gets \textbf{AUTOMATIC NUMBERING}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Use \texttt{\{-\}} or \texttt{\{.unnumbered\}} to keep a section out of the auto-list. These will still be listed in the TOC
-  \item
-    To hide the heading from the TOC you can also use \{.unlisted\}
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{basic-fonts}{%
-\section*{Basic Fonts}\label{basic-fonts}}
-
-In a list:
-
-\begin{itemize}
-\item
-  \emph{italics}
-\item
-  \textbf{bold}
-\item
-  \texttt{code}
-\item
-  \(equations\)
-\end{itemize}
-
-In \emph{a sentence} \textbf{with differently} \texttt{formated\ fonts} and maths \$ a + b
-= c? \$.
-
-\hypertarget{more-on-math}{%
-\subsection{More on Math}\label{more-on-math}}
-
-Randal Pruim features an extensive list of common math expression on
-their \href{https://rpruim.github.io/s341/S19/from-class/MathinRmd.html}{github
-page}. Here
-are some quick notes:
-
-In-line equations can be written within \texttt{\$} and will be displayed right
-there: \(a^2 + b^2 = c^2\). In contrast, you can also add equation-chunks
-by using \texttt{\$\$}
-
-This can be coded in-line, \[\sum_{n=1}^{10} n^2\], but will result in a
-page break.
-
-\(p\) is unknown but expected to be around 1/3. Standard error will be
-approximated
-
-\[
-SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-\]
-
-\hypertarget{linking-and-crossrefs}{%
-\section*{Linking and Crossrefs}\label{linking-and-crossrefs}}
-
-There are a few different options here:
-
-\begin{itemize}
-\item
-  Footnotes
-\item
-  Hyperlinks
-\item
-  autocite?
-\end{itemize}
-
-\hypertarget{footntes}{%
-\subsection{Footntes}\label{footntes}}
-
-You can also use math in footnotes like this\footnote{where we mention \(p = \frac{a}{b}\)}. Footnotes
-are helpful because they either open to a new page, where you can
-re-link to where you left off. Or they display as a literal footnote,
-depending on your file format.
-
-We will approximate standard error to 0.027\footnote{\(p\) is unknown but expected to be around 1/3. Standard
-  error will be approximated
-
-  \[
-  SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-  \]}
-
-Anything that maintains the indent following the html tag (square
-brackets) will be included in the footnote and \textbf{excluded} from the
-actual rendered text. This could be helpful to easily provide more
-information without breaking the narrative; however, it has the drawback
-that footnotes are dispersed throughout the document.
-
-\textbf{NOTE:} Footnote labels can be any character string, but for our own
-sakes, it makes sense to follow a standard, descriptive, format.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to
-install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
-
-\hypertarget{hyperlinks}{%
-\subsection{Hyperlinks}\label{hyperlinks}}
-
-In short, if you \textbf{label} it, you can link to it. So it's good practice to
-\textbf{LABEL EVERYTHING DESCRIPTIVELY} in case you it later. There are a couple of differnt styles of labeling depending on what you want to link to. You already saw above how to link to a website (URL).
-
-\begin{itemize}
-\tightlist
-\item
-  code chunks that produce figures can be referenced via \texttt{@\textbackslash{}ref(fig:{[}LABEL{]})}
-\end{itemize}
-
-\hypertarget{link-to-chapters}{%
-\subsubsection{Link to chapters}\label{link-to-chapters}}
-
-You can label chapter, section, or any level of header (\texttt{\#\#}) using by including the label in curly brackets after the section.
-* e.g., we can reference @ref(unit1\_ch1) using the following:
-+ \texttt{\textbackslash{}@ref(unit1\_ch1)}
-
-\textbf{NOTE:} If you do not manually label sections, they will get automatic labels anyway, which are hard to reference, so best to just declare them.
-
-\hypertarget{link-to-figures-tables-or-code-chunks}{%
-\subsubsection{Link to figures, tables, or code chunks}\label{link-to-figures-tables-or-code-chunks}}
-
-You can link to figures or tables created by R code, or the R code itself, as long as they are labeled.
-\textbf{Be careful!!} if labels are not descriptive and informative, it might be hard to find them later.
-* We should decide on some conventions for this!*
-
-Whatever the output (figure, table, etc), the label follows the r at the very first line of the code chunk:
-* \texttt{\{r\ an\_example\}\textasciigrave{}\ \ \ *}\{r an\_example, fig.cap = ``Example that include additional code chunk parameters''\}`
-
-To include the link in text, use the \texttt{\textbackslash{}@ref()}.
-
-To link to the code itself, we simply call the label (just like linking to a section header).
-* \texttt{\textbackslash{}@ref(basic\_code)} Link to some basic code @ref(basic\_code)
-
-If the output is a figure, you will also need to preface the label with \texttt{fig:}
-* \texttt{\textbackslash{}@ref(fig:height\_boxplot)}. Is the code that produces this link to a figure @ref(fig:height\_boxplot)
-
-In order to reference a nicely formatted table, made with \texttt{knitr::kable()}, use the following:
-* \texttt{\textbackslash{}@ref(tab:height\_table)}. In order to reference \emph{this table} @ref(tab:height\_table)
-
-\hypertarget{link-to-websites}{%
-\subsubsection{Link to websites}\label{link-to-websites}}
-
-linking to external websites is easy, just include the \href{https://ehrlichd.github.io/ipumsEDbook}{text-to-be-hyperlinked}
-
-This is actuall the exact same as linking to a local .jpg or similar.
-
-\hypertarget{citations}{%
-\subsection{Citations}\label{citations}}
-
-There do appera to be tools for citations, but I'm not super familiar with them so this section will grow as I learn more.
-
-\hypertarget{citing-r-packages}{%
-\subsubsection{Citing R packages}\label{citing-r-packages}}
-
-You can easily gather a list of all R packages used in a project using \texttt{knitr::write\_bib()}.
-By using square brackets and the \texttt{@} sign, along with the package name? or maybe the github repo? I'm not entirely sure, see below
-
-Quick example from demo/index (may not work without write\_bib() though):
-we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book,
-which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
-
-\begin{itemize}
-\tightlist
-\item
-  This infor should be written to the References files, though i'm not sure if it will work
-\end{itemize}
-
-\hypertarget{appendix-2-intro-to-rrstudio}{%
-\chapter*{Appendix 2: Intro to R/Rstudio}\label{appendix-2-intro-to-rrstudio}}
-\addcontentsline{toc}{chapter}{Appendix 2: Intro to R/Rstudio}
-
-A crash course to teach you everthing you need to know\ldots{}
+\hypertarget{appendix-1-intro-to-rrstudio}{%
+\chapter*{Appendix 1: Intro to R/Rstudio}\label{appendix-1-intro-to-rrstudio}}
+\addcontentsline{toc}{chapter}{Appendix 1: Intro to R/Rstudio}
+
+A crash course to teach you everything you need to know\ldots{}
 
 To teach yourself more with the rest of this book!
 
@@ -2738,7 +2488,7 @@ Let's start with some analogies:
 \emph{Click to show answer}
 
 \begin{quote}
-\texttt{R} is technically the \textbf{programming language},
+\texttt{R} is the \textbf{programming language},
 \texttt{RStudio} is the \textbf{Integrated Development Environment (IDE)}
 \end{quote}
 
@@ -2765,13 +2515,16 @@ Now, POSIT (company) produces RStudio (software), along with Quarto (software), 
 \section*{How to install}\label{how-to-install}}
 \addcontentsline{toc}{section}{How to install}
 
+\hypertarget{r-rstudio}{%
+\subsection{R, RStudio}\label{r-rstudio}}
+
 R is available directly from the Comprehensive R Archive Network, CRAN, located at \url{https://cran.r-project.org/}. You can find the latest official and development versions of \textbf{base-R} and all contributed packages hosted by CRAN.
 
 You can also go straight to the POSIT website, \url{https://posit.co/download/rstudio-desktop/}, where you can find download links for both R and Rstudio.
 
-\hypertarget{base-r-and-beyond}{%
-\subsection*{Base R and beyond}\label{base-r-and-beyond}}
-\addcontentsline{toc}{subsection}{Base R and beyond}
+\hypertarget{beyond-base-r}{%
+\subsection*{Beyond Base R}\label{beyond-base-r}}
+\addcontentsline{toc}{subsection}{Beyond Base R}
 
 \textbf{Base R} Generally refers to the core set of \textbf{R packages} that come bundled together when you download R from CRAN or POSIT. \textbf{Packages} are collections of R code that can expand the functionality that is not included with the base R packages. For example, this book was made using the \texttt{bookdown} Rpackage which itself extends the \texttt{Rmarkdown} package. Together, these packages make it easy to produce high quality textbook style materials using only R!.
 
@@ -2787,7 +2540,7 @@ This section will focus on using base R commands to orient users, however this b
   ipumsEDbook (that's the text you're reading!)
 \end{itemize}
 
-R packages need to \textbf{installed} one time which downloads a copy to your local R package library. This is most often done using the \texttt{install.packages()} command, which whill download R packages straight from CRAN.
+R packages need to be \textbf{installed} one time which downloads a copy to your local R package library. This is most often done using the \texttt{install.packages()} command, which whill download R packages straight from CRAN.
 
 For example, you could run the following to download the packages mentioned above. Note how the \texttt{c()} function is needed in order to provide a list of R packages the user wishes to download.
 
@@ -2814,10 +2567,38 @@ Note that \texttt{library()} does not expect a characer string (in quotes \textt
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{ipumsedbook}{%
+\subsection{ipumsEDbook}\label{ipumsedbook}}
+
+If you want to edit the book text directly, you'll need a few additional tools.
+
+First, you'll need the R \texttt{devtools} package. This can be downloaded with \texttt{install.packages(devtools)}. You will also need \texttt{Rtools}, which is not an R package and must be downloaded manually from CRAN.
+
+OS-specfic versions can be found here:
+\href{https://cran.r-project.org/bin/windows/Rtools/}{Windows}
+\href{https://cran.r-project.org/bin/macosx/tools/}{Mac}
+\href{https://cran.r-project.org/bin/linux/}{Linux}
+
+In addition to devtools and Rtools, you will need \textbf{GIT}. GIT is a version-control system that is commonly used to track and maintain software. GIT provides MANY tools that most researchers won't really need to interact with. The main reason we use GIT is to host a \textbf{repository} on a website, like \textbf{github.com}.
+
+By hosting our project on a remote site like github, we ensure that a version is always available. Other researchers can create a copy of their own, and download whatever the latest version.
+
+\hypertarget{setting-up-git}{%
+\subsubsection{Setting up GIT}\label{setting-up-git}}
+
+Download instructions for GIT can be found \href{https://git-scm.com/downloads}{here}.
+
+\hypertarget{setting-up-github}{%
+\subsubsection{Setting up GITHUB}\label{setting-up-github}}
+
+\hypertarget{downloading-from-github}{%
+\subsubsection{Downloading from GITHUB}\label{downloading-from-github}}
+
 Note also that while downloading \texttt{ipumsEDbook} provides all the source code for this document, it is unlikely that you would ever need to load the package with \texttt{library()}. Instead, you can use the following notation to call a specific function without loading the entire package. In this case, we call a function which will regenerate the html version of this document.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\DocumentationTok{\#\# need to add a function to make it easy to recompile}
 \NormalTok{ipumsEDbook}\SpecialCharTok{::}\FunctionTok{regenerate\_book}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -2832,15 +2613,15 @@ Note also that while downloading \texttt{ipumsEDbook} provides all the source co
 You get used to it, promise.
 \end{quote}
 
-\hypertarget{navigating-console}{%
-\subsection{Navigating\ldots{} Console}\label{navigating-console}}
+\hypertarget{console}{%
+\subsection{Console}\label{console}}
 
 The console is where you interact with \texttt{R} directly.
 
-The console is where you actually input the code into R
+The console is technically where you input the code to be run in R.
 
-\hypertarget{writing-r-code---give-it-a-try}{%
-\subsubsection{Writing R code - give it a try}\label{writing-r-code---give-it-a-try}}
+\hypertarget{simple-code}{%
+\subsubsection{Simple Code}\label{simple-code}}
 
 At its simplest, R is a calculator. You can enter basic math equations into the console like. R will read the input, interpret it, and print some kine of output.
 
@@ -2856,7 +2637,7 @@ The exact output you receive depends on the input!
 ## [1] 4
 \end{verbatim}
 
-As a statistical programing language, R is capable of basic arithmetic and following order of operations.
+As a statistical programming language, R is capable of basic arithmetic and following order of operations.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2871,7 +2652,7 @@ As a statistical programing language, R is capable of basic arithmetic and follo
 \hypertarget{r-objects}{%
 \subsubsection{R Objects}\label{r-objects}}
 
-R is also an oject oriented programing language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or \textbf{clases} of R objects.
+R is also an object oriented programming language. This means you can create R-objects. These objects can store complicated input or output. R objects can really be anything, and R objects can be used to create new types, or \textbf{classes} of other R objects.
 
 Let's start simple. Try to describe, in plain language, what's going on in the code below. In other words, how do you as a human, interpret the code.
 
@@ -2908,11 +2689,11 @@ In the above code chunk, we add up the numbers 1 through 9 and save the result t
 \subsubsection*{R functions}\label{r-functions}}
 \addcontentsline{toc}{subsubsection}{R functions}
 
-In addition to objects, a second important concept to programing in R is \textbf{functions}. Functions are actually just a special \textbf{class} of R object. What makes functions special is that they \textbf{do} something. In gneral functions take one or more \textbf{arguments} as \textbf{input}, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of \textbf{output}
+In addition to objects, a second important concept to programming in R is \textbf{functions}. Functions are actually just a special \textbf{class} of R object. What makes functions special is that they \textbf{do} something. In general functions take one or more \textbf{arguments} as \textbf{input}, they do some kind of action like calculations, visualizations, or data transformations, and the produce some kind of \textbf{output}
 
 R functions are easily recognizable because they end in parentheses \texttt{()}. Arguments to the function go within the parentheses.
 
-Instead of typing the \texttt{+} sign multiple times, as we did above, we could use the \texttt{sum()} function. In the code on the right, we pass the numbers 1 though 9 as arguments to the \texttt{sum()} functiom. The arguments go within the \texttt{()} separated by commas.
+Instead of typing the \texttt{+} sign multiple times, as we did above, we could use the \texttt{sum()} function. In the code on the right, we pass the numbers 1 though 9 as arguments to the \texttt{sum()} function. The arguments go within the \texttt{()} separated by commas.
 
 .pull-left{[}
 
@@ -3019,8 +2800,8 @@ Using \texttt{c()} is easy. It takes any number of inputs, and joins them togeth
 
 {]}
 
-\hypertarget{interacting-with-objects-and-functions}{%
-\subsubsection{Interacting with Objects and Functions}\label{interacting-with-objects-and-functions}}
+\hypertarget{calling-functions-on-objects}{%
+\subsubsection{Calling functions on objects}\label{calling-functions-on-objects}}
 
 We can use some basic R functions to interact with our R objects. The first function tells us the \texttt{class} of our R object. While \texttt{length()} tells us how long the object is. Notice how \texttt{my\_value} and \texttt{my\_vector} have the same class, but different lengths.
 
@@ -3171,12 +2952,12 @@ TRUE & 9 & i\\
 
 You're bound to create \textbf{MANY} R objects throughout your work, and that can be a lot to keep track of. Fortunately, you don't need to track this all yourself - that's what the environment tab is for!
 
-\hypertarget{navigating-environments}{%
-\subsection{Navigating \ldots{} Environments}\label{navigating-environments}}
+\hypertarget{environments-the-2nd-pane}{%
+\subsection{Environments (The 2nd Pane)}\label{environments-the-2nd-pane}}
 
 Finally, we come to the second tab of Rstudio. In addition to Environment, you may see tabs for \texttt{History,\ Connections}. You may also see tabs for \texttt{Build} or \texttt{Git} depending on if you have these tools installed.
 
-While you \emph{may} interact with these other tabs depending on your project needs, you will \textbf{always} want to reference R objects stored in your \textbf{local environment}. In the environment panel, you will find each R object listed by name and organized broadly into categories of \texttt{Values} (vectors), \texttt{Data} (data frames, matrices, and other more complex structures), User-created \texttt{Functions} will also recieve their own section.
+While you \emph{may} interact with these other tabs depending on your project needs, you will \textbf{always} want to reference R objects stored in your \textbf{local environment}. In the environment panel, you will find each R object listed by name and organized broadly into categories of \texttt{Values} (vectors), \texttt{Data} (data frames, matrices, and other more complex structures), User-created \texttt{Functions} will also receive their own section.
 
 Your local environent is a temporary space. When you close your R session, you will lose any work you do not save or \textbf{write out} to a separate file.
 
@@ -3189,12 +2970,12 @@ These may seem like handy convenience features, but in practice we find them pro
 
 Here we outline what we consider to be best practice for maintaining an R environment/ R project.
 
-\hypertarget{change-global-options}{%
-\paragraph{CHANGE GLOBAL OPTIONS}\label{change-global-options}}
+\hypertarget{global-options}{%
+\paragraph{Global Options}\label{global-options}}
 
 For the most part, we strive to use the default installations/parameters when using R/Rstudio. This facilitates reproducibility for a researcher working across different computers, and reproducibility if a colleague wishes to replicate the code themselves.
 
-However, one setting we \textbf{DO} reccomend changing the following under \texttt{Tools/Global\ Options/General} Uncheck all boxes that begin \texttt{Restore}..
+However, one setting we \textbf{DO} recommend changing the following under \texttt{Tools/Global\ Options/General} Uncheck all boxes that begin \texttt{Restore}..
 
 \begin{itemize}
 \item
@@ -3205,20 +2986,51 @@ However, one setting we \textbf{DO} reccomend changing the following under \text
   Restore .RData
 \end{itemize}
 
-Also, we reccomend changing the option for \texttt{Save\ a\ copy\ of\ .RData} to \texttt{NEVER}.
+Also, we recommend changing the option for \texttt{Save\ a\ copy\ of\ .RData} to \texttt{NEVER}.
 
 The reason for this is that if an R session crashes, trying to load the latest autogenerated backup is likely to cause the error and make the session fail again. It can also be timely if you last worked on a really large project that takes a while to open and restore all files.
 
 In practice, it's better to intentionally save and close your project. Then open up whichever project you want to work on each time you start a new R session.
+
+\hypertarget{files-plots-packages-oh-my-the-3rd-pane}{%
+\subsection{Files, Plots, Packages, oh my! (The 3rd Pane)}\label{files-plots-packages-oh-my-the-3rd-pane}}
+
+The bottom-right pane (by default) contains a lot of tabs, many of which you will likely use!
+
+They functions of these tabs are largely self explanatory. \texttt{Files} provides a file browser, which defaults to your \textbf{working directory}. Usually, your working directory is the same as your R Project Folder.
+
+\texttt{Plots} is a graphical device, this is where (most) data visualizations will be rendered by default.
+Past plots can be viewed with the arrow keys, and new ones will be placed last in the sequence.
+
+NOTE: these plots are temporary renders made for your current R session. Be sure to export any visualizations if you will need to access them later.
+
+\texttt{Packages} lists all the R packages you currently have installed on your machine. The check box \emph{can} be used to load packages as desired. In fact, clicking the check box is the same as the \texttt{library()} function, which in practice, is usually the preffered way to load packages. Remember, you only need to \texttt{install.packages()} once, but you need to load R packages with \texttt{library()} each session.
+
+The \texttt{Help} tab provides direct access to the help files housed within R. Each function \emph{should} have a helpfile which you can search for by name. Alternatively, you can press \texttt{F1} while your cursor is located at the end of a function name, but before the opening parentheses.
+
+The \texttt{Viewer} and \texttt{Presentation} panes will be used if you are using certain R packages that produce special outputs. See various package-specific help fules for those.
 
 \hypertarget{writing-r-in-scripts-breaking-the-4th-pane}{%
 \subsection{Writing R in Scripts (Breaking the 4th Pane)}\label{writing-r-in-scripts-breaking-the-4th-pane}}
 
 Save your work, find typos, re-run easy!
 
-\hypertarget{r-specific-quirks}{%
-\section*{R-specific Quirks}\label{r-specific-quirks}}
-\addcontentsline{toc}{section}{R-specific Quirks}
+Up until now, you've likely have been passing code directly to Console. While it makes it easy to hit the ground running, this aproach is not very efficient for actually conducting a project. Entering code line-by-line is error prone and does not provide an easy reference of the work you have done.
+
+Instead of entering code directly to console, we usually want to save our work in the form of an R script.
+
+An R script is simply a text document that contains R code. Importantly, it is \textbf{assumed} that everything within the Rscript is R code \textbf{to be run}.
+
+\hypertarget{reveiw-of-r-specific-quirks}{%
+\section*{Reveiw of R-specific Quirks}\label{reveiw-of-r-specific-quirks}}
+\addcontentsline{toc}{section}{Reveiw of R-specific Quirks}
+
+Here is a summary of some of the information outlined previously.
+
+\hypertarget{global-options-1}{%
+\subsection{Global options}\label{global-options-1}}
+
+\emph{refer to the global options outlined above}
 
 \hypertarget{r-objects-functions}{%
 \subsection*{R objects, Functions}\label{r-objects-functions}}
@@ -3230,9 +3042,9 @@ In the context of \textbf{language}, objects are the nouns and functions are the
 
 When you write R code, you usually create R objects that represent data of interest, then apply various R functions to transform, analyze, or visualize the data. In the below code, we are creating an \textbf{object} called \texttt{my\_data}, which represents the integers one through 10. We are using the \texttt{c()} \textbf{function} which takes any number of input \textbf{objects} as \textbf{input} and \textbf{concatenates} them together into a character string.
 
-The \textbf{input(s)} to a function go within the parentheses seperated by commas. You can usually tell the difference between R obects and R functions because R functions always have \texttt{()} written after their name.
+The \textbf{input(s)} to a function go within the parentheses separated by commas. You can usually tell the difference between R objects and R functions because R functions always have \texttt{()} written after their name.
 
-In most cases, the \textbf{output} of an R function will be printed to the console, unless it is saved into a new R object. We do this using the \textbf{assignment opperator}, \texttt{\textless{}-}. This is a special function R function that takes whatever is on the right-hand side of the \texttt{\textless{}-} and creates or overwrites an R object with the name specified to the left-hand side of the \texttt{\textless{}-}. In the example below, we use the \textbf{assignment opperator} to ``catch'' the result of the \texttt{c()}, which is the character string of intengers from 1 to 10.
+In most cases, the \textbf{output} of an R function will be printed to the console, unless it is saved into a new R object. We do this using the \textbf{assignment opperator}, \texttt{\textless{}-}. This is a special function R function that takes whatever is on the right-hand side of the \texttt{\textless{}-} and creates or overwrites an R object with the name specified to the left-hand side of the \texttt{\textless{}-}. In the example below, we use the \textbf{assignment opperator} to ``catch'' the result of the \texttt{c()}, which is the character string of integers from 1 to 10.
 
 Calling the name of an R object will \emph{usually} print its contents in the console.
 
@@ -3275,10 +3087,12 @@ Some basic R classes are \textbf{vectors}, \textbf{data,frames}, and \textbf{fun
 ## [1] "numeric"
 \end{verbatim}
 
-\hypertarget{r-projects}{%
-\subsection{R Projects}\label{r-projects}}
+\hypertarget{r-projects-r-packages}{%
+\subsection{R Projects, R packages}\label{r-projects-r-packages}}
 
 R projects are an essential way to organize your data analysis, research, or even scratch work in R. Projects let you create self-contained environments that can feature their own R libraries, containg packages that are different from your day-to-day operations.
+
+R packages are collections of R functions and R objects (datasets) that extend the functionality of R. In general, an R package is also an R project. However, an R project, doesn't have to be an R package.
 
 \hypertarget{r-code-vs-r-scripts-vs-r-markdown}{%
 \subsection{R code vs R scripts vs R markdown}\label{r-code-vs-r-scripts-vs-r-markdown}}
@@ -3294,11 +3108,11 @@ Scripts can also be helpful to automate workflows. If the same data transofrmati
 R markdown is just another script, but has a few more bells and whistles that make writing and documenting code a much more enjoyable experience. In fact, this whole book was written using Rmarkdown!!
 
 \hypertarget{how-to-find-help}{%
-\section*{How to find help}\label{how-to-find-help}}
-\addcontentsline{toc}{section}{How to find help}
+\subsection*{How to find help}\label{how-to-find-help}}
+\addcontentsline{toc}{subsection}{How to find help}
 
 \hypertarget{in-r}{%
-\subsection{In R}\label{in-r}}
+\subsubsection{In R}\label{in-r}}
 
 All R functions \emph{should} come with their hown help file. There are a few different ways to access this page.
 
@@ -3311,7 +3125,7 @@ You could also access the help files by pressing the \texttt{F1} key while your 
 \emph{todo: Screenshot of cursor placement after function name, before open parentheses}
 
 \hypertarget{the-web}{%
-\subsection{the web!}\label{the-web}}
+\subsubsection{the web!}\label{the-web}}
 
 Google (or duck-duck-go or, i guess, bing) it!
 
@@ -3927,7 +3741,7 @@ Univariate continuous data, like height, can be visualized using a box and whisk
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-77-1.pdf}
 
 \hypertarget{continuous-data---histograms}{%
 \subsection{Continuous Data - Histograms}\label{continuous-data---histograms}}
@@ -3940,7 +3754,7 @@ Continuous data, can also be broken into \textbf{bins} and plotted as a \textbf{
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-78-1.pdf}
 
 \hypertarget{categorical-data}{%
 \subsection{Categorical Data}\label{categorical-data}}
@@ -3971,7 +3785,7 @@ We can also visualize our tabulated results using a \textbf{barplot} as below.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
 
 \hypertarget{glossary-2}{%
 \section*{Glossary}\label{glossary-2}}
@@ -4009,21 +3823,21 @@ First we'll generate a normal distribution with the \texttt{rnorm()} function. T
 \end{Shaded}
 
 \begin{verbatim}
-##   [1]  8.630055 10.609381  9.000617  9.087239 12.042593 10.787303 10.282904
-##   [8] 10.311779 10.662004  7.840461  9.459774  9.319356  9.528807  9.376153
-##  [15]  8.654797  9.689129  8.625847 10.924292 11.072562 10.346924  9.109647
-##  [22] 10.204684  9.546494  8.219540 10.139094 10.158898  9.834750  8.661776
-##  [29]  9.960127 10.239149 11.173459  8.883999 11.272602 11.031087  9.956361
-##  [36] 10.174024 10.013325  9.662270  8.397064 10.077891 10.631040  9.420818
-##  [43] 10.098892  9.699856 11.279329 10.244760  9.237803  9.874816 11.791900
-##  [50] 11.417320 11.769660 10.599739 10.255369 10.021611  9.671718 10.911160
-##  [57] 10.866039  9.329412  9.980811 10.779823  9.071665  9.546059 10.144164
-##  [64]  9.548172  8.862110  9.415677  9.718902 10.832477  7.859006  8.712707
-##  [71] 10.081398 11.333786 12.057830  9.935928  8.956344 11.053680  9.118385
-##  [78]  9.890567 10.635065 10.743629 11.798461  9.072948 10.678442 11.036687
-##  [85]  8.328338 10.546021  9.071663  9.235037 10.505488  9.674155  9.822565
-##  [92] 10.644300 10.543804  9.617115  9.532858  9.410122 10.178436 11.419354
-##  [99] 10.936624 10.196390
+##   [1] 11.537843  9.577027 11.444075 10.518058  9.752622  9.381794  9.283329
+##   [8] 11.997276 10.383081 10.716883  9.871463 10.575796  9.803151  8.695750
+##  [15]  9.346073  9.349846 10.108626 11.711685 10.674153 11.827317 11.779177
+##  [22] 10.896859 12.545381 11.943484 10.964451  9.924096  9.439721 10.084466
+##  [29] 10.287442  9.352893 10.636215  8.703583 10.935781 10.969983  8.645146
+##  [36] 11.430844 11.295499 10.003588  8.291503  9.189448 11.316452 11.729021
+##  [43] 11.006216 10.525947 10.863133  9.884728  8.801202 10.653382  9.648026
+##  [50]  9.906731  7.851274  9.809432  9.968136  8.717939  9.882488 11.077242
+##  [57] 10.287510  9.558057  9.327232 10.197740  7.510276 10.527043  9.925029
+##  [64]  9.986464 10.820894  9.069265 10.166528  8.990858 11.031247 10.943931
+##  [71]  8.493954  8.986688 10.595989  8.882771 10.572699 10.811687 10.045714
+##  [78]  8.082443 10.578480 10.122678 10.514887  9.696846  9.871598  9.787594
+##  [85] 10.141834  9.217790 10.534329 10.177832 10.412341 10.193418 10.332295
+##  [92]  9.273755  9.637714  9.729498  9.926673 10.746631 10.008932  9.251834
+##  [99] 12.293185  9.264603
 \end{verbatim}
 
 Another better way to look at data would be to \textbf{visualize} or \textbf{plot} it. One way to to that is with a \textbf{histogram}, which groups \textbf{continuous values} into \textbf{bins}, then plots the \textbf{frequency} for each bin.
@@ -4065,7 +3879,7 @@ We can print the table in R by calling its name.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   7.840   9.402  10.017  10.006  10.649  12.058
+##   7.510   9.425  10.097  10.120  10.724  12.545
 \end{verbatim}
 
 Mean, standard deviation
@@ -4133,9 +3947,9 @@ Often times its important to tables of \textbf{summary statistics}
 \end{Shaded}
 
 \begin{verbatim}
-##           Min.  1st Qu.    Median     Mean   3rd Qu.     Max.
-## [1,]  69.27518 92.62793 100.08074 99.50605 106.02766 129.0665
-## [2,] -19.67188 43.00360  60.48516 60.30797  76.56964 145.8045
+##           Min.  1st Qu.   Median     Mean   3rd Qu.     Max.
+## [1,]  67.50282 92.94738 99.85491 99.83723 106.34225 127.6897
+## [2,] -11.47190 44.40308 60.78438 61.91661  79.79141 142.9623
 \end{verbatim}
 
 Making the table a little nicer. Also an example of \textbf{conditional programming}.
@@ -4170,9 +3984,9 @@ When working with \textbf{Rmarkdown} we can take advantage of \texttt{knitr} and
 \hline
   & Min. & 1st Qu. & Median & Mean & 3rd Qu. & Max.\\
 \hline
-data1 & 69.27518 & 92.62793 & 100.08074 & 99.50605 & 106.02766 & 129.0665\\
+data1 & 67.50282 & 92.94738 & 99.85491 & 99.83723 & 106.34225 & 127.6897\\
 \hline
-data2 & -19.67188 & 43.00360 & 60.48516 & 60.30797 & 76.56964 & 145.8045\\
+data2 & -11.47190 & 44.40308 & 60.78438 & 61.91661 & 79.79141 & 142.9623\\
 \hline
 \end{tabular}
 
@@ -4297,6 +4111,275 @@ Discrete
 Continuous
 Nominal
 Ordinal
+
+\hypertarget{dev-appendix-styling-with-rmd}{%
+\chapter*{dev-Appendix : Styling with RMD}\label{dev-appendix-styling-with-rmd}}
+\addcontentsline{toc}{chapter}{dev-Appendix : Styling with RMD}
+
+For now, this chapter is a bit of a placeholder. I'm not sure what/how
+the \texttt{references.Rmd} file actually fits in to the code/construction (it
+looks automatic) so I want to keep that in place and need a section to
+note that.
+
+I also want a more centralized reference point to put any example code I
+find helpful while working in R/bookdown. This section could get really
+unruly really fast, but oh well.
+
+\hypertarget{navigating-the-bookdown}{%
+\section*{Navigating the bookdown}\label{navigating-the-bookdown}}
+\addcontentsline{toc}{section}{Navigating the bookdown}
+
+All chapter files need a 2 digit prefix (except \texttt{index.Rmd}) which
+dictates the chapter order. Note, this is not automatic and a little
+tedious to re-do.
+
+\begin{itemize}
+\item
+  \texttt{index.Rmd} is a required file and treated as file
+  \texttt{00}.
+\item
+  Chapters \emph{should} be numbered for ease of sorting but custom
+  orders are possible by specifying filenames somewhere \texttt{in\ a\ certain\ file...but\ i\textquotesingle{}m\ not\ sure\ where}.
+\end{itemize}
+
+Remember each Rmd file contains one and only one chapter, and a chapter
+is defined by the first-level heading \texttt{\#}.
+* Unlike usual Rmd files, chapters DO not contain a YAML header
+* Note that \texttt{index.Rmd} has its own YMAL for the title page and some bookwide parameters.
+
+\hypertarget{include-images}{%
+\section*{Include Images}\label{include-images}}
+\addcontentsline{toc}{section}{Include Images}
+
+\hypertarget{figures-in-a-folder}{%
+\subsection{Figures in a folder}\label{figures-in-a-folder}}
+
+Embed figures from a folder.
+
+For this, it's usually best to use a code-chunk and \texttt{knitr}. There are a
+number of graphical paramerters you can set (or ignore) \texttt{out.width} will
+scale your image accordingly - irrespective of unit/display \texttt{fig.align}
+should be ``left'', ``right'', or ``center'' \texttt{fig.cap} allows you to provide
+``mouse over'' captions for the image. \texttt{echo=FALSE} is important if you
+ONLY want the image (IE the result of the code). If you want the code
+itself to show, (IE, or echo) set \texttt{echo=TRUE}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{imgs/ipums_i_logo} 
+
+}
+
+\caption{the ipums logo}\label{fig:unnamed-chunk-88}
+\end{figure}
+
+\hypertarget{fancy-renders}{%
+\subsection{Fancy renders}\label{fancy-renders}}
+
+Embed html renders (EG, fancy tables (IPUMS\_var\_desc), or any shiny app)
+with \texttt{webshot} R package and \texttt{phantomJS}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"webshot"}\NormalTok{)}
+\NormalTok{webshot}\SpecialCharTok{::}\FunctionTok{install\_phantomjs}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tips}{%
+\section*{Tips}\label{tips}}
+\addcontentsline{toc}{section}{Tips}
+
+\begin{itemize}
+\tightlist
+\item
+  Each section (chapters) gets \textbf{AUTOMATIC NUMBERING}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use \texttt{\{-\}} or \texttt{\{.unnumbered\}} to keep a section out of the auto-list. These will still be listed in the TOC
+  \item
+    To hide the heading from the TOC you can also use \{.unlisted\}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{basic-fonts}{%
+\section*{Basic Fonts}\label{basic-fonts}}
+\addcontentsline{toc}{section}{Basic Fonts}
+
+In a list:
+
+\begin{itemize}
+\item
+  \emph{italics}
+\item
+  \textbf{bold}
+\item
+  \texttt{code}
+\item
+  \(equations\)
+\end{itemize}
+
+In \emph{a sentence} \textbf{with differently} \texttt{formated\ fonts} and maths \$ a + b
+= c? \$.
+
+\hypertarget{more-on-math}{%
+\subsection{More on Math}\label{more-on-math}}
+
+Randal Pruim features an extensive list of common math expression on
+their \href{https://rpruim.github.io/s341/S19/from-class/MathinRmd.html}{github
+page}. Here
+are some quick notes:
+
+In-line equations can be written within \texttt{\$} and will be displayed right
+there: \(a^2 + b^2 = c^2\). In contrast, you can also add equation-chunks
+by using \texttt{\$\$}
+
+This can be coded in-line, \[\sum_{n=1}^{10} n^2\], but will result in a
+page break.
+
+\(p\) is unknown but expected to be around 1/3. Standard error will be
+approximated
+
+\[
+SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+\]
+
+\hypertarget{linking-and-crossrefs}{%
+\section*{Linking and Crossrefs}\label{linking-and-crossrefs}}
+\addcontentsline{toc}{section}{Linking and Crossrefs}
+
+There are a few different options here:
+
+\begin{itemize}
+\item
+  Footnotes
+\item
+  Hyperlinks
+\item
+  autocite?
+\end{itemize}
+
+\hypertarget{footntes}{%
+\subsection{Footntes}\label{footntes}}
+
+You can also use math in footnotes like this\footnote{where we mention \(p = \frac{a}{b}\)}. Footnotes
+are helpful because they either open to a new page, where you can
+re-link to where you left off. Or they display as a literal footnote,
+depending on your file format.
+
+We will approximate standard error to 0.027\footnote{\(p\) is unknown but expected to be around 1/3. Standard
+  error will be approximated
+
+  \[
+  SE = \sqrt(\frac{p(1-p)}{n}) \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+  \]}
+
+Anything that maintains the indent following the html tag (square
+brackets) will be included in the footnote and \textbf{excluded} from the
+actual rendered text. This could be helpful to easily provide more
+information without breaking the narrative; however, it has the drawback
+that footnotes are dispersed throughout the document.
+
+\textbf{NOTE:} Footnote labels can be any character string, but for our own
+sakes, it makes sense to follow a standard, descriptive, format.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to
+install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+
+\hypertarget{hyperlinks}{%
+\subsection{Hyperlinks}\label{hyperlinks}}
+
+In short, if you \textbf{label} it, you can link to it. So it's good practice to
+\textbf{LABEL EVERYTHING DESCRIPTIVELY} in case you it later. There are a couple of differnt styles of labeling depending on what you want to link to. You already saw above how to link to a website (URL).
+
+\begin{itemize}
+\tightlist
+\item
+  code chunks that produce figures can be referenced via \texttt{@\textbackslash{}ref(fig:{[}LABEL{]})}
+\end{itemize}
+
+\hypertarget{link-to-chapters}{%
+\subsubsection{Link to chapters}\label{link-to-chapters}}
+
+You can label chapter, section, or any level of header (\texttt{\#\#}) using by including the label in curly brackets after the section.
+* e.g., we can reference @ref(unit1\_ch1) using the following:
++ \texttt{\textbackslash{}@ref(unit1\_ch1)}
+
+\textbf{NOTE:} If you do not manually label sections, they will get automatic labels anyway, which are hard to reference, so best to just declare them.
+
+\hypertarget{link-to-figures-tables-or-code-chunks}{%
+\subsubsection{Link to figures, tables, or code chunks}\label{link-to-figures-tables-or-code-chunks}}
+
+You can link to figures or tables created by R code, or the R code itself, as long as they are labeled.
+\textbf{Be careful!!} if labels are not descriptive and informative, it might be hard to find them later.
+* We should decide on some conventions for this!*
+
+Whatever the output (figure, table, etc), the label follows the r at the very first line of the code chunk:
+* \texttt{\{r\ an\_example\}\textasciigrave{}\ \ \ *}\{r an\_example, fig.cap = ``Example that include additional code chunk parameters''\}`
+
+To include the link in text, use the \texttt{\textbackslash{}@ref()}.
+
+To link to the code itself, we simply call the label (just like linking to a section header).
+* \texttt{\textbackslash{}@ref(basic\_code)} Link to some basic code @ref(basic\_code)
+
+If the output is a figure, you will also need to preface the label with \texttt{fig:}
+* \texttt{\textbackslash{}@ref(fig:height\_boxplot)}. Is the code that produces this link to a figure @ref(fig:height\_boxplot)
+
+In order to reference a nicely formatted table, made with \texttt{knitr::kable()}, use the following:
+* \texttt{\textbackslash{}@ref(tab:height\_table)}. In order to reference \emph{this table} @ref(tab:height\_table)
+
+\hypertarget{link-to-websites}{%
+\subsubsection{Link to websites}\label{link-to-websites}}
+
+linking to external websites is easy, just include the \href{https://ehrlichd.github.io/ipumsEDbook}{text-to-be-hyperlinked}
+
+This is actuall the exact same as linking to a local .jpg or similar.
+
+\hypertarget{citations}{%
+\subsection{Citations}\label{citations}}
+
+There do appera to be tools for citations, but I'm not super familiar with them so this section will grow as I learn more.
+
+\hypertarget{citing-r-packages}{%
+\subsubsection{Citing R packages}\label{citing-r-packages}}
+
+You can easily gather a list of all R packages used in a project using \texttt{knitr::write\_bib()}.
+By using square brackets and the \texttt{@} sign, along with the package name? or maybe the github repo? I'm not entirely sure, see below
+
+Quick example from demo/index (may not work without write\_bib() though):
+we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book,
+which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
+
+\begin{itemize}
+\tightlist
+\item
+  This infor should be written to the References files, though i'm not sure if it will work
+\end{itemize}
+
+\hypertarget{glossary-4}{%
+\chapter{Glossary}\label{glossary-4}}
+
+\hypertarget{unit-1}{%
+\section{Unit 1}\label{unit-1}}
+
+\hypertarget{chapter-1}{%
+\subsection{Chapter 1}\label{chapter-1}}
+
+\textbf{Random Sampling:}
+\textbf{Stratified Random Sampling:}
+\textbf{Statistical bias}
+
+\hypertarget{aoendix-1}{%
+\section{Aoendix 1}\label{aoendix-1}}
+
+\hypertarget{intro-to-r}{%
+\subsection{Intro to R}\label{intro-to-r}}
+
+\hypertarget{advanced-methods}{%
+\chapter*{Advanced Methods}\label{advanced-methods}}
+\addcontentsline{toc}{chapter}{Advanced Methods}
 
   \bibliography{book.bib,packages.bib}
 

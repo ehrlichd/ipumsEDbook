@@ -21,18 +21,10 @@
 
 ```{r, echo = FALSE}
 
-## tmp locations
-nhis_data <- read.csv(file.path("..", "Projects", "IPUMS", "ipumsED", "data", "nhis_sample.csv"))
-ipums_data <- read.csv(file.path("..", "Projects", "IPUMS", "ipumsED", "data", "ipumsi_sample.csv"))
-## this is very wrong
-# ipums_ddi <- readRDS(file.path("..", "Projects", "IPUMS","ipumsED","data","ipumsi_ddi.rda"))
 
-# 
 # ## UPDATE
-# nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
-# ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
-# ## this is very wrong
-# ipums_ddi <- readRDS(file.path("..","ipumsED","data","ipumsi_ddi.rda"))
+nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
+ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
 
 ## see ipumsi.cbk for these labels
 ff_sex <- factor(ipums_data$SEX, labels = c("Male", "Female"))
@@ -53,7 +45,7 @@ ff_marst <- factor(ipums_data$MARST, labels = c("Single", "Married", "Separated"
   > Barplots tend to be good choices to represent categorical data. They categories can be visualized side-by-side or stacked.
   >
     
-  </p>
+  </p> <br>
 </details>
 
 
@@ -241,7 +233,7 @@ The `summary()` function can be applied to many data types. When applying to a c
   >
   
   
-  </p>
+  </p> <br>
 </details>
 
 ```{r}

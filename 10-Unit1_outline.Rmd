@@ -20,6 +20,4 @@ Lesson 0 can also be used for a brainstorming space to sketch out ideas before c
 
 ### Unit-wide Glossary {-}
 
-_Is this redundant?_
-
 

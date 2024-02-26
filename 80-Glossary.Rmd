@@ -1,0 +1,16 @@
+# Glossary
+
+## Unit 1
+
+### Chapter 1
+
+
+**Random Sampling:**
+**Stratified Random Sampling:**
+**Statistical bias**
+
+## Aoendix 1
+
+### Intro to R
+
+

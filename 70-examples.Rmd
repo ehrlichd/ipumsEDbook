@@ -1,9 +1,4 @@
-# Appendix 1: Example RMD code {#ex_code .unnumbered}
-
-
-
-
-## Intro {.unnumbered .unlisted}
+# dev-Appendix : Styling with RMD { .unnumbered}
 
 
 
@@ -20,7 +15,7 @@ unruly really fast, but oh well.
 
 
 
-## Navigating the bookdown {.unnumbered .unlisted}
+## Navigating the bookdown {.unnumbered}
 
 
 All chapter files need a 2 digit prefix (except `index.Rmd`) which
@@ -41,7 +36,7 @@ is defined by the first-level heading `#`.
 
 
 
-## Include Images {.unnumbered .unlisted}
+## Include Images {.unnumbered}
 
 
 ### Figures in a folder
@@ -76,14 +71,14 @@ install.packages("webshot")
 webshot::install_phantomjs()
 ```
 
-## Tips {.unnumbered .unlisted}
+## Tips {.unnumbered}
 
   * Each section (chapters) gets **AUTOMATIC NUMBERING** 
     + Use `{-}` or `{.unnumbered}` to keep a section out of the auto-list. These will still be listed in the TOC
     + To hide the heading from the TOC you can also use {.unlisted}
 
 
-## Basic Fonts {.unnumbered .unlisted}
+## Basic Fonts {.unnumbered}
 
 In a list:
 
@@ -123,7 +118,7 @@ $$
 
 
 
-## Linking and Crossrefs {.unnumbered .unlisted}
+## Linking and Crossrefs {.unnumbered}
 
 There are a few different options here: 
 
