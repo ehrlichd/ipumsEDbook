@@ -4,7 +4,7 @@ lesson-0
 unit1_ch1
 engage
 explore
-explain
+chapter1_explain
 what-are-data
 collecting-data
 how-do-we-get-data
@@ -37,7 +37,7 @@ vis-1
 vis-2
 vis-3
 explore-1
-explain-1
+explain
 single-variable---continuous
 single-variable---categorical
 multi-variable---continuous
@@ -133,6 +133,7 @@ citing-r-packages
 glossary-1
 unit-1
 chapter-1
+glossary_data
 appendix-1---intro-to-r
 glossary_r
 glossary_rstudio
