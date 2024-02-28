@@ -75,7 +75,13 @@ webshot::install_phantomjs()
 
   * Each section (chapters) gets **AUTOMATIC NUMBERING** 
     + Use `{-}` or `{.unnumbered}` to keep a section out of the auto-list. These will still be listed in the TOC
-    + To hide the heading from the TOC you can also use {.unlisted}
+    + To hide the heading from the TOC you can also use `{.unlisted}`
+    + To specify multiple conditions, separate with a space: `{.unnumbered .unlisted}`
+  * Each section also gets a label **automatically**
+    + If you want to reference (link) to that section, be sure to give it a meaningful ID:
+      + `{#chapter1_section2}`
+      + `{#appendix_1 .unnumered}`
+      
 
 
 ## Basic Fonts {.unnumbered}

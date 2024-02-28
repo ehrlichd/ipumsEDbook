@@ -38,7 +38,7 @@ ff_marst <- factor(ipums_data$MARST, labels = c("Single", "Married", "Separated"
 
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary> 
   <p> 
   
   > 
@@ -46,7 +46,7 @@ ff_marst <- factor(ipums_data$MARST, labels = c("Single", "Married", "Separated"
   >
     
   </p> <br>
-</details>
+</details> <br> 
 
 
 
@@ -222,7 +222,7 @@ The `summary()` function can be applied to many data types. When applying to a c
 **Which numbers are included in the 5-number summary? How do these values relate to the box plot?**
 
 <details>
-  <summary> *Click to show answer* </summary> <br> 
+  <summary> *Click to show answer* </summary> 
   <p> 
   
   >
@@ -234,7 +234,7 @@ The `summary()` function can be applied to many data types. When applying to a c
   
   
   </p> <br>
-</details>
+</details> <br> 
 
 ```{r}
 

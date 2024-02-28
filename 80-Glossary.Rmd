@@ -6,11 +6,26 @@
 
 
 **Random Sampling:**
+
+
 **Stratified Random Sampling:**
+
+
 **Statistical bias**
 
-## Aoendix 1
 
-### Intro to R
+
+# Appendix 1 - Intro to R
+
+## R {#glossary_r}
+
+R refers to both a statistical programming language and the compiler (console) used to execute R code. Generally, when people refer to "R" they are referring to writing code in the R programming language. While you can interact with the R console directly, most often you will use a GUI like [RStudio](#glossary_rstudio)
+
+See also [Appendix 1](#appendix_1)
+
+## RStudio {#glossary_rstudio}
+
+An Integrated Development Environment (IDE) that makes it fun and easy to code in [R](#glossary_r).
+
 
 

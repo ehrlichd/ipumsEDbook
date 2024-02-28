@@ -1,4 +1,4 @@
-# Appendix 1: Intro to R/Rstudio {.unnumbered}
+# Appendix 1: Intro to R/Rstudio {#appendix_1 .unnumbered}
 
 
 
@@ -30,7 +30,7 @@ Let's start with some analogies:
 **What do you think some differences are between R and RStudio?**
 
 <details>
-  <summary> *Click to show answer* </summary> <br> 
+  <summary> *Click to show answer* </summary> 
   <p> 
   
   >
@@ -40,7 +40,7 @@ Let's start with some analogies:
   
   
   </p> <br> 
-</details>
+</details> <br> 
 
 
 
@@ -241,7 +241,7 @@ my_answer <- 1+2+3+4+5+6+7+8+9
 
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary>  
   <p> 
   
   > 
@@ -250,7 +250,7 @@ my_answer <- 1+2+3+4+5+6+7+8+9
   >
     
   </p> <br>
-</details>
+</details> <br>
 
 
 
@@ -336,7 +336,7 @@ my_sum <- 1,2,3,4,5
 
 
 <details>
- <summary> *If you can't run the code, click to show result* </summary> <br> 
+ <summary> *If you can't run the code, click to show result* </summary> 
   <p> 
   
   > ```
@@ -345,7 +345,7 @@ my_sum <- 1,2,3,4,5
   >
   
   </p> <br>
-</details>
+</details> <br> 
 
 
 So what went wrong??
@@ -475,7 +475,7 @@ Can describe how each argument goes from input to output?
 
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary> 
   <p> 
   
   > 
@@ -487,7 +487,7 @@ Can describe how each argument goes from input to output?
   >
     
   </p> <br>
-</details>
+</details> <br> 
 
 
 

@@ -25,9 +25,14 @@ github-repo: ehrlichd/ipumsEDbook
 description: "This is an open source book. The output format for this example is bookdown::gitbook."
 ---
 
-
-
 # Preface {-}
+
+
+
+```{r}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+```
 
 
 An applied methods class for social scientists that uses real-world IPUMS data. This course is:
@@ -240,7 +245,7 @@ Here we demonstrate two **different** approaches to conducting research. Student
 
 For unit dealing with hypothesis testing, students will learn to develop their own simple research questions or social-science hypotheses. They will seek out data to answer these questions, learning to navigate [ipums.org](https://ipums.org), and create **data extracts**, as well as hypothesis-testing statistical methods. Again, lab reports to summarize findings. 
 
-#### Week 6: Intro to IPUMS
+#### Week 6: Intro to IPUMS {-}
 #### Week 7: Exploratory analysis {-}
 
 
@@ -308,34 +313,22 @@ We provide some examples here but encourage instructors (or students) to bring i
 
 
 
+## Modifying the Course Content {-}
+
+This book is open source which means anyone can contribute to it!
+
+The process requires a little bit of setup, but interested users should see the
+"How to Modify Book" vignette in the `ipumsED`  companion R package. This can
+be accessed via:
 
 
-# DEV NOTES {.unlisted .unnumbered}
 
-### TO DO {-}
+```{r, eval = FALSE}
+require(ipumsED)
+vignette("how-to-modify-book.Rmd", package = "ipumsED")
 
-* **UPDATE TODO LIST**
+```
 
-* Make chapter 1 chapter 2
-* Anna Adds chapter con data science intro exclusive of R/IPUMS
-
-* discuss style
-  + key terms section for each chapter?
-  + key terms in **bold**
-  + italics for *emphasis*
-  + are we pro-hyphens, or are they pedantic?
-
-
-### MISC IDEAS {-}
-
-* Application forward
-* Present research/ analysis/results FIRST, then explain the mathematical principals behind it
-* daily/weekly “i’m stuck on…” 
-  + Students send in questions (night before class) and instructor spends 10-15 mins talking through (or collaboratively working through with class) solutions
-  + Alternatively, once a month maybe a longer class covering “common problems asked this month”
-daily/weekly “recent research”
-* pick out a recent article with good visualization (or bad) and spend 5-10 mins discussing what makes it good (or bad)
-  + Encourage students to find articles for extra credit
 
 
 ### Documentation {-}

@@ -3,7 +3,80 @@
 
 ## Engage
 
-Brainstorm/word cloud on “what is data”
+
+
+```{r}
+
+
+library(wordcloud)
+## check for local files first
+
+local_data_dir <- file.path(file.path("..", "ipumsED", "data"))
+local_files <- list.files(local_data_dir, pattern = "^example_data_word_cloud", full.names = T)
+
+word_counts <- list()
+
+
+if(length(local_files)>0){
+  for(ii in 1:length(local_files)){
+    word_counts[[ii]] <- read.csv(local_files[ii])
+  }
+}
+
+names(word_counts) <- c(basename(local_files))
+
+
+## THEN load primary example data
+
+#### once ipumsED is updated, we can just call them by name; for now
+# word_counts$included_example <- example_word_cloud
+#### see below
+
+
+```
+
+
+
+```{r,out.width="50%", fig.show = "hold", fig.cap="Left word cloud of the text book. Right word cloud of wikipedia page for Data. Both sourced from local files"}
+
+## plot only datasets as many datasets as there are
+for(ii in 1:2){
+  wordcloud(word_counts[[ii]]$word, 
+            word_counts[[ii]]$freq, 
+            min.freq = 1, 
+            max.words = 200, 
+            random.order = FALSE,
+            rot.per = .35, colors = brewer.pal(8, "Dark2"))
+}
+
+```
+
+
+
+>
+>
+>  See vignette in `ipumsED` vignettes for how to add your own data to this example!
+>
+>
+
+
+
+
+```{r, eval = FALSE}
+
+## plot as many datasets as there are
+for(ii in 1:length(word_counts)){
+  wordcloud(word_counts[[ii]]$word, 
+            word_counts[[ii]]$freq, 
+            min.freq = 1, 
+            max.words = 200, 
+            random.order = FALSE,
+            rot.per = .35, colors = brewer.pal(8, "Dark2"))
+}
+
+```
+
+
 
 
 ## Explore
@@ -160,7 +233,7 @@ If you do not have class data on height, we will be using the following simple d
 * What do `person, height` represent in relationship to `ex_height`??
  
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary> 
   <p>
   > We **create** the **R object** `ex_height` using the **assignment operator** `<-`
   > `ex_height` is a **data.frame**, a table, with two columns: `person` and `height` <br>
@@ -168,7 +241,7 @@ If you do not have class data on height, we will be using the following simple d
   >
   
   </p> <br>
-</details>
+</details> <br> 
 
  
 ```{r}
@@ -475,7 +548,7 @@ answer the following questions about our data set.
 **Are the data quantitative or nominal?**
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary>
   <p> 
   
   > 
@@ -483,7 +556,7 @@ answer the following questions about our data set.
   >
     
   </p> <br>
-</details>
+</details>  <br> 
 
 
 
@@ -491,7 +564,7 @@ answer the following questions about our data set.
 **Are the data discrete or continuous?**
 
 <details>
-  <summary> *Click to show answer* </summary> <br> 
+  <summary> *Click to show answer* </summary> 
   <p> 
   
   >
@@ -501,7 +574,7 @@ answer the following questions about our data set.
   
   
   </p> <br>
-</details>
+</details> <br> 
 
 
 
@@ -509,12 +582,12 @@ answer the following questions about our data set.
 **Is the dataset primary or secondary data?**
 
 <details>
-  <summary> *Click to show answer* </summary> <br> 
+  <summary> *Click to show answer* </summary> 
   <p> 
   > That depends on which data you are using. If it was collected in your class, it is primary data. If you are using the IPUMS data, it is secondary data as the information was collected by IPUMS from the US Census.
   
   </p> <br>
-</details>
+</details> <br> 
 
 
 
@@ -522,14 +595,14 @@ answer the following questions about our data set.
 **What sampling method was used?**
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary>  
   <p> 
   
   > 
   > Age data is quantitative.
 
   </p> <br>
-</details>
+</details> <br>
 
 
 
@@ -537,13 +610,13 @@ answer the following questions about our data set.
 **Does any statistical bias exist?**
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary> 
   <p> 
   > 
   > Age data is quantitative.
   
   </p> <br>
-</details>
+</details> <br> 
 
 
 
@@ -551,13 +624,13 @@ answer the following questions about our data set.
 **Which measure of central tendency is best to describe this data? Mean, Median or Mode.**
 
 <details>
- <summary> *Click to show answer* </summary> <br> 
+ <summary> *Click to show answer* </summary> 
   <p> 
   >
   >Age data is quantitative.
   
   </p> <br>
-</details>
+</details> <br> 
 
 
 
