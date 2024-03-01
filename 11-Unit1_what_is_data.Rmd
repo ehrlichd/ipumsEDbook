@@ -5,11 +5,8 @@
 
 
 
-```{r}
-
-
-library(wordcloud)
-## check for local files first
+```{r, eval = FALSE}
+## check for local files - TBD
 
 local_data_dir <- file.path(file.path("..", "ipumsED", "data"))
 local_files <- list.files(local_data_dir, pattern = "^example_data_word_cloud", full.names = T)
@@ -21,16 +18,19 @@ if(length(local_files)>0){
   for(ii in 1:length(local_files)){
     word_counts[[ii]] <- read.csv(local_files[ii])
   }
-}
-
+  
 names(word_counts) <- c(basename(local_files))
 
+}
+```
 
-## THEN load primary example data
 
-#### once ipumsED is updated, we can just call them by name; for now
-# word_counts$included_example <- example_word_cloud
-#### see below
+```{r}
+
+word_counts <- list()
+
+word_counts$book <- ipumsED::ex_word_cloud_book
+word_counts$wiki <- ipumsED::ex_word_cloud_wiki
 
 
 ```
@@ -39,17 +39,22 @@ names(word_counts) <- c(basename(local_files))
 
 ```{r,out.width="50%", fig.show = "hold", fig.cap="Left word cloud of the text book. Right word cloud of wikipedia page for Data. Both sourced from local files"}
 
+
+
+library(wordcloud)
+
 ## plot only datasets as many datasets as there are
 for(ii in 1:2){
   wordcloud(word_counts[[ii]]$word, 
             word_counts[[ii]]$freq, 
-            min.freq = 1, 
-            max.words = 200, 
+            min.freq = 2, 
+            max.words = 100, 
             random.order = FALSE,
             rot.per = .35, colors = brewer.pal(8, "Dark2"))
 }
 
 ```
+
 
 
 
@@ -395,7 +400,7 @@ max(ex_height$height)
 
 So far, some of these examples may have so obvious you may be thinking: *what's the point??*
 
-For a slightly more practical demonstration, try out the above functions on your `class_data`. You can also access our sample dataset, curtousey of, [IPUMS-Health Surveys](nhis.ipums.org). The heights and weights dataset is included in the accompanying `ipumsED` R package. 
+For a slightly more practical demonstration, try out the above functions on your `class_data`. You can also access our heights and weights dataset is included in the accompanying `ipumsED` R package. 
 
 There are a few ways to actually get your data into `R`, depending on the file type your data is saved as. If it is a `.csv`, you can use the base-R function `read.csv()`. If you have data in an Excel file (.xls, .xlsx) you will need install the `readxl` R package in order to use the add-on function of `read.xlsx()`.
 
@@ -405,26 +410,10 @@ There are a few ways to actually get your data into `R`, depending on the file t
 >
 
 
-In order to keep things organized, we will first create an object called `my_data_path` that contains the **file path** to the data I want to read. You can type this out as a single character string, or use the `file.path()` function, which adds in `/`s for you. Next we **pass** our new object, `my_data_path`, as the **argument** to either `read.csv()` or `read.xlsx` 
-
-
 ```{r}
 
-## for now working copy for dan
-my_data_path <- file.path("..", "ipumsED", "data", "nhis_sample.csv")
+my_data <- ipumsED::ex_height_weight
 
-
-
-my_data <- read.csv(my_data_path)
-
-```
-
-
-If you have the `ipumsED` package installed, you can load the dataset into your local environment simply by using the `data()` function. 
-
-
-```{r, eval = FALSE}
-data(nhis_data)
 ```
 
 

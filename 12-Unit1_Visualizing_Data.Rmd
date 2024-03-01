@@ -23,8 +23,9 @@
 
 
 # ## UPDATE
-nhis_data <- read.csv(file.path("..", "ipumsED", "data", "nhis_sample.csv"))
-ipums_data <- read.csv(file.path("..", "ipumsED", "data", "ipumsi_sample.csv"))
+height_data <- ipumsED::ex_height_weight
+
+ipums_data <- ipumsED::ex_census_data
 
 ## see ipumsi.cbk for these labels
 ff_sex <- factor(ipums_data$SEX, labels = c("Male", "Female"))
