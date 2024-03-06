@@ -25,6 +25,16 @@ names(word_counts) <- c(basename(local_files))
 ```
 
 
+Check for, and install companion package
+```{r}
+
+if(!"ipumsED" %in% rownames(installed.packages())){
+  remotes::install_github("ehrlichd/ipumsED")
+}
+
+```
+
+
 ```{r}
 
 word_counts <- list()
